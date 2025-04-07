@@ -1,0 +1,21 @@
+const ArrowRight = ({ width = 16, height = 15, className = '' }) => {
+  return (
+    <span className={`transition-all ease-in-out group-hover:translate-x-1 ${className}`}>
+      <svg
+        width={width}
+        height={height}
+        viewBox="0 0 16 15"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className={`inline-block transition-colors ease-in-out group-hover:fill-white`}
+      >
+        <path
+          d="M4 7C3.72386 7 3.5 7.22386 3.5 7.5C3.5 7.77614 3.72386 8 4 8L4 7ZM12.3536 7.85355C12.5488 7.65829 12.5488 7.34171 12.3536 7.14645L9.17157 3.96447C8.97631 3.7692 8.65973 3.7692 8.46447 3.96447C8.2692 4.15973 8.2692 4.47631 8.46447 4.67157L11.2929 7.5L8.46447 10.3284C8.2692 10.5237 8.2692 10.8403 8.46447 11.0355C8.65973 11.2308 8.97631 11.2308 9.17157 11.0355L12.3536 7.85355ZM4 8L12 8L12 7L4 7L4 8Z"
+          className="fill-current"
+        />
+      </svg>
+    </span>
+  );
+};
+
+export default ArrowRight;
