@@ -34,6 +34,13 @@
     "Uncompromising_consistency": "Безкомпромиссная стабильность",
     "Every_batch_is_third_party_tested_cGMP_certified_and_manufactured_to_exceed_industry_standards_for_purity_and_performance": "Каждая партия проходит независимое тестирование, сертифицирована по cGMP и произведена с превышением отраслевых стандартов по чистоте и эффективности."
   },
+  "ShopByMood": {
+    "Shop_by_Mood": "Покупайте по настроению",
+    "The_Right_Flavor_for_Every_Feeling": "Правильный вкус для каждого чувства",
+    "Active": "Активный",
+    "Relaxed": "Расслабленный",
+    "Hybrid": "Гибридный"
+  },
   "productVariants": {
     "Alive": "Элайв",
     "Sweet": "Свит",

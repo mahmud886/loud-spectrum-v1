@@ -34,6 +34,13 @@
     "Uncompromising_consistency": "Uncompromising consistency",
     "Every_batch_is_third_party_tested_cGMP_certified_and_manufactured_to_exceed_industry_standards_for_purity_and_performance": "Every batch is third-party tested, cGMP certified, and manufactured to exceed industry standards for purity and performance."
   },
+  "ShopByMood": {
+    "Shop_by_Mood": "Shop by Mood",
+    "The_Right_Flavor_for_Every_Feeling": "The Right Flavor for Every Feeling",
+    "Active": "Active",
+    "Relaxed": "Relaxed",
+    "Hybrid": "Hybrid"
+  },
   "productVariants": {
     "Alive": "Alive",
     "Sweet": "Sweet",

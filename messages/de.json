@@ -34,6 +34,13 @@
     "Uncompromising_consistency": "Kompromisslose Konsistenz",
     "Every_batch_is_third_party_tested_cGMP_certified_and_manufactured_to_exceed_industry_standards_for_purity_and_performance": "Jede Charge wird von Dritten getestet, cGMP-zertifiziert und hergestellt, um die Branchenstandards für Reinheit und Leistung zu übertreffen."
   },
+  "ShopByMood": {
+    "Shop_by_Mood": "Nach Stimmung einkaufen",
+    "The_Right_Flavor_for_Every_Feeling": "Der richtige Geschmack für jedes Gefühl",
+    "Active": "Aktiv",
+    "Relaxed": "Entspannt",
+    "Hybrid": "Hybrid"
+  },
   "productVariants": {
     "Alive": "Lebendig",
     "Sweet": "Süß",

@@ -34,6 +34,13 @@
     "Uncompromising_consistency": "妥協のない一貫性",
     "Every_batch_is_third_party_tested_cGMP_certified_and_manufactured_to_exceed_industry_standards_for_purity_and_performance": "すべてのバッチは第三者機関によりテストされ、cGMP認証を受け、業界基準を超える純度と性能で製造されています。"
   },
+  "ShopByMood": {
+    "Shop_by_Mood": "気分で選ぶ",
+    "The_Right_Flavor_for_Every_Feeling": "あらゆる気分に合ったフレーバー",
+    "Active": "アクティブ",
+    "Relaxed": "リラックス",
+    "Hybrid": "ハイブリッド"
+  },
   "productVariants": {
     "Alive": "アライブ",
     "Sweet": "スイート",
