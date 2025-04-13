@@ -5,8 +5,8 @@ import { useTranslations } from 'next-intl';
 const ShopByMood = () => {
   const t = useTranslations('ShopByMood');
   return (
-    <div className="container">
-      <div className="bg-umbra-100 flex w-full items-center justify-between gap-20 p-[160px] text-white">
+    <div className="bg-umbra-100 container">
+      <div className="flex w-full items-center justify-between gap-20 p-[80px] text-white">
         <div className="flex min-w-[420px] flex-col space-y-6">
           <h5 className="text-white-100 font-sans text-[16px] font-normal uppercase">{t('Shop_by_Mood')}</h5>
           <h2 className="font-sans text-[44px] leading-[120%] font-normal text-white">

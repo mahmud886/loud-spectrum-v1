@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const TransitionAnimation = () => {
   return (
-    <div className="container">
+    <div className="flex items-center justify-center">
       <Image
         src="/assets/images/transition-animation.png"
         width={1440}

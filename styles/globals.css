@@ -195,6 +195,14 @@
 	}
 }
 
+.text-gradient-extraordinary {
+	background: linear-gradient(97.43deg, #101820 7.54%, #0077C8 45.72%, rgba(192, 174, 231, 0.2) 83.43%, rgba(221, 218, 232, 0) 100.19%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	color: transparent;
+}
+
 .bg-gradient-four-colors {
 	background-image: linear-gradient(to right, #101820 25%, #0077c8 50%, #b2a9f5 75%, #dddae8 100%);
 }

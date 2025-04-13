@@ -5,6 +5,7 @@ import QualityPromise from '@/components/containers/QualityPromise';
 import InTheLab from '@/components/containers/InTheLab';
 import TransitionAnimation from '@/components/containers/TransitionAnimation';
 import ShopByMood from '@/components/containers/ShopByMood';
+import ExperienceExtraordinary from '@/components/containers/ExperienceExtraordinary';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <InTheLab />
       <TransitionAnimation />
       <ShopByMood />
+      <ExperienceExtraordinary />
     </div>
   );
 }
