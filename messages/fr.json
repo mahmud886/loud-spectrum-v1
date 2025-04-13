@@ -10,6 +10,36 @@
     "Discover_the_perfect_terpene_profile_for_your_products_The_right_blend_doesnt_just_enhance_the_experience_it_creates_lasting_loyalty_and_keeps_customers_coming_back": "Découvrez le profil de terpène parfait pour vos produits. Le bon mélange améliore non seulement l'expérience, mais crée aussi une fidélité durable et incite les clients à revenir.",
     "TerpeneGuide": "Guide des Terpènes"
   },
+  "productVariants": {
+    "Alive": "Vivant",
+    "Sweet": "Doux",
+    "Classic": "Classique",
+    "Dank": "Puissant",
+    "Default": "Par défaut"
+  },
+  "buttons": {
+    "shopTheLine": "Acheter la gamme",
+    "wholesale": "Vente en gros",
+    "cannabisDerived": "Dérivé du cannabis"
+  },
+  "descriptions": {
+    "Alive": {
+      "line1": "Pour les connaisseurs exigeants, Vivant frappe fort avec ses propriétés pures, aromatiques et puissantes.",
+      "line2": "Cette formule va au-delà de la Live Resin et est extraite directement des meilleures fleurs dans notre installation certifiée cGMP."
+    },
+    "Sweet": {
+      "line1": "Doux offre un équilibre agréable entre saveur douce et arôme vif.",
+      "line2": "Parfait pour ceux qui recherchent une expérience à la fois douce et stimulante."
+    },
+    "Classic": {
+      "line1": "Classique capture l’essence de la tradition avec une saveur intemporelle et une puissance constante.",
+      "line2": "Conçu pour une utilisation quotidienne, il offre une expérience familière et agréable à chaque bouffée."
+    },
+    "Dank": {
+      "line1": "Puissant est riche, intense, et audacieux tant en arôme qu’en effet.",
+      "line2": "Conçu pour les utilisateurs expérimentés, ce mélange promet une expérience puissante et satisfaisante."
+    }
+  },
   "Menu": "Menu",
   "Shop": "Boutique",
   "NEW": "NOUVEAU",

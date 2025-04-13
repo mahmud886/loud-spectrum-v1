@@ -10,6 +10,36 @@
     "Discover_the_perfect_terpene_profile_for_your_products_The_right_blend_doesnt_just_enhance_the_experience_it_creates_lasting_loyalty_and_keeps_customers_coming_back": "Entdecken Sie das perfekte Terpenprofil für Ihre Produkte. Die richtige Mischung verbessert nicht nur das Erlebnis – sie schafft dauerhafte Loyalität und sorgt für wiederkehrende Kunden.",
     "TerpeneGuide": "Terpen-Leitfaden"
   },
+  "productVariants": {
+    "Alive": "Lebendig",
+    "Sweet": "Süß",
+    "Classic": "Klassisch",
+    "Dank": "Kräftig",
+    "Default": "Standard"
+  },
+  "buttons": {
+    "shopTheLine": "Produktlinie kaufen",
+    "wholesale": "Großhandel",
+    "cannabisDerived": "Aus Cannabis gewonnen"
+  },
+  "descriptions": {
+    "Alive": {
+      "line1": "Für anspruchsvolle Kenner – Lebendig beeindruckt mit reinem, aromatischem und starkem Charakter.",
+      "line2": "Diese Formel übertrifft Live Resin und wird direkt aus den feinsten Blüten in unserer cGMP-zertifizierten Anlage extrahiert."
+    },
+    "Sweet": {
+      "line1": "Süß bietet eine angenehme Balance aus sanftem Geschmack und lebendigem Aroma.",
+      "line2": "Ideal für alle, die ein sanftes und zugleich belebendes Erlebnis suchen."
+    },
+    "Classic": {
+      "line1": "Klassisch verkörpert Tradition mit zeitlosem Geschmack und gleichbleibender Potenz.",
+      "line2": "Perfekt für den Alltag – mit einem vertrauten und sanften Erlebnis bei jedem Zug."
+    },
+    "Dank": {
+      "line1": "Kräftig ist intensiv, vollmundig und besticht durch ein markantes Aroma und eine starke Wirkung.",
+      "line2": "Für erfahrene Nutzer konzipiert – ein tief befriedigendes und kraftvolles Erlebnis."
+    }
+  },
   "Menu": "Speisekarte",
   "Shop": "Geschäft",
   "NEW": "NEU",

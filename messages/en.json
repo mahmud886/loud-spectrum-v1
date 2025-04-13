@@ -10,6 +10,37 @@
     "Discover_the_perfect_terpene_profile_for_your_products_The_right_blend_doesnt_just_enhance_the_experience_it_creates_lasting_loyalty_and_keeps_customers_coming_back": "Discover the perfect terpene profile for your products. The right blend doesn’t just enhance the experience—it creates lasting loyalty and keeps customers coming back.",
     "TerpeneGuide": "Terpene Guide"
   },
+  "productVariants": {
+    "Alive": "Alive",
+    "Sweet": "Sweet",
+    "Classic": "Classic",
+    "Dank": "Dank",
+    "Default": "Default"
+  },
+  "buttons": {
+    "shopTheLine": "Shop the Line",
+    "wholesale": "Wholesale",
+    "cannabisDerived": "Cannabis Derived"
+  },
+  "descriptions": {
+    "Alive": {
+      "line1": "For the uncompromising connoisseur, Alive comes out swinging with its pure, aromatic, and potent properties.",
+      "line2": "This formula is a level above Live Resin and extracted directly from the finest flower through a specialized process in our cGMP Certified Facility."
+    },
+    "Sweet": {
+      "line1": "Sweet delivers a delightful balance of smooth flavor and vibrant aroma.",
+      "line2": "A great choice for those seeking a mellow yet uplifting experience."
+    },
+    "Classic": {
+      "line1": "Classic captures the essence of tradition with timeless flavor and consistent potency.",
+      "line2": "Crafted for everyday use, it delivers a smooth and familiar experience with each inhale."
+    },
+    "Dank": {
+      "line1": "Dank is rich, intense, and unapologetically bold in both aroma and effect.",
+      "line2": "Tailored for seasoned users, this blend promises a deeply satisfying and powerful experience."
+    }
+  },
+
   "Menu": "Menu",
   "Shop": "Shop",
   "NEW": "NEW",

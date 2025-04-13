@@ -10,6 +10,36 @@
     "Discover_the_perfect_terpene_profile_for_your_products_The_right_blend_doesnt_just_enhance_the_experience_it_creates_lasting_loyalty_and_keeps_customers_coming_back": "Descubre el perfil de terpeno perfecto para tus productos. La mezcla adecuada no solo mejora la experiencia, sino que también genera lealtad duradera y hace que los clientes regresen.",
     "TerpeneGuide": "Guía de Terpenos"
   },
+  "productVariants": {
+    "Alive": "Vivo",
+    "Sweet": "Dulce",
+    "Classic": "Clásico",
+    "Dank": "Intenso",
+    "Default": "Predeterminado"
+  },
+  "buttons": {
+    "shopTheLine": "Comprar la línea",
+    "wholesale": "Venta al por mayor",
+    "cannabisDerived": "Derivado del cannabis"
+  },
+  "descriptions": {
+    "Alive": {
+      "line1": "Para los conocedores exigentes, Vivo destaca por sus propiedades puras, aromáticas y potentes.",
+      "line2": "Esta fórmula va más allá del Live Resin y se extrae directamente de las mejores flores en nuestra instalación certificada cGMP."
+    },
+    "Sweet": {
+      "line1": "Dulce ofrece un equilibrio encantador de sabor suave y aroma vibrante.",
+      "line2": "Una excelente opción para quienes buscan una experiencia suave pero estimulante."
+    },
+    "Classic": {
+      "line1": "Clásico captura la esencia de la tradición con sabor atemporal y potencia constante.",
+      "line2": "Ideal para el uso diario, ofrece una experiencia familiar y suave en cada calada."
+    },
+    "Dank": {
+      "line1": "Intenso es rico, fuerte y audaz en aroma y efecto.",
+      "line2": "Diseñado para usuarios experimentados, esta mezcla garantiza una experiencia poderosa y satisfactoria."
+    }
+  },
   "Menu": "Menú",
   "Shop": "Tienda",
   "NEW": "NUEVO",

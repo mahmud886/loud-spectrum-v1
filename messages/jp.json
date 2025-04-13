@@ -10,6 +10,36 @@
     "Discover_the_perfect_terpene_profile_for_your_products_The_right_blend_doesnt_just_enhance_the_experience_it_creates_lasting_loyalty_and_keeps_customers_coming_back": "製品に最適なテルペンプロファイルを見つけましょう。適切なブレンドは体験を高めるだけでなく、長期的なロイヤルティを生み出し、顧客のリピートを促します。",
     "TerpeneGuide": "テルペンガイド"
   },
+  "productVariants": {
+    "Alive": "アライブ",
+    "Sweet": "スイート",
+    "Classic": "クラシック",
+    "Dank": "ダンク",
+    "Default": "デフォルト"
+  },
+  "buttons": {
+    "shopTheLine": "製品ラインを購入",
+    "wholesale": "卸売り",
+    "cannabisDerived": "カンナビス由来"
+  },
+  "descriptions": {
+    "Alive": {
+      "line1": "妥協のない鑑賞家のために、アライブは純粋で芳香があり、強力な特性で登場します。",
+      "line2": "このフォーミュラはライブレジンを超え、最高級の花から当社のcGMP認証施設で抽出されています。"
+    },
+    "Sweet": {
+      "line1": "スイートは、滑らかな味わいと鮮やかなアロマの絶妙なバランスを提供します。",
+      "line2": "穏やかで高揚感のある体験を求める方に最適です。"
+    },
+    "Classic": {
+      "line1": "クラシックは伝統の本質をとらえ、時代を超えた風味と一貫した効力を持っています。",
+      "line2": "毎日の使用に最適で、吸うたびに親しみやすく滑らかな体験を提供します。"
+    },
+    "Dank": {
+      "line1": "ダンクは豊かで強烈、香りと効果の両方で圧倒的な存在感を放ちます。",
+      "line2": "熟練者向けに調整されたこのブレンドは、非常に満足できる強力な体験を提供します。"
+    }
+  },
   "Menu": "メニュー",
   "Shop": "店",
   "NEW": "新しい",
