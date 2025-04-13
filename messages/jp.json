@@ -3,6 +3,13 @@
     "Log_in": "ログイン",
     "Cart": "カート"
   },
+  "Homepage": {
+    "Explore_The_Spectrum": "スペクトラムを探索する",
+    "Find_Your_Perfect_Profile": "完璧なプロファイルを見つける",
+    "Explore_Our_Terpene_Guide": "テルペンガイドを探索する",
+    "Discover_the_perfect_terpene_profile_for_your_products_The_right_blend_doesnt_just_enhance_the_experience_it_creates_lasting_loyalty_and_keeps_customers_coming_back": "製品に最適なテルペンプロファイルを見つけましょう。適切なブレンドは体験を高めるだけでなく、長期的なロイヤルティを生み出し、顧客のリピートを促します。",
+    "TerpeneGuide": "テルペンガイド"
+  },
   "Menu": "メニュー",
   "Shop": "店",
   "NEW": "新しい",

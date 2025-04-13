@@ -3,6 +3,13 @@
     "Log_in": "Войти",
     "Cart": "Корзина"
   },
+  "Homepage": {
+    "Explore_The_Spectrum": "Исследуйте спектр",
+    "Find_Your_Perfect_Profile": "Найдите свой идеальный профиль",
+    "Explore_Our_Terpene_Guide": "Изучите наш гид по терпеноидом",
+    "Discover_the_perfect_terpene_profile_for_your_products_The_right_blend_doesnt_just_enhance_the_experience_it_creates_lasting_loyalty_and_keeps_customers_coming_back": "Откройте для себя идеальный профиль терпенов для ваших продуктов. Правильная смесь не просто улучшает впечатление — она создаёт устойчивую лояльность и возвращает клиентов снова и снова.",
+    "TerpeneGuide": "Гид по Терпенам"
+  },
   "Menu": "Меню",
   "Shop": "Магазин",
   "NEW": "НОВОЕ",
