@@ -11,7 +11,9 @@ const ExploreTerpeneGuide = () => {
           {t('Explore_Our_Terpene_Guide')}
         </h5>
         <h6 className="text-umbra-100 mt-6 font-sans text-[35px] leading-[130%] font-normal">
-          {t('Discover_the_perfect_terpene_profile_for_your_products_The_right_blend_doesnt_just_enhance_the_experience_it_creates_lasting_loyalty_and_keeps_customers_coming_back')}
+          {t(
+            'Discover_the_perfect_terpene_profile_for_your_products_The_right_blend_doesnt_just_enhance_the_experience_it_creates_lasting_loyalty_and_keeps_customers_coming_back',
+          )}
         </h6>
         <div className="mt-12 w-full">
           <button className="main-button-black rounded-full px-6 py-2">{t('TerpeneGuide')}</button>
