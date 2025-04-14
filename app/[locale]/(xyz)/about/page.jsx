@@ -4,6 +4,7 @@ import TerpeneProfile from '@/components/containers/TerpeneProfile';
 import FlavorScience from '@/components/containers/FlavorScience';
 import WhyLoudSpectrum from '@/components/containers/WhyLoudSpectrum';
 import OurVision from '@/components/containers/OurVision';
+import FlavorThatSetsYouApart from '@/components/containers/FlavorThatSetsYouApart';
 
 const AboutPage = () => {
   return (
@@ -13,6 +14,7 @@ const AboutPage = () => {
       <FlavorScience />
       <WhyLoudSpectrum />
       <OurVision />
+      <FlavorThatSetsYouApart />
     </>
   );
 };
