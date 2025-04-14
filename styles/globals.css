@@ -16,11 +16,11 @@
 	--color-dank: oklch(76.36% 0.163664 106.9447);
 	--color-classic: oklch(47.91% 0.2113 290.78);
 	/* Neutrals Colors */
-	--color-umbra-100: oklch(13.41% 0.02 252.88);
-	--color-umbra-60: oklch(13.41% 0.02 252.88 / 0.6);
-	--color-umbra-40: oklch(13.41% 0.02 252.88 / 0.4);
-	--color-umbra-10: oklch(13.41% 0.02 252.88 / 0.15);
-	--color-umbra-5: oklch(13.41% 0.02 252.88 / 0.05);
+	--color-umbra-100: oklch(0.21 0.02 248.83);
+	--color-umbra-60: oklch(0.21 0.02 248.83 / 0.6);
+	--color-umbra-40: oklch(0.21 0.02 248.83 / 0.4);
+	--color-umbra-10: oklch(0.21 0.02 248.83 / 0.15);
+	--color-umbra-5: oklch(0.21 0.02 248.83 / 0.05);
 	--color-white-100: oklch(100% 0 0);
 	--color-white-40: oklch(100% 0 0 / 0.4);
 	--color-white-20: oklch(100% 0 0 / 0.2);
