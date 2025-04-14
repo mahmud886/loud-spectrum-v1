@@ -2,7 +2,7 @@ import LanguageSwitcher from '@/components/LanguageSwitcher';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 
-const Footer = ({ locale }) => {
+const Footer = () => {
   const t = useTranslations('');
   return (
     <footer className="bg-umbra-100 text-white md:px-[80px] md:pt-[80px] md:pb-[50px]">
