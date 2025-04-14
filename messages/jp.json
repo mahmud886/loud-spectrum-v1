@@ -22,7 +22,16 @@
     "Step_03_Description": "最高のテルペンプロファイルを体験してください！"
   },
   "AboutPage": {
-    "The_Best_in_the_Terpene_Business_Bar_None": "テルペン業界で最高。間違いなし。"
+    "The_Best_in_the_Terpene_Business_Bar_None": "テルペン業界で最高。間違いなし。",
+    "Header_Description": "Loud Spectrumは、プレミアムな原材料から作られ、最高水準で設計された<sup>2</sup>、最も広範なテルペンプロファイル<sup>1</sup>を提供しています。これは、より高い体験<sup>4</sup>を求める<sup>3</sup>愛好家のためのものです。<br /><br />ちょっと複雑に聞こえるかもしれません。そこで、わかりやすく分解しました：",
+    "Point_01_Title": "01",
+    "Point_01_Description": "3,500以上のカスタムプロファイルを提供するLoud Spectrumは、業界標準を確立し、テルペン配合における最も幅広い選択肢と深い専門知識を提供します。",
+    "Point_02_Title": "02",
+    "Point_02_Description": "当社のテルペンは、科学的な精密さと分子風味ダイナミクスへの深い理解を用いて慎重に設計され、比類のない品質と一貫性を実現しています。",
+    "Point_03_Title": "03",
+    "Point_03_Description": "あなた（とあなたの顧客）は優れたセンスを持っていることを私たちは知っています。その期待を超えることに尽力しています。",
+    "Point_04_Title": "04",
+    "Point_04_Description": "私たちはトレンドを追いません—それらを創造します。10年以上にわたり、私たちはテルペン体験の最前線で、限界を押し広げ、可能性を再定義し続けています。"
   },
   "InTheLab": {
     "In_the_Lab": "研究室で",

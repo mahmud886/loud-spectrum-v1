@@ -22,7 +22,16 @@
     "Step_03_Description": "¡Experimenta lo mejor de nuestros perfiles de terpenos!"
   },
   "AboutPage": {
-    "The_Best_in_the_Terpene_Business_Bar_None": "Los mejores en el negocio de terpenos. Sin excepción."
+    "The_Best_in_the_Terpene_Business_Bar_None": "Los mejores en el negocio de terpenos. Sin excepción.",
+    "Header_Description": "Loud Spectrum ofrece la gama más amplia de perfiles de terpenos<sup>1</sup>, elaborados con ingredientes premium y diseñados con los más altos estándares<sup>2</sup> para conocedores<sup>3</sup> que buscan experiencias intensas<sup>4</sup>. <br /> <br /> Sabemos que es mucho. Así que lo desglosamos para usted:",
+    "Point_01_Title": "01",
+    "Point_01_Description": "Con más de 3.500 perfiles personalizados, Loud Spectrum establece el estándar de la industria, ofreciendo la selección más amplia y la mayor experiencia en formulación de terpenos.",
+    "Point_02_Title": "02",
+    "Point_02_Description": "Nuestros terpenos se formulan meticulosamente utilizando precisión científica y una profunda comprensión de la dinámica del sabor molecular, asegurando una calidad y consistencia inigualables.",
+    "Point_03_Title": "03",
+    "Point_03_Description": "Sabemos que usted (y sus clientes) tienen un gran gusto, y estamos dedicados a superar sus expectativas.",
+    "Point_04_Title": "04",
+    "Point_04_Description": "No seguimos tendencias, las creamos. Durante más de una década, hemos estado a la vanguardia de la experiencia con terpenos, superando límites y redefiniendo lo posible."
   },
   "InTheLab": {
     "In_the_Lab": "En el Laboratorio",

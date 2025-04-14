@@ -22,7 +22,16 @@
     "Step_03_Description": "Experience the best of our terpene profiles!"
   },
   "AboutPage": {
-    "The_Best_in_the_Terpene_Business_Bar_None": "The Best in the Terpene Business. Bar None."
+    "The_Best_in_the_Terpene_Business_Bar_None": "The Best in the Terpene Business. Bar None.",
+    "Header_Description": "Loud Spectrum offers the widest range of terpene profiles<sup>1</sup>, crafted from premium ingredients and engineered to the highest standards<sup>2</sup> for connoisseurs<sup>3</sup> seeking heightened experiences<sup>4</sup>. <br /> <br /> We know that’s a bit of a mouthful. So, we broke it down for you:",
+    "Point_01_Title": "01",
+    "Point_01_Description": "With over 3,500 custom profiles, Loud Spectrum sets the industry standard, offering the widest selection and deepest expertise in terpene formulation.",
+    "Point_02_Title": "02",
+    "Point_02_Description": "Our terpenes are meticulously formulated using scientific precision and a deep understanding of molecular flavor dynamics, ensuring unmatched quality and consistency.",
+    "Point_03_Title": "03",
+    "Point_03_Description": "We know you (and your customers) have great taste, and we're dedicated to exceeding expectations.",
+    "Point_04_Title": "04",
+    "Point_04_Description": "We don’t follow trends—we create them. For over a decade, we’ve been at the forefront of terpene experience, pushing boundaries and redefining what’s possible."
   },
   "InTheLab": {
     "In_the_Lab": "In the Lab",
