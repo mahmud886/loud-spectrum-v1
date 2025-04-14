@@ -1,11 +1,12 @@
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 
-const Footer = () => {
-  const t = useTranslations('')
+const Footer = ({ locale }) => {
+  const t = useTranslations('');
   return (
     <footer className="bg-umbra-100 text-white md:px-[80px] md:pt-[80px] md:pb-[50px]">
-      <div className='container'>
+      <div className="container">
         {/*for desktop*/}
         <div className="hidden flex-col justify-center space-y-[150px] md:flex">
           <div className="mx-auto grid w-full grid-cols-1 gap-8 md:grid-cols-2">
@@ -15,29 +16,27 @@ const Footer = () => {
                 <h3 className="text-white-40 mb-2 text-[14px] capitalize">{t('Menu')}</h3>
                 <ul className="w-full space-y-4">
                   <li>
-                    <a href="#" className="footer-text">
+                    <Link href={`/shop`} className="footer-text">
                       {t('Shop')}
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="footer-text">
+                    <Link href={`/new`} className="footer-text">
                       {t('NEW')}
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="footer-text">
+                    <Link href={`/lab`} className="footer-text">
                       {t('The_lab')}
-                    </a>
+                    </Link>
                   </li>
+                  <Link href={`/about`} className="footer-text">
+                    {t('About')}
+                  </Link>
                   <li>
-                    <a href="#" className="footer-text">
-                      {t('About')}
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="footer-text">
+                    <Link href={`/blog`} className="footer-text">
                       {t('Blog')}
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -45,14 +44,14 @@ const Footer = () => {
                 <h3 className="text-white-40 mb-2 text-[14px] capitalize">{t('Account')}</h3>
                 <ul className="w-full space-y-4">
                   <li>
-                    <a href="#" className="footer-text">
+                    <Link href={`/login`} className="footer-text">
                       {t('Log_in')}
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="footer-text">
+                    <Link href={`/cart`} className="footer-text">
                       {t('Cart')}
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -60,28 +59,31 @@ const Footer = () => {
                 <h3 className="text-white-40 mb-2 text-[14px] capitalize">{t('Support')}</h3>
                 <ul className="w-full space-y-4">
                   <li>
-                    <a href="#" className="footer-text">
+                    <Link href={`/shipping-returns`} className="footer-text">
                       {t('Shipping_&_Returns')}
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="footer-text">
+                    <Link href={`/contact`} className="footer-text">
                       {t('Contact')}
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="footer-text">
+                    <Link href={`/faq`} className="footer-text">
                       {t('FAQ')}
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
             </div>
             {/* Buttons */}
             <div className="flex justify-end gap-4">
-              <button className="main-button-white h-[44px] w-[244px] rounded-full font-normal">
+              <Link
+                href={`/wholesale-registration`}
+                className="main-button-white inline-flex h-[44px] w-[244px] items-center justify-center rounded-full font-normal"
+              >
                 {t('Wholesale_Registration')}
-              </button>
+              </Link>
               <LanguageSwitcher />
             </div>
           </div>
@@ -103,18 +105,18 @@ const Footer = () => {
                 Est. 2015 &nbsp; | &nbsp; Copyright © 2024 Medical Terpenes
               </p>
               <div className="flex space-x-6">
-                <a href="#" className="footer-text/50">
+                <Link href={`/quality-safety`} className="footer-text/50">
                   {t('Quality_&_Safety')}
-                </a>
-                <a href="#" className="footer-text/50">
+                </Link>
+                <Link href={`/legal`} className="footer-text/50">
                   {t('Legal')}
-                </a>
-                <a href="#" className="footer-text/50">
+                </Link>
+                <Link href={`/privacy-policy`} className="footer-text/50">
                   {t('Privacy_Policy')}
-                </a>
-                <a href="#" className="footer-text/50">
+                </Link>
+                <Link href={`/terms-and-conditions`} className="footer-text/50">
                   {t('Terms_&_Conditions')}
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -145,29 +147,27 @@ const Footer = () => {
                 <h3 className="text-white-40 mb-2 text-[14px] capitalize">{t('Menu')}</h3>
                 <ul className="w-full space-y-4">
                   <li>
-                    <a href="#" className="footer-text">
+                    <Link href={`/shop`} className="footer-text">
                       {t('Shop')}
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="footer-text">
+                    <Link href={`/new`} className="footer-text">
                       {t('NEW')}
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="footer-text">
+                    <Link href={`/lab`} className="footer-text">
                       {t('The_lab')}
-                    </a>
+                    </Link>
                   </li>
+                  <Link href={`/about`} className="footer-text">
+                    {t('About')}
+                  </Link>
                   <li>
-                    <a href="#" className="footer-text">
-                      {t('About')}
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="footer-text">
+                    <Link href={`/blog`} className="footer-text">
                       {t('Blog')}
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -176,14 +176,14 @@ const Footer = () => {
                 <h3 className="text-white-40 mb-2 text-[14px] capitalize">{t('Account')}</h3>
                 <ul className="w-full space-y-4">
                   <li>
-                    <a href="#" className="footer-text">
+                    <Link href={`/login`} className="footer-text">
                       {t('Log_in')}
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="footer-text">
+                    <Link href={`/cart`} className="footer-text">
                       {t('Cart')}
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -192,45 +192,45 @@ const Footer = () => {
                 <h3 className="text-white-40 mb-2 text-[14px] capitalize">{t('Support')}</h3>
                 <ul className="w-full space-y-4">
                   <li>
-                    <a href="#" className="footer-text">
+                    <Link href={`/shipping-returns`} className="footer-text">
                       {t('Shipping_&_Returns')}
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="footer-text">
+                    <Link href={`/contact`} className="footer-text">
                       {t('Contact')}
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="footer-text">
+                    <Link href={`/faq`} className="footer-text">
                       {t('FAQ')}
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
               <div className="mt-5 flex w-full items-center justify-center">
-                <button className="main-button-white h-[44px] w-full rounded-full font-normal">
+                <Link
+                  href={`/wholesale-registration`}
+                  className="main-button-white inline-flex h-[44px] w-full items-center justify-center rounded-full font-normal"
+                >
                   {t('Wholesale_Registration')}
-                </button>
+                </Link>
               </div>
             </div>
             <div className="flex flex-col items-start gap-[40px]">
               <div className="flex flex-wrap space-x-2 gap-y-5 text-gray-500">
-                <a href="#" className="text-white-100/50 font-sans text-[17px]">
+                <Link href={`/quality-safety`} className="footer-text/50">
                   {t('Quality_&_Safety')}
-                </a>
-                <span>|</span>
-                <a href="#" className="text-white-100/50 font-sans text-[17px]">
+                </Link>
+                <Link href={`/legal`} className="footer-text/50">
                   {t('Legal')}
-                </a>
-                <span>|</span>
-                <a href="#" className="text-white-100/50 font-sans text-[17px]">
+                </Link>
+                <Link href={`/privacy-policy`} className="footer-text/50">
                   {t('Privacy_Policy')}
-                </a>
-                <span>|</span>
-                <a href="#" className="text-white-100/50 font-sans text-[17px]">
+                </Link>
+                <Link href={`/terms-and-conditions`} className="footer-text/50">
                   {t('Terms_&_Conditions')}
-                </a>
+                </Link>
               </div>
               <p className="text-white-100/50 font-sans text-[17px] leading-10">
                 Est. 2015 &nbsp; | &nbsp; Copyright © 2024 Medical Terpenes

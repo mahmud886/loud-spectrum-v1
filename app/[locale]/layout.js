@@ -34,7 +34,7 @@ export default async function RootLayout({ children, params }) {
           />
           <Navbar />
           {children}
-          <Footer />
+          <Footer locale={locale} />
         </NextIntlClientProvider>
       </body>
     </html>
