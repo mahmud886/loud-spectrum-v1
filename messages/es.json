@@ -57,6 +57,19 @@
     "description": "Los terpenos son compuestos naturales que le dan a las plantas sus aromas característicos, como el estallido cítrico de una cáscara de naranja o el aroma calmante de la lavanda.",
     "subText": "Pero hacen más que solo oler bien. Los terpenos pueden influir en el sabor y el efecto de productos como aceites esenciales o cannabis, trabajando en armonía con otros compuestos vegetales para moldear experiencias."
   },
+  "PickYourPace": {
+    "title": "Elige Tu Ritmo",
+    "subtitle": "Explora terpenos diseñados para coincidir con tu estado de ánimo.",
+    "active": "Activo",
+    "relaxed": "Relajado",
+    "hybrid": "Híbrido",
+    "shopActive": "Comprar Activo",
+    "shopRelaxed": "Comprar Relajado",
+    "shopHybrid": "Comprar Híbrido",
+    "activeAlt": "Producto Activo",
+    "relaxedAlt": "Producto Relajado",
+    "hybridAlt": "Producto Híbrido"
+  },
   "WhatAreTerpenesSlider": {
     "classic": {
       "description": "Classic es la línea original de terpenos específicos por cepa, diseñada para precisión y versatilidad. Elaborado con terpenos botánicos 100% naturales, Classic ofrece el efecto séquito sin un aroma abrumador. Ya sea que busques perfiles puros de cepa o un sutil toque afrutado, esta línea ofrece una manera sencilla y precisa de infundir terpenos en tus productos.",

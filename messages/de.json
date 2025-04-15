@@ -57,6 +57,19 @@
     "description": "Terpene sind natürliche Verbindungen, die Pflanzen ihre charakteristischen Düfte verleihen – wie der Zitrusduft einer Orangenschale oder das beruhigende Aroma von Lavendel.",
     "subText": "Aber sie riechen nicht nur gut. Terpene können Geschmack und Wirkung von Produkten wie ätherischen Ölen oder Cannabis beeinflussen, indem sie mit anderen Pflanzenstoffen zusammenwirken, um Erlebnisse zu formen."
   },
+  "PickYourPace": {
+    "title": "Wähle Dein Tempo",
+    "subtitle": "Entdecke Terpene, die auf deine Gemütslage abgestimmt sind.",
+    "active": "Aktiv",
+    "relaxed": "Entspannt",
+    "hybrid": "Hybrid",
+    "shopActive": "Aktiv Kaufen",
+    "shopRelaxed": "Entspannt Kaufen",
+    "shopHybrid": "Hybrid Kaufen",
+    "activeAlt": "Aktives Produkt",
+    "relaxedAlt": "Entspanntes Produkt",
+    "hybridAlt": "Hybrid-Produkt"
+  },
   "WhatAreTerpenesSlider": {
     "classic": {
       "description": "Classic ist die ursprüngliche, strainspezifische Terpenlinie, die für Präzision und Vielseitigkeit entwickelt wurde. Hergestellt aus 100 % natürlichen, botanisch gewonnenen Terpenen, liefert Classic den Entourage-Effekt ohne überwältigendes Aroma. Ob reine Strain-Profile oder eine dezente fruchtige Note – diese Linie bietet eine nahtlose Möglichkeit, Terpene präzise in Produkte zu integrieren.",
