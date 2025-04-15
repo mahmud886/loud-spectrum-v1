@@ -166,6 +166,10 @@
 		@apply mx-auto px-[20px] xl:px-[80px] 2xl:px-[160px];
 	}
 	
+	.heading-6 {
+		@apply font-sans text-white-100 text-[16px] font-normal tracking-normal leading-[100%] uppercase;
+	}
+	
 	.main-gradient {
 		@apply from-umbra-100 via-atmosphere to-aurora bg-gradient-to-r from-25% via-50% to-75%;
 	}
@@ -187,7 +191,7 @@
 	}
 	
 	.bg-gradient-classic {
-		@apply from-umbra-100 to-classic bg-gradient-to-l;
+		@apply bg-gradient-to-b from-classic via-umbra-100 to-umbra-100;
 	}
 	
 	.footer-text {

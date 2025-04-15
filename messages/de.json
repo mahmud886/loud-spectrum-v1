@@ -52,6 +52,25 @@
     "title": "Geschmack, der dich\nbesonders macht",
     "button": "Jetzt einkaufen"
   },
+  "WhatAreTerpenes": {
+    "heading": "Zuerst, was sind Terpene?",
+    "description": "Terpene sind natürliche Verbindungen, die Pflanzen ihre charakteristischen Düfte verleihen – wie der Zitrusduft einer Orangenschale oder das beruhigende Aroma von Lavendel.",
+    "subText": "Aber sie riechen nicht nur gut. Terpene können Geschmack und Wirkung von Produkten wie ätherischen Ölen oder Cannabis beeinflussen, indem sie mit anderen Pflanzenstoffen zusammenwirken, um Erlebnisse zu formen."
+  },
+  "WhatAreTerpenesSlider": {
+    "classic": {
+      "description": "Classic ist die ursprüngliche, strainspezifische Terpenlinie, die für Präzision und Vielseitigkeit entwickelt wurde. Hergestellt aus 100 % natürlichen, botanisch gewonnenen Terpenen, liefert Classic den Entourage-Effekt ohne überwältigendes Aroma. Ob reine Strain-Profile oder eine dezente fruchtige Note – diese Linie bietet eine nahtlose Möglichkeit, Terpene präzise in Produkte zu integrieren.",
+      "quickFacts": "Schnelle Fakten:",
+      "facts": [
+        "Erfunden im Jahr 2018",
+        "Enthält über 100 Inhaltsstoffe pro Profil",
+        "Riecht stark nach Cannabis",
+        "Ideal für Freizeitkonsumenten"
+      ],
+      "shop": "Classic kaufen",
+      "label": "Classic"
+    }
+  },
   "InTheLab": {
     "In_the_Lab": "Im Labor",
     "Science_Is_in_Our_DNA": "Wissenschaft liegt in unserer DNA",

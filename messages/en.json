@@ -52,6 +52,25 @@
     "title": "Flavor That Sets\nYou Apart",
     "button": "Shop Now"
   },
+  "WhatAreTerpenes": {
+    "heading": "First, What are Terpenes?",
+    "description": "Terpenes are the natural compounds that give plants their signature scents–like the citrus burst from an orange peel or the calming aroma of lavender.",
+    "subText": "But they do more than just smell delicious. Terpenes can influence flavor and effect of products such as essential oils or cannabis, working in harmony with other plant compounds to shape experiences."
+  },
+  "WhatAreTerpenesSlider": {
+    "classic": {
+      "description": "Classic is the original strain-specific terpene line, designed for precision and versatility. Made from 100% natural, botanically derived terpenes, Classic delivers the entourage effect without an overpowering aroma. Whether you’re after pure strain profiles or a subtle fruity twist, this line offers a seamless way to infuse terpenes into your products with accuracy and ease.",
+      "quickFacts": "Quick Facts:",
+      "facts": [
+        "Invented in 2018",
+        "Contains over 100 ingredients per profile",
+        "Smells strongly of cannabis",
+        "Ideal for recreational users"
+      ],
+      "shop": "Shop Classic",
+      "label": "Classic"
+    }
+  },
   "InTheLab": {
     "In_the_Lab": "In the Lab",
     "Science_Is_in_Our_DNA": "Science Is in Our DNA",

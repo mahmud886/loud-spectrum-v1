@@ -52,6 +52,25 @@
     "title": "Sabor que te\nhace destacar",
     "button": "Compra ahora"
   },
+  "WhatAreTerpenes": {
+    "heading": "Tout d'abord, que sont les terpènes ?",
+    "description": "Les terpènes sont des composés naturels qui donnent aux plantes leurs parfums caractéristiques – comme l’éclat d’agrumes d’une écorce d’orange ou l’arôme apaisant de la lavande.",
+    "subText": "Mais ils ne se contentent pas de sentir bon. Les terpènes peuvent influencer la saveur et l'effet de produits comme les huiles essentielles ou le cannabis, en travaillant en harmonie avec d'autres composés végétaux pour façonner les expériences."
+  },
+  "WhatAreTerpenesSlider": {
+    "classic": {
+      "description": "Classic est la gamme originale de terpènes spécifiques à chaque souche, conçue pour la précision et la polyvalence. Fabriqué à partir de terpènes d'origine botanique 100 % naturels, Classic offre l'effet d'entourage sans arôme envahissant. Que vous recherchiez des profils de souche purs ou une touche fruitée subtile, cette gamme permet d'infuser des terpènes avec précision et facilité.",
+      "quickFacts": "Faits rapides :",
+      "facts": [
+        "Créé en 2018",
+        "Contient plus de 100 ingrédients par profil",
+        "Odeur forte de cannabis",
+        "Idéal pour les utilisateurs récréatifs"
+      ],
+      "shop": "Acheter Classic",
+      "label": "Classic"
+    }
+  },
   "InTheLab": {
     "In_the_Lab": "Dans le Laboratoire",
     "Science_Is_in_Our_DNA": "La Science Est dans Notre ADN",
