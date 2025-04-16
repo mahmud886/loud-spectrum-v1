@@ -10,7 +10,7 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
 const buttonStyle =
   'rounded-full bg-umbra-10 text-umbra-100 px-4 py-2 hover:bg-umbra-40 hover:text-white transition-colors';
 
-const BlogPagination = () => {
+const ProductPagination = () => {
   return (
     <div>
       <Pagination>
@@ -44,4 +44,4 @@ const BlogPagination = () => {
   );
 };
 
-export default BlogPagination;
+export default ProductPagination;
