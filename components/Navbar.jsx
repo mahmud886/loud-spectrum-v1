@@ -12,7 +12,6 @@ const Navbar = ({ locale }) => {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // List of paths that should have white background and dark text
   const specialPaths = [
     'blog',
     'wholesale',
@@ -26,7 +25,6 @@ const Navbar = ({ locale }) => {
     'terpene-charts',
   ];
 
-  // Check if current pathname matches any special path
   const isSpecialPath = specialPaths.some(
     (path) => pathname === `/${locale}/${path}` || pathname.startsWith(`/${locale}/${path}/`),
   );
@@ -46,7 +44,9 @@ const Navbar = ({ locale }) => {
 
   return (
     <nav className={`fixed top-0 left-0 z-100 w-full transition-colors duration-300 ${navBg} ${textColor}`}>
-      <div className="container mx-auto flex items-center justify-between px-[80px] py-4">
+      <div
+        className={`container mx-auto flex items-center justify-between px-[80px] ${isScrolled ? 'py-5' : 'py-10'} transition-all duration-300`}
+      >
         <Link href={`/`}>
           <Image src={logoSrc} alt="Logo" width={221} height={36} />
         </Link>

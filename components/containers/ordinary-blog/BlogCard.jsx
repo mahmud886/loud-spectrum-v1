@@ -1,4 +1,3 @@
-import React from 'react';
 import Image from 'next/image';
 
 const BlogCard = () => {
@@ -31,7 +30,7 @@ const BlogCard = () => {
           </div>
         </div>
       </div>
-      <h2 className="text-umbra-100 font-sans text-[28px] leading-[130%] font-normal tracking-normal">
+      <h2 className="text-umbra-100 font-sans text-[22px] leading-[130%] font-normal tracking-normal">
         Terpene-Infused Products That You Can Make At Home: Oils, And Candles
       </h2>
     </div>
