@@ -248,6 +248,7 @@
 
 /*Main Buttons White*/
 .main-button-white {
+	margin: 2px;
 	font-size: 17px;
 	font-weight: 400;
 	color: var(--color-umbra-100);
@@ -266,6 +267,7 @@
 
 /*Outline Buttons*/
 .outline-button-black {
+	margin: 2px;
 	font-weight: 400;
 	font-size: 17px;
 	border: 1px solid var(--color-white-20);
@@ -307,6 +309,7 @@
 
 /*Outline Buttons*/
 .outline-button-white {
+	margin: 2px;
 	font-weight: 400;
 	font-size: 17px;
 	/*border: 1px solid var(--color-umbra-10);*/

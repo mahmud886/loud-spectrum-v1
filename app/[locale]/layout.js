@@ -32,7 +32,7 @@ export default async function RootLayout({ children, params }) {
             color="var(--primary)"
             showSpinner={false}
           />
-          <Navbar />
+          <Navbar locale={locale} />
           {children}
           <Footer locale={locale} />
         </NextIntlClientProvider>

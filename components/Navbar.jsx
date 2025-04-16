@@ -5,10 +5,31 @@ import { PlusIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
+import { usePathname } from 'next/navigation';
 
-const Navbar = () => {
+const Navbar = ({ locale }) => {
   const t = useTranslations('');
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
+
+  // List of paths that should have white background and dark text
+  const specialPaths = [
+    'blog',
+    'wholesale',
+    'wholesale-registration',
+    'terms-and-condition',
+    'privacy-policy',
+    'login',
+    'shop',
+    'try-sample-pack',
+    'faq',
+    'terpene-charts',
+  ];
+
+  // Check if current pathname matches any special path
+  const isSpecialPath = specialPaths.some(
+    (path) => pathname === `/${locale}/${path}` || pathname.startsWith(`/${locale}/${path}/`),
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,29 +37,28 @@ const Navbar = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
-
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const navBg = isSpecialPath ? 'bg-white-100' : isScrolled ? 'bg-umbra-100' : 'bg-transparent';
+  const textColor = isSpecialPath ? 'text-umbra-100' : 'text-white';
+  const logoSrc = isSpecialPath ? '/assets/svgs/logos/logo-dark.svg' : '/assets/svgs/logos/logo-light.svg';
+
   return (
-    <nav
-      className={`fixed top-0 left-0 z-100 w-full text-white transition-colors duration-300 ${
-        isScrolled ? 'bg-umbra-100' : 'bg-transparent'
-      }`}
-    >
+    <nav className={`fixed top-0 left-0 z-100 w-full transition-colors duration-300 ${navBg} ${textColor}`}>
       <div className="container mx-auto flex items-center justify-between px-[80px] py-4">
         <Link href={`/`}>
-          <Image src="/assets/svgs/logos/logo-light.svg" alt="Logo" width={221} height={36} />
+          <Image src={logoSrc} alt="Logo" width={221} height={36} />
         </Link>
         <div className="flex items-center gap-[30px]">
           <Link href={`/login`} className="mx-[5px] font-sans text-[17px] font-normal hover:underline">
             {t('Log_in')}
           </Link>
           <Link href={`/cart`} className="mx-[5px] font-sans text-[17px] font-normal hover:underline">
-            {t('Cart')} <span className="text-white/60">(0)</span>
+            {t('Cart')} <span className="text-inherit/60">(0)</span>
           </Link>
           <div className="cursor-pointer">
-            <PlusIcon width={20} height={20} color="white" />
+            <PlusIcon width={20} height={20} color={isSpecialPath ? '#191919' : 'white'} />
           </div>
         </div>
       </div>
