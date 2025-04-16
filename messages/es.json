@@ -84,6 +84,17 @@
       "label": "Classic"
     }
   },
+  "TerpeneShop": {
+    "ShopHero": {
+      "title": "Todo el espectro, al alcance de tu mano",
+      "description": "Compra nuestra gama completa de terpenos específicos para cada cepa y perfiles llenos de sabor que maximizan tus productos y ayudan a crecer tu negocio."
+    },
+    "ShopQualityPromise": {
+      "title": "La calidad que tu negocio merece",
+      "description": "Elegir el perfil de terpeno adecuado ahora es más fácil.",
+      "button": "Explorar la guía de terpenos"
+    }
+  },
   "InTheLab": {
     "In_the_Lab": "En el Laboratorio",
     "Science_Is_in_Our_DNA": "La Ciencia Está en Nuestro ADN",

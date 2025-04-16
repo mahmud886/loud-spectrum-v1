@@ -1,10 +1,18 @@
 import React from 'react';
+import ShopHero from '@/components/headers/ShopHero';
+import ShopQualityPromise from '@/components/containers/shop/ShopQualityPromise';
 
 const ShopPage = () => {
   return (
-    <div className="text-umbra-100 flex h-screen w-full items-center justify-center">
-      <h2 className="text-5xl">Shop Page</h2>
-    </div>
+    <>
+      <ShopHero />
+      <div className="h-screen">
+        <h2>Products</h2>
+      </div>
+      <div className="container pt-20 pb-[160px]">
+        <ShopQualityPromise />
+      </div>
+    </>
   );
 };
 

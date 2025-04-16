@@ -84,6 +84,17 @@
       "label": "Classic"
     }
   },
+  "TerpeneShop": {
+    "ShopHero": {
+      "title": "すべてのスペクトルがあなたの手に",
+      "description": "製品を最大限に活用し、ビジネスの成長を促進するために、品種特有のテルペンと風味豊かなプロファイルのフルレンジをお買い求めください。"
+    },
+    "ShopQualityPromise": {
+      "title": "あなたのビジネスにふさわしい品質",
+      "description": "最適なテルペンプロファイルの選択が簡単になりました。",
+      "button": "テルペンガイドを見る"
+    }
+  },
   "InTheLab": {
     "In_the_Lab": "研究室で",
     "Science_Is_in_Our_DNA": "科学は私たちのDNAに刻まれています",

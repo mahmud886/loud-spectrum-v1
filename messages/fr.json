@@ -84,6 +84,17 @@
       "label": "Classic"
     }
   },
+  "TerpeneShop": {
+    "ShopHero": {
+      "title": "Le spectre complet, à portée de main",
+      "description": "Découvrez notre gamme complète de terpènes spécifiques à chaque variété et de profils riches en saveurs pour maximiser vos produits et faire croître votre entreprise."
+    },
+    "ShopQualityPromise": {
+      "title": "La qualité que votre entreprise mérite",
+      "description": "Choisir le bon profil de terpènes n’a jamais été aussi simple.",
+      "button": "Explorer le guide des terpènes"
+    }
+  },
   "InTheLab": {
     "In_the_Lab": "Dans le Laboratoire",
     "Science_Is_in_Our_DNA": "La Science Est dans Notre ADN",

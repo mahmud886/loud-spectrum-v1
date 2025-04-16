@@ -84,6 +84,17 @@
       "label": "Classic"
     }
   },
+  "TerpeneShop": {
+    "ShopHero": {
+      "title": "The Full Spectrum, at Your Fingertips",
+      "description": "Shop our full range of strain-specific terpenes and flavor-packed profiles that maximize your products and help your business grow."
+    },
+    "ShopQualityPromise": {
+      "title": "The Quality Your Business Deserves",
+      "description": "Choosing the right terpene profile just got easier.",
+      "button": "Explore Terpene Guide"
+    }
+  },
   "InTheLab": {
     "In_the_Lab": "In the Lab",
     "Science_Is_in_Our_DNA": "Science Is in Our DNA",

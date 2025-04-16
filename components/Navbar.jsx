@@ -19,7 +19,6 @@ const Navbar = ({ locale }) => {
     'terms-and-condition',
     'privacy-policy',
     'login',
-    'shop',
     'try-sample-pack',
     'faq',
     'terpene-charts',

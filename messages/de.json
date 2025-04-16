@@ -84,6 +84,17 @@
       "label": "Classic"
     }
   },
+  "TerpeneShop": {
+    "ShopHero": {
+      "title": "Das gesamte Spektrum, in Ihrer Reichweite",
+      "description": "Entdecken Sie unser komplettes Sortiment an sortenspezifischen Terpenen und geschmacksintensiven Profilen, die Ihre Produkte verbessern und Ihr Geschäft fördern."
+    },
+    "ShopQualityPromise": {
+      "title": "Die Qualität, die Ihr Unternehmen verdient",
+      "description": "Die Wahl des richtigen Terpenprofils war noch nie so einfach.",
+      "button": "Terpen-Leitfaden entdecken"
+    }
+  },
   "InTheLab": {
     "In_the_Lab": "Im Labor",
     "Science_Is_in_Our_DNA": "Wissenschaft liegt in unserer DNA",
