@@ -7,9 +7,7 @@ const ShopPage = () => {
   return (
     <>
       <ShopHero />
-
       <TerpeneProductsContainer />
-
       <div className="container pt-20 pb-[160px]">
         <ShopQualityPromise />
       </div>

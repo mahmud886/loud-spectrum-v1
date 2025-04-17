@@ -100,6 +100,14 @@
     },
     "AllProducts": "すべての商品"
   },
+  "ProductDetails": {
+    "AddToCart": "カートに追加",
+    "SeePDF": "PDFを見る",
+    "ChooseFormula": "処方を選択",
+    "ChooseVolume": "処方を選択",
+    "Reviews": "レビュー",
+    "CannabisDerived": "カンナビス由来"
+  },
   "InTheLab": {
     "In_the_Lab": "研究室で",
     "Science_Is_in_Our_DNA": "科学は私たちのDNAに刻まれています",

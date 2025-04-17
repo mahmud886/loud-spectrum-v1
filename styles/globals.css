@@ -174,6 +174,10 @@
 		@apply from-umbra-100 via-atmosphere to-aurora bg-gradient-to-r from-25% via-50% to-75%;
 	}
 	
+	.terpene-border {
+		@apply bg-gradient-to-r from-[#C0AEE7] via-[#0077C8] via-45% to-[#101820] h-[2px] w-full;
+	}
+	
 	.custom-border {
 		@apply rounded-[12px] bg-gradient-to-r from-[#C0AEE7] via-[#0077C8] via-45% to-[#101820] p-[1px] before:absolute before:inset-0 before:z-[-1] before:rounded-[12px] before:bg-[#D9D9D9]
 	}

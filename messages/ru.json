@@ -100,6 +100,14 @@
     },
     "AllProducts": "Все продукты"
   },
+  "ProductDetails": {
+    "AddToCart": "Добавить в корзину",
+    "SeePDF": "Посмотреть PDF",
+    "ChooseFormula": "Выбрать формулу",
+    "ChooseVolume": "Выбрать формулу",
+    "Reviews": "Отзывы",
+    "CannabisDerived": "Из каннабиса"
+  },
   "InTheLab": {
     "In_the_Lab": "В лаборатории",
     "Science_Is_in_Our_DNA": "Наука в нашей ДНК",

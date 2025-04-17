@@ -100,6 +100,14 @@
     },
     "AllProducts": "Todos los productos"
   },
+  "ProductDetails": {
+    "AddToCart": "Añadir al carrito",
+    "SeePDF": "Ver PDF",
+    "ChooseFormula": "Elegir fórmula",
+    "ChooseVolume": "Elegir fórmula",
+    "Reviews": "Reseñas",
+    "CannabisDerived": "Derivado del cannabis"
+  },
   "InTheLab": {
     "In_the_Lab": "En el Laboratorio",
     "Science_Is_in_Our_DNA": "La Ciencia Está en Nuestro ADN",
