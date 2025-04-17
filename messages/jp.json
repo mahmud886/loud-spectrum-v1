@@ -93,7 +93,20 @@
       "title": "あなたのビジネスにふさわしい品質",
       "description": "最適なテルペンプロファイルの選択が簡単になりました。",
       "button": "テルペンガイドを見る"
-    }
+    },
+    "ProductCard": {
+      "buyNow": "今すぐ購入",
+      "tag": "大麻由来"
+    },
+    "AllProducts": "すべての商品"
+  },
+  "ProductDetails": {
+    "AddToCart": "カートに追加",
+    "SeePDF": "PDFを見る",
+    "ChooseFormula": "処方を選択",
+    "ChooseVolume": "処方を選択",
+    "Reviews": "レビュー",
+    "CannabisDerived": "カンナビス由来"
   },
   "InTheLab": {
     "In_the_Lab": "研究室で",

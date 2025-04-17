@@ -93,7 +93,20 @@
       "title": "La calidad que tu negocio merece",
       "description": "Elegir el perfil de terpeno adecuado ahora es más fácil.",
       "button": "Explorar la guía de terpenos"
-    }
+    },
+    "ProductCard": {
+      "buyNow": "Comprar ahora",
+      "tag": "Derivado del cannabis"
+    },
+    "AllProducts": "Todos los productos"
+  },
+  "ProductDetails": {
+    "AddToCart": "Añadir al carrito",
+    "SeePDF": "Ver PDF",
+    "ChooseFormula": "Elegir fórmula",
+    "ChooseVolume": "Elegir fórmula",
+    "Reviews": "Reseñas",
+    "CannabisDerived": "Derivado del cannabis"
   },
   "InTheLab": {
     "In_the_Lab": "En el Laboratorio",

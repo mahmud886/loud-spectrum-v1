@@ -93,7 +93,20 @@
       "title": "The Quality Your Business Deserves",
       "description": "Choosing the right terpene profile just got easier.",
       "button": "Explore Terpene Guide"
-    }
+    },
+    "ProductCard": {
+      "buyNow": "Buy Now",
+      "tag": "Cannabis Derived"
+    },
+    "AllProducts": "All Products"
+  },
+  "ProductDetails": {
+    "AddToCart": "Add To Cart",
+    "SeePDF": "See PDF",
+    "ChooseFormula": "Choose Formula",
+    "ChooseVolume": "Choose Formula",
+    "Reviews": "Reviews",
+    "CannabisDerived": "Cannabis Derived"
   },
   "InTheLab": {
     "In_the_Lab": "In the Lab",

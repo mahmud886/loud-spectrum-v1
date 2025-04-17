@@ -93,7 +93,20 @@
       "title": "Die Qualität, die Ihr Unternehmen verdient",
       "description": "Die Wahl des richtigen Terpenprofils war noch nie so einfach.",
       "button": "Terpen-Leitfaden entdecken"
-    }
+    },
+    "ProductCard": {
+      "buyNow": "Jetzt kaufen",
+      "tag": "Cannabis-basiert"
+    },
+    "AllProducts": "Alle Produkte"
+  },
+  "ProductDetails": {
+    "AddToCart": "In den Warenkorb",
+    "SeePDF": "PDF ansehen",
+    "ChooseFormula": "Formel wählen",
+    "ChooseVolume": "Formel wählen",
+    "Reviews": "Bewertungen",
+    "CannabisDerived": "Aus Cannabis gewonnen"
   },
   "InTheLab": {
     "In_the_Lab": "Im Labor",
