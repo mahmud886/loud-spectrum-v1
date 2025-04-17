@@ -93,7 +93,12 @@
       "title": "La qualité que votre entreprise mérite",
       "description": "Choisir le bon profil de terpènes n’a jamais été aussi simple.",
       "button": "Explorer le guide des terpènes"
-    }
+    },
+    "ProductCard": {
+      "buyNow": "Acheter maintenant",
+      "tag": "Dérivé du cannabis"
+    },
+    "AllProducts": "Tous les produits"
   },
   "InTheLab": {
     "In_the_Lab": "Dans le Laboratoire",

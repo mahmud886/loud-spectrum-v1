@@ -93,7 +93,12 @@
       "title": "The Quality Your Business Deserves",
       "description": "Choosing the right terpene profile just got easier.",
       "button": "Explore Terpene Guide"
-    }
+    },
+    "ProductCard": {
+      "buyNow": "Buy Now",
+      "tag": "Cannabis Derived"
+    },
+    "AllProducts": "All Products"
   },
   "InTheLab": {
     "In_the_Lab": "In the Lab",
