@@ -1,9 +1,15 @@
 import SpectrumAccordion from '@/components/containers/SpectrumAccordion';
+import ProductReviews from '@/components/containers/product/ProductReviews';
+import AddAReview from '@/components/containers/product/AddAReview';
+import RelatedProducts from '@/components/containers/product/RelatedProducts';
 
 const ProductDetailsPage = () => {
   return (
     <div>
       <SpectrumAccordion items={accordionData} />
+      <ProductReviews />
+      <AddAReview />
+      <RelatedProducts />
     </div>
   );
 };
