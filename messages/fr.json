@@ -116,6 +116,11 @@
     "StartingAt": "À partir de",
     "Note": "Remarque : Informer le client de ce qu’il doit faire pour effectuer des modifications – Loud Spectrum mettra à jour le texte final."
   },
+  "TerpeneChartHero": {
+    "heading": "Le Tableau des Terpènes du Spectre Intense",
+    "subheading": "Votre Guide de Chaque Profil",
+    "description": "Découvrez comment ces composés naturels apportent des arômes puissants, des effets distincts et des propriétés thérapeutiques aux plantes, y compris le cannabis. Que vous recherchiez des notes d’agrumes pour l’énergie ou des profils boisés pour la détente, cet outil visuel vous permet de trouver facilement les profils adaptés à vos préférences. Une façon simple d’explorer ce que les terpènes peuvent faire pour vous et vos clients."
+  },
   "InTheLab": {
     "In_the_Lab": "Dans le Laboratoire",
     "Science_Is_in_Our_DNA": "La Science Est dans Notre ADN",

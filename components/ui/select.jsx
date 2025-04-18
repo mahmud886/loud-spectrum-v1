@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import * as SelectPrimitive from '@radix-ui/react-select';
-import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from 'lucide-react';
+import { ChevronDownIcon, ChevronUpIcon, DotIcon } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
 
@@ -80,19 +80,22 @@ function SelectLabel({ className, ...props }) {
 function SelectItem({ className, children, ...props }) {
   return (
     <SelectPrimitive.Item
-      data-slot="select-item"
       className={cn(
-        "focus:bg-accent focus:text-accent-foreground [&_svg:not([class*='text-'])]:text-muted-foreground relative flex w-full cursor-default items-center gap-2 rounded-sm py-1.5 pr-8 pl-2 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2",
+        'group relative my-1 flex w-full cursor-pointer items-center justify-between rounded-sm px-3 py-2 transition',
+        'text-umbra-100 font-mono text-[16px] leading-[140%]',
+        'data-[state=checked]:bg-stardust',
+        'data-[state=unchecked]:bg-white-100',
         className,
       )}
       {...props}
     >
-      <span className="absolute right-2 flex size-3.5 items-center justify-center">
+      <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
+
+      <span className="border-umbra-100 data-[state=checked]:border-umbra-100 flex h-[9px] w-[9px] items-center justify-center rounded-full border">
         <SelectPrimitive.ItemIndicator>
-          <CheckIcon className="size-4" />
+          <DotIcon className="size-5" />
         </SelectPrimitive.ItemIndicator>
       </span>
-      <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
     </SelectPrimitive.Item>
   );
 }

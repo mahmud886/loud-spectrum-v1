@@ -19,8 +19,8 @@ const Navbar = ({ locale }) => {
     'terms-and-condition',
     'privacy-policy',
     'login',
+    'terpene-chart',
     'faq',
-    'terpene-charts',
   ];
 
   const isSpecialPath = specialPaths.some(
