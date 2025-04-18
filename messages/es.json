@@ -108,6 +108,14 @@
     "Reviews": "Reseñas",
     "CannabisDerived": "Derivado del cannabis"
   },
+  "TrySamplePack": {
+    "Reviews": "Reseñas",
+    "ChooseFormula": "Elegir fórmula",
+    "CustomizeYourPack": "Personaliza tu paquete",
+    "AddToCart": "Agregar al carrito",
+    "StartingAt": "Desde",
+    "Note": "Nota: Informar al cliente lo que debe hacer para realizar cambios - Loud Spectrum actualizará el texto final."
+  },
   "InTheLab": {
     "In_the_Lab": "En el Laboratorio",
     "Science_Is_in_Our_DNA": "La Ciencia Está en Nuestro ADN",

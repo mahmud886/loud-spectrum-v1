@@ -108,6 +108,14 @@
     "Reviews": "Reviews",
     "CannabisDerived": "Cannabis Derived"
   },
+  "TrySamplePack": {
+    "Reviews": "Reviews",
+    "ChooseFormula": "Choose Formula",
+    "CustomizeYourPack": "Customize Your Pack",
+    "AddToCart": "Add To Cart",
+    "StartingAt": "Starting at",
+    "Note": "Note: Telling customer what they need to do to make swaps - Loud Spectrum to update with final language."
+  },
   "InTheLab": {
     "In_the_Lab": "In the Lab",
     "Science_Is_in_Our_DNA": "Science Is in Our DNA",

@@ -108,6 +108,14 @@
     "Reviews": "Avis",
     "CannabisDerived": "Dérivé du cannabis"
   },
+  "TrySamplePack": {
+    "Reviews": "Avis",
+    "ChooseFormula": "Choisir la formule",
+    "CustomizeYourPack": "Personnalisez votre pack",
+    "AddToCart": "Ajouter au panier",
+    "StartingAt": "À partir de",
+    "Note": "Remarque : Informer le client de ce qu’il doit faire pour effectuer des modifications – Loud Spectrum mettra à jour le texte final."
+  },
   "InTheLab": {
     "In_the_Lab": "Dans le Laboratoire",
     "Science_Is_in_Our_DNA": "La Science Est dans Notre ADN",

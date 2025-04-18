@@ -108,6 +108,14 @@
     "Reviews": "レビュー",
     "CannabisDerived": "カンナビス由来"
   },
+  "TrySamplePack": {
+    "Reviews": "レビュー",
+    "ChooseFormula": "フォーミュラを選択",
+    "CustomizeYourPack": "パックをカスタマイズ",
+    "AddToCart": "カートに追加",
+    "StartingAt": "開始価格：",
+    "Note": "注意：カスタマイズするために顧客が行う必要があることを伝える – Loud Spectrumが最終的な文言を更新します。"
+  },
   "InTheLab": {
     "In_the_Lab": "研究室で",
     "Science_Is_in_Our_DNA": "科学は私たちのDNAに刻まれています",

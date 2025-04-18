@@ -108,6 +108,14 @@
     "Reviews": "Отзывы",
     "CannabisDerived": "Из каннабиса"
   },
+  "TrySamplePack": {
+    "Reviews": "Отзывы",
+    "ChooseFormula": "Выбрать формулу",
+    "CustomizeYourPack": "Настройте свой набор",
+    "AddToCart": "Добавить в корзину",
+    "StartingAt": "Начиная с",
+    "Note": "Примечание: Сообщите клиенту, что ему нужно сделать для замены — Loud Spectrum обновит окончательный текст."
+  },
   "InTheLab": {
     "In_the_Lab": "В лаборатории",
     "Science_Is_in_Our_DNA": "Наука в нашей ДНК",

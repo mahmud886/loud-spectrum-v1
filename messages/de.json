@@ -108,6 +108,14 @@
     "Reviews": "Bewertungen",
     "CannabisDerived": "Aus Cannabis gewonnen"
   },
+  "TrySamplePack": {
+    "Reviews": "Bewertungen",
+    "ChooseFormula": "Formel wählen",
+    "CustomizeYourPack": "Paket anpassen",
+    "AddToCart": "In den Warenkorb",
+    "StartingAt": "Ab",
+    "Note": "Hinweis: Kunden informieren, was sie tun müssen, um Anpassungen vorzunehmen – Loud Spectrum wird den endgültigen Text aktualisieren."
+  },
   "InTheLab": {
     "In_the_Lab": "Im Labor",
     "Science_Is_in_Our_DNA": "Wissenschaft liegt in unserer DNA",
