@@ -20,7 +20,7 @@ const SpectrumAccordion = ({ items }) => {
           <AccordionItem key={index} value={item.title}>
             <AccordionTrigger
               className={cn(
-                'font-sans text-[22px] leading-[130%] font-normal',
+                'font-sans text-[22px] leading-[130%] font-normal !capitalize',
                 activeItem === item.title ? 'text-umbra-100' : 'text-umbra-40',
               )}
             >
