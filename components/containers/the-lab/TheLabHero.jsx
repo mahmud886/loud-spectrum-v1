@@ -9,7 +9,7 @@ const TheLabHero = () => {
       <div className="mb-6 flex items-center justify-center text-center">
         <h2 className="text-umbra-100 w-1/2 font-sans text-[60px] leading-[120%] font-normal">{t('heading')}</h2>
       </div>
-      <div className="space-y-20 py-16">
+      <div className="space-y-20 pt-16">
         <div className="relative h-[631px] overflow-hidden bg-white">
           {/* Background Image */}
           <Image

@@ -1,9 +1,12 @@
 import React from 'react';
+import TransitionAnimation from '@/components/containers/TransitionAnimation';
+import BehindTheProccess from '@/components/containers/the-lab/BehindTheProccess';
 
 const LabPage = () => {
   return (
-    <div className="text-umbra-100 flex h-screen w-full items-center justify-center">
-      <h2 className="text-5xl">Lab Page</h2>
+    <div>
+      <TransitionAnimation />
+      <BehindTheProccess />
     </div>
   );
 };
