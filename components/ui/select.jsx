@@ -84,6 +84,7 @@ function SelectItem({ className, children, ...props }) {
         'group relative my-1 flex w-full cursor-pointer items-center justify-between rounded-sm px-3 py-2 transition',
         'text-umbra-100 font-mono text-[16px] leading-[140%]',
         'data-[state=checked]:bg-stardust',
+        'data-[state=hover]:bg-stardust',
         'data-[state=unchecked]:bg-white-100',
         className,
       )}

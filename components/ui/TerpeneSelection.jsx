@@ -8,88 +8,94 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 
-const TerpeneSelection = () => {
+const TerpeneSelection = ({ value, onChange }) => {
   return (
-    <div>
-      <Select>
-        <SelectTrigger className="min-h-[42px] max-w-[280px] min-w-[156px]">
-          <SelectValue placeholder="Select a Profile" />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectGroup>
-            <SelectLabel>Terpene Chart</SelectLabel>
-            <SelectItem value="1">Gorilla Glue</SelectItem>
-            <SelectItem value="2">Silver Haze</SelectItem>
-            <SelectItem value="3">Bubba Kush</SelectItem>
-            <SelectItem value="4">Granddaddy Purple</SelectItem>
-            <SelectItem value="5">OG Kush</SelectItem>
-            <SelectItem value="7">Blue Dream</SelectItem>
-            <SelectItem value="8">Trainwreck</SelectItem>
-            <SelectItem value="9">Green Crack</SelectItem>
-            <SelectItem value="10">Lemon Skunk</SelectItem>
-            <SelectItem value="11">Skywalker OG</SelectItem>
-            <SelectItem value="12">The Original Z</SelectItem>
-            <SelectItem value="13">Sour Diesel</SelectItem>
-            <SelectItem value="14">Maui Wowie</SelectItem>
-            <SelectItem value="15">Cheese</SelectItem>
-            <SelectItem value="16">White Widow</SelectItem>
-            <SelectItem value="17">GSC</SelectItem>
-            <SelectItem value="18">Agent Orange</SelectItem>
-            <SelectItem value="19">Jack Herer</SelectItem>
-            <SelectItem value="20">AK-47</SelectItem>
-            <SelectItem value="21">Gelato</SelectItem>
-            <SelectItem value="22">Durban Poison</SelectItem>
-            <SelectItem value="23">Tangerine Dream</SelectItem>
-            <SelectItem value="24">Platinum Kush</SelectItem>
-            <SelectItem value="25">Northern Lights</SelectItem>
-            <SelectItem value="26">ACDC</SelectItem>
-            <SelectItem value="27">Banana Express</SelectItem>
-            <SelectItem value="28">Berry Blast</SelectItem>
-            <SelectItem value="29">Biscotti</SelectItem>
-            <SelectItem value="30">Birthday Cake</SelectItem>
-            <SelectItem value="31">Blackberry Kush (BBK)</SelectItem>
-            <SelectItem value="32">Blueberry OG</SelectItem>
-            <SelectItem value="33">Bubble Gum Glue</SelectItem>
-            <SelectItem value="34">Bull Wings</SelectItem>
-            <SelectItem value="35">Pink Champagne</SelectItem>
-            <SelectItem value="36">Cherry Burst</SelectItem>
-            <SelectItem value="37">Chocolate Milk Cookies</SelectItem>
-            <SelectItem value="38">Cotton Candy</SelectItem>
-            <SelectItem value="39">Cucumber Water</SelectItem>
-            <SelectItem value="40">Dutch Treat</SelectItem>
-            <SelectItem value="41">Grape Ape Candy</SelectItem>
-            <SelectItem value="42">Grapefruit OG</SelectItem>
-            <SelectItem value="43">Green Apple Jack</SelectItem>
-            <SelectItem value="44">Gushers</SelectItem>
-            <SelectItem value="45">Harlequin</SelectItem>
-            <SelectItem value="46">Lemon Lime</SelectItem>
-            <SelectItem value="47">Mango OG</SelectItem>
-            <SelectItem value="48">Matcha Green Tea</SelectItem>
-            <SelectItem value="49">Mocha Express</SelectItem>
-            <SelectItem value="50">Passion Fruit OG</SelectItem>
-            <SelectItem value="51">Peach Dream</SelectItem>
-            <SelectItem value="52">Pineapple Express</SelectItem>
-            <SelectItem value="53">Raspberry Dream</SelectItem>
-            <SelectItem value="54">Rose Dream</SelectItem>
-            <SelectItem value="55">Rum & Cola</SelectItem>
-            <SelectItem value="56">SinMint</SelectItem>
-            <SelectItem value="57">Strawberry Banana</SelectItem>
-            <SelectItem value="58">Strawberry Diesel</SelectItem>
-            <SelectItem value="59">Tropical OG</SelectItem>
-            <SelectItem value="60">True OG</SelectItem>
-            <SelectItem value="61">Watermelon OG</SelectItem>
-            <SelectItem value="62">Wild Mountain Pomegranate</SelectItem>
-            <SelectItem value="63">Cherry Pie</SelectItem>
-            <SelectItem value="64">Peanut Butter Breath</SelectItem>
-            <SelectItem value="65">Mac 1</SelectItem>
-            <SelectItem value="66">Forbidden Fruit</SelectItem>
-            <SelectItem value="67">Fruity Pebbles OG</SelectItem>
-            <SelectItem value="68">Fuji Apple</SelectItem>
-          </SelectGroup>
-        </SelectContent>
-      </Select>
-    </div>
+    <Select value={value} onValueChange={onChange}>
+      <SelectTrigger className="bg-umbra-5 min-h-[42px] max-w-[280px] min-w-[156px]">
+        <SelectValue placeholder="Select a Profile" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectGroup>
+          <SelectLabel>Terpene Chart</SelectLabel>
+          {terpeneOptions.map((option) => (
+            <SelectItem key={option.id} value={option.label}>
+              {option.label}
+            </SelectItem>
+          ))}
+        </SelectGroup>
+      </SelectContent>
+    </Select>
   );
 };
 
 export default TerpeneSelection;
+
+const terpeneOptions = [
+  { id: '1', label: 'Gorilla Glue' },
+  { id: '2', label: 'Silver Haze' },
+  { id: '3', label: 'Bubba Kush' },
+  { id: '4', label: 'Granddaddy Purple' },
+  { id: '5', label: 'OG Kush' },
+  { id: '7', label: 'Blue Dream' },
+  { id: '8', label: 'Trainwreck' },
+  { id: '9', label: 'Green Crack' },
+  { id: '10', label: 'Lemon Skunk' },
+  { id: '11', label: 'Skywalker OG' },
+  { id: '12', label: 'The Original Z' },
+  { id: '13', label: 'Sour Diesel' },
+  { id: '14', label: 'Maui Wowie' },
+  { id: '15', label: 'Cheese' },
+  { id: '16', label: 'White Widow' },
+  { id: '17', label: 'GSC' },
+  { id: '18', label: 'Agent Orange' },
+  { id: '19', label: 'Jack Herer' },
+  { id: '20', label: 'AK-47' },
+  { id: '21', label: 'Gelato' },
+  { id: '22', label: 'Durban Poison' },
+  { id: '23', label: 'Tangerine Dream' },
+  { id: '24', label: 'Platinum Kush' },
+  { id: '25', label: 'Northern Lights' },
+  { id: '26', label: 'ACDC' },
+  { id: '27', label: 'Banana Express' },
+  { id: '28', label: 'Berry Blast' },
+  { id: '29', label: 'Biscotti' },
+  { id: '30', label: 'Birthday Cake' },
+  { id: '31', label: 'Blackberry Kush (BBK)' },
+  { id: '32', label: 'Blueberry OG' },
+  { id: '33', label: 'Bubble Gum Glue' },
+  { id: '34', label: 'Bull Wings' },
+  { id: '35', label: 'Pink Champagne' },
+  { id: '36', label: 'Cherry Burst' },
+  { id: '37', label: 'Chocolate Milk Cookies' },
+  { id: '38', label: 'Cotton Candy' },
+  { id: '39', label: 'Cucumber Water' },
+  { id: '40', label: 'Dutch Treat' },
+  { id: '41', label: 'Grape Ape Candy' },
+  { id: '42', label: 'Grapefruit OG' },
+  { id: '43', label: 'Green Apple Jack' },
+  { id: '44', label: 'Gushers' },
+  { id: '45', label: 'Harlequin' },
+  { id: '46', label: 'Lemon Lime' },
+  { id: '47', label: 'Mango OG' },
+  { id: '48', label: 'Matcha Green Tea' },
+  { id: '49', label: 'Mocha Express' },
+  { id: '50', label: 'Passion Fruit OG' },
+  { id: '51', label: 'Peach Dream' },
+  { id: '52', label: 'Pineapple Express' },
+  { id: '53', label: 'Raspberry Dream' },
+  { id: '54', label: 'Rose Dream' },
+  { id: '55', label: 'Rum & Cola' },
+  { id: '56', label: 'SinMint' },
+  { id: '57', label: 'Strawberry Banana' },
+  { id: '58', label: 'Strawberry Diesel' },
+  { id: '59', label: 'Tropical OG' },
+  { id: '60', label: 'True OG' },
+  { id: '61', label: 'Watermelon OG' },
+  { id: '62', label: 'Wild Mountain Pomegranate' },
+  { id: '63', label: 'Cherry Pie' },
+  { id: '64', label: 'Peanut Butter Breath' },
+  { id: '65', label: 'Mac 1' },
+  { id: '66', label: 'Forbidden Fruit' },
+  { id: '67', label: 'Fruity Pebbles OG' },
+  { id: '68', label: 'Fuji Apple' },
+];
