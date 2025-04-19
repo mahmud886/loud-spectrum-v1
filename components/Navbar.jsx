@@ -19,6 +19,7 @@ const Navbar = ({ locale }) => {
     'terms-and-conditions',
     'privacy-policy',
     'login',
+    'lab',
     'terpene-chart',
     'faq',
   ];
