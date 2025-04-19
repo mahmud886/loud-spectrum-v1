@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import * as SelectPrimitive from '@radix-ui/react-select';
-import { ChevronDownIcon, ChevronUpIcon, DotIcon } from 'lucide-react';
+import { CheckIcon, ChevronDownIcon, ChevronUpIcon, DotIcon } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
 
@@ -24,7 +24,7 @@ function SelectTrigger({ className, size = 'default', children, ...props }) {
       data-slot="select-trigger"
       data-size={size}
       className={cn(
-        "border-input data-[placeholder]:text-muted-foreground [&_svg:not([class*='text-'])]:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:bg-input/30 dark:hover:bg-input/50 flex w-fit items-center justify-between gap-2 rounded-md border bg-transparent px-3 py-2 text-sm whitespace-nowrap shadow-xs transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 data-[size=default]:h-10 data-[size=sm]:h-8 *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-2 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        "border-input data-[placeholder]:text-muted-foreground [&_svg:not([class*='text-'])]:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:bg-input/30 dark:hover:bg-input/50 flex w-fit items-center justify-between gap-2 rounded-md border bg-transparent px-3 py-2 text-sm whitespace-nowrap shadow-xs transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 data-[size=default]:h-9 data-[size=sm]:h-8 *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-2 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         className,
       )}
       {...props}
@@ -80,23 +80,19 @@ function SelectLabel({ className, ...props }) {
 function SelectItem({ className, children, ...props }) {
   return (
     <SelectPrimitive.Item
+      data-slot="select-item"
       className={cn(
-        'group relative my-1 flex w-full cursor-pointer items-center justify-between rounded-sm px-3 py-2 transition',
-        'text-umbra-100 font-mono text-[16px] leading-[140%]',
-        'data-[state=checked]:bg-stardust',
-        'data-[state=hover]:bg-stardust',
-        'data-[state=unchecked]:bg-white-100',
+        "focus:bg-accent focus:text-accent-foreground [&_svg:not([class*='text-'])]:text-muted-foreground relative flex w-full cursor-default items-center gap-2 rounded-sm py-1.5 pr-8 pl-2 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2",
         className,
       )}
       {...props}
     >
-      <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
-
-      <span className="border-umbra-100 data-[state=checked]:border-umbra-100 flex h-[9px] w-[9px] items-center justify-center rounded-full border">
+      <span className="border-umbra-100 data-[state=checked]:border-umbra-100 absolute right-2 flex size-3.5 h-[9px] w-[9px] items-center justify-center rounded-full border">
         <SelectPrimitive.ItemIndicator>
           <DotIcon className="size-5" />
         </SelectPrimitive.ItemIndicator>
       </span>
+      <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
     </SelectPrimitive.Item>
   );
 }
