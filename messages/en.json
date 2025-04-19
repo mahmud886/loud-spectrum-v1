@@ -164,6 +164,16 @@
     "fromSeed": {
       "title": "From Seed to Bottle—We Control Every Step",
       "description": "Our four-facility process ensures that every product meets the highest standards of purity, consistency, and innovation. Experience the Loud Spectrum difference."
+    },
+    "ingredientsSection": {
+      "label": "Ingredients",
+      "title": "Loud Spectrum blends are powered by naturally derived terpenes and a library of over 1,000 flavoring elements."
+    },
+    "qualitySection": {
+      "label": "Our quality promise",
+      "title": "The Highest Standards of Quality",
+      "description": "Quality isn’t just our standard, it’s our signature move. Each profile undergoes expert-driven R&D, is crafted in ISO and cGMP-compliant facilities and is third-party tested for pesticides, heavy metals, and solvents. It’s a rigorous process, but you can literally taste the difference.",
+      "button": "Join the Waitlist"
     }
   },
   "InTheLab": {

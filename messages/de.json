@@ -164,6 +164,16 @@
     "fromSeed": {
       "title": "Vom Samen bis zur Flasche – Wir kontrollieren jeden Schritt",
       "description": "Unser Prozess mit vier Einrichtungen stellt sicher, dass jedes Produkt den höchsten Standards in Reinheit, Konsistenz und Innovation entspricht. Erleben Sie den Unterschied von Loud Spectrum."
+    },
+    "ingredientsSection": {
+      "label": "Zutaten",
+      "title": "Loud Spectrum-Mischungen basieren auf natürlich gewonnenen Terpenen und einer Bibliothek von über 1.000 Aromastoffen."
+    },
+    "qualitySection": {
+      "label": "Unser Qualitätsversprechen",
+      "title": "Die höchsten Qualitätsstandards",
+      "description": "Qualität ist nicht nur unser Standard, sondern unser Markenzeichen. Jedes Profil durchläuft eine forschungsbasierte Entwicklung, wird in ISO- und cGMP-konformen Einrichtungen hergestellt und von Dritten auf Pestizide, Schwermetalle und Lösungsmittel getestet. Es ist ein rigoroser Prozess – aber man schmeckt den Unterschied.",
+      "button": "Warteliste beitreten"
     }
   },
   "InTheLab": {
