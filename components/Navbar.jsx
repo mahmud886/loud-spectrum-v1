@@ -16,7 +16,7 @@ const Navbar = ({ locale }) => {
     'blog',
     'wholesale',
     'wholesale-registration',
-    'terms-and-condition',
+    'terms-and-conditions',
     'privacy-policy',
     'login',
     'terpene-chart',
