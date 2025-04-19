@@ -1,15 +1,17 @@
 import React from 'react';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 const BehindTheProccess = () => {
+  const t = useTranslations('TheLab');
   return (
     <div className="bg-umbra-100 container px-[188px] py-20">
       <div className="space-y-6">
         <h5 className="text-white-40 font-sans text-[16px] leading-[100%] font-normal tracking-normal uppercase">
-          Behind the Process
+          {t('behindTheProcess.title')}
         </h5>
         <h6 className="text-white-100 w-1/2 font-sans text-[44px] leading-[120%] font-normal tracking-normal">
-          Our Process, Your Advantage
+          {t('behindTheProcess.subtitle')}
         </h6>
       </div>
       <div className="flex items-center justify-between gap-[145px] py-20">
@@ -22,19 +24,18 @@ const BehindTheProccess = () => {
         />
         <div className="max-w-[397px] space-y-10">
           <h5 className="text-white-100 pb-2 font-sans text-[32px] leading-[120%] font-normal tracking-normal">
-            Premium Sourcing: Only the Best
+            {t('premiumSourcing.title')}
           </h5>
           <p className="text-white-100 font-mono text-[16px] leading-[140%] font-normal tracking-normal">
-            We begin with the purest ingredients, carefully selecting:
+            {t('premiumSourcing.intro')}
           </p>
           <ul className="text-white-100 font-mono text-[14px] leading-[130%] font-normal tracking-normal">
-            <li className="border-t border-b py-2.5">Food-grade botanical isolates</li>
-            <li className="border-b py-2.5">Pesticide-free, heavy metal-free extracts</li>
-            <li className="border-b py-2.5">The finest cultivated hemp for flower-extracted terpenes</li>
+            <li className="border-t border-b py-2.5">{t('premiumSourcing.item1')}</li>
+            <li className="border-b py-2.5">{t('premiumSourcing.item2')}</li>
+            <li className="border-b py-2.5">{t('premiumSourcing.item3')}</li>
           </ul>
           <p className="text-white-100 font-sans text-[16px] leading-[140%] font-normal tracking-normal">
-            Every raw material meets strict safety and purity standards, ensuring clean, consistent, and
-            authentic terpene profiles.
+            {t('premiumSourcing.details')}
           </p>
         </div>
       </div>
@@ -42,19 +43,15 @@ const BehindTheProccess = () => {
       <div className="flex items-center justify-between gap-[145px] py-20">
         <div className="max-w-[397px] space-y-10">
           <h5 className="text-white-100 pb-2 font-sans text-[32px] leading-[120%] font-normal tracking-normal">
-            Advanced Extraction: Oregon Facility
+            {t('advancedExtraction.title')}
           </h5>
           <p className="text-white-100 font-mono text-[16px] leading-[140%] font-normal tracking-normal">
-            Our Oregon-based extraction facility is equipped with cutting-edge technology to capture the true essence of
-            terpenes. Using state-of-the-art extraction methods, we preserve the full complexity and potency of every
-            strain.
+            {t('advancedExtraction.description')}
           </p>
           <ul className="text-white-100 font-mono text-[14px] leading-[130%] font-normal tracking-normal">
-            <li className="border-white-40 border-t border-b py-2.5">Food-grade botanical isolates</li>
-            <li className="border-white-40 border-b py-2.5">Pesticide-free, heavy metal-free extracts</li>
-            <li className="border-white-40 border-b py-2.5">
-              The finest cultivated hemp for flower-extracted terpenes
-            </li>
+            <li className="border-white-40 border-t border-b py-2.5">{t('advancedExtraction.item1')}</li>
+            <li className="border-white-40 border-b py-2.5">{t('advancedExtraction.item2')}</li>
+            <li className="border-white-40 border-b py-2.5">{t('advancedExtraction.item3')}</li>
           </ul>
         </div>
         <Image
@@ -76,28 +73,24 @@ const BehindTheProccess = () => {
         />
         <div className="max-w-[397px] space-y-10">
           <h5 className="text-white-100 pb-2 font-sans text-[32px] leading-[120%] font-normal tracking-normal">
-            Expert Formulation & Testing: Santa Ana Lab
+            {t('expertFormulation.title')}
           </h5>
           <p className="text-white-100 font-mono text-[16px] leading-[140%] font-normal tracking-normal">
-            Once extracted, our terpenes move to our GMP-certified lab in Santa Ana, CA, where we meticulously formulate
-            and refine each profile.
+            {t('expertFormulation.description')}
           </p>
           <ul className="text-white-100 font-mono text-[14px] leading-[130%] font-normal tracking-normal">
-            <li className="border-white-40 border-t border-b py-2.5">Custom terpene blends crafted by experts</li>
-            <li className="border-white-40 border-b py-2.5">
-              Collaboration with industry leaders to fine-tune flavors
-            </li>
-            <li className="border-white-40 border-b py-2.5">Rigorous testing to ensure unmatched depth & experience</li>
+            <li className="border-white-40 border-t border-b py-2.5">{t('expertFormulation.item1')}</li>
+            <li className="border-white-40 border-b py-2.5">{t('expertFormulation.item2')}</li>
+            <li className="border-white-40 border-b py-2.5">{t('expertFormulation.item3')}</li>
           </ul>
           <p className="text-white-100 font-sans text-[16px] leading-[140%] font-normal tracking-normal">
-            Our team works closely with partners in the industry to perfect every flavor, ensuring authenticity,
-            richness, and precision in every drop.
+            {t('expertFormulation.footer')}
           </p>
         </div>
       </div>
       <div className="space-y-10 py-20">
         <h5 className="text-white-100 pb-2 font-sans text-[32px] leading-[120%] font-normal tracking-normal">
-          Final Testing & Innovation: Irvine R&D Lab
+          {t('finalTesting.title')}
         </h5>
         <Image
           src="/assets/images/the-lab-advantage2.png"
@@ -109,22 +102,18 @@ const BehindTheProccess = () => {
         <div className="w-full">
           <div className="inline-flex items-center gap-[145px]">
             <p className="text-white-100 font-mono text-[16px] leading-[140%] font-normal tracking-normal">
-              Before any product reaches our clients, it undergoes comprehensive screening and refinement at our Irvine
-              Research & Development Lab.
+              {t('finalTesting.description1')}
             </p>
             <p className="text-white-100 font-sans text-[16px] leading-[140%] font-normal tracking-normal">
-              By combining science, craftsmanship, and rigorous testing, we guarantee that every terpene profile
-              delivers a flawless experience.
+              {t('finalTesting.description2')}
             </p>
           </div>
         </div>
         <div className="w-full">
           <ul className="text-white-100 font-mono text-[14px] leading-[130%] font-normal tracking-normal">
-            <li className="border-white-40 border-t border-b py-2.5">Custom terpene blends crafted by experts</li>
-            <li className="border-white-40 border-b py-2.5">
-              Collaboration with industry leaders to fine-tune flavors
-            </li>
-            <li className="border-white-40 border-b py-2.5">Rigorous testing to ensure unmatched depth & experience</li>
+            <li className="border-white-40 border-t border-b py-2.5">{t('finalTesting.item1')}</li>
+            <li className="border-white-40 border-b py-2.5">{t('finalTesting.item2')}</li>
+            <li className="border-white-40 border-b py-2.5">{t('finalTesting.item3')}</li>
           </ul>
         </div>
       </div>
@@ -137,11 +126,10 @@ const BehindTheProccess = () => {
               'linear-gradient(270.64deg, #101820 17.05%, #0077C8 40.67%, #B2A9F5 72.15%, #DDDAE8 107.01%)',
           }}
         >
-          From Seed to Bottle—We Control Every Step
+          {t('fromSeed.title')}
         </h2>
         <p className="text-white-100 w-1/2 font-sans text-[16px] leading-[140%] font-normal tracking-normal">
-          Our four-facility process ensures that every product meets the highest standards of purity, consistency, and
-          innovation. <span className="font-bold">Experience the Loud Spectrum difference.</span>
+          {t('fromSeed.description')}
         </p>
       </div>
     </div>

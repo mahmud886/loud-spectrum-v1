@@ -125,7 +125,46 @@
     "heading": "La science derrière les saveurs puissantes",
     "subheading": "Un bon goût est un art… \net une science.",
     "description1": "Nous avons été les pionniers du premier profil de terpènes à spectre complet et spécifique à chaque variété. Même si nous ne pouvons pas révéler tous les secrets de notre sauce, nous pouvons partager ce qui la rend unique.",
-    "description2": "Derrière chaque profil Loud Spectrum se cache notre méthode Flavor Science – un procédé exclusif qui élimine les approximations dans la création de saveurs exceptionnelles. Grâce à une recherche et un développement approfondis, nous comprenons chaque ingrédient : son arôme, sa capacité à se marier avec d’autres, et la formulation précise pour lui donner vie — à tel point que nous avons déjà perfectionné plus de 200 profils, et ce n’est que le début."
+    "description2": "Derrière chaque profil Loud Spectrum se cache notre méthode Flavor Science – un procédé exclusif qui élimine les approximations dans la création de saveurs exceptionnelles. Grâce à une recherche et un développement approfondis, nous comprenons chaque ingrédient : son arôme, sa capacité à se marier avec d’autres, et la formulation précise pour lui donner vie — à tel point que nous avons déjà perfectionné plus de 200 profils, et ce n’est que le début.",
+    "behindTheProcess": {
+      "title": "Derrière le processus",
+      "subtitle": "Notre processus, votre avantage"
+    },
+    "premiumSourcing": {
+      "title": "Approvisionnement premium : seulement le meilleur",
+      "intro": "Nous commençons avec les ingrédients les plus purs, soigneusement sélectionnés :",
+      "item1": "Isolats botaniques de qualité alimentaire",
+      "item2": "Extraits sans pesticides ni métaux lourds",
+      "item3": "Le meilleur chanvre cultivé pour des terpènes extraits de fleurs",
+      "details": "Chaque matière première respecte des normes strictes de sécurité et de pureté, garantissant des profils de terpènes propres, cohérents et authentiques."
+    },
+    "advancedExtraction": {
+      "title": "Extraction avancée : Installation en Oregon",
+      "description": "Notre installation d'extraction basée en Oregon est équipée d'une technologie de pointe pour capturer la véritable essence des terpènes. Grâce à des méthodes d'extraction ultramodernes, nous préservons toute la complexité et la puissance de chaque souche.",
+      "item1": "Isolats botaniques de qualité alimentaire",
+      "item2": "Extraits sans pesticides ni métaux lourds",
+      "item3": "Le meilleur chanvre cultivé pour des terpènes extraits de fleurs"
+    },
+    "expertFormulation": {
+      "title": "Formulation et Tests d'Experts : Laboratoire de Santa Ana",
+      "description": "Une fois extraits, nos terpènes sont transférés dans notre laboratoire certifié GMP à Santa Ana, Californie, où nous formulons et affinons chaque profil avec soin.",
+      "item1": "Mélanges de terpènes personnalisés créés par des experts",
+      "item2": "Collaboration avec les leaders de l'industrie pour affiner les saveurs",
+      "item3": "Tests rigoureux pour garantir une profondeur et une expérience inégalées",
+      "footer": "Notre équipe travaille en étroite collaboration avec des partenaires de l'industrie pour perfectionner chaque saveur, garantissant authenticité, richesse et précision dans chaque goutte."
+    },
+    "finalTesting": {
+      "title": "Tests Finaux & Innovation : Laboratoire R&D d'Irvine",
+      "description1": "Avant d'arriver chez nos clients, chaque produit passe par un processus complet de contrôle et d’amélioration dans notre laboratoire de recherche et développement à Irvine.",
+      "description2": "En combinant science, artisanat et tests rigoureux, nous garantissons que chaque profil de terpène offre une expérience irréprochable.",
+      "item1": "Mélanges de terpènes personnalisés créés par des experts",
+      "item2": "Collaboration avec les leaders de l'industrie pour affiner les saveurs",
+      "item3": "Tests rigoureux pour garantir une profondeur et une expérience inégalées"
+    },
+    "fromSeed": {
+      "title": "De la graine à la bouteille – Nous contrôlons chaque étape",
+      "description": "Notre processus à quatre installations garantit que chaque produit respecte les normes les plus élevées en matière de pureté, de cohérence et d’innovation. Découvrez la différence Loud Spectrum."
+    }
   },
   "InTheLab": {
     "In_the_Lab": "Dans le Laboratoire",

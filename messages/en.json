@@ -125,7 +125,46 @@
     "heading": "The Science Behind Bold Flavor",
     "subheading": "Great taste is an art… \nand a science.",
     "description1": "We pioneered the first full-spectrum, strain-specific terpene profile. While we can’t spill all the secrets behind our sauce, we can share what makes it special. ",
-    "description2": "Behind every Loud Spectrum profile is our Flavor Science method, a proprietary process that takes the guesswork out of crafting exceptional flavor.  Through deep research and development, we’ve gained an understanding of every ingredient: its aroma, how it blends, and the precise formulation needed to bring it to life—to the point that we’ve perfected 200 profiles and counting. "
+    "description2": "Behind every Loud Spectrum profile is our Flavor Science method, a proprietary process that takes the guesswork out of crafting exceptional flavor.  Through deep research and development, we’ve gained an understanding of every ingredient: its aroma, how it blends, and the precise formulation needed to bring it to life—to the point that we’ve perfected 200 profiles and counting. ",
+    "behindTheProcess": {
+      "title": "Behind the Process",
+      "subtitle": "Our Process, Your Advantage"
+    },
+    "premiumSourcing": {
+      "title": "Premium Sourcing: Only the Best",
+      "intro": "We begin with the purest ingredients, carefully selecting:",
+      "item1": "Food-grade botanical isolates",
+      "item2": "Pesticide-free, heavy metal-free extracts",
+      "item3": "The finest cultivated hemp for flower-extracted terpenes",
+      "details": "Every raw material meets strict safety and purity standards, ensuring clean, consistent, and authentic terpene profiles."
+    },
+    "advancedExtraction": {
+      "title": "Advanced Extraction: Oregon Facility",
+      "description": "Our Oregon-based extraction facility is equipped with cutting-edge technology to capture the true essence of terpenes. Using state-of-the-art extraction methods, we preserve the full complexity and potency of every strain.",
+      "item1": "Food-grade botanical isolates",
+      "item2": "Pesticide-free, heavy metal-free extracts",
+      "item3": "The finest cultivated hemp for flower-extracted terpenes"
+    },
+    "expertFormulation": {
+      "title": "Expert Formulation & Testing: Santa Ana Lab",
+      "description": "Once extracted, our terpenes move to our GMP-certified lab in Santa Ana, CA, where we meticulously formulate and refine each profile.",
+      "item1": "Custom terpene blends crafted by experts",
+      "item2": "Collaboration with industry leaders to fine-tune flavors",
+      "item3": "Rigorous testing to ensure unmatched depth & experience",
+      "footer": "Our team works closely with partners in the industry to perfect every flavor, ensuring authenticity, richness, and precision in every drop."
+    },
+    "finalTesting": {
+      "title": "Final Testing & Innovation: Irvine R&D Lab",
+      "description1": "Before any product reaches our clients, it undergoes comprehensive screening and refinement at our Irvine Research & Development Lab.",
+      "description2": "By combining science, craftsmanship, and rigorous testing, we guarantee that every terpene profile delivers a flawless experience.",
+      "item1": "Custom terpene blends crafted by experts",
+      "item2": "Collaboration with industry leaders to fine-tune flavors",
+      "item3": "Rigorous testing to ensure unmatched depth & experience"
+    },
+    "fromSeed": {
+      "title": "From Seed to Bottle—We Control Every Step",
+      "description": "Our four-facility process ensures that every product meets the highest standards of purity, consistency, and innovation. Experience the Loud Spectrum difference."
+    }
   },
   "InTheLab": {
     "In_the_Lab": "In the Lab",
