@@ -30,9 +30,11 @@ const Footer = () => {
                       {t('The_lab')}
                     </Link>
                   </li>
-                  <Link href={`/about`} className="footer-text">
-                    {t('About')}
-                  </Link>
+                  <li>
+                    <Link href={`/about`} className="footer-text">
+                      {t('About')}
+                    </Link>
+                  </li>
                   <li>
                     <Link href={`/blog`} className="footer-text">
                       {t('Blog')}
