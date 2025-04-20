@@ -250,6 +250,21 @@
       "MadeInUSA": "Hecho en EE. UU."
     }
   },
+  "NewPage": {
+    "newPageHeroBanner": {
+      "title": "Tienes altos estándares. Ofrecemos posibilidades infinitas.",
+      "description": "Siempre estamos innovando perfiles de terpenos en nuestro laboratorio. Con nuevos sabores que se lanzan regularmente, visita con frecuencia para descubrir los productos más recientes que harán destacar tu negocio."
+    },
+    "WhatsNewProductSlider": {
+      "DiscoverWhatsNew": "Descubre lo nuevo"
+    },
+    "commingSoon": {
+      "comingSoonLabel": "PRÓXIMAMENTE",
+      "title": "Una nueva experiencia de sabor",
+      "description": "¿Qué sigue para Loud Spectrum? Hemos estado trabajando en el laboratorio en una audaz nueva ola de innovación en terpenos, diseñada para elevar cada momento de formas inesperadas. Nuestro último proyecto es una línea de productos pioneros que aportan sabor a las experiencias cotidianas. Prueba el futuro de los terpenos y estate atento a más novedades.",
+      "button": "Únete a la lista de espera"
+    }
+  },
   "InTheLab": {
     "In_the_Lab": "En el Laboratorio",
     "Science_Is_in_Our_DNA": "La Ciencia Está en Nuestro ADN",

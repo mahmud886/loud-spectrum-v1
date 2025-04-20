@@ -1,10 +1,14 @@
-import React from 'react';
+import WhatsNewProductSlider from '@/components/containers/new/WhatsNewProductSlider';
+import NewPageAnimation from '@/components/containers/new/NewPageAnimation';
+import NewPageCommingSoon from '@/components/containers/new/NewPageCommingSoon';
 
 const NewPage = () => {
   return (
-    <div className="text-umbra-100 flex h-screen w-full items-center justify-center">
-      <h2 className="text-5xl">New Page</h2>
-    </div>
+    <>
+      <WhatsNewProductSlider />
+      <NewPageAnimation />
+      <NewPageCommingSoon />
+    </>
   );
 };
 

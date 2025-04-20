@@ -250,6 +250,21 @@
       "MadeInUSA": "アメリカ製"
     }
   },
+  "NewPage": {
+    "newPageHeroBanner": {
+      "title": "高い基準をお持ちですか？私たちは無限の可能性を提供します。",
+      "description": "私たちのラボでは常にテルペンプロファイルを革新しています。新しいフレーバーが定期的に登場するため、ビジネスを際立たせる最新商品をぜひチェックしてください。"
+    },
+    "WhatsNewProductSlider": {
+      "DiscoverWhatsNew": "最新情報をチェック"
+    },
+    "commingSoon": {
+      "comingSoonLabel": "近日公開",
+      "title": "新しいフレーバー体験",
+      "description": "Loud Spectrum の次の展開は？私たちは研究所で、あらゆる瞬間を予想外の方法で高める、大胆な新しいテルペンイノベーションの波に取り組んでいます。今回の新しい試みは、日常に風味をもたらす最先端の製品ラインです。テルペンの未来を一足先に体験し、最新情報をお楽しみに。",
+      "button": "ウェイトリストに参加"
+    }
+  },
   "InTheLab": {
     "In_the_Lab": "研究室で",
     "Science_Is_in_Our_DNA": "科学は私たちのDNAに刻まれています",
