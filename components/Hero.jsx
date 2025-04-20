@@ -23,7 +23,10 @@ const Hero = () => {
             </p>
           </div>
           <div className="inline-flex w-full gap-[15px] self-start">
-            <Link href={`/shop`} className="special-button cursor-grab rounded-full px-6 py-2">
+            <Link
+              href={`/shop`}
+              className="special-button inline-flex cursor-grab items-center justify-center rounded-full px-6 py-2"
+            >
               {t('Explore_the_shop')}
             </Link>
             <Link href={`/try-sample-pack`} className="outline-button-black cursor-grab rounded-full px-6 py-2">

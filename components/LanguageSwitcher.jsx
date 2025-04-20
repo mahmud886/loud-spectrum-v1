@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { usePathname } from "next/navigation";
-import Link from "next/link";
-import { motion } from "framer-motion";
-import { ChevronDown, Globe } from "lucide-react";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-import { Button } from "@/components/ui/button";
+import { useState } from 'react';
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { ChevronDown, Globe } from 'lucide-react';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
+import { Button } from '@/components/ui/button';
 
 const options = [
   { country: 'English', code: 'en' },
@@ -23,8 +23,8 @@ const LanguageSwitcher = () => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
-  const segments = pathname.split("/").filter(Boolean);
-  const currentLang = segments[0] || "en";
+  const segments = pathname.split('/').filter(Boolean);
+  const currentLang = segments[0] || 'en';
   const urlSegments = segments.slice(1);
 
   return (
@@ -32,34 +32,26 @@ const LanguageSwitcher = () => {
       <DropdownMenuTrigger asChild>
         <Button
           variant="outline"
-          className="bg-transparent hover:bg-white/10 cursor-pointer font-sans font-bold text-[16px] hover:text-white w-full h-full md:w-[120px] md:h-[42px] flex items-center justify-between gap-[10px] px-4"
+          className="border-white-20 bg-white-10 hover:bg-white-20 m-[2px] flex h-full w-full cursor-pointer items-center justify-between gap-[10px] border-1 px-4 font-sans text-[16px] font-bold hover:text-white md:h-[42px] md:w-[100px]"
         >
           <span className="flex items-center gap-2">
             <Globe />
             {currentLang.toUpperCase()}
           </span>
-          <motion.span
-            animate={{ rotate: isOpen ? 180 : 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-          >
-            <ChevronDown className="w-4 h-4" />
+          <motion.span animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.3, ease: 'easeInOut' }}>
+            <ChevronDown className="h-4 w-4" />
           </motion.span>
         </Button>
       </DropdownMenuTrigger>
 
-      <DropdownMenuContent align="end" className="w-[160px] flex flex-col gap-[5px]">
+      <DropdownMenuContent align="end" className="flex w-[160px] flex-col gap-[5px]">
         {options.map((lang) => (
-          <Link
-            key={lang.code}
-            href={`/${lang.code}/${urlSegments.join("/")}`}
-          >
+          <Link key={lang.code} href={`/${lang.code}/${urlSegments.join('/')}`}>
             <button
               lang={lang.code}
               onMouseDown={(e) => e.preventDefault()}
-              className={`w-full px-4 py-2 text-umbra-100 rounded text-left text-[17px] hover:bg-stardust capitalize font-sans ${
-                currentLang === lang.code
-                  ? "bg-stardust text-primary"
-                  : "text-secondary"
+              className={`text-umbra-100 hover:bg-stardust w-full rounded px-4 py-2 text-left font-sans text-[17px] capitalize ${
+                currentLang === lang.code ? 'bg-stardust text-primary' : 'text-secondary'
               }`}
             >
               {capitalize(lang.country)}
