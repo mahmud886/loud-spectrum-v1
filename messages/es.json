@@ -108,6 +108,96 @@
     "Reviews": "Reseñas",
     "CannabisDerived": "Derivado del cannabis"
   },
+  "TrySamplePack": {
+    "Reviews": "Reseñas",
+    "ChooseFormula": "Elegir fórmula",
+    "CustomizeYourPack": "Personaliza tu paquete",
+    "AddToCart": "Agregar al carrito",
+    "StartingAt": "Desde",
+    "Note": "Nota: Informar al cliente lo que debe hacer para realizar cambios - Loud Spectrum actualizará el texto final."
+  },
+  "TerpeneChartHero": {
+    "heading": "La Tabla de Terpenos del Espectro Intenso",
+    "subheading": "Tu Guía para Cada Perfil",
+    "description": "Descubre cómo estos compuestos naturales potencian aromas intensos, efectos distintivos y propiedades terapéuticas en las plantas, incluido el cannabis. Ya sea que busques notas cítricas para la energía o perfiles a pino para la relajación, esta herramienta visual facilita la coincidencia de perfiles con tus preferencias. Es una forma sencilla de explorar lo que los terpenos pueden hacer por ti y tus clientes."
+  },
+  "TheLab": {
+    "heading": "La ciencia detrás del sabor intenso",
+    "subheading": "El gran sabor es un arte… \ny una ciencia.",
+    "description1": "Fuimos pioneros en el primer perfil de terpenos específico por cepa y de espectro completo. Aunque no podemos revelar todos los secretos de nuestra fórmula, sí podemos compartir qué la hace especial.",
+    "description2": "Detrás de cada perfil Loud Spectrum está nuestro método Flavor Science, un proceso patentado que elimina las conjeturas al crear sabores excepcionales. A través de una profunda investigación y desarrollo, hemos llegado a comprender cada ingrediente: su aroma, cómo se mezcla y la formulación precisa necesaria para darle vida, al punto de haber perfeccionado más de 200 perfiles… y seguimos contando.",
+    "behindTheProcess": {
+      "title": "Detrás del proceso",
+      "subtitle": "Nuestro proceso, tu ventaja"
+    },
+    "premiumSourcing": {
+      "title": "Selección Premium: Solo lo mejor",
+      "intro": "Comenzamos con los ingredientes más puros, seleccionando cuidadosamente:",
+      "item1": "Isolados botánicos de calidad alimentaria",
+      "item2": "Extractos libres de pesticidas y metales pesados",
+      "item3": "El mejor cáñamo cultivado para terpenos extraídos de flores",
+      "details": "Cada materia prima cumple con estrictos estándares de seguridad y pureza, asegurando perfiles de terpenos limpios, consistentes y auténticos."
+    },
+    "advancedExtraction": {
+      "title": "Extracción avanzada: Instalación en Oregón",
+      "description": "Nuestra instalación de extracción en Oregón está equipada con tecnología de vanguardia para capturar la verdadera esencia de los terpenos. Usando métodos de extracción de última generación, preservamos toda la complejidad y potencia de cada variedad.",
+      "item1": "Aislados botánicos de grado alimentario",
+      "item2": "Extractos libres de pesticidas y metales pesados",
+      "item3": "El mejor cáñamo cultivado para terpenos extraídos de flores"
+    },
+    "expertFormulation": {
+      "title": "Formulación y Pruebas Expertas: Laboratorio en Santa Ana",
+      "description": "Una vez extraídos, nuestros terpenos se trasladan a nuestro laboratorio con certificación GMP en Santa Ana, California, donde formulamos y refinamos cada perfil meticulosamente.",
+      "item1": "Mezclas personalizadas de terpenos elaboradas por expertos",
+      "item2": "Colaboración con líderes de la industria para ajustar sabores",
+      "item3": "Pruebas rigurosas para asegurar una experiencia y profundidad incomparables",
+      "footer": "Nuestro equipo trabaja en estrecha colaboración con socios de la industria para perfeccionar cada sabor, garantizando autenticidad, riqueza y precisión en cada gota."
+    },
+    "finalTesting": {
+      "title": "Pruebas Finales e Innovación: Laboratorio de I+D en Irvine",
+      "description1": "Antes de llegar a nuestros clientes, cada producto pasa por una evaluación y refinamiento exhaustivos en nuestro laboratorio de investigación y desarrollo en Irvine.",
+      "description2": "Combinando ciencia, artesanía y rigurosas pruebas, garantizamos que cada perfil de terpenos proporcione una experiencia impecable.",
+      "item1": "Mezclas personalizadas de terpenos elaboradas por expertos",
+      "item2": "Colaboración con líderes de la industria para ajustar sabores",
+      "item3": "Pruebas rigurosas para asegurar una experiencia y profundidad incomparables"
+    },
+    "fromSeed": {
+      "title": "De la semilla a la botella: controlamos cada paso",
+      "description": "Nuestro proceso de cuatro instalaciones garantiza que cada producto cumpla con los más altos estándares de pureza, consistencia e innovación. Descubre la diferencia de Loud Spectrum."
+    },
+    "ingredientsSection": {
+      "label": "Ingredientes",
+      "title": "Las mezclas de Loud Spectrum se elaboran con terpenos de origen natural y una biblioteca de más de 1,000 elementos aromatizantes."
+    },
+    "qualitySection": {
+      "label": "Nuestra promesa de calidad",
+      "title": "Los más altos estándares de calidad",
+      "description": "La calidad no es solo nuestro estándar, es nuestra marca registrada. Cada perfil pasa por I+D impulsado por expertos, se elabora en instalaciones compatibles con ISO y cGMP, y se prueba de forma independiente para detectar pesticidas, metales pesados y solventes. Es un proceso riguroso, pero literalmente puedes saborear la diferencia.",
+      "button": "Únete a la lista de espera"
+    }
+  },
+  "ContactPage": {
+    "contactHero": {
+      "title": "Conectémonos",
+      "description": "¿Tienes preguntas sobre mezclas, dilución, aplicaciones de productos o seguridad? Siempre estamos atentos a las consultas entrantes, así que pronto tendrás noticias nuestras.",
+      "tollFreeLabel": "Número gratuito",
+      "textCallLabel": "Mensaje/Llamada",
+      "emailLabel": "Correo electrónico",
+      "hours": "Lunes a viernes - 10AM a 5PM PST",
+      "addressLabel": "Dirección",
+      "address1": "1907 N Main St,",
+      "address2": "Santa Ana CA 92706"
+    },
+    "contactForm": {
+      "title": "Inicia la conversación",
+      "description": "¿Buscas formulaciones personalizadas, precios al por mayor o soluciones de marca blanca? Creamos algo extraordinario juntos.",
+      "requiredNote": "*Campos obligatorios",
+      "namePlaceholder": "Nombre*",
+      "emailPlaceholder": "Correo electrónico*",
+      "messagePlaceholder": "Tu mensaje*",
+      "submitButton": "Enviar mensaje"
+    }
+  },
   "InTheLab": {
     "In_the_Lab": "En el Laboratorio",
     "Science_Is_in_Our_DNA": "La Ciencia Está en Nuestro ADN",

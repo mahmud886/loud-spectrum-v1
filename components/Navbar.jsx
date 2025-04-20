@@ -16,12 +16,12 @@ const Navbar = ({ locale }) => {
     'blog',
     'wholesale',
     'wholesale-registration',
-    'terms-and-condition',
+    'terms-and-conditions',
     'privacy-policy',
     'login',
-    'try-sample-pack',
+    'lab',
+    'terpene-chart',
     'faq',
-    'terpene-charts',
   ];
 
   const isSpecialPath = specialPaths.some(
