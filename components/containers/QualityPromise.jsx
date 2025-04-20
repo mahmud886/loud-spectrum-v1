@@ -8,7 +8,7 @@ const QualityPromise = () => {
     <div className="container">
       <div className="py-[80px]">
         <div className="relative z-0 flex min-h-[796px] items-center justify-center p-[80px]">
-          <div className="absolute inset-0 -z-10">
+          <div className="bg-stardust absolute inset-0 -z-10">
             <div className="absolute top-[-2px] left-0 z-20">
               <Image
                 src="/assets/images/home-quality-top-mask.png"
@@ -19,7 +19,7 @@ const QualityPromise = () => {
               />
             </div>
             <Image
-              src="/assets/images/quality-promise/grid-texture.png"
+              src="/assets/images/quality-promise-grid.png"
               alt="Background"
               width={1280}
               height={796}
