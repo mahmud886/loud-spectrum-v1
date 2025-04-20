@@ -10,7 +10,7 @@ import TransitionAnimation from '@/components/containers/TransitionAnimation';
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="bg-white-100">
       <Hero />
       <ExploreTheSpectrum />
       <ExploreTerpeneGuide />

@@ -19,7 +19,7 @@ export default async function RootLayout({ children, params }) {
   }
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className={`bg-white ${adelphiSans.variable} ${neueHaasUnicaW1GMono.variable} antialiased`}>
+      <body className={` ${adelphiSans.variable} ${neueHaasUnicaW1GMono.variable} antialiased`}>
         <NextIntlClientProvider>
           <NextTopLoader
             initialPosition={0.08}
