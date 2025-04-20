@@ -218,6 +218,36 @@
       "username": "Имя пользователя*",
       "password": "Пароль*",
       "registerButton": "Зарегистрироваться"
+    },
+    "WholesaleRegistrationWorks": {
+      "THowItWorks": "Как это работает",
+      "Point_01_Number": "01",
+      "Point_01_Title": "Заполните форму",
+      "Point_01_Description": "Заполните форму регистрации для оптовых закупок с вашими данными.",
+      "Point_02_Number": "02",
+      "Point_02_Title": "Получите одобрение",
+      "Point_02_Description": "Наша команда рассмотрит вашу заявку в течение 1–2 рабочих дней.",
+      "Point_03_Number": "03",
+      "Point_03_Title": "Войти в систему",
+      "Point_03_Description": "После одобрения войдите, используя электронную почту и пароль, указанные при регистрации.",
+      "Point_04_Number": "04",
+      "Point_04_Title": "Доступ к магазину",
+      "Point_04_Description": "Просматривайте оптовые товары, настраивайте вкусы и изучайте наши предложения.",
+      "Point_05_Number": "05",
+      "Point_05_Title": "Всегда в наличии",
+      "Point_05_Description": "Покупайте оптовые товары и другие продукты из нашего магазина с легкостью."
+    },
+    "WhyChooseLoudSpectrum": {
+      "WhyChooseTitle": "Почему выбирают Loud Spectrum?",
+      "WhyChooseSubtitle": "Потому что обычные терпены — это не то.",
+      "FarmToBottle": "Качество от фермы до бутылки",
+      "ExclusiveFlavors": "Эксклюзивные ароматы",
+      "NaturalFoodGrade": "100% натуральные и пищевого класса",
+      "Turnaround24Hour": "Доставка за 24 часа",
+      "BotanicalFlower": "Растительные и цветочные",
+      "DerivedTerpenes": "Извлечённые терпены",
+      "TerpeneIsolates": "100+ изолятов терпенов на профиль",
+      "MadeInUSA": "Сделано в США"
     }
   },
   "InTheLab": {

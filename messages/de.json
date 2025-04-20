@@ -218,6 +218,36 @@
       "username": "Benutzername*",
       "password": "Passwort*",
       "registerButton": "Registrieren"
+    },
+    "WholesaleRegistrationWorks": {
+      "THowItWorks": "So funktioniert es",
+      "Point_01_Number": "01",
+      "Point_01_Title": "Formular ausfüllen",
+      "Point_01_Description": "Füllen Sie das Großhandelsregistrierungsformular mit Ihren Daten aus.",
+      "Point_02_Number": "02",
+      "Point_02_Title": "Genehmigung erhalten",
+      "Point_02_Description": "Unser Team überprüft Ihre Bewerbung innerhalb von 1–2 Werktagen.",
+      "Point_03_Number": "03",
+      "Point_03_Title": "Anmelden",
+      "Point_03_Description": "Nach der Genehmigung melden Sie sich mit der E-Mail und dem Passwort an, die Sie bei der Registrierung verwendet haben.",
+      "Point_04_Number": "04",
+      "Point_04_Title": "Zugang zum Shop",
+      "Point_04_Description": "Stöbern Sie durch Großhandelsprodukte, passen Sie Aromen an und entdecken Sie unser Angebot.",
+      "Point_05_Number": "05",
+      "Point_05_Title": "Immer gut versorgt",
+      "Point_05_Description": "Kaufen Sie Großhandelsprodukte und andere Artikel ganz einfach in unserem Shop."
+    },
+    "WhyChooseLoudSpectrum": {
+      "WhyChooseTitle": "Warum Loud Spectrum wählen?",
+      "WhyChooseSubtitle": "Weil gewöhnliche Terpene einfach nicht ausreichen.",
+      "FarmToBottle": "Qualität vom Bauernhof bis zur Flasche",
+      "ExclusiveFlavors": "Exklusive Aromen",
+      "NaturalFoodGrade": "100 % natürlich & lebensmittelecht",
+      "Turnaround24Hour": "24-Stunden-Bearbeitung verfügbar",
+      "BotanicalFlower": "Botanisch & Blüte",
+      "DerivedTerpenes": "Gewonnene Terpene",
+      "TerpeneIsolates": "100+ Terpen-Isolate pro Profil",
+      "MadeInUSA": "Hergestellt in den USA"
     }
   },
   "InTheLab": {

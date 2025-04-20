@@ -218,6 +218,36 @@
       "username": "Nom d'utilisateur*",
       "password": "Mot de passe*",
       "registerButton": "S'inscrire"
+    },
+    "WholesaleRegistrationWorks": {
+      "THowItWorks": "Comment ça marche",
+      "Point_01_Number": "01",
+      "Point_01_Title": "Remplir le formulaire",
+      "Point_01_Description": "Remplissez le formulaire d'inscription pour les ventes en gros avec vos informations.",
+      "Point_02_Number": "02",
+      "Point_02_Title": "Obtenir l'approbation",
+      "Point_02_Description": "Notre équipe examinera votre demande sous 1 à 2 jours ouvrables.",
+      "Point_03_Number": "03",
+      "Point_03_Title": "Se connecter",
+      "Point_03_Description": "Une fois approuvé, connectez-vous avec l'e-mail et le mot de passe utilisés lors de l'inscription.",
+      "Point_04_Number": "04",
+      "Point_04_Title": "Accéder à la boutique",
+      "Point_04_Description": "Parcourez les produits en gros, personnalisez les saveurs et découvrez nos offres.",
+      "Point_05_Number": "05",
+      "Point_05_Title": "Restez approvisionné",
+      "Point_05_Description": "Achetez facilement des produits en gros et d'autres articles dans notre boutique."
+    },
+    "WhyChooseLoudSpectrum": {
+      "WhyChooseTitle": "Pourquoi choisir Loud Spectrum ?",
+      "WhyChooseSubtitle": "Parce que les terpènes ordinaires ne suffisent pas.",
+      "FarmToBottle": "Qualité de la ferme à la bouteille",
+      "ExclusiveFlavors": "Saveurs exclusives",
+      "NaturalFoodGrade": "100% naturel et de qualité alimentaire",
+      "Turnaround24Hour": "Délai de 24 heures disponible",
+      "BotanicalFlower": "Botaniques & fleurs",
+      "DerivedTerpenes": "Terpènes dérivés",
+      "TerpeneIsolates": "100+ isolats de terpènes par profil",
+      "MadeInUSA": "Fabriqué aux États-Unis"
     }
   },
   "InTheLab": {

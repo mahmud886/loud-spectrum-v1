@@ -218,6 +218,36 @@
       "username": "ユーザー名*",
       "password": "パスワード*",
       "registerButton": "登録"
+    },
+    "WholesaleRegistrationWorks": {
+      "THowItWorks": "ご利用の流れ",
+      "Point_01_Number": "01",
+      "Point_01_Title": "フォームの記入",
+      "Point_01_Description": "卸売登録フォームに必要事項を入力してください。",
+      "Point_02_Number": "02",
+      "Point_02_Title": "承認を得る",
+      "Point_02_Description": "当社チームが1～2営業日以内に申請内容を確認します。",
+      "Point_03_Number": "03",
+      "Point_03_Title": "ログイン",
+      "Point_03_Description": "承認後、登録時に使用したメールアドレスとパスワードでログインします。",
+      "Point_04_Number": "04",
+      "Point_04_Title": "ストアにアクセス",
+      "Point_04_Description": "卸売商品を閲覧し、フレーバーをカスタマイズし、製品をチェックできます。",
+      "Point_05_Number": "05",
+      "Point_05_Title": "在庫を維持",
+      "Point_05_Description": "卸売商品や他の商品を簡単にご購入いただけます。"
+    },
+    "WhyChooseLoudSpectrum": {
+      "WhyChooseTitle": "なぜLoud Spectrumを選ぶのか？",
+      "WhyChooseSubtitle": "一般的なテルペンでは物足りません。",
+      "FarmToBottle": "農場からボトルまでの品質",
+      "ExclusiveFlavors": "独自のフレーバー",
+      "NaturalFoodGrade": "100%天然・食品グレード",
+      "Turnaround24Hour": "24時間対応可能",
+      "BotanicalFlower": "植物性＆花由来",
+      "DerivedTerpenes": "抽出されたテルペン",
+      "TerpeneIsolates": "1プロファイルあたり100種以上のテルペン分離体",
+      "MadeInUSA": "アメリカ製"
     }
   },
   "InTheLab": {

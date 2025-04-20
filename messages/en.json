@@ -218,6 +218,36 @@
       "username": "Username*",
       "password": "Password*",
       "registerButton": "Register"
+    },
+    "WholesaleRegistrationWorks": {
+      "THowItWorks": "How It Works",
+      "Point_01_Number": "01",
+      "Point_01_Title": "Complete Form",
+      "Point_01_Description": "Fill out the wholesale registration form with your details.",
+      "Point_02_Number": "02",
+      "Point_02_Title": "Get Approved",
+      "Point_02_Description": "Our team will review your application within 1-2 business days.",
+      "Point_03_Number": "03",
+      "Point_03_Title": "Sign In",
+      "Point_03_Description": "Once approved, log in with the email and password you used to register.",
+      "Point_04_Number": "04",
+      "Point_04_Title": "Access Store",
+      "Point_04_Description": "Browse bulk products, customize flavors, and explore our offerings.",
+      "Point_05_Number": "05",
+      "Point_05_Title": "Stay Stocked",
+      "Point_05_Description": "Purchase wholesale products and any other items from our store with ease."
+    },
+    "WhyChooseLoudSpectrum": {
+      "WhyChooseTitle": "Why Choose Loud Spectrum?",
+      "WhyChooseSubtitle": "Because ordinary terpenes just don’t cut it.",
+      "FarmToBottle": "Farm-to-Bottle Quality",
+      "ExclusiveFlavors": "Exclusive Flavors",
+      "NaturalFoodGrade": "100% Natural & Food Grade",
+      "Turnaround24Hour": "24-Hour Turnaround Available",
+      "BotanicalFlower": "Botanical & Flower",
+      "DerivedTerpenes": "Derived Terpenes",
+      "TerpeneIsolates": "100+ Terpene Isolates Per Profile",
+      "MadeInUSA": "Made in the USA"
     }
   },
   "InTheLab": {
