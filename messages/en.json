@@ -176,6 +176,28 @@
       "button": "Join the Waitlist"
     }
   },
+  "ContactPage": {
+    "contactHero": {
+      "title": "Let’s Connect",
+      "description": "Have questions about mixing, dilution, product applications, or safety? We’re always keeping an eye on incoming questions, so you’ll hear back from us shortly.",
+      "tollFreeLabel": "Toll-Free Number",
+      "textCallLabel": "Text/Call",
+      "emailLabel": "Email",
+      "hours": "Monday to Friday - 10AM - 5PM PST",
+      "addressLabel": "Address",
+      "address1": "1907 N Main St,",
+      "address2": "Santa Ana CA 92706"
+    },
+    "contactForm": {
+      "title": "Start the Conversation",
+      "description": "Looking for custom formulations, wholesale pricing, or white-label solutions? Let's create something extraordinary together.",
+      "requiredNote": "*Required fields",
+      "namePlaceholder": "Name*",
+      "emailPlaceholder": "Email*",
+      "messagePlaceholder": "Your Message*",
+      "submitButton": "Send Message"
+    }
+  },
   "InTheLab": {
     "In_the_Lab": "In the Lab",
     "Science_Is_in_Our_DNA": "Science Is in Our DNA",

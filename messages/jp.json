@@ -175,7 +175,28 @@
       "description": "品質は私たちの基準であるだけでなく、私たちの特徴でもあります。各プロファイルは専門家による研究開発を経て、ISOおよびcGMPに準拠した施設で製造され、第三者機関により農薬、重金属、溶剤の検査を受けています。厳密なプロセスですが、その違いは確実に味に現れます。",
       "button": "ウェイトリストに登録"
     }
-
+  },
+  "ContactPage": {
+    "contactHero": {
+      "title": "つながりましょう",
+      "description": "ミキシング、希釈、製品の使用方法、安全性に関するご質問はありますか？私たちは常にお問い合わせをチェックしており、すぐにご連絡いたします。",
+      "tollFreeLabel": "フリーダイヤル",
+      "textCallLabel": "テキスト/通話",
+      "emailLabel": "メール",
+      "hours": "月曜〜金曜 - 午前10時〜午後5時（PST）",
+      "addressLabel": "住所",
+      "address1": "1907 N Main St,",
+      "address2": "サンタアナ CA 92706"
+    },
+    "contactForm": {
+      "title": "会話を始めましょう",
+      "description": "カスタム配合、大量注文価格、またはホワイトラベルのソリューションをお探しですか？一緒に特別なものを作りましょう。",
+      "requiredNote": "*必須項目",
+      "namePlaceholder": "名前*",
+      "emailPlaceholder": "メールアドレス*",
+      "messagePlaceholder": "メッセージ*",
+      "submitButton": "メッセージを送信"
+    }
   },
   "InTheLab": {
     "In_the_Lab": "研究室で",

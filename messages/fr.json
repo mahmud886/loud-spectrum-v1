@@ -176,6 +176,28 @@
       "button": "Rejoindre la liste d'attente"
     }
   },
+  "ContactPage": {
+    "contactHero": {
+      "title": "Connectons-nous",
+      "description": "Vous avez des questions sur le mélange, la dilution, les applications de produits ou la sécurité ? Nous surveillons en permanence les questions entrantes, vous recevrez donc une réponse rapidement.",
+      "tollFreeLabel": "Numéro vert",
+      "textCallLabel": "SMS/Appel",
+      "emailLabel": "Email",
+      "hours": "Lundi à vendredi - 10h à 17h PST",
+      "addressLabel": "Adresse",
+      "address1": "1907 N Main St,",
+      "address2": "Santa Ana CA 92706"
+    },
+    "contactForm": {
+      "title": "Commencez la conversation",
+      "description": "Vous cherchez des formulations sur mesure, des prix de gros ou des solutions en marque blanche ? Créons ensemble quelque chose d'extraordinaire.",
+      "requiredNote": "*Champs requis",
+      "namePlaceholder": "Nom*",
+      "emailPlaceholder": "Email*",
+      "messagePlaceholder": "Votre message*",
+      "submitButton": "Envoyer le message"
+    }
+  },
   "InTheLab": {
     "In_the_Lab": "Dans le Laboratoire",
     "Science_Is_in_Our_DNA": "La Science Est dans Notre ADN",

@@ -176,6 +176,28 @@
       "button": "Warteliste beitreten"
     }
   },
+  "ContactPage": {
+    "contactHero": {
+      "title": "Lass uns in Kontakt treten",
+      "description": "Haben Sie Fragen zu Mischungen, Verdünnungen, Produktanwendungen oder Sicherheit? Wir achten stets auf eingehende Anfragen und melden uns in Kürze bei Ihnen.",
+      "tollFreeLabel": "Kostenlose Telefonnummer",
+      "textCallLabel": "SMS/Anruf",
+      "emailLabel": "E-Mail",
+      "hours": "Montag bis Freitag - 10–17 Uhr PST",
+      "addressLabel": "Adresse",
+      "address1": "1907 N Main St,",
+      "address2": "Santa Ana CA 92706"
+    },
+    "contactForm": {
+      "title": "Starten Sie das Gespräch",
+      "description": "Suchen Sie nach maßgeschneiderten Formulierungen, Großhandelspreisen oder White-Label-Lösungen? Lassen Sie uns gemeinsam etwas Außergewöhnliches schaffen.",
+      "requiredNote": "*Erforderliche Felder",
+      "namePlaceholder": "Name*",
+      "emailPlaceholder": "E-Mail*",
+      "messagePlaceholder": "Ihre Nachricht*",
+      "submitButton": "Nachricht senden"
+    }
+  },
   "InTheLab": {
     "In_the_Lab": "Im Labor",
     "Science_Is_in_Our_DNA": "Wissenschaft liegt in unserer DNA",
