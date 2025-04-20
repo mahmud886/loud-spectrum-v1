@@ -198,6 +198,28 @@
       "submitButton": "Send Message"
     }
   },
+  "Wholesale": {
+    "wholesaleRegistrationHero": {
+      "title": "Wholesale Terpenes",
+      "registerButton": "Register to Access",
+      "whyWholesaleTitle": "Why Wholesale?",
+      "para1": "At Loud Spectrum, we bring premium terpenes to businesses that demand the best.",
+      "para2": "Take advantage of competitive bulk pricing, exclusive custom profiles, and access to infinite products and samples—everything you need to deliver flavor and quality your customers will love."
+    },
+    "wholesaleRegistrationForm": {
+      "formTitle": "Bulk Up With the Best Terpenes",
+      "requiredFields": "*Required fields",
+      "fullName": "Full Name*",
+      "company": "Company*",
+      "phone": "Phone Number*",
+      "email": "Email*",
+      "website": "Website*",
+      "country": "Country*",
+      "username": "Username*",
+      "password": "Password*",
+      "registerButton": "Register"
+    }
+  },
   "InTheLab": {
     "In_the_Lab": "In the Lab",
     "Science_Is_in_Our_DNA": "Science Is in Our DNA",

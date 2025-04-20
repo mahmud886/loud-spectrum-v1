@@ -1,9 +1,10 @@
 import React from 'react';
+import WholesaleRegistrationForm from '@/components/containers/wholesale/WholesaleRegistrationForm';
 
 const WholesaleRegistrationPage = () => {
   return (
-    <div className="text-umbra-100 flex h-screen w-full items-center justify-center">
-      <h2 className="text-5xl">Wholesale Registration Page</h2>
+    <div className="">
+      <WholesaleRegistrationForm />
     </div>
   );
 };

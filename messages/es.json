@@ -198,6 +198,28 @@
       "submitButton": "Enviar mensaje"
     }
   },
+  "Wholesale": {
+    "wholesaleRegistrationHero": {
+      "title": "Terpenos al por mayor",
+      "registerButton": "Registrarse para acceder",
+      "whyWholesaleTitle": "¿Por qué al por mayor?",
+      "para1": "En Loud Spectrum, ofrecemos terpenos premium a empresas que exigen lo mejor.",
+      "para2": "Aprovecha los precios competitivos por volumen, perfiles personalizados exclusivos y acceso a una variedad infinita de productos y muestras: todo lo que necesitas para ofrecer sabor y calidad que tus clientes adorarán."
+    },
+    "wholesaleRegistrationForm": {
+      "formTitle": "Abastécete con los mejores terpenos",
+      "requiredFields": "*Campos obligatorios",
+      "fullName": "Nombre completo*",
+      "company": "Empresa*",
+      "phone": "Número de teléfono*",
+      "email": "Correo electrónico*",
+      "website": "Sitio web*",
+      "country": "País*",
+      "username": "Nombre de usuario*",
+      "password": "Contraseña*",
+      "registerButton": "Registrarse"
+    }
+  },
   "InTheLab": {
     "In_the_Lab": "En el Laboratorio",
     "Science_Is_in_Our_DNA": "La Ciencia Está en Nuestro ADN",

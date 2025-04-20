@@ -198,6 +198,28 @@
       "submitButton": "メッセージを送信"
     }
   },
+  "Wholesale": {
+    "wholesaleRegistrationHero": {
+      "title": "業務用テルペン",
+      "registerButton": "登録してアクセス",
+      "whyWholesaleTitle": "なぜ業務用？",
+      "para1": "Loud Spectrumでは、最高品質のテルペンを求めるビジネスに向けてプレミアム製品を提供しています。",
+      "para2": "競争力のある大量購入価格、独自のカスタムプロファイル、無限の製品とサンプルへのアクセスを活用して、お客様に愛される風味と品質を提供しましょう。"
+    },
+    "wholesaleRegistrationForm": {
+      "formTitle": "最高のテルペンを大量に仕入れよう",
+      "requiredFields": "※必須項目",
+      "fullName": "氏名*",
+      "company": "会社名*",
+      "phone": "電話番号*",
+      "email": "メールアドレス*",
+      "website": "ウェブサイト*",
+      "country": "国名*",
+      "username": "ユーザー名*",
+      "password": "パスワード*",
+      "registerButton": "登録"
+    }
+  },
   "InTheLab": {
     "In_the_Lab": "研究室で",
     "Science_Is_in_Our_DNA": "科学は私たちのDNAに刻まれています",

@@ -198,6 +198,28 @@
       "submitButton": "Envoyer le message"
     }
   },
+  "Wholesale": {
+    "wholesaleRegistrationHero": {
+      "title": "Terpènes en gros",
+      "registerButton": "S'inscrire pour accéder",
+      "whyWholesaleTitle": "Pourquoi en gros ?",
+      "para1": "Chez Loud Spectrum, nous fournissons des terpènes de qualité supérieure aux entreprises qui exigent le meilleur.",
+      "para2": "Profitez de tarifs compétitifs pour les achats en gros, de profils personnalisés exclusifs et d'un accès à une infinité de produits et d'échantillons – tout ce dont vous avez besoin pour offrir des saveurs et une qualité que vos clients adoreront."
+    },
+    "wholesaleRegistrationForm": {
+      "formTitle": "Faites le plein avec les meilleurs terpènes",
+      "requiredFields": "*Champs obligatoires",
+      "fullName": "Nom complet*",
+      "company": "Entreprise*",
+      "phone": "Numéro de téléphone*",
+      "email": "E-mail*",
+      "website": "Site web*",
+      "country": "Pays*",
+      "username": "Nom d'utilisateur*",
+      "password": "Mot de passe*",
+      "registerButton": "S'inscrire"
+    }
+  },
   "InTheLab": {
     "In_the_Lab": "Dans le Laboratoire",
     "Science_Is_in_Our_DNA": "La Science Est dans Notre ADN",

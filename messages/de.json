@@ -198,6 +198,28 @@
       "submitButton": "Nachricht senden"
     }
   },
+  "Wholesale": {
+    "wholesaleRegistrationHero": {
+      "title": "Großhandel Terpene",
+      "registerButton": "Registrieren zum Zugriff",
+      "whyWholesaleTitle": "Warum Großhandel?",
+      "para1": "Bei Loud Spectrum bieten wir Premium-Terpene für Unternehmen, die nur das Beste verlangen.",
+      "para2": "Profitieren Sie von wettbewerbsfähigen Großhandelspreisen, exklusiven kundenspezifischen Profilen und Zugang zu unzähligen Produkten und Mustern – alles, was Sie brauchen, um Geschmack und Qualität zu liefern, die Ihre Kunden lieben werden."
+    },
+    "wholesaleRegistrationForm": {
+      "formTitle": "Lager auf mit den besten Terpenen",
+      "requiredFields": "*Pflichtfelder",
+      "fullName": "Vollständiger Name*",
+      "company": "Unternehmen*",
+      "phone": "Telefonnummer*",
+      "email": "E-Mail*",
+      "website": "Webseite*",
+      "country": "Land*",
+      "username": "Benutzername*",
+      "password": "Passwort*",
+      "registerButton": "Registrieren"
+    }
+  },
   "InTheLab": {
     "In_the_Lab": "Im Labor",
     "Science_Is_in_Our_DNA": "Wissenschaft liegt in unserer DNA",
