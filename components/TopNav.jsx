@@ -1,16 +1,25 @@
+'use client';
+
 import React from 'react';
 import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
 import { Search, X } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import { motion } from 'framer-motion';
 
 const TopNav = ({ setMenuOpen, ref }) => {
   const t = useTranslations('');
+
   return (
     <div className="fixed inset-0 top-0 z-50 overflow-y-auto" ref={ref}>
-      <div className="divide-umbra-40 mx-auto grid h-[554px] w-[1440px] grid-cols-1 divide-x bg-white text-black md:grid-cols-3">
+      <div className="divide-umbra-40 mx-auto grid h-[554px] w-[1440px] grid-cols-1 divide-x text-black md:grid-cols-3">
         {/* Left side with product */}
-        <div className="flex w-[480px] flex-col items-start gap-6 py-[50px] pr-[60px] pl-[80px]">
+        <motion.div
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1, delay: 0.1 }}
+          className="flex w-[480px] flex-col items-start gap-6 bg-white py-[50px] pr-[60px] pl-[80px]"
+        >
           <div className="space-y-12">
             <div>
               <Link href={`/`}>
@@ -43,10 +52,15 @@ const TopNav = ({ setMenuOpen, ref }) => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Middle navigation */}
-        <div className="flex w-[480px] flex-col gap-6 px-[60px] pt-[120px] pb-[50px] pl-[60px] text-4xl font-semibold">
+        <motion.div
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1, delay: 0.3 }}
+          className="flex w-[480px] flex-col gap-6 bg-white px-[60px] pt-[120px] pb-[50px] pl-[60px] text-4xl font-semibold"
+        >
           <div className="flex h-full flex-col justify-center gap-12">
             <div>
               <button className="main-button-black rounded-full px-6 py-2">Wholesale</button>
@@ -69,10 +83,15 @@ const TopNav = ({ setMenuOpen, ref }) => {
               </Link>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Right filters */}
-        <div className="w-[480px] px-[80px] py-[50px]">
+        <motion.div
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className="w-[480px] bg-white px-[80px] py-[50px]"
+        >
           <div className="flex h-full flex-col justify-between">
             <div className="flex items-center justify-end gap-[30px]">
               <Link href={`/login`} className="mx-[5px] font-sans text-[20px] font-normal hover:underline">
@@ -95,7 +114,7 @@ const TopNav = ({ setMenuOpen, ref }) => {
               ))}
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
