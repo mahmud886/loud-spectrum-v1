@@ -8,7 +8,7 @@ const SpectrumAccordion = ({ items }) => {
   const [activeItem, setActiveItem] = useState(items?.[0]?.title || '');
 
   return (
-    <div className="container pt-[160px] pb-[80px]">
+    <div className="container pb-[160px]">
       <Accordion
         type="single"
         collapsible
@@ -26,7 +26,7 @@ const SpectrumAccordion = ({ items }) => {
             >
               {item.title}
             </AccordionTrigger>
-            <AccordionContent className="text-umbra-100 max-w-4/5 font-mono text-[16px] leading-[140%] font-normal">
+            <AccordionContent className="text-umbra-100 max-w-4/5 pb-8 font-mono text-[16px] leading-[140%] font-normal">
               {item.description}
             </AccordionContent>
           </AccordionItem>

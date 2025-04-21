@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 
 const InTheLab = () => {
   const t = useTranslations('InTheLab');
@@ -15,7 +16,9 @@ const InTheLab = () => {
             )}
           </p>
           <div className="mt-6 w-full">
-            <button className="main-button-black rounded-full px-6 py-2">{t('Discover_the_Science')}</button>
+            <Link href={`/lab`} className="main-button-black rounded-full px-6 py-2">
+              {t('Discover_the_Science')}
+            </Link>
           </div>
         </div>
 

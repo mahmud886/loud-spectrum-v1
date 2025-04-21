@@ -1,28 +1,26 @@
 import React from 'react';
 import SpectrumAccordion from '@/components/containers/SpectrumAccordion';
 
-const FaqPage = () => {
+const WholesaleRegistrationFaq = () => {
   return (
-    <div className="mt-[200px]">
-      <div className="flex items-center justify-center">
-        <h2 className="text-umbra-100 w-[35%] text-center font-sans text-[60px] leading-[120%] font-normal">
-          Frequently Asked Questions
-        </h2>
+    <>
+      <div className="container pt-20">
+        <h2 className="text-umbra-100 font-sans text-[32px] leading-[120%] font-normal">Frequently Asked Questions</h2>
       </div>
       <div className="pt-20">
         <SpectrumAccordion items={faqData} />
       </div>
-    </div>
+    </>
   );
 };
 
-export default FaqPage;
+export default WholesaleRegistrationFaq;
 
 const faqData = [
   {
-    title: 'What Are Terpenes?',
+    title: 'What is your production capacity?',
     description:
-      'Terpenes are a large and diverse class of organic compounds found in many plants. They are the primary components of essential oils and are used for flavoring and in aromatherapy. In cannabis, the amount and type of terpenes contribute to the plant’s unique scent and effects.',
+      'Whether you’re launching a new CBD line or an industry-leading manufacturer, we can handle your needs. That’s whether you’re a manufacturer, retailer, or formulator. Our operation is built to scale, ensuring every client—no matter their size—receives personalized attention and the exceptional service we’re known for. Let us handle the flavor and effect, so you can focus on growing your business.',
   },
   {
     title: 'Terpenes And CBD',

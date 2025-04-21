@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 
 const ExploreTerpeneGuide = () => {
   const t = useTranslations('Homepage');
@@ -16,7 +17,9 @@ const ExploreTerpeneGuide = () => {
           )}
         </h6>
         <div className="mt-12 w-full">
-          <button className="main-button-black rounded-full px-6 py-2">{t('TerpeneGuide')}</button>
+          <Link href={`/terpene-guide`} className="main-button-black rounded-full px-6 py-2">
+            {t('TerpeneGuide')}
+          </Link>
         </div>
       </div>
     </div>

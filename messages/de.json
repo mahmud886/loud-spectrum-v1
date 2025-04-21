@@ -198,6 +198,73 @@
       "submitButton": "Nachricht senden"
     }
   },
+  "Wholesale": {
+    "wholesaleRegistrationHero": {
+      "title": "Großhandel Terpene",
+      "registerButton": "Registrieren zum Zugriff",
+      "whyWholesaleTitle": "Warum Großhandel?",
+      "para1": "Bei Loud Spectrum bieten wir Premium-Terpene für Unternehmen, die nur das Beste verlangen.",
+      "para2": "Profitieren Sie von wettbewerbsfähigen Großhandelspreisen, exklusiven kundenspezifischen Profilen und Zugang zu unzähligen Produkten und Mustern – alles, was Sie brauchen, um Geschmack und Qualität zu liefern, die Ihre Kunden lieben werden."
+    },
+    "wholesaleRegistrationForm": {
+      "formTitle": "Lager auf mit den besten Terpenen",
+      "requiredFields": "*Pflichtfelder",
+      "fullName": "Vollständiger Name*",
+      "company": "Unternehmen*",
+      "phone": "Telefonnummer*",
+      "email": "E-Mail*",
+      "website": "Webseite*",
+      "country": "Land*",
+      "username": "Benutzername*",
+      "password": "Passwort*",
+      "registerButton": "Registrieren"
+    },
+    "WholesaleRegistrationWorks": {
+      "THowItWorks": "So funktioniert es",
+      "Point_01_Number": "01",
+      "Point_01_Title": "Formular ausfüllen",
+      "Point_01_Description": "Füllen Sie das Großhandelsregistrierungsformular mit Ihren Daten aus.",
+      "Point_02_Number": "02",
+      "Point_02_Title": "Genehmigung erhalten",
+      "Point_02_Description": "Unser Team überprüft Ihre Bewerbung innerhalb von 1–2 Werktagen.",
+      "Point_03_Number": "03",
+      "Point_03_Title": "Anmelden",
+      "Point_03_Description": "Nach der Genehmigung melden Sie sich mit der E-Mail und dem Passwort an, die Sie bei der Registrierung verwendet haben.",
+      "Point_04_Number": "04",
+      "Point_04_Title": "Zugang zum Shop",
+      "Point_04_Description": "Stöbern Sie durch Großhandelsprodukte, passen Sie Aromen an und entdecken Sie unser Angebot.",
+      "Point_05_Number": "05",
+      "Point_05_Title": "Immer gut versorgt",
+      "Point_05_Description": "Kaufen Sie Großhandelsprodukte und andere Artikel ganz einfach in unserem Shop."
+    },
+    "WhyChooseLoudSpectrum": {
+      "WhyChooseTitle": "Warum Loud Spectrum wählen?",
+      "WhyChooseSubtitle": "Weil gewöhnliche Terpene einfach nicht ausreichen.",
+      "FarmToBottle": "Qualität vom Bauernhof bis zur Flasche",
+      "ExclusiveFlavors": "Exklusive Aromen",
+      "NaturalFoodGrade": "100 % natürlich & lebensmittelecht",
+      "Turnaround24Hour": "24-Stunden-Bearbeitung verfügbar",
+      "BotanicalFlower": "Botanisch & Blüte",
+      "DerivedTerpenes": "Gewonnene Terpene",
+      "TerpeneIsolates": "100+ Terpen-Isolate pro Profil",
+      "MadeInUSA": "Hergestellt in den USA"
+    }
+  },
+  "NewPage": {
+    "newPageHeroBanner": {
+      "title": "Sie haben hohe Ansprüche. Wir bieten endlose Möglichkeiten.",
+      "description": "Wir entwickeln ständig neue Terpenprofile in unserem Labor. Da regelmäßig neue Aromen eingeführt werden, schauen Sie regelmäßig vorbei, um die neuesten Produkte zu entdecken, die Ihr Unternehmen hervorheben."
+    },
+    "WhatsNewProductSlider": {
+      "DiscoverWhatsNew": "Entdecke, was neu ist"
+    },
+    "commingSoon": {
+      "comingSoonLabel": "DEMÄCHST VERFÜGBAR",
+      "title": "Eine neue Art von Geschmackserlebnis",
+      "description": "Was kommt als Nächstes bei Loud Spectrum? Wir arbeiten im Labor an einer neuen Welle mutiger Terpen-Innovationen, die jeden Moment auf unerwartete Weise bereichern. Unser neuestes Projekt ist eine Reihe von Produkten, die als erste ihrer Art auf den Markt kommen und alltägliche Erlebnisse mit Geschmack bereichern. Erleben Sie die Zukunft der Terpene – und bleiben Sie gespannt.",
+      "button": "Zur Warteliste anmelden"
+    }
+  },
   "InTheLab": {
     "In_the_Lab": "Im Labor",
     "Science_Is_in_Our_DNA": "Wissenschaft liegt in unserer DNA",

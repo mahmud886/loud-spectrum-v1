@@ -198,6 +198,73 @@
       "submitButton": "Enviar mensaje"
     }
   },
+  "Wholesale": {
+    "wholesaleRegistrationHero": {
+      "title": "Terpenos al por mayor",
+      "registerButton": "Registrarse para acceder",
+      "whyWholesaleTitle": "¿Por qué al por mayor?",
+      "para1": "En Loud Spectrum, ofrecemos terpenos premium a empresas que exigen lo mejor.",
+      "para2": "Aprovecha los precios competitivos por volumen, perfiles personalizados exclusivos y acceso a una variedad infinita de productos y muestras: todo lo que necesitas para ofrecer sabor y calidad que tus clientes adorarán."
+    },
+    "wholesaleRegistrationForm": {
+      "formTitle": "Abastécete con los mejores terpenos",
+      "requiredFields": "*Campos obligatorios",
+      "fullName": "Nombre completo*",
+      "company": "Empresa*",
+      "phone": "Número de teléfono*",
+      "email": "Correo electrónico*",
+      "website": "Sitio web*",
+      "country": "País*",
+      "username": "Nombre de usuario*",
+      "password": "Contraseña*",
+      "registerButton": "Registrarse"
+    },
+    "WholesaleRegistrationWorks": {
+      "THowItWorks": "Cómo funciona",
+      "Point_01_Number": "01",
+      "Point_01_Title": "Completa el formulario",
+      "Point_01_Description": "Rellena el formulario de registro al por mayor con tus datos.",
+      "Point_02_Number": "02",
+      "Point_02_Title": "Obtén la aprobación",
+      "Point_02_Description": "Nuestro equipo revisará tu solicitud en 1-2 días hábiles.",
+      "Point_03_Number": "03",
+      "Point_03_Title": "Inicia sesión",
+      "Point_03_Description": "Una vez aprobado, inicia sesión con el correo y la contraseña usados en el registro.",
+      "Point_04_Number": "04",
+      "Point_04_Title": "Accede a la tienda",
+      "Point_04_Description": "Explora productos al por mayor, personaliza sabores y descubre nuestras ofertas.",
+      "Point_05_Number": "05",
+      "Point_05_Title": "Mantente abastecido",
+      "Point_05_Description": "Compra productos al por mayor y otros artículos de nuestra tienda con facilidad."
+    },
+    "WhyChooseLoudSpectrum": {
+      "WhyChooseTitle": "¿Por qué elegir Loud Spectrum?",
+      "WhyChooseSubtitle": "Porque los terpenos comunes no son suficientes.",
+      "FarmToBottle": "Calidad del campo a la botella",
+      "ExclusiveFlavors": "Sabores exclusivos",
+      "NaturalFoodGrade": "100% natural y de grado alimenticio",
+      "Turnaround24Hour": "Entrega en 24 horas disponible",
+      "BotanicalFlower": "Botánicos y flores",
+      "DerivedTerpenes": "Terpenos derivados",
+      "TerpeneIsolates": "100+ aislados de terpenos por perfil",
+      "MadeInUSA": "Hecho en EE. UU."
+    }
+  },
+  "NewPage": {
+    "newPageHeroBanner": {
+      "title": "Tienes altos estándares. Ofrecemos posibilidades infinitas.",
+      "description": "Siempre estamos innovando perfiles de terpenos en nuestro laboratorio. Con nuevos sabores que se lanzan regularmente, visita con frecuencia para descubrir los productos más recientes que harán destacar tu negocio."
+    },
+    "WhatsNewProductSlider": {
+      "DiscoverWhatsNew": "Descubre lo nuevo"
+    },
+    "commingSoon": {
+      "comingSoonLabel": "PRÓXIMAMENTE",
+      "title": "Una nueva experiencia de sabor",
+      "description": "¿Qué sigue para Loud Spectrum? Hemos estado trabajando en el laboratorio en una audaz nueva ola de innovación en terpenos, diseñada para elevar cada momento de formas inesperadas. Nuestro último proyecto es una línea de productos pioneros que aportan sabor a las experiencias cotidianas. Prueba el futuro de los terpenos y estate atento a más novedades.",
+      "button": "Únete a la lista de espera"
+    }
+  },
   "InTheLab": {
     "In_the_Lab": "En el Laboratorio",
     "Science_Is_in_Our_DNA": "La Ciencia Está en Nuestro ADN",

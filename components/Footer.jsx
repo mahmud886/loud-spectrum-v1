@@ -30,9 +30,11 @@ const Footer = () => {
                       {t('The_lab')}
                     </Link>
                   </li>
-                  <Link href={`/about`} className="footer-text">
-                    {t('About')}
-                  </Link>
+                  <li>
+                    <Link href={`/about`} className="footer-text">
+                      {t('About')}
+                    </Link>
+                  </li>
                   <li>
                     <Link href={`/blog`} className="footer-text">
                       {t('Blog')}
@@ -105,16 +107,16 @@ const Footer = () => {
                 Est. 2015 &nbsp; | &nbsp; Copyright © 2024 Medical Terpenes
               </p>
               <div className="flex space-x-6">
-                <Link href={`/quality-safety`} className="footer-text/50">
+                <Link href={`/quality-safety`} className="footer-text2">
                   {t('Quality_&_Safety')}
                 </Link>
-                <Link href={`/legal`} className="footer-text/50">
+                <Link href={`/legal`} className="footer-text2">
                   {t('Legal')}
                 </Link>
-                <Link href={`/privacy-policy`} className="footer-text/50">
+                <Link href={`/privacy-policy`} className="footer-text2">
                   {t('Privacy_Policy')}
                 </Link>
-                <Link href={`/terms-and-conditions`} className="footer-text/50">
+                <Link href={`/terms-and-conditions`} className="footer-text2">
                   {t('Terms_&_Conditions')}
                 </Link>
               </div>
@@ -219,16 +221,16 @@ const Footer = () => {
             </div>
             <div className="flex flex-col items-start gap-[40px]">
               <div className="flex flex-wrap space-x-2 gap-y-5 text-gray-500">
-                <Link href={`/quality-safety`} className="footer-text/50">
+                <Link href={`/quality-safety`} className="footer-text2">
                   {t('Quality_&_Safety')}
                 </Link>
-                <Link href={`/legal`} className="footer-text/50">
+                <Link href={`/legal`} className="footer-text2">
                   {t('Legal')}
                 </Link>
-                <Link href={`/privacy-policy`} className="footer-text/50">
+                <Link href={`/privacy-policy`} className="footer-text2">
                   {t('Privacy_Policy')}
                 </Link>
-                <Link href={`/terms-and-conditions`} className="footer-text/50">
+                <Link href={`/terms-and-conditions`} className="footer-text2">
                   {t('Terms_&_Conditions')}
                 </Link>
               </div>

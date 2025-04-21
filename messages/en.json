@@ -198,6 +198,73 @@
       "submitButton": "Send Message"
     }
   },
+  "Wholesale": {
+    "wholesaleRegistrationHero": {
+      "title": "Wholesale Terpenes",
+      "registerButton": "Register to Access",
+      "whyWholesaleTitle": "Why Wholesale?",
+      "para1": "At Loud Spectrum, we bring premium terpenes to businesses that demand the best.",
+      "para2": "Take advantage of competitive bulk pricing, exclusive custom profiles, and access to infinite products and samples—everything you need to deliver flavor and quality your customers will love."
+    },
+    "wholesaleRegistrationForm": {
+      "formTitle": "Bulk Up With the Best Terpenes",
+      "requiredFields": "*Required fields",
+      "fullName": "Full Name*",
+      "company": "Company*",
+      "phone": "Phone Number*",
+      "email": "Email*",
+      "website": "Website*",
+      "country": "Country*",
+      "username": "Username*",
+      "password": "Password*",
+      "registerButton": "Register"
+    },
+    "WholesaleRegistrationWorks": {
+      "THowItWorks": "How It Works",
+      "Point_01_Number": "01",
+      "Point_01_Title": "Complete Form",
+      "Point_01_Description": "Fill out the wholesale registration form with your details.",
+      "Point_02_Number": "02",
+      "Point_02_Title": "Get Approved",
+      "Point_02_Description": "Our team will review your application within 1-2 business days.",
+      "Point_03_Number": "03",
+      "Point_03_Title": "Sign In",
+      "Point_03_Description": "Once approved, log in with the email and password you used to register.",
+      "Point_04_Number": "04",
+      "Point_04_Title": "Access Store",
+      "Point_04_Description": "Browse bulk products, customize flavors, and explore our offerings.",
+      "Point_05_Number": "05",
+      "Point_05_Title": "Stay Stocked",
+      "Point_05_Description": "Purchase wholesale products and any other items from our store with ease."
+    },
+    "WhyChooseLoudSpectrum": {
+      "WhyChooseTitle": "Why Choose Loud Spectrum?",
+      "WhyChooseSubtitle": "Because ordinary terpenes just don’t cut it.",
+      "FarmToBottle": "Farm-to-Bottle Quality",
+      "ExclusiveFlavors": "Exclusive Flavors",
+      "NaturalFoodGrade": "100% Natural & Food Grade",
+      "Turnaround24Hour": "24-Hour Turnaround Available",
+      "BotanicalFlower": "Botanical & Flower",
+      "DerivedTerpenes": "Derived Terpenes",
+      "TerpeneIsolates": "100+ Terpene Isolates Per Profile",
+      "MadeInUSA": "Made in the USA"
+    }
+  },
+  "NewPage": {
+    "newPageHeroBanner": {
+      "title": "You've got high standards. We offer endless possibilities.",
+      "description": "We’re always innovating terpene profiles in our lab. With new flavors rolling out regularly, check back often for the latest products that set your business apart."
+    },
+    "WhatsNewProductSlider": {
+      "DiscoverWhatsNew": "Discover What’s New"
+    },
+    "commingSoon": {
+      "comingSoonLabel": "COMING SOON",
+      "title": "A New Kind of Flavor Experience",
+      "description": "What’s next for Loud Spectrum? We’ve been in the lab working on a bold new wave of terpene innovation, designed to elevate every moment in unexpected ways. Our latest venture is a line of first-to-market products that bring flavor to everyday experiences. Get a taste for the future of terpenes—and stay tuned for more.",
+      "button": "Join the Waitlist"
+    }
+  },
   "InTheLab": {
     "In_the_Lab": "In the Lab",
     "Science_Is_in_Our_DNA": "Science Is in Our DNA",

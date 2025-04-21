@@ -199,7 +199,10 @@
 	}
 	
 	.footer-text {
-		@apply text-white-100 font-sans text-[17px] font-normal hover:underline;
+		@apply text-white-100 font-sans text-[17px] font-normal hover:text-white-40;
+	}
+	.footer-text2 {
+		@apply text-white-100/50 font-sans text-[17px] font-normal hover:text-white-100;
 	}
 }
 
@@ -217,7 +220,10 @@
 
 /*Special Button*/
 .special-button {
+	cursor: pointer;
+	margin: 2px;
 	font-size: 17px;
+	font-weight: 400;
 	color: var(--color-white);
 	background: linear-gradient(90deg, #dddae8 0%, #c0aee7 59.88%, #0077c8 100%);
 }
