@@ -81,7 +81,7 @@ const Navbar = ({ locale }) => {
         </div>
       </nav>
 
-      {menuOpen && <TopNav ref={menuRef} setMenuOpen={setMenuOpen} />}
+      {menuOpen && <TopNav ref={menuRef} menuOpen={menuOpen} setMenuOpen={setMenuOpen} />}
     </>
   );
 };
