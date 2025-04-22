@@ -1,7 +1,25 @@
 {
   "Navbar": {
-    "Log_in": "Se connecter",
-    "Cart": "Panier"
+    "Log_in": "Connexion",
+    "Cart": "Panier",
+    "TopNav": {
+      "Wholesale": "Vente en gros",
+      "About": "À propos",
+      "The_lab": "Le laboratoire",
+      "Shop": "Boutique",
+      "New": "Nouveau",
+      "Product_guide": "Guide des produits",
+      "Shop_by": "Acheter par",
+      "Line": "Ligne",
+      "Mood": "Humeur",
+      "Alive": "Vivant",
+      "Dank": "Reconnaissant",
+      "Sweet": "Doux",
+      "Classic": "Classique",
+      "Active": "Actif",
+      "Relaxed": "Détendu",
+      "Sample_packs": "Packs d'échantillons"
+    }
   },
   "Homepage": {
     "Explore_The_Spectrum": "Explorez le spectre",

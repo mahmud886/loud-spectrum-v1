@@ -170,6 +170,11 @@
 		@apply font-sans text-white-100 text-[16px] font-normal tracking-normal leading-[100%] uppercase;
 	}
 	
+	.navLinkClass {
+		@apply text-umbra-100 hover:text-umbra-40 font-mono text-[40px] leading-[100%] font-normal transition-colors duration-300 ease-in-out
+	}
+	
+	
 	.main-gradient {
 		@apply from-umbra-100 via-atmosphere to-aurora bg-gradient-to-r from-25% via-50% to-75%;
 	}
@@ -204,6 +209,16 @@
 	.footer-text2 {
 		@apply text-white-100/50 font-sans text-[17px] font-normal hover:text-white-100;
 	}
+}
+
+.nextjs-toploader-bar {
+	background: linear-gradient(
+		270deg,
+		#101820 21.53%,
+		#0077C8 44.14%,
+		#B2A9F5 74.28%,
+		#DDDAE8 107.65%
+	) !important;
 }
 
 .text-gradient-extraordinary {

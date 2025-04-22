@@ -1,7 +1,25 @@
 {
   "Navbar": {
-    "Log_in": "Einloggen",
-    "Cart": "Warenkorb"
+    "Log_in": "Anmelden",
+    "Cart": "Warenkorb",
+    "TopNav": {
+      "Wholesale": "Großhandel",
+      "About": "Über uns",
+      "The_lab": "Das Labor",
+      "Shop": "Shop",
+      "New": "Neu",
+      "Product_guide": "Produktanleitung",
+      "Shop_by": "Einkaufen nach",
+      "Line": "Linie",
+      "Mood": "Stimmung",
+      "Alive": "Lebendig",
+      "Dank": "Dankbar",
+      "Sweet": "Süß",
+      "Classic": "Klassisch",
+      "Active": "Aktiv",
+      "Relaxed": "Entspannt",
+      "Sample_packs": "Musterpakete"
+    }
   },
   "Homepage": {
     "Explore_The_Spectrum": "Entdecke das Spektrum",
