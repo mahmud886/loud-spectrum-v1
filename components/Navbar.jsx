@@ -1,19 +1,18 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
-import { PlusIcon, X } from 'lucide-react';
+import TopNav from '@/components/TopNav';
+import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import { Link } from '@/i18n/navigation';
 import { usePathname } from 'next/navigation';
-import TopNav from '@/components/TopNav';
+import { useEffect, useState } from 'react';
+import MenuButton from '@/components/navbar/MenuButton';
 
 const Navbar = ({ locale }) => {
   const t = useTranslations('');
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const menuRef = useRef(null);
 
   const specialPaths = [
     'blog',
@@ -37,23 +36,6 @@ const Navbar = ({ locale }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close menu on outside click
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setMenuOpen(false);
-      }
-    };
-
-    if (menuOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [menuOpen]);
-
   const navBg = isSpecialPath ? 'bg-white-100' : isScrolled ? 'bg-umbra-100' : 'bg-transparent';
   const textColor = isSpecialPath ? 'text-umbra-100' : 'text-white';
   const logoSrc = isSpecialPath ? '/assets/svgs/logos/logo-dark.svg' : '/assets/svgs/logos/logo-light.svg';
@@ -68,20 +50,29 @@ const Navbar = ({ locale }) => {
             <Image src={logoSrc} alt="Logo" width={221} height={36} />
           </Link>
           <div className="flex items-center gap-[30px]">
-            <Link href={`/login`} className="mx-[5px] font-sans text-[20px] font-normal hover:underline">
+            <Link
+              href={`/login`}
+              className={`mx-[5px] font-sans text-[20px] font-normal transition-colors duration-300 ease-in-out ${
+                isSpecialPath ? 'hover:text-umbra-40 text-[#191919]' : 'text-white-100 hover:text-white-40'
+              }`}
+            >
               {t('Log_in')}
             </Link>
-            <Link href={`/cart`} className="mx-[5px] font-sans text-[20px] font-normal hover:underline">
+
+            <Link
+              href={`/cart`}
+              className={`mx-[5px] font-sans text-[20px] font-normal transition-colors duration-300 ease-in-out ${
+                isSpecialPath ? 'hover:text-umbra-40 text-[#191919]' : 'text-white-100 hover:text-white-40'
+              }`}
+            >
               {t('Cart')} <span className="text-inherit/60">(0)</span>
             </Link>
-            <div className="cursor-pointer" onClick={() => setMenuOpen(true)}>
-              <PlusIcon width={27} height={27} color={isSpecialPath ? '#191919' : 'white'} />
-            </div>
+            <MenuButton setMenuOpen={setMenuOpen} isSpecialPath={isSpecialPath} />
           </div>
         </div>
       </nav>
 
-      {menuOpen && <TopNav ref={menuRef} menuOpen={menuOpen} setMenuOpen={setMenuOpen} />}
+      {menuOpen && <TopNav menuOpen={menuOpen} setMenuOpen={setMenuOpen} />}
     </>
   );
 };

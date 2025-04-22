@@ -1,7 +1,25 @@
 {
   "Navbar": {
     "Log_in": "ログイン",
-    "Cart": "カート"
+    "Cart": "カート",
+    "TopNav": {
+      "Wholesale": "卸売",
+      "About": "私たちについて",
+      "The_lab": "研究所",
+      "Shop": "ショップ",
+      "New": "新着",
+      "Product_guide": "商品ガイド",
+      "Shop_by": "カテゴリで探す",
+      "Line": "ライン",
+      "Mood": "ムード",
+      "Alive": "生き生き",
+      "Dank": "感謝",
+      "Sweet": "甘い",
+      "Classic": "クラシック",
+      "Active": "アクティブ",
+      "Relaxed": "リラックス",
+      "Sample_packs": "サンプルパック"
+    }
   },
   "Homepage": {
     "Explore_The_Spectrum": "スペクトラムを探索する",

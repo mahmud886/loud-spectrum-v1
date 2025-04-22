@@ -1,7 +1,25 @@
 {
   "Navbar": {
     "Log_in": "Log in",
-    "Cart": "Cart"
+    "Cart": "Cart",
+    "TopNav": {
+      "Wholesale": "Wholesale",
+      "About": "About",
+      "The_lab": "The lab",
+      "Shop": "Shop",
+      "New": "New",
+      "Product_guide": "Product guide",
+      "Shop_by": "Shop by",
+      "Line": "Line",
+      "Mood": "Mood",
+      "Alive": "Alive",
+      "Dank": "Dank",
+      "Sweet": "Sweet",
+      "Classic": "Classic",
+      "Active": "Active",
+      "Relaxed": "Relaxed",
+      "Sample_packs": "Sample packs"
+    }
   },
   "Homepage": {
     "Explore_The_Spectrum": "Explore the Spectrum",
