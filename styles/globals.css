@@ -163,7 +163,7 @@
 
 @layer components {
 	.container {
-		@apply mx-auto px-[20px] xl:px-[80px] 2xl:px-[160px];
+		@apply mx-auto px-[20px] xl:px-[80px] md:px-[80px];
 	}
 	
 	.heading-6 {
