@@ -12,14 +12,14 @@ export default function Home() {
   return (
     <div className="bg-white-100 flex flex-col">
       <Hero />
-      {/*<ExploreTheSpectrum />*/}
-      {/*<ExploreTerpeneGuide />*/}
-      {/*<QualityPromise />*/}
-      {/*<InTheLab />*/}
-      {/*<TransitionAnimation />*/}
-      {/*<ShopByMood />*/}
-      {/*<ExperienceExtraordinary />*/}
-      {/*<OrderASample />*/}
+      <ExploreTheSpectrum />
+      <ExploreTerpeneGuide />
+      <QualityPromise />
+      <InTheLab />
+      <TransitionAnimation />
+      <ShopByMood />
+      <ExperienceExtraordinary />
+      <OrderASample />
     </div>
   );
 }

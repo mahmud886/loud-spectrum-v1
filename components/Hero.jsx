@@ -61,13 +61,13 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="mx-auto hidden w-[1440px] md:flex lg:flex">
+      <div className="mx-auto w-[375px] md:flex md:w-[1440px] lg:flex lg:w-[1440px]">
         <Image
           src="/assets/images/main-header-section-mask.png"
           alt="Shop Hero"
           width={1440}
           height={195}
-          className="h-[195px] w-[1440px] bg-black object-cover"
+          className="h-[50px] w-[375px] bg-black object-cover md:h-[195px] md:w-[1440px] lg:h-[195px] lg:w-[1440px]"
         />
       </div>
     </>

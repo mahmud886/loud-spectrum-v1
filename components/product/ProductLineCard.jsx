@@ -24,7 +24,7 @@ const ProductLineCard = ({ productVariant = 'Default' }) => {
     <div className="group cursor-pointer">
       <div
         className={cn(
-          'border-umbra-10 relative h-[408px] w-[305px] overflow-hidden border bg-[#F0F0F0] p-5 transition-colors duration-500 ease-in-out',
+          'border-umbra-10 relative h-[400px] w-full overflow-hidden border bg-[#F0F0F0] p-5 transition-colors duration-500 ease-in-out md:h-[408px] md:w-[305px] lg:h-[408px] lg:w-[305px]',
           'group-hover:border-transparent',
           `group-hover:${borderClass}`,
         )}
@@ -38,8 +38,8 @@ const ProductLineCard = ({ productVariant = 'Default' }) => {
         />
 
         {/* Top Button */}
-        <div className="relative z-10 flex justify-end">
-          <button className="outline-button-white border-umbra-10 group-hover:border-white-100 relative h-[37px] max-w-1/2 min-w-[147px] cursor-pointer overflow-hidden rounded-full border px-6 py-3 opacity-100 transition-all duration-200 ease-in-out group-hover:text-white">
+        <div className="relative z-10 flex justify-center md:justify-end lg:justify-end">
+          <button className="outline-button-white border-umbra-10 group-hover:border-white-100 relative h-[44px] w-full cursor-pointer overflow-hidden rounded-full border px-6 py-3 opacity-100 transition-all duration-200 ease-in-out group-hover:text-white md:h-[37px] md:max-w-1/2 md:min-w-[150px] lg:h-[37px] lg:max-w-1/2 lg:min-w-[150px]">
             <span className="absolute inset-0 flex items-center justify-center gap-2 transition-opacity duration-200 ease-in-out group-hover:opacity-0">
               {t('buttons.shopTheLine')} <ArrowRight />
             </span>
@@ -52,7 +52,7 @@ const ProductLineCard = ({ productVariant = 'Default' }) => {
         {/* Product Image */}
         <div className="relative z-10 my-4 flex items-center justify-center overflow-hidden group-hover:hidden">
           <Image
-            className="transition-scale h-[282px] w-[211px] object-cover duration-200 ease-in-out group-hover:scale-110"
+            className="transition-scale h-[250px] w-[161px] object-cover duration-200 ease-in-out group-hover:scale-110 md:h-[282px] md:w-[211px] lg:h-[282px] lg:w-[211px]"
             src="/assets/images/products/product-line-1.png"
             alt="Product"
             width={422}

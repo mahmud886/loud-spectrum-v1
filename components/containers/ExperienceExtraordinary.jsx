@@ -7,8 +7,8 @@ const ExperienceExtraordinary = () => {
   return (
     <>
       <div className="bg-umbra-100 container">
-        <div className="px-[188px] pt-[100px]">
-          <h2 className="bg-[linear-gradient(97.43deg,#101820_7.54%,#0077C8_45.72%,rgba(192,174,231,0.2)_83.43%,rgba(221,218,232,0)_100.19%)] bg-clip-text text-center text-[130px] leading-normal text-transparent">
+        <div className="pt-12 md:px-[188px] md:pt-[100px] lg:px-[188px] lg:pt-[100px]">
+          <h2 className="bg-[linear-gradient(97.43deg,#101820_7.54%,#0077C8_45.72%,rgba(192,174,231,0.2)_83.43%,rgba(221,218,232,0)_100.19%)] bg-clip-text text-center text-[50px] leading-normal text-transparent md:text-[130px] lg:text-[130px]">
             {t('Experience_Extraordinary')}
           </h2>
         </div>
