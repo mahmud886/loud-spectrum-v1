@@ -8,7 +8,7 @@ const TransitionAnimation = () => {
         src="/assets/images/transition-animation.png"
         width={1440}
         height={781}
-        className="h-[781px] w-[1440px] object-cover"
+        className="h-[400px] w-[375px] object-cover md:h-[781px] md:w-[1440px] lg:h-[781px] lg:w-[1440px]"
         alt="transition-animation"
       />
     </div>

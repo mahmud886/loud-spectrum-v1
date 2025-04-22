@@ -126,7 +126,7 @@ const Footer = () => {
         {/*for desktop*/}
         {/*============================================================================*/}
         {/*for mobile*/}
-        <div className="visible mx-auto w-full px-5 md:hidden">
+        <div className="visible mx-auto w-full md:hidden">
           <div className="flex flex-col gap-[80px] pt-[80px] pb-5">
             <div className="flex flex-col items-center justify-between">
               <div className="flex flex-col justify-between gap-10 pb-5">
@@ -163,9 +163,11 @@ const Footer = () => {
                       {t('The_lab')}
                     </Link>
                   </li>
-                  <Link href={`/about`} className="footer-text">
-                    {t('About')}
-                  </Link>
+                  <li>
+                    <Link href={`/about`} className="footer-text">
+                      {t('About')}
+                    </Link>
+                  </li>
                   <li>
                     <Link href={`/blog`} className="footer-text">
                       {t('Blog')}

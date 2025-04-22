@@ -44,15 +44,22 @@ const Navbar = ({ locale }) => {
     <>
       <nav className={`fixed top-0 left-0 z-50 w-full transition-colors duration-300 ${navBg} ${textColor}`}>
         <div
-          className={`container mx-auto flex items-center justify-between px-[80px] ${isScrolled ? 'py-5' : 'py-12'} transition-all duration-300`}
+          className={`lg-[80px] container mx-auto flex items-center justify-between px-5 md:px-[80px] ${isScrolled ? 'py-5' : 'py-12'} transition-all duration-300`}
         >
           <Link href={`/`}>
-            <Image src={logoSrc} alt="Logo" width={221} height={36} />
+            <Image
+              src={logoSrc}
+              alt="Logo"
+              width={221}
+              height={36}
+              className="h-[25px] w-[153px] cursor-pointer md:h-[36px] md:w-[221px] lg:h-[36px] lg:w-[221px]"
+              priority
+            />
           </Link>
           <div className="flex items-center gap-[30px]">
             <Link
               href={`/login`}
-              className={`mx-[5px] font-sans text-[20px] font-normal transition-colors duration-300 ease-in-out ${
+              className={`mx-[5px] hidden font-sans text-[20px] font-normal transition-colors duration-300 ease-in-out md:flex ${
                 isSpecialPath ? 'hover:text-umbra-40 text-[#191919]' : 'text-white-100 hover:text-white-40'
               }`}
             >
@@ -65,7 +72,7 @@ const Navbar = ({ locale }) => {
                 isSpecialPath ? 'hover:text-umbra-40 text-[#191919]' : 'text-white-100 hover:text-white-40'
               }`}
             >
-              {t('Cart')} <span className="text-inherit/60">(0)</span>
+              {t('Cart')} <span className="text-white-40">(0)</span>
             </Link>
             <MenuButton setMenuOpen={setMenuOpen} isSpecialPath={isSpecialPath} />
           </div>
