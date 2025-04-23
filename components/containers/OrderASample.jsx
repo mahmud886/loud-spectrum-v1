@@ -5,7 +5,7 @@ const OrderASample = () => {
 
   return (
     <div className="container">
-      <div className="pt-[100px] pb-[100px] md:p-[120px] md:pt-0 md:pb-0 lg:p-[120px] lg:pt-0 lg:pb-0">
+      <div className="py-20 md:py-[120px] lg:px-[120px]">
         <div className="flex flex-col items-center justify-between gap-5 md:flex-row lg:md:flex-row">
           <div className="flex min-w-full flex-col space-y-10 md:min-w-1/2 lg:md:min-w-1/2">
             <h2 className="text-umbra-100 font-sans text-[32px] leading-[120%] font-normal md:text-[44px] lg:text-[44px]">
@@ -13,11 +13,11 @@ const OrderASample = () => {
             </h2>
             <div className="block w-full md:hidden lg:hidden">
               <img
-                src="/assets/images/order-sample.png"
+                src="/assets/images/order-sample1.png"
                 alt="order-sample"
                 width={522}
                 height={474}
-                className="w-[335px] object-cover md:h-[582px] md:w-[522px] lg:h-[373px] lg:w-[522px]"
+                className="w-full object-cover md:h-[582px] md:w-[522px] lg:h-[373px] lg:w-[522px]"
               />
             </div>
             <div className="flex flex-col space-y-2.5">
@@ -48,6 +48,9 @@ const OrderASample = () => {
                 </p>
                 <div className="border-1"></div>
               </div>
+              <div className="mt-10">
+                <button className="main-button-black rounded-full px-6 py-2">Try a Sample Pack</button>
+              </div>
             </div>
           </div>
           <div className="hidden w-full md:block md:min-w-1/2 lg:block lg:min-w-1/2">
@@ -56,7 +59,7 @@ const OrderASample = () => {
               alt="order-sample"
               width={522}
               height={474}
-              className="w-[335px] object-cover md:h-[582px] md:w-[522px] lg:h-[373px] lg:w-[522px]"
+              className="h-[582px] w-[522px] object-cover"
             />
           </div>
         </div>
