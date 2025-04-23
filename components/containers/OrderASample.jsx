@@ -1,4 +1,5 @@
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 
 const OrderASample = () => {
   const t = useTranslations('Homepage');
@@ -49,7 +50,9 @@ const OrderASample = () => {
                 <div className="border-1"></div>
               </div>
               <div className="mt-10">
-                <button className="main-button-black rounded-full px-6 py-2">Try a Sample Pack</button>
+                <Link href={`/try-sample-pack`} className="main-button-black rounded-full px-6 py-2">
+                  Try a Sample Pack
+                </Link>
               </div>
             </div>
           </div>

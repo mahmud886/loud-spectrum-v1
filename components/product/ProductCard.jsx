@@ -5,7 +5,7 @@ const ProductCard = () => {
   const t = useTranslations('TerpeneShop.ProductCard');
   return (
     <div className="group cursor-pointer">
-      <div className="group-hover:border-umbra-100 h-[384px] w-[305px] border border-transparent bg-[#F0F0F0] p-5 transition-colors duration-200 ease-in-out 2xl:h-[510px] 2xl:w-[382px]">
+      <div className="group-hover:border-umbra-100 h-[384px] w-[305px] border border-transparent bg-[#F0F0F0] p-5 transition-colors duration-200 ease-in-out">
         <div className="flex justify-end">
           <button className="main-button-black rounded-full px-6 py-3 opacity-0 transition-opacity duration-200 ease-in-out group-hover:opacity-100">
             {t('buyNow')}
