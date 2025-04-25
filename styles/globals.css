@@ -232,6 +232,9 @@
 .bg-gradient-four-colors {
 	background-image: linear-gradient(to right, #101820 25%, #0077c8 50%, #b2a9f5 75%, #dddae8 100%);
 }
+.bg-gradient-four-colors {
+	background-image: linear-gradient(to right, #101820 25%, #0077c8 50%, #b2a9f5 75%, #dddae8 100%);
+}
 
 /*Special Button*/
 .special-button {

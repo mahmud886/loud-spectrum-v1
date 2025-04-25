@@ -1,11 +1,10 @@
-import WhatsNewProductSlider from '@/components/containers/new/WhatsNewProductSlider';
 import NewPageAnimation from '@/components/containers/new/NewPageAnimation';
 import NewPageCommingSoon from '@/components/containers/new/NewPageCommingSoon';
 
 const NewPage = () => {
   return (
     <>
-      <WhatsNewProductSlider />
+      {/*<WhatsNewProductSlider />*/}
       <NewPageAnimation />
       <NewPageCommingSoon />
     </>
