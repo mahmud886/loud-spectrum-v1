@@ -18,7 +18,7 @@ const TerpeneProductsContainer = () => {
           <RadioGroupButtons />
         </div>
         <div className="flex flex-col space-y-20">
-          <div className="grid min-w-[77%] grid-cols-3 gap-x-5 gap-y-20">
+          <div className="grid min-w-[77%] gap-x-5 gap-y-20 md:grid-cols-3">
             <ProductCard />
             <ProductCard />
             <ProductCard />

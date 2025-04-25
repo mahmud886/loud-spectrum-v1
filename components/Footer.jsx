@@ -5,7 +5,7 @@ import { Link } from '@/i18n/navigation';
 const Footer = () => {
   const t = useTranslations('');
   return (
-    <footer className="bg-umbra-100 text-white md:px-[80px] md:pt-[80px] md:pb-[50px]">
+    <footer className="bg-umbra-100 text-white md:px-[80px] md:pt-[80px] md:pb-[50px] lg:px-[40px] xl:px-[40px]">
       <div className="container">
         {/*for desktop*/}
         <div className="hidden flex-col justify-center space-y-[150px] md:flex">

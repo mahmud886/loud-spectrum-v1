@@ -24,7 +24,7 @@ const ProductLineCard = ({ productVariant = 'Default' }) => {
     <div className="group cursor-pointer">
       <div
         className={cn(
-          'border-umbra-10 relative h-[400px] w-full overflow-hidden border bg-[#F0F0F0] p-5 transition-colors duration-500 ease-in-out md:h-[408px] md:w-[305px] lg:h-[408px] lg:w-[305px]',
+          'border-umbra-10 md:h-h-[408px] relative h-[400px] w-full overflow-hidden border bg-[#F0F0F0] p-5 transition-colors duration-500 ease-in-out md:w-full lg:h-[408px] lg:w-full xl:h-[408px]',
           'group-hover:border-transparent',
           `group-hover:${borderClass}`,
         )}

@@ -163,7 +163,7 @@
 
 @layer components {
 	.container {
-		@apply mx-auto px-[20px] xl:px-[80px] md:px-[80px];
+		@apply mx-auto px-[20px] xl:px-[80px] lg:px-[40px] md:px-[40px];
 	}
 	
 	.heading-6 {
@@ -229,6 +229,9 @@
 	color: transparent;
 }
 
+.bg-gradient-four-colors {
+	background-image: linear-gradient(to right, #101820 25%, #0077c8 50%, #b2a9f5 75%, #dddae8 100%);
+}
 .bg-gradient-four-colors {
 	background-image: linear-gradient(to right, #101820 25%, #0077c8 50%, #b2a9f5 75%, #dddae8 100%);
 }

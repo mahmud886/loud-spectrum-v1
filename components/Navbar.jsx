@@ -44,7 +44,7 @@ const Navbar = ({ locale }) => {
     <>
       <nav className={`fixed top-0 left-0 z-50 w-full transition-colors duration-300 ${navBg} ${textColor}`}>
         <div
-          className={`lg-[80px] container mx-auto flex items-center justify-between px-5 md:px-[80px] ${isScrolled ? 'py-5' : 'py-12'} transition-all duration-300`}
+          className={`container mx-auto flex items-center justify-between px-5 md:px-[40px] lg:px-[40px] xl:px-[80px] ${isScrolled ? 'py-5' : 'py-12'} transition-all duration-300`}
         >
           <Link href={`/`}>
             <Image
