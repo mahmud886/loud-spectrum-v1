@@ -89,13 +89,48 @@
     "hybridAlt": "Producto Híbrido"
   },
   "WhatAreTerpenesSlider": {
-    "classic": {
-      "description": "Classic es la línea original de terpenos específicos por cepa, diseñada para precisión y versatilidad. Elaborado con terpenos botánicos 100% naturales, Classic ofrece el efecto séquito sin un aroma abrumador. Ya sea que busques perfiles puros de cepa o un sutil toque afrutado, esta línea ofrece una manera sencilla y precisa de infundir terpenos en tus productos.",
+    "alive": {
+      "description": "Alive es el máximo lujo en terpenos: puro, raro y perfeccionado a lo largo de los años. Extraído de flores frescas en menos de una hora después de la cosecha, esta línea premium conserva el aroma y la complejidad únicos de cada variedad. Nunca diluido ni mezclado, cada lote es una cosecha única que muchos clientes aseguran anualmente para mantener la consistencia.",
       "quickFacts": "Datos rápidos:",
       "facts": [
         "Inventado en 2018",
-        "Contiene más de 100 ingredientes por perfil",
-        "Huele fuertemente a cannabis",
+        "Precio premium",
+        "Puede ser CDT (terpeno derivado de cannabis) o HDT (derivado de cáñamo)",
+        "Extraído internamente a través de asociaciones exclusivas con cultivadores"
+      ],
+      "shop": "Comprar Alive",
+      "label": "Alive"
+    },
+    "dank": {
+      "description": "Dank es la primera línea de terpenos para conocedores que entrega la esencia rica y skunky del cannabis, sin contener cannabis. Hecho de botánicos 100% naturales, ofrece un aroma y sabor intensos. Desde opciones frutales como Raspberry Dream hasta clásicos como OG Kush y Sour Diesel, Dank trae potencia a un precio inmejorable.",
+      "quickFacts": "Datos rápidos:",
+      "facts": [
+        "Inventado en 2018",
+        "Más de 100 ingredientes por perfil",
+        "Huele intensamente a cannabis",
+        "Ideal para usuarios recreativos"
+      ],
+      "shop": "Comprar Dank",
+      "label": "Dank"
+    },
+    "sweet": {
+      "description": "Sweet es una línea de terpenos para los amantes de los sabores audaces y afrutados con un toque de dulzura. Desde jugoso mango hasta fresa madura, estos perfiles aportan dulzura a cualquier producto. Perfecto para potenciar, mezclar o crear algo nuevo: Sweet ofrece el sabor que no sabías que necesitabas.",
+      "quickFacts": "Datos rápidos:",
+      "facts": [
+        "Perfil más solicitado",
+        "Más de 100 ingredientes por perfil",
+        "Puede personalizarse para añadir aroma a cannabis"
+      ],
+      "shop": "Comprar Sweet",
+      "label": "Sweet"
+    },
+    "classic": {
+      "description": "Classic es la línea original de terpenos específicos de cepa, diseñada para precisión y versatilidad. Hecha de terpenos 100% botánicos, ofrece el efecto séquito sin un aroma abrumador. Ideal tanto para perfilar variedades puras como para añadir un sutil toque frutal a tus productos.",
+      "quickFacts": "Datos rápidos:",
+      "facts": [
+        "Inventado en 2018",
+        "Más de 100 ingredientes por perfil",
+        "Huele intensamente a cannabis",
         "Ideal para usuarios recreativos"
       ],
       "shop": "Comprar Classic",

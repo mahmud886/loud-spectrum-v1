@@ -89,18 +89,6 @@
     "hybridAlt": "Hybrid Product"
   },
   "WhatAreTerpenesSlider": {
-    "classic": {
-      "description": "Classic is the original strain-specific terpene line, designed for precision and versatility. Made from 100% natural, botanically derived terpenes, Classic delivers the entourage effect without an overpowering aroma. Whether you’re after pure strain profiles or a subtle fruity twist, this line offers a seamless way to infuse terpenes into your products with accuracy and ease.",
-      "quickFacts": "Quick Facts:",
-      "facts": [
-        "Invented in 2018",
-        "Contains over 100 ingredients per profile",
-        "Smells strongly of cannabis",
-        "Ideal for recreational users"
-      ],
-      "shop": "Shop Classic",
-      "label": "Classic"
-    },
     "alive": {
       "description": "Alive is the pinnacle of terpene luxury—pure, rare, and perfected over years of production. Extracted from fresh flower within an hour of picking, this premium line preserves the delicate, full-bodied aroma and complexity of each strain. Never diluted or cut with other products, every batch is a unique vintage, making it a sought-after choice for those who demand the finest. Many customers secure their supply annually to ensure consistency across their products.",
       "quickFacts": "Quick Facts:",
@@ -135,6 +123,18 @@
       ],
       "shop": "Shop Sweet",
       "label": "Sweet"
+    },
+    "classic": {
+      "description": "Classic is the original strain-specific terpene line, designed for precision and versatility. Made from 100% natural, botanically derived terpenes, Classic delivers the entourage effect without an overpowering aroma. Whether you’re after pure strain profiles or a subtle fruity twist, this line offers a seamless way to infuse terpenes into your products with accuracy and ease.",
+      "quickFacts": "Quick Facts:",
+      "facts": [
+        "Invented in 2018",
+        "Contains over 100 ingredients per profile",
+        "Smells strongly of cannabis",
+        "Ideal for recreational users"
+      ],
+      "shop": "Shop Classic",
+      "label": "Classic"
     }
   },
   "TerpeneShop": {
