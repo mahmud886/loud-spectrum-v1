@@ -27,10 +27,6 @@ const TerpenePieChart = ({ terpeneData }) => {
     },
   };
 
-  // if (fillColor.includes('url(#firstTwoGradient)')) {
-  //   fillColor = '#101820';
-  // }
-
   return (
     <div className="flex w-full flex-col items-center justify-center gap-8 md:flex-row md:gap-12">
       {/* Chart First */}
@@ -59,7 +55,7 @@ const TerpenePieChart = ({ terpeneData }) => {
       <div className="hidden w-full pr-4 text-left md:order-1 md:block md:w-auto">
         <h2 className="text-umbra-100 text-lg font-semibold">Terpene Breakdown</h2>
         <ul className="text-umbra-40 space-y-2 text-sm">
-          {leftData.map((item, index) => (
+          {leftData.map((item) => (
             <li key={item.name} className="flex items-center gap-2">
               <span
                 className="h-3 w-3 rounded-full"
@@ -79,7 +75,7 @@ const TerpenePieChart = ({ terpeneData }) => {
       <div className="hidden w-full text-left md:order-3 md:block md:w-auto md:pl-4">
         <h2 className="text-umbra-100 text-lg font-semibold">Terpene Breakdown</h2>
         <ul className="text-umbra-40 space-y-2 text-sm">
-          {rightData.map((item, index) => (
+          {rightData.map((item) => (
             <li key={item.name} className="flex items-center gap-2">
               <span
                 className="h-3 w-3 rounded-full"
@@ -98,7 +94,7 @@ const TerpenePieChart = ({ terpeneData }) => {
       {/* Right Side Text sp mode */}
       <div className="flex w-full items-center justify-between p-6 text-center md:order-2 md:hidden">
         <ul className="text-umbra-40 space-y-2 text-sm">
-          {leftData.map((item, index) => (
+          {leftData.map((item) => (
             <li key={item.name} className="flex items-center gap-2">
               <span
                 className="h-3 w-3 rounded-full"
@@ -113,7 +109,7 @@ const TerpenePieChart = ({ terpeneData }) => {
           ))}
         </ul>
         <ul className="text-umbra-40 space-y-2 text-sm">
-          {rightData.map((item, index) => (
+          {rightData.map((item) => (
             <li key={item.name} className="flex items-center gap-2">
               <span
                 className="h-3 w-3 rounded-full"
