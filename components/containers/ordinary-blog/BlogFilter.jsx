@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,12 +9,14 @@ import {
 
 const BlogFilter = () => {
   return (
-    <div>
+    <div className="w-full sm:w-auto">
       <DropdownMenu>
-        <DropdownMenuTrigger>
-          <p className="outline-button-white border-umbra-10 rounded-md border-1 px-6 py-2">Filter</p>
+        <DropdownMenuTrigger className="w-full sm:w-auto">
+          <p className="outline-button-white border-umbra-10 w-full rounded-md border-1 px-6 py-2 text-center">
+            Filter
+          </p>
         </DropdownMenuTrigger>
-        <DropdownMenuContent>
+        <DropdownMenuContent className="w-[200px]">
           <DropdownMenuLabel>Filter</DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuItem>Filter</DropdownMenuItem>
