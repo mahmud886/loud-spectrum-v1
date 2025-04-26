@@ -3,9 +3,9 @@ import RightSlideLists from './RightSlideLists';
 
 const BlogContents = () => {
   return (
-    <div className="flex justify-between gap-[160px] py-[80px]">
-      <div className="max-w-[58%]">
-        <h2 className="text-umbra-100 mb-4 font-sans text-[44px] leading-[120%] font-normal tracking-normal">
+    <div className="flex flex-col justify-between gap-20 py-[80px] md:flex-row md:gap-[160px]">
+      <div className="md:max-w-[58%]">
+        <h2 className="text-umbra-100 mb-4 font-sans text-[26px] leading-[120%] font-normal tracking-normal md:text-[44px]">
           Lorem ipsum dolor sit amet, consectetur.
         </h2>
         <p className="text-umbra-100 font-sans text-[16px] leading-[140%] font-normal tracking-normal">
@@ -29,11 +29,11 @@ const BlogContents = () => {
           est laborum
         </p>{' '}
         <br />
-        <h5 className="text-umbra-100 mb-4 font-sans text-[35px] leading-[130%] font-normal tracking-normal">
+        <h5 className="text-umbra-100 mb-4 font-sans text-[26px] leading-[130%] font-normal tracking-normal md:text-[35px]">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam.
         </h5>
-        <div className="pt-10 pb-[100px]">
+        <div className="pt-10 pb-6 md:pb-[100px]">
           <Image
             width={743}
             height={435}
@@ -44,7 +44,7 @@ const BlogContents = () => {
 
           <div className="mt-20">
             <div className="flex flex-col space-y-5">
-              <h5 className="text-umbra-100 mb-4 font-sans text-[32px] leading-[120%] font-normal tracking-normal">
+              <h5 className="text-umbra-100 mb-4 font-sans text-[26px] leading-[120%] font-normal tracking-normal md:text-[32px]">
                 Lorem ipsum dolor sit amet, consectetur.
               </h5>
               <p className="text-umbra-100 font-sans text-[16px] leading-[140%] font-normal tracking-normal">
@@ -55,33 +55,33 @@ const BlogContents = () => {
                 deserunt mollit anim id est laborum
               </p>
             </div>
-            <div className="mt-20 flex gap-3">
+            <div className="mt-20 flex flex-col gap-3 md:flex-row">
               <Image
                 width={240}
                 height={246}
                 src="/assets/images/blog/single-blog3.png"
-                className="h-[256px] w-[240px] object-cover"
+                className="h-full w-full object-cover md:h-[256px] md:w-[240px]"
                 alt="blog-image2"
               />
               <Image
                 width={240}
                 height={246}
                 src="/assets/images/blog/single-blog3.png"
-                className="h-[256px] w-[240px] object-cover"
+                className="h-full w-full object-cover md:h-[256px] md:w-[240px]"
                 alt="blog-image2"
               />
               <Image
                 width={240}
                 height={246}
                 src="/assets/images/blog/single-blog3.png"
-                className="h-[256px] w-[240px] object-cover"
+                className="h-full w-full object-cover md:h-[256px] md:w-[240px]"
                 alt="blog-image2"
               />
             </div>
           </div>
         </div>
       </div>
-      <div className="max-w-[45%]">
+      <div className="w-full md:max-w-[45%]">
         <RightSlideLists />
       </div>
     </div>
