@@ -1,23 +1,29 @@
 import Image from 'next/image';
+import { Link } from '@/i18n/navigation';
 
 const BlogCard = () => {
   return (
-    <div className="flex flex-col justify-between space-y-6">
-      <div className="group relative">
+    <div className="group flex flex-col justify-between space-y-6">
+      <div className="relative">
         <div>
           <div className="overflow-hidden">
-            <Image
-              src="/assets/images/blog/single-blog.png"
-              alt="blog-image-featuted"
-              width={413}
-              height={380}
-              className="block h-auto w-[413px] object-cover transition-transform duration-500 group-hover:scale-110"
-            />
+            <Link href={`/blog/1`} className="group w-full">
+              <Image
+                src="/assets/images/blog/single-blog.png"
+                alt="blog-image-featuted"
+                width={413}
+                height={380}
+                className="block h-auto w-[413px] object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+            </Link>
           </div>
           <div className="absolute top-[8%] right-[5%]">
-            <button className="outline-button-black !md:text-[17px] cursor-pointer rounded-full px-3 py-1 !text-[14px] md:px-6 md:py-2">
+            <Link
+              href={`/blog/1`}
+              className="outline-button-black !md:text-[17px] cursor-pointer rounded-full px-3 py-1 !text-[14px] md:px-6 md:py-2"
+            >
               Read More
-            </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -32,9 +38,11 @@ const BlogCard = () => {
           </div>
         </div>
       </div>
-      <h2 className="text-umbra-100 font-sans text-[18px] leading-[130%] font-normal tracking-normal md:text-[22px]">
-        Terpene-Infused Products That You Can Make At Home: Oils, And Candles
-      </h2>
+      <Link href={`/blog/1`} className="group w-full">
+        <h2 className="text-umbra-100 group-hover:text-umbra-40 font-sans text-[18px] leading-[130%] font-normal tracking-normal transition-colors duration-300 md:text-[28px]">
+          Terpene-Infused Products That You Can Make At Home: Oils, And Candles
+        </h2>
+      </Link>
     </div>
   );
 };
