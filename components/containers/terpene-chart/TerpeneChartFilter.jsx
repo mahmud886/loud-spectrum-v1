@@ -13,7 +13,7 @@ const TerpeneChartFilter = () => {
   return (
     <div className="w-full">
       <div className="flex flex-col-reverse justify-between gap-4 md:flex-row md:items-center md:gap-0">
-        <h2 className="text-umbra-100 text-left font-sans text-[26px] leading-[120%] font-normal tracking-normal md:text-center md:text-left md:text-[32px]">
+        <h2 className="text-umbra-100 text-left font-sans text-[26px] leading-[120%] font-normal tracking-normal md:text-left md:text-[32px]">
           {selectedStrainData?.name || ''}
         </h2>
         <TerpeneSelection value={selectedStrain} onChange={setSelectedStrain} />

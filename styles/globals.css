@@ -171,7 +171,7 @@
   }
 
   .navLinkClass {
-    @apply text-umbra-100 hover:text-umbra-40 font-mono text-[40px] leading-[100%] font-normal transition-colors duration-300 ease-in-out;
+    @apply text-umbra-100 hover:text-umbra-40 font-sans text-[32px] md:text-[40px] leading-[100%] font-normal transition-colors duration-300 ease-in-out;
   }
 
   .main-gradient {
