@@ -1,3 +1,4 @@
+import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
 
 const SideBlogs = () => {
@@ -25,15 +26,17 @@ const SideBlogs = () => {
   return (
     <div>
       {blogPosts.map((post, index) => (
-        <div key={index} className={`${index !== 0 ? 'border-umbra-40 border-t py-5' : 'pb-5'}`}>
-          <div className="flex flex-col items-center gap-5 overflow-hidden bg-white md:flex-row">
-            <Image
-              width={177}
-              height={150}
-              src={post.imageUrl}
-              alt={post.title}
-              className="h-auto w-[177px] object-cover"
-            />
+        <div key={index} className={`group mt-10 md:mt-0 ${index !== 0 ? 'border-umbra-40 border-t py-5' : 'pb-5'}`}>
+          <div className="flex flex-col items-center gap-5 overflow-hidden bg-white transition-all duration-300 md:flex-row">
+            <Link href={`/blog/1`} className="w-full overflow-hidden md:w-[177px]">
+              <Image
+                width={177}
+                height={150}
+                src={post.imageUrl}
+                alt={post.title}
+                className="h-auto w-full object-cover transition-transform duration-500 group-hover:scale-115 md:w-[177px]"
+              />
+            </Link>
             <div className="flex flex-1 flex-col justify-between">
               <div className="flex flex-col justify-between gap-5">
                 <div className="mb-2 flex items-center gap-5">
@@ -42,9 +45,11 @@ const SideBlogs = () => {
                   </button>
                   <p className="text-umbra-100 font-mono text-[14px] leading-[130%] font-normal">{post.date}</p>
                 </div>
-                <h2 className="text-umbra-100 font-sans text-[22px] leading-[130%] font-normal tracking-normal">
-                  {post.title}
-                </h2>
+                <Link href={`/blog/1`} className="group w-full">
+                  <h2 className="text-umbra-100 group-hover:text-umbra-40 font-sans text-[18px] leading-[130%] font-normal tracking-normal transition-colors duration-300 md:text-[22px]">
+                    {post.title}
+                  </h2>
+                </Link>
               </div>
             </div>
           </div>

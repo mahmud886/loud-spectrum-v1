@@ -1,6 +1,5 @@
-import React from 'react';
-import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 
 const PickYourPace = () => {
   const t = useTranslations('PickYourPace');
@@ -8,60 +7,70 @@ const PickYourPace = () => {
   return (
     <div className="container">
       <div className="py-[140px]">
-        <div className="space-y-10">
-          <h5 className="text-umbra-100 font-sans text-[16px] leading-[100%] font-normal tracking-normal uppercase">
+        <div className="space-y-4 pb-10 md:space-y-10 md:pb-0">
+          <h5 className="text-umbra-100 font-sans text-[14px] leading-[100%] font-normal tracking-normal uppercase md:text-[16px]">
             {t('title')}
           </h5>
-          <h6 className="w-1/2 font-sans text-[44px] leading-[120%] font-normal tracking-normal">{t('subtitle')}</h6>
+          <h6 className="w-full font-sans text-[44px] leading-[120%] font-normal tracking-normal md:w-1/2">
+            {t('subtitle')}
+          </h6>
         </div>
-        <div className="mt-12 flex space-x-5">
+        <div className="mt-12 flex flex-col items-center justify-center gap-6 md:flex-row">
           <div className="group relative">
-            <div className="">
-              <div className="overflow-hidden transition-transform duration-500">
+            <div className="overflow-hidden">
+              <div className="transition-transform duration-500 group-hover:scale-110">
                 <Image
-                  src="/assets/images/what-are-terpenes-product.png"
+                  src="/assets/images/terpene-guide/active.jpg"
                   alt={t('activeAlt')}
                   width={414}
                   height={408}
-                  className="block h-auto w-[414px] object-cover group-hover:scale-110"
+                  className="block h-[408px] w-[414px] object-cover"
                 />
               </div>
-              <div className="absolute top-[5%] right-[5%]">
-                <button className="outline-button-black rounded-full px-6 py-2">{t('shopActive')}</button>
-              </div>
             </div>
-            <h2 className="text-umbra-100 mt-5 font-sans text-[32px] leading-[120%]">{t('active')}</h2>
+            <div className="absolute bottom-[12%] w-full px-5 pb-5 md:top-[5%] md:right-[5%] md:bottom-auto md:w-auto md:px-0 md:pb-0">
+              <button className="outline-button-black w-full rounded-full px-6 py-2 md:w-auto">
+                {t('shopActive')}
+              </button>
+            </div>
+            <h2 className="text-umbra-100 mt-5 cursor-pointer font-sans text-[32px] leading-[120%]">{t('active')}</h2>
           </div>
+
           <div className="group relative">
-            <div className="">
-              <div className="overflow-hidden transition-transform duration-500">
+            <div className="overflow-hidden">
+              <div className="transition-transform duration-500 group-hover:scale-110">
                 <Image
-                  src="/assets/images/what-are-terpenes-product.png"
+                  src="/assets/images/terpene-guide/relaxed.jpg"
                   alt={t('relaxedAlt')}
                   width={414}
                   height={408}
-                  className="block h-auto w-[414px] object-cover group-hover:scale-110"
+                  className="block h-[408px] w-[414px] object-cover group-hover:scale-110"
                 />
               </div>
-              <div className="absolute top-[5%] right-[5%]">
-                <button className="outline-button-black rounded-full px-6 py-2">{t('shopRelaxed')}</button>
+
+              <div className="absolute bottom-[12%] w-full px-5 pb-5 md:top-[5%] md:right-[5%] md:bottom-auto md:w-auto md:px-0 md:pb-0">
+                <button className="outline-button-black w-full rounded-full px-6 py-2 md:w-auto">
+                  {t('shopRelaxed')}
+                </button>
               </div>
             </div>
             <h2 className="text-umbra-100 mt-5 font-sans text-[32px] leading-[120%]">{t('relaxed')}</h2>
           </div>
           <div className="group relative">
-            <div className="">
-              <div className="overflow-hidden transition-transform duration-500">
+            <div className="overflow-hidden">
+              <div className="transition-transform duration-500 group-hover:scale-110">
                 <Image
-                  src="/assets/images/what-are-terpenes-product.png"
+                  src="/assets/images/terpene-guide/hybrid.jpg"
                   alt={t('hybridAlt')}
                   width={414}
                   height={408}
-                  className="block h-auto w-[414px] object-cover group-hover:scale-110"
+                  className="block h-[408px] w-[414px] object-cover group-hover:scale-110"
                 />
               </div>
-              <div className="absolute top-[5%] right-[5%]">
-                <button className="outline-button-black rounded-full px-6 py-2">{t('shopHybrid')}</button>
+              <div className="absolute bottom-[12%] w-full px-5 pb-5 md:top-[5%] md:right-[5%] md:bottom-auto md:w-auto md:px-0 md:pb-0">
+                <button className="outline-button-black w-full rounded-full px-6 py-2 md:w-auto">
+                  {t('shopHybrid')}
+                </button>
               </div>
             </div>
             <h2 className="text-umbra-100 mt-5 font-sans text-[32px] leading-[120%]">{t('hybrid')}</h2>

@@ -22,10 +22,10 @@ const ContactFormSection = () => {
           </div>
         </div>
 
-        <div className="px-6 md:px-0">
+        <div className="mt-4 md:mt-0 md:px-0">
           <div className="space-y-12">
             <div className="space-y-6">
-              <h2 className="text-umbra-100 font-sans text-[44px] leading-[120%] font-normal">
+              <h2 className="text-umbra-100 font-sans text-[32px] leading-[120%] font-normal md:text-[44px]">
                 {t('contactForm.title')}
               </h2>
               <p className="text-umbra-100 font-sans text-[16px] leading-[140%] font-normal">
@@ -37,7 +37,7 @@ const ContactFormSection = () => {
               <p className="text-umbra-100 mb-6 font-sans text-[16px] leading-[140%] font-normal">
                 {t('contactForm.requiredNote')}
               </p>
-              <div className="flex justify-between gap-4">
+              <div className="flex flex-col justify-between gap-4 md:flex-row">
                 <Input
                   type="text"
                   placeholder={t('contactForm.namePlaceholder')}

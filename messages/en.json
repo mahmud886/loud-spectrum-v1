@@ -89,6 +89,41 @@
     "hybridAlt": "Hybrid Product"
   },
   "WhatAreTerpenesSlider": {
+    "alive": {
+      "description": "Alive is the pinnacle of terpene luxury—pure, rare, and perfected over years of production. Extracted from fresh flower within an hour of picking, this premium line preserves the delicate, full-bodied aroma and complexity of each strain. Never diluted or cut with other products, every batch is a unique vintage, making it a sought-after choice for those who demand the finest. Many customers secure their supply annually to ensure consistency across their products.",
+      "quickFacts": "Quick Facts:",
+      "facts": [
+        "Invented in 2018",
+        "Premium pricing",
+        "Can be CDT (cannabis derived terpene) or HDT (hemp derived terpene)",
+        "Extracted in-house through exclusive partnerships with growers"
+      ],
+      "shop": "Shop Alive",
+      "label": "Alive"
+    },
+    "dank": {
+      "description": "Dank is the first-of-its-kind connoisseur terpene line, delivering the rich, skunky essence of cannabis—without the cannabis. Made from 100% natural botanicals, these terpenes pack a potent punch with full-bodied aroma and flavor. From fruity twists like Raspberry Dream to legendary strains like OG Kush and Sour Diesel, Dank brings the gas at an unbeatable value.",
+      "quickFacts": "Quick Facts:",
+      "facts": [
+        "Invented in 2018",
+        "Contains over 100 ingredients per profile",
+        "Smells strongly of cannabis",
+        "Ideal for recreational users"
+      ],
+      "shop": "Shop Dank",
+      "label": "Dank"
+    },
+    "sweet": {
+      "description": "Indulge your senses with Sweet—a terpene line made for those who crave bold, fruity flavors with a candy-like kick. From juicy mango to ripe strawberry (and everything in between), these profiles bring a burst of sweetness to any product. Whether you're looking to enhance, mix, or create something entirely new, Sweet delivers the flavor you didn’t know you needed—but won’t want to go without.",
+      "quickFacts": "Quick Facts:",
+      "facts": [
+        "Most requested profile",
+        "Contains over 100 ingredients per profile",
+        "Can be customized to add cannabis aroma"
+      ],
+      "shop": "Shop Sweet",
+      "label": "Sweet"
+    },
     "classic": {
       "description": "Classic is the original strain-specific terpene line, designed for precision and versatility. Made from 100% natural, botanically derived terpenes, Classic delivers the entourage effect without an overpowering aroma. Whether you’re after pure strain profiles or a subtle fruity twist, this line offers a seamless way to infuse terpenes into your products with accuracy and ease.",
       "quickFacts": "Quick Facts:",

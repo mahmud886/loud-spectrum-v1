@@ -6,32 +6,36 @@ import { useEffect, useRef, useState } from 'react';
 import TopNavLeft from './navbar/TopNavLeft';
 import TopNavMiddle from './navbar/TopNavMiddle';
 import TopNavRight from './navbar/TopNavRight';
+import MobileNav from '@/components/navbar/MobileNav';
 
 const TopNav = ({ setMenuOpen, menuOpen }) => {
   const t = useTranslations('');
   const [shouldRender, setShouldRender] = useState(true);
   const menuRef = useRef(null);
 
-  // When exit animation finishes, call setMenuOpen(false)
   const handleClose = () => {
     setShouldRender(false);
   };
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setMenuOpen(false);
+    const handleClick = (event) => {
+      if (menuRef.current) {
+        if (!menuRef.current.contains(event.target)) {
+          setMenuOpen(false);
+        }
+        if (menuRef.current.contains(event.target) && event.target.tagName === 'A') {
+          setShouldRender(false);
+        }
       }
     };
     if (menuOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('mousedown', handleClick);
     }
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('mousedown', handleClick);
     };
   }, [menuOpen]);
 
-  // After exit animation (200ms), unmount completely
   useEffect(() => {
     if (!shouldRender) {
       const timer = setTimeout(() => {
@@ -44,51 +48,79 @@ const TopNav = ({ setMenuOpen, menuOpen }) => {
   return (
     <AnimatePresence>
       {shouldRender && (
-        <motion.div
-          initial={{ height: 0 }}
-          animate={{ height: 554 }}
-          exit={{ height: 0 }}
-          transition={{ duration: 0.2, ease: 'easeInOut' }}
-          className="fixed top-0 right-0 left-0 z-50 overflow-hidden"
-        >
-          <div
-            className="divide-umbra-40 mx-auto grid h-full w-[1440px] grid-cols-1 divide-x text-black md:grid-cols-3"
-            // ref={menuRef}
-          >
-            {/* Left Section */}
+        <>
+          {/* For Larger Devices */}
+          <div className="hidden md:block">
             <motion.div
-              initial={{ y: -50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1, height: 554 }}
-              exit={{ y: -50, opacity: 0 }}
-              transition={{ duration: 0.4, delay: 0.2 }}
-              className="flex w-[480px] flex-col items-start gap-6 bg-white py-[50px] pr-[60px] pl-[80px]"
+              initial={{ height: 0 }}
+              animate={{ height: 554 }}
+              exit={{ height: 0 }}
+              transition={{ duration: 0.2, ease: 'easeInOut' }}
+              className="fixed top-0 right-0 left-0 z-50 overflow-hidden"
+              ref={menuRef}
             >
-              <TopNavLeft />
-            </motion.div>
+              <div className="divide-umbra-40 mx-auto grid h-full w-full grid-cols-1 divide-x text-black md:w-[1440px] md:grid-cols-3">
+                {/* Left Section */}
+                <motion.div
+                  initial={{ y: -50, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1, height: 554 }}
+                  exit={{ y: -50, opacity: 0 }}
+                  transition={{ duration: 0.4, delay: 0.2 }}
+                  className="flex w-[480px] flex-col items-start gap-6 bg-white py-[50px] pr-[60px] pl-[80px]"
+                >
+                  <TopNavLeft />
+                </motion.div>
 
-            {/* Middle Section */}
-            <motion.div
-              initial={{ y: -50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1, height: 554 }}
-              exit={{ y: -50, opacity: 0 }}
-              transition={{ duration: 0.4, delay: 0.3 }}
-              className="flex w-[480px] flex-col gap-6 bg-white px-[60px] pt-[120px] pb-[50px] pl-[60px] text-4xl font-semibold"
-            >
-              <TopNavMiddle />
-            </motion.div>
+                {/* Middle Section */}
+                <motion.div
+                  initial={{ y: -50, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1, height: 554 }}
+                  exit={{ y: -50, opacity: 0 }}
+                  transition={{ duration: 0.4, delay: 0.3 }}
+                  className="flex w-[480px] flex-col gap-6 bg-white px-[60px] pt-[120px] pb-[50px] pl-[60px] text-4xl font-semibold"
+                >
+                  <TopNavMiddle />
+                </motion.div>
 
-            {/* Right Section */}
-            <motion.div
-              initial={{ y: -50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1, height: 554 }}
-              exit={{ y: -50, opacity: 0 }}
-              transition={{ duration: 0.4, delay: 0.3 }}
-              className="w-[480px] bg-white py-[50px] pr-[80px] pl-[60px]"
-            >
-              <TopNavRight onClose={handleClose} />
+                {/* Right Section */}
+                <motion.div
+                  initial={{ y: -50, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1, height: 554 }}
+                  exit={{ y: -50, opacity: 0 }}
+                  transition={{ duration: 0.4, delay: 0.3 }}
+                  className="w-[480px] bg-white py-[50px] pr-[80px] pl-[60px]"
+                >
+                  <TopNavRight onClose={handleClose} />
+                </motion.div>
+              </div>
             </motion.div>
           </div>
-        </motion.div>
+
+          {/* For Mobile Devices */}
+          <div className="md:hidden">
+            <motion.div
+              initial={{ height: 0 }}
+              animate={{ height: '100vh' }}
+              exit={{ height: 0 }}
+              transition={{ duration: 0.2, ease: 'easeInOut' }}
+              className="fixed top-0 right-0 left-0 z-50 overflow-hidden"
+              ref={menuRef}
+            >
+              <div className="divide-umbra-40 flex h-screen w-full flex-col divide-y text-black">
+                {/* Right Section */}
+                <motion.div
+                  initial={{ y: -50, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -50, opacity: 0 }}
+                  transition={{ duration: 0.4, delay: 0.3 }}
+                  className="h-screen w-full bg-white px-5 py-12"
+                >
+                  <MobileNav onClose={handleClose} />
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </>
       )}
     </AnimatePresence>
   );

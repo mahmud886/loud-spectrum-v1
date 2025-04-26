@@ -72,7 +72,7 @@ const Navbar = ({ locale }) => {
                 isSpecialPath ? 'hover:text-umbra-40 text-[#191919]' : 'text-white-100 hover:text-white-40'
               }`}
             >
-              {t('Cart')} <span className="text-white-40">(0)</span>
+              {t('Cart')} <span className={`${isSpecialPath ? 'text-umbra-40' : 'text-white-40'}`}>(0)</span>
             </Link>
             <MenuButton setMenuOpen={setMenuOpen} isSpecialPath={isSpecialPath} />
           </div>

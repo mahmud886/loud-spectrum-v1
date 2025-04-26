@@ -89,16 +89,51 @@
     "hybridAlt": "Hybrid-Produkt"
   },
   "WhatAreTerpenesSlider": {
-    "classic": {
-      "description": "Classic ist die ursprüngliche, strainspezifische Terpenlinie, die für Präzision und Vielseitigkeit entwickelt wurde. Hergestellt aus 100 % natürlichen, botanisch gewonnenen Terpenen, liefert Classic den Entourage-Effekt ohne überwältigendes Aroma. Ob reine Strain-Profile oder eine dezente fruchtige Note – diese Linie bietet eine nahtlose Möglichkeit, Terpene präzise in Produkte zu integrieren.",
-      "quickFacts": "Schnelle Fakten:",
+    "alive": {
+      "description": "Alive ist der Inbegriff von Terpen-Luxus – rein, selten und über Jahre perfektioniert. Innerhalb einer Stunde nach der Ernte aus frischen Blüten extrahiert, bewahrt diese Premium-Linie das volle Aroma und die Komplexität jeder Sorte. Niemals verdünnt oder mit anderen Produkten vermischt, ist jede Charge ein einzigartiger Jahrgang, der von Kennern geschätzt wird. Viele Kunden sichern sich jährlich ihre Vorräte, um Konsistenz zu gewährleisten.",
+      "quickFacts": "Kurzinfos:",
       "facts": [
-        "Erfunden im Jahr 2018",
-        "Enthält über 100 Inhaltsstoffe pro Profil",
-        "Riecht stark nach Cannabis",
-        "Ideal für Freizeitkonsumenten"
+        "Erfunden 2018",
+        "Premium-Preis",
+        "Kann CDT (Cannabis-abgeleitete Terpene) oder HDT (Hanf-abgeleitete Terpene) sein",
+        "In-house extrahiert durch exklusive Partnerschaften mit Anbauern"
       ],
-      "shop": "Classic kaufen",
+      "shop": "Alive einkaufen",
+      "label": "Alive"
+    },
+    "dank": {
+      "description": "Dank ist die erste Terpen-Linie für Kenner, die das reiche, skunkige Aroma von Cannabis liefert – ganz ohne Cannabis. Hergestellt aus 100% natürlichen Botanicals, bieten diese Terpene ein kraftvolles Aroma- und Geschmackserlebnis. Von fruchtigen Varianten wie Raspberry Dream bis zu Legenden wie OG Kush und Sour Diesel – Dank liefert den vollen Gas-Effekt zu unschlagbarem Preis.",
+      "quickFacts": "Kurzinfos:",
+      "facts": [
+        "Erfunden 2018",
+        "Über 100 Zutaten pro Profil",
+        "Riecht stark nach Cannabis",
+        "Ideal für Freizeitnutzer"
+      ],
+      "shop": "Dank einkaufen",
+      "label": "Dank"
+    },
+    "sweet": {
+      "description": "Gönnen Sie sich Sweet – eine Terpen-Linie für alle, die kräftige, fruchtige Aromen mit einem süßen Kick lieben. Von saftiger Mango bis zu reifer Erdbeere – diese Profile bringen Süße in jedes Produkt. Egal ob zur Verstärkung, Mischung oder Kreation von Neuem: Sweet liefert das Aroma, das Sie nicht mehr missen möchten.",
+      "quickFacts": "Kurzinfos:",
+      "facts": [
+        "Meistgefragtes Profil",
+        "Über 100 Zutaten pro Profil",
+        "Kann angepasst werden, um Cannabis-Aroma hinzuzufügen"
+      ],
+      "shop": "Sweet einkaufen",
+      "label": "Sweet"
+    },
+    "classic": {
+      "description": "Classic ist die ursprüngliche, sortenspezifische Terpen-Linie, die für Präzision und Vielseitigkeit entwickelt wurde. Hergestellt aus 100% natürlichen botanischen Terpenen, liefert Classic den Entourage-Effekt ohne überwältigendes Aroma. Ob reine Strain-Profile oder eine dezente fruchtige Note – diese Linie ermöglicht eine präzise Terpen-Integration in Ihre Produkte.",
+      "quickFacts": "Kurzinfos:",
+      "facts": [
+        "Erfunden 2018",
+        "Über 100 Zutaten pro Profil",
+        "Riecht stark nach Cannabis",
+        "Ideal für Freizeitnutzer"
+      ],
+      "shop": "Classic einkaufen",
       "label": "Classic"
     }
   },

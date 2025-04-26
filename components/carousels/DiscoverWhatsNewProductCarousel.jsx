@@ -1,9 +1,9 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import ProductCard from '@/components/product/ProductCard';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Progress } from '@/components/ui/progress';
+import { useEffect, useState } from 'react';
 
 export default function DiscoverWhatsNewProductCarousel() {
   const [api, setApi] = useState(null);
@@ -28,9 +28,12 @@ export default function DiscoverWhatsNewProductCarousel() {
           align: 'start',
         }}
       >
-        <CarouselContent>
+        <CarouselContent className="flex w-full gap-1 md:gap-2">
           {Array.from({ length: 8 }).map((_, index) => (
-            <CarouselItem key={index} className="sm:basis-1 md:basis-1/2 lg:basis-1/4 xl:basis-1/4 2xl:basis-1/5">
+            <CarouselItem
+              key={index}
+              className="pl-2 sm:basis-1 md:basis-1/2 md:pl-4 lg:basis-1/4 xl:basis-1/4 2xl:basis-1/5"
+            >
               <ProductCard />
             </CarouselItem>
           ))}

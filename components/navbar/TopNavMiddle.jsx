@@ -22,8 +22,8 @@ const TopNavMiddle = () => {
         <Link href="/new" className={'navLinkClass'}>
           {t('New')}
         </Link>
-        <Link href="/product-guide" className={'navLinkClass'}>
-          {t('Product_guide')}
+        <Link href="/terpene-guide" className={'navLinkClass'}>
+          Terpene Guide
         </Link>
       </div>
     </div>

@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import { Input } from '@/components/ui/input';
 import { useTranslations } from 'next-intl';
 
@@ -9,9 +8,9 @@ const WholesaleRegistrationForm = () => {
 
   return (
     <div className="container py-[80px]">
-      <div className="px-6 md:px-0">
+      <div className="md:px-0">
         <div className="space-y-12">
-          <h2 className="text-umbra-100 font-sans text-[44px] leading-[120%] font-normal">
+          <h2 className="text-umbra-100 font-sans text-[32px] leading-[120%] font-normal md:text-[44px]">
             {t('wholesaleRegistrationForm.formTitle')}
           </h2>
 
@@ -20,7 +19,7 @@ const WholesaleRegistrationForm = () => {
               {t('wholesaleRegistrationForm.requiredFields')}
             </p>
 
-            <div className="flex justify-between gap-4">
+            <div className="flex flex-col justify-between gap-4 md:flex-row">
               <Input
                 type="text"
                 placeholder={t('wholesaleRegistrationForm.fullName')}
@@ -33,7 +32,7 @@ const WholesaleRegistrationForm = () => {
               />
             </div>
 
-            <div className="flex justify-between gap-4">
+            <div className="flex flex-col justify-between gap-4 md:flex-row">
               <Input
                 type="phone"
                 placeholder={t('wholesaleRegistrationForm.phone')}
@@ -46,7 +45,7 @@ const WholesaleRegistrationForm = () => {
               />
             </div>
 
-            <div className="flex justify-between gap-4">
+            <div className="flex flex-col justify-between gap-4 md:flex-row">
               <Input
                 type="text"
                 placeholder={t('wholesaleRegistrationForm.website')}
@@ -59,7 +58,7 @@ const WholesaleRegistrationForm = () => {
               />
             </div>
 
-            <div className="flex justify-between gap-4">
+            <div className="flex flex-col justify-between gap-4 md:flex-row">
               <Input
                 type="text"
                 placeholder={t('wholesaleRegistrationForm.username')}

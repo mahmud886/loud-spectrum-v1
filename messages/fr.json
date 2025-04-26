@@ -89,13 +89,48 @@
     "hybridAlt": "Produit Hybride"
   },
   "WhatAreTerpenesSlider": {
-    "classic": {
-      "description": "Classic est la gamme originale de terpènes spécifiques à chaque souche, conçue pour la précision et la polyvalence. Fabriqué à partir de terpènes d'origine botanique 100 % naturels, Classic offre l'effet d'entourage sans arôme envahissant. Que vous recherchiez des profils de souche purs ou une touche fruitée subtile, cette gamme permet d'infuser des terpènes avec précision et facilité.",
-      "quickFacts": "Faits rapides :",
+    "alive": {
+      "description": "Alive est le summum du luxe en matière de terpènes : pur, rare et perfectionné au fil des ans. Extrait de fleurs fraîches dans l'heure suivant la récolte, cette gamme premium conserve l'arôme complexe de chaque variété. Jamais dilué ni mélangé, chaque lot est une cuvée unique, souvent réservée à l'avance par nos clients fidèles.",
+      "quickFacts": "Faits rapides :",
       "facts": [
-        "Créé en 2018",
-        "Contient plus de 100 ingrédients par profil",
-        "Odeur forte de cannabis",
+        "Inventé en 2018",
+        "Prix premium",
+        "Peut être CDT (terpène dérivé du cannabis) ou HDT (dérivé du chanvre)",
+        "Extrait en interne grâce à des partenariats exclusifs avec des cultivateurs"
+      ],
+      "shop": "Acheter Alive",
+      "label": "Alive"
+    },
+    "dank": {
+      "description": "Dank est la première ligne de terpènes pour connaisseurs, offrant la riche essence skunky du cannabis, sans cannabis. Fabriqué à partir de plantes 100% naturelles, Dank propose un arôme et un goût puissants. De Raspberry Dream aux classiques OG Kush et Sour Diesel, Dank propose des profils riches à un prix imbattable.",
+      "quickFacts": "Faits rapides :",
+      "facts": [
+        "Inventé en 2018",
+        "Plus de 100 ingrédients par profil",
+        "Sent fortement le cannabis",
+        "Idéal pour les utilisateurs récréatifs"
+      ],
+      "shop": "Acheter Dank",
+      "label": "Dank"
+    },
+    "sweet": {
+      "description": "Sweet est une gamme de terpènes pour ceux qui aiment les saveurs fruitées audacieuses avec une touche sucrée. De la mangue juteuse à la fraise mûre, ces profils ajoutent de la douceur à n'importe quel produit. Sweet est parfait pour rehausser, mélanger ou créer de nouvelles expériences gustatives.",
+      "quickFacts": "Faits rapides :",
+      "facts": [
+        "Profil le plus demandé",
+        "Plus de 100 ingrédients par profil",
+        "Peut être personnalisé pour ajouter l'arôme du cannabis"
+      ],
+      "shop": "Acheter Sweet",
+      "label": "Sweet"
+    },
+    "classic": {
+      "description": "Classic est la gamme de terpènes originelle spécifique à chaque variété, conçue pour la précision et la polyvalence. Fabriqué à partir de terpènes botaniques 100% naturels, Classic offre l'effet d'entourage sans arôme envahissant. Idéal pour infuser vos produits avec pureté et subtilité.",
+      "quickFacts": "Faits rapides :",
+      "facts": [
+        "Inventé en 2018",
+        "Plus de 100 ingrédients par profil",
+        "Sent fortement le cannabis",
         "Idéal pour les utilisateurs récréatifs"
       ],
       "shop": "Acheter Classic",

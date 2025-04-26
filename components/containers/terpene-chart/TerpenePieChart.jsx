@@ -1,74 +1,125 @@
 'use client';
 
-import { Pie, PieChart } from 'recharts';
+import { Cell, Pie, PieChart } from 'recharts';
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
+import { generateGradientColorsSequentially } from '@/helpers/generate-gradient-colors-sequentially';
 
-const chartData = [
-  { browser: 'chrome', visitors: 275, fill: 'var(--color-chrome)' },
-  { browser: 'safari', visitors: 200, fill: 'var(--color-safari)' },
-  { browser: 'firefox', visitors: 187, fill: 'var(--color-firefox)' },
-  { browser: 'edge', visitors: 173, fill: 'var(--color-edge)' },
-  { browser: 'other', visitors: 90, fill: 'var(--color-other)' },
-];
+const TerpenePieChart = ({ terpeneData }) => {
+  const filteredData = terpeneData
+    .filter((item) => item.value !== null && item.value !== 0)
+    .sort((a, b) => b.value - a.value);
 
-const chartConfig = {
-  visitors: {
-    label: 'Visitors',
-  },
-  chrome: {
-    label: 'Chrome',
-    color: 'var(--chart-1)',
-  },
-  safari: {
-    label: 'Safari',
-    color: 'var(--chart-2)',
-  },
-  firefox: {
-    label: 'Firefox',
-    color: 'var(--chart-3)',
-  },
-  edge: {
-    label: 'Edge',
-    color: 'var(--chart-4)',
-  },
-  other: {
-    label: 'Other',
-    color: 'var(--chart-5)',
-  },
-};
+  const colors = generateGradientColorsSequentially(filteredData.length);
 
-const TerpenePieChart = () => {
+  const chartData = filteredData.map((item, index) => ({
+    name: item.name,
+    value: item.value,
+    fill: colors[index],
+  }));
+
+  const half = Math.ceil(chartData.length / 2);
+  const leftData = chartData.slice(0, half);
+  const rightData = chartData.slice(half);
+
+  const chartConfig = {
+    value: {
+      label: 'value',
+    },
+  };
+
   return (
-    <div className="flex w-full flex-row items-center justify-center gap-12">
-      {/* Left Side */}
-      <div className="pr-4 text-left">
-        <h2 className="text-lg font-semibold text-gray-700">Left Side Text</h2>
-        <ul className="list-inside list-disc text-sm text-gray-500">
-          {chartData.map((item) => (
-            <li key={item.browser}>
-              {item.browser.charAt(0).toUpperCase() + item.browser.slice(1)}: {item.visitors}
+    <div className="flex w-full flex-col items-center justify-center gap-8 md:flex-row md:gap-12">
+      {/* Chart First */}
+      <div className="w-full flex-shrink-0 md:order-2 md:w-[550px]">
+        <ChartContainer config={chartConfig} className="aspect-square">
+          <PieChart>
+            <defs>
+              <linearGradient id="firstTwoGradient" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stopColor="#00AF66" />
+                <stop offset="100%" stopColor="#101820" />
+              </linearGradient>
+            </defs>
+
+            <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />} />
+
+            <Pie data={chartData} dataKey="value" nameKey="name" innerRadius={80} label>
+              {chartData.map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={entry.fill} />
+              ))}
+            </Pie>
+          </PieChart>
+        </ChartContainer>
+      </div>
+
+      {/* Left Side Text pc mode */}
+      <div className="hidden w-full pr-4 text-left md:order-1 md:block md:w-auto">
+        <h2 className="text-umbra-100 text-lg font-semibold">Terpene Breakdown</h2>
+        <ul className="text-umbra-40 space-y-2 text-sm">
+          {leftData.map((item) => (
+            <li key={item.name} className="flex items-center gap-2">
+              <span
+                className="h-3 w-3 rounded-full"
+                style={{
+                  background: item.fill.includes('url(#firstTwoGradient)') ? '#101820' : item.fill,
+                }}
+              ></span>
+              <p className="text-umbra-100 font-mono text-[14px] leading-[130%] font-normal">
+                {item.name} <span className="text-umbra-40"> {item.value}%</span>
+              </p>
             </li>
           ))}
         </ul>
       </div>
 
-      {/* Chart in the middle */}
-      <div className="w-[550px] flex-shrink-0">
-        <ChartContainer config={chartConfig} className="aspect-square">
-          <PieChart>
-            <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />} />
-            <Pie data={chartData} dataKey="visitors" nameKey="browser" innerRadius={60} label />
-          </PieChart>
-        </ChartContainer>
+      {/* Right Side Text pc mode */}
+      <div className="hidden w-full text-left md:order-3 md:block md:w-auto md:pl-4">
+        <h2 className="text-umbra-100 text-lg font-semibold">Terpene Breakdown</h2>
+        <ul className="text-umbra-40 space-y-2 text-sm">
+          {rightData.map((item) => (
+            <li key={item.name} className="flex items-center gap-2">
+              <span
+                className="h-3 w-3 rounded-full"
+                style={{
+                  background: item.fill.includes('url(#firstTwoGradient)') ? '#101820' : item.fill,
+                }}
+              ></span>
+              <p className="text-umbra-100 font-mono text-[14px] leading-[130%] font-normal">
+                {item.name} <span className="text-umbra-40"> {item.value}%</span>
+              </p>
+            </li>
+          ))}
+        </ul>
       </div>
 
-      {/* Right Side */}
-      <div className="pl-4 text-left">
-        <h2 className="text-lg font-semibold text-gray-700">Right Side Text</h2>
-        <ul className="list-inside list-disc text-sm text-gray-500">
-          {chartData.map((item) => (
-            <li key={item.browser}>
-              {item.browser.charAt(0).toUpperCase() + item.browser.slice(1)}: {item.visitors}
+      {/* Right Side Text sp mode */}
+      <div className="flex w-full items-center justify-between p-6 text-center md:order-2 md:hidden">
+        <ul className="text-umbra-40 space-y-2 text-sm">
+          {leftData.map((item) => (
+            <li key={item.name} className="flex items-center gap-2">
+              <span
+                className="h-3 w-3 rounded-full"
+                style={{
+                  background: item.fill.includes('url(#firstTwoGradient)') ? '#101820' : item.fill,
+                }}
+              ></span>
+              <p className="text-umbra-100 font-mono text-[14px] leading-[130%] font-normal">
+                {item.name} <span className="text-umbra-40"> {item.value}%</span>
+              </p>
+            </li>
+          ))}
+        </ul>
+        <ul className="text-umbra-40 space-y-2 text-sm">
+          {rightData.map((item) => (
+            <li key={item.name} className="flex items-center gap-2">
+              <span
+                className="h-3 w-3 rounded-full"
+                style={{
+                  background: item.fill.includes('url(#firstTwoGradient)') ? '#101820' : item.fill,
+                }}
+              ></span>
+              <p className="text-umbra-100 font-mono text-[14px] leading-[130%] font-normal">
+                {item.name} <span className="text-umbra-40"> {item.value}%</span>
+              </p>
             </li>
           ))}
         </ul>
