@@ -11,7 +11,7 @@ import {
 const TerpeneSelection = ({ value, onChange }) => {
   return (
     <Select value={value} onValueChange={onChange}>
-      <SelectTrigger className="bg-umbra-5 min-h-[42px] max-w-[280px] min-w-[156px]">
+      <SelectTrigger className="bg-umbra-5 w-full md:min-h-[42px] md:max-w-[280px] md:min-w-[156px]">
         <SelectValue placeholder="Select a Profile" />
       </SelectTrigger>
       <SelectContent>

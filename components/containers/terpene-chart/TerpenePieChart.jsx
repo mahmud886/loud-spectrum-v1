@@ -39,9 +39,19 @@ const chartConfig = {
 
 const TerpenePieChart = () => {
   return (
-    <div className="flex w-full flex-row items-center justify-center gap-12">
-      {/* Left Side */}
-      <div className="pr-4 text-left">
+    <div className="flex w-full flex-col items-center justify-center gap-8 md:flex-row md:gap-12">
+      {/* Chart First */}
+      <div className="w-full flex-shrink-0 md:order-2 md:w-[550px]">
+        <ChartContainer config={chartConfig} className="aspect-square">
+          <PieChart>
+            <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />} />
+            <Pie data={chartData} dataKey="visitors" nameKey="browser" innerRadius={60} label />
+          </PieChart>
+        </ChartContainer>
+      </div>
+
+      {/* Left Side Text */}
+      <div className="w-full pr-4 text-left md:order-1 md:w-auto">
         <h2 className="text-lg font-semibold text-gray-700">Left Side Text</h2>
         <ul className="list-inside list-disc text-sm text-gray-500">
           {chartData.map((item) => (
@@ -52,18 +62,8 @@ const TerpenePieChart = () => {
         </ul>
       </div>
 
-      {/* Chart in the middle */}
-      <div className="w-[550px] flex-shrink-0">
-        <ChartContainer config={chartConfig} className="aspect-square">
-          <PieChart>
-            <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />} />
-            <Pie data={chartData} dataKey="visitors" nameKey="browser" innerRadius={60} label />
-          </PieChart>
-        </ChartContainer>
-      </div>
-
-      {/* Right Side */}
-      <div className="pl-4 text-left">
+      {/* Right Side Text */}
+      <div className="w-full text-left md:order-3 md:w-auto md:pl-4">
         <h2 className="text-lg font-semibold text-gray-700">Right Side Text</h2>
         <ul className="list-inside list-disc text-sm text-gray-500">
           {chartData.map((item) => (
