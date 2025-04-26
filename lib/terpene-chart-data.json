@@ -1,0 +1,8846 @@
+[
+  {
+    "id": "gorilla_glue_001",
+    "name": "Gorilla Glue",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 5.73
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 17.37
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 21.71
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 1.87
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 5.90
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 20.41
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 4.69
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": null
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": 1.69
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": 4.12
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 16.51
+      }
+    ]
+  },
+  {
+    "id": "silver_haze",
+    "name": "Silver Haze",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": 2.01
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 4.75
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 3.75
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 10.21
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": 3.60
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 8.59
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 9.34
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 26.01
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": null
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": null
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": 1.83
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": 1.86
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": 2.37
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": 3.72
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": 2.54
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 19.40
+      }
+    ]
+  },
+  {
+    "id": "bubba_kush",
+    "name": "Bubba Kush",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 1.63
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 10.98
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 12.87
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 1.36
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 4.74
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 18.41
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": null
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 2.68
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": null
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": 1.63
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": 5.75
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": 5.97
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": 13.37
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 20.61
+      }
+    ]
+  },
+  {
+    "id": "granddaddy_purple",
+    "name": "Granddaddy Purple",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 7.59
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 48.69
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 6.00
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 3.46
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 3.33
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 11.71
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 4.29
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": null
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": null
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": 1.42
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 13.50
+      }
+    ]
+  },
+  {
+    "id": "og_kush",
+    "name": "OG Kush",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 2.35
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 25.04
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 18.66
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 5.20
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 5.66
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 16.67
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 3.60
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": null
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": 1.11
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": 2.35
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": 1.07
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": 1.60
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 16.69
+      }
+    ]
+  },
+  {
+    "id": "blue_dream",
+    "name": "Blue Dream",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 25.16
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 35.11
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 3.98
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 1.96
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 2.86
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 6.23
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 7.70
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 0.96
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": null
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": null
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 16.04
+      }
+    ]
+  },
+  {
+    "id": "trainwreck",
+    "name": "Trainwreck",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 3.96
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 19.78
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 9.10
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": 24.53
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": null
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 4.39
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 12.42
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 3.40
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 3.60
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": null
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": null
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": 2.30
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 16.52
+      }
+    ]
+  },
+  {
+    "id": "green-crack",
+    "name": "Green Crack",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 3.47
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 9.38
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 39.71
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 2.31
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 5.85
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 14.14
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 5.71
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 1.36
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": 1.31
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": null
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": 1.22
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 15.52
+      }
+    ]
+  },
+  {
+    "id": "lemon-skunk",
+    "name": "Lemon Skunk",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": 1.09
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 5.65
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": null
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 51.43
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": null
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 10.55
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 10.21
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 2.15
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 1.16
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": 1.42
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": null
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": 2.23
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 14.12
+      }
+    ]
+  },
+  {
+    "id": "skywalker-og",
+    "name": "Skywalker OG",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 2.32
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 37.14
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 24.06
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 5.45
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 2.56
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 8.16
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 4.10
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": null
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": 1.21
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": null
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 15.00
+      }
+    ]
+  },
+  {
+    "id": "the-original-z",
+    "name": "The Original Z",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": null
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": null
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 4.94
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 6.35
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 17.97
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 42.69
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": null
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 4.35
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": null
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": 2.78
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": 4.08
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": 1.65
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 15.18
+      }
+    ]
+  },
+  {
+    "id": "sour-diesel",
+    "name": "Sour Diesel",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 1.31
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 5.04
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 15.13
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 2.02
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 6.25
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 17.65
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 2.52
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 20.17
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": 1.21
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": null
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": 15.13
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 13.58
+      }
+    ]
+  },
+  {
+    "id": "maui-wowie",
+    "name": "Maui Wowie",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": 2.01
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 4.75
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 3.75
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 10.21
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": 3.60
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 8.59
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 9.34
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 26.01
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 5.11
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": null
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": 1.83
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": 1.86
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": 2.37
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": 3.72
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": 2.54
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 14.30
+      }
+    ]
+  },
+  {
+    "id": "cheese",
+    "name": "Cheese",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 3.38
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 4.16
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 33.78
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 15.07
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 2.92
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 10.78
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 5.65
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 1.62
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": 1.83
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": 1.10
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": 2.47
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": 1.56
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": 1.04
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": 1.01
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 13.61
+      }
+    ]
+  },
+  {
+    "id": "white-widow",
+    "name": "White Widow",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 4.72
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 6.60
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 5.66
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": 28.32
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": null
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 4.11
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 11.82
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 4.54
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 2.68
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": 2.86
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": 1.74
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": 1.37
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": null
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": null
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": 4.72
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": 5.41
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 15.45
+      }
+    ]
+  },
+  {
+    "id": "gsc",
+    "name": "GSC",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": null
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 7.19
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 7.88
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 4.66
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 19.19
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 37.69
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 1.34
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 3.01
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": null
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": 2.71
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 16.34
+      }
+    ]
+  },
+  {
+    "id": "agent-orange",
+    "name": "Agent Orange",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 1.80
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 18.26
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 20.37
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 7.23
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 2.82
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 8.99
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 2.95
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 1.98
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": null
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": 1.24
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": null
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": 4.03
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 30.32
+      }
+    ]
+  },
+  {
+    "id": "jack-herer",
+    "name": "Jack Herer",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 2.85
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 6.17
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 5.30
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": 40.42
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": null
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 3.84
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 11.07
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 4.25
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 2.50
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": 2.68
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": 1.63
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": 1.28
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": null
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": null
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": 5.07
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 12.92
+      }
+    ]
+  },
+  {
+    "id": "ak-47",
+    "name": "AK-47",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 4.83
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 4.83
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 11.11
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": 29.96
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": null
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 5.36
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 15.17
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 4.16
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 4.40
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": 1.59
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": 1.16
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": 1.00
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": null
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": null
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": 2.81
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 13.61
+      }
+    ]
+  },
+  {
+    "id": "gelato",
+    "name": "Gelato",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": 1.27
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 1.72
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 1.90
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 15.39
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": null
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 14.39
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 40.01
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 3.44
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": null
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": 1.01
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": 4.53
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": 1.51
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 14.83
+      }
+    ]
+  },
+  {
+    "id": "durban-poison",
+    "name": "Durban Poison",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 2.51
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 9.58
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 5.45
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": 43.69
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": null
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": null
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 2.70
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 4.05
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": null
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": 1.85
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": 1.56
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": 1.16
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": null
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": 2.43
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": null
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": 9.84
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 15.17
+      }
+    ]
+  },
+  {
+    "id": "tangerine-dream",
+    "name": "Tangerine Dream",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 8.75
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 3.81
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 18.79
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": 1.79
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 3.14
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 5.67
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 13.91
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 5.50
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 2.24
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": 1.21
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": 1.57
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": null
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": 4.82
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 28.78
+      }
+    ]
+  },
+  {
+    "id": "platinum-kush",
+    "name": "Platinum Kush",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 1.82
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 18.23
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 3.04
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": 24.31
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 6.08
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 3.04
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 11.55
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 1.82
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": null
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": 4.07
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": 1.40
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": 1.22
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": null
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": 2.37
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": null
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": 6.08
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 14.98
+      }
+    ]
+  },
+  {
+    "id": "northern-lights",
+    "name": "Northern Lights",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 2.91
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 29.45
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 16.36
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": 3.27
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 3.93
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 7.53
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 17.35
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 4.75
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": null
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": 1.21
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": null
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 13.24
+      }
+    ]
+  },
+  {
+    "id": "acdc",
+    "name": "ACDC",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": 1.03
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 4.75
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 3.75
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 11.33
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": 3.60
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 8.59
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 9.34
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 26.01
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": null
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": null
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": 1.83
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": 1.86
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": 2.37
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": 3.72
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": 2.54
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 19.27
+      }
+    ]
+  },
+  {
+    "id": "banana-express",
+    "name": "Banana Express",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 25.16
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 35.11
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 5.32
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 1.96
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 2.86
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 6.23
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 7.54
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 0.96
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": null
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": null
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 14.86
+      }
+    ]
+  },
+  {
+    "id": "berry-blast",
+    "name": "Berry Blast",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 25.16
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 35.11
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": null
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": 0.00
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 1.96
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 2.86
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 6.23
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 7.24
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 0.96
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": null
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": null
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 20.48
+      }
+    ]
+  },
+  {
+    "id": "biscotti",
+    "name": "Biscotti",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": null
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 8.02
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 7.88
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 4.66
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 19.19
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 36.31
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 1.34
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 3.01
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": null
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": 2.71
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 16.89
+      }
+    ]
+  },
+  {
+    "id": "birthday-cake",
+    "name": "Birthday Cake",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 1.63
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 11.43
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 12.87
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 1.36
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 4.24
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 18.41
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": null
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 2.68
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": 1.63
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": null
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": 5.75
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": 5.97
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": 13.37
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 20.66
+      }
+    ]
+  },
+  {
+    "id": "blackberry-kush",
+    "name": "Blackberry Kush (BBK)",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 7.59
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 47.34
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 6.00
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 3.46
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 3.33
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 11.25
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 4.26
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": null
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": null
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": 1.42
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 15.35
+      }
+    ]
+  },
+  {
+    "id": "blueberry-og",
+    "name": "Blueberry OG",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 2.35
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 25.53
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 17.98
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 5.20
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 5.66
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 16.67
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 3.60
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": null
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": 1.11
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": 2.35
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": 1.07
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": 1.60
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 16.88
+      }
+    ]
+  },
+  {
+    "id": "bubble-gum-glue",
+    "name": "Bubble Gum Glue",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 5.73
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 17.37
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 22.54
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 1.56
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 5.90
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 20.41
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 4.69
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": null
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": 1.69
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": 4.12
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 15.98
+      }
+    ]
+  },
+  {
+    "id": "bull-wings",
+    "name": "Bull Wings",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": null
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": null
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 4.94
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 6.35
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 17.33
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 41.65
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": null
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 4.35
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": null
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": 2.78
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": 4.08
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": 1.65
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 16.86
+      }
+    ]
+  },
+  {
+    "id": "pink-champagne",
+    "name": "Pink Champagne",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": 1.09
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 5.65
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": null
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 49.34
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": null
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 10.55
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 10.65
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 2.15
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 1.16
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": 1.42
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": null
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": 2.23
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 15.77
+      }
+    ]
+  },
+  {
+    "id": "cherry-burst",
+    "name": "Cherry Burst",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 0.00
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 0.00
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 4.76
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 6.35
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 17.22
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 42.69
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 0.00
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 4.35
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": null
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": 2.78
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": 4.08
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": 1.65
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 16.11
+      }
+    ]
+  },
+  {
+    "id": "chocolate-milk-cookies",
+    "name": "Chocolate Milk Cookies",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 7.59
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 47.98
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 6.00
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 3.46
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 3.33
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 11.75
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 4.29
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": null
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": null
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": 1.42
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 14.17
+      }
+    ]
+  },
+  {
+    "id": "cotton-candy",
+    "name": "Cotton Candy",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 25.76
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 34.76
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 3.98
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 1.96
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 2.86
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 6.23
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 7.70
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 0.96
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": null
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": null
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 15.79
+      }
+    ]
+  },
+  {
+    "id": "cucumber-water",
+    "name": "Cucumber Water",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 2.54
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 24.76
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 18.66
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 5.20
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 5.66
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 16.67
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 3.60
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": null
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": 1.11
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": 2.35
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": 1.07
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": 1.60
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 16.78
+      }
+    ]
+  },
+  {
+    "id": "dutch-treat",
+    "name": "Dutch Treat",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 7.59
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 47.86
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 6.75
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 3.46
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 3.33
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 11.71
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 4.29
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": null
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": null
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": 1.42
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 13.58
+      }
+    ]
+  },
+  {
+    "id": "grape-ape-candy",
+    "name": "Grape Ape Candy",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 7.59
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 48.69
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 6.00
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 3.76
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 3.65
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 11.71
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 4.29
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": null
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": null
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": 1.42
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 12.88
+      }
+    ]
+  },
+  {
+    "id": "grapefruit-og",
+    "name": "Grapefruit OG",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 8.75
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 3.81
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 18.79
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": 1.79
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 3.14
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 5.87
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 12.55
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 5.50
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 2.24
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": 1.21
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": 1.57
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": null
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": 4.82
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 29.94
+      }
+    ]
+  },
+  {
+    "id": "green-apple-jack",
+    "name": "Green Apple Jack",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 2.85
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 6.17
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 5.30
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": 40.42
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 0.00
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 3.84
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 11.02
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 4.12
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 2.50
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": 2.68
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": 1.63
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": 1.28
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": null
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": null
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": 5.07
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 13.10
+      }
+    ]
+  },
+  {
+    "id": "gushers",
+    "name": "Gushers",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": 1.27
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 1.72
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 1.90
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 15.39
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": null
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 14.39
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 40.54
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 3.23
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": null
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": 1.01
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": 4.53
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": 1.51
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 14.51
+      }
+    ]
+  },
+  {
+    "id": "harlequin",
+    "name": "Harlequin",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 2.32
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 37.14
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 24.06
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": 0.00
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 5.45
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 2.45
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 8.43
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 4.10
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": null
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": 1.21
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": null
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 14.84
+      }
+    ]
+  },
+  {
+    "id": "lemon-lime",
+    "name": "Lemon Lime",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": 1.09
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 5.65
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 0.00
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 51.43
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": null
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 10.23
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 10.65
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 2.15
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 1.16
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": 1.42
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": null
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": 2.23
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 14.00
+      }
+    ]
+  },
+  {
+    "id": "mango-og",
+    "name": "Mango OG",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 2.35
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 25.04
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 18.66
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 5.20
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 5.66
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 16.37
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 3.54
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": null
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": 1.11
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": 0.00
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": 2.35
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": 1.07
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": 1.60
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 17.04
+      }
+    ]
+  },
+  {
+    "id": "matcha-green-tea",
+    "name": "Matcha Green Tea",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 25.16
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 35.11
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 3.98
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 1.96
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 2.86
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 6.78
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 7.44
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 0.96
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": null
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": null
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 15.75
+      }
+    ]
+  },
+  {
+    "id": "mocha-express",
+    "name": "Mocha Express",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 25.16
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 35.11
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 3.98
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 1.96
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 2.86
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 6.65
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 7.33
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 0.96
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": null
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": null
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 15.99
+      }
+    ]
+  },
+  {
+    "id": "passion-fruit-og",
+    "name": "Passion Fruit OG",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 2.35
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 25.04
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 18.66
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 5.20
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 5.86
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 16.67
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 3.67
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": null
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": 1.11
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": 2.35
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": 1.07
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": 1.60
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 16.42
+      }
+    ]
+  },
+  {
+    "id": "peach-dream",
+    "name": "Peach Dream",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 25.16
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 35.11
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 3.98
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 1.86
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 2.65
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 6.23
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 7.70
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 0.96
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": null
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": null
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 16.34
+      }
+    ]
+  },
+  {
+    "id": "pineapple-express",
+    "name": "Pineapple Express",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 25.16
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 35.11
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 3.98
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 1.85
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 2.45
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 6.23
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 7.70
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 0.96
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": null
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": null
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 16.55
+      }
+    ]
+  },
+  {
+    "id": "raspberry-dream",
+    "name": "Raspberry Dream",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 25.16
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 35.11
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 3.98
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 1.96
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 2.65
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 6.13
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 7.70
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 0.96
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": null
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": null
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 16.34
+      }
+    ]
+  },
+  {
+    "id": "rose-dream",
+    "name": "Rose Dream",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 25.16
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 35.11
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 3.98
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 1.96
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 2.96
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 6.76
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 7.70
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 0.96
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": null
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": null
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 15.40
+      }
+    ]
+  },
+  {
+    "id": "rum-cola",
+    "name": "Rum & Cola",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 1.63
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 10.98
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 12.87
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 1.36
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 4.86
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 18.65
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": null
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 2.68
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": null
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": 1.63
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": 5.75
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": 5.97
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": 13.37
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 20.25
+      }
+    ]
+  },
+  {
+    "id": "sinmint",
+    "name": "SinMint",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": null
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 7.19
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 7.88
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 4.66
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 19.19
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 36.87
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 1.31
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 3.01
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": null
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": 2.71
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 17.18
+      }
+    ]
+  },
+  {
+    "id": "strawberry-banana",
+    "name": "Strawberry Banana",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 1.31
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 5.04
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 15.13
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 2.02
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 6.25
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 17.45
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 2.76
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 20.17
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": 1.21
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": null
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": 15.13
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 13.54
+      }
+    ]
+  },
+  {
+    "id": "strawberry-diesel",
+    "name": "Strawberry Diesel",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 1.31
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 5.04
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 15.13
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 2.02
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 6.25
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 17.97
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 2.65
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 20.17
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": 1.21
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": null
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": 15.13
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 13.13
+      }
+    ]
+  },
+  {
+    "id": "tropical-og",
+    "name": "Tropical OG",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 2.35
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 25.04
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 18.66
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 5.20
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 5.66
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 16.24
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 3.64
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": null
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": 1.11
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": 2.35
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": 1.07
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": 1.60
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 17.07
+      }
+    ]
+  },
+  {
+    "id": "true-og",
+    "name": "True OG",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 1.82
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 18.23
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 3.04
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": 24.05
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 6.08
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 3.04
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 12.02
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 1.82
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": null
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": 4.07
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": 1.40
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": 1.22
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": null
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": 2.37
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": null
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": 6.08
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 14.76
+      }
+    ]
+  },
+  {
+    "id": "watermelon-og",
+    "name": "Watermelon OG",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 2.35
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 25.04
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 18.66
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 5.20
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 5.06
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 16.87
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 3.60
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": null
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": 1.11
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": 2.35
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": 1.07
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": 1.60
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 17.09
+      }
+    ]
+  },
+  {
+    "id": "wild-mountain-pomegranate",
+    "name": "Wild Mountain Pomegranate",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 25.16
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 35.11
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 3.98
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 1.96
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 2.86
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 6.86
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 7.23
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 0.96
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": null
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": null
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 15.88
+      }
+    ]
+  },
+  {
+    "id": "cherry-pie",
+    "name": "Cherry Pie",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": null
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": null
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 4.94
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 6.35
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 17.97
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 41.44
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": null
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 4.03
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": null
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": 2.78
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": 4.08
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": 1.65
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 16.74
+      }
+    ]
+  },
+  {
+    "id": "peanut-butter-breath",
+    "name": "Peanut Butter Breath",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": null
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": null
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 4.94
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 6.35
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 17.97
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 41.35
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": null
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 4.05
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": null
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": 2.78
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": 4.08
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": 1.65
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 16.81
+      }
+    ]
+  },
+  {
+    "id": "mac-1",
+    "name": "Mac 1",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": 2.01
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 4.75
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 3.75
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 10.21
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": 3.60
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 8.59
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 9.61
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 26.45
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": null
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": null
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": 1.83
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": 1.86
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": 2.37
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": 3.72
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": 2.54
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 18.69
+      }
+    ]
+  },
+  {
+    "id": "forbidden-fruit",
+    "name": "Forbidden Fruit",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 3.96
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 19.78
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 9.10
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": 24.53
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": null
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 4.11
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 12.87
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 3.40
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 3.60
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": null
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": null
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": 2.30
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 16.36
+      }
+    ]
+  },
+  {
+    "id": "fruity-pebbles-og",
+    "name": "Fruity Pebbles OG",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": 1.09
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 5.65
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": null
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 51.43
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": null
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": 0.00
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 10.88
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 10.53
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 2.15
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 1.16
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": 1.42
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": null
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": 2.23
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": null
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 13.47
+      }
+    ]
+  },
+  {
+    "id": "fuji-apple",
+    "name": "Fuji Apple",
+    "value": null,
+    "terpenes": [
+      {
+        "id": "caryophyllene-oxide",
+        "name": "Caryophyllene Oxide",
+        "value": null
+      },
+      {
+        "id": "a-pinene",
+        "name": "a-Pinene",
+        "value": 3.96
+      },
+      {
+        "id": "myrcene",
+        "name": "Myrcene",
+        "value": 19.78
+      },
+      {
+        "id": "d-limonene",
+        "name": "d-Limonene",
+        "value": 9.10
+      },
+      {
+        "id": "terpinolene",
+        "name": "Terpinolene",
+        "value": 24.53
+      },
+      {
+        "id": "linalool",
+        "name": "Linalool",
+        "value": null
+      },
+      {
+        "id": "humulene",
+        "name": "Humulene",
+        "value": 4.11
+      },
+      {
+        "id": "caryophyllene",
+        "name": "Caryophyllene",
+        "value": 12.86
+      },
+      {
+        "id": "b-pinene",
+        "name": "b-Pinene",
+        "value": 3.40
+      },
+      {
+        "id": "nerolidol",
+        "name": "Nerolidol",
+        "value": 3.60
+      },
+      {
+        "id": "a-phellandrene",
+        "name": "a-Phellandrene",
+        "value": null
+      },
+      {
+        "id": "cerene",
+        "name": "Cerene",
+        "value": null
+      },
+      {
+        "id": "terpinene",
+        "name": "Terpinene",
+        "value": null
+      },
+      {
+        "id": "fenchol",
+        "name": "Fenchol",
+        "value": null
+      },
+      {
+        "id": "borneol",
+        "name": "Borneol",
+        "value": null
+      },
+      {
+        "id": "terpineol",
+        "name": "Terpineol",
+        "value": null
+      },
+      {
+        "id": "geraniol",
+        "name": "Geraniol",
+        "value": null
+      },
+      {
+        "id": "bisabolol",
+        "name": "Bisabolol",
+        "value": null
+      },
+      {
+        "id": "camphene",
+        "name": "Camphene",
+        "value": null
+      },
+      {
+        "id": "ocimene",
+        "name": "Ocimene",
+        "value": null
+      },
+      {
+        "id": "cedrene",
+        "name": "Cedrene",
+        "value": null
+      },
+      {
+        "id": "eucalyptol",
+        "name": "Eucalyptol",
+        "value": null
+      },
+      {
+        "id": "geranyl-acetate",
+        "name": "Geranyl Acetate",
+        "value": null
+      },
+      {
+        "id": "guaiol",
+        "name": "Guaiol",
+        "value": 2.30
+      },
+      {
+        "id": "trace",
+        "name": "Trace",
+        "value": 16.37
+      }
+    ]
+  }
+]
