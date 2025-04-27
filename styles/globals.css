@@ -370,3 +370,19 @@
     color 0.2s ease-in-out,
     background-color 0.2s ease-in-out; /* Added transition */
 }
+
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #101820 21.53%, #0077c8 44.14%, #b2a9f5 74.28%, #dddae8 107.65%) !important;
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
