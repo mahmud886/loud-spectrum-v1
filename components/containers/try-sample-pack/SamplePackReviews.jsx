@@ -4,7 +4,7 @@ import ReviewAndTestimonialCarouselWithProgress from '@/components/carousels/Rev
 
 const SamplePackReviews = () => {
   return (
-    <div className={'container md:py-[80px]'}>
+    <div className={'container py-6 md:py-[80px]'}>
       <h2 className="text-umbra-100 font-sans text-[32px] leading-[120%] font-normal md:text-[44px]">
         Reviews <span className="text-umbra-40">(6)</span>
       </h2>
