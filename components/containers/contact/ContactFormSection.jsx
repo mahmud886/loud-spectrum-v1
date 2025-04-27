@@ -41,18 +41,18 @@ const ContactFormSection = () => {
                 <Input
                   type="text"
                   placeholder={t('contactForm.namePlaceholder')}
-                  className="bg-umbra-5 min-h-[48px] py-2 font-mono text-[16px] leading-[140%] font-normal"
+                  className="bg-umbra-5 placeholder:text-umbra-100 min-h-[48px] py-2 font-mono text-[16px] leading-[140%] font-normal"
                 />
                 <Input
                   type="email"
                   placeholder={t('contactForm.emailPlaceholder')}
-                  className="bg-umbra-5 min-h-[48px] py-2 font-mono text-[16px] leading-[140%] font-normal"
+                  className="bg-umbra-5 placeholder:text-umbra-100 min-h-[48px] py-2 font-mono text-[16px] leading-[140%] font-normal"
                 />
               </div>
               <div>
                 <Textarea
                   placeholder={t('contactForm.messagePlaceholder')}
-                  className="bg-umbra-5 min-h-[173px] py-2 font-mono text-[16px] leading-[140%] font-normal"
+                  className="bg-umbra-5 placeholder:text-umbra-100 min-h-[173px] py-2 font-mono text-[16px] leading-[140%] font-normal"
                 />
               </div>
               <div className="mt-12">

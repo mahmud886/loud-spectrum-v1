@@ -1,7 +1,8 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import DiscoverWhatsNewProductCarousel from '@/components/carousels/DiscoverWhatsNewProductCarousel';
+import ProductCarouselWithProgress from '@/components/carousels/ProductCarouselWithProgress';
+import ProductCard from '@/components/product/ProductCard';
 
 const NewPageHero = () => {
   const t = useTranslations('NewPage.newPageHeroBanner');
@@ -43,7 +44,9 @@ const NewPageHero = () => {
             <h2 className="text-white-100 mb-3 font-sans text-[32px] leading-[120%] font-normal md:text-[42px]">
               Discover What's New
             </h2>
-            <DiscoverWhatsNewProductCarousel />
+            <ProductCarouselWithProgress>
+              <ProductCard />
+            </ProductCarouselWithProgress>
           </div>
         </div>
       </div>
