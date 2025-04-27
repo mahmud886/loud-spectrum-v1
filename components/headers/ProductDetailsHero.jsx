@@ -7,7 +7,7 @@ const ProductDetailsHero = () => {
     <>
       <div className="relative hidden h-[1082px] overflow-hidden bg-black md:block">
         <Image
-          src="/assets/images/shop-hero.png"
+          src="/assets/images/products/product-page-hero.png"
           alt="Background"
           width={1440}
           height={797}
@@ -38,7 +38,7 @@ const ProductDetailsHero = () => {
       {/*  For Mobile */}
       <div className="relative block h-[619px] overflow-hidden bg-black md:hidden">
         <Image
-          src="/assets/images/sample-pack/sample-pack-hero-mobile.png"
+          src="/assets/images/products/product-page-hero.png"
           alt="Background"
           width={375}
           height={619}
