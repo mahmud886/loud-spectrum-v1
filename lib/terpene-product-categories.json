@@ -1,0 +1,42 @@
+[
+  {
+    "id": "all",
+    "name": "All",
+    "value": null
+  },
+  {
+    "id": "active",
+    "name": "Active",
+    "value": null
+  },
+  {
+    "id": "relaxed",
+    "name": "Relaxed",
+    "value": null
+  },
+  {
+    "id": "classic",
+    "name": "Classic",
+    "value": null
+  },
+  {
+    "id": "sweet",
+    "name": "Sweet",
+    "value": null
+  },
+  {
+    "id": "dank",
+    "name": "Dank",
+    "value": null
+  },
+  {
+    "id": "alive",
+    "name": "Alive",
+    "value": null
+  },
+  {
+    "id": "sample-packed",
+    "name": "Sample Packed",
+    "value": null
+  }
+]
