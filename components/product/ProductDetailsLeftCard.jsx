@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl';
 const ProductDetailsLeftCard = () => {
   const t = useTranslations('ProductDetails');
   return (
-    <div className="bg-white-100 text-umbra-100 h-[587px] w-[413px] p-5">
+    <div className="bg-white-100 text-umbra-100 p-5 md:h-[587px] md:w-[413px]">
       <div className="flex h-full w-full flex-col items-start justify-between gap-5">
         <div className="self-start">
           <div className="space-y-5">
@@ -46,7 +46,7 @@ const ProductDetailsLeftCard = () => {
             <div className="space-y-2">
               <div>
                 <Select>
-                  <SelectTrigger className="text-umbra-100 h-[42px] w-full font-mono text-[16px] leading-[140%] font-normal">
+                  <SelectTrigger className="bg-umbra-5 text-umbra-100 h-[42px] w-full font-mono text-[16px] leading-[140%] font-normal">
                     <SelectValue placeholder={t('ChooseFormula')} />
                   </SelectTrigger>
                   <SelectContent>
@@ -57,7 +57,7 @@ const ProductDetailsLeftCard = () => {
               </div>
               <div>
                 <Select>
-                  <SelectTrigger className="text-umbra-100 h-[42px] w-full font-mono text-[16px] leading-[140%] font-normal">
+                  <SelectTrigger className="bg-umbra-5 text-umbra-100 h-[42px] w-full font-mono text-[16px] leading-[140%] font-normal">
                     <SelectValue placeholder={t('ChooseVolume')} />
                   </SelectTrigger>
                   <SelectContent>
@@ -76,8 +76,16 @@ const ProductDetailsLeftCard = () => {
             </div>
           </div>
         </div>
-        <div className="flex w-full items-center justify-between gap-5">
-          <div className="">
+        <div className="flex w-full flex-col items-center justify-between gap-8 md:flex-row">
+          <div className="md:hidden">
+            <p className="text-umbra-100 font-mono text-[20px] leading-[140%] font-normal tracking-normal">
+              Mango OG is a strain-specific, organically grown, and botanically derived terpene profile.{' '}
+            </p>
+          </div>
+          <div className="flex w-full items-center justify-between gap-5 md:flex-row">
+            <div className="md:hidden">
+              <button className="outline-button-white rounded-full border px-5 py-2">{t('SeePDF')}</button>
+            </div>
             <div className="flex items-center gap-2">
               <button
                 className="border-umbra-40 flex size-10 cursor-not-allowed items-center justify-center rounded-full border bg-white"
@@ -98,7 +106,7 @@ const ProductDetailsLeftCard = () => {
               </button>
             </div>
           </div>
-          <button className="main-button-black rounded-full px-6 py-2">{t('AddToCart')}</button>
+          <button className="main-button-black w-full rounded-full px-2 py-2 md:max-w-[132px]">{t('AddToCart')}</button>
         </div>
       </div>
     </div>

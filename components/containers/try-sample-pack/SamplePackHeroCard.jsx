@@ -7,7 +7,7 @@ import { Textarea } from '@/components/ui/textarea';
 const SamplePackHeroCard = () => {
   const t = useTranslations('TrySamplePack');
   return (
-    <div className="bg-white-100 text-umbra-100 h-[587px] w-[413px] p-5">
+    <div className="bg-white-100 text-umbra-100 p-5 md:h-[587px] md:w-[413px]">
       <div className="flex h-full w-full flex-col items-start justify-between gap-5">
         <div className="self-start">
           <div className="space-y-5">
@@ -38,7 +38,7 @@ const SamplePackHeroCard = () => {
             <div className="space-y-2">
               <div>
                 <Select>
-                  <SelectTrigger className="text-umbra-100 h-[42px] w-full font-mono text-[16px] leading-[140%] font-normal">
+                  <SelectTrigger className="text-umbra-100 bg-umbra-5 h-[42px] w-full font-mono text-[16px] leading-[140%] font-normal">
                     <SelectValue placeholder={t('ChooseFormula')} />
                   </SelectTrigger>
                   <SelectContent>
@@ -56,7 +56,7 @@ const SamplePackHeroCard = () => {
             </div>
           </div>
         </div>
-        <div className="flex w-full items-center justify-between gap-5">
+        <div className="flex w-full flex-col items-center justify-between gap-5 md:flex-row">
           <div className="">
             <div className="flex items-center gap-2">
               <button
@@ -78,7 +78,8 @@ const SamplePackHeroCard = () => {
               </button>
             </div>
           </div>
-          <button className="main-button-black rounded-full px-6 py-2">{t('AddToCart')}</button>
+
+          <button className="main-button-black w-full rounded-full px-2 py-2 md:max-w-[132px]">{t('AddToCart')}</button>
         </div>
       </div>
     </div>
