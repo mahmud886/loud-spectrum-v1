@@ -8,7 +8,7 @@ const SpectrumAccordion = ({ items }) => {
   const [activeItem, setActiveItem] = useState(items?.[0]?.title || '');
 
   return (
-    <div className="container pb-[160px]">
+    <div className="container pb-20 md:pb-[160px]">
       <Accordion
         type="single"
         collapsible

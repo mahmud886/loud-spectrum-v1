@@ -5,7 +5,7 @@ import RelatedProducts from '@/components/containers/product/RelatedProducts';
 
 const ProductDetailsPage = () => {
   return (
-    <div className="mt-[160px]">
+    <div className="md:mt-[160px]">
       <SpectrumAccordion items={accordionData} />
       <ProductReviews />
       <AddAReview />
