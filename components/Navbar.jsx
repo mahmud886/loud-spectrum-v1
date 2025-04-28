@@ -1,12 +1,12 @@
 'use client';
 
+import MenuButton from '@/components/navbar/MenuButton';
 import TopNav from '@/components/TopNav';
 import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import MenuButton from '@/components/navbar/MenuButton';
 
 const Navbar = ({ locale }) => {
   const t = useTranslations('');
@@ -46,6 +46,11 @@ const Navbar = ({ locale }) => {
         <div
           className={`container mx-auto flex items-center justify-between px-5 md:px-[40px] lg:px-[40px] xl:px-[80px] ${isScrolled ? 'py-5' : 'py-12'} transition-all duration-300`}
         >
+          {!isScrolled && (
+            <div className="absolute top-0 left-1/2 -z-10 w-full -translate-x-1/2">
+              <div className="shadow-[0px_0px_300px_150px_rgba(0,0,0,0.9)]"></div>
+            </div>
+          )}
           <Link href={`/`}>
             <Image
               src={logoSrc}
