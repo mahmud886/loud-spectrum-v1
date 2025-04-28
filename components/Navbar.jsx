@@ -36,7 +36,11 @@ const Navbar = ({ locale }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navBg = isSpecialPath ? 'bg-white-100' : isScrolled ? 'bg-umbra-100' : 'bg-transparent';
+  const navBg = isSpecialPath
+    ? 'bg-white-100/60 backdrop-blur-xl'
+    : isScrolled
+      ? 'bg-umbra-100/80 backdrop-blur-xl'
+      : 'bg-transparent';
   const textColor = isSpecialPath ? 'text-umbra-100' : 'text-white';
   const logoSrc = isSpecialPath ? '/assets/svgs/logos/logo-dark.svg' : '/assets/svgs/logos/logo-light.svg';
 
@@ -48,7 +52,13 @@ const Navbar = ({ locale }) => {
         >
           {!isScrolled && (
             <div className="absolute top-0 left-1/2 -z-10 w-full -translate-x-1/2">
-              <div className="shadow-[0px_0px_300px_150px_rgba(0,0,0,0.9)]"></div>
+              <div
+                className={`${
+                  isSpecialPath
+                    ? 'shadow-[0px_0px_300px_150px_rgba(255,255,255,0.9)]'
+                    : 'shadow-[0px_0px_300px_150px_rgba(0,0,0,0.9)]'
+                }`}
+              />
             </div>
           )}
           <Link href={`/`}>
