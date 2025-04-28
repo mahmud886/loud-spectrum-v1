@@ -1,12 +1,12 @@
 'use client';
 
+import MenuButton from '@/components/navbar/MenuButton';
 import TopNav from '@/components/TopNav';
 import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import MenuButton from '@/components/navbar/MenuButton';
 
 const Navbar = ({ locale }) => {
   const t = useTranslations('');
@@ -36,7 +36,11 @@ const Navbar = ({ locale }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navBg = isSpecialPath ? 'bg-white-100' : isScrolled ? 'bg-umbra-100' : 'bg-transparent';
+  const navBg = isSpecialPath
+    ? 'bg-white-100/60 backdrop-blur-xl'
+    : isScrolled
+      ? 'bg-umbra-100/80 backdrop-blur-xl'
+      : 'bg-transparent';
   const textColor = isSpecialPath ? 'text-umbra-100' : 'text-white';
   const logoSrc = isSpecialPath ? '/assets/svgs/logos/logo-dark.svg' : '/assets/svgs/logos/logo-light.svg';
 
@@ -46,6 +50,17 @@ const Navbar = ({ locale }) => {
         <div
           className={`container mx-auto flex items-center justify-between px-5 md:px-[40px] lg:px-[40px] xl:px-[80px] ${isScrolled ? 'py-5' : 'py-12'} transition-all duration-300`}
         >
+          {!isScrolled && (
+            <div className="absolute top-0 left-1/2 -z-10 w-full -translate-x-1/2">
+              <div
+                className={`${
+                  isSpecialPath
+                    ? 'shadow-[0px_0px_300px_150px_rgba(255,255,255,0.9)]'
+                    : 'shadow-[0px_0px_300px_150px_rgba(0,0,0,0.9)]'
+                }`}
+              />
+            </div>
+          )}
           <Link href={`/`}>
             <Image
               src={logoSrc}

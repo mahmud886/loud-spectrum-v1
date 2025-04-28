@@ -1,10 +1,8 @@
-import React from 'react';
-import ProductCard from '@/components/product/ProductCard';
+import ProductFilter from '@/components/containers/ProductFilter';
 import ProductPagination from '@/components/containers/shop/ProductPagination';
+import ProductGridCard from '@/components/product/ProductGridCard';
 import RadioGroupButtons from '@/components/ui/RadioGroupButtons';
 import { useTranslations } from 'next-intl';
-import ProductFilter from '@/components/containers/ProductFilter';
-import ProductGridCard from '@/components/product/ProductGridCard';
 
 const TerpeneProductsContainer = () => {
   const t = useTranslations('TerpeneShop');
@@ -24,8 +22,10 @@ const TerpeneProductsContainer = () => {
             <RadioGroupButtons />
           </div>
         </div>
-        <div className="flex flex-col space-y-20">
-          <div className="grid grid-cols-2 gap-x-3 gap-y-10 md:min-w-[77%] md:grid-cols-3 md:gap-x-5 md:gap-y-20">
+        <div className="w-full space-y-10 md:w-[75%]">
+          <div className="grid grid-cols-2 gap-3 space-y-8 md:grid-cols-3 md:gap-5 md:space-y-16">
+            <ProductGridCard />
+            <ProductGridCard />
             <ProductGridCard />
             <ProductGridCard />
             <ProductGridCard />

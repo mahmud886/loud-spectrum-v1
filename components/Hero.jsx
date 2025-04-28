@@ -1,9 +1,6 @@
-import Image from 'next/image';
-import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
-import React from 'react';
-import ProductDetailsLeftCard from '@/components/product/ProductDetailsLeftCard';
-import ProductDetailsRightCard from '@/components/product/ProductDetailsRightCard';
+import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 
 const Hero = () => {
   const t = useTranslations('');
@@ -13,24 +10,46 @@ const Hero = () => {
         <div className="relative container h-[900px] overflow-hidden">
           <>
             {/* Mobile Image */}
-            <Image
+            {/* <Image
               src="/assets/images/homepage-image.png"
               alt="Background"
               width={450}
               height={900}
               className="absolute top-0 left-1/2 z-0 h-[900px] w-[450px] -translate-x-1/2 md:hidden"
               priority
-            />
-
+            /> */}
             {/* Desktop Image */}
-            <Image
+            {/* <Image
               src="/assets/images/homepage-image.jpeg"
               alt="Background"
               width={1440}
               height={900}
               className="absolute top-0 left-1/2 z-0 hidden h-[900px] w-[1440px] -translate-x-1/2 object-cover md:block"
               priority
-            />
+            /> */}
+            <div className="absolute top-0 left-1/2 z-0 h-[900px] w-[450px] -translate-x-1/2 transform overflow-hidden md:hidden">
+              <video
+                src="/assets/homepage-hero-video-mobile.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="h-full w-full object-cover"
+                preload="auto"
+              />
+            </div>
+
+            <div className="absolute top-0 left-1/2 z-0 hidden h-[900px] w-[1440px] -translate-x-1/2 transform overflow-hidden md:block">
+              <video
+                src="/assets/homepage-hero-video.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="h-full w-full object-cover"
+                preload="auto"
+              />
+            </div>
           </>
 
           <div className="relative z-30 flex h-[900px] flex-col justify-end gap-6 md:w-3/6 md:items-center md:justify-center md:gap-[40px] lg:w-3/6">

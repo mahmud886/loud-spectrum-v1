@@ -1,6 +1,5 @@
-import React from 'react';
-import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 
 const ShopHero = () => {
   const t = useTranslations('TerpeneShop.ShopHero');
@@ -12,11 +11,11 @@ const ShopHero = () => {
         alt="Background"
         width={1440}
         height={797}
-        className="absolute top-0 left-1/2 z-0 h-full w-[1440px] -translate-x-1/2 object-cover"
+        className="absolute top-0 left-1/2 z-0 h-full w-full -translate-x-1/2 object-cover md:w-[1440px]"
         priority
       />
 
-      <div className="absolute inset-0 z-10 container h-[510px] w-full overflow-hidden">
+      <div className="absolute inset-0 z-10 container h-[610px] w-full overflow-hidden">
         <div className="relative z-10 flex h-[610px] w-full flex-col items-center justify-center gap-[40px] md:h-full md:w-[42%]">
           <div>
             <h1 className="pb-5 font-sans text-[35px] leading-[120%] font-normal tracking-normal text-white md:text-[60px]">
