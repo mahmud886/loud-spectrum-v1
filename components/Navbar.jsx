@@ -84,10 +84,10 @@ const Navbar = ({ locale }) => {
             </Link>
 
             <a
-              onClick={(e) => {
+              onClick={() => {
                 setCartOpen(true);
               }}
-              className={`mx-[5px] font-sans text-[20px] font-normal transition-colors duration-300 ease-in-out ${
+              className={`mx-[5px] cursor-pointer font-sans text-[20px] font-normal transition-colors duration-300 ease-in-out ${
                 isSpecialPath ? 'hover:text-umbra-40 text-[#191919]' : 'text-white-100 hover:text-white-40'
               }`}
             >
