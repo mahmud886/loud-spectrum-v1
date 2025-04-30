@@ -7,12 +7,14 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import CartDrawer from '@/components/CartDrawer';
 
 const Navbar = ({ locale }) => {
   const t = useTranslations('');
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [cartOpen, setCartOpen] = useState(false);
 
   const specialPaths = [
     'blog',
@@ -81,20 +83,23 @@ const Navbar = ({ locale }) => {
               {t('Log_in')}
             </Link>
 
-            <Link
-              href={`/cart`}
-              className={`mx-[5px] font-sans text-[20px] font-normal transition-colors duration-300 ease-in-out ${
+            <a
+              onClick={() => {
+                setCartOpen(true);
+              }}
+              className={`mx-[5px] cursor-pointer font-sans text-[20px] font-normal transition-colors duration-300 ease-in-out ${
                 isSpecialPath ? 'hover:text-umbra-40 text-[#191919]' : 'text-white-100 hover:text-white-40'
               }`}
             >
               {t('Cart')} <span className={`${isSpecialPath ? 'text-umbra-40' : 'text-white-40'}`}>(0)</span>
-            </Link>
+            </a>
             <MenuButton setMenuOpen={setMenuOpen} isSpecialPath={isSpecialPath} />
           </div>
         </div>
       </nav>
 
-      {menuOpen && <TopNav menuOpen={menuOpen} setMenuOpen={setMenuOpen} />}
+      {menuOpen && <TopNav menuOpen={menuOpen} setMenuOpen={setMenuOpen} setCartOpen={setCartOpen} />}
+      <CartDrawer isOpen={cartOpen} onClose={() => setCartOpen(false)} cartItems={[]} />
     </>
   );
 };
