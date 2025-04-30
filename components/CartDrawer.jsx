@@ -38,7 +38,7 @@ const CartDrawer = ({ isOpen, onClose }) => {
             <p className="text-center text-gray-500">Your cart is empty.</p>
           ) : (
             cartItems.map((item, idx) => (
-              <div key={idx} className="border-umbra-10 flex items-center gap-4 rounded-md border-1 pt-2.5 pr-5 pl-2.5">
+              <div key={idx} className="border-umbra-10 flex items-center gap-4 rounded-md border-1 py-2.5 pr-5 pl-2.5">
                 <Image src={item.image} alt={item.name} width={80} height={80} className="rounded" />
                 <div className="flex w-full flex-col justify-between gap-5">
                   <h6 className="text-umbra-100 font-sans text-[20px] leading-[120%] font-normal">{item.name}</h6>
