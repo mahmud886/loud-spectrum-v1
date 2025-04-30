@@ -7,7 +7,7 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import CartDrawer from '@/components/CartDrawer';
+import CartDrawer from '@/components/cart/CartDrawer';
 
 const Navbar = ({ locale }) => {
   const t = useTranslations('');
