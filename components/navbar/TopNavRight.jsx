@@ -1,9 +1,10 @@
+'use client';
+
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
-
 import CloseButton from '@/components/navbar/CloseButton';
 
-const TopNavRight = ({ onClose }) => {
+const TopNavRight = ({ onClose, setCartOpen }) => {
   const t = useTranslations('Navbar');
   const topNav = t.raw('TopNav');
   return (
@@ -15,12 +16,14 @@ const TopNavRight = ({ onClose }) => {
         >
           {t('Log_in')}
         </Link>
-        <Link
-          href={`/cart`}
+        <a
+          onClick={() => {
+            setCartOpen(true);
+          }}
           className="text-umbra-100 hover:text-umbra-40 mx-[5px] font-sans text-[20px] font-normal transition-colors duration-300 ease-in-out"
         >
           {t('Cart')} <span className="text-inherit/60">(0)</span>
-        </Link>
+        </a>
         <CloseButton onClose={onClose} />
       </div>
       <div className="flex h-[372px] flex-col justify-between gap-4">

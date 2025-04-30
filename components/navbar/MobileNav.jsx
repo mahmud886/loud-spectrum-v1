@@ -1,4 +1,5 @@
 'use client';
+
 import React from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
@@ -6,7 +7,7 @@ import CloseButton from '@/components/navbar/CloseButton';
 import Image from 'next/image';
 import { Search } from 'lucide-react';
 
-const MobileNav = ({ onClose }) => {
+const MobileNav = ({ onClose, setCartOpen }) => {
   const t = useTranslations('Navbar');
   const topNav = useTranslations('Navbar.TopNav');
   return (
@@ -26,12 +27,14 @@ const MobileNav = ({ onClose }) => {
           </Link>
           {/* Cart and Close Button Section */}
           <div className="flex items-center gap-[30px]">
-            <Link
-              href={`/cart`}
+            <a
+              onClick={() => {
+                setCartOpen(true);
+              }}
               className="text-umbra-100 hover:text-umbra-40 mx-[5px] font-sans text-[20px] font-normal transition-colors duration-300 ease-in-out"
             >
               {t('Cart')} <span className="text-inherit/60">(0)</span>
-            </Link>
+            </a>
             <CloseButton onClose={onClose} />
           </div>
         </div>

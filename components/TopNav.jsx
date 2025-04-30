@@ -8,7 +8,7 @@ import TopNavMiddle from './navbar/TopNavMiddle';
 import TopNavRight from './navbar/TopNavRight';
 import MobileNav from '@/components/navbar/MobileNav';
 
-const TopNav = ({ setMenuOpen, menuOpen }) => {
+const TopNav = ({ setMenuOpen, menuOpen, setCartOpen }) => {
   const t = useTranslations('');
   const [shouldRender, setShouldRender] = useState(true);
   const menuRef = useRef(null);
@@ -90,7 +90,7 @@ const TopNav = ({ setMenuOpen, menuOpen }) => {
                   transition={{ duration: 0.4, delay: 0.3 }}
                   className="w-[480px] bg-white py-[50px] pr-[80px] pl-[60px]"
                 >
-                  <TopNavRight onClose={handleClose} />
+                  <TopNavRight onClose={handleClose} setCartOpen={setCartOpen} />
                 </motion.div>
               </div>
             </motion.div>
@@ -115,7 +115,7 @@ const TopNav = ({ setMenuOpen, menuOpen }) => {
                   transition={{ duration: 0.4, delay: 0.3 }}
                   className="h-screen w-full bg-white px-5 py-12"
                 >
-                  <MobileNav onClose={handleClose} />
+                  <MobileNav onClose={handleClose} setCartOpen={setCartOpen} />
                 </motion.div>
               </div>
             </motion.div>

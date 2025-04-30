@@ -98,7 +98,7 @@ const Navbar = ({ locale }) => {
         </div>
       </nav>
 
-      {menuOpen && <TopNav menuOpen={menuOpen} setMenuOpen={setMenuOpen} />}
+      {menuOpen && <TopNav menuOpen={menuOpen} setMenuOpen={setMenuOpen} setCartOpen={setCartOpen} />}
       <CartDrawer isOpen={cartOpen} onClose={() => setCartOpen(false)} cartItems={[]} />
     </>
   );
