@@ -1,6 +1,6 @@
 'use client';
 
-import { X } from 'lucide-react';
+import { ShoppingCartIcon, X } from 'lucide-react';
 import { useEffect } from 'react';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import CartItem from '@/components/cart/CartItem';
@@ -38,7 +38,8 @@ const CartDrawer = ({ isOpen, onClose }) => {
         <ScrollArea className="h-[calc(100dvh-350px)] space-y-4 p-4">
           {cartItems.length === 0 ? (
             <div className="flex h-[calc(100dvh-450px)] w-full flex-col items-center justify-center">
-              <p className="text-center text-gray-500">Your cart is empty.</p>
+              <ShoppingCartIcon size={100} className="text-umbra-40" />
+              <p className="text-umbra-40 text-center">Your cart is empty.</p>
             </div>
           ) : (
             <div className="space-y-2.5">
@@ -75,6 +76,7 @@ const CartDrawer = ({ isOpen, onClose }) => {
 
 export default CartDrawer;
 
+// const cartItems = [];
 const cartItems = [
   {
     name: 'Green Apple Jack',
