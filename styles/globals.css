@@ -163,7 +163,7 @@
 
 @layer components {
   .container {
-    @apply mx-auto px-[20px] md:px-[40px] lg:px-[40px] xl:px-[80px] overflow-x-hidden
+    @apply mx-auto px-[20px] md:px-[40px] lg:px-[40px] xl:px-[80px] overflow-hidden
   }
 
   .heading-6 {

@@ -7,7 +7,12 @@ const TopNavMiddle = () => {
   return (
     <div className="flex h-full flex-col justify-center gap-12">
       <div>
-        <button className="main-button-black rounded-full px-6 py-2">{t('Wholesale')}</button>
+        <Link
+          href={`/wholesale-store`}
+          className="main-button-black inline-flex items-center justify-center rounded-full px-6 py-2"
+        >
+          {t('Wholesale')}
+        </Link>
       </div>
       <div className="flex flex-col gap-4">
         <Link href="/about" className={'navLinkClass'}>

@@ -29,10 +29,10 @@ const TopNav = ({ setMenuOpen, menuOpen, setCartOpen }) => {
       }
     };
     if (menuOpen) {
-      document.addEventListener('mousedown', handleClick);
+      document.addEventListener('click', handleClick);
     }
     return () => {
-      document.removeEventListener('mousedown', handleClick);
+      document.removeEventListener('click', handleClick);
     };
   }, [menuOpen]);
 
@@ -40,7 +40,7 @@ const TopNav = ({ setMenuOpen, menuOpen, setCartOpen }) => {
     if (!shouldRender) {
       const timer = setTimeout(() => {
         setMenuOpen(false);
-      }, 200);
+      }, 2000);
       return () => clearTimeout(timer);
     }
   }, [shouldRender, setMenuOpen]);

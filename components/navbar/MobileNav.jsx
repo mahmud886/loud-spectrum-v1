@@ -68,7 +68,7 @@ const MobileNav = ({ onClose, setCartOpen }) => {
       </div>
       <div className="flex flex-col gap-4">
         <Link
-          href={`/wholesale`}
+          href={`/wholesale-store`}
           className="main-button-black inline-flex w-full items-center justify-center rounded-full px-6 py-4"
         >
           Wholesale

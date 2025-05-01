@@ -27,6 +27,7 @@ const Navbar = ({ locale }) => {
     'terpene-chart',
     'faq',
     'checkout',
+    'wholesale-store',
   ];
 
   const isSpecialPath = specialPaths.some(
