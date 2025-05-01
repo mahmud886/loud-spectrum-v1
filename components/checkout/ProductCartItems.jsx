@@ -1,14 +1,16 @@
 'use client';
-import React from 'react';
 import Image from 'next/image';
 import { MinusIcon, PlusIcon, TrashIcon } from 'lucide-react';
 
-const CartItem = ({ item }) => {
+const ProductCartItems = ({ item }) => {
   return (
     <div className="border-umbra-10 flex items-center gap-4 rounded-md border-1 py-2.5 pr-5 pl-2.5">
-      <Image src={item.image} alt={item.name} width={80} height={80} className="rounded" />
-      <div className="flex w-full flex-col justify-between gap-5">
-        <h6 className="text-umbra-100 font-sans text-[20px] leading-[120%] font-normal">{item.name}</h6>
+      <Image src={item.image} alt={item.name} width={70} height={70} className="rounded" />
+      <div className="flex w-full flex-col justify-between gap-3">
+        <div>
+          <h6 className="text-umbra-100 font-sans text-[18px] leading-[120%] font-normal">{item.name}</h6>
+          <h6 className="text-umbra-40 font-sans text-[16px] leading-[120%] font-normal">Volume: 5ml</h6>
+        </div>
         <div className="flex w-full items-end justify-between gap-5">
           <div className="mt-2 flex items-center gap-2">
             {/* Quantity Control */}
@@ -52,4 +54,4 @@ const CartItem = ({ item }) => {
   );
 };
 
-export default CartItem;
+export default ProductCartItems;

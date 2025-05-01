@@ -26,6 +26,7 @@ const Navbar = ({ locale }) => {
     'lab',
     'terpene-chart',
     'faq',
+    'checkout',
   ];
 
   const isSpecialPath = specialPaths.some(
