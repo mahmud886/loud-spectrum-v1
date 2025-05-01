@@ -4,9 +4,11 @@ import { ShoppingCartIcon, X } from 'lucide-react';
 import { useEffect } from 'react';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import CartItem from '@/components/cart/CartItem';
-import EmptyCartIcon from '@/components/svgs/empty-cart-icon';
+import { Link, useRouter } from '@/i18n/navigation';
 
 const CartDrawer = ({ isOpen, onClose }) => {
+  const router = useRouter();
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -63,7 +65,13 @@ const CartDrawer = ({ isOpen, onClose }) => {
               </div>
             </div>
             <div className="mb-5 flex w-full items-center justify-between gap-5">
-              <button className="main-button-black w-full rounded-full py-3 text-white transition">
+              <button
+                onClick={() => {
+                  onClose();
+                  setTimeout(() => router.push('/checkout'), 300);
+                }}
+                className="main-button-black inline-flex w-full items-center justify-center rounded-full py-3 text-white transition"
+              >
                 Proceed to Checkout
               </button>
             </div>
