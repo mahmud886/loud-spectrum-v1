@@ -129,6 +129,19 @@ function CarouselItem({ className, ...props }) {
     />
   );
 }
+function CarouselItemWholesale({ className, ...props }) {
+  const { orientation } = useCarousel();
+
+  return (
+    <div
+      role="group"
+      aria-roledescription="slide"
+      data-slot="carousel-item"
+      className={cn('min-w-0 shrink-0 grow-0 basis-[60%]', orientation === 'horizontal' ? 'pl-4' : 'pl-4', className)}
+      {...props}
+    />
+  );
+}
 
 function CarouselPrevious({ className, variant = 'outline', size = 'icon', ...props }) {
   const { orientation, scrollPrev, canScrollPrev } = useCarousel();
@@ -180,4 +193,4 @@ function CarouselNext({ className, variant = 'outline', size = 'icon', ...props 
   );
 }
 
-export { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious };
+export { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, CarouselItemWholesale };
