@@ -28,6 +28,7 @@ const Navbar = ({ locale }) => {
     'faq',
     'checkout',
     'wholesale-store',
+    'account',
   ];
 
   const isSpecialPath = specialPaths.some(
