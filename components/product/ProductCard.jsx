@@ -1,7 +1,7 @@
 'use client';
 
 import clsx from 'clsx';
-import { motion } from 'framer-motion'; // ✨ (only add this)
+import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -12,7 +12,8 @@ const ProductCard = () => {
   const pathname = usePathname();
   const cleanPath = pathname.replace(/^\/(en|fr|de|es|jp|ru)/, '').replace(/\/$/, '');
 
-  const isShopPage = cleanPath.startsWith('/shop') || cleanPath.startsWith('/try-sample-pack');
+  const isShopPage =
+    cleanPath.startsWith('/shop') || cleanPath.startsWith('/try-sample-pack') || cleanPath.startsWith('/account');
 
   return (
     <motion.div initial="rest" whileHover="hover" animate="rest" className="cursor-pointer">
