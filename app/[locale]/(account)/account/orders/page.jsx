@@ -284,21 +284,24 @@ export default function OrdersPage() {
           <Table>
             <TableHeader>
               <TableRow className="bg-background after:bg-border sticky top-0 after:absolute after:inset-x-0 after:bottom-0 after:h-px after:content-[''] [&>*]:whitespace-nowrap">
-                <TableHead>Order ID</TableHead>
-                <TableHead>Order Date</TableHead>
-                <TableHead>Quantity</TableHead>
-                <TableHead>Total Amount</TableHead>
-                <TableHead>Status</TableHead>
-                <TableHead>Payment Status</TableHead>
-                <TableHead className="text-center">Action</TableHead>
-                <TableHead className="text-center">Details</TableHead>
+                <TableHead className="font-sans font-normal">Order ID</TableHead>
+                <TableHead className="font-sans font-normal">Order Date</TableHead>
+                <TableHead className="font-sans font-normal">Quantity</TableHead>
+                <TableHead className="font-sans font-normal">Total Amount</TableHead>
+                <TableHead className="font-sans font-normal">Status</TableHead>
+                <TableHead className="font-sans font-normal">Payment Status</TableHead>
+                <TableHead className="text-center font-sans font-normal">Action</TableHead>
+                <TableHead className="text-center font-sans font-normal">Details</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {orders.map((order) => (
                 <TableRow key={order.id} className="odd:bg-muted/50 [&>*]:whitespace-nowrap">
                   <TableCell>
-                    <Link href={`/account/orders/1`} className="text-blue-600 hover:underline">
+                    <Link
+                      href={`/account/orders/1`}
+                      className="bg-stardust/80 hover:bg-stardust text-umbra-100 rounded-[10px] px-2 py-1 text-[10px]"
+                    >
                       {order.id}
                     </Link>
                   </TableCell>

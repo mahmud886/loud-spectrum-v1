@@ -41,29 +41,35 @@ const OrderDetailsDialog = ({ open, onOpenChange, orderId }) => {
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="w-full rounded-lg bg-white p-6 md:max-w-5xl">
         <DialogHeader>
-          <DialogTitle className="mb-6 text-2xl font-semibold">Order Details - {orderDetails.id}</DialogTitle>
+          <DialogTitle className="text-umbra-100 font-sans text-[24px] leading-[120%] font-normal">
+            Order Details - {orderDetails.id}
+          </DialogTitle>
         </DialogHeader>
 
         {/* Product List Section */}
         <div className="mb-6">
-          <h3 className="mb-4 text-xl font-semibold">Product Details</h3>
+          <h3 className="mb-4 text-xl font-normal">Product Details</h3>
           <div className="overflow-x-auto rounded-md border border-gray-200">
             <table className="w-full table-auto text-left">
-              <thead className="bg-gray-100">
+              <thead className="bg-stardust/20">
                 <tr>
-                  <th className="px-4 py-2">Product</th>
-                  <th className="px-4 py-2">Quantity</th>
-                  <th className="px-4 py-2">Price</th>
-                  <th className="px-4 py-2">Total</th>
+                  <th className="text-umbra-100 px-4 py-2 font-sans text-[16px] font-normal">Product</th>
+                  <th className="text-umbra-100 px-4 py-2 font-sans text-[16px] font-normal">Quantity</th>
+                  <th className="text-umbra-100 px-4 py-2 font-sans text-[16px] font-normal">Price</th>
+                  <th className="text-umbra-100 px-4 py-2 font-sans text-[16px] font-normal">Total</th>
                 </tr>
               </thead>
               <tbody>
                 {orderDetails.items.map((item) => (
                   <tr key={item.id} className="border-b">
-                    <td className="px-4 py-2">{item.name}</td>
-                    <td className="px-4 py-2">{item.quantity}</td>
-                    <td className="px-4 py-2">${item.price.toFixed(2)}</td>
-                    <td className="px-4 py-2">${(item.quantity * item.price).toFixed(2)}</td>
+                    <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">{item.name}</td>
+                    <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">{item.quantity}</td>
+                    <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">
+                      ${item.price.toFixed(2)}
+                    </td>
+                    <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">
+                      ${(item.quantity * item.price).toFixed(2)}
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -72,35 +78,48 @@ const OrderDetailsDialog = ({ open, onOpenChange, orderId }) => {
         </div>
 
         {/* Shipping Address and Order Summary Section */}
-        <div className="flex space-x-6">
+        <div className="flex flex-col gap-2 md:flex-row md:space-x-6">
           {/* Shipping Address */}
-          <div className="flex-1">
-            <h3 className="mb-4 text-xl font-semibold">Shipping Address</h3>
-            <div className="rounded-md bg-gray-50 p-4">
-              <p className="font-medium">{orderDetails.shippingAddress.name}</p>
-              <p>{orderDetails.shippingAddress.address}</p>
-              <p>{orderDetails.shippingAddress.phone}</p>
+          <div className="w-full md:flex-1">
+            <h3 className="mb-4 text-[18px] font-normal">Address</h3>
+            <div className="bg-stardust/20 divide-umbra-10 divide-y rounded-[10px]">
+              <div className="p-4">
+                <h3 className="mb-1 text-[18px] font-normal">Shipping Address</h3>
+                <p className="text-umbra-100 font-sans text-[14px] font-normal">{orderDetails.shippingAddress.name}</p>
+                <p className="text-umbra-100 font-sans text-[14px] font-normal">
+                  {orderDetails.shippingAddress.address}
+                </p>
+                <p className="text-umbra-100 font-sans text-[14px] font-normal">{orderDetails.shippingAddress.phone}</p>
+              </div>
+              <div className="p-4">
+                <h3 className="mb-1 text-[18px] font-normal">Billing Address</h3>
+                <p className="text-umbra-100 font-sans text-[14px] font-normal">{orderDetails.shippingAddress.name}</p>
+                <p className="text-umbra-100 font-sans text-[14px] font-normal">
+                  {orderDetails.shippingAddress.address}
+                </p>
+                <p className="text-umbra-100 font-sans text-[14px] font-normal">{orderDetails.shippingAddress.phone}</p>
+              </div>
             </div>
           </div>
 
           {/* Order Summary */}
-          <div className="flex-1">
-            <h3 className="mb-4 text-xl font-semibold">Order Summary</h3>
-            <div className="rounded-md bg-gray-50 p-4">
+          <div className="w-full md:flex-1">
+            <h3 className="mb-4 text-[18px] font-normal">Order Summary</h3>
+            <div className="rounded-[10px] bg-gray-50 p-4">
               <div className="mb-2 flex justify-between">
-                <span className="font-medium">Subtotal</span>
+                <span className="text-umbra-100 font-sans text-[14px] font-normal">Subtotal</span>
                 <span>${orderDetails.orderSummary.totalAmount.toFixed(2)}</span>
               </div>
               <div className="mb-2 flex justify-between">
-                <span className="font-medium">Shipping Fee</span>
+                <span className="text-umbra-100 font-sans text-[14px] font-normal">Shipping Fee</span>
                 <span>${orderDetails.orderSummary.shippingFee.toFixed(2)}</span>
               </div>
               <div className="mb-2 flex justify-between">
-                <span className="font-medium">Taxes</span>
+                <span className="text-umbra-100 font-sans text-[14px] font-normal">Taxes</span>
                 <span>${orderDetails.orderSummary.taxes.toFixed(2)}</span>
               </div>
-              <div className="mb-2 flex justify-between font-semibold">
-                <span>Total</span>
+              <div className="border-umbra-10 mb-2 flex justify-between border-t pt-2 font-normal">
+                <span className="text-umbra-100 font-sans text-[14px] font-normal">Total</span>
                 <span>${orderDetails.orderSummary.finalAmount.toFixed(2)}</span>
               </div>
             </div>
@@ -109,7 +128,7 @@ const OrderDetailsDialog = ({ open, onOpenChange, orderId }) => {
 
         {/* Close Button */}
         <div className="mt-6 flex justify-end">
-          <button className="rounded-md bg-blue-500 px-4 py-2 text-white" onClick={() => onOpenChange(false)}>
+          <button className="main-button-black rounded-full px-6 py-2 text-white" onClick={() => onOpenChange(false)}>
             Close
           </button>
         </div>
