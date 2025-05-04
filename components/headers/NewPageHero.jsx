@@ -14,7 +14,7 @@ const NewPageHero = () => {
         alt="Background"
         width={1440}
         height={797}
-        className="absolute top-0 left-1/2 z-0 h-full w-[1440px] -translate-x-1/2 object-fill"
+        className="absolute top-0 left-1/2 z-0 h-full w-full -translate-x-1/2 object-fill md:w-[1920px]"
         priority
       />
 

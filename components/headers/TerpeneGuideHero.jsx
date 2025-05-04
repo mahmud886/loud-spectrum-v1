@@ -11,7 +11,7 @@ const TerpeneGuideHero = () => {
         alt="Background"
         width={1440}
         height={689}
-        className="absolute top-0 left-1/2 z-0 h-full w-full -translate-x-1/2 object-cover md:h-[689px] md:w-[1440px]"
+        className="absolute top-0 left-1/2 z-0 h-full w-full -translate-x-1/2 object-cover md:h-[689px] md:w-[1920px]"
         priority
       />
 
