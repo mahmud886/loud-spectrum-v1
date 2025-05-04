@@ -10,7 +10,7 @@ const TrySamplePackHero = () => {
           alt="Background"
           width={1440}
           height={797}
-          className="absolute top-0 left-1/2 z-0 hidden h-full w-[1440px] -translate-x-1/2 object-cover md:block"
+          className="absolute top-0 left-1/2 z-0 hidden h-full -translate-x-1/2 object-cover md:block md:w-[1920px]"
           priority
         />
 
