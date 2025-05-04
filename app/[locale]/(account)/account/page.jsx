@@ -1,12 +1,8 @@
 'use client';
 
 import { PackageCheck, RotateCw, Clock, ShoppingBag } from 'lucide-react';
-import ProductGridCard from '@/components/product/ProductGridCard';
-import ProductCart from '@/components/checkout/ProductCart';
 import ProductCard from '@/components/product/ProductCard';
-import ProductCarouselWithProgress from '@/components/carousels/ProductCarouselWithProgress';
 import React from 'react';
-import RelatedProducts from '@/components/containers/product/RelatedProducts';
 
 export default function DashboardPage() {
   const stats = [
