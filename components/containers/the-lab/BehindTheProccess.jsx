@@ -1,13 +1,12 @@
-import React from 'react';
-import Image from 'next/image';
-import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
+import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 
 const BehindTheProccess = () => {
   const t = useTranslations('TheLab');
   return (
     <>
-      <div className="bg-umbra-100 container pt-20 pb-10 md:px-[188px] md:pb-20">
+      <div className="bg-umbra-100 container pt-20 pb-10 md:px-[188px] md:pb-20 2xl:px-[428px]">
         <div className="space-y-6">
           <h5 className="text-white-40 font-sans text-[14px] leading-[100%] font-normal tracking-normal uppercase md:text-[16px]">
             {t('behindTheProcess.title')}
@@ -151,7 +150,7 @@ const BehindTheProccess = () => {
           className="h-full w-full"
         />
       </div>
-      <div className="bg-white-100 container px-6 py-20 md:px-[188px] md:py-[180px]">
+      <div className="bg-white-100 container px-6 py-20 md:px-[188px] md:py-[180px] 2xl:px-[428px]">
         <div className="flex flex-col items-center justify-between gap-12 md:flex-row">
           <div className="w-full space-y-4 md:w-[413px] md:space-y-6">
             <h5 className="text-umbra-40 font-sans text-[14px] leading-[100%] font-normal tracking-normal uppercase md:text-[16px]">
