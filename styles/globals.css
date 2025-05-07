@@ -163,7 +163,7 @@
 
 @layer components {
   .container {
-    @apply mx-auto px-[20px] md:px-[40px] lg:px-[40px] xl:px-[80px] overflow-hidden
+    @apply mx-auto overflow-hidden px-[20px] md:px-[40px] lg:px-[40px] xl:px-[80px] 2xl:px-[320px];
   }
 
   .heading-6 {
@@ -171,7 +171,7 @@
   }
 
   .navLinkClass {
-    @apply text-umbra-100 hover:text-umbra-40 font-sans text-[32px] md:text-[40px] leading-[100%] font-normal transition-colors duration-300 ease-in-out;
+    @apply text-umbra-100 hover:text-umbra-40 font-sans text-[32px] leading-[100%] font-normal transition-colors duration-300 ease-in-out md:text-[40px];
   }
 
   .main-gradient {
@@ -371,7 +371,6 @@
     background-color 0.2s ease-in-out; /* Added transition */
 }
 
-
 ::-webkit-scrollbar {
   width: 4px;
   height: 4px;
@@ -385,4 +384,3 @@
 ::-webkit-scrollbar-track {
   background: transparent;
 }
-
