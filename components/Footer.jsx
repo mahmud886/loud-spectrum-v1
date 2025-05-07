@@ -1,12 +1,12 @@
 import LanguageSwitcher from '@/components/LanguageSwitcher';
-import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
+import { useTranslations } from 'next-intl';
 
 const Footer = () => {
   const t = useTranslations('');
   return (
-    <footer className="bg-umbra-100 text-white md:px-[80px] md:pt-[80px] md:pb-[50px] lg:px-[40px] xl:px-[40px]">
-      <div className="container">
+    <footer className="bg-umbra-100 text-white md:pt-[80px] md:pb-[50px]">
+      <div className="container px-5 md:px-[40px] lg:px-[40px] xl:px-[80px] 2xl:px-[320px]">
         {/*for desktop*/}
         <div className="hidden flex-col justify-center space-y-[150px] md:flex">
           <div className="mx-auto grid w-full grid-cols-1 gap-8 md:grid-cols-2">

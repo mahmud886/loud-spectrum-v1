@@ -1,5 +1,6 @@
 'use client';
 
+import CartDrawer from '@/components/cart/CartDrawer';
 import MenuButton from '@/components/navbar/MenuButton';
 import TopNav from '@/components/TopNav';
 import { Link } from '@/i18n/navigation';
@@ -7,7 +8,6 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import CartDrawer from '@/components/cart/CartDrawer';
 
 const Navbar = ({ locale }) => {
   const t = useTranslations('');
@@ -53,7 +53,7 @@ const Navbar = ({ locale }) => {
     <>
       <nav className={`fixed top-0 left-0 z-50 w-full transition-colors duration-300 ${navBg} ${textColor}`}>
         <div
-          className={`container mx-auto flex items-center justify-between px-5 md:px-[40px] lg:px-[40px] xl:px-[80px] ${isScrolled ? 'py-5' : 'py-12'} transition-all duration-300`}
+          className={`container mx-auto flex items-center justify-between px-5 md:px-[40px] lg:px-[40px] xl:px-[80px] 2xl:px-[320px] ${isScrolled ? 'py-5' : 'py-12'} transition-all duration-300`}
         >
           {!isScrolled && (
             <div className="absolute top-0 left-1/2 -z-10 w-full -translate-x-1/2">
@@ -76,6 +76,7 @@ const Navbar = ({ locale }) => {
               priority
             />
           </Link>
+
           <div className="flex items-center gap-[30px]">
             <Link
               href={`/login`}
