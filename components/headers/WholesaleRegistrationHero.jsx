@@ -1,4 +1,3 @@
-import React from 'react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
@@ -29,7 +28,7 @@ const WholesaleRegistrationHero = () => {
           </div>
           {/* Background Image */}
           <Image
-            src="/assets/images/about-hero.jpeg"
+            src="/assets/images/wholesale/wholesale-hero.png"
             alt="Background"
             width={1280}
             height={631}

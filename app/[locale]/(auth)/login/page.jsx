@@ -1,10 +1,9 @@
-import React from 'react';
-import Image from 'next/image';
-import { useTranslations } from 'next-intl';
 import LoginRegister from '@/components/auth';
+import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 
 const LoginPage = () => {
-  const t = useTranslations('ContactPage');
+  const t = useTranslations('LoginPage');
   return (
     <div className="text-umbra-100 flex w-full items-center justify-center">
       <div className="bg-white py-24 md:py-40">
@@ -25,11 +24,9 @@ const LoginPage = () => {
             <div className="space-y-12">
               <div className="space-y-6">
                 <h2 className="text-umbra-100 font-sans text-[32px] leading-[120%] font-normal md:text-[44px]">
-                  Welcome To Loud Spectrum
+                  {t('welcome')}
                 </h2>
-                <p className="text-umbra-100 font-sans text-[16px] leading-[140%] font-normal">
-                  {t('contactForm.description')}
-                </p>
+                <p className="text-umbra-100 font-sans text-[16px] leading-[140%] font-normal">{t('description')}</p>
               </div>
               <LoginRegister />
             </div>

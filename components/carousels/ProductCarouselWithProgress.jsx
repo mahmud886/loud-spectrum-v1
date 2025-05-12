@@ -30,7 +30,7 @@ export default function ProductCarouselWithProgress({ children }) {
           {Array.from({ length: 8 }).map((_, index) => (
             <CarouselItem
               key={index}
-              className="pl-2 sm:basis-1 md:basis-1/2 md:pl-2 lg:basis-1/4 xl:basis-1/4 2xl:basis-1/5"
+              className="pl-2 sm:basis-1 md:basis-1/2 md:pl-2 lg:basis-1/4 xl:basis-1/4 2xl:basis-1/4"
             >
               {children}
             </CarouselItem>

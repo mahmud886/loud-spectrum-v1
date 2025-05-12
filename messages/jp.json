@@ -1,4 +1,39 @@
 {
+  "LoginPage": {
+    "welcome": "Loud Spectrumへようこそ",
+    "description": "アカウントにログインして、プロフィールや注文履歴にアクセスしてください。",
+    "login": "ログイン",
+    "register": "登録",
+    "Login": {
+      "emailLabel": "メールアドレス*",
+      "emailPlaceholder": "メールアドレスを入力してください",
+      "passwordLabel": "パスワード*",
+      "passwordPlaceholder": "パスワードを入力してください",
+      "loginButton": "ログイン",
+      "togglePassword": "パスワードの表示/非表示"
+    },
+    "Registration": {
+      "fullNameLabel": "氏名*",
+      "fullNamePlaceholder": "氏名を入力してください",
+      "phoneLabel": "電話番号*",
+      "phonePlaceholder": "電話番号を入力してください",
+      "emailLabel": "メールアドレス*",
+      "emailPlaceholder": "メールアドレスを入力してください",
+      "companyLabel": "会社名",
+      "companyPlaceholder": "会社名を入力してください",
+      "websiteLabel": "ウェブサイト",
+      "websitePlaceholder": "ウェブサイトを入力してください",
+      "passwordLabel": "パスワード*",
+      "passwordPlaceholder": "パスワードを入力してください",
+      "confirmPasswordLabel": "パスワード確認*",
+      "confirmPasswordPlaceholder": "パスワードを再入力してください",
+      "agreeTerms": "利用規約に同意します",
+      "registerButton": "登録",
+      "wholesalerButton": "卸売アカウントを作成",
+      "togglePassword": "パスワードの表示/非表示",
+      "toggleConfirmPassword": "確認パスワードの表示/非表示"
+    }
+  },
   "Navbar": {
     "Log_in": "ログイン",
     "Cart": "カート",

@@ -17,7 +17,7 @@ const BehindTheProccess = () => {
         </div>
         <div className="mt-2 flex flex-col items-center justify-between py-12 md:mt-0 md:flex-row md:gap-[145px] md:py-20">
           <Image
-            src="/assets/images/the-lab-advantage.png"
+            src="/assets/images/the-lab/behind-the-process-1.png"
             alt="the-lab-advantage"
             width={522}
             height={474}
@@ -42,7 +42,7 @@ const BehindTheProccess = () => {
         </div>
         <div className="mt-2 flex flex-col items-center justify-between py-12 md:mt-0 md:flex-row md:gap-[145px] md:py-20">
           <Image
-            src="/assets/images/the-lab-advantage.png"
+            src="/assets/images/the-lab/behind-the-process-2.png"
             alt="the-lab-advantage"
             width={522}
             height={474}
@@ -62,7 +62,7 @@ const BehindTheProccess = () => {
             </ul>
           </div>
           <Image
-            src="/assets/images/the-lab-advantage.png"
+            src="/assets/images/the-lab/behind-the-process-2.png"
             alt="the-lab-advantage"
             width={522}
             height={474}
@@ -71,7 +71,7 @@ const BehindTheProccess = () => {
         </div>
         <div className="mt-2 flex flex-col items-center justify-between py-12 md:mt-0 md:flex-row md:gap-[145px] md:py-20">
           <Image
-            src="/assets/images/the-lab-advantage.png"
+            src="/assets/images/the-lab/behind-the-process-3.png"
             alt="the-lab-advantage"
             width={522}
             height={474}
@@ -170,7 +170,7 @@ const BehindTheProccess = () => {
           </div>
           <div>
             <Image
-              src="/assets/images/the-lab-ingradients.png"
+              src="/assets/images/the-lab/ingredients.png"
               alt="section-mask"
               width={538}
               height={474}
@@ -196,13 +196,22 @@ const BehindTheProccess = () => {
             </div>
           </div>
           <div>
-            <Image
+            <video
+              src="/assets/videos/badge-animation.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="h-full w-full object-cover"
+              preload="auto"
+            />
+            {/* <Image
               src="/assets/images/the-lab-ingredient-footer.png"
               alt="section-mask"
               width={987}
               height={355}
               className="h-full w-full object-cover md:h-[355px] md:w-[987px]"
-            />
+            /> */}
           </div>
         </div>
       </div>

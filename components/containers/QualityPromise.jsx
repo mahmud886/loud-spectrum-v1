@@ -1,6 +1,5 @@
-import React from 'react';
-import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 
 const QualityPromise = () => {
   const t = useTranslations('Homepage');
@@ -38,11 +37,11 @@ const QualityPromise = () => {
           </div>
           <div className="flex flex-col items-center justify-between gap-20 md:flex-row md:gap-[126px] lg:flex-row lg:gap-[126px]">
             <Image
-              src="/assets/images/quality-promise/video.png"
+              src="/assets/videos/our-quality-promise.gif"
               alt="quality"
-              width={414}
-              height={359}
-              className="h-[256px] w-[295px] object-cover md:h-[359px] md:w-[414px] lg:h-[359px] lg:w-[414px]"
+              width={578}
+              height={502}
+              className="h-full w-full object-cover md:h-[359px] md:w-[414px] md:scale-125 lg:h-[359px] lg:w-[414px]"
             />
             <div className="flex max-w-full min-w-full flex-col space-y-6 md:max-w-[600px] md:min-w-[520px] lg:max-w-[600px] lg:min-w-[520px]">
               <h5 className="text-umbra-40 font-sans text-[16px] font-normal uppercase">{t('Our_Quality_Promise')}</h5>
