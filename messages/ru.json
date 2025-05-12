@@ -1,4 +1,39 @@
 {
+  "LoginPage": {
+    "welcome": "Добро пожаловать в Loud Spectrum",
+    "description": "Войдите в аккаунт, чтобы получить доступ к своему профилю и истории заказов.",
+    "login": "Войти",
+    "register": "Регистрация",
+    "Login": {
+      "emailLabel": "Электронная почта*",
+      "emailPlaceholder": "Введите вашу почту",
+      "passwordLabel": "Пароль*",
+      "passwordPlaceholder": "Введите ваш пароль",
+      "loginButton": "Войти",
+      "togglePassword": "Показать/скрыть пароль"
+    },
+    "Registration": {
+      "fullNameLabel": "Полное имя*",
+      "fullNamePlaceholder": "Введите ваше полное имя",
+      "phoneLabel": "Телефон*",
+      "phonePlaceholder": "Введите ваш номер телефона",
+      "emailLabel": "Электронная почта*",
+      "emailPlaceholder": "Введите вашу почту",
+      "companyLabel": "Компания",
+      "companyPlaceholder": "Введите название вашей компании",
+      "websiteLabel": "Веб-сайт",
+      "websitePlaceholder": "Введите ваш сайт",
+      "passwordLabel": "Пароль*",
+      "passwordPlaceholder": "Введите пароль",
+      "confirmPasswordLabel": "Подтвердите пароль*",
+      "confirmPasswordPlaceholder": "Подтвердите пароль",
+      "agreeTerms": "Я согласен с условиями и положениями",
+      "registerButton": "Зарегистрироваться",
+      "wholesalerButton": "Создать аккаунт оптовика",
+      "togglePassword": "Показать/скрыть пароль",
+      "toggleConfirmPassword": "Показать/скрыть подтверждение пароля"
+    }
+  },
   "Navbar": {
     "Log_in": "Войти",
     "Cart": "Корзина",

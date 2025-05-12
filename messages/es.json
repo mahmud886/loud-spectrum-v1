@@ -1,4 +1,39 @@
 {
+  "LoginPage": {
+    "welcome": "Bienvenido a Loud Spectrum",
+    "description": "Inicia sesión para acceder a tu perfil e historial de pedidos.",
+    "login": "Iniciar sesión",
+    "register": "Registrarse",
+    "Login": {
+      "emailLabel": "Correo electrónico*",
+      "emailPlaceholder": "Introduce tu correo electrónico",
+      "passwordLabel": "Contraseña*",
+      "passwordPlaceholder": "Introduce tu contraseña",
+      "loginButton": "Iniciar sesión",
+      "togglePassword": "Mostrar/ocultar contraseña"
+    },
+    "Registration": {
+      "fullNameLabel": "Nombre completo*",
+      "fullNamePlaceholder": "Introduce tu nombre completo",
+      "phoneLabel": "Teléfono*",
+      "phonePlaceholder": "Introduce tu número de teléfono",
+      "emailLabel": "Correo electrónico*",
+      "emailPlaceholder": "Introduce tu correo electrónico",
+      "companyLabel": "Empresa",
+      "companyPlaceholder": "Introduce el nombre de tu empresa",
+      "websiteLabel": "Sitio web",
+      "websitePlaceholder": "Introduce tu sitio web",
+      "passwordLabel": "Contraseña*",
+      "passwordPlaceholder": "Introduce la contraseña",
+      "confirmPasswordLabel": "Confirmar contraseña*",
+      "confirmPasswordPlaceholder": "Confirma la contraseña",
+      "agreeTerms": "Acepto los términos y condiciones",
+      "registerButton": "Registrarse",
+      "wholesalerButton": "Crear cuenta de mayorista",
+      "togglePassword": "Mostrar/ocultar contraseña",
+      "toggleConfirmPassword": "Mostrar/ocultar confirmación de contraseña"
+    }
+  },
   "Navbar": {
     "Log_in": "Iniciar sesión",
     "Cart": "Carrito",

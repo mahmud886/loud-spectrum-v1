@@ -1,4 +1,39 @@
 {
+  "LoginPage": {
+    "welcome": "Willkommen bei Loud Spectrum",
+    "description": "Melden Sie sich bei Ihrem Konto an, um auf Ihr Profil und Ihre Bestellhistorie zuzugreifen.",
+    "login": "Anmelden",
+    "register": "Registrieren",
+    "Login": {
+      "emailLabel": "E-Mail*",
+      "emailPlaceholder": "Geben Sie Ihre E-Mail ein",
+      "passwordLabel": "Passwort*",
+      "passwordPlaceholder": "Geben Sie Ihr Passwort ein",
+      "loginButton": "Anmelden",
+      "togglePassword": "Passwort anzeigen/verbergen"
+    },
+    "Registration": {
+      "fullNameLabel": "Vollständiger Name*",
+      "fullNamePlaceholder": "Geben Sie Ihren vollständigen Namen ein",
+      "phoneLabel": "Telefon*",
+      "phonePlaceholder": "Geben Sie Ihre Telefonnummer ein",
+      "emailLabel": "E-Mail*",
+      "emailPlaceholder": "Geben Sie Ihre E-Mail ein",
+      "companyLabel": "Firma",
+      "companyPlaceholder": "Geben Sie Ihren Firmennamen ein",
+      "websiteLabel": "Webseite",
+      "websitePlaceholder": "Geben Sie Ihre Webseite ein",
+      "passwordLabel": "Passwort*",
+      "passwordPlaceholder": "Passwort eingeben",
+      "confirmPasswordLabel": "Passwort bestätigen*",
+      "confirmPasswordPlaceholder": "Passwort bestätigen",
+      "agreeTerms": "Ich stimme den Allgemeinen Geschäftsbedingungen zu",
+      "registerButton": "Registrieren",
+      "wholesalerButton": "Großhandelskonto erstellen",
+      "togglePassword": "Passwort anzeigen/verbergen",
+      "toggleConfirmPassword": "Passwortbestätigung anzeigen/verbergen"
+    }
+  },
   "Navbar": {
     "Log_in": "Anmelden",
     "Cart": "Warenkorb",

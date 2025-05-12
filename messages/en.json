@@ -1,4 +1,40 @@
 {
+  "LoginPage": {
+    "welcome": "Welcome To Loud Spectrum",
+    "description": "Log in to your account to access your profile and order history.",
+    "login": "Login",
+    "register": "Register",
+
+    "Login": {
+      "emailLabel": "Email*",
+      "emailPlaceholder": "Enter your email",
+      "passwordLabel": "Password*",
+      "passwordPlaceholder": "Enter your password",
+      "loginButton": "Login",
+      "togglePassword": "Toggle password visibility"
+    },
+    "Registration": {
+      "fullNameLabel": "Full Name*",
+      "fullNamePlaceholder": "Enter your full name",
+      "phoneLabel": "Phone*",
+      "phonePlaceholder": "Enter your phone number",
+      "emailLabel": "Email*",
+      "emailPlaceholder": "Enter your email",
+      "companyLabel": "Company",
+      "companyPlaceholder": "Enter your company name",
+      "websiteLabel": "Website",
+      "websitePlaceholder": "Enter your website",
+      "passwordLabel": "Password*",
+      "passwordPlaceholder": "Enter password",
+      "confirmPasswordLabel": "Confirm Password*",
+      "confirmPasswordPlaceholder": "Confirm password",
+      "agreeTerms": "I agree to the terms and conditions",
+      "registerButton": "Register",
+      "wholesalerButton": "Create Wholesaler Account",
+      "togglePassword": "Toggle password visibility",
+      "toggleConfirmPassword": "Toggle confirm password visibility"
+    }
+  },
   "Navbar": {
     "Log_in": "Log in",
     "Cart": "Cart",

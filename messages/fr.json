@@ -1,4 +1,39 @@
 {
+  "LoginPage": {
+    "welcome": "Bienvenue chez Loud Spectrum",
+    "description": "Connectez-vous à votre compte pour accéder à votre profil et à votre historique de commandes.",
+    "login": "Connexion",
+    "register": "S'inscrire",
+    "Login": {
+      "emailLabel": "Email*",
+      "emailPlaceholder": "Entrez votre email",
+      "passwordLabel": "Mot de passe*",
+      "passwordPlaceholder": "Entrez votre mot de passe",
+      "loginButton": "Connexion",
+      "togglePassword": "Afficher/masquer le mot de passe"
+    },
+    "Registration": {
+      "fullNameLabel": "Nom complet*",
+      "fullNamePlaceholder": "Entrez votre nom complet",
+      "phoneLabel": "Téléphone*",
+      "phonePlaceholder": "Entrez votre numéro de téléphone",
+      "emailLabel": "Email*",
+      "emailPlaceholder": "Entrez votre email",
+      "companyLabel": "Entreprise",
+      "companyPlaceholder": "Entrez le nom de votre entreprise",
+      "websiteLabel": "Site web",
+      "websitePlaceholder": "Entrez votre site web",
+      "passwordLabel": "Mot de passe*",
+      "passwordPlaceholder": "Entrez un mot de passe",
+      "confirmPasswordLabel": "Confirmer le mot de passe*",
+      "confirmPasswordPlaceholder": "Confirmez le mot de passe",
+      "agreeTerms": "J'accepte les termes et conditions",
+      "registerButton": "S'inscrire",
+      "wholesalerButton": "Créer un compte grossiste",
+      "togglePassword": "Afficher/masquer le mot de passe",
+      "toggleConfirmPassword": "Afficher/masquer la confirmation du mot de passe"
+    }
+  },
   "Navbar": {
     "Log_in": "Connexion",
     "Cart": "Panier",
