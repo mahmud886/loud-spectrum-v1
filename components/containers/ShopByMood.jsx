@@ -22,7 +22,7 @@ const ShopByMood = () => {
           </div>
           <div className="h-full w-full">
             <Image
-              src="/assets/images/shop-by-mood.png"
+              src="/assets/images/shop-by-mode.png"
               width={522}
               height={474}
               className="h-[474] w-[522px] object-cover"

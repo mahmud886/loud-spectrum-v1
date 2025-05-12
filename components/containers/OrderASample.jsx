@@ -1,5 +1,5 @@
-import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
+import { useTranslations } from 'next-intl';
 
 const OrderASample = () => {
   const t = useTranslations('Homepage');
@@ -14,7 +14,7 @@ const OrderASample = () => {
             </h2>
             <div className="block w-full md:hidden lg:hidden">
               <img
-                src="/assets/images/order-sample1.png"
+                src="/assets/images/order-sample-stack.png"
                 alt="order-sample"
                 width={522}
                 height={474}
@@ -58,7 +58,7 @@ const OrderASample = () => {
           </div>
           <div className="hidden w-full md:block md:min-w-1/2 lg:block lg:min-w-1/2">
             <img
-              src="/assets/images/order-sample.png"
+              src="/assets/images/order-sample-stack.png"
               alt="order-sample"
               width={522}
               height={474}

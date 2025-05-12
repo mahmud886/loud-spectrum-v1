@@ -18,7 +18,7 @@ const WhyChooseLoudSpectrum = () => {
   return (
     <div className="flex flex-col items-center justify-between gap-10 pt-20 lg:flex-row">
       <Image
-        src="/assets/images/the-lab-advantage.png"
+        src="/assets/images/wholesale/why-loud-spectrum.png"
         alt="the-lab-advantage"
         width={462}
         height={474}
@@ -34,7 +34,7 @@ const WhyChooseLoudSpectrum = () => {
         </p>
 
         <Image
-          src="/assets/images/the-lab-advantage.png"
+          src="/assets/images/wholesale/why-loud-spectrum.png"
           alt="the-lab-advantage"
           width={462}
           height={474}

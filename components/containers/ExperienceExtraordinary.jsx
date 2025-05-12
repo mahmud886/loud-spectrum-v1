@@ -27,10 +27,10 @@ const ExperienceExtraordinary = () => {
             />
             {/* Centered foreground image */}
             <Image
-              src="/assets/images/mimosa-live-resin.png"
-              width={1440}
-              height={1230}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-cover md:h-[684px] md:w-[536px] lg:h-[684px] lg:w-[536px]"
+              src="/assets/videos/extraordinary.gif"
+              width={373}
+              height={573}
+              className="absolute top-1/2 left-1/2 h-[573px] w-[373px] -translate-x-1/2 -translate-y-1/2 object-cover"
               alt="extra-ordinary"
             />
             {/* Top Left Text */}
@@ -86,10 +86,10 @@ const ExperienceExtraordinary = () => {
       <div className="bg-umbra-100 container">
         <div className="flex justify-center md:hidden">
           <Image
-            src="/assets/images/mimosa-live-resin.png"
-            width={640}
-            height={736}
-            className="h-full w-full object-cover"
+            src="/assets/videos/extraordinary.gif"
+            width={373}
+            height={573}
+            className="h-[573px] w-[373px] object-cover"
             alt="extra-ordinary"
           />
         </div>
