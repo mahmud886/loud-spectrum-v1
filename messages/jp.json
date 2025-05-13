@@ -34,6 +34,120 @@
       "toggleConfirmPassword": "確認パスワードの表示/非表示"
     }
   },
+  "CheckoutPage": {
+    "PageTitle": "チェックアウト",
+    "ShippingAndBillingAddress": {
+      "headingShipping": "配送先住所",
+      "headingBilling": "請求先住所",
+      "firstNameLabel": "名*",
+      "firstNamePlaceholder": "名を入力してください",
+      "lastNameLabel": "姓*",
+      "lastNamePlaceholder": "姓を入力してください",
+      "emailLabel": "メールアドレス*",
+      "emailPlaceholder": "メールアドレスを入力してください",
+      "phoneLabel": "電話番号*",
+      "phonePlaceholder": "電話番号を入力してください",
+      "countryLabel": "国*",
+      "countryPlaceholder": "国を選択してください",
+      "provinceLabel": "都道府県*",
+      "provincePlaceholder": "都道府県を入力してください",
+      "cityLabel": "市区町村*",
+      "cityPlaceholder": "市区町村を入力してください",
+      "postalCodeLabel": "郵便番号*",
+      "postalCodePlaceholder": "郵便番号を入力してください",
+      "streetAddressLabel": "住所*",
+      "streetAddressPlaceholder": "住所を入力してください",
+      "billingOptionSame": "配送先住所と同じ",
+      "billingOptionDifferent": "別の請求先住所を使用"
+    },
+    "CourierSelection": {
+      "label": "配送業者を選択してください*",
+      "fedex": {
+        "name": "FedEx",
+        "description": "220か国以上で信頼性の高い配送"
+      },
+      "ups": {
+        "name": "UPS",
+        "description": "国内外の効率的な物流"
+      },
+      "ShippingType": {
+        "label": "配送タイプを選択してください*",
+        "placeholder": "配送タイプを選択してください",
+        "standard": "標準配送 (5-7営業日)",
+        "express": "エクスプレス配送 (2-3営業日)",
+        "overnight": "翌日配送 (1営業日)",
+        "free": "無料配送 (10-15営業日)"
+      }
+    },
+
+    "ProductCart": {
+      "title": "製品",
+      "itemCount": "{count} アイテム",
+      "itemCount_plural": "{count} アイテム",
+      "emptyMessage": "カートは空です。",
+      "volume": "容量",
+      "ml": "ml"
+    },
+    "DiscountCoupon": {
+      "placeholder": "割引コードを入力してください",
+      "apply": "適用"
+    },
+    "OrderSummary": {
+      "title": "ご注文の概要",
+      "totalVolume": "合計容量",
+      "subtotal": "小計",
+      "discount": "割引",
+      "tax": "税金",
+      "taxFree": "無料",
+      "shipping": "配送",
+      "freeShipping": "無料配送",
+      "totalAmount": "合計金額"
+    },
+    "PaymentMethod": {
+      "title": "支払い方法",
+      "methods": {
+        "debit-credit-card": {
+          "name": "デビット/クレジットカード",
+          "description": "クレジットカードまたはデビットカードで安全に支払い"
+        },
+        "ach-wire-transfer": {
+          "name": "ACH/電信送金",
+          "description": "ACHまたは電信送金で支払い"
+        },
+        "cash-on-delivery": {
+          "name": "代金引換",
+          "description": "配送時に現金で支払い"
+        }
+      }
+    },
+    "PaymentDialog": {
+      "cardHolderName": "カード名義",
+      "expiry": "有効期限",
+      "securityCode": "セキュリティコード",
+      "postalCode": "郵便番号",
+      "saveButton": "保存",
+      "title": "カード情報の入力"
+    },
+    "WireTransferDialog": {
+      "bankDetails": "銀行情報",
+      "bankName": "銀行名",
+      "accountNumber": "口座番号",
+      "sortCode": "支店番号",
+      "bic": "BIC",
+      "iban": "IBAN",
+      "confirmPayment": "支払いを確認",
+      "transactionId": "取引ID",
+      "accountName": "口座名義",
+      "cancel": "キャンセル",
+      "save": "保存"
+    },
+    "ContinueToPayment": {
+      "button": {
+        "default": "支払いに進む",
+        "loading": "処理中..."
+      }
+    }
+  },
   "Navbar": {
     "Log_in": "ログイン",
     "Cart": "カート",

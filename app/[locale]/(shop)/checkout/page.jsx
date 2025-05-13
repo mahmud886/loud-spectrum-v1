@@ -1,14 +1,14 @@
 'use client';
 
-import ShippingAndBillingAddress from '@/components/checkout/ShippingAndBillingAddress';
-import ProductCart from '@/components/checkout/ProductCart';
+import ConfirmPayment from '@/components/checkout/ConfirmPayment';
+import DebitCreditCardDialog from '@/components/checkout/DebitAndCreditCardDialog';
 import DiscountCoupon from '@/components/checkout/DiscountCoupon';
 import OrderSummary from '@/components/checkout/OrderSummary';
 import PaymentMethod from '@/components/checkout/PaymentMethod';
-import ConfirmPayment from '@/components/checkout/ConfirmPayment';
-import { useState, useEffect } from 'react';
-import DebitCreditCardDialog from '@/components/checkout/DebitAndCreditCardDialog';
+import ProductCart from '@/components/checkout/ProductCart';
+import ShippingAndBillingAddress from '@/components/checkout/ShippingAndBillingAddress';
 import WireTransferDialog from '@/components/checkout/WireTransferDialog';
+import { useEffect, useState } from 'react';
 
 const CheckoutPage = () => {
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState('');

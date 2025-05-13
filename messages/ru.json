@@ -34,6 +34,121 @@
       "toggleConfirmPassword": "Показать/скрыть подтверждение пароля"
     }
   },
+  "CheckoutPage": {
+    "PageTitle": "Оформление заказа",
+    "ShippingAndBillingAddress": {
+      "headingShipping": "Адрес доставки",
+      "headingBilling": "Адрес для выставления счета",
+      "firstNameLabel": "Имя*",
+      "firstNamePlaceholder": "Введите ваше имя",
+      "lastNameLabel": "Фамилия*",
+      "lastNamePlaceholder": "Введите вашу фамилию",
+      "emailLabel": "Электронная почта*",
+      "emailPlaceholder": "Введите ваш адрес электронной почты",
+      "phoneLabel": "Телефон*",
+      "phonePlaceholder": "Введите ваш номер телефона",
+      "countryLabel": "Страна*",
+      "countryPlaceholder": "Выберите страну",
+      "provinceLabel": "Область/регион*",
+      "provincePlaceholder": "Введите ваш регион",
+      "cityLabel": "Город*",
+      "cityPlaceholder": "Введите ваш город",
+      "postalCodeLabel": "Почтовый индекс*",
+      "postalCodePlaceholder": "Введите ваш почтовый индекс",
+      "streetAddressLabel": "Улица*",
+      "streetAddressPlaceholder": "Введите ваш адрес",
+      "billingOptionSame": "Тот же, что и адрес доставки",
+      "billingOptionDifferent": "Использовать другой адрес для выставления счета"
+    },
+    "CourierSelection": {
+      "label": "Выберите курьера*",
+      "fedex": {
+        "name": "FedEx",
+        "description": "Надежная доставка более чем в 220 странах"
+      },
+      "ups": {
+        "name": "UPS",
+        "description": "Эффективная логистика внутри страны и за рубежом"
+      },
+
+      "ShippingType": {
+        "label": "Выберите способ доставки*",
+        "placeholder": "Выберите способ доставки",
+        "standard": "Стандартная доставка (5-7 рабочих дней)",
+        "express": "Экспресс-доставка (2-3 рабочих дня)",
+        "overnight": "Доставка на следующий день (1 рабочий день)",
+        "free": "Бесплатная доставка (10-15 рабочих дней)"
+      }
+    },
+
+    "ProductCart": {
+      "title": "Продукты",
+      "itemCount": "{count} товар",
+      "itemCount_plural": "{count} товаров",
+      "emptyMessage": "Ваша корзина пуста.",
+      "volume": "Объем",
+      "ml": "мл"
+    },
+    "DiscountCoupon": {
+      "placeholder": "Введите код купона",
+      "apply": "Применить"
+    },
+    "OrderSummary": {
+      "title": "Сводка заказа",
+      "totalVolume": "Общий объем",
+      "subtotal": "Промежуточный итог",
+      "discount": "Скидка",
+      "tax": "Налог",
+      "taxFree": "Бесплатно",
+      "shipping": "Доставка",
+      "freeShipping": "Бесплатная доставка",
+      "totalAmount": "Общая сумма"
+    },
+    "PaymentMethod": {
+      "title": "Метод оплаты",
+      "methods": {
+        "debit-credit-card": {
+          "name": "Дебетовая/кредитная карта",
+          "description": "Безопасная оплата с помощью дебетовой или кредитной карты"
+        },
+        "ach-wire-transfer": {
+          "name": "Перевод ACH/банковский перевод",
+          "description": "Оплата через ACH или банковский перевод"
+        },
+        "cash-on-delivery": {
+          "name": "Оплата при получении",
+          "description": "Оплатите наличными при получении товара"
+        }
+      }
+    },
+    "PaymentDialog": {
+      "cardHolderName": "Имя владельца карты",
+      "expiry": "Срок действия",
+      "securityCode": "Код безопасности",
+      "postalCode": "Почтовый индекс",
+      "saveButton": "Сохранить",
+      "title": "Введите данные вашей карты"
+    },
+    "WireTransferDialog": {
+      "bankDetails": "Банковские реквизиты",
+      "bankName": "Название банка",
+      "accountNumber": "Номер счета",
+      "sortCode": "Код сортировки",
+      "bic": "BIC",
+      "iban": "IBAN",
+      "confirmPayment": "Подтвердите оплату",
+      "transactionId": "Идентификатор транзакции",
+      "accountName": "Название счета",
+      "cancel": "Отменить",
+      "save": "Сохранить"
+    },
+    "ContinueToPayment": {
+      "button": {
+        "default": "Перейти к оплате",
+        "loading": "Обработка..."
+      }
+    }
+  },
   "Navbar": {
     "Log_in": "Войти",
     "Cart": "Корзина",

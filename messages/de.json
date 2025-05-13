@@ -34,6 +34,120 @@
       "toggleConfirmPassword": "Passwortbestätigung anzeigen/verbergen"
     }
   },
+  "CheckoutPage": {
+    "PageTitle": "Kasse",
+    "ShippingAndBillingAddress": {
+      "headingShipping": "Versandadresse",
+      "headingBilling": "Rechnungsadresse",
+      "firstNameLabel": "Vorname*",
+      "firstNamePlaceholder": "Geben Sie Ihren Vornamen ein",
+      "lastNameLabel": "Nachname*",
+      "lastNamePlaceholder": "Geben Sie Ihren Nachnamen ein",
+      "emailLabel": "E-Mail*",
+      "emailPlaceholder": "Geben Sie Ihre E-Mail-Adresse ein",
+      "phoneLabel": "Telefon*",
+      "phonePlaceholder": "Geben Sie Ihre Telefonnummer ein",
+      "countryLabel": "Land*",
+      "countryPlaceholder": "Wählen Sie Ihr Land",
+      "provinceLabel": "Bundesland*",
+      "provincePlaceholder": "Geben Sie Ihr Bundesland ein",
+      "cityLabel": "Stadt*",
+      "cityPlaceholder": "Geben Sie Ihre Stadt ein",
+      "postalCodeLabel": "Postleitzahl*",
+      "postalCodePlaceholder": "Geben Sie Ihre Postleitzahl ein",
+      "streetAddressLabel": "Straße und Hausnummer*",
+      "streetAddressPlaceholder": "Geben Sie Ihre Straße und Hausnummer ein",
+      "billingOptionSame": "Wie Versandadresse",
+      "billingOptionDifferent": "Verwenden Sie eine andere Rechnungsadresse"
+    },
+    "CourierSelection": {
+      "label": "Wählen Sie Ihren Kurier*",
+      "fedex": {
+        "name": "FedEx",
+        "description": "Zuverlässige Lieferung in über 220 Länder"
+      },
+      "ups": {
+        "name": "UPS",
+        "description": "Effiziente nationale und internationale Logistik"
+      },
+      "ShippingType": {
+        "label": "Wählen Sie Ihren Versandtyp*",
+        "placeholder": "Wählen Sie Ihren Versandtyp",
+        "standard": "Standardversand (5-7 Werktage)",
+        "express": "Expressversand (2-3 Werktage)",
+        "overnight": "Übernachtversand (1 Werktag)",
+        "free": "Kostenloser Versand (10-15 Werktage)"
+      }
+    },
+
+    "ProductCart": {
+      "title": "Produkte",
+      "itemCount": "{count} Artikel",
+      "itemCount_plural": "{count} Artikel",
+      "emptyMessage": "Ihr Warenkorb ist leer.",
+      "volume": "Volumen",
+      "ml": "ml"
+    },
+    "DiscountCoupon": {
+      "placeholder": "Geben Sie Rabattcode ein",
+      "apply": "Anwenden"
+    },
+    "OrderSummary": {
+      "title": "Ihre Bestellübersicht",
+      "totalVolume": "Gesamtvolumen",
+      "subtotal": "Zwischensumme",
+      "discount": "Rabatt",
+      "tax": "Steuer",
+      "taxFree": "Kostenlos",
+      "shipping": "Versand",
+      "freeShipping": "Kostenloser Versand",
+      "totalAmount": "Gesamtbetrag"
+    },
+    "PaymentMethod": {
+      "title": "Zahlungsmethode",
+      "methods": {
+        "debit-credit-card": {
+          "name": "Debit-/Kreditkarte",
+          "description": "Zahlen Sie sicher mit Ihrer Kredit- oder Debitkarte"
+        },
+        "ach-wire-transfer": {
+          "name": "ACH/Überweisung",
+          "description": "Zahlen Sie per ACH oder Überweisung"
+        },
+        "cash-on-delivery": {
+          "name": "Nachnahme",
+          "description": "Zahlen Sie bei Lieferung in bar"
+        }
+      }
+    },
+    "PaymentDialog": {
+      "cardHolderName": "Karteninhabername",
+      "expiry": "Ablaufdatum",
+      "securityCode": "Sicherheitscode",
+      "postalCode": "Postleitzahl",
+      "saveButton": "Speichern",
+      "title": "Kartendaten eingeben"
+    },
+    "WireTransferDialog": {
+      "bankDetails": "Bankdetails",
+      "bankName": "Bankname",
+      "accountNumber": "Kontonummer",
+      "sortCode": "BLZ",
+      "bic": "BIC",
+      "iban": "IBAN",
+      "confirmPayment": "Zahlung bestätigen",
+      "transactionId": "Transaktions-ID",
+      "accountName": "Kontoinhaber",
+      "cancel": "Abbrechen",
+      "save": "Speichern"
+    },
+    "ContinueToPayment": {
+      "button": {
+        "default": "Weiter zur Zahlung",
+        "loading": "Wird bearbeitet..."
+      }
+    }
+  },
   "Navbar": {
     "Log_in": "Anmelden",
     "Cart": "Warenkorb",

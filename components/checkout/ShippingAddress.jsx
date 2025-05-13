@@ -1,19 +1,23 @@
-import React from 'react';
+'use client';
+
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
+import { useTranslations } from 'next-intl';
 
 const ShippingAddress = () => {
+  const t = useTranslations('CheckoutPage.ShippingAndBillingAddress');
+
   return (
     <form className="mx-auto w-full space-y-6">
-      <h2 className="text-umbra-100 font-sans text-[24px] font-normal">Shipping Address</h2>
+      <h2 className="text-umbra-100 font-sans text-[24px] font-normal">{t('headingShipping')}</h2>
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {/* First Name */}
         <div>
-          <label className="text-umbra-100 mb-1 block font-sans text-[16px] font-normal">First Name*</label>
+          <label className="text-umbra-100 mb-1 block font-sans text-[16px] font-normal">{t('firstNameLabel')}</label>
           <input
             type="text"
-            placeholder="Enter your first name"
+            placeholder={t('firstNamePlaceholder')}
             className="bg-umbra-5 placeholder:text-umbra-100 hover:bg-umbra-10 min-h-[48px] w-full rounded-[10px] px-4 py-2 font-mono text-[16px] leading-[140%] font-normal"
             required
           />
@@ -21,10 +25,10 @@ const ShippingAddress = () => {
 
         {/* Last Name */}
         <div>
-          <label className="text-umbra-100 mb-1 block font-sans text-[16px] font-normal">Last Name*</label>
+          <label className="text-umbra-100 mb-1 block font-sans text-[16px] font-normal">{t('lastNameLabel')}</label>
           <input
             type="text"
-            placeholder="Enter your last name"
+            placeholder={t('lastNamePlaceholder')}
             className="bg-umbra-5 placeholder:text-umbra-100 hover:bg-umbra-10 min-h-[48px] w-full rounded-[10px] px-4 py-2 font-mono text-[16px] leading-[140%] font-normal"
             required
           />
@@ -32,10 +36,10 @@ const ShippingAddress = () => {
 
         {/* Email */}
         <div>
-          <label className="text-umbra-100 mb-1 block font-sans text-[16px] font-normal">Email*</label>
+          <label className="text-umbra-100 mb-1 block font-sans text-[16px] font-normal">{t('emailLabel')}</label>
           <input
             type="email"
-            placeholder="Enter your email"
+            placeholder={t('emailPlaceholder')}
             className="bg-umbra-5 placeholder:text-umbra-100 hover:bg-umbra-10 min-h-[48px] w-full rounded-[10px] px-4 py-2 font-mono text-[16px] leading-[140%] font-normal"
             required
           />
@@ -43,20 +47,21 @@ const ShippingAddress = () => {
 
         {/* Phone */}
         <div>
-          <label className="text-umbra-100 mb-1 block font-sans text-[16px] font-normal">Phone*</label>
+          <label className="text-umbra-100 mb-1 block font-sans text-[16px] font-normal">{t('phoneLabel')}</label>
           <input
             type="tel"
-            placeholder="Enter your phone number"
+            placeholder={t('phonePlaceholder')}
             className="bg-umbra-5 placeholder:text-umbra-100 hover:bg-umbra-10 min-h-[48px] w-full rounded-[10px] px-4 py-2 font-mono text-[16px] leading-[140%] font-normal"
             required
           />
         </div>
 
+        {/* Country */}
         <div>
-          <label className="text-umbra-100 mb-1 block font-sans text-[16px] font-normal">Country*</label>
+          <label className="text-umbra-100 mb-1 block font-sans text-[16px] font-normal">{t('countryLabel')}</label>
           <Select required>
             <SelectTrigger className="bg-umbra-5 hover:bg-umbra-10 text-umbra-100 min-h-[48px] w-full rounded-[10px] px-4 py-2 font-mono text-[16px] font-normal">
-              <SelectValue placeholder="Select your country" />
+              <SelectValue placeholder={t('countryPlaceholder')} />
             </SelectTrigger>
             <SelectContent className="text-umbra-100 font-mono text-[16px]">
               <SelectItem value="usa">United States</SelectItem>
@@ -71,10 +76,10 @@ const ShippingAddress = () => {
 
         {/* Province */}
         <div>
-          <label className="text-umbra-100 mb-1 block font-sans text-[16px] font-normal">Province*</label>
+          <label className="text-umbra-100 mb-1 block font-sans text-[16px] font-normal">{t('provinceLabel')}</label>
           <input
             type="text"
-            placeholder="Enter your province"
+            placeholder={t('provincePlaceholder')}
             className="bg-umbra-5 placeholder:text-umbra-100 hover:bg-umbra-10 min-h-[48px] w-full rounded-[10px] px-4 py-2 font-mono text-[16px] leading-[140%] font-normal"
             required
           />
@@ -82,10 +87,10 @@ const ShippingAddress = () => {
 
         {/* City */}
         <div>
-          <label className="text-umbra-100 mb-1 block font-sans text-[16px] font-normal">City*</label>
+          <label className="text-umbra-100 mb-1 block font-sans text-[16px] font-normal">{t('cityLabel')}</label>
           <input
             type="text"
-            placeholder="Enter your city"
+            placeholder={t('cityPlaceholder')}
             className="bg-umbra-5 placeholder:text-umbra-100 hover:bg-umbra-10 min-h-[48px] w-full rounded-[10px] px-4 py-2 font-mono text-[16px] leading-[140%] font-normal"
             required
           />
@@ -93,10 +98,10 @@ const ShippingAddress = () => {
 
         {/* Postal Code */}
         <div>
-          <label className="text-umbra-100 mb-1 block font-sans text-[16px] font-normal">Postal / ZIP Code*</label>
+          <label className="text-umbra-100 mb-1 block font-sans text-[16px] font-normal">{t('postalCodeLabel')}</label>
           <input
             type="text"
-            placeholder="Enter ZIP or postal code"
+            placeholder={t('postalCodePlaceholder')}
             className="bg-umbra-5 placeholder:text-umbra-100 hover:bg-umbra-10 min-h-[48px] w-full rounded-[10px] px-4 py-2 font-mono text-[16px] leading-[140%] font-normal"
             required
           />
@@ -105,13 +110,13 @@ const ShippingAddress = () => {
 
       {/* Street Address */}
       <div>
-        <label className="text-umbra-100 mb-1 block font-sans text-[16px] font-normal">Street Address*</label>
+        <label className="text-umbra-100 mb-1 block font-sans text-[16px] font-normal">{t('streetAddressLabel')}</label>
         <Textarea
-          rows="3"
-          placeholder="Enter your street address"
+          rows={3}
+          placeholder={t('streetAddressPlaceholder')}
           className="bg-umbra-5 placeholder:text-umbra-100 hover:bg-umbra-10 w-full rounded-[10px] px-4 py-2 font-mono text-[16px] leading-[140%] font-normal"
           required
-        ></Textarea>
+        />
       </div>
     </form>
   );

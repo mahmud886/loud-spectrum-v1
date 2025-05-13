@@ -34,6 +34,119 @@
       "toggleConfirmPassword": "Mostrar/ocultar confirmación de contraseña"
     }
   },
+  "CheckoutPage": {
+    "PageTitle": "Pagar",
+    "ShippingAndBillingAddress": {
+      "headingShipping": "Dirección de envío",
+      "headingBilling": "Dirección de facturación",
+      "firstNameLabel": "Nombre*",
+      "firstNamePlaceholder": "Ingrese su nombre",
+      "lastNameLabel": "Apellido*",
+      "lastNamePlaceholder": "Ingrese su apellido",
+      "emailLabel": "Correo electrónico*",
+      "emailPlaceholder": "Ingrese su correo electrónico",
+      "phoneLabel": "Teléfono*",
+      "phonePlaceholder": "Ingrese su número de teléfono",
+      "countryLabel": "País*",
+      "countryPlaceholder": "Seleccione su país",
+      "provinceLabel": "Provincia*",
+      "provincePlaceholder": "Ingrese su provincia",
+      "cityLabel": "Ciudad*",
+      "cityPlaceholder": "Ingrese su ciudad",
+      "postalCodeLabel": "Código postal / ZIP*",
+      "postalCodePlaceholder": "Ingrese el código postal o ZIP",
+      "streetAddressLabel": "Dirección*",
+      "streetAddressPlaceholder": "Ingrese su dirección",
+      "billingOptionSame": "Misma que la dirección de envío",
+      "billingOptionDifferent": "Usar una dirección de facturación diferente"
+    },
+    "CourierSelection": {
+      "label": "Elija su mensajero*",
+      "fedex": {
+        "name": "FedEx",
+        "description": "Entrega confiable a más de 220 países"
+      },
+      "ups": {
+        "name": "UPS",
+        "description": "Logística eficiente nacional e internacional"
+      },
+      "ShippingType": {
+        "label": "Elija su tipo de envío*",
+        "placeholder": "Seleccione su tipo de envío",
+        "standard": "Envío estándar (5-7 días hábiles)",
+        "express": "Envío exprés (2-3 días hábiles)",
+        "overnight": "Envío nocturno (1 día hábil)",
+        "free": "Envío gratuito (10-15 días hábiles)"
+      }
+    },
+    "ProductCart": {
+      "title": "Productos",
+      "itemCount": "{count} artículo",
+      "itemCount_plural": "{count} artículos",
+      "emptyMessage": "Tu carrito está vacío.",
+      "volume": "Volumen",
+      "ml": "ml"
+    },
+    "DiscountCoupon": {
+      "placeholder": "Ingrese el código de descuento",
+      "apply": "Aplicar"
+    },
+    "OrderSummary": {
+      "title": "Resumen de su pedido",
+      "totalVolume": "Volumen total",
+      "subtotal": "Subtotal",
+      "discount": "Descuento",
+      "tax": "Impuesto",
+      "taxFree": "Gratis",
+      "shipping": "Envío",
+      "freeShipping": "Envío gratuito",
+      "totalAmount": "Monto total"
+    },
+    "PaymentMethod": {
+      "title": "Método de pago",
+      "methods": {
+        "debit-credit-card": {
+          "name": "Tarjeta de débito/crédito",
+          "description": "Pague de forma segura con su tarjeta de crédito o débito"
+        },
+        "ach-wire-transfer": {
+          "name": "Transferencia ACH/por cable",
+          "description": "Pague mediante transferencia ACH o por cable"
+        },
+        "cash-on-delivery": {
+          "name": "Pago contra entrega",
+          "description": "Pague en efectivo al recibir el pedido"
+        }
+      }
+    },
+    "PaymentDialog": {
+      "cardHolderName": "Nombre del titular de la tarjeta",
+      "expiry": "Vencimiento",
+      "securityCode": "Código de seguridad",
+      "postalCode": "Código Postal",
+      "saveButton": "Guardar",
+      "title": "Ingrese los detalles de la tarjeta"
+    },
+    "WireTransferDialog": {
+      "bankDetails": "Detalles bancarios",
+      "bankName": "Nombre del banco",
+      "accountNumber": "Número de cuenta",
+      "sortCode": "Código de clasificación",
+      "bic": "BIC",
+      "iban": "IBAN",
+      "confirmPayment": "Confirme su pago",
+      "transactionId": "ID de transacción",
+      "accountName": "Nombre de la cuenta",
+      "cancel": "Cancelar",
+      "save": "Guardar"
+    },
+    "ContinueToPayment": {
+      "button": {
+        "default": "Continuar al pago",
+        "loading": "Procesando..."
+      }
+    }
+  },
   "Navbar": {
     "Log_in": "Iniciar sesión",
     "Cart": "Carrito",
