@@ -34,6 +34,120 @@
       "toggleConfirmPassword": "Afficher/masquer la confirmation du mot de passe"
     }
   },
+  "CheckoutPage": {
+    "PageTitle": "Paiement",
+    "ShippingAndBillingAddress": {
+      "headingShipping": "Adresse de livraison",
+      "headingBilling": "Adresse de facturation",
+      "firstNameLabel": "Prénom*",
+      "firstNamePlaceholder": "Entrez votre prénom",
+      "lastNameLabel": "Nom*",
+      "lastNamePlaceholder": "Entrez votre nom",
+      "emailLabel": "Email*",
+      "emailPlaceholder": "Entrez votre email",
+      "phoneLabel": "Téléphone*",
+      "phonePlaceholder": "Entrez votre numéro de téléphone",
+      "countryLabel": "Pays*",
+      "countryPlaceholder": "Sélectionnez votre pays",
+      "provinceLabel": "Province*",
+      "provincePlaceholder": "Entrez votre province",
+      "cityLabel": "Ville*",
+      "cityPlaceholder": "Entrez votre ville",
+      "postalCodeLabel": "Code postal / ZIP*",
+      "postalCodePlaceholder": "Entrez votre code postal ou ZIP",
+      "streetAddressLabel": "Adresse*",
+      "streetAddressPlaceholder": "Entrez votre adresse",
+      "billingOptionSame": "Identique à l'adresse de livraison",
+      "billingOptionDifferent": "Utiliser une adresse de facturation différente"
+    },
+    "CourierSelection": {
+      "label": "Choisissez votre transporteur*",
+      "fedex": {
+        "name": "FedEx",
+        "description": "Livraison fiable dans plus de 220 pays"
+      },
+      "ups": {
+        "name": "UPS",
+        "description": "Logistique efficace nationale et internationale"
+      },
+      "ShippingType": {
+        "label": "Choisissez votre type de livraison*",
+        "placeholder": "Sélectionnez votre type de livraison",
+        "standard": "Livraison standard (5-7 jours ouvrés)",
+        "express": "Livraison express (2-3 jours ouvrés)",
+        "overnight": "Livraison en 24 heures (1 jour ouvré)",
+        "free": "Livraison gratuite (10-15 jours ouvrés)"
+      }
+    },
+
+    "ProductCart": {
+      "title": "Produits",
+      "itemCount": "{count} article",
+      "itemCount_plural": "{count} articles",
+      "emptyMessage": "Votre panier est vide.",
+      "volume": "Volume",
+      "ml": "ml"
+    },
+    "DiscountCoupon": {
+      "placeholder": "Entrez le code promo",
+      "apply": "Appliquer"
+    },
+    "OrderSummary": {
+      "title": "Résumé de votre commande",
+      "totalVolume": "Volume total",
+      "subtotal": "Sous-total",
+      "discount": "Réduction",
+      "tax": "Taxe",
+      "taxFree": "Gratuit",
+      "shipping": "Livraison",
+      "freeShipping": "Livraison gratuite",
+      "totalAmount": "Montant total"
+    },
+    "PaymentMethod": {
+      "title": "Méthode de paiement",
+      "methods": {
+        "debit-credit-card": {
+          "name": "Carte de débit/crédit",
+          "description": "Payez en toute sécurité avec votre carte de crédit ou de débit"
+        },
+        "ach-wire-transfer": {
+          "name": "Virement ACH/transfert bancaire",
+          "description": "Payez par virement ACH ou bancaire"
+        },
+        "cash-on-delivery": {
+          "name": "Paiement à la livraison",
+          "description": "Payez en espèces à la livraison"
+        }
+      }
+    },
+    "PaymentDialog": {
+      "cardHolderName": "Nom du titulaire de la carte",
+      "expiry": "Expiration",
+      "securityCode": "Code de sécurité",
+      "postalCode": "Code postal",
+      "saveButton": "Enregistrer",
+      "title": "Entrez les détails de votre carte"
+    },
+    "WireTransferDialog": {
+      "bankDetails": "Détails bancaires",
+      "bankName": "Nom de la banque",
+      "accountNumber": "Numéro de compte",
+      "sortCode": "Code tri",
+      "bic": "BIC",
+      "iban": "IBAN",
+      "confirmPayment": "Confirmer votre paiement",
+      "transactionId": "ID de transaction",
+      "accountName": "Nom du compte",
+      "cancel": "Annuler",
+      "save": "Enregistrer"
+    },
+    "ContinueToPayment": {
+      "button": {
+        "default": "Continuer vers le paiement",
+        "loading": "Traitement en cours..."
+      }
+    }
+  },
   "Navbar": {
     "Log_in": "Connexion",
     "Cart": "Panier",

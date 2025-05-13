@@ -35,6 +35,120 @@
       "toggleConfirmPassword": "Toggle confirm password visibility"
     }
   },
+  "CheckoutPage": {
+    "PageTitle": "Checkout",
+    "ShippingAndBillingAddress": {
+      "headingShipping": "Shipping Address",
+      "headingBilling": "Billing Address",
+      "firstNameLabel": "First Name*",
+      "firstNamePlaceholder": "Enter your first name",
+      "lastNameLabel": "Last Name*",
+      "lastNamePlaceholder": "Enter your last name",
+      "emailLabel": "Email*",
+      "emailPlaceholder": "Enter your email",
+      "phoneLabel": "Phone*",
+      "phonePlaceholder": "Enter your phone number",
+      "countryLabel": "Country*",
+      "countryPlaceholder": "Select your country",
+      "provinceLabel": "Province*",
+      "provincePlaceholder": "Enter your province",
+      "cityLabel": "City*",
+      "cityPlaceholder": "Enter your city",
+      "postalCodeLabel": "Postal / ZIP Code*",
+      "postalCodePlaceholder": "Enter ZIP or postal code",
+      "streetAddressLabel": "Street Address*",
+      "streetAddressPlaceholder": "Enter your street address",
+      "billingOptionSame": "Same as shipping address",
+      "billingOptionDifferent": "Use a different billing address"
+    },
+    "CourierSelection": {
+      "label": "Choose Your Courier*",
+      "fedex": {
+        "name": "FedEx",
+        "description": "Reliable delivery across 220+ countries"
+      },
+      "ups": {
+        "name": "UPS",
+        "description": "Efficient domestic and global logistics"
+      },
+      "ShippingType": {
+        "label": "Choose Your Shipping Type*",
+        "placeholder": "Select your shipping type",
+        "standard": "Standard Shipping (5-7 business days)",
+        "express": "Express Shipping (2-3 business days)",
+        "overnight": "Overnight Shipping (1 business day)",
+        "free": "Free Shipping (10-15 business days)"
+      }
+    },
+
+    "ProductCart": {
+      "title": "Products",
+      "itemCount": "{count} item",
+      "itemCount_plural": "{count} items",
+      "emptyMessage": "Your cart is empty.",
+      "volume": "Volume",
+      "ml": "ml"
+    },
+    "DiscountCoupon": {
+      "placeholder": "Enter discount code",
+      "apply": "Apply"
+    },
+    "OrderSummary": {
+      "title": "Your order summary",
+      "totalVolume": "Total Volume",
+      "subtotal": "Subtotal",
+      "discount": "Discount",
+      "tax": "Tax",
+      "taxFree": "Free",
+      "shipping": "Shipping",
+      "freeShipping": "Free Shipping",
+      "totalAmount": "Total Amount"
+    },
+    "PaymentMethod": {
+      "title": "Payment Method",
+      "methods": {
+        "debit-credit-card": {
+          "name": "Debit/Credit Card",
+          "description": "Pay securely using your credit or debit card"
+        },
+        "ach-wire-transfer": {
+          "name": "ACH/Wire Transfer",
+          "description": "Pay via ACH or wire transfer"
+        },
+        "cash-on-delivery": {
+          "name": "Cash on Delivery",
+          "description": "Pay in cash upon delivery"
+        }
+      }
+    },
+    "PaymentDialog": {
+      "cardHolderName": "Card Holder Name",
+      "expiry": "Expiry",
+      "securityCode": "Security Code",
+      "postalCode": "Postal Code",
+      "saveButton": "Save",
+      "title": "Enter Card Details"
+    },
+    "WireTransferDialog": {
+      "bankDetails": "Bank Details",
+      "bankName": "Bank Name",
+      "accountNumber": "Account Number",
+      "sortCode": "Sort Code",
+      "bic": "BIC",
+      "iban": "IBAN",
+      "confirmPayment": "Confirm Your Payment",
+      "transactionId": "Transaction ID",
+      "accountName": "Account Name",
+      "cancel": "Cancel",
+      "save": "Save"
+    },
+    "ContinueToPayment": {
+      "button": {
+        "default": "Continue to Payment",
+        "loading": "Processing..."
+      }
+    }
+  },
   "Navbar": {
     "Log_in": "Log in",
     "Cart": "Cart",

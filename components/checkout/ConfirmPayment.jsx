@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
 import { useRouter } from '@/i18n/navigation';
+import { useTranslations } from 'next-intl';
+import { useState } from 'react';
 
 const ContinueToPayment = () => {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+  const t = useTranslations('CheckoutPage.ContinueToPayment');
 
   const handleContinuePayment = () => {
     setLoading(true);
@@ -22,7 +24,7 @@ const ContinueToPayment = () => {
           }`}
           disabled={loading}
         >
-          {loading ? 'Processing...' : 'Continue to Payment'}
+          {loading ? t('button.loading') : t('button.default')}
         </button>
       </div>
     </div>
