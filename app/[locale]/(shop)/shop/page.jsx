@@ -1,11 +1,12 @@
 import ShopQualityPromise from '@/components/containers/shop/ShopQualityPromise';
 import TerpeneProductsContainer from '@/components/containers/shop/TerpeneProductsContainer';
+import ShopHero from '@/components/headers/ShopHero';
 import { getCategories } from '@/services/get-categories';
 import { getCategoryProducts } from '@/services/get-category-products';
-import ShopHero from '@/components/headers/ShopHero';
+
 const ShopPage = async () => {
-  const categories = await getCategories();
-  const categoryProducts = await getCategoryProducts('all');
+  const [categories, categoryProducts] = await Promise.all([getCategories(), getCategoryProducts('all')]);
+
   return (
     <>
       <ShopHero />
