@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   Select,
   SelectContent,
@@ -8,9 +7,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import terpeneCategories from '@/lib/terpene-product-categories.json';
 
-const ProductFilter = ({ value, onChange }) => {
+const ProductFilter = ({ value, onChange, categories }) => {
   return (
     <Select value={value} onValueChange={onChange}>
       <SelectTrigger className="bg-umbra-5 min-h-12 w-full text-[17px] md:min-h-[42px] md:max-w-[280px] md:min-w-[156px]">
@@ -19,8 +17,13 @@ const ProductFilter = ({ value, onChange }) => {
       <SelectContent>
         <SelectGroup>
           <SelectLabel className="!text-[17px]">Filter</SelectLabel>
-          {terpeneCategories.map((option) => (
+          {/* {terpeneCategories.map((option) => (
             <SelectItem key={option.id} value={option.id}>
+              {option.name}
+            </SelectItem>
+          ))} */}
+          {categories.map((option) => (
+            <SelectItem key={option.slug} value={option.slug}>
               {option.name}
             </SelectItem>
           ))}

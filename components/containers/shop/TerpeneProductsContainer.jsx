@@ -4,7 +4,7 @@ import ProductGridCard from '@/components/product/ProductGridCard';
 import RadioGroupButtons from '@/components/ui/RadioGroupButtons';
 import { useTranslations } from 'next-intl';
 
-const TerpeneProductsContainer = () => {
+const TerpeneProductsContainer = ({ categories, categoryProducts }) => {
   const t = useTranslations('TerpeneShop');
   return (
     <div className="container pt-[100px]">
@@ -16,28 +16,17 @@ const TerpeneProductsContainer = () => {
             </h5>
           </div>
           <div className="block md:hidden">
-            <ProductFilter />
+            <ProductFilter categories={categories} />
           </div>
           <div className="hidden md:block">
-            <RadioGroupButtons />
+            <RadioGroupButtons categories={categories} />
           </div>
         </div>
         <div className="w-full space-y-10 md:w-[75%]">
           <div className="grid grid-cols-2 gap-3 space-y-8 md:grid-cols-3 md:gap-5 md:space-y-16">
-            <ProductGridCard />
-            <ProductGridCard />
-            <ProductGridCard />
-            <ProductGridCard />
-            <ProductGridCard />
-            <ProductGridCard />
-            <ProductGridCard />
-            <ProductGridCard />
-            <ProductGridCard />
-            <ProductGridCard />
-            <ProductGridCard />
-            <ProductGridCard />
-            <ProductGridCard />
-            <ProductGridCard />
+            {categoryProducts.map((product) => (
+              <ProductGridCard key={product._id} product={product} />
+            ))}
           </div>
           <div className="border-1"></div>
           <ProductPagination />
