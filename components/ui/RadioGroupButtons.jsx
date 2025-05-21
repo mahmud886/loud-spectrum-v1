@@ -1,12 +1,14 @@
 'use client';
-import { useState } from 'react';
 import clsx from 'clsx';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useState } from 'react';
 
-const options = ['All', 'Active', 'Relaxed', 'Classic', 'Sweet', 'Dank', 'Alive', 'Sample Packed'];
+// const options = ['All', 'Active', 'Relaxed', 'Classic', 'Sweet', 'Dank', 'Alive', 'Sample Packed'];
 
-export default function RadioGroupButtons() {
+export default function RadioGroupButtons({ categories }) {
   const [selected, setSelected] = useState(['All']);
+
+  const options = ['All', ...categories.map((category) => category.name)];
 
   const toggleOption = (option) => {
     if (option === 'All') {

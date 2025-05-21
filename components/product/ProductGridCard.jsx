@@ -1,19 +1,19 @@
 'use client';
 
+import ProductBuyDialog from '@/components/product/ProductBuyDialog';
+import { Link } from '@/i18n/navigation';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import ProductBuyDialog from '@/components/product/ProductBuyDialog';
-import { Link } from '@/i18n/navigation';
 
-const ProductGridCard = () => {
+const ProductGridCard = ({ product }) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const handleBuyNowClick = () => {
-    console.log('BuyNowClick');
+    console.log('BuyNowClick', product);
     setIsDialogOpen(true);
   };
 
@@ -83,7 +83,7 @@ const ProductGridCard = () => {
         {/* Product Title and Price */}
         <div className="mt-[15px]">
           <h2 className={clsx('text-[18px] font-normal md:text-[22px]', isShopPage ? 'text-black' : 'text-white-100')}>
-            Mango OG
+            {product.name}
           </h2>
           <p className={clsx('text-[15px] md:text-[19px]', isShopPage ? 'text-umbra-40' : 'text-white-40')}>
             $10.00 – $2,999.00
@@ -92,7 +92,9 @@ const ProductGridCard = () => {
       </motion.div>
 
       {/* ProductBuyDialog */}
-      {isDialogOpen && <ProductBuyDialog open={isDialogOpen} onOpenChange={() => setIsDialogOpen(false)} />}
+      {isDialogOpen && (
+        <ProductBuyDialog open={isDialogOpen} onOpenChange={() => setIsDialogOpen(false)} product={product} />
+      )}
     </>
   );
 };
