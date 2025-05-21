@@ -3,6 +3,8 @@ import Navbar from '@/components/Navbar';
 import ScrollToTop from '@/components/ScrollToTop';
 import { routing } from '@/i18n/routing';
 import { adelphiSans, neueHaasUnicaW1GMono } from '@/lib/fonts';
+import { ReduxProvider } from '@/lib/providers/ReduxProvider';
+import { ToastProvider } from '@/lib/providers/ToastProvider';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
 import NextTopLoader from 'nextjs-toploader';
@@ -21,24 +23,27 @@ export default async function RootLayout({ children, params }) {
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className={`bg-white-100 ${adelphiSans.variable} ${neueHaasUnicaW1GMono.variable} antialiased`}>
-        <ScrollToTop>
-          <NextIntlClientProvider>
-            <NextTopLoader
-              initialPosition={0.08}
-              crawlSpeed={200}
-              height={3}
-              crawl={true}
-              easing="ease"
-              speed={200}
-              shadow="0 0 10px #2299DD,0 0 5px #2299DD"
-              color="var(--primary)"
-              showSpinner={false}
-            />
-            <Navbar locale={locale} />
-            {children}
-            <Footer locale={locale} />
-          </NextIntlClientProvider>
-        </ScrollToTop>
+        <ReduxProvider>
+          <ToastProvider />
+          <ScrollToTop>
+            <NextIntlClientProvider>
+              <NextTopLoader
+                initialPosition={0.08}
+                crawlSpeed={200}
+                height={3}
+                crawl={true}
+                easing="ease"
+                speed={200}
+                shadow="0 0 10px #2299DD,0 0 5px #2299DD"
+                color="var(--primary)"
+                showSpinner={false}
+              />
+              <Navbar locale={locale} />
+              {children}
+              <Footer locale={locale} />
+            </NextIntlClientProvider>
+          </ScrollToTop>
+        </ReduxProvider>
       </body>
     </html>
   );

@@ -1,12 +1,14 @@
 'use client';
-import React from 'react';
-import Image from 'next/image';
+import { removeFromCart, updateQuantity } from '@/lib/store/slices/cartSlice';
 import { MinusIcon, PlusIcon, TrashIcon } from 'lucide-react';
+import Image from 'next/image';
+import { useDispatch } from 'react-redux';
 
 const CartItem = ({ item }) => {
+  const dispatch = useDispatch();
   return (
     <div className="border-umbra-10 flex items-center gap-4 rounded-md border-1 py-2.5 pr-5 pl-2.5">
-      <Image src={item.image} alt={item.name} width={80} height={80} className="rounded" />
+      <Image src="/assets/images/cart-item.jpg" alt={item.name} width={80} height={80} className="rounded" />
       <div className="flex w-full flex-col justify-between gap-5">
         <h6 className="text-umbra-100 font-sans text-[20px] leading-[120%] font-normal">{item.name}</h6>
         <div className="flex w-full items-end justify-between gap-5">
@@ -16,7 +18,7 @@ const CartItem = ({ item }) => {
               {/* Minus Button */}
               <button
                 className="group text-umbra-100 hover:text-white-100 flex cursor-pointer items-center justify-center px-2 py-1 transition hover:bg-red-500"
-                onClick={() => console.log('decrease')}
+                onClick={() => dispatch(updateQuantity({ id: item.id, quantity: item.quantity - 1 }))}
               >
                 <MinusIcon size={16} className="text-umbra-100 group-hover:text-white-100 transition" />
               </button>
@@ -29,7 +31,7 @@ const CartItem = ({ item }) => {
               {/* Plus Button */}
               <button
                 className="group text-umbra-100 hover:text-white-100 hover:bg-alive flex cursor-pointer items-center justify-center px-2 py-1 transition"
-                onClick={() => console.log('increase')}
+                onClick={() => dispatch(updateQuantity({ id: item.id, quantity: item.quantity + 1 }))}
               >
                 <PlusIcon size={16} className="text-umbra-100 group-hover:text-white-100 transition" />
               </button>
@@ -38,7 +40,7 @@ const CartItem = ({ item }) => {
             {/* Remove Button */}
             <button
               className="group text-umbra-100 hover:text-white-100 bg-umbra-5 flex cursor-pointer items-center justify-center rounded-full p-2 transition hover:bg-red-500"
-              onClick={() => console.log('remove')}
+              onClick={() => dispatch(removeFromCart(item.id))}
             >
               <TrashIcon size={16} className="text-umbra-100 group-hover:text-white-100 transition" />
             </button>

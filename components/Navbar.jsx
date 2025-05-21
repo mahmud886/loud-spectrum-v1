@@ -8,6 +8,7 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 const Navbar = ({ locale }) => {
   const t = useTranslations('');
@@ -15,6 +16,8 @@ const Navbar = ({ locale }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
+
+  const cartItems = useSelector((state) => state.cart);
 
   const specialPaths = [
     'blog',
@@ -95,7 +98,10 @@ const Navbar = ({ locale }) => {
                 isSpecialPath ? 'hover:text-umbra-40 text-[#191919]' : 'text-white-100 hover:text-white-40'
               }`}
             >
-              {t('Cart')} <span className={`${isSpecialPath ? 'text-umbra-40' : 'text-white-40'}`}>(0)</span>
+              {t('Cart')}{' '}
+              <span className={`${isSpecialPath ? 'text-umbra-40' : 'text-white-40'}`}>
+                ({cartItems?.totalQuantity || 0})
+              </span>
             </a>
             <MenuButton setMenuOpen={setMenuOpen} isSpecialPath={isSpecialPath} />
           </div>
@@ -103,7 +109,7 @@ const Navbar = ({ locale }) => {
       </nav>
 
       {menuOpen && <TopNav menuOpen={menuOpen} setMenuOpen={setMenuOpen} setCartOpen={setCartOpen} />}
-      <CartDrawer isOpen={cartOpen} onClose={() => setCartOpen(false)} cartItems={[]} />
+      <CartDrawer isOpen={cartOpen} onClose={() => setCartOpen(false)} />
     </>
   );
 };

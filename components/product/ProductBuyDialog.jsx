@@ -2,14 +2,17 @@
 
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { parseProductAttributes } from '@/helpers/product-attributes';
+import { addToCart } from '@/lib/store/slices/cartSlice';
 import { MinusIcon, PlusIcon, Star, XIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 const ProductBuyDialog = ({ open, onOpenChange, product }) => {
   const t = useTranslations('ProductDetails');
   const [quantity, setQuantity] = useState(1);
   const [selectedVolume, setSelectedVolume] = useState('');
+  const dispatch = useDispatch();
 
   const volumeOptions = parseProductAttributes(product, 'volume');
 
@@ -136,7 +139,13 @@ const ProductBuyDialog = ({ open, onOpenChange, product }) => {
               </div>
             </div>
 
-            <button className="main-button-black w-full rounded-full px-2 py-2 md:max-w-[132px]">
+            <button
+              className="main-button-black w-full rounded-full px-2 py-2 md:max-w-[132px]"
+              onClick={() => {
+                dispatch(addToCart({ id: product._id, product, quantity, selectedVolume }));
+                onOpenChange(false);
+              }}
+            >
               {t('AddToCart')}
             </button>
           </div>

@@ -1,13 +1,15 @@
 'use client';
 
+import CartItem from '@/components/cart/CartItem';
+import { ScrollArea } from '@/components/ui/scroll-area';
+import { useRouter } from '@/i18n/navigation';
 import { ShoppingCartIcon, X } from 'lucide-react';
 import { useEffect } from 'react';
-import { ScrollArea } from '@/components/ui/scroll-area';
-import CartItem from '@/components/cart/CartItem';
-import { Link, useRouter } from '@/i18n/navigation';
+import { useSelector } from 'react-redux';
 
 const CartDrawer = ({ isOpen, onClose }) => {
   const router = useRouter();
+  const cartItems = useSelector((state) => state.cart.items);
 
   useEffect(() => {
     if (isOpen) {
@@ -29,7 +31,7 @@ const CartDrawer = ({ isOpen, onClose }) => {
         <div className="flex items-start justify-between p-5">
           <div className="space-y-2">
             <h2 className="text-umbra-100 font-sans text-[32px] leading-[120%] font-normal">Your Cart</h2>
-            <h6 className="text-umbra-40 font-mono text-[16px] leading-[130%] font-normal">5 items</h6>
+            <h6 className="text-umbra-40 font-mono text-[16px] leading-[130%] font-normal">{cartItems.length} items</h6>
           </div>
           <button onClick={onClose}>
             <X size={27} className="text-umbra-100 hover:text-umbra-40 cursor-pointer" />
@@ -83,43 +85,3 @@ const CartDrawer = ({ isOpen, onClose }) => {
 };
 
 export default CartDrawer;
-
-// const cartItems = [];
-const cartItems = [
-  {
-    name: 'Green Apple Jack',
-    quantity: 2,
-    price: 29.99,
-    image: '/assets/images/cart-item.jpg',
-  },
-  {
-    name: 'Green Apple Jack',
-    quantity: 2,
-    price: 29.99,
-    image: '/assets/images/cart-item.jpg',
-  },
-  {
-    name: 'Green Apple Jack',
-    quantity: 2,
-    price: 29.99,
-    image: '/assets/images/cart-item.jpg',
-  },
-  {
-    name: 'Green Apple Jack',
-    quantity: 2,
-    price: 29.99,
-    image: '/assets/images/cart-item.jpg',
-  },
-  {
-    name: 'Green Apple Jack',
-    quantity: 2,
-    price: 29.99,
-    image: '/assets/images/cart-item.jpg',
-  },
-  {
-    name: 'Green Apple Jack',
-    quantity: 2,
-    price: 29.99,
-    image: '/assets/images/cart-item.jpg',
-  },
-];
