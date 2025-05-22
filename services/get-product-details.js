@@ -16,7 +16,6 @@ export async function getProductDetails(productSlug) {
     }
 
     const data = await res.json();
-    console.log('API Response:', data?.data?.data?.[0]);
     return data?.data?.data?.[0];
   } catch (error) {
     console.error('Error fetching product details:', error);

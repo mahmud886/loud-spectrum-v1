@@ -1,0 +1,16 @@
+/* TEAM */
+Company: Loud Spectrum
+Site: https://loudspectrum.com
+Location: United States
+
+/* THANKS */
+Name: Our Customers
+Name: Our Partners
+Name: The Open Source Community
+
+/* SITE */
+Last update: 2024/03
+Standards: HTML5, CSS3, JavaScript
+Components: Next.js 15, React, Tailwind CSS
+Software: Visual Studio Code, Git, Node.js
+Language: English, Spanish, French, German, Japanese, Russian
