@@ -306,9 +306,11 @@
     "AddToCart": "カートに追加",
     "SeePDF": "PDFを見る",
     "ChooseFormula": "処方を選択",
-    "ChooseVolume": "処方を選択",
+    "ChooseVolume": "体積を選択",
     "Reviews": "レビュー",
-    "CannabisDerived": "カンナビス由来"
+    "CannabisDerived": "カンナビス由来",
+    "PleaseSelectVolume": "体積を選択してください",
+    "PleaseSelectFormula": "処方を選択してください"
   },
   "TrySamplePack": {
     "Reviews": "レビュー",

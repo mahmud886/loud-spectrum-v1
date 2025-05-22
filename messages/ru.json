@@ -307,9 +307,10 @@
     "AddToCart": "Добавить в корзину",
     "SeePDF": "Посмотреть PDF",
     "ChooseFormula": "Выбрать формулу",
-    "ChooseVolume": "Выбрать формулу",
+    "ChooseVolume": "Выбрать объем",
     "Reviews": "Отзывы",
-    "CannabisDerived": "Из каннабиса"
+    "CannabisDerived": "Из каннабиса",
+    "PleaseSelectVolume": "Пожалуйста, выберите объем"
   },
   "TrySamplePack": {
     "Reviews": "Отзывы",

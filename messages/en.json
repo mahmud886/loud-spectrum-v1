@@ -307,9 +307,11 @@
     "AddToCart": "Add To Cart",
     "SeePDF": "See PDF",
     "ChooseFormula": "Choose Formula",
-    "ChooseVolume": "Choose Formula",
+    "ChooseVolume": "Choose Volume",
     "Reviews": "Reviews",
-    "CannabisDerived": "Cannabis Derived"
+    "CannabisDerived": "Cannabis Derived",
+    "PleaseSelectVolume": "Please Select Volume",
+    "PleaseSelectFormula": "Please Select Formula"
   },
   "TrySamplePack": {
     "Reviews": "Reviews",

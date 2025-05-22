@@ -306,9 +306,11 @@
     "AddToCart": "Ajouter au panier",
     "SeePDF": "Voir le PDF",
     "ChooseFormula": "Choisir une formule",
-    "ChooseVolume": "Choisir une formule",
+    "ChooseVolume": "Choisir un volume",
     "Reviews": "Avis",
-    "CannabisDerived": "Dérivé du cannabis"
+    "CannabisDerived": "Dérivé du cannabis",
+    "PleaseSelectVolume": "Veuillez sélectionner un volume",
+    "PleaseSelectFormula": "Veuillez sélectionner une formule"
   },
   "TrySamplePack": {
     "Reviews": "Avis",
