@@ -7,7 +7,6 @@ const nextConfig = {
   poweredByHeader: false,
   compress: true,
   reactStrictMode: true,
-  // swcMinify: true,
   images: {
     domains: ['loudspectrum.com'],
     formats: ['image/avif', 'image/webp'],
@@ -50,8 +49,23 @@ const nextConfig = {
     },
   ],
   experimental: {
-    optimizeCss: true,
+    optimizeCss: {
+      inlineFonts: true,
+      preloadFonts: true,
+    },
     optimizePackageImports: ['@/components', '@/lib'],
+  },
+  webpack: (config, { dev, isServer }) => {
+    // Optimize CSS loading
+    if (!dev && !isServer) {
+      config.optimization.splitChunks.cacheGroups.styles = {
+        name: 'styles',
+        test: /\.(css|scss)$/,
+        chunks: 'all',
+        enforce: true,
+      };
+    }
+    return config;
   },
 };
 
