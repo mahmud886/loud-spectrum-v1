@@ -1,14 +1,17 @@
 import SpectrumAccordion from '@/components/containers/SpectrumAccordion';
-import ProductReviews from '@/components/containers/product/ProductReviews';
 import AddAReview from '@/components/containers/product/AddAReview';
+import ProductReviews from '@/components/containers/product/ProductReviews';
 import RelatedProducts from '@/components/containers/product/RelatedProducts';
+import { getProductDetails } from '@/services/get-product-details';
 
-const ProductDetailsPage = () => {
+const ProductDetailsPage = async ({ params }) => {
+  const { productId } = await params;
+  const productDetails = await getProductDetails(productId);
   return (
     <div className="md:mt-[160px]">
       <SpectrumAccordion items={accordionData} />
-      <ProductReviews />
-      <AddAReview />
+      <ProductReviews productId={productDetails?.id} />
+      <AddAReview productId={productDetails?.id} />
       <RelatedProducts />
     </div>
   );

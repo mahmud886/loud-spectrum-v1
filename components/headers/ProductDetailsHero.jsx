@@ -1,8 +1,9 @@
-import Image from 'next/image';
 import ProductDetailsLeftCard from '@/components/product/ProductDetailsLeftCard';
 import ProductDetailsRightCard from '@/components/product/ProductDetailsRightCard';
+import Image from 'next/image';
+import { Suspense } from 'react';
 
-const ProductDetailsHero = () => {
+const ProductDetailsHero = ({ product }) => {
   return (
     <>
       <div className="relative hidden h-[1082px] overflow-hidden bg-black md:block">
@@ -18,7 +19,15 @@ const ProductDetailsHero = () => {
         <div className="absolute inset-0 z-10 container h-[987px] w-full overflow-hidden">
           <div className="relative z-10 flex h-full w-full flex-col items-center justify-center gap-[40px]">
             <div className="flex w-full items-start justify-between gap-[40px]">
-              <ProductDetailsLeftCard />
+              <Suspense
+                fallback={
+                  <div className="bg-white-100 text-umbra-100 animate-pulse p-5 md:h-[587px] md:w-[413px]">
+                    Loading...
+                  </div>
+                }
+              >
+                {product && <ProductDetailsLeftCard product={product} />}
+              </Suspense>
               <ProductDetailsRightCard />
             </div>
           </div>
@@ -48,7 +57,9 @@ const ProductDetailsHero = () => {
       </div>
 
       <div className="flex justify-center py-8 md:hidden">
-        <ProductDetailsLeftCard />
+        <Suspense fallback={<div className="bg-white-100 text-umbra-100 animate-pulse p-5">Loading...</div>}>
+          {product && <ProductDetailsLeftCard product={product} />}
+        </Suspense>
       </div>
     </>
   );

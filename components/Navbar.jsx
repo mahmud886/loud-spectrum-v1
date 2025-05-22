@@ -19,6 +19,8 @@ const Navbar = ({ locale }) => {
 
   const cartItems = useSelector((state) => state.cart);
 
+  console.log(cartItems);
+
   const specialPaths = [
     'blog',
     'wholesale',

@@ -306,9 +306,10 @@
     "AddToCart": "In den Warenkorb",
     "SeePDF": "PDF ansehen",
     "ChooseFormula": "Formel wählen",
-    "ChooseVolume": "Formel wählen",
+    "ChooseVolume": "Volumen wählen",
     "Reviews": "Bewertungen",
-    "CannabisDerived": "Aus Cannabis gewonnen"
+    "CannabisDerived": "Aus Cannabis gewonnen",
+    "PleaseSelectVolume": "Bitte Volumen auswählen"
   },
   "TrySamplePack": {
     "Reviews": "Bewertungen",

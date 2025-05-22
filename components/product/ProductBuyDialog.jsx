@@ -7,16 +7,29 @@ import { MinusIcon, PlusIcon, Star, XIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { toast } from 'sonner';
 
 const ProductBuyDialog = ({ open, onOpenChange, product }) => {
   const t = useTranslations('ProductDetails');
   const [quantity, setQuantity] = useState(1);
   const [selectedVolume, setSelectedVolume] = useState('');
+  const [showVolumeError, setShowVolumeError] = useState(false);
   const dispatch = useDispatch();
 
   const volumeOptions = parseProductAttributes(product, 'volume');
 
-  console.log('selectedVolume', selectedVolume);
+  const handleAddToCart = () => {
+    if (!selectedVolume) {
+      setShowVolumeError(true);
+      toast.error(t('PleaseSelectVolume'));
+      return;
+    }
+    setShowVolumeError(false);
+    dispatch(addToCart({ id: product._id, product, quantity, selectedVolume }));
+    onOpenChange(false);
+    setSelectedVolume('');
+    setQuantity(1);
+  };
 
   if (!open) return null;
 
@@ -64,7 +77,7 @@ const ProductBuyDialog = ({ open, onOpenChange, product }) => {
                     </span>
                   ))}
                 </h6>
-                <p className="text-umbra-40 line-clamp-4 font-mono text-[16px] leading-[140%]">
+                <p className="text-umbra-40 line-clamp-3 font-mono text-[16px] leading-[140%]">
                   {product?.meta_description}
                 </p>
               </div>
@@ -81,8 +94,16 @@ const ProductBuyDialog = ({ open, onOpenChange, product }) => {
                   </Select>
                 </div>
                 <div>
-                  <Select value={selectedVolume} onValueChange={setSelectedVolume}>
-                    <SelectTrigger className="bg-umbra-5 text-umbra-100 h-[42px] w-full font-mono text-[16px]">
+                  <Select
+                    value={selectedVolume}
+                    onValueChange={(value) => {
+                      setSelectedVolume(value);
+                      setShowVolumeError(false);
+                    }}
+                  >
+                    <SelectTrigger
+                      className={`bg-umbra-5 text-umbra-100 h-[42px] w-full font-mono text-[16px] ${showVolumeError ? 'border-2 border-red-500' : ''}`}
+                    >
                       <SelectValue placeholder={t('ChooseVolume')} />
                     </SelectTrigger>
                     <SelectContent>
@@ -102,7 +123,7 @@ const ProductBuyDialog = ({ open, onOpenChange, product }) => {
             <div className="flex w-full items-center justify-between gap-5 md:flex-row">
               <div className="flex items-center gap-2">
                 <button
-                  className="border-umbra-40 flex size-10 items-center justify-center rounded-full border bg-white"
+                  className="border-umbra-40 flex size-10 cursor-pointer items-center justify-center rounded-full border bg-white disabled:cursor-not-allowed"
                   onClick={() => setQuantity((q) => Math.max(1, q - 1))}
                   disabled={quantity <= 1}
                 >
@@ -131,7 +152,7 @@ const ProductBuyDialog = ({ open, onOpenChange, product }) => {
                 />
 
                 <button
-                  className="border-umbra-40 bg-white-40/10 flex size-10 items-center justify-center rounded-full border backdrop-blur-2xl"
+                  className="border-umbra-40 bg-white-40/10 flex size-10 cursor-pointer items-center justify-center rounded-full border backdrop-blur-2xl disabled:cursor-not-allowed"
                   onClick={() => setQuantity((q) => q + 1)}
                 >
                   <PlusIcon size={14} fill="#000000" />
@@ -141,10 +162,7 @@ const ProductBuyDialog = ({ open, onOpenChange, product }) => {
 
             <button
               className="main-button-black w-full rounded-full px-2 py-2 md:max-w-[132px]"
-              onClick={() => {
-                dispatch(addToCart({ id: product._id, product, quantity, selectedVolume }));
-                onOpenChange(false);
-              }}
+              onClick={handleAddToCart}
             >
               {t('AddToCart')}
             </button>

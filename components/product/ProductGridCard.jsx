@@ -13,7 +13,6 @@ const ProductGridCard = ({ product }) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const handleBuyNowClick = () => {
-    console.log('BuyNowClick', product);
     setIsDialogOpen(true);
   };
 
@@ -31,7 +30,7 @@ const ProductGridCard = ({ product }) => {
           className="relative flex h-[220px] min-h-[220px] w-full min-w-[162px] flex-col justify-around border bg-[#F0F0F0] p-2.5 md:h-[384px] md:min-h-[384px] md:w-[305px] md:min-w-[305px]"
         >
           {/* Image Section */}
-          <Link href={`/shop/1`} className="flex items-center justify-center overflow-hidden md:mt-16">
+          <Link href={`/shop/${product.slug}`} className="flex items-center justify-center overflow-hidden md:mt-16">
             <motion.div
               variants={{
                 rest: { scale: 1 },

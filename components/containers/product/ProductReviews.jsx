@@ -1,8 +1,7 @@
-import React from 'react';
 import ReviewAndTestimonialCarouselWithProgress from '@/components/carousels/ReviewAndTestimonialCarouselWithProgress';
 import ProductReviewCard from '@/components/product/ProductReviewCard';
 
-const ProductReviews = () => {
+const ProductReviews = ({ productId }) => {
   return (
     <div className={'container pb-6 md:pb-[80px]'}>
       <h2 className="text-umbra-100 font-sans text-[32px] leading-[120%] font-normal md:text-[44px]">
