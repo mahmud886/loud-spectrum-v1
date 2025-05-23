@@ -2,8 +2,10 @@ import ProductCartItems from '@/components/checkout/ProductCartItems';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { ShoppingCartIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import { useSelector } from 'react-redux';
 
 const ProductCart = () => {
+  const cartItems = useSelector((state) => state.cart.items);
   const t = useTranslations('CheckoutPage.ProductCart');
 
   return (
