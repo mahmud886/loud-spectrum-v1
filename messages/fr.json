@@ -90,7 +90,16 @@
     },
     "DiscountCoupon": {
       "placeholder": "Entrez le code promo",
-      "apply": "Appliquer"
+      "apply": "Appliquer",
+      "remove": "Supprimer",
+      "applied": "Coupon appliqué : {value}{type} de réduction",
+      "discount": "Réduction",
+      "total": "Total",
+      "error": {
+        "empty": "Veuillez saisir un code de coupon",
+        "invalid": "Code de coupon invalide",
+        "server": "Erreur lors de l'application du coupon. Veuillez réessayer."
+      }
     },
     "OrderSummary": {
       "title": "Résumé de votre commande",

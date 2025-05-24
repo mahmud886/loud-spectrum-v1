@@ -89,8 +89,17 @@
       "ml": "ml"
     },
     "DiscountCoupon": {
-      "placeholder": "Geben Sie Rabattcode ein",
-      "apply": "Anwenden"
+      "placeholder": "Rabattcode eingeben",
+      "apply": "Anwenden",
+      "remove": "Entfernen",
+      "applied": "Gutschein angewendet: {value}{type} Rabatt",
+      "discount": "Rabatt",
+      "total": "Gesamt",
+      "error": {
+        "empty": "Bitte geben Sie einen Gutscheincode ein",
+        "invalid": "Ungültiger Gutscheincode",
+        "server": "Fehler beim Anwenden des Gutscheins. Bitte versuchen Sie es erneut."
+      }
     },
     "OrderSummary": {
       "title": "Ihre Bestellübersicht",

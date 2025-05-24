@@ -89,8 +89,17 @@
       "ml": "ml"
     },
     "DiscountCoupon": {
-      "placeholder": "割引コードを入力してください",
-      "apply": "適用"
+      "placeholder": "割引コードを入力",
+      "apply": "適用",
+      "remove": "削除",
+      "applied": "クーポン適用済み：{value}{type}オフ",
+      "discount": "割引",
+      "total": "合計",
+      "error": {
+        "empty": "クーポンコードを入力してください",
+        "invalid": "無効なクーポンコードです",
+        "server": "クーポンの適用中にエラーが発生しました。もう一度お試しください。"
+      }
     },
     "OrderSummary": {
       "title": "ご注文の概要",

@@ -91,7 +91,16 @@
     },
     "DiscountCoupon": {
       "placeholder": "Enter discount code",
-      "apply": "Apply"
+      "apply": "Apply",
+      "remove": "Remove",
+      "applied": "Coupon applied: {value}{type} off",
+      "discount": "Discount",
+      "total": "Total",
+      "error": {
+        "empty": "Please enter a coupon code",
+        "invalid": "Invalid coupon code",
+        "server": "Error applying coupon. Please try again."
+      }
     },
     "OrderSummary": {
       "title": "Your order summary",
