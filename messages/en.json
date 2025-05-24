@@ -91,7 +91,16 @@
     },
     "DiscountCoupon": {
       "placeholder": "Enter discount code",
-      "apply": "Apply"
+      "apply": "Apply",
+      "remove": "Remove",
+      "applied": "Coupon applied: {value}{type} off",
+      "discount": "Discount",
+      "total": "Total",
+      "error": {
+        "empty": "Please enter a coupon code",
+        "invalid": "Invalid coupon code",
+        "server": "Error applying coupon. Please try again."
+      }
     },
     "OrderSummary": {
       "title": "Your order summary",
@@ -175,7 +184,7 @@
     "Explore_The_Spectrum": "Explore the Spectrum",
     "Find_Your_Perfect_Profile": "Find Your Perfect Profile",
     "Explore_Our_Terpene_Guide": "Explore Our Terpene Guide",
-    "Discover_the_perfect_terpene_profile_for_your_products_The_right_blend_doesnt_just_enhance_the_experience_it_creates_lasting_loyalty_and_keeps_customers_coming_back": "Discover the perfect terpene profile for your products. The right blend doesn’t just enhance the experience—it creates lasting loyalty and keeps customers coming back.",
+    "Discover_the_perfect_terpene_profile_for_your_products_The_right_blend_doesnt_just_enhance_the_experience_it_creates_lasting_loyalty_and_keeps_customers_coming_back": "Discover the perfect terpene profile for your products. The right blend doesn't just enhance the experience—it creates lasting loyalty and keeps customers coming back.",
     "TerpeneGuide": "Terpene Guide",
     "Our_Quality_Promise": "Our Quality Promise",
     "The_Quality_Your_Business_Deserves": "The Quality Your Business Deserves",
@@ -191,7 +200,7 @@
   },
   "AboutPage": {
     "The_Best_in_the_Terpene_Business_Bar_None": "The Best in the Terpene Business. Bar None.",
-    "Header_Description": "Loud Spectrum offers the widest range of terpene profiles<sup>1</sup>, crafted from premium ingredients and engineered to the highest standards<sup>2</sup> for connoisseurs<sup>3</sup> seeking heightened experiences<sup>4</sup>. <br /> <br /> We know that’s a bit of a mouthful. So, we broke it down for you:",
+    "Header_Description": "Loud Spectrum offers the widest range of terpene profiles<sup>1</sup>, crafted from premium ingredients and engineered to the highest standards<sup>2</sup> for connoisseurs<sup>3</sup> seeking heightened experiences<sup>4</sup>. <br /> <br /> We know that's a bit of a mouthful. So, we broke it down for you:",
     "Point_01_Title": "01",
     "Point_01_Description": "With over 3,500 custom profiles, Loud Spectrum sets the industry standard, offering the widest selection and deepest expertise in terpene formulation.",
     "Point_02_Title": "02",
@@ -199,22 +208,22 @@
     "Point_03_Title": "03",
     "Point_03_Description": "We know you (and your customers) have great taste, and we're dedicated to exceeding expectations.",
     "Point_04_Title": "04",
-    "Point_04_Description": "We don’t follow trends—we create them. For over a decade, we’ve been at the forefront of terpene experience, pushing boundaries and redefining what’s possible."
+    "Point_04_Description": "We don't follow trends—we create them. For over a decade, we've been at the forefront of terpene experience, pushing boundaries and redefining what's possible."
   },
   "FlavorScience": {
-    "Title": "How do we create terpenes that each have a unique personality and flavor? It’s all in the science. We call it <strong>Flavor Science™</strong>.",
+    "Title": "How do we create terpenes that each have a unique personality and flavor? It's all in the science. We call it <strong>Flavor Science™</strong>.",
     "Button": "Learn More"
   },
   "WhyLoudSpectrum": {
     "Title": "Why Loud\nSpectrum?",
     "Paragraph1": "Our terpenes are the bold, vibrant nucleus of every unforgettable experience.",
-    "Paragraph2": "Each product is that special ingredient to take wind-down time, healing rituals, or a smoke sesh up a notch by enhancing it with taste, flavor, and sensation. It’s those details that make all the difference.",
-    "Paragraph3": "We’re hands-on, sourcing the finest ingredients and using the most rigorous standards. This perfect chemistry of science and rigor makes our terpenes stand out through unmatched quality and 100% consistency."
+    "Paragraph2": "Each product is that special ingredient to take wind-down time, healing rituals, or a smoke sesh up a notch by enhancing it with taste, flavor, and sensation. It's those details that make all the difference.",
+    "Paragraph3": "We're hands-on, sourcing the finest ingredients and using the most rigorous standards. This perfect chemistry of science and rigor makes our terpenes stand out through unmatched quality and 100% consistency."
   },
   "OurVision": {
     "title": "Flavors for Every Occasion",
     "subtitle": "Our Vision",
-    "description": "Terpenes have the power to help heal, support, elevate... and so much more. That’s why we believe every moment deserves a terpene profile that feels like it was made for it. We created Loud Spectrum to introduce more people to the benefits of premium, organic terpenes, building a portfolio that can be paired with moods, moments, milestones, and everything in between."
+    "description": "Terpenes have the power to help heal, support, elevate... and so much more. That's why we believe every moment deserves a terpene profile that feels like it was made for it. We created Loud Spectrum to introduce more people to the benefits of premium, organic terpenes, building a portfolio that can be paired with moods, moments, milestones, and everything in between."
   },
   "FlavorThatSetsYouApart": {
     "title": "Flavor That Sets\nYou Apart",
@@ -264,7 +273,7 @@
       "label": "Dank"
     },
     "sweet": {
-      "description": "Indulge your senses with Sweet—a terpene line made for those who crave bold, fruity flavors with a candy-like kick. From juicy mango to ripe strawberry (and everything in between), these profiles bring a burst of sweetness to any product. Whether you're looking to enhance, mix, or create something entirely new, Sweet delivers the flavor you didn’t know you needed—but won’t want to go without.",
+      "description": "Indulge your senses with Sweet—a terpene line made for those who crave bold, fruity flavors with a candy-like kick. From juicy mango to ripe strawberry (and everything in between), these profiles bring a burst of sweetness to any product. Whether you're looking to enhance, mix, or create something entirely new, Sweet delivers the flavor you didn't know you needed—but won't want to go without.",
       "quickFacts": "Quick Facts:",
       "facts": [
         "Most requested profile",
@@ -275,7 +284,7 @@
       "label": "Sweet"
     },
     "classic": {
-      "description": "Classic is the original strain-specific terpene line, designed for precision and versatility. Made from 100% natural, botanically derived terpenes, Classic delivers the entourage effect without an overpowering aroma. Whether you’re after pure strain profiles or a subtle fruity twist, this line offers a seamless way to infuse terpenes into your products with accuracy and ease.",
+      "description": "Classic is the original strain-specific terpene line, designed for precision and versatility. Made from 100% natural, botanically derived terpenes, Classic delivers the entourage effect without an overpowering aroma. Whether you're after pure strain profiles or a subtle fruity twist, this line offers a seamless way to infuse terpenes into your products with accuracy and ease.",
       "quickFacts": "Quick Facts:",
       "facts": [
         "Invented in 2018",
@@ -324,13 +333,13 @@
   "TerpeneChartHero": {
     "heading": "The Loud Spectrum Terpene Chart",
     "subheading": "Your Guide to Every Profile",
-    "description": "Discover how these natural compounds power bold aromas, distinct effects, and therapeutic properties in plants, including cannabis. Whether you’re after citrus notes for energy or piney profiles for relaxation, this visual tool makes it easy to match profiles to your preferences. It’s a simple way to explore what terpenes can do for you and your customers."
+    "description": "Discover how these natural compounds power bold aromas, distinct effects, and therapeutic properties in plants, including cannabis. Whether you're after citrus notes for energy or piney profiles for relaxation, this visual tool makes it easy to match profiles to your preferences. It's a simple way to explore what terpenes can do for you and your customers."
   },
   "TheLab": {
     "heading": "The Science Behind Bold Flavor",
     "subheading": "Great taste is an art… \nand a science.",
-    "description1": "We pioneered the first full-spectrum, strain-specific terpene profile. While we can’t spill all the secrets behind our sauce, we can share what makes it special. ",
-    "description2": "Behind every Loud Spectrum profile is our Flavor Science method, a proprietary process that takes the guesswork out of crafting exceptional flavor.  Through deep research and development, we’ve gained an understanding of every ingredient: its aroma, how it blends, and the precise formulation needed to bring it to life—to the point that we’ve perfected 200 profiles and counting. ",
+    "description1": "We pioneered the first full-spectrum, strain-specific terpene profile. While we can't spill all the secrets behind our sauce, we can share what makes it special. ",
+    "description2": "Behind every Loud Spectrum profile is our Flavor Science method, a proprietary process that takes the guesswork out of crafting exceptional flavor.  Through deep research and development, we've gained an understanding of every ingredient: its aroma, how it blends, and the precise formulation needed to bring it to life—to the point that we've perfected 200 profiles and counting. ",
     "behindTheProcess": {
       "title": "Behind the Process",
       "subtitle": "Our Process, Your Advantage"
@@ -377,14 +386,14 @@
     "qualitySection": {
       "label": "Our quality promise",
       "title": "The Highest Standards of Quality",
-      "description": "Quality isn’t just our standard, it’s our signature move. Each profile undergoes expert-driven R&D, is crafted in ISO and cGMP-compliant facilities and is third-party tested for pesticides, heavy metals, and solvents. It’s a rigorous process, but you can literally taste the difference.",
+      "description": "Quality isn't just our standard, it's our signature move. Each profile undergoes expert-driven R&D, is crafted in ISO and cGMP-compliant facilities and is third-party tested for pesticides, heavy metals, and solvents. It's a rigorous process, but you can literally taste the difference.",
       "button": "Join the Waitlist"
     }
   },
   "ContactPage": {
     "contactHero": {
-      "title": "Let’s Connect",
-      "description": "Have questions about mixing, dilution, product applications, or safety? We’re always keeping an eye on incoming questions, so you’ll hear back from us shortly.",
+      "title": "Let's Connect",
+      "description": "Have questions about mixing, dilution, product applications, or safety? We're always keeping an eye on incoming questions, so you'll hear back from us shortly.",
       "tollFreeLabel": "Toll-Free Number",
       "textCallLabel": "Text/Call",
       "emailLabel": "Email",
@@ -444,7 +453,7 @@
     },
     "WhyChooseLoudSpectrum": {
       "WhyChooseTitle": "Why Choose Loud Spectrum?",
-      "WhyChooseSubtitle": "Because ordinary terpenes just don’t cut it.",
+      "WhyChooseSubtitle": "Because ordinary terpenes just don't cut it.",
       "FarmToBottle": "Farm-to-Bottle Quality",
       "ExclusiveFlavors": "Exclusive Flavors",
       "NaturalFoodGrade": "100% Natural & Food Grade",
@@ -458,15 +467,15 @@
   "NewPage": {
     "newPageHeroBanner": {
       "title": "You've got high standards. We offer endless possibilities.",
-      "description": "We’re always innovating terpene profiles in our lab. With new flavors rolling out regularly, check back often for the latest products that set your business apart."
+      "description": "We're always innovating terpene profiles in our lab. With new flavors rolling out regularly, check back often for the latest products that set your business apart."
     },
     "WhatsNewProductSlider": {
-      "DiscoverWhatsNew": "Discover What’s New"
+      "DiscoverWhatsNew": "Discover What's New"
     },
     "commingSoon": {
       "comingSoonLabel": "COMING SOON",
       "title": "A New Kind of Flavor Experience",
-      "description": "What’s next for Loud Spectrum? We’ve been in the lab working on a bold new wave of terpene innovation, designed to elevate every moment in unexpected ways. Our latest venture is a line of first-to-market products that bring flavor to everyday experiences. Get a taste for the future of terpenes—and stay tuned for more.",
+      "description": "What's next for Loud Spectrum? We've been in the lab working on a bold new wave of terpene innovation, designed to elevate every moment in unexpected ways. Our latest venture is a line of first-to-market products that bring flavor to everyday experiences. Get a taste for the future of terpenes—and stay tuned for more.",
       "button": "Join the Waitlist"
     }
   },

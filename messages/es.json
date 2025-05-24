@@ -88,8 +88,17 @@
       "ml": "ml"
     },
     "DiscountCoupon": {
-      "placeholder": "Ingrese el código de descuento",
-      "apply": "Aplicar"
+      "placeholder": "Ingrese código de descuento",
+      "apply": "Aplicar",
+      "remove": "Eliminar",
+      "applied": "Cupón aplicado: {value}{type} de descuento",
+      "discount": "Descuento",
+      "total": "Total",
+      "error": {
+        "empty": "Por favor ingrese un código de cupón",
+        "invalid": "Código de cupón inválido",
+        "server": "Error al aplicar el cupón. Por favor intente nuevamente."
+      }
     },
     "OrderSummary": {
       "title": "Resumen de su pedido",

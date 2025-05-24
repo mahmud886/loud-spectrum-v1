@@ -1,7 +1,6 @@
 // app/checkout/page.js
 'use client';
 
-import { useDispatch, useSelector } from 'react-redux';
 import ConfirmPayment from '@/components/checkout/ConfirmPayment';
 import DebitCreditCardDialog from '@/components/checkout/DebitAndCreditCardDialog';
 import DiscountCoupon from '@/components/checkout/DiscountCoupon';
@@ -10,11 +9,27 @@ import PaymentMethod from '@/components/checkout/PaymentMethod';
 import ProductCart from '@/components/checkout/ProductCart';
 import ShippingAndBillingAddress from '@/components/checkout/ShippingAndBillingAddress';
 import WireTransferDialog from '@/components/checkout/WireTransferDialog';
-import { setPaymentMethod } from '@/lib/store/slices/checkoutSlice';
+import { setOrderDetails, setPaymentMethod } from '@/lib/store/slices/checkoutSlice';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 const CheckoutPage = () => {
   const dispatch = useDispatch();
   const { paymentMethod, order } = useSelector((state) => state.checkout);
+  const cartTotal = useSelector((state) => state.cart.totalAmount);
+
+  useEffect(() => {
+    // Initialize order details with cart total while preserving existing values
+    const currentOrder = order;
+    dispatch(
+      setOrderDetails({
+        subtotal: cartTotal,
+        shipping: currentOrder.shipping || 0,
+        discount: currentOrder.discount || 0,
+        total: cartTotal + (currentOrder.shipping || 0) - (currentOrder.discount || 0),
+      }),
+    );
+  }, [dispatch, cartTotal]);
 
   return (
     <>
@@ -26,7 +41,7 @@ const CheckoutPage = () => {
           <div className="px-4">
             <ProductCart />
             <DiscountCoupon />
-            <OrderSummary subtotal={order.subtotal} shipping={order.shipping} discount={order.discount} />
+            <OrderSummary />
             <PaymentMethod value={paymentMethod} onValueChange={(value) => dispatch(setPaymentMethod(value))} />
             <ConfirmPayment />
           </div>
