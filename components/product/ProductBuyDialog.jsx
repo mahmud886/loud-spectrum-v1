@@ -1,12 +1,13 @@
 'use client';
 
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { getProductPriceByVolume } from '@/helpers/get-product-price-by-volume';
 import { getProductPriceRange } from '@/helpers/get-product-price-ranges';
 import { parseProductAttributes } from '@/helpers/product-attributes';
 import { addToCart } from '@/lib/store/slices/cartSlice';
 import { MinusIcon, PlusIcon, Star, XIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { toast } from 'sonner';
 
@@ -20,6 +21,14 @@ const ProductBuyDialog = ({ open, onOpenChange, product }) => {
   const volumeOptions = parseProductAttributes(product, 'volume');
   const { min, max } = getProductPriceRange(product?.subProducts);
 
+  const selectedPrice = getProductPriceByVolume(product?.subProducts, selectedVolume);
+
+  useEffect(() => {
+    if (selectedPrice) {
+      toast.success(`Selected price: $${selectedPrice.toFixed(2)} for ${selectedVolume}`);
+    }
+  }, [selectedPrice, selectedVolume]);
+
   const handleAddToCart = () => {
     if (!selectedVolume) {
       setShowVolumeError(true);
@@ -27,7 +36,7 @@ const ProductBuyDialog = ({ open, onOpenChange, product }) => {
       return;
     }
     setShowVolumeError(false);
-    dispatch(addToCart({ id: product._id, product, quantity, selectedVolume }));
+    dispatch(addToCart({ id: product._id, product, quantity, price: selectedPrice, selectedVolume }));
     onOpenChange(false);
     setSelectedVolume('');
     setQuantity(1);

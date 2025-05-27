@@ -9,8 +9,13 @@ const CartItem = ({ item }) => {
   return (
     <div className="border-umbra-10 flex items-center gap-4 rounded-md border-1 py-2.5 pr-5 pl-2.5">
       <Image src="/assets/images/cart-item.jpg" alt={item.name} width={80} height={80} className="rounded" />
-      <div className="flex w-full flex-col justify-between gap-5">
-        <h6 className="text-umbra-100 font-sans text-[20px] leading-[120%] font-normal">{item.name}</h6>
+      <div className="flex w-full flex-col justify-between gap-2">
+        <div className="flex flex-col items-start justify-between gap-1">
+          <h6 className="text-umbra-100 font-sans text-[18px] leading-[120%] font-normal">{item.name}</h6>
+          <p className="bg-umbra-5 text-umbra-100 rounded-[10px] px-2 py-1 font-sans text-[12px] leading-[120%] font-normal">
+            {item.selectedVolume}
+          </p>
+        </div>
         <div className="flex w-full items-end justify-between gap-5">
           <div className="mt-2 flex items-center gap-2">
             {/* Quantity Control */}
@@ -46,7 +51,9 @@ const CartItem = ({ item }) => {
             </button>
           </div>
           <div>
-            <p className="text-umbra-100 font-sans text-[20px] leading-[120%] font-normal">${item.price}</p>
+            <p className="text-umbra-100 font-sans text-[20px] leading-[120%] font-normal">
+              ${item.totalPrice.toFixed(2)}
+            </p>
           </div>
         </div>
       </div>
