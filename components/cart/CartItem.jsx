@@ -23,7 +23,15 @@ const CartItem = ({ item }) => {
               {/* Minus Button */}
               <button
                 className="group text-umbra-100 hover:text-white-100 flex cursor-pointer items-center justify-center px-2 py-1 transition hover:bg-red-500"
-                onClick={() => dispatch(updateQuantity({ id: item.id, quantity: item.quantity - 1 }))}
+                onClick={() =>
+                  dispatch(
+                    updateQuantity({
+                      id: item.originalId,
+                      selectedVolume: item.selectedVolume,
+                      quantity: item.quantity - 1,
+                    }),
+                  )
+                }
               >
                 <MinusIcon size={16} className="text-umbra-100 group-hover:text-white-100 transition" />
               </button>
@@ -36,7 +44,15 @@ const CartItem = ({ item }) => {
               {/* Plus Button */}
               <button
                 className="group text-umbra-100 hover:text-white-100 hover:bg-alive flex cursor-pointer items-center justify-center px-2 py-1 transition"
-                onClick={() => dispatch(updateQuantity({ id: item.id, quantity: item.quantity + 1 }))}
+                onClick={() =>
+                  dispatch(
+                    updateQuantity({
+                      id: item.originalId,
+                      selectedVolume: item.selectedVolume,
+                      quantity: item.quantity + 1,
+                    }),
+                  )
+                }
               >
                 <PlusIcon size={16} className="text-umbra-100 group-hover:text-white-100 transition" />
               </button>
@@ -45,7 +61,14 @@ const CartItem = ({ item }) => {
             {/* Remove Button */}
             <button
               className="group text-umbra-100 hover:text-white-100 bg-umbra-5 flex cursor-pointer items-center justify-center rounded-full p-2 transition hover:bg-red-500"
-              onClick={() => dispatch(removeFromCart(item.id))}
+              onClick={() =>
+                dispatch(
+                  removeFromCart({
+                    id: item.originalId,
+                    selectedVolume: item.selectedVolume,
+                  }),
+                )
+              }
             >
               <TrashIcon size={16} className="text-umbra-100 group-hover:text-white-100 transition" />
             </button>
