@@ -10,8 +10,8 @@ const ProductDetailsPage = async ({ params }) => {
   return (
     <div className="md:mt-[160px]">
       <SpectrumAccordion items={accordionData} />
-      <ProductReviews productId={productDetails?.id} />
-      <AddAReview productId={productDetails?.id} />
+      <ProductReviews productId={productId} />
+      <AddAReview productId={productId} />
       <RelatedProducts />
     </div>
   );
