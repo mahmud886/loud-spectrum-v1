@@ -1,9 +1,12 @@
 'use client';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { getProductPriceByVolume } from '@/helpers/get-product-price-by-volume';
+import { getProductPriceRange } from '@/helpers/get-product-price-ranges';
+import { parseProductAttributes } from '@/helpers/product-attributes';
 import { addToCart } from '@/lib/store/slices/cartSlice';
 import { MinusIcon, PlusIcon, Star } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { toast } from 'sonner';
 
@@ -15,6 +18,16 @@ const ProductDetailsLeftCard = ({ product }) => {
 
   const t = useTranslations('ProductDetails');
 
+  const volumeOptions = parseProductAttributes(product?.subproducts, 'volume');
+  const { min, max } = getProductPriceRange(product?.subproducts);
+  const selectedPrice = getProductPriceByVolume(product?.subproducts, selectedVolume);
+
+  useEffect(() => {
+    if (selectedPrice) {
+      toast.success(`Selected price: $${selectedPrice.toFixed(2)} for ${selectedVolume}`);
+    }
+  }, [selectedPrice, selectedVolume]);
+
   const handleAddToCart = () => {
     if (!selectedVolume) {
       setShowVolumeError(true);
@@ -22,11 +35,10 @@ const ProductDetailsLeftCard = ({ product }) => {
       return;
     }
     setShowVolumeError(false);
-    dispatch(addToCart({ id: product._id, product, quantity, selectedVolume }));
+    dispatch(addToCart({ id: product._id, product, quantity, price: selectedPrice, selectedVolume }));
     setSelectedVolume('');
     setQuantity(1);
   };
-
   return (
     <div className="bg-white-100 text-umbra-100 p-5 md:h-[587px] md:w-[413px]">
       <div className="flex h-full w-full flex-col items-start justify-between gap-5">
@@ -52,7 +64,7 @@ const ProductDetailsLeftCard = ({ product }) => {
                 {product?.name}
               </h2>
               <h6 className="text-umbra-100 font-sans text-[22px] leading-[130%] font-normal tracking-normal">
-                $10.00
+                {min === max ? `$${min.toFixed(2)}` : `$${min.toFixed(2)} – $${max.toFixed(2)}`}
               </h6>
             </div>
             <hr className="terpene-border" />
@@ -95,9 +107,9 @@ const ProductDetailsLeftCard = ({ product }) => {
                     <SelectValue placeholder={t('ChooseVolume')} />
                   </SelectTrigger>
                   <SelectContent>
-                    {product?.variation?.[0]?.volume?.map((option) => (
-                      <SelectItem key={option.name} value={option.name}>
-                        {option.name}
+                    {volumeOptions.map((option) => (
+                      <SelectItem key={option.value} value={option.value}>
+                        {option.label}
                       </SelectItem>
                     ))}
                   </SelectContent>

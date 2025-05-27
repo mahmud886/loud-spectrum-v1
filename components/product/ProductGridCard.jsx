@@ -1,6 +1,7 @@
 'use client';
 
 import ProductBuyDialog from '@/components/product/ProductBuyDialog';
+import { getProductPriceRange } from '@/helpers/get-product-price-ranges';
 import { Link } from '@/i18n/navigation';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
@@ -11,6 +12,7 @@ import { useState } from 'react';
 
 const ProductGridCard = ({ product }) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const { min, max } = getProductPriceRange(product?.subProducts);
 
   const handleBuyNowClick = () => {
     setIsDialogOpen(true);
@@ -30,7 +32,7 @@ const ProductGridCard = ({ product }) => {
           className="relative flex h-[220px] min-h-[220px] w-full min-w-[162px] flex-col justify-around border bg-[#F0F0F0] p-2.5 md:h-[384px] md:min-h-[384px] md:w-[305px] md:min-w-[305px]"
         >
           {/* Image Section */}
-          <Link href={`/shop/${product.slug}`} className="flex items-center justify-center overflow-hidden md:mt-16">
+          <Link href={`/shop/${product._id}`} className="flex items-center justify-center overflow-hidden md:mt-16">
             <motion.div
               variants={{
                 rest: { scale: 1 },
@@ -85,7 +87,7 @@ const ProductGridCard = ({ product }) => {
             {product.name}
           </h2>
           <p className={clsx('text-[15px] md:text-[19px]', isShopPage ? 'text-umbra-40' : 'text-white-40')}>
-            $10.00 – $2,999.00
+            {min === max ? `$${min.toFixed(2)}` : `$${min.toFixed(2)} – $${max.toFixed(2)}`}
           </p>
         </div>
       </motion.div>

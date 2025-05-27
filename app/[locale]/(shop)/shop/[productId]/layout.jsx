@@ -13,7 +13,7 @@ export async function generateMetadata({ params }) {
   return {
     title,
     description,
-    keywords: product?.tag.join(', ') || '',
+    keywords: product?.tag?.join(', ') || '',
     alternates: {
       canonical: `${websiteUrl}/shop/${productId}`,
     },

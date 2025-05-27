@@ -1,6 +1,7 @@
 'use client';
 
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { getProductPriceRange } from '@/helpers/get-product-price-ranges';
 import { parseProductAttributes } from '@/helpers/product-attributes';
 import { addToCart } from '@/lib/store/slices/cartSlice';
 import { MinusIcon, PlusIcon, Star, XIcon } from 'lucide-react';
@@ -17,6 +18,7 @@ const ProductBuyDialog = ({ open, onOpenChange, product }) => {
   const dispatch = useDispatch();
 
   const volumeOptions = parseProductAttributes(product, 'volume');
+  const { min, max } = getProductPriceRange(product?.subProducts);
 
   const handleAddToCart = () => {
     if (!selectedVolume) {
@@ -65,7 +67,9 @@ const ProductBuyDialog = ({ open, onOpenChange, product }) => {
               </div>
               <div className="space-y-2">
                 <h2 className="text-umbra-100 font-sans text-[44px] leading-[120%] font-normal">{product?.name}</h2>
-                <h6 className="text-umbra-100 font-sans text-[22px] leading-[130%] font-normal">$10.00</h6>
+                <h6 className="text-umbra-100 font-sans text-[22px] leading-[130%] font-normal">
+                  {min === max ? `$${min.toFixed(2)}` : `$${min.toFixed(2)} – $${max.toFixed(2)}`}
+                </h6>
               </div>
               <hr className="terpene-border" />
               <div className="space-y-2">
