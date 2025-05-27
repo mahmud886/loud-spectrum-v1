@@ -7,10 +7,12 @@ import { getProductDetails } from '@/services/get-product-details';
 const ProductDetailsPage = async ({ params }) => {
   const { productId } = await params;
   const productDetails = await getProductDetails(productId);
+  console.log(productDetails?.subproducts?.[0]?._id);
   return (
     <div className="md:mt-[160px]">
       <SpectrumAccordion items={accordionData} />
       <ProductReviews productId={productId} />
+      {/* <AddAReview productId={productDetails?.subproducts?.[0]?._id} /> */}
       <AddAReview productId={productId} />
       <RelatedProducts />
     </div>
