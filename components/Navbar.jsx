@@ -3,23 +3,39 @@
 import CartDrawer from '@/components/cart/CartDrawer';
 import MenuButton from '@/components/navbar/MenuButton';
 import TopNav from '@/components/TopNav';
-import { Link } from '@/i18n/navigation';
+import { Link, usePathname, useRouter } from '@/i18n/navigation';
+import { logout } from '@/lib/store/slices/authSlice';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Navbar = ({ locale }) => {
   const t = useTranslations('');
   const pathname = usePathname();
+  const router = useRouter();
+  const dispatch = useDispatch();
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
 
   const cartItems = useSelector((state) => state.cart);
+  const user = useSelector((state) => state.auth.user);
 
-  console.log(cartItems);
+  const handleLogout = async () => {
+    try {
+      const response = await fetch('/api/auth/logout', {
+        method: 'POST',
+      });
+
+      if (response.ok) {
+        dispatch(logout());
+        router.push('/');
+      }
+    } catch (error) {
+      console.error('Logout failed:', error);
+    }
+  };
 
   const specialPaths = [
     'blog',
@@ -83,14 +99,25 @@ const Navbar = ({ locale }) => {
           </Link>
 
           <div className="flex items-center gap-[30px]">
-            <Link
-              href={`/login`}
-              className={`mx-[5px] hidden font-sans text-[20px] font-normal transition-colors duration-300 ease-in-out md:flex ${
-                isSpecialPath ? 'hover:text-umbra-40 text-[#191919]' : 'text-white-100 hover:text-white-40'
-              }`}
-            >
-              {t('Log_in')}
-            </Link>
+            {user ? (
+              <button
+                onClick={handleLogout}
+                className={`mx-[5px] hidden font-sans text-[20px] font-normal transition-colors duration-300 ease-in-out md:flex ${
+                  isSpecialPath ? 'hover:text-umbra-40 text-[#191919]' : 'text-white-100 hover:text-white-40'
+                }`}
+              >
+                Logout
+              </button>
+            ) : (
+              <Link
+                href={`/login`}
+                className={`mx-[5px] hidden font-sans text-[20px] font-normal transition-colors duration-300 ease-in-out md:flex ${
+                  isSpecialPath ? 'hover:text-umbra-40 text-[#191919]' : 'text-white-100 hover:text-white-40'
+                }`}
+              >
+                {t('Log_in')}
+              </Link>
+            )}
 
             <a
               onClick={() => {

@@ -6,7 +6,7 @@
  */
 export async function getProductDetails(productSlug) {
   try {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/get-product-info?slug=${productSlug}`;
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/product/${productSlug}`;
     const res = await fetch(url, {
       next: { revalidate: 300 }, // Revalidate every 5 minutes
     });
@@ -16,7 +16,7 @@ export async function getProductDetails(productSlug) {
     }
 
     const data = await res.json();
-    return data?.data?.data?.[0];
+    return data?.data?.products?.[0];
   } catch (error) {
     console.error('Error fetching product details:', error);
     throw new Error('Failed to fetch product details. Please try again later.');

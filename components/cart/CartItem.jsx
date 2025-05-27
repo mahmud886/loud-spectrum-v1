@@ -9,8 +9,13 @@ const CartItem = ({ item }) => {
   return (
     <div className="border-umbra-10 flex items-center gap-4 rounded-md border-1 py-2.5 pr-5 pl-2.5">
       <Image src="/assets/images/cart-item.jpg" alt={item.name} width={80} height={80} className="rounded" />
-      <div className="flex w-full flex-col justify-between gap-5">
-        <h6 className="text-umbra-100 font-sans text-[20px] leading-[120%] font-normal">{item.name}</h6>
+      <div className="flex w-full flex-col justify-between gap-2">
+        <div className="flex flex-col items-start justify-between gap-1">
+          <h6 className="text-umbra-100 font-sans text-[18px] leading-[120%] font-normal">{item.name}</h6>
+          <p className="bg-umbra-5 text-umbra-100 rounded-[10px] px-2 py-1 font-sans text-[12px] leading-[120%] font-normal">
+            {item.selectedVolume}
+          </p>
+        </div>
         <div className="flex w-full items-end justify-between gap-5">
           <div className="mt-2 flex items-center gap-2">
             {/* Quantity Control */}
@@ -18,7 +23,15 @@ const CartItem = ({ item }) => {
               {/* Minus Button */}
               <button
                 className="group text-umbra-100 hover:text-white-100 flex cursor-pointer items-center justify-center px-2 py-1 transition hover:bg-red-500"
-                onClick={() => dispatch(updateQuantity({ id: item.id, quantity: item.quantity - 1 }))}
+                onClick={() =>
+                  dispatch(
+                    updateQuantity({
+                      id: item.originalId,
+                      selectedVolume: item.selectedVolume,
+                      quantity: item.quantity - 1,
+                    }),
+                  )
+                }
               >
                 <MinusIcon size={16} className="text-umbra-100 group-hover:text-white-100 transition" />
               </button>
@@ -31,7 +44,15 @@ const CartItem = ({ item }) => {
               {/* Plus Button */}
               <button
                 className="group text-umbra-100 hover:text-white-100 hover:bg-alive flex cursor-pointer items-center justify-center px-2 py-1 transition"
-                onClick={() => dispatch(updateQuantity({ id: item.id, quantity: item.quantity + 1 }))}
+                onClick={() =>
+                  dispatch(
+                    updateQuantity({
+                      id: item.originalId,
+                      selectedVolume: item.selectedVolume,
+                      quantity: item.quantity + 1,
+                    }),
+                  )
+                }
               >
                 <PlusIcon size={16} className="text-umbra-100 group-hover:text-white-100 transition" />
               </button>
@@ -40,13 +61,22 @@ const CartItem = ({ item }) => {
             {/* Remove Button */}
             <button
               className="group text-umbra-100 hover:text-white-100 bg-umbra-5 flex cursor-pointer items-center justify-center rounded-full p-2 transition hover:bg-red-500"
-              onClick={() => dispatch(removeFromCart(item.id))}
+              onClick={() =>
+                dispatch(
+                  removeFromCart({
+                    id: item.originalId,
+                    selectedVolume: item.selectedVolume,
+                  }),
+                )
+              }
             >
               <TrashIcon size={16} className="text-umbra-100 group-hover:text-white-100 transition" />
             </button>
           </div>
           <div>
-            <p className="text-umbra-100 font-sans text-[20px] leading-[120%] font-normal">${item.price}</p>
+            <p className="text-umbra-100 font-sans text-[20px] leading-[120%] font-normal">
+              ${item.totalPrice.toFixed(2)}
+            </p>
           </div>
         </div>
       </div>
