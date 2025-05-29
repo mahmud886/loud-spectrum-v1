@@ -75,7 +75,7 @@ const CartItem = ({ item }) => {
           </div>
           <div>
             <p className="text-umbra-100 font-sans text-[20px] leading-[120%] font-normal">
-              ${item.totalPrice.toFixed(2)}
+              ${item?.totalPrice?.toFixed(2)}
             </p>
           </div>
         </div>
