@@ -50,7 +50,7 @@ const AddAReview = ({ productId }) => {
     if (validateForm()) {
       setIsSubmitting(true);
       try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/subproducts/review`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/products/review`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
