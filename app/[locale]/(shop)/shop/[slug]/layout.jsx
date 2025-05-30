@@ -2,8 +2,8 @@ import ProductDetailsHero from '@/components/headers/ProductDetailsHero';
 import { getProductDetails } from '@/services/get-product-details';
 
 export async function generateMetadata({ params }) {
-  const { productId } = await params;
-  const product = await getProductDetails(productId);
+  const { slug } = await params;
+  const product = await getProductDetails(slug);
 
   const title = `${product?.name || 'Product'} | Loud Spectrum`;
   const description = product?.meta_description || 'Check out this amazing product on our store';
@@ -15,12 +15,12 @@ export async function generateMetadata({ params }) {
     description,
     keywords: product?.tag?.join(', ') || '',
     alternates: {
-      canonical: `${websiteUrl}/shop/${productId}`,
+      canonical: `${websiteUrl}/shop/${slug}`,
     },
     openGraph: {
       title,
       description,
-      url: `${websiteUrl}/shop/${productId}`,
+      url: `${websiteUrl}/shop/${slug}`,
       siteName: 'Loud Spectrum',
       images: imageUrl
         ? [
@@ -58,8 +58,8 @@ export async function generateMetadata({ params }) {
 }
 
 const ProductDetailsLayout = async ({ children, params }) => {
-  const { productId } = await params;
-  const productDetails = await getProductDetails(productId);
+  const { slug } = await params;
+  const productDetails = await getProductDetails(slug);
 
   return (
     <div className="">

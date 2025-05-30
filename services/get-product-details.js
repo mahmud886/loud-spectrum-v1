@@ -4,9 +4,9 @@
  * @returns {Promise<Object>} The product details data
  * @throws {Error} If the fetch fails
  */
-export async function getProductDetails(productSlug) {
+export async function getProductDetails(slug) {
   try {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/product/${productSlug}`;
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/get-product-by-slug/${slug}`;
     const res = await fetch(url, {
       next: { revalidate: 300 }, // Revalidate every 5 minutes
     });
