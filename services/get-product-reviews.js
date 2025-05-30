@@ -6,7 +6,7 @@
  */
 export async function getProductReviews(productId) {
   try {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/subproducts/review?product_id=${productId}`;
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/products/review?product_id=${productId}`;
     const res = await fetch(url, {
       next: { revalidate: 300 }, // Revalidate every 5 minutes
     });
