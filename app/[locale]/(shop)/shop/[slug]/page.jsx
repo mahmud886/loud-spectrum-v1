@@ -5,15 +5,13 @@ import RelatedProducts from '@/components/containers/product/RelatedProducts';
 import { getProductDetails } from '@/services/get-product-details';
 
 const ProductDetailsPage = async ({ params }) => {
-  const { productId } = await params;
-  const productDetails = await getProductDetails(productId);
-  console.log(productDetails?.subproducts?.[0]?._id);
+  const { slug } = await params;
+  const productDetails = await getProductDetails(slug);
   return (
     <div className="md:mt-[160px]">
       <SpectrumAccordion items={accordionData} />
-      <ProductReviews productId={productId} />
-      {/* <AddAReview productId={productDetails?.subproducts?.[0]?._id} /> */}
-      <AddAReview productId={productId} />
+      <ProductReviews productId={productDetails?._id} />
+      <AddAReview productId={productDetails?._id} />
       <RelatedProducts />
     </div>
   );
