@@ -122,10 +122,12 @@ const Navbar = ({ locale }) => {
               </Link>
             )}
 
-            <a
+            <button
+              type="button"
               onClick={() => {
                 setCartOpen(true);
               }}
+              aria-label={`${t('Cart')} (${cartItems?.totalQuantity || 0} items)`}
               className={`mx-[5px] cursor-pointer font-sans text-[20px] font-normal transition-colors duration-300 ease-in-out ${
                 isSpecialPath ? 'hover:text-umbra-40 text-[#191919]' : 'text-white-100 hover:text-white-40'
               }`}
@@ -134,7 +136,7 @@ const Navbar = ({ locale }) => {
               <span className={`${isSpecialPath ? 'text-umbra-40' : 'text-white-40'}`}>
                 ({cartItems?.totalQuantity || 0})
               </span>
-            </a>
+            </button>
             <MenuButton setMenuOpen={setMenuOpen} isSpecialPath={isSpecialPath} />
           </div>
         </div>
