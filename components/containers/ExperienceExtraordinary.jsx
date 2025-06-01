@@ -27,6 +27,7 @@ const ExperienceExtraordinary = () => {
             />
             {/* Centered foreground image */}
             <Image
+              unoptimized={true}
               src="/assets/videos/extraordinary.gif"
               width={373}
               height={573}

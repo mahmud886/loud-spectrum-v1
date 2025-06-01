@@ -37,6 +37,7 @@ const QualityPromise = () => {
           </div>
           <div className="flex flex-col items-center justify-between gap-20 md:flex-row md:gap-[126px] lg:flex-row lg:gap-[126px]">
             <Image
+              unoptimized={true}
               src="/assets/videos/our-quality-promise.gif"
               alt="quality"
               width={578}
