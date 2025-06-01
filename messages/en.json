@@ -3,15 +3,19 @@
     "welcome": "Welcome To Loud Spectrum",
     "description": "Log in to your account to access your profile and order history.",
     "login": "Login",
+    "logout": "Logout",
     "register": "Register",
-
     "Login": {
       "emailLabel": "Email*",
       "emailPlaceholder": "Enter your email",
       "passwordLabel": "Password*",
       "passwordPlaceholder": "Enter your password",
       "loginButton": "Login",
-      "togglePassword": "Toggle password visibility"
+      "togglePassword": "Toggle password visibility",
+      "login_success": "Login successfully",
+      "login_failed": "Login failed",
+      "logout_success": "Logout successfully",
+      "logout_failed": "Logout failed"
     },
     "Registration": {
       "fullNameLabel": "Full Name*",
@@ -159,7 +163,10 @@
     }
   },
   "Navbar": {
-    "Log_in": "Log in",
+    "Log_in": "Login",
+    "logout_success": "Logout successfully",
+    "logout_failed": "Logout failed",
+    "logout": "Logout",
     "Cart": "Cart",
     "TopNav": {
       "Wholesale": "Wholesale",

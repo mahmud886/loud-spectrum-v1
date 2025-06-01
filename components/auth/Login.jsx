@@ -7,6 +7,7 @@ import { useTranslations } from 'next-intl';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { toast } from 'sonner';
 
 const Login = () => {
   const t = useTranslations('LoginPage.Login');
@@ -52,17 +53,20 @@ const Login = () => {
       const result = await response.json();
 
       if (!response.ok) {
+        toast.error(t('login_failed'));
         dispatch(setError(result.message || 'Authentication failed'));
         return;
       }
 
       // Update Redux store with user data
       dispatch(setCredentials(result.data));
+      toast.success(t('login_success'));
 
       // Redirect to the original requested page or home page
       const redirectTo = searchParams.get('from') || '/';
       router.push(redirectTo);
     } catch (error) {
+      toast.error(t('login_failed'));
       dispatch(setError('An unexpected error occurred'));
     }
   };
@@ -71,26 +75,24 @@ const Login = () => {
     <div className="mt-10 max-w-full">
       <form className="space-y-4" onSubmit={handleSubmit}>
         <div>
-          <label className="text-umbra-100 mb-1 block font-sans text-[16px] font-normal">{t('emailLabel')}</label>
+          <label className="input-label">{t('emailLabel')}</label>
           <input
             type="email"
             name="email"
             placeholder={t('emailPlaceholder')}
-            className={`bg-umbra-5 placeholder:text-umbra-100 hover:bg-umbra-10 min-h-[48px] w-full rounded-[10px] px-4 py-2 font-mono text-[16px] leading-[140%] font-normal ${errors.email ? 'border border-red-500' : ''}`}
-            required
+            className={`input-field ${errors.email ? 'border border-red-500' : ''}`}
           />
           {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
         </div>
 
         <div>
-          <label className="text-umbra-100 mb-1 block font-sans text-[16px] font-normal">{t('passwordLabel')}</label>
+          <label className="input-label">{t('passwordLabel')}</label>
           <div className="relative">
             <input
               type={showPassword ? 'text' : 'password'}
               name="password"
               placeholder={t('passwordPlaceholder')}
-              className={`bg-umbra-5 placeholder:text-umbra-100 hover:bg-umbra-10 min-h-[48px] w-full rounded-[10px] px-4 py-2 pr-10 font-mono text-[16px] leading-[140%] font-normal ${errors.password ? 'border border-red-500' : ''}`}
-              required
+              className={`input-field ${errors.password ? 'border border-red-500' : ''}`}
             />
             <button
               type="button"

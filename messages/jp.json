@@ -3,6 +3,7 @@
     "welcome": "Loud Spectrumへようこそ",
     "description": "アカウントにログインして、プロフィールや注文履歴にアクセスしてください。",
     "login": "ログイン",
+    "logout": "ログアウト",
     "register": "登録",
     "Login": {
       "emailLabel": "メールアドレス*",
@@ -10,7 +11,11 @@
       "passwordLabel": "パスワード*",
       "passwordPlaceholder": "パスワードを入力してください",
       "loginButton": "ログイン",
-      "togglePassword": "パスワードの表示/非表示"
+      "togglePassword": "パスワードの表示/非表示",
+      "login_success": "ログイン成功",
+      "login_failed": "ログイン失敗",
+      "logout_success": "ログアウト成功",
+      "logout_failed": "ログアウト失敗"
     },
     "Registration": {
       "fullNameLabel": "氏名*",
@@ -160,6 +165,9 @@
   "Navbar": {
     "Log_in": "ログイン",
     "Cart": "カート",
+    "logout_success": "ログアウト成功",
+    "logout_failed": "ログアウト失敗",
+    "logout": "ログアウト",
     "TopNav": {
       "Wholesale": "卸売",
       "About": "私たちについて",

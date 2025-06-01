@@ -3,6 +3,8 @@
     "welcome": "Добро пожаловать в Loud Spectrum",
     "description": "Войдите в аккаунт, чтобы получить доступ к своему профилю и истории заказов.",
     "login": "Войти",
+
+    "logout": "Выйти",
     "register": "Регистрация",
     "Login": {
       "emailLabel": "Электронная почта*",
@@ -10,7 +12,11 @@
       "passwordLabel": "Пароль*",
       "passwordPlaceholder": "Введите ваш пароль",
       "loginButton": "Войти",
-      "togglePassword": "Показать/скрыть пароль"
+      "togglePassword": "Показать/скрыть пароль",
+      "login_success": "Вы успешно вошли в систему",
+      "login_failed": "Вход в систему не выполнен",
+      "logout_success": "Вы успешно вышли из системы",
+      "logout_failed": "Выход из системы не выполнен"
     },
     "Registration": {
       "fullNameLabel": "Полное имя*",
@@ -161,6 +167,9 @@
   "Navbar": {
     "Log_in": "Войти",
     "Cart": "Корзина",
+    "logout_success": "Вы успешно вышли из системы",
+    "logout_failed": "Выход из системы не выполнен",
+    "logout": "Выйти",
     "TopNav": {
       "Wholesale": "Оптовая продажа",
       "About": "О нас",
