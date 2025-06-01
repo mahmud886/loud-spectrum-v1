@@ -9,6 +9,7 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'sonner';
 
 const Navbar = ({ locale }) => {
   const t = useTranslations('');
@@ -29,10 +30,12 @@ const Navbar = ({ locale }) => {
       });
 
       if (response.ok) {
+        toast.success(t('Navbar.logout_success'));
         dispatch(logout());
         router.push('/');
       }
     } catch (error) {
+      toast.error(t('Navbar.logout_failed'));
       console.error('Logout failed:', error);
     }
   };
@@ -106,7 +109,7 @@ const Navbar = ({ locale }) => {
                   isSpecialPath ? 'hover:text-umbra-40 text-[#191919]' : 'text-white-100 hover:text-white-40'
                 }`}
               >
-                Logout
+                {t('Navbar.logout')}
               </button>
             ) : (
               <Link
@@ -115,7 +118,7 @@ const Navbar = ({ locale }) => {
                   isSpecialPath ? 'hover:text-umbra-40 text-[#191919]' : 'text-white-100 hover:text-white-40'
                 }`}
               >
-                {t('Log_in')}
+                {t('Navbar.Log_in')}
               </Link>
             )}
 

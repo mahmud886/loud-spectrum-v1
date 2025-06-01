@@ -3,6 +3,7 @@
     "welcome": "Willkommen bei Loud Spectrum",
     "description": "Melden Sie sich bei Ihrem Konto an, um auf Ihr Profil und Ihre Bestellhistorie zuzugreifen.",
     "login": "Anmelden",
+    "logout": "Abmelden",
     "register": "Registrieren",
     "Login": {
       "emailLabel": "E-Mail*",
@@ -10,7 +11,11 @@
       "passwordLabel": "Passwort*",
       "passwordPlaceholder": "Geben Sie Ihr Passwort ein",
       "loginButton": "Anmelden",
-      "togglePassword": "Passwort anzeigen/verbergen"
+      "togglePassword": "Passwort anzeigen/verbergen",
+      "login_success": "Erfolgreich eingeloggt",
+      "login_failed": "Einloggen fehlgeschlagen",
+      "logout_success": "Erfolgreich abgemeldet",
+      "logout_failed": "Abmeldung fehlgeschlagen"
     },
     "Registration": {
       "fullNameLabel": "Vollständiger Name*",
@@ -160,6 +165,9 @@
   "Navbar": {
     "Log_in": "Anmelden",
     "Cart": "Warenkorb",
+    "logout_success": "Erfolgreich abgemeldet",
+    "logout_failed": "Abmeldung fehlgeschlagen",
+    "logout": "Abmelden",
     "TopNav": {
       "Wholesale": "Großhandel",
       "About": "Über uns",
