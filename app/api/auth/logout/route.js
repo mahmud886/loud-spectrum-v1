@@ -4,7 +4,8 @@ import { NextResponse } from 'next/server';
 // Function to handle the POST request
 export async function POST(req) {
   try {
-    cookies().set('authToken', '', {
+    const cookieStore = await cookies();
+    await cookieStore.set('authToken', '', {
       path: '/',
       expires: new Date(0),
       secure: true,

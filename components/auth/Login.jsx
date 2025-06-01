@@ -77,7 +77,6 @@ const Login = () => {
             name="email"
             placeholder={t('emailPlaceholder')}
             className={`bg-umbra-5 placeholder:text-umbra-100 hover:bg-umbra-10 min-h-[48px] w-full rounded-[10px] px-4 py-2 font-mono text-[16px] leading-[140%] font-normal ${errors.email ? 'border border-red-500' : ''}`}
-            required
           />
           {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
         </div>
@@ -90,7 +89,6 @@ const Login = () => {
               name="password"
               placeholder={t('passwordPlaceholder')}
               className={`bg-umbra-5 placeholder:text-umbra-100 hover:bg-umbra-10 min-h-[48px] w-full rounded-[10px] px-4 py-2 pr-10 font-mono text-[16px] leading-[140%] font-normal ${errors.password ? 'border border-red-500' : ''}`}
-              required
             />
             <button
               type="button"
