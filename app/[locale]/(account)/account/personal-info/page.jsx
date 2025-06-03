@@ -1,25 +1,99 @@
 'use client';
 
-import { useState } from 'react';
+import { updateUserProfile } from '@/app/actions/user-actions';
+import { validateUserInfo } from '@/helpers/validations/user-info-validation';
+import { selectCurrentUser, setCredentials } from '@/lib/store/slices/authSlice';
 import { Edit, UserIcon } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'sonner';
 
 export default function PersonalInfoPage() {
+  const userInformation = useSelector(selectCurrentUser);
+  const dispatch = useDispatch();
   const [isEditing, setIsEditing] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
-    name: 'John Doe',
-    phone: '+1 234 567 890',
-    email: 'john@example.com',
+    name: '',
+    phone: '',
+    email: '',
   });
+  const [errors, setErrors] = useState({});
+
+  useEffect(() => {
+    if (userInformation) {
+      setFormData({
+        name: userInformation.name || '',
+        phone: userInformation.phone_number || '',
+        email: userInformation.email || '',
+      });
+    }
+  }, [userInformation]);
 
   const handleInputChange = (e) => {
+    const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value,
+      [name]: value,
     }));
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors((prev) => ({
+        ...prev,
+        [name]: '',
+      }));
+    }
   };
 
-  const handleSave = () => {
+  const handleCancel = () => {
+    setFormData({
+      name: userInformation?.name || '',
+      phone: userInformation?.phone_number || '',
+      email: userInformation?.email || '',
+    });
+    setErrors({});
     setIsEditing(false);
+  };
+
+  const handleSave = async () => {
+    const validationResult = await validateUserInfo(formData);
+
+    if (!validationResult.success) {
+      const newErrors = {};
+      validationResult.errors.forEach((error) => {
+        newErrors[error.field] = error.message;
+      });
+      setErrors(newErrors);
+      return;
+    }
+    try {
+      setIsLoading(true);
+      const result = await updateUserProfile(userInformation.id, {
+        name: formData.name,
+        phone_number: formData.phone,
+      });
+
+      if (!result.success) {
+        toast.error(result.message || 'Failed to update profile');
+        return;
+      }
+      dispatch(
+        setCredentials({
+          ...userInformation,
+          name: formData.name,
+          phone_number: formData.phone,
+          email: userInformation.email,
+        }),
+      );
+
+      toast.success('Profile updated successfully');
+      setErrors({});
+      setIsEditing(false);
+    } catch (error) {
+      toast.error(error.message || 'Failed to update profile');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -34,6 +108,7 @@ export default function PersonalInfoPage() {
           onClick={() => setIsEditing(!isEditing)}
           aria-label="Edit Info"
           className="absolute top-4 right-4 text-gray-500 transition hover:text-[#D00234]"
+          disabled={isLoading}
         >
           <Edit className="h-5 w-5" />
         </button>
@@ -62,37 +137,61 @@ export default function PersonalInfoPage() {
               </>
             ) : (
               <>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  placeholder="Full Name"
-                  className="bg-umbra-5 placeholder:text-umbra-100 hover:bg-umbra-10 min-h-[48px] w-full rounded-[10px] px-4 py-2 font-mono text-[16px] leading-[140%] font-normal"
-                />
-                <input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleInputChange}
-                  placeholder="Phone"
-                  className="bg-umbra-5 placeholder:text-umbra-100 hover:bg-umbra-10 min-h-[48px] w-full rounded-[10px] px-4 py-2 font-mono text-[16px] leading-[140%] font-normal"
-                />
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  placeholder="Email"
-                  className="bg-umbra-5 placeholder:text-umbra-100 hover:bg-umbra-10 min-h-[48px] w-full rounded-[10px] px-4 py-2 font-mono text-[16px] leading-[140%] font-normal"
-                />
+                <div className="flex flex-col gap-1">
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    placeholder="Full Name"
+                    className={`bg-umbra-5 placeholder:text-umbra-100 hover:bg-umbra-10 min-h-[48px] w-full rounded-[10px] px-4 py-2 font-mono text-[16px] leading-[140%] font-normal ${
+                      errors.name ? 'border border-red-500' : ''
+                    }`}
+                    disabled={isLoading}
+                  />
+                  {errors.name && <span className="text-sm text-red-500">{errors.name}</span>}
+                </div>
+                <div className="flex flex-col gap-1">
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    placeholder="Phone"
+                    className={`bg-umbra-5 placeholder:text-umbra-100 hover:bg-umbra-10 min-h-[48px] w-full rounded-[10px] px-4 py-2 font-mono text-[16px] leading-[140%] font-normal ${
+                      errors.phone ? 'border border-red-500' : ''
+                    }`}
+                    disabled={isLoading}
+                  />
+                  {errors.phone && <span className="text-sm text-red-500">{errors.phone}</span>}
+                </div>
+                <div className="flex flex-col gap-1">
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    className="bg-umbra-10 text-umbra-60 min-h-[48px] w-full cursor-not-allowed rounded-[10px] px-4 py-2 font-mono text-[16px] leading-[140%] font-normal"
+                    disabled={true}
+                  />
+                  <span className="text-umbra-60 text-sm">Email cannot be changed</span>
+                </div>
 
-                <button
-                  onClick={handleSave}
-                  className="main-button-black inline-flex w-full items-center justify-center rounded-[10px] px-6 py-3"
-                >
-                  Save
-                </button>
+                <div className="flex gap-3">
+                  <button
+                    onClick={handleCancel}
+                    className="border-umbra-20 text-umbra-100 hover:bg-umbra-10 flex-1 rounded-[10px] border px-6 py-3 transition disabled:cursor-not-allowed disabled:opacity-50"
+                    disabled={isLoading}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    onClick={handleSave}
+                    className="main-button-black flex-1 rounded-[10px] px-6 py-3 disabled:cursor-not-allowed disabled:opacity-50"
+                    disabled={isLoading}
+                  >
+                    {isLoading ? 'Saving...' : 'Save'}
+                  </button>
+                </div>
               </>
             )}
           </div>
