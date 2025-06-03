@@ -32,16 +32,9 @@ export default function PersonalInfoPage() {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-    // Clear error when user starts typing
+    setFormData((prev) => ({ ...prev, [name]: value }));
     if (errors[name]) {
-      setErrors((prev) => ({
-        ...prev,
-        [name]: '',
-      }));
+      setErrors((prev) => ({ ...prev, [name]: '' }));
     }
   };
 
@@ -77,14 +70,7 @@ export default function PersonalInfoPage() {
         toast.error(result.message || 'Failed to update profile');
         return;
       }
-      dispatch(
-        setCredentials({
-          ...userInformation,
-          name: formData.name,
-          phone_number: formData.phone,
-          email: userInformation.email,
-        }),
-      );
+      dispatch(setCredentials({ ...userInformation, name: formData.name, phone_number: formData.phone }));
 
       toast.success('Profile updated successfully');
       setErrors({});
