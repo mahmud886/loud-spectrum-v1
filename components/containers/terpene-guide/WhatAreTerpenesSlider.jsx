@@ -66,6 +66,13 @@ const WhatAreTerpenesSlider = () => {
   const [current, setCurrent] = React.useState(0);
   const [count, setCount] = React.useState(0);
 
+  const colorMap = {
+    alive: 'from-alive',
+    dank: 'from-dank',
+    sweet: 'from-sweet',
+    classic: 'from-classic',
+  };
+
   const slides = [
     {
       description: t('alive.description'),
@@ -134,7 +141,7 @@ const WhatAreTerpenesSlider = () => {
               const labelLower = slide.label.toLowerCase();
               return (
                 <CarouselItem key={index}>
-                  <section className={cn('relative w-full bg-gradient-to-b to-black text-white', `from-${labelLower}`)}>
+                  <section className={cn('relative w-full bg-gradient-to-b to-black text-white', colorMap[labelLower])}>
                     <div className="min-h-[644px] p-10">
                       <div className="flex min-h-[564px] max-w-[550px] flex-col justify-between">
                         <div className="flex flex-col space-y-10">
