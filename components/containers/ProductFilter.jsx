@@ -8,22 +8,27 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 
-const ProductFilter = ({ value, onChange, categories }) => {
+const ProductFilter = ({ categories, onCategoryChange }) => {
+  const handleChange = (value) => {
+    if (value === 'all') {
+      onCategoryChange?.([]);
+    } else {
+      const selectedCategory = categories.find((cat) => cat._id === value);
+      onCategoryChange?.(selectedCategory ? [selectedCategory] : []);
+    }
+  };
+
   return (
-    <Select value={value} onValueChange={onChange}>
+    <Select defaultValue="all" onValueChange={handleChange}>
       <SelectTrigger className="bg-umbra-5 min-h-12 w-full text-[17px] md:min-h-[42px] md:max-w-[280px] md:min-w-[156px]">
         <SelectValue placeholder="Filter by Category" />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
           <SelectLabel className="!text-[17px]">Filter</SelectLabel>
-          {/* {terpeneCategories.map((option) => (
-            <SelectItem key={option.id} value={option.id}>
-              {option.name}
-            </SelectItem>
-          ))} */}
+          <SelectItem value="all">All</SelectItem>
           {categories.map((option) => (
-            <SelectItem key={option.slug} value={option.slug}>
+            <SelectItem key={option._id} value={option._id}>
               {option.name}
             </SelectItem>
           ))}

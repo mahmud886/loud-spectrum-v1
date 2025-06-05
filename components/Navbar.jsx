@@ -5,6 +5,7 @@ import MenuButton from '@/components/navbar/MenuButton';
 import TopNav from '@/components/TopNav';
 import { Link, usePathname, useRouter } from '@/i18n/navigation';
 import { logout } from '@/lib/store/slices/authSlice';
+import { LogInIcon, ShoppingCartIcon, UserIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
@@ -12,16 +13,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'sonner';
 
 const Navbar = ({ locale }) => {
-  const t = useTranslations('');
-  const pathname = usePathname();
-  const router = useRouter();
-  const dispatch = useDispatch();
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
 
-  const cartItems = useSelector((state) => state.cart);
+  const cartItems = useSelector((state) => state.cart.items);
   const user = useSelector((state) => state.auth.user);
+  const dispatch = useDispatch();
+  const pathname = usePathname();
+  const t = useTranslations('');
+  const router = useRouter();
 
   const handleLogout = async () => {
     try {
@@ -84,8 +85,8 @@ const Navbar = ({ locale }) => {
               <div
                 className={`${
                   isSpecialPath
-                    ? 'shadow-[0px_0px_300px_150px_rgba(255,255,255,0.9)]'
-                    : 'shadow-[0px_0px_300px_150px_rgba(0,0,0,0.9)]'
+                    ? 'shadow-[0px_0px_100px_100px_rgba(255,255,255,0.9)]'
+                    : 'shadow-[0px_0px_100px_100px_rgba(0,0,0,0.9)]'
                 }`}
               />
             </div>
@@ -101,24 +102,25 @@ const Navbar = ({ locale }) => {
             />
           </Link>
 
-          <div className="flex items-center gap-[30px]">
+          <div className="flex items-center gap-4">
             {user ? (
-              <button
-                onClick={handleLogout}
-                className={`mx-[5px] hidden font-sans text-[20px] font-normal transition-colors duration-300 ease-in-out md:flex ${
+              <Link
+                href="/account"
+                className={`mx-[5px] flex items-center gap-2 font-sans text-[20px] font-normal transition-colors duration-300 ease-in-out md:flex ${
                   isSpecialPath ? 'hover:text-umbra-40 text-[#191919]' : 'text-white-100 hover:text-white-40'
                 }`}
               >
-                {t('Navbar.logout')}
-              </button>
+                <UserIcon size={24} />
+              </Link>
             ) : (
               <Link
-                href={`/login`}
-                className={`mx-[5px] hidden font-sans text-[20px] font-normal transition-colors duration-300 ease-in-out md:flex ${
+                href="/login"
+                className={`mx-[5px] flex items-center gap-2 font-sans text-[20px] font-normal transition-colors duration-300 ease-in-out md:flex ${
                   isSpecialPath ? 'hover:text-umbra-40 text-[#191919]' : 'text-white-100 hover:text-white-40'
                 }`}
               >
-                {t('Navbar.Log_in')}
+                <LogInIcon size={24} />
+                {/* <span className="hidden md:inline">{t('Navbar.Log_in')}</span> */}
               </Link>
             )}
 
@@ -127,15 +129,17 @@ const Navbar = ({ locale }) => {
               onClick={() => {
                 setCartOpen(true);
               }}
-              aria-label={`${t('Cart')} (${cartItems?.totalQuantity || 0} items)`}
-              className={`mx-[5px] cursor-pointer font-sans text-[20px] font-normal transition-colors duration-300 ease-in-out ${
+              aria-label={`${t('Cart')} (${cartItems?.length || 0} items)`}
+              className={`relative mx-[5px] cursor-pointer transition-colors duration-300 ease-in-out ${
                 isSpecialPath ? 'hover:text-umbra-40 text-[#191919]' : 'text-white-100 hover:text-white-40'
               }`}
             >
-              {t('Cart')}{' '}
-              <span className={`${isSpecialPath ? 'text-umbra-40' : 'text-white-40'}`}>
-                ({cartItems?.totalQuantity || 0})
-              </span>
+              <ShoppingCartIcon size={24} />
+              {cartItems?.length > 0 && (
+                <span className="bg-alive absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full text-[12px] font-medium text-white">
+                  {cartItems.length}
+                </span>
+              )}
             </button>
             <MenuButton setMenuOpen={setMenuOpen} isSpecialPath={isSpecialPath} />
           </div>
