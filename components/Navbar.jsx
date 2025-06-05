@@ -85,8 +85,8 @@ const Navbar = ({ locale }) => {
               <div
                 className={`${
                   isSpecialPath
-                    ? 'shadow-[0px_0px_300px_150px_rgba(255,255,255,0.9)]'
-                    : 'shadow-[0px_0px_300px_150px_rgba(0,0,0,0.9)]'
+                    ? 'shadow-[0px_0px_100px_100px_rgba(255,255,255,0.9)]'
+                    : 'shadow-[0px_0px_100px_100px_rgba(0,0,0,0.9)]'
                 }`}
               />
             </div>

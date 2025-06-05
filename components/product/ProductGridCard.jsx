@@ -52,7 +52,9 @@ const ProductGridCard = ({ product }) => {
 
           {/* Tag Button (Hidden on mobile) */}
           <div className="ml-3 hidden md:block">
-            <button className="border-umbra-100 rounded-[3px] border px-2 text-[9px] font-normal">{t('tag')}</button>
+            <button className="border-umbra-100 rounded-[3px] border px-2 text-[9px] font-normal">
+              {product?.category?.name}
+            </button>
           </div>
 
           {/* Buy Now Button (Mobile) */}
