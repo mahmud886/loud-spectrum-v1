@@ -1,13 +1,15 @@
 'use client';
 
-import React from 'react';
-import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/navigation';
 import CloseButton from '@/components/navbar/CloseButton';
+import { Link } from '@/i18n/navigation';
+import { LogInIcon, Search, ShoppingCartIcon, UserIcon } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import { Search } from 'lucide-react';
+import { useSelector } from 'react-redux';
 
 const MobileNav = ({ onClose, setCartOpen }) => {
+  const cartItems = useSelector((state) => state.cart.items);
+  const user = useSelector((state) => state.auth.user);
   const t = useTranslations('Navbar');
   const topNav = useTranslations('Navbar.TopNav');
   return (
@@ -26,15 +28,37 @@ const MobileNav = ({ onClose, setCartOpen }) => {
             />
           </Link>
           {/* Cart and Close Button Section */}
-          <div className="flex items-center gap-[30px]">
-            <a
+          <div className="flex items-center gap-4">
+            {user ? (
+              <Link
+                href="/account"
+                className={`hover:text-umbra-40 text-[#191919]' } mx-[5px] flex items-center gap-2 font-sans text-[20px] font-normal transition-colors duration-300 ease-in-out md:flex`}
+              >
+                <UserIcon size={24} />
+              </Link>
+            ) : (
+              <Link
+                href="/login"
+                className="text-umbra-100 hover:text-umbra-40 relative mx-[5px] cursor-pointer transition-colors duration-300 ease-in-out"
+              >
+                <LogInIcon size={24} />
+              </Link>
+            )}
+            <button
+              type="button"
               onClick={() => {
                 setCartOpen(true);
               }}
-              className="text-umbra-100 hover:text-umbra-40 mx-[5px] font-sans text-[20px] font-normal transition-colors duration-300 ease-in-out"
+              aria-label={`${t('Cart')} (${cartItems?.length || 0} items)`}
+              className="text-umbra-100 hover:text-umbra-40 relative mx-[5px] cursor-pointer transition-colors duration-300 ease-in-out"
             >
-              {t('Cart')} <span className="text-inherit/60">(0)</span>
-            </a>
+              <ShoppingCartIcon size={24} />
+              {cartItems?.length > 0 && (
+                <span className="bg-alive absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full text-[12px] font-medium text-white">
+                  {cartItems.length}
+                </span>
+              )}
+            </button>
             <CloseButton onClose={onClose} />
           </div>
         </div>
