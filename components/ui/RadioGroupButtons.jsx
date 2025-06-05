@@ -3,9 +3,7 @@ import clsx from 'clsx';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
 
-// const options = ['All', 'Active', 'Relaxed', 'Classic', 'Sweet', 'Dank', 'Alive', 'Sample Packed'];
-
-export default function RadioGroupButtons({ categories }) {
+export default function RadioGroupButtons({ categories, onCategoryChange }) {
   const [selected, setSelected] = useState(['All']);
 
   const options = ['All', ...categories.map((category) => category.name)];
@@ -13,6 +11,7 @@ export default function RadioGroupButtons({ categories }) {
   const toggleOption = (option) => {
     if (option === 'All') {
       setSelected(['All']);
+      onCategoryChange?.([]);
     } else {
       let updated;
       if (selected.includes(option)) {
@@ -22,6 +21,10 @@ export default function RadioGroupButtons({ categories }) {
       }
 
       setSelected(updated.length === 0 ? ['All'] : updated);
+
+      // Emit selected categories to parent
+      const selectedCategories = updated.length === 0 ? [] : categories.filter((cat) => updated.includes(cat.name));
+      onCategoryChange?.(selectedCategories);
     }
   };
 

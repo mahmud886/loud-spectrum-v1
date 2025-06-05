@@ -13,9 +13,6 @@ import { useState } from 'react';
 const ProductGridCard = ({ product }) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const { min, max } = getProductPriceRange(product?.subProducts);
-
-  console.log(product);
-
   const handleBuyNowClick = () => {
     setIsDialogOpen(true);
   };

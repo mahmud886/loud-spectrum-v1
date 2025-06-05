@@ -11,13 +11,13 @@ export const getProductPriceRange = (productOrSubProducts) => {
   } else if (productOrSubProducts?.subProducts) {
     subProducts = productOrSubProducts.subProducts;
   } else {
-    console.warn('No valid subProducts found:', productOrSubProducts);
+    // console.warn('No valid subProducts found:', productOrSubProducts);
     return { min: 0, max: 0 };
   }
 
   // Check if subProducts is empty
   if (subProducts.length === 0) {
-    console.warn('subProducts array is empty');
+    // console.warn('subProducts array is empty');
     return { min: 0, max: 0 };
   }
 
@@ -26,12 +26,12 @@ export const getProductPriceRange = (productOrSubProducts) => {
     .map((subProduct) => {
       try {
         if (!subProduct.price) {
-          console.warn('No price found in subProduct:', subProduct);
+          // console.warn('No price found in subProduct:', subProduct);
           return null;
         }
         return parseFloat(subProduct.price);
       } catch (e) {
-        console.error('Error processing subProduct price:', e);
+        // console.error('Error processing subProduct price:', e);
         return null;
       }
     })
