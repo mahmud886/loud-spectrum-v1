@@ -1,11 +1,12 @@
-import React from 'react';
-import { MinusIcon, PlusIcon, Star } from 'lucide-react';
+'use client';
+
+import WholesaleProductCarousel from '@/components/carousels/WholesaleProductCarousel';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { MinusIcon, PlusIcon, Star } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import WholesaleProductCarousel from '@/components/carousels/WholesaleProductCarousel';
 
-const WholesaleProductCard = () => {
+const WholesaleProductCard = ({ product }) => {
   const t = useTranslations('ProductDetails');
   return (
     <div className="bg-white-100 text-umbra-100 border-1 p-5 shadow-sm md:h-auto md:w-full">
@@ -25,7 +26,7 @@ const WholesaleProductCard = () => {
             </div>
             <div className="flex items-center justify-between gap-5">
               <button className="border-alive text-alive rounded-[3px] border-1 px-2 text-[12px] font-normal">
-                {t('CannabisDerived')}
+                {product?.productDetails?.category_name}
               </button>
               <p className="text-umbra-100 inline-flex items-center justify-start gap-2 font-mono text-[14px] leading-[130%] font-normal">
                 <span className={'flex items-center justify-start'}>
@@ -40,10 +41,10 @@ const WholesaleProductCard = () => {
             </div>
             <div className="space-y-2">
               <h2 className="text-umbra-100 font-sans text-[35px] leading-[120%] font-normal tracking-normal">
-                Mango OG
+                {product?.productDetails?.name}
               </h2>
               <h6 className="text-umbra-100 font-sans text-[22px] leading-[130%] font-normal tracking-normal">
-                $10.00
+                ${product?.price}
               </h6>
             </div>
             <div className="space-y-3">

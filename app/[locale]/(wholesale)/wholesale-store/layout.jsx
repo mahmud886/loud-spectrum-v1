@@ -1,4 +1,3 @@
-import React from 'react';
 import DynamicBreadcrumb from '@/components/DynamicBreadcrumb';
 
 const WholesaleStoreLayout = ({ children }) => {
