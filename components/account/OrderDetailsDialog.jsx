@@ -3,6 +3,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/u
 import { getOrderById } from '@/services/get-order-by-id';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { toast } from 'sonner';
 
 const OrderDetailsDialog = ({ open, onOpenChange, orderId }) => {
   const [orderDetails, setOrderDetails] = useState(null);
@@ -15,9 +16,9 @@ const OrderDetailsDialog = ({ open, onOpenChange, orderId }) => {
         setIsLoading(true);
         try {
           const order = await getOrderById(orderId, token);
-          console.log(order?.data);
           setOrderDetails(order?.data);
         } catch (error) {
+          toast.error('Error fetching order details');
           console.error('Error fetching order details:', error);
         } finally {
           setIsLoading(false);
