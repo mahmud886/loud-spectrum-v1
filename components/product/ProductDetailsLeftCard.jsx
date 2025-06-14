@@ -35,7 +35,7 @@ const ProductDetailsLeftCard = ({ product }) => {
       return;
     }
     setShowVolumeError(false);
-    dispatch(addToCart({ id: product._id, product, quantity, price: selectedPrice, selectedVolume }));
+    dispatch(addToCart({ id: product._id, product, quantity, price: selectedPrice, selectedVolume, isRegular: true }));
     setSelectedVolume('');
     setQuantity(1);
   };

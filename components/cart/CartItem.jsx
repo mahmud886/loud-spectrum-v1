@@ -12,9 +12,21 @@ const CartItem = ({ item }) => {
       <div className="flex w-full flex-col justify-between gap-2">
         <div className="flex flex-col items-start justify-between gap-1">
           <h6 className="text-umbra-100 font-sans text-[18px] leading-[120%] font-normal">{item.name}</h6>
-          <p className="bg-umbra-5 text-umbra-100 rounded-[10px] px-2 py-1 font-sans text-[12px] leading-[120%] font-normal">
-            {item.selectedVolume}
-          </p>
+          <div className="flex items-center gap-2">
+            <p className="bg-umbra-5 text-umbra-100 rounded-[10px] px-2 py-1 font-sans text-[12px] leading-[120%] font-normal">
+              {item.selectedVolume}
+            </p>
+            {item?.isRegular && (
+              <p className="text-umbra-100 rounded-[10px] bg-green-100 px-2 py-1 font-sans text-[12px] leading-[120%] font-normal">
+                Regular
+              </p>
+            )}
+            {item?.isWholesale && (
+              <p className="text-umbra-100 rounded-[10px] bg-red-100 px-2 py-1 font-sans text-[12px] leading-[120%] font-normal">
+                Wholesale
+              </p>
+            )}
+          </div>
         </div>
         <div className="flex w-full items-end justify-between gap-5">
           <div className="mt-2 flex items-center gap-2">
