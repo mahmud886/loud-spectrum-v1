@@ -49,7 +49,9 @@ export default function OrderTrackPage() {
                 setOrderCode(e.target.value);
                 setError('');
               }}
-              className="bg-umbra-5 placeholder:text-umbra-100 min-h-[48px] flex-1 rounded-[10px] px-4 py-2"
+              className={`bg-umbra-5 placeholder:text-umbra-100 min-h-[48px] flex-1 rounded-[10px] px-4 py-2 ${
+                error ? 'border-2 border-red-500' : ''
+              }`}
             />
             <Button onClick={handleSearch} className="main-button-black min-h-[48px] rounded-[10px] px-6 py-2">
               Search
