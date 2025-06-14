@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useDispatch } from 'react-redux';
 
 const CartItem = ({ item }) => {
+  console.log(item);
   const dispatch = useDispatch();
   return (
     <div className="border-umbra-10 flex items-center gap-4 rounded-md border-1 py-2.5 pr-5 pl-2.5">
@@ -41,6 +42,7 @@ const CartItem = ({ item }) => {
                       id: item.originalId,
                       selectedVolume: item.selectedVolume,
                       quantity: item.quantity - 1,
+                      flavor: item.flavor,
                     }),
                   )
                 }
@@ -62,6 +64,7 @@ const CartItem = ({ item }) => {
                       id: item.originalId,
                       selectedVolume: item.selectedVolume,
                       quantity: item.quantity + 1,
+                      flavor: item.flavor,
                     }),
                   )
                 }
@@ -78,6 +81,7 @@ const CartItem = ({ item }) => {
                   removeFromCart({
                     id: item.originalId,
                     selectedVolume: item.selectedVolume,
+                    flavor: item.flavor,
                   }),
                 )
               }

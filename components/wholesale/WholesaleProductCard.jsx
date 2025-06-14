@@ -1,13 +1,53 @@
 'use client';
 
 import WholesaleProductCarousel from '@/components/carousels/WholesaleProductCarousel';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { addToCart } from '@/lib/store/slices/cartSlice';
 import { MinusIcon, PlusIcon, Star } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { toast } from 'sonner';
 
 const WholesaleProductCard = ({ product }) => {
+  const [quantity, setQuantity] = useState(1);
+  const [flavor, setFlavor] = useState('');
+  const [error, setError] = useState(false);
+  const dispatch = useDispatch();
   const t = useTranslations('ProductDetails');
+  console.log(product);
+  const validateFlavor = (value) => {
+    setError(!value.trim());
+  };
+
+  const handleAddToCart = () => {
+    if (!flavor.trim()) {
+      toast.error('Please enter a flavor');
+      setError(true);
+      return;
+    }
+    setError(false);
+    dispatch(
+      addToCart({
+        id: product._id,
+        product: {
+          ...product,
+          name: product?.productDetails?.name,
+          image: product?.productDetails?.image,
+        },
+        quantity,
+        price: product?.price,
+        selectedVolume: '1ml',
+        isRegular: false,
+        isWholesale: true,
+        flavor,
+      }),
+    );
+    setQuantity(1);
+    setFlavor('');
+  };
+  console.log(flavor);
+
   return (
     <div className="bg-white-100 text-umbra-100 border-1 p-5 shadow-sm md:h-auto md:w-full">
       <div className="flex h-full w-full flex-col items-start justify-between gap-5">
@@ -54,45 +94,74 @@ const WholesaleProductCard = ({ product }) => {
             </div>
             <div className="space-y-1">
               <div>
-                <Select>
-                  <SelectTrigger className="bg-umbra-5 placeholder:text-umbra-100 hover:bg-umbra-10 min-h-[48px] w-full rounded-[10px] px-4 py-2 font-mono text-[16px] leading-[140%] font-normal">
-                    <SelectValue placeholder={'Choose Flavor'} />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="1">710Terps</SelectItem>
-                    <SelectItem value="2">Suace Terp</SelectItem>
-                  </SelectContent>
-                </Select>
+                <input
+                  id="flavor"
+                  type="text"
+                  placeholder="e.g., 710Terps"
+                  value={flavor}
+                  onChange={(e) => {
+                    let value = e.target.value;
+                    value = value.toLowerCase().replace(/\s+/g, '-');
+                    setFlavor(value);
+                    validateFlavor(value);
+                  }}
+                  onBlur={(e) => validateFlavor(e.target.value)}
+                  className={`input-field w-full rounded-md border px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none ${
+                    error ? 'border-red-500' : 'border-gray-300'
+                  }`}
+                />
+                {error && <p className="mt-1 text-sm text-red-500">Please enter a flavor</p>}
               </div>
             </div>
           </div>
         </div>
         <div className="flex w-full flex-col items-center justify-between gap-8 md:flex-row">
           <div className="flex w-full items-center justify-between gap-5 md:flex-row">
-            {/*<div className="md:hidden">*/}
-            {/*  <button className="outline-button-white rounded-full border px-5 py-2">{t('SeePDF')}</button>*/}
-            {/*</div>*/}
             <div className="flex items-center gap-2">
               <button
-                className="border-umbra-40 flex size-10 cursor-not-allowed items-center justify-center rounded-full border bg-white"
-                disabled
+                className="border-umbra-40 flex size-10 cursor-pointer items-center justify-center rounded-full border bg-white disabled:cursor-not-allowed"
+                onClick={() => setQuantity((q) => Math.max(1, q - 1))}
+                disabled={quantity <= 1}
               >
                 <MinusIcon size={14} fill="#C2C2C2" />
               </button>
 
               <input
-                id="quantity-input"
                 type="number"
-                defaultValue="01"
-                className="text-umbra-100 h-10 w-[40px] appearance-none text-center font-sans text-[17px] font-normal [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+                value={quantity}
+                min={1}
+                max={99}
+                onChange={(e) => {
+                  const val = parseInt(e.target.value, 10);
+                  if (!isNaN(val) && val >= 1 && val <= 99) {
+                    setQuantity(val);
+                  }
+                }}
+                onBlur={() => {
+                  if (!quantity || quantity < 1) {
+                    setQuantity(1);
+                  } else if (quantity > 99) {
+                    setQuantity(99);
+                  }
+                }}
+                className="text-umbra-100 h-10 w-[60px] appearance-none text-center font-sans text-[17px] font-normal [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
               />
 
-              <button className="border-umbra-40 bg-white-40/10 flex size-10 items-center justify-center rounded-full border backdrop-blur-2xl">
+              <button
+                className="border-umbra-40 bg-white-40/10 flex size-10 cursor-pointer items-center justify-center rounded-full border backdrop-blur-2xl disabled:cursor-not-allowed"
+                onClick={() => setQuantity((q) => q + 1)}
+              >
                 <PlusIcon size={14} fill="#000000" />
               </button>
             </div>
           </div>
-          <button className="main-button-black w-full rounded-full px-2 py-2 md:max-w-[132px]">{t('AddToCart')}</button>
+
+          <button
+            className="main-button-black w-full rounded-full px-2 py-2 md:max-w-[132px]"
+            onClick={handleAddToCart}
+          >
+            {t('AddToCart')}
+          </button>
         </div>
       </div>
     </div>

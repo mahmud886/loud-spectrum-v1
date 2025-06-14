@@ -35,7 +35,17 @@ const ProductDetailsLeftCard = ({ product }) => {
       return;
     }
     setShowVolumeError(false);
-    dispatch(addToCart({ id: product._id, product, quantity, price: selectedPrice, selectedVolume, isRegular: true }));
+    dispatch(
+      addToCart({
+        id: product._id,
+        product,
+        quantity,
+        price: selectedPrice,
+        selectedVolume,
+        isRegular: true,
+        flavor: '',
+      }),
+    );
     setSelectedVolume('');
     setQuantity(1);
   };
