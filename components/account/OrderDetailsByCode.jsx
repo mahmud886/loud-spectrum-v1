@@ -1,10 +1,10 @@
 'use client';
 import { useRouter } from '@/i18n/navigation';
-import { getOrderById } from '@/services/get-order-by-id';
+import { getOrderByCode } from '@/services/get-order-by-code';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-const OrderDetailsPage = ({ orderId }) => {
+const OrderDetailsPage = ({ orderCode }) => {
   const [orderDetails, setOrderDetails] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const token = useSelector((state) => state.auth.token);
@@ -12,10 +12,10 @@ const OrderDetailsPage = ({ orderId }) => {
 
   useEffect(() => {
     const fetchOrderDetails = async () => {
-      if (orderId) {
+      if (orderCode) {
         setIsLoading(true);
         try {
-          const order = await getOrderById(orderId, token);
+          const order = await getOrderByCode(orderCode, token);
           setOrderDetails(order?.data);
         } catch (error) {
           console.error('Error fetching order details:', error);
@@ -26,7 +26,7 @@ const OrderDetailsPage = ({ orderId }) => {
     };
 
     fetchOrderDetails();
-  }, [orderId]);
+  }, [orderCode]);
 
   const formatDate = (dateString) => {
     return new Date(dateString).toLocaleDateString('en-US', {
