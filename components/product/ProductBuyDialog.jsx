@@ -36,7 +36,7 @@ const ProductBuyDialog = ({ open, onOpenChange, product }) => {
       return;
     }
     setShowVolumeError(false);
-    dispatch(addToCart({ id: product._id, product, quantity, price: selectedPrice, selectedVolume }));
+    dispatch(addToCart({ id: product._id, product, quantity, price: selectedPrice, selectedVolume, isRegular: true }));
     onOpenChange(false);
     setSelectedVolume('');
     setQuantity(1);
