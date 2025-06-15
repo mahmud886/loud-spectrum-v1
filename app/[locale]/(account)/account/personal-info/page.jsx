@@ -93,10 +93,10 @@ export default function PersonalInfoPage() {
         <button
           onClick={() => setIsEditing(!isEditing)}
           aria-label="Edit Info"
-          className="absolute top-4 right-4 text-gray-500 transition hover:text-[#D00234]"
+          className="absolute top-4 right-4 cursor-pointer text-gray-500 transition hover:text-[#D00234]"
           disabled={isLoading}
         >
-          <Edit className="h-5 w-5" />
+          {isEditing ? '' : <Edit className="h-5 w-5" />}
         </button>
 
         <div className="flex h-[300px] flex-col items-center justify-center gap-10 md:flex-row">
