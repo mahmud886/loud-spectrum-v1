@@ -1,23 +1,24 @@
 'use client';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { useRouter } from '@/i18n/navigation';
 import { getOrderByCode } from '@/services/get-order-by-code';
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { toast } from 'sonner';
 
-const OrderDetailsPage = ({ orderCode }) => {
+const OrderDetailsByCode = ({ orderCode, token, isOpen, onClose }) => {
   const [orderDetails, setOrderDetails] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const token = useSelector((state) => state.auth.token);
   const router = useRouter();
 
   useEffect(() => {
     const fetchOrderDetails = async () => {
-      if (orderCode) {
+      if (orderCode && isOpen) {
         setIsLoading(true);
         try {
           const order = await getOrderByCode(orderCode, token);
           setOrderDetails(order?.data);
         } catch (error) {
+          toast.error('Error fetching order details');
           console.error('Error fetching order details:', error);
         } finally {
           setIsLoading(false);
@@ -26,7 +27,7 @@ const OrderDetailsPage = ({ orderCode }) => {
     };
 
     fetchOrderDetails();
-  }, [orderCode]);
+  }, [orderCode, isOpen, token]);
 
   const formatDate = (dateString) => {
     return new Date(dateString).toLocaleDateString('en-US', {
@@ -73,7 +74,7 @@ const OrderDetailsPage = ({ orderCode }) => {
             {/* Table Rows */}
             <div className="divide-y">
               {orderDetails?.products?.map((item) => (
-                <div key={item} className="grid grid-cols-4 gap-4 py-1">
+                <div key={item?._id} className="grid grid-cols-4 gap-4 py-1">
                   <div className="h-7 rounded bg-gray-200"></div>
                   <div className="h-7 rounded bg-gray-200"></div>
                   <div className="h-7 rounded bg-gray-200"></div>
@@ -162,145 +163,164 @@ const OrderDetailsPage = ({ orderCode }) => {
           </div>
         </div>
       </div>
+
+      {/* Close Button Shimmer */}
+      <div className="mt-6 flex justify-end">
+        <div className="h-10 w-24 rounded-full bg-gray-200"></div>
+      </div>
     </div>
   );
 
   return (
-    <div className="mx-auto w-full max-w-full p-4 md:p-0">
-      {/* Back to Orders Button */}
-      <div className="mb-6 flex items-center justify-between">
-        <h1 className="text-umbra-100 font-sans text-[24px] leading-[120%] font-normal">
-          Order Details - {orderDetails?.code}
-        </h1>
-        <button className="main-button-black rounded-full px-6 py-2 text-white" onClick={() => router.back()}>
-          Back to Orders
-        </button>
-      </div>
-
-      {isLoading ? (
-        <ShimmerEffect />
-      ) : (
-        <>
-          {/* Product List Section */}
-          <div className="mb-6">
-            <h3 className="mb-4 text-xl font-normal">Product Details</h3>
-            <div className="overflow-x-auto rounded-md border border-gray-200">
-              <table className="w-full table-auto text-left">
-                <thead className="bg-stardust/20">
-                  <tr>
-                    <th className="text-umbra-100 px-4 py-2 font-sans text-[16px] font-normal">Product</th>
-                    <th className="text-umbra-100 px-4 py-2 font-sans text-[16px] font-normal">Quantity</th>
-                    <th className="text-umbra-100 px-4 py-2 font-sans text-[16px] font-normal">Price</th>
-                    <th className="text-umbra-100 px-4 py-2 font-sans text-[16px] font-normal">Total</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {orderDetails?.products?.map((item) => (
-                    <tr key={item._id} className="border-b">
-                      <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">
-                        {item?.product?.name}
-                      </td>
-                      <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">{item?.quantity}</td>
-                      <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">
-                        ${item?.price?.toFixed(2)}
-                      </td>
-                      <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">
-                        ${item?.total?.toFixed(2)}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          {/* Shipping Address and Order Summary Section */}
-          <div className="flex flex-col gap-2 md:flex-row md:space-x-6">
-            {/* Shipping Address */}
-            <div className="w-full md:flex-1">
-              <h3 className="mb-4 text-[18px] font-normal">Address</h3>
-              <div className="bg-stardust/20 divide-umbra-10 divide-y rounded-[10px]">
-                <div className="p-4">
-                  <h3 className="mb-1 text-[18px] font-normal">Shipping Address</h3>
-                  <p className="text-umbra-100 font-sans text-[14px] font-normal">
-                    {orderDetails?.shipping_details?.first_name} {orderDetails?.shipping_details?.last_name}
-                  </p>
-                  {formatAddress(orderDetails?.shipping_details)}
-                  <p className="text-umbra-100 font-sans text-[14px] font-normal">
-                    {orderDetails?.shipping_details?.phone}
-                  </p>
-                  <p className="text-umbra-100 font-sans text-[14px] font-normal">
-                    {orderDetails?.shipping_details?.email}
-                  </p>
-                </div>
-                <div className="p-4">
-                  <h3 className="mb-1 text-[18px] font-normal">Billing Address</h3>
-                  <p className="text-umbra-100 font-sans text-[14px] font-normal">
-                    {orderDetails?.billing_details?.first_name} {orderDetails?.billing_details?.last_name}
-                  </p>
-                  {formatAddress(orderDetails?.billing_details)}
-                  <p className="text-umbra-100 font-sans text-[14px] font-normal">
-                    {orderDetails?.billing_details?.phone}
-                  </p>
-                  <p className="text-umbra-100 font-sans text-[14px] font-normal">
-                    {orderDetails?.billing_details?.email}
-                  </p>
+    <Dialog open={isOpen} onOpenChange={onClose}>
+      <DialogContent className="flex max-h-[90vh] w-full flex-col overflow-hidden rounded-lg bg-white p-6 md:h-auto md:max-w-5xl">
+        <DialogHeader>
+          <DialogTitle className="text-umbra-100 inline-flex font-sans text-[24px] leading-[120%] font-normal">
+            {isLoading ? (
+              <div className="h-8 w-64 rounded bg-gray-200"></div>
+            ) : (
+              <>Order Details - {orderDetails?.code}</>
+            )}
+          </DialogTitle>
+        </DialogHeader>
+        <div className="overflow-auto">
+          {isLoading ? (
+            <ShimmerEffect />
+          ) : (
+            <>
+              {/* Product List Section */}
+              <div className="mb-6">
+                <h3 className="mb-4 text-xl font-normal">Product Details</h3>
+                <div className="overflow-x-auto rounded-md border border-gray-200">
+                  <table className="w-full table-auto text-left">
+                    <thead className="bg-stardust/20">
+                      <tr>
+                        <th className="text-umbra-100 px-4 py-2 font-sans text-[16px] font-normal">Product</th>
+                        <th className="text-umbra-100 px-4 py-2 font-sans text-[16px] font-normal">Quantity</th>
+                        <th className="text-umbra-100 px-4 py-2 font-sans text-[16px] font-normal">Price</th>
+                        <th className="text-umbra-100 px-4 py-2 font-sans text-[16px] font-normal">Total</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {orderDetails?.products?.map((item) => (
+                        <tr key={item._id} className="border-b">
+                          <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">
+                            {item?.product?.name}
+                          </td>
+                          <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">
+                            {item?.quantity}
+                          </td>
+                          <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">
+                            ${item?.price?.toFixed(2)}
+                          </td>
+                          <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">
+                            ${item?.total?.toFixed(2)}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
               </div>
-            </div>
 
-            {/* Order Summary */}
-            <div className="w-full md:flex-1">
-              <h3 className="mb-4 text-[18px] font-normal">Order Summary</h3>
-              <div className="rounded-[10px] bg-gray-50 p-4">
-                <div className="mb-2 flex justify-between">
-                  <span className="text-umbra-100 font-sans text-[14px] font-normal">Subtotal</span>
-                  <span>${orderDetails?.sub_total?.toFixed(2) || 0}</span>
+              {/* Shipping Address and Order Summary Section */}
+              <div className="flex flex-col gap-2 md:flex-row md:space-x-6">
+                {/* Shipping Address */}
+                <div className="w-full md:flex-1">
+                  <h3 className="mb-4 text-[18px] font-normal">Address</h3>
+                  <div className="bg-stardust/20 divide-umbra-10 divide-y rounded-[10px]">
+                    <div className="p-4">
+                      <h3 className="mb-1 text-[18px] font-normal">Shipping Address</h3>
+                      <p className="text-umbra-100 font-sans text-[14px] font-normal">
+                        {orderDetails?.shipping_details?.first_name} {orderDetails?.shipping_details?.last_name}
+                      </p>
+                      {formatAddress(orderDetails?.shipping_details)}
+                      <p className="text-umbra-100 font-sans text-[14px] font-normal">
+                        {orderDetails?.shipping_details?.phone}
+                      </p>
+                      <p className="text-umbra-100 font-sans text-[14px] font-normal">
+                        {orderDetails?.shipping_details?.email}
+                      </p>
+                    </div>
+                    <div className="p-4">
+                      <h3 className="mb-1 text-[18px] font-normal">Billing Address</h3>
+                      <p className="text-umbra-100 font-sans text-[14px] font-normal">
+                        {orderDetails?.billing_details?.first_name} {orderDetails?.billing_details?.last_name}
+                      </p>
+                      {formatAddress(orderDetails?.billing_details)}
+                      <p className="text-umbra-100 font-sans text-[14px] font-normal">
+                        {orderDetails?.billing_details?.phone}
+                      </p>
+                      <p className="text-umbra-100 font-sans text-[14px] font-normal">
+                        {orderDetails?.billing_details?.email}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div className="mb-2 flex justify-between">
-                  <span className="text-umbra-100 font-sans text-[14px] font-normal">Shipping Fee</span>
-                  <span>${orderDetails?.shipping_amount?.toFixed(2) || 0}</span>
-                </div>
-                <div className="mb-2 flex justify-between">
-                  <span className="text-umbra-100 font-sans text-[14px] font-normal">Taxes</span>
-                  <span>${orderDetails?.tax_amount?.toFixed(2) || 0}</span>
-                </div>
-                <div className="border-umbra-10 mb-2 flex justify-between border-t pt-2 font-normal">
-                  <span className="text-umbra-100 font-sans text-[14px] font-normal">Total</span>
-                  <span>${orderDetails?.total?.toFixed(2)}</span>
+
+                {/* Order Summary */}
+                <div className="w-full md:flex-1">
+                  <h3 className="mb-4 text-[18px] font-normal">Order Summary</h3>
+                  <div className="rounded-[10px] bg-gray-50 p-4">
+                    <div className="mb-2 flex justify-between">
+                      <span className="text-umbra-100 font-sans text-[14px] font-normal">Subtotal</span>
+                      <span>${orderDetails?.sub_total?.toFixed(2) || 0}</span>
+                    </div>
+                    <div className="mb-2 flex justify-between">
+                      <span className="text-umbra-100 font-sans text-[14px] font-normal">Shipping Fee</span>
+                      <span>${orderDetails?.shipping_amount?.toFixed(2) || 0}</span>
+                    </div>
+                    <div className="mb-2 flex justify-between">
+                      <span className="text-umbra-100 font-sans text-[14px] font-normal">Taxes</span>
+                      <span>${orderDetails?.tax_amount?.toFixed(2) || 0}</span>
+                    </div>
+                    <div className="border-umbra-10 mb-2 flex justify-between border-t pt-2 font-normal">
+                      <span className="text-umbra-100 font-sans text-[14px] font-normal">Total</span>
+                      <span>${orderDetails?.total?.toFixed(2)}</span>
+                    </div>
+                  </div>
+                  <div className="mt-6 rounded-[10px] bg-gray-50 p-4">
+                    <h3 className="mb-2 text-[18px] font-normal">Payment Information</h3>
+                    <div className="mb-2 flex justify-between">
+                      <span className="text-umbra-100 font-sans text-[14px] font-normal">Transaction ID</span>
+                      <span className="text-umbra-100 font-sans text-[14px] font-normal">
+                        {orderDetails?.payment_info?.transection_id}
+                      </span>
+                    </div>
+                    <div className="mb-2 flex justify-between">
+                      <span className="text-umbra-100 font-sans text-[14px] font-normal">Payment Status</span>
+                      <span className="text-umbra-100 font-sans text-[14px] font-normal">
+                        {orderDetails?.payment_status}
+                      </span>
+                    </div>
+                    <div className="mb-2 flex justify-between">
+                      <span className="text-umbra-100 font-sans text-[14px] font-normal">Order Status</span>
+                      <span className="text-umbra-100 font-sans text-[14px] font-normal">
+                        {orderDetails?.order_status}
+                      </span>
+                    </div>
+                    <div className="mb-2 flex justify-between">
+                      <span className="text-umbra-100 font-sans text-[14px] font-normal">Order Date</span>
+                      <span className="text-umbra-100 font-sans text-[14px] font-normal">
+                        {formatDate(orderDetails?.created_at)}
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="mt-6 rounded-[10px] bg-gray-50 p-4">
-                <h3 className="mb-2 text-[18px] font-normal">Payment Information</h3>
-                <div className="mb-2 flex justify-between">
-                  <span className="text-umbra-100 font-sans text-[14px] font-normal">Transaction ID</span>
-                  <span className="text-umbra-100 font-sans text-[14px] font-normal">
-                    {orderDetails?.payment_info?.transection_id}
-                  </span>
-                </div>
-                <div className="mb-2 flex justify-between">
-                  <span className="text-umbra-100 font-sans text-[14px] font-normal">Payment Status</span>
-                  <span className="text-umbra-100 font-sans text-[14px] font-normal">
-                    {orderDetails?.payment_status}
-                  </span>
-                </div>
-                <div className="mb-2 flex justify-between">
-                  <span className="text-umbra-100 font-sans text-[14px] font-normal">Order Status</span>
-                  <span className="text-umbra-100 font-sans text-[14px] font-normal">{orderDetails?.order_status}</span>
-                </div>
-                <div className="mb-2 flex justify-between">
-                  <span className="text-umbra-100 font-sans text-[14px] font-normal">Order Date</span>
-                  <span className="text-umbra-100 font-sans text-[14px] font-normal">
-                    {formatDate(orderDetails?.created_at)}
-                  </span>
-                </div>
+
+              {/* Close Button */}
+              <div className="mt-6 flex justify-end">
+                <button className="main-button-black rounded-full px-6 py-2 text-white" onClick={() => onClose(false)}>
+                  Close
+                </button>
               </div>
-            </div>
-          </div>
-        </>
-      )}
-    </div>
+            </>
+          )}
+        </div>
+      </DialogContent>
+    </Dialog>
   );
 };
 
-export default OrderDetailsPage;
+export default OrderDetailsByCode;
