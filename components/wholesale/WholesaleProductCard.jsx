@@ -83,8 +83,13 @@ const WholesaleProductCard = ({ product }) => {
               <h2 className="text-umbra-100 font-sans text-[35px] leading-[120%] font-normal tracking-normal">
                 {product?.productDetails?.name}
               </h2>
-              <h6 className="text-umbra-100 font-sans text-[22px] leading-[130%] font-normal tracking-normal">
-                ${product?.price}
+              <h6 className="text-umbra-100 inline-flex items-center font-sans text-[22px] leading-[130%] font-normal tracking-normal">
+                <span className="text-umbra-100 font-sans text-[22px] leading-[130%] font-normal tracking-normal">
+                  ${product?.price}
+                </span>
+                <span className="text-umbra-100 font-sans text-[16px] leading-[130%] font-normal tracking-normal">
+                  /ml
+                </span>
               </h6>
             </div>
             <div className="space-y-3">
@@ -119,7 +124,7 @@ const WholesaleProductCard = ({ product }) => {
           <div className="flex w-full items-center justify-between gap-5 md:flex-row">
             <div className="flex items-center gap-2">
               <button
-                className="border-umbra-40 flex size-10 cursor-pointer items-center justify-center rounded-full border bg-white disabled:cursor-not-allowed"
+                className="border-umbra-40 flex size-10 cursor-pointer items-center justify-center rounded-full border bg-white hover:bg-red-100 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-white"
                 onClick={() => setQuantity((q) => Math.max(1, q - 1))}
                 disabled={quantity <= 1}
               >
@@ -148,7 +153,7 @@ const WholesaleProductCard = ({ product }) => {
               />
 
               <button
-                className="border-umbra-40 bg-white-40/10 flex size-10 cursor-pointer items-center justify-center rounded-full border backdrop-blur-2xl disabled:cursor-not-allowed"
+                className="border-umbra-40 bg-white-40/10 flex size-10 cursor-pointer items-center justify-center rounded-full border backdrop-blur-2xl hover:bg-green-100 disabled:cursor-not-allowed"
                 onClick={() => setQuantity((q) => q + 1)}
               >
                 <PlusIcon size={14} fill="#000000" />

@@ -86,7 +86,10 @@ const MobileNav = ({ onClose, setCartOpen }) => {
             {topNav('New')}
           </Link>
           <Link href="/terpene-guide" className={'navLinkClass'}>
-            Terpene Guide
+            {topNav('Terpene_Guide')}
+          </Link>
+          <Link href="/terpene-chart" className={'navLinkClass'}>
+            {topNav('Terpene_Chart')}
           </Link>
         </div>
       </div>

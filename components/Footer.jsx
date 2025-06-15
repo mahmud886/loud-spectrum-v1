@@ -1,9 +1,13 @@
+'use client';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
+import { useSelector } from 'react-redux';
 
 const Footer = () => {
   const t = useTranslations('');
+  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+
   return (
     <footer className="bg-umbra-100 text-white md:pt-[80px] md:pb-[50px]">
       <div className="container px-5 md:px-[40px] lg:px-[40px] xl:px-[80px] 2xl:px-[320px]">
@@ -45,14 +49,22 @@ const Footer = () => {
               <div>
                 <h3 className="text-white-40 mb-2 text-[14px] capitalize">{t('Account')}</h3>
                 <ul className="w-full space-y-4">
+                  {isAuthenticated ? (
+                    <li>
+                      <Link href={`/account`} className="footer-text">
+                        {t('My_Account')}
+                      </Link>
+                    </li>
+                  ) : (
+                    <li>
+                      <Link href={`/login`} className="footer-text">
+                        {t('Log_in')}
+                      </Link>
+                    </li>
+                  )}
                   <li>
-                    <Link href={`/login`} className="footer-text">
-                      {t('Log_in')}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href={`/cart`} className="footer-text">
-                      {t('Cart')}
+                    <Link href={`/checkout`} className="footer-text">
+                      {t('Checkout')}
                     </Link>
                   </li>
                 </ul>
@@ -81,7 +93,11 @@ const Footer = () => {
             {/* Buttons */}
             <div className="flex justify-end gap-4">
               <Link
-                href={`/wholesale-registration`}
+                href="/wholesale-registration"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.location.href = '/wholesale-registration#wholesale-form';
+                }}
                 className="main-button-white inline-flex h-[44px] w-[244px] items-center justify-center rounded-full font-normal"
               >
                 {t('Wholesale_Registration')}
@@ -179,14 +195,22 @@ const Footer = () => {
               <div className="mb-4 border-b border-white/20 pb-4">
                 <h3 className="text-white-40 mb-2 text-[14px] capitalize">{t('Account')}</h3>
                 <ul className="w-full space-y-4">
+                  {isAuthenticated ? (
+                    <li>
+                      <Link href={`/account`} className="footer-text">
+                        {t('My_Account')}
+                      </Link>
+                    </li>
+                  ) : (
+                    <li>
+                      <Link href={`/login`} className="footer-text">
+                        {t('Log_in')}
+                      </Link>
+                    </li>
+                  )}
                   <li>
-                    <Link href={`/login`} className="footer-text">
-                      {t('Log_in')}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href={`/cart`} className="footer-text">
-                      {t('Cart')}
+                    <Link href={`/checkout`} className="footer-text">
+                      {t('Checkout')}
                     </Link>
                   </li>
                 </ul>
@@ -214,7 +238,11 @@ const Footer = () => {
               </div>
               <div className="mt-5 flex w-full items-center justify-center">
                 <Link
-                  href={`/wholesale-registration`}
+                  href="/wholesale-registration"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.location.href = '/wholesale-registration#wholesale-form';
+                  }}
                   className="main-button-white inline-flex h-[44px] w-full items-center justify-center rounded-full font-normal"
                 >
                   {t('Wholesale_Registration')}
