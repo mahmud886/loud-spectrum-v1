@@ -1,13 +1,14 @@
 'use client';
+
+import { useAuthToken } from '@/hooks/useAuthToken';
 import { useRouter } from '@/i18n/navigation';
 import { getOrderById } from '@/services/get-order-by-id';
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
 
 const OrderDetailsPage = ({ orderId }) => {
   const [orderDetails, setOrderDetails] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const token = useSelector((state) => state.auth.token);
+  const token = useAuthToken();
   const router = useRouter();
 
   useEffect(() => {
@@ -170,10 +171,10 @@ const OrderDetailsPage = ({ orderId }) => {
       {/* Back to Orders Button */}
       <div className="mb-6 flex items-center justify-between">
         <h1 className="text-umbra-100 font-sans text-[24px] leading-[120%] font-normal">
-          Order Details - {orderDetails?.code}
+          {isLoading ? <div className="h-8 w-64 rounded bg-gray-200"></div> : <>Order Details - {orderDetails?.code}</>}
         </h1>
         <button className="main-button-black rounded-full px-6 py-2 text-white" onClick={() => router.back()}>
-          Back to Orders
+          Back
         </button>
       </div>
 

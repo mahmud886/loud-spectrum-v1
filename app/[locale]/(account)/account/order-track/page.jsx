@@ -3,15 +3,15 @@
 import OrderDetailsByCode from '@/components/account/OrderDetailsByCode';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { useAuthToken } from '@/hooks/useAuthToken';
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
 import { toast } from 'sonner';
 
 export default function OrderTrackPage() {
   const [orderCode, setOrderCode] = useState('');
-  const [showOrderDetails, setShowOrderDetails] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [error, setError] = useState('');
-  const token = useSelector((state) => state.auth.token);
+  const token = useAuthToken();
 
   const handleSearch = () => {
     if (!orderCode.trim()) {
@@ -27,7 +27,11 @@ export default function OrderTrackPage() {
     }
 
     setError('');
-    setShowOrderDetails(true);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -61,11 +65,9 @@ export default function OrderTrackPage() {
         </div>
       </div>
 
-      {showOrderDetails ? (
-        <OrderDetailsByCode orderCode={orderCode} />
-      ) : (
-        <div className="text-center text-gray-500">Your order history appears here.</div>
-      )}
+      <div className="text-center text-gray-500">Your order history appears here.</div>
+
+      <OrderDetailsByCode orderCode={orderCode} token={token} isOpen={isModalOpen} onClose={handleCloseModal} />
     </div>
   );
 }

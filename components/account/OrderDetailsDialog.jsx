@@ -1,14 +1,14 @@
 'use client';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { useAuthToken } from '@/hooks/useAuthToken';
 import { getOrderById } from '@/services/get-order-by-id';
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
 import { toast } from 'sonner';
 
 const OrderDetailsDialog = ({ open, onOpenChange, orderId }) => {
   const [orderDetails, setOrderDetails] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const token = useSelector((state) => state.auth.token);
+  const token = useAuthToken();
 
   useEffect(() => {
     const fetchOrderDetails = async () => {
@@ -178,8 +178,12 @@ const OrderDetailsDialog = ({ open, onOpenChange, orderId }) => {
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="flex max-h-[90vh] w-full flex-col overflow-hidden rounded-lg bg-white p-6 md:h-auto md:max-w-5xl">
         <DialogHeader>
-          <DialogTitle className="text-umbra-100 font-sans text-[24px] leading-[120%] font-normal">
-            {`Order Details - ${orderDetails?.code}`}
+          <DialogTitle className="text-umbra-100 inline-flex font-sans text-[24px] leading-[120%] font-normal">
+            {isLoading ? (
+              <div className="h-8 w-64 rounded bg-gray-200"></div>
+            ) : (
+              <>Order Details - {orderDetails?.code}</>
+            )}
           </DialogTitle>
         </DialogHeader>
         <div className="overflow-auto">
