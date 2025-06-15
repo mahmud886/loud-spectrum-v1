@@ -1,3 +1,4 @@
+'use client';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
@@ -81,7 +82,11 @@ const Footer = () => {
             {/* Buttons */}
             <div className="flex justify-end gap-4">
               <Link
-                href={`/wholesale-registration`}
+                href="/wholesale-registration"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.location.href = '/wholesale-registration#wholesale-form';
+                }}
                 className="main-button-white inline-flex h-[44px] w-[244px] items-center justify-center rounded-full font-normal"
               >
                 {t('Wholesale_Registration')}
@@ -214,7 +219,11 @@ const Footer = () => {
               </div>
               <div className="mt-5 flex w-full items-center justify-center">
                 <Link
-                  href={`/wholesale-registration`}
+                  href="/wholesale-registration"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.location.href = '/wholesale-registration#wholesale-form';
+                  }}
                   className="main-button-white inline-flex h-[44px] w-full items-center justify-center rounded-full font-normal"
                 >
                   {t('Wholesale_Registration')}

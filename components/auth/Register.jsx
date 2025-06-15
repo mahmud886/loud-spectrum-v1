@@ -247,7 +247,11 @@ const Register = () => {
             {isSubmitting ? 'Registering...' : t('registerButton')}
           </button>
           <Link
-            href="/wholesaler-registration"
+            href="/wholesale-registration#wholesale-form"
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.href = '/wholesale-registration#wholesale-form';
+            }}
             type="button"
             className="main-button-white hover:bg-umbra-10 inline-flex w-full items-center justify-center rounded-full border border-black bg-transparent px-6 py-3 text-black transition"
           >

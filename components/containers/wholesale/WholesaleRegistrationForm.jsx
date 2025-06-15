@@ -10,7 +10,7 @@ import { useDispatch } from 'react-redux';
 import { toast } from 'sonner';
 import { z } from 'zod';
 
-const WholesaleRegistrationForm = () => {
+const WholesaleRegistrationForm = ({ id }) => {
   const t = useTranslations('Wholesale');
   const router = useRouter();
   const dispatch = useDispatch();
@@ -123,7 +123,7 @@ const WholesaleRegistrationForm = () => {
   };
 
   return (
-    <div className="container py-[80px]">
+    <div className="container py-[80px]" id={id || 'wholesale-form'}>
       <div className="md:px-0">
         <div className="space-y-12">
           <h2 className="text-umbra-100 font-sans text-[32px] leading-[120%] font-normal md:text-[44px]">

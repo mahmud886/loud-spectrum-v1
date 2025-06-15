@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { useDispatch } from 'react-redux';
 
 const CartItem = ({ item }) => {
-  console.log(item);
   const dispatch = useDispatch();
   return (
     <div className="border-umbra-10 flex items-center gap-4 rounded-md border-1 py-2.5 pr-5 pl-2.5">
@@ -18,17 +17,17 @@ const CartItem = ({ item }) => {
               {item.selectedVolume}
             </p>
             {item?.isRegular && (
-              <p className="text-umbra-100 bg-alive/50 rounded-[10px] px-2 py-1 font-sans text-[12px] leading-[120%] font-normal">
+              <p className="text-umbra-100 bg-alive/50 rounded-[10px] px-2 py-1 font-sans text-[12px] leading-[120%] font-normal capitalize">
                 Regular
               </p>
             )}
             {item?.isWholesale && (
-              <p className="text-umbra-100 rounded-[10px] bg-red-100 px-2 py-1 font-sans text-[12px] leading-[120%] font-normal">
+              <p className="text-umbra-100 rounded-[10px] bg-red-100 px-2 py-1 font-sans text-[12px] leading-[120%] font-normal capitalize">
                 Wholesale
               </p>
             )}
             {item?.flavor && (
-              <p className="text-umbra-100 bg-dank/30 rounded-[10px] px-2 py-1 font-sans text-[12px] leading-[120%] font-normal">
+              <p className="text-umbra-100 bg-dank/30 rounded-[10px] px-2 py-1 font-sans text-[12px] leading-[120%] font-normal capitalize">
                 {item?.flavor}
               </p>
             )}
