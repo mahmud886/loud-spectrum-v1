@@ -18,13 +18,18 @@ const CartItem = ({ item }) => {
               {item.selectedVolume}
             </p>
             {item?.isRegular && (
-              <p className="text-umbra-100 rounded-[10px] bg-green-100 px-2 py-1 font-sans text-[12px] leading-[120%] font-normal">
+              <p className="text-umbra-100 bg-alive/50 rounded-[10px] px-2 py-1 font-sans text-[12px] leading-[120%] font-normal">
                 Regular
               </p>
             )}
             {item?.isWholesale && (
               <p className="text-umbra-100 rounded-[10px] bg-red-100 px-2 py-1 font-sans text-[12px] leading-[120%] font-normal">
                 Wholesale
+              </p>
+            )}
+            {item?.flavor && (
+              <p className="text-umbra-100 bg-dank/30 rounded-[10px] px-2 py-1 font-sans text-[12px] leading-[120%] font-normal">
+                {item?.flavor}
               </p>
             )}
           </div>
