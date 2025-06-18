@@ -1,15 +1,13 @@
 'use client';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { selectAuthToken } from '@/lib/store/slices/authSlice';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
 import { toast } from 'sonner';
 
-const AddAReview = ({ productId }) => {
+const AddAReview = ({ productId, authToken }) => {
   const t = useTranslations('ContactPage');
-  const token = useSelector(selectAuthToken);
+  const token = authToken;
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -46,7 +44,6 @@ const AddAReview = ({ productId }) => {
       toast.error('Please login to submit a review');
       return;
     }
-
     if (validateForm()) {
       setIsSubmitting(true);
       try {
@@ -60,7 +57,9 @@ const AddAReview = ({ productId }) => {
         });
 
         if (!response.ok) {
-          throw new Error('Failed to submit review');
+          const errorData = await response.json();
+          console.log('Error response:', errorData);
+          throw new Error(errorData.message || 'Failed to submit review');
         }
 
         const data = await response.json();
@@ -70,8 +69,10 @@ const AddAReview = ({ productId }) => {
           email: '',
           review: '',
           rating: 0,
+          product_id: productId,
         });
       } catch (error) {
+        console.error('Submit error:', error);
         toast.error('Failed to submit review. Please try again.');
       } finally {
         setIsSubmitting(false);

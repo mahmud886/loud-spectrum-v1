@@ -1,10 +1,13 @@
 'use client';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import Shimmer from '@/components/ui/shimmer';
 import { getProductPriceByVolume } from '@/helpers/get-product-price-by-volume';
 import { getProductPriceRange } from '@/helpers/get-product-price-ranges';
 import { parseProductAttributes } from '@/helpers/product-attributes';
+import { getStarRatingData } from '@/helpers/star-rating';
 import { addToCart } from '@/lib/store/slices/cartSlice';
-import { MinusIcon, PlusIcon, Star } from 'lucide-react';
+import { getProductReviews } from '@/services/get-product-reviews';
+import { MinusIcon, PlusIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
@@ -14,6 +17,8 @@ const ProductDetailsLeftCard = ({ product }) => {
   const [quantity, setQuantity] = useState(1);
   const [selectedVolume, setSelectedVolume] = useState('');
   const [showVolumeError, setShowVolumeError] = useState(false);
+  const [reviews, setReviews] = useState([]);
+  const [reviewsLoading, setReviewsLoading] = useState(true);
   const dispatch = useDispatch();
 
   const t = useTranslations('ProductDetails');
@@ -27,6 +32,26 @@ const ProductDetailsLeftCard = ({ product }) => {
       toast.success(`Selected price: $${selectedPrice.toFixed(2)} for ${selectedVolume}`);
     }
   }, [selectedPrice, selectedVolume]);
+
+  useEffect(() => {
+    const fetchReviews = async () => {
+      if (product?._id) {
+        try {
+          setReviewsLoading(true);
+          const reviewsData = await getProductReviews(product._id);
+          setReviews(reviewsData || []);
+        } catch (error) {
+          console.error('Error fetching product reviews:', error);
+          setReviews([]);
+        } finally {
+          setReviewsLoading(false);
+        }
+      }
+    };
+
+    fetchReviews();
+  }, [product?._id]);
+  const { starComponents } = getStarRatingData(reviews);
 
   const handleAddToCart = () => {
     if (!selectedVolume) {
@@ -49,6 +74,7 @@ const ProductDetailsLeftCard = ({ product }) => {
     setSelectedVolume('');
     setQuantity(1);
   };
+
   return (
     <div className="bg-white-100 text-umbra-100 p-5 md:h-[587px] md:w-[413px]">
       <div className="flex h-full w-full flex-col items-start justify-between gap-5">
@@ -56,18 +82,21 @@ const ProductDetailsLeftCard = ({ product }) => {
           <div className="space-y-5">
             <div className="flex items-center justify-between gap-5">
               <button className="border-alive text-alive rounded-[3px] border-1 px-2 text-[12px] font-normal">
-                {t('CannabisDerived')}
+                {product?.category?.name}
               </button>
-              <p className="text-umbra-100 inline-flex items-center justify-start gap-2 font-mono text-[14px] leading-[130%] font-normal">
-                <span className={'flex items-center justify-start'}>
-                  <Star size={15} fill={'#00000'} />
-                  <Star size={15} fill={'#00000'} />
-                  <Star size={15} fill={'#00000'} />
-                  <Star size={15} fill={'#00000'} />
-                  <Star size={15} fill={'#00000'} />
-                </span>{' '}
-                6 {t('Reviews')}
-              </p>
+              <div className="text-umbra-100 inline-flex items-center justify-start gap-2 font-mono text-[14px] leading-[130%] font-normal">
+                {reviewsLoading ? (
+                  <div className="flex items-center gap-2">
+                    <Shimmer className="h-[15px] w-[75px] rounded" />
+                    <Shimmer className="h-[15px] w-[60px] rounded" />
+                  </div>
+                ) : (
+                  <>
+                    <span className={'flex items-center justify-start'}>{starComponents}</span> {reviews.length}{' '}
+                    {t('Reviews')}
+                  </>
+                )}
+              </div>
             </div>
             <div className="space-y-2">
               <h2 className="text-umbra-100 line-clamp-2 font-sans text-[44px] leading-[120%] font-normal tracking-normal">

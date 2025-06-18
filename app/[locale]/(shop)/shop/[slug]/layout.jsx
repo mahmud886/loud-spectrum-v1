@@ -16,6 +16,14 @@ export async function generateMetadata({ params }) {
     keywords: product?.tag?.join(', ') || '',
     alternates: {
       canonical: `${websiteUrl}/shop/${slug}`,
+      languages: {
+        'en-US': `${websiteUrl}/en/shop/${slug}`,
+        'ja-JP': `${websiteUrl}/jp/shop/${slug}`,
+        'es-ES': `${websiteUrl}/es/shop/${slug}`,
+        'fr-FR': `${websiteUrl}/fr/shop/${slug}`,
+        'de-DE': `${websiteUrl}/de/shop/${slug}`,
+        'ru-RU': `${websiteUrl}/ru/shop/${slug}`,
+      },
     },
     openGraph: {
       title,
