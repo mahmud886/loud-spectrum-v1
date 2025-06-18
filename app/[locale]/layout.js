@@ -75,7 +75,7 @@ export async function generateMetadata({ params }) {
         'es-ES': `${websiteUrl}/es`,
         'fr-FR': `${websiteUrl}/fr`,
         'de-DE': `${websiteUrl}/de`,
-        'ja-JP': `${websiteUrl}/jp`,
+        'ja-JP': `${websiteUrl}/ja`,
         'ru-RU': `${websiteUrl}/ru`,
       },
     },

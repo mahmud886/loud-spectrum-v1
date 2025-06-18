@@ -20,7 +20,7 @@ const ProductGridCard = ({ product }) => {
   const t = useTranslations('TerpeneShop.ProductCard');
 
   const pathname = usePathname();
-  const cleanPath = pathname.replace(/^\/(en|fr|de|es|jp|ru)/, '').replace(/\/$/, '');
+  const cleanPath = pathname.replace(/^\/(en|fr|de|es|ja|ru)/, '').replace(/\/$/, '');
   const isShopPage = cleanPath.startsWith('/shop') || cleanPath.startsWith('/try-sample-pack');
 
   return (

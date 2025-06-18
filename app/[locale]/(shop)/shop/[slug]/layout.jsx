@@ -18,7 +18,7 @@ export async function generateMetadata({ params }) {
       canonical: `${websiteUrl}/shop/${slug}`,
       languages: {
         'en-US': `${websiteUrl}/en/shop/${slug}`,
-        'ja-JP': `${websiteUrl}/jp/shop/${slug}`,
+        'ja-JP': `${websiteUrl}/ja/shop/${slug}`,
         'es-ES': `${websiteUrl}/es/shop/${slug}`,
         'fr-FR': `${websiteUrl}/fr/shop/${slug}`,
         'de-DE': `${websiteUrl}/de/shop/${slug}`,
