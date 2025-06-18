@@ -1,16 +1,16 @@
 'use client';
 
-import { useState } from 'react';
-import { usePathname } from 'next/navigation';
-import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { motion } from 'framer-motion';
 import { ChevronDown, Globe } from 'lucide-react';
-import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
-import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useState } from 'react';
 
 const options = [
   { country: 'English', code: 'en' },
-  { country: 'Japanese', code: 'jp' },
+  { country: 'Japanese', code: 'ja' },
   { country: 'Deutsch', code: 'de' },
   { country: 'Français', code: 'fr' },
   { country: 'Español', code: 'es' },

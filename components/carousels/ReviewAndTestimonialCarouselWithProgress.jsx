@@ -1,7 +1,7 @@
 'use client';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Progress } from '@/components/ui/progress';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 export default function ReviewAndTestimonialCarouselWithProgress({ children }) {
   const [api, setApi] = useState(null);
@@ -33,14 +33,14 @@ export default function ReviewAndTestimonialCarouselWithProgress({ children }) {
         }}
       >
         <CarouselContent className="flex w-full gap-4 md:gap-6">
-          {Array.from({ length: 8 }).map((_, index) => (
+          {React.Children.map(children, (child, index) => (
             <CarouselItem
               key={index}
               className={`pl-0 transition-opacity duration-300 sm:basis-1 md:basis-1/3 ${
                 index === current ? 'opacity-100' : 'opacity-50'
               }`}
             >
-              {children}
+              {child}
             </CarouselItem>
           ))}
         </CarouselContent>

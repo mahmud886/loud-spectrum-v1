@@ -1,13 +1,13 @@
 'use client';
 
+import ProductBuyDialog from '@/components/product/ProductBuyDialog';
+import { Link } from '@/i18n/navigation';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import ProductBuyDialog from '@/components/product/ProductBuyDialog';
 import { useState } from 'react';
-import { Link } from '@/i18n/navigation';
 
 const ProductCard = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -20,7 +20,7 @@ const ProductCard = () => {
   const t = useTranslations('TerpeneShop.ProductCard');
 
   const pathname = usePathname();
-  const cleanPath = pathname.replace(/^\/(en|fr|de|es|jp|ru)/, '').replace(/\/$/, '');
+  const cleanPath = pathname.replace(/^\/(en|fr|de|es|ja|ru)/, '').replace(/\/$/, '');
 
   const isShopPage =
     cleanPath.startsWith('/shop') || cleanPath.startsWith('/try-sample-pack') || cleanPath.startsWith('/account');

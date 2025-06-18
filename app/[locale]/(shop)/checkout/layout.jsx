@@ -14,7 +14,7 @@ const metadataByLocale = {
     title: 'Paiement | Loud Spectrum',
     description: 'Finalisez votre achat en toute sécurité sur Loud Spectrum',
   },
-  jp: {
+  ja: {
     title: 'チェックアウト | Loud Spectrum',
     description: 'Loud Spectrumで安全にお支払いを完了してください',
   },
