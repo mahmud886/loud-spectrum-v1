@@ -46,24 +46,33 @@ export const addNewAddress = async (formData) => {
   try {
     const cookieStore = await cookies();
     const authToken = cookieStore.get('authToken')?.value;
+
+    if (!authToken) {
+      return {
+        success: false,
+        message: 'Authentication token not found',
+      };
+    }
+
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/orders/address`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: authToken,
+        Authorization: `${authToken}`,
       },
       body: JSON.stringify(formData),
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      const errorData = await response.json();
+      throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
     }
 
     const data = await response.json();
     return { success: true, data: data.data };
   } catch (error) {
     console.error('Error adding new address:', error);
-    return { success: false, message: error.message, data: { address: [] } };
+    return { success: false, message: error.message, data: { addresss: [] } };
   }
 };
 
@@ -116,7 +125,7 @@ export const getAddresses = async () => {
       return {
         error: true,
         message: 'Authentication token not found',
-        data: { address: [] },
+        data: { addresss: [] },
       };
     }
 
@@ -136,6 +145,6 @@ export const getAddresses = async () => {
     return { error: false, data: data?.data };
   } catch (error) {
     console.error('Error fetching addresses:', error);
-    return { error: true, message: error.message, data: { address: [] } };
+    return { error: true, message: error.message, data: { addresss: [] } };
   }
 };
