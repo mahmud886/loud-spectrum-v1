@@ -9,17 +9,12 @@ import ProductCart from '@/components/checkout/ProductCart';
 import WireTransferDialog from '@/components/checkout/WireTransferDialog';
 import {
   selectCardFormData,
-  selectOrderSummary,
-  selectSelectedCourier,
   selectSelectedPaymentMethod,
-  selectShippingType,
   selectShowCardDialog,
   selectShowWireDialog,
   selectWireFormData,
   setCardFormField,
-  setSelectedCourier,
   setSelectedPaymentMethod,
-  setShippingType,
   setShowCardDialog,
   setShowWireDialog,
   setWireFormField,
@@ -38,18 +33,6 @@ const CheckoutPage = () => {
   const wireFormData = useSelector(selectWireFormData);
   const showCardDialog = useSelector(selectShowCardDialog);
   const showWireDialog = useSelector(selectShowWireDialog);
-  const selectedCourier = useSelector(selectSelectedCourier);
-  const shippingType = useSelector(selectShippingType);
-  const orderSummary = useSelector(selectOrderSummary);
-
-  // Event handlers
-  const handleCourierChange = (value) => {
-    dispatch(setSelectedCourier(value));
-  };
-
-  const handleShippingTypeChange = (value) => {
-    dispatch(setShippingType(value));
-  };
 
   const handlePaymentMethodChange = (value) => {
     dispatch(setSelectedPaymentMethod(value));
@@ -101,12 +84,7 @@ const CheckoutPage = () => {
         </div>
         <div className="h-auto w-full rounded-[10px] pb-4 shadow-sm md:min-w-[40%]">
           <div className="px-4">
-            <ChooseYourCourier
-              value={selectedCourier}
-              onValueChange={handleCourierChange}
-              selectedShippingType={shippingType}
-              onShippingTypeChange={handleShippingTypeChange}
-            />
+            <ChooseYourCourier />
             <DiscountCoupon />
             <OrderSummary />
             <PaymentMethod value={selectedPaymentMethod} onValueChange={handlePaymentMethodChange} />

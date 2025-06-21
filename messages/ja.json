@@ -81,7 +81,13 @@
         "standard": "標準配送 (5-7営業日)",
         "express": "エクスプレス配送 (2-3営業日)",
         "overnight": "翌日配送 (1営業日)",
-        "free": "無料配送 (10-15営業日)"
+        "free": "無料配送 (10-15営業日)",
+        "standardFlatRate": "標準配送 ($9.95)",
+        "fedex2Day": "FedEx 2 Days",
+        "upsGround": "UPS Ground",
+        "fedexAirHazardous": "FedEx Air Hazardous ($300)",
+        "fedexAirHazardousIntl": "FedEx Air Hazardous International ($350)",
+        "internationalEconomy": "国際経済配送"
       }
     },
 

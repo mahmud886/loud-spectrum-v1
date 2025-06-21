@@ -81,7 +81,13 @@
         "standard": "Livraison standard (5-7 jours ouvrés)",
         "express": "Livraison express (2-3 jours ouvrés)",
         "overnight": "Livraison en 24 heures (1 jour ouvré)",
-        "free": "Livraison gratuite (10-15 jours ouvrés)"
+        "free": "Livraison gratuite (10-15 jours ouvrés)",
+        "standardFlatRate": "Livraison standard ($9.95)",
+        "fedex2Day": "FedEx 2 Jours",
+        "upsGround": "UPS Ground",
+        "fedexAirHazardous": "FedEx Air Hazardous ($300)",
+        "fedexAirHazardousIntl": "FedEx Air Hazardous International ($350)",
+        "internationalEconomy": "International Economy"
       }
     },
 
