@@ -9,7 +9,7 @@ const ProductCartItems = ({ item }) => {
   const t = useTranslations('CheckoutPage.ProductCart');
   const dispatch = useDispatch();
   return (
-    <div className="border-umbra-10 flex items-center gap-4 rounded-md border-1 py-2.5 pr-5 pl-2.5">
+    <div className="border-umbra-10 bg-umbra-5 flex items-center gap-4 rounded-md border-1 py-2.5 pr-5 pl-2.5">
       <Image
         src="/assets/images/cart-item.jpg"
         alt={item.name}

@@ -34,7 +34,7 @@ const ChooseYourCourier = ({ value, onValueChange, selectedShippingType, onShipp
   ];
 
   return (
-    <div className="space-y-4">
+    <div className="border-umbra-10 my-4 space-y-4 rounded-[10px] border p-4">
       {/* Courier Selection */}
       <label className="text-umbra-100 mb-1 block font-sans text-[16px] font-normal">{t('label')}</label>
 
