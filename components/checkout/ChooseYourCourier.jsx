@@ -48,11 +48,11 @@ const ChooseYourCourier = ({ value, onValueChange, selectedShippingType, onShipp
               'hover:border-umbra-40 data-[state=checked]:bg-stardust data-[state=checked]:border-transparent',
             )}
           >
-            <CheckCircle2 className="absolute top-2 right-2 h-5 w-5 text-green-600 opacity-0 transition-opacity group-data-[state=checked]:opacity-100" />
+            <CheckCircle2 className="absolute top-0 right-0 h-5 w-5 text-green-600 opacity-0 transition-opacity group-data-[state=checked]:opacity-100" />
 
             <div className="flex flex-col items-start">
               <span className="text-umbra-100 text-left font-sans text-[20px] font-normal">{courier.name}</span>
-              <p className="text-umbra-60 text-left text-[14px]">{courier.description}</p>
+              <p className="text-umbra-60 text-left text-[12px]">{courier.description}</p>
             </div>
 
             <div className="relative ml-auto h-12 w-20">
