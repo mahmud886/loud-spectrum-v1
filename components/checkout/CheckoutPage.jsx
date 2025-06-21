@@ -7,79 +7,88 @@ import OrderSummary from '@/components/checkout/OrderSummary';
 import PaymentMethod from '@/components/checkout/PaymentMethod';
 import ProductCart from '@/components/checkout/ProductCart';
 import WireTransferDialog from '@/components/checkout/WireTransferDialog';
+import {
+  selectCardFormData,
+  selectOrderSummary,
+  selectSelectedCourier,
+  selectSelectedPaymentMethod,
+  selectShippingType,
+  selectShowCardDialog,
+  selectShowWireDialog,
+  selectWireFormData,
+  setCardFormField,
+  setSelectedCourier,
+  setSelectedPaymentMethod,
+  setShippingType,
+  setShowCardDialog,
+  setShowWireDialog,
+  setWireFormField,
+} from '@/lib/store/slices/checkoutSlice';
 import { useTranslations } from 'next-intl';
-import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import ChooseYourCourier from './ChooseYourCourier';
 
 const CheckoutPage = () => {
-  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState('');
-
-  // Control card dialog open/close
-  const [showCardDialog, setShowCardDialog] = useState(true);
-
-  // Card form state
-  const [cardFormData, setCardFormData] = useState({
-    cardHolderName: '',
-    expiry: '',
-    securityCode: '',
-    postalCode: '',
-  });
-
-  const [showWireDialog, setShowWireDialog] = useState(false);
-  const [wireFormData, setWireFormData] = useState({
-    accountHolderName: '',
-    accountNumber: '',
-    transactionId: '',
-  });
-
-  const [selectedCourier, setSelectedCourier] = useState('fedex');
-
-  const [shippingType, setShippingType] = useState('');
-
+  const dispatch = useDispatch();
   const t = useTranslations('CheckoutPage.ShippingAndBillingAddress');
+
+  // Redux selectors
+  const selectedPaymentMethod = useSelector(selectSelectedPaymentMethod);
+  const cardFormData = useSelector(selectCardFormData);
+  const wireFormData = useSelector(selectWireFormData);
+  const showCardDialog = useSelector(selectShowCardDialog);
+  const showWireDialog = useSelector(selectShowWireDialog);
+  const selectedCourier = useSelector(selectSelectedCourier);
+  const shippingType = useSelector(selectShippingType);
+  const orderSummary = useSelector(selectOrderSummary);
+
+  // Event handlers
   const handleCourierChange = (value) => {
-    setSelectedCourier(value);
+    dispatch(setSelectedCourier(value));
   };
 
   const handleShippingTypeChange = (value) => {
-    setShippingType(value);
+    dispatch(setShippingType(value));
   };
 
-  // Handle input change
+  const handlePaymentMethodChange = (value) => {
+    dispatch(setSelectedPaymentMethod(value));
+  };
+
+  // Handle card input change
   const handleCardInputChange = (e) => {
     const { name, value } = e.target;
-    setCardFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    dispatch(setCardFormField({ name, value }));
   };
 
+  // Handle wire form input change
   const handleWireFormChange = (e) => {
     const { name, value } = e.target;
-    setWireFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    dispatch(setWireFormField({ name, value }));
   };
 
-  // Submit handler for  debit / credit card form
+  // Submit handler for debit / credit card form
   const handleCardSubmit = () => {
     console.log('Card Info Submitted:', cardFormData);
-    setShowCardDialog(false);
+    dispatch(setShowCardDialog(false));
+    // Here you would typically process the payment
   };
 
-  // Submit handler for wire transfer input change
+  // Submit handler for wire transfer
   const handleWireSubmit = () => {
     console.log('Wire info Submitted:', wireFormData);
-    setShowCardDialog(false);
+    dispatch(setShowWireDialog(false));
+    // Here you would typically process the wire transfer
   };
 
-  // Open dialog when selecting credit card
-  useEffect(() => {
-    setShowCardDialog(selectedPaymentMethod === 'debit-credit-card');
-    setShowWireDialog(selectedPaymentMethod === 'ach-wire-transfer');
-    console.log('Selected Payment Method:', selectedPaymentMethod);
-  }, [selectedPaymentMethod]);
+  // Handle dialog close
+  const handleCardDialogClose = () => {
+    dispatch(setShowCardDialog(false));
+  };
+
+  const handleWireDialogClose = () => {
+    dispatch(setShowWireDialog(false));
+  };
 
   return (
     <>
@@ -99,8 +108,8 @@ const CheckoutPage = () => {
               onShippingTypeChange={handleShippingTypeChange}
             />
             <DiscountCoupon />
-            <OrderSummary subtotal={120} shipping={0} discount={10} />
-            <PaymentMethod value={selectedPaymentMethod} onValueChange={setSelectedPaymentMethod} />
+            <OrderSummary />
+            <PaymentMethod value={selectedPaymentMethod} onValueChange={handlePaymentMethodChange} />
             <ConfirmPayment />
           </div>
         </div>
@@ -109,16 +118,16 @@ const CheckoutPage = () => {
       {/* Show card form dialog */}
       <DebitCreditCardDialog
         open={showCardDialog}
-        onClose={() => setShowCardDialog(false)}
+        onClose={handleCardDialogClose}
         formData={cardFormData}
         onChange={handleCardInputChange}
         onSubmit={handleCardSubmit}
       />
 
-      {/* Show wire transfer card*/}
+      {/* Show wire transfer dialog */}
       <WireTransferDialog
         open={showWireDialog}
-        onClose={() => setShowWireDialog(false)}
+        onClose={handleWireDialogClose}
         formData={wireFormData}
         onChange={handleWireFormChange}
         onSubmit={handleWireSubmit}
