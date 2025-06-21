@@ -6,7 +6,6 @@ import DiscountCoupon from '@/components/checkout/DiscountCoupon';
 import OrderSummary from '@/components/checkout/OrderSummary';
 import PaymentMethod from '@/components/checkout/PaymentMethod';
 import ProductCart from '@/components/checkout/ProductCart';
-import ShippingAndBillingAddress from '@/components/checkout/ShippingAndBillingAddress';
 import WireTransferDialog from '@/components/checkout/WireTransferDialog';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
@@ -89,7 +88,7 @@ const CheckoutPage = () => {
           <div className="px-4">
             <ProductCart />
           </div>
-          <ShippingAndBillingAddress />
+          {/* <ShippingAndBillingAddress /> */}
         </div>
         <div className="h-auto w-full rounded-[10px] pb-4 shadow-sm md:min-w-[40%]">
           <div className="px-4">

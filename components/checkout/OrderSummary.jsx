@@ -1,11 +1,15 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { useSelector } from 'react-redux';
 
 const OrderSummary = ({ subtotal, shipping, discount }) => {
+  const cartItems = useSelector((state) => state.cart.items);
   const t = useTranslations('CheckoutPage.OrderSummary');
   const isFreeShipping = shipping === 0 || shipping === 'free';
   const total = subtotal + (isFreeShipping ? 0 : shipping) - discount;
+
+  console.log(cartItems);
 
   return (
     <div className="border-umbra-10 mt-4 space-y-5 rounded-[10px] border-1 p-4">
