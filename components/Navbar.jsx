@@ -3,6 +3,7 @@
 import CartDrawer from '@/components/cart/CartDrawer';
 import MenuButton from '@/components/navbar/MenuButton';
 import TopNav from '@/components/TopNav';
+import { useAuthToken } from '@/hooks/useAuthToken';
 import { Link, usePathname, useRouter } from '@/i18n/navigation';
 import { logout } from '@/lib/store/slices/authSlice';
 import { LogInIcon, ShoppingCartIcon, UserIcon } from 'lucide-react';
@@ -18,7 +19,7 @@ const Navbar = ({ locale }) => {
   const [cartOpen, setCartOpen] = useState(false);
 
   const cartItems = useSelector((state) => state.cart.items);
-  const user = useSelector((state) => state.auth.user);
+  const authToken = useAuthToken();
   const dispatch = useDispatch();
   const pathname = usePathname();
   const t = useTranslations('');
@@ -103,7 +104,7 @@ const Navbar = ({ locale }) => {
           </Link>
 
           <div className="flex items-center gap-4">
-            {user ? (
+            {authToken ? (
               <Link
                 href="/account"
                 className={`mx-[5px] flex items-center gap-2 font-sans text-[20px] font-normal transition-colors duration-300 ease-in-out md:flex ${
