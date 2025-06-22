@@ -50,7 +50,7 @@ const upsData = {
   },
 };
 
-export const getUpsInformation = async (payload) => {
+export const getUpsInformations = async (payload) => {
   // const upsData = {
   // 	Shipment: {
   // 		Shipper: {
@@ -108,7 +108,7 @@ export const getUpsInformation = async (payload) => {
   try {
     const cookieStore = await cookies();
     const authToken = cookieStore.get('authToken')?.value;
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/ups-info`, {
+    const response = await fetch(`http://127.0.0.1:4000/ups-info`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
