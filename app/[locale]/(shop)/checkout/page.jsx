@@ -1,5 +1,11 @@
 import CheckoutPage from '@/components/checkout/CheckoutPage';
 
-export default function Checkout() {
-  return <CheckoutPage />;
-}
+const Checkout = async () => {
+  return (
+    <>
+      <CheckoutPage />
+    </>
+  );
+};
+
+export default Checkout;
