@@ -1,6 +1,7 @@
 'use client';
 
 import CloseButton from '@/components/navbar/CloseButton';
+import { useAuthToken } from '@/hooks/useAuthToken';
 import { Link } from '@/i18n/navigation';
 import { LogInIcon, ShoppingCartIcon, UserIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
@@ -8,13 +9,13 @@ import { useSelector } from 'react-redux';
 
 const TopNavRight = ({ onClose, setCartOpen }) => {
   const cartItems = useSelector((state) => state.cart.items);
-  const user = useSelector((state) => state.auth.user);
+  const authToken = useAuthToken();
   const t = useTranslations('Navbar');
   const topNav = t.raw('TopNav');
   return (
     <div className="flex h-full flex-col justify-between">
       <div className="flex w-full items-center justify-end gap-4">
-        {user ? (
+        {authToken ? (
           <Link
             href="/account"
             className={`hover:text-umbra-40 text-[#191919]' } mx-[5px] flex items-center gap-2 font-sans text-[20px] font-normal transition-colors duration-300 ease-in-out md:flex`}
