@@ -83,7 +83,7 @@ export const getFedexInformations = async () => {
   try {
     const cookieStore = await cookies();
     const authToken = cookieStore.get('authToken')?.value;
-    const response = await fetch(`http://127.0.0.1:4000/fedx-info`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/fedx-info`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

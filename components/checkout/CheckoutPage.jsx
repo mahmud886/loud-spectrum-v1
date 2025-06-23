@@ -22,6 +22,7 @@ import {
 import { useTranslations } from 'next-intl';
 import { useDispatch, useSelector } from 'react-redux';
 import ChooseYourCourier from './ChooseYourCourier';
+import ShippingAndBillingAddress from './ShippingAndBillingAddress';
 
 const CheckoutPage = () => {
   const dispatch = useDispatch();
@@ -80,7 +81,7 @@ const CheckoutPage = () => {
           <div className="px-4">
             <ProductCart />
           </div>
-          {/* <ShippingAndBillingAddress /> */}
+          <ShippingAndBillingAddress />
         </div>
         <div className="h-auto w-full rounded-[10px] pb-4 shadow-sm md:min-w-[40%]">
           <div className="px-4">

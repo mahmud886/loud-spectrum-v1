@@ -22,7 +22,7 @@ const ProductCart = () => {
       </div>
 
       {/* Cart Items */}
-      <ScrollArea className="max-h-[390px] space-y-4 pr-4">
+      <ScrollArea className="max-h-[390px] space-y-4 overflow-y-auto pr-4">
         {cartItems.length === 0 ? (
           <div className="flex h-[370px] w-full flex-col items-center justify-center">
             <ShoppingCartIcon size={100} className="text-umbra-40" />

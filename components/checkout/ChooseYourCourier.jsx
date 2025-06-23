@@ -53,8 +53,12 @@ const ChooseYourCourier = () => {
   // Helper functions based on flowchart logic
   const isWholesaler = () => user?.role === 'wholesaler';
   const isCustomer = () => user?.role === 'customer' || !user?.role;
-  const isInternational = () => shippingAddress?.country && shippingAddress.country !== 'US';
-  const isCaliforniaUS = () => shippingAddress?.country === 'US' && shippingAddress?.state === 'CA';
+  const isInternational = () =>
+    (shippingAddress?.country && shippingAddress.country.toLowerCase() !== 'usa') ||
+    shippingAddress?.country.toLowerCase() !== 'usa';
+  const isCaliforniaUS = () =>
+    (shippingAddress?.country.toLowerCase() === 'usa' && shippingAddress?.province.toLowerCase() === 'ca') ||
+    (shippingAddress?.country.toLowerCase() === 'usa' && shippingAddress?.province.toLowerCase() === 'ca');
 
   // Calculate and apply tax based on flowchart logic
   const calculateAndApplyTax = () => {
@@ -341,7 +345,7 @@ const ChooseYourCourier = () => {
         <div className="rounded-[10px] border border-purple-200 bg-purple-50 p-3">
           <p className="text-sm text-purple-800">
             <span className="font-medium">User Type:</span> {isWholesaler() ? 'Wholesaler' : 'Customer'} |
-            <span className="ml-2 font-medium">Destination:</span> {isInternational() ? 'International' : 'US'}
+            <span className="ml-2 font-medium">Destination:</span> {isInternational() ? 'International' : 'USA'}
             {isCaliforniaUS() && <span className="ml-2 text-xs">(CA - Sales Tax: 7.75%)</span>}
             {!shippingAddress?.country && (
               <span className="ml-2 text-xs text-red-500">(Address not set - initializing...)</span>
@@ -438,8 +442,8 @@ const ChooseYourCourier = () => {
             Debug: Volume: {totalVolume}ml | Courier: {selectedCourier} | Shipping: {selectedShippingType}
           </p>
           <p>
-            User: {user?.role || 'guest'} | Country: {shippingAddress?.country || 'not set'} | State:{' '}
-            {shippingAddress?.state || 'not set'}
+            User: {user?.role || 'guest'} | Country: {shippingAddress?.country || 'not set'} | Province:{' '}
+            {shippingAddress?.province || 'not set'} | Postal Code: {shippingAddress?.postalCode || 'not set'}
           </p>
           <p>
             International: {isInternational() ? 'Yes' : 'No'} | California: {isCaliforniaUS() ? 'Yes' : 'No'}

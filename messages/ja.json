@@ -87,7 +87,8 @@
         "upsGround": "UPS Ground",
         "fedexAirHazardous": "FedEx Air Hazardous ($300)",
         "fedexAirHazardousIntl": "FedEx Air Hazardous International ($350)",
-        "internationalEconomy": "国際経済配送"
+        "internationalEconomy": "国際経済配送",
+        "noOptionsAvailable": "配送オプションがありません"
       }
     },
 
