@@ -23,6 +23,8 @@ import { useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { getDimensionsByVolume } from '@/helpers/get-dimentions-by-volume';
+import { getWeightByVolume } from '@/helpers/get-weight-by-volume';
 import { selectCurrentUser } from '@/lib/store/slices/authSlice';
 import { getFedexInformations } from '@/services/getFedexInformations';
 import { getUpsInformations } from '@/services/getUpsInformations';
@@ -40,6 +42,7 @@ const ChooseYourCourier = () => {
   const t = useTranslations('CheckoutPage.CourierSelection');
 
   // Redux selectors
+
   const selectedCourier = useSelector(selectSelectedCourier);
   const selectedShippingType = useSelector(selectShippingType);
   const orderSummary = useSelector(selectOrderSummary);
@@ -49,6 +52,10 @@ const ChooseYourCourier = () => {
 
   // Get total volume from order summary
   const totalVolume = orderSummary.totalVolume;
+  const totalWeightInPounds = getWeightByVolume(totalVolume);
+  const dimensions = getDimensionsByVolume(totalVolume);
+  const countryCode = shippingAddress?.country;
+  const postalCode = shippingAddress?.postalCode;
 
   // Helper functions based on flowchart logic
   const isWholesaler = () => user?.role === 'wholesaler';
@@ -239,12 +246,19 @@ const ChooseYourCourier = () => {
 
     try {
       let response;
-
+      // Prepare shipping payload
+      let shippingPayload = {
+        dimensions,
+        totalWeightInPounds,
+        originalType: originalType,
+        countryCode,
+        postalCode,
+      };
       // Call appropriate API based on shipping type
       if (originalType === 'UPS_GROUND') {
-        response = await getUpsInformations();
+        response = await getUpsInformations(shippingPayload);
       } else if (originalType === 'FEDEX_2_DAY' || originalType === 'INTERNATIONAL_ECONOMY') {
-        response = await getFedexInformations();
+        response = await getFedexInformations(shippingPayload);
       }
 
       if (response && !response.error && response.data) {

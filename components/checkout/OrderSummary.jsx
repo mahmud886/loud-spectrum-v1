@@ -17,8 +17,6 @@ const OrderSummary = () => {
   const discountCoupon = useSelector(selectDiscountCoupon);
   const t = useTranslations('CheckoutPage.OrderSummary');
 
-  console.log(cartItems);
-
   // Calculate cart totals from cart items
   useEffect(() => {
     if (cartItems && cartItems.length > 0) {
