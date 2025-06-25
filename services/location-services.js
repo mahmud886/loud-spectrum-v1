@@ -11,10 +11,9 @@ export const getCountries = async () => {
         accept: 'application/json',
         'X-CSCAPI-KEY': process.env.NEXT_PUBLIC_COUNTRY_STATE_CITY_API_KEY,
       },
-      cache: 'force-cache',
     });
 
-    console.log(response);
+    // console.log(response);
 
     if (!response.ok) {
       throw new Error('Failed to fetch countries');
@@ -39,10 +38,9 @@ export const getStates = async (countryCode) => {
         accept: 'application/json',
         'X-CSCAPI-KEY': process.env.NEXT_PUBLIC_COUNTRY_STATE_CITY_API_KEY,
       },
-      cache: 'force-cache',
     });
 
-    console.log(response);
+    // console.log(response);
 
     if (!response.ok) {
       throw new Error('Failed to fetch states');
@@ -68,10 +66,9 @@ export const getCities = async (countryCode, stateCode) => {
         accept: 'application/json',
         'X-CSCAPI-KEY': process.env.NEXT_PUBLIC_COUNTRY_STATE_CITY_API_KEY,
       },
-      cache: 'force-cache',
     });
 
-    console.log(response);
+    // console.log(response);
 
     if (!response.ok) {
       throw new Error('Failed to fetch cities');
