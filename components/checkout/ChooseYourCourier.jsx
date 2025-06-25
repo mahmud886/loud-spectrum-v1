@@ -53,23 +53,38 @@ const ChooseYourCourier = () => {
   // Helper functions based on flowchart logic
   const isWholesaler = () => user?.role === 'wholesaler';
   const isCustomer = () => user?.role === 'customer' || !user?.role;
-  const isInternational = () =>
-    (shippingAddress?.country && shippingAddress.country.toLowerCase() !== 'usa') ||
-    shippingAddress?.country.toLowerCase() !== 'usa';
-  const isCaliforniaUS = () =>
-    (shippingAddress?.country.toLowerCase() === 'usa' && shippingAddress?.province.toLowerCase() === 'ca') ||
-    (shippingAddress?.country.toLowerCase() === 'usa' && shippingAddress?.province.toLowerCase() === 'ca');
+  const isInternational = () => {
+    const country = shippingAddress?.country?.toLowerCase();
+    return country && country !== 'us' && country !== 'usa';
+  };
+  const isCaliforniaUS = () => {
+    const country = shippingAddress?.country?.toLowerCase();
+    const province = shippingAddress?.province?.toLowerCase();
+
+    // Handle multiple possible US country codes
+    const isUS = country === 'us' || country === 'usa';
+    // Handle multiple possible California state codes
+    const isCA = province === 'ca' || province === 'california';
+
+    return isUS && isCA;
+  };
 
   // Calculate and apply tax based on flowchart logic
   const calculateAndApplyTax = () => {
     if (!shippingAddress?.country) {
-      console.log('No shipping address set, skipping tax calculation');
       return;
     }
 
-    if (isCaliforniaUS() && orderSummary.subtotal > 0) {
+    const country = shippingAddress?.country?.toLowerCase();
+    const province = shippingAddress?.province?.toLowerCase();
+    const isUS = country === 'us' || country === 'usa';
+    const isCA = province === 'ca' || province === 'california';
+    const isCaliforniaUSResult = isUS && isCA;
+    const subtotal = orderSummary.subtotal;
+
+    if (isCaliforniaUSResult && subtotal > 0) {
       // Apply 7.75% sales tax for California
-      const taxAmount = orderSummary.subtotal * 0.0775;
+      const taxAmount = subtotal * 0.0775;
       dispatch(setTax(taxAmount));
     } else {
       dispatch(setTax(0));
@@ -78,13 +93,11 @@ const ChooseYourCourier = () => {
 
   // Apply tax calculation when relevant factors change
   useEffect(() => {
-    console.log('Tax calculation effect triggered');
     calculateAndApplyTax();
-  }, [orderSummary.subtotal, shippingAddress?.country, shippingAddress?.state, dispatch]);
+  }, [orderSummary.subtotal, shippingAddress?.country, shippingAddress?.province, dispatch]);
 
   // Initial tax calculation on component mount
   useEffect(() => {
-    console.log('Initial tax calculation on mount');
     calculateAndApplyTax();
   }, []);
 
@@ -186,7 +199,7 @@ const ChooseYourCourier = () => {
 
       return { value: displayValue, label, cost, originalType: type };
     });
-  }, [totalVolume, selectedCourier, t, user?.role, shippingAddress?.country, shippingAddress?.state]);
+  }, [totalVolume, selectedCourier, t, user?.role, shippingAddress?.country, shippingAddress?.province]);
 
   // Get display cost for shipping type (dynamic or default)
   const getDisplayCost = (shippingType) => {
@@ -230,10 +243,8 @@ const ChooseYourCourier = () => {
       // Call appropriate API based on shipping type
       if (originalType === 'UPS_GROUND') {
         response = await getUpsInformations();
-        console.log('response ups', response);
       } else if (originalType === 'FEDEX_2_DAY' || originalType === 'INTERNATIONAL_ECONOMY') {
         response = await getFedexInformations();
-        console.log('response fedex', response);
       }
 
       if (response && !response.error && response.data) {
@@ -264,12 +275,10 @@ const ChooseYourCourier = () => {
       if (shippingType === 'UPS_GROUND') {
         // UPS API response structure
         const upsCost = apiData?.data?.RateResponse?.RatedShipment?.[0]?.TotalCharges?.MonetaryValue;
-        console.log('upsCost', upsCost);
         return upsCost ? parseFloat(upsCost) : null;
       } else {
         // FedEx API response structure
         const fedexCost = apiData?.data?.output?.rateReplyDetails?.[0]?.ratedShipmentDetails?.[0]?.totalNetCharge;
-        console.log('fedexCost', fedexCost);
         return fedexCost ? parseFloat(fedexCost) : null;
       }
     } catch (error) {

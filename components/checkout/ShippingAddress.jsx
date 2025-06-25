@@ -60,27 +60,26 @@ const ShippingAddress = () => {
     fetchStates();
   }, [shippingAddress.country]);
 
-  // useEffect(() => {
-  //   const fetchCities = async () => {
-  //     if (!shippingAddress.country || !shippingAddress.province) {
-  //       setCities([]);
-  //       return;
-  //     }
-  //     try {
-  //       const data = await getCities(shippingAddress.country, shippingAddress.province);
-  //       console.log('city data', data);
-  //       setCities(
-  //         data.map((city) => ({
-  //           value: city.name,
-  //           label: city.name,
-  //         })),
-  //       );
-  //     } catch (error) {
-  //       toast.error('Failed to load cities');
-  //     }
-  //   };
-  //   fetchCities();
-  // }, [shippingAddress.country, shippingAddress.province]);
+  useEffect(() => {
+    const fetchCities = async () => {
+      if (!shippingAddress.country || !shippingAddress.province) {
+        setCities([]);
+        return;
+      }
+      try {
+        const data = await getCities(shippingAddress.country, shippingAddress.province);
+        setCities(
+          data.map((city) => ({
+            value: city.name,
+            label: city.name,
+          })),
+        );
+      } catch (error) {
+        toast.error('Failed to load cities');
+      }
+    };
+    fetchCities();
+  }, [shippingAddress.country, shippingAddress.province]);
 
   const handleShippingAddressChange = (e) => {
     dispatch(
@@ -111,16 +110,16 @@ const ShippingAddress = () => {
     setIsCustomCity(false);
   };
 
-  // const handleCitySelectChange = (name, value) => {
-  //   dispatch(
-  //     updateShippingAddress({
-  //       ...shippingAddress,
-  //       [name]: value,
-  //     }),
-  //   );
-  //   setOpenCity(false);
-  //   setIsCustomCity(false);
-  // };
+  const handleCitySelectChange = (name, value) => {
+    dispatch(
+      updateShippingAddress({
+        ...shippingAddress,
+        [name]: value,
+      }),
+    );
+    setOpenCity(false);
+    setIsCustomCity(false);
+  };
 
   const handleCustomCityInputChange = (name, value) => {
     dispatch({
@@ -247,35 +246,34 @@ const ShippingAddress = () => {
         {/* City */}
         <div>
           <label className="input-label">{t('cityLabel')}</label>
-
-          {/*{cities?.length > 0 ? (*/}
-          {/*  <Select*/}
-          {/*    value={shippingAddress?.province || ''}*/}
-          {/*    onValueChange={(value) => handleCitySelectChange('province', value)}*/}
-          {/*    required*/}
-          {/*  >*/}
-          {/*    <SelectTrigger className="bg-umbra-5 hover:bg-umbra-10 text-umbra-100 min-h-[48px] w-full rounded-[10px] px-4 py-2 font-mono text-[16px] font-normal">*/}
-          {/*      <SelectValue placeholder={t('provincePlaceholder')} />*/}
-          {/*    </SelectTrigger>*/}
-          {/*    <SelectContent className="text-umbra-100 font-mono text-[16px]">*/}
-          {/*      {cities.map((city) => (*/}
-          {/*        <SelectItem key={city.value} value={city.value}>*/}
-          {/*          {city.label}*/}
-          {/*        </SelectItem>*/}
-          {/*      ))}*/}
-          {/*    </SelectContent>*/}
-          {/*  </Select>*/}
-          {/*) : (*/}
-          <input
-            type="text"
-            name="city"
-            value={shippingAddress?.city || ''}
-            onChange={handleCustomCityInputChange}
-            placeholder={t('cityPlaceholder')}
-            className="input-field"
-            required
-          />
-          {/*)}*/}
+          {cities?.length > 0 ? (
+            <Select
+              value={shippingAddress?.city || ''}
+              onValueChange={(value) => handleCitySelectChange('city', value)}
+              required
+            >
+              <SelectTrigger className="bg-umbra-5 hover:bg-umbra-10 text-umbra-100 min-h-[48px] w-full rounded-[10px] px-4 py-2 font-mono text-[16px] font-normal">
+                <SelectValue placeholder={t('cityPlaceholder')} />
+              </SelectTrigger>
+              <SelectContent className="text-umbra-100 font-mono text-[16px]">
+                {cities.map((city) => (
+                  <SelectItem key={city.value} value={city.value}>
+                    {city.label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          ) : (
+            <input
+              type="text"
+              name="city"
+              value={shippingAddress?.city || ''}
+              onChange={handleShippingAddressChange}
+              placeholder={t('cityPlaceholder')}
+              className="input-field"
+              required
+            />
+          )}
         </div>
 
         {/* Postal Code */}
