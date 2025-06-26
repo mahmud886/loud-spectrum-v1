@@ -31,14 +31,14 @@ const PaymentMethod = ({ value, onValueChange }) => {
               type="button"
               onClick={() => handleChange(methodKey)}
               className={cn(
-                'group relative flex cursor-pointer items-center justify-between gap-4 rounded-[10px] border px-4 py-2 transition-all',
+                'group relative flex min-h-[80px] cursor-pointer items-center justify-between gap-4 rounded-[10px] border px-4 py-2 transition-all',
                 'hover:border-umbra-40',
                 isChecked ? 'bg-stardust border-transparent' : 'border-umbra-10',
               )}
             >
               <CheckCircle2
                 className={cn(
-                  'absolute top-2 right-2 h-5 w-5 text-green-600 transition-opacity',
+                  'absolute top-0 right-0 h-5 w-5 text-green-600 transition-opacity',
                   isChecked ? 'opacity-100' : 'opacity-0',
                 )}
               />

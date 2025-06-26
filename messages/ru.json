@@ -83,7 +83,14 @@
         "standard": "Стандартная доставка (5-7 рабочих дней)",
         "express": "Экспресс-доставка (2-3 рабочих дня)",
         "overnight": "Доставка на следующий день (1 рабочий день)",
-        "free": "Бесплатная доставка (10-15 рабочих дней)"
+        "free": "Бесплатная доставка (10-15 рабочих дней)",
+        "standardFlatRate": "Стандартная доставка ($9.95)",
+        "fedex2Day": "FedEx 2 Days",
+        "upsGround": "UPS Ground",
+        "fedexAirHazardous": "FedEx Air Hazardous ($300)",
+        "fedexAirHazardousIntl": "FedEx Air Hazardous International ($350)",
+        "internationalEconomy": "Международный экономический",
+        "noOptionsAvailable": "Нет доступных способов доставки"
       }
     },
 
