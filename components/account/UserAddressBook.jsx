@@ -4,23 +4,36 @@ import { getAddresses, updateAddress } from '@/app/actions/user-actions';
 import AddAddressDialog from '@/components/account/AddAddressDialog';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
+import {
+  addUserAddress,
+  selectUserAddresses,
+  setUserAddresses,
+  updateUserAddress as updateUserAddressAction,
+} from '@/lib/store/slices/authSlice';
 import { Edit } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'sonner';
 
 export default function UserAddressBook({ userAddressBook }) {
-  // Use the correct property name 'addresss' (with double 's')
-  const initialAddresses = userAddressBook?.addresss || [];
-
-  const [addresses, setAddresses] = useState(initialAddresses);
+  const dispatch = useDispatch();
+  const addresses = useSelector(selectUserAddresses);
   const [isLoading, setIsLoading] = useState(false);
   const [editingAddress, setEditingAddress] = useState(null);
 
+  // Initialize addresses from props if Redux store is empty
+  useEffect(() => {
+    if (userAddressBook?.addresss && addresses.length === 0) {
+      dispatch(setUserAddresses(userAddressBook.addresss));
+    }
+  }, [userAddressBook, addresses.length, dispatch]);
+
   const handleSaveAddress = (newAddress) => {
-    setAddresses([...addresses, newAddress]);
+    dispatch(addUserAddress(newAddress));
   };
 
   const handleUpdateAddress = (updatedAddress) => {
+    dispatch(updateUserAddressAction(updatedAddress));
     // Refresh addresses from server to get the latest data
     refreshAddresses();
     setEditingAddress(null);
@@ -32,7 +45,7 @@ export default function UserAddressBook({ userAddressBook }) {
       if (!result.error) {
         // Use the correct property name 'addresss'
         const fetchedAddresses = result.data?.addresss || [];
-        setAddresses(fetchedAddresses);
+        dispatch(setUserAddresses(fetchedAddresses));
       }
     } catch (error) {
       console.error('Error refreshing addresses:', error);
@@ -51,6 +64,8 @@ export default function UserAddressBook({ userAddressBook }) {
         // Update all current default addresses to not be default
         for (const addr of currentDefaultAddresses) {
           await updateAddress(addr._id, { is_default: false });
+          // Update Redux store
+          dispatch(updateUserAddressAction({ ...addr, is_default: false }));
         }
       }
 
@@ -58,6 +73,12 @@ export default function UserAddressBook({ userAddressBook }) {
       const result = await updateAddress(addressId, { is_default: checked });
 
       if (result.success) {
+        // Update the specific address in Redux store
+        const addressToUpdate = addresses.find((addr) => addr._id === addressId);
+        if (addressToUpdate) {
+          dispatch(updateUserAddressAction({ ...addressToUpdate, is_default: checked }));
+        }
+
         // Refresh addresses from server to ensure UI is in sync
         await refreshAddresses();
         toast.success(checked ? 'Address set as default' : 'Address removed from default');

@@ -81,7 +81,14 @@
         "standard": "Standardversand (5-7 Werktage)",
         "express": "Expressversand (2-3 Werktage)",
         "overnight": "Übernachtversand (1 Werktag)",
-        "free": "Kostenloser Versand (10-15 Werktage)"
+        "free": "Kostenloser Versand (10-15 Werktage)",
+        "standardFlatRate": "Standard Flat Rate ($9.95)",
+        "fedex2Day": "FedEx 2 Tag",
+        "upsGround": "UPS Ground",
+        "fedexAirHazardous": "FedEx Air Hazardous ($300)",
+        "fedexAirHazardousIntl": "FedEx Air Hazardous International ($350)",
+        "internationalEconomy": "International Economy",
+        "noOptionsAvailable": "Keine Versandoptionen verfügbar"
       }
     },
 

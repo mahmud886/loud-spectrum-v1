@@ -81,7 +81,14 @@
         "standard": "Envío estándar (5-7 días hábiles)",
         "express": "Envío exprés (2-3 días hábiles)",
         "overnight": "Envío nocturno (1 día hábil)",
-        "free": "Envío gratuito (10-15 días hábiles)"
+        "free": "Envío gratuito (10-15 días hábiles)",
+        "standardFlatRate": "Envío estándar ($9.95)",
+        "fedex2Day": "FedEx 2 Day",
+        "upsGround": "UPS Ground",
+        "fedexAirHazardous": "FedEx Air Hazardous ($300)",
+        "fedexAirHazardousIntl": "FedEx Air Hazardous International ($350)",
+        "internationalEconomy": "International Economy",
+        "noOptionsAvailable": "No hay opciones de envío disponibles"
       }
     },
     "ProductCart": {
