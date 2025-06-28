@@ -1,16 +1,15 @@
 import BlogCard from '@/components/containers/ordinary-blog/BlogCard';
 import BlogFilter from '@/components/containers/ordinary-blog/BlogFilter';
-import BlogPagination from '@/components/containers/ordinary-blog/BlogPagination';
 import FeaturedBlog from '@/components/containers/ordinary-blog/FeaturedBlog';
 import SideBlogs from '@/components/containers/ordinary-blog/SideBlogs';
 
-const OrdinaryBlogSection = () => {
+const OrdinaryBlogSection = ({ blogs }) => {
   return (
     <div className="mb-[100px]">
       <div className="my-10 grid grid-cols-1 gap-x-10 md:grid-cols-[53.52%_42.58%]">
-        <FeaturedBlog />
+        <FeaturedBlog featuredBlog={blogs?.[0]} />
         <div className="">
-          <SideBlogs />
+          <SideBlogs blogs={blogs?.slice(1, 4)} />
         </div>
       </div>
       <div className="border-1"></div>
@@ -25,17 +24,14 @@ const OrdinaryBlogSection = () => {
       </div>
 
       <div className="mb-[50px] grid grid-cols-1 gap-6 gap-x-4 md:grid-cols-3 md:gap-y-20">
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
+        {blogs.map((blog) => (
+          <BlogCard key={blog._id} blog={blog} />
+        ))}
       </div>
       <div className="border-1"></div>
-      <div className="py-16">
+      {/* <div className="py-16">
         <BlogPagination />
-      </div>
+      </div> */}
     </div>
   );
 };

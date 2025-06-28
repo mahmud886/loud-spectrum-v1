@@ -1,3 +1,4 @@
+import { getBlogs } from '@/services/get-blogs';
 import { getCategories } from '@/services/get-categories';
 import { getCategoryProducts } from '@/services/get-category-products';
 
@@ -99,6 +100,27 @@ export default async function sitemap() {
       })),
     ) || [];
 
+  // Dynamic blog routes (including localized versions)
+  let blogRoutes = [];
+  try {
+    const blogsData = await getBlogs();
+    if (blogsData && blogsData.blogs && Array.isArray(blogsData.blogs)) {
+      const publishedBlogs = blogsData.blogs.filter((blog) => blog.status === 'Published');
+
+      // Generate blog routes for each locale
+      blogRoutes = publishedBlogs.flatMap((blog) =>
+        locales.map((locale) => ({
+          url: `${websiteUrl}/${locale}/blog/${blog._id}`,
+          lastModified: new Date(blog.updated_at || blog.created_at),
+          changeFrequency: 'weekly',
+          priority: 0.7,
+        })),
+      );
+    }
+  } catch (error) {
+    console.error('Error fetching blogs for sitemap:', error);
+  }
+
   // Combine all routes
-  return [...staticRoutes, ...localizedRoutes, ...categoryRoutes, ...productRoutes];
+  return [...staticRoutes, ...localizedRoutes, ...categoryRoutes, ...productRoutes, ...blogRoutes];
 }
