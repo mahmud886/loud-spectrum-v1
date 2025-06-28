@@ -4,12 +4,15 @@ import { getAddresses, updateAddress } from '@/app/actions/user-actions';
 import AddAddressDialog from '@/components/account/AddAddressDialog';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
+import { useAuthToken } from '@/hooks/useAuthToken';
 import {
   addUserAddress,
+  removeUserAddress,
   selectUserAddresses,
   setUserAddresses,
   updateUserAddress as updateUserAddressAction,
 } from '@/lib/store/slices/authSlice';
+import { deleteOrderAddressById } from '@/services/delete-order-address-by-id';
 import { Edit } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -17,14 +20,18 @@ import { toast } from 'sonner';
 
 export default function UserAddressBook({ userAddressBook }) {
   const dispatch = useDispatch();
-  const addresses = useSelector(selectUserAddresses);
+  const authToken = useAuthToken();
+  const addresses = useSelector(selectUserAddresses) || [];
   const [isLoading, setIsLoading] = useState(false);
-  const [editingAddress, setEditingAddress] = useState(null);
 
   // Initialize addresses from props if Redux store is empty
   useEffect(() => {
-    if (userAddressBook?.addresss && addresses.length === 0) {
-      dispatch(setUserAddresses(userAddressBook.addresss));
+    try {
+      if (userAddressBook?.addresss && Array.isArray(userAddressBook.addresss) && addresses.length === 0) {
+        dispatch(setUserAddresses(userAddressBook.addresss));
+      }
+    } catch (error) {
+      console.error('Error initializing addresses:', error);
     }
   }, [userAddressBook, addresses.length, dispatch]);
 
@@ -36,7 +43,6 @@ export default function UserAddressBook({ userAddressBook }) {
     dispatch(updateUserAddressAction(updatedAddress));
     // Refresh addresses from server to get the latest data
     refreshAddresses();
-    setEditingAddress(null);
   };
 
   const refreshAddresses = async () => {
@@ -93,9 +99,70 @@ export default function UserAddressBook({ userAddressBook }) {
     }
   };
 
-  const handleEditAddress = (address) => {
-    setEditingAddress(address);
+  const handleDeleteAddress = async (addressId) => {
+    try {
+      setIsLoading(true);
+
+      // Show confirmation dialog
+      const confirmed = window.confirm('Are you sure you want to delete this address? This action cannot be undone.');
+
+      if (!confirmed) {
+        setIsLoading(false);
+        return;
+      }
+
+      // Call the delete service
+      const result = await deleteOrderAddressById(addressId, authToken);
+
+      if (!result.error) {
+        // Remove from Redux store
+        dispatch(removeUserAddress(addressId));
+
+        // Refresh addresses from server to ensure UI is in sync
+        await refreshAddresses();
+        toast.success('Address deleted successfully');
+      } else {
+        toast.error(result.message || 'Failed to delete address');
+      }
+    } catch (error) {
+      console.error('Error deleting address:', error);
+      toast.error('An error occurred while deleting the address');
+    } finally {
+      setIsLoading(false);
+    }
   };
+
+  // Add error boundary for the component
+  const [hasError, setHasError] = useState(false);
+
+  useEffect(() => {
+    const handleError = (error) => {
+      console.error('UserAddressBook Error:', error);
+      setHasError(true);
+    };
+
+    window.addEventListener('error', handleError);
+    window.addEventListener('unhandledrejection', handleError);
+
+    return () => {
+      window.removeEventListener('error', handleError);
+      window.removeEventListener('unhandledrejection', handleError);
+    };
+  }, []);
+
+  if (hasError) {
+    return (
+      <div className="p-4">
+        <h1 className="text-umbra-100 mb-4 font-sans text-[24px] font-normal">Address Book</h1>
+        <div className="py-8 text-center">
+          <p className="text-red-500">Something went wrong loading your addresses. Please try refreshing the page.</p>
+          <button onClick={() => window.location.reload()} className="main-button-black mt-4 rounded-[10px] px-6 py-2">
+            Refresh Page
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div>
@@ -106,76 +173,90 @@ export default function UserAddressBook({ userAddressBook }) {
 
       <div className="mt-5 space-y-6 p-4 md:p-0">
         {Array.isArray(addresses) && addresses.length > 0 ? (
-          addresses.map((address) => (
-            <div key={address._id} className="relative rounded-lg border bg-white p-6 shadow-sm transition-colors">
-              <AddAddressDialog
-                editMode={true}
-                editAddress={editingAddress}
-                onSave={handleUpdateAddress}
-                trigger={
-                  <button
-                    aria-label="Edit Address"
-                    className="absolute top-4 right-4 text-gray-500 transition hover:text-[#D00234]"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleEditAddress(address);
-                    }}
-                  >
-                    <Edit className="h-5 w-5" />
-                  </button>
-                }
-              />
-              <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3">
-                <p>
-                  <span className="font-semibold">Name:</span> {address.first_name} {address.last_name}
-                </p>
-                <p>
-                  <span className="font-semibold">Email:</span> {address.email}
-                </p>
-                <p>
-                  <span className="font-semibold">Phone:</span> {address.phone}
-                </p>
-                <p>
-                  <span className="font-semibold">City:</span> {address.city}
-                </p>
-                <p>
-                  <span className="font-semibold">Province:</span> {address.province}
-                </p>
-                <p>
-                  <span className="font-semibold">Country:</span> {address.country}
-                </p>
-                <p>
-                  <span className="font-semibold">Postal Code:</span> {address.post_code}
-                </p>
-                <p>
-                  <span className="font-semibold">Street:</span> {address.street_address}
-                </p>
-                <p>
-                  <span className="font-semibold">Type:</span> {address.type}
-                </p>
-                {/* Default Address Checkbox */}
-                <div className="flex items-center space-x-2">
-                  <Checkbox
-                    id={`default-${address._id}`}
-                    checked={address.is_default}
-                    onCheckedChange={(checked) => handleSetDefaultAddress(address._id, checked)}
-                    disabled={isLoading}
+          addresses.map((address) => {
+            // Safety check for address object
+            if (!address || !address._id) {
+              console.warn('Invalid address object:', address);
+              return null;
+            }
+
+            return (
+              <div key={address._id} className="relative rounded-lg border bg-white p-6 shadow-sm transition-colors">
+                <div className="absolute top-4 right-4 flex items-center justify-center gap-2">
+                  <AddAddressDialog
+                    editMode={true}
+                    editAddress={address}
+                    onSave={handleUpdateAddress}
+                    trigger={
+                      <button
+                        aria-label="Edit Address"
+                        className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-green-100 text-green-600 transition-all duration-200 hover:scale-105 hover:bg-green-200 hover:text-green-700"
+                      >
+                        <Edit className="h-4 w-4" />
+                      </button>
+                    }
                   />
-                  <Label
-                    htmlFor={`default-${address._id}`}
-                    className="text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  {/* <button
+                    aria-label="Delete Address"
+                    onClick={() => handleDeleteAddress(address._id)}
+                    disabled={isLoading}
+                    className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-red-100 text-red-600 transition-all duration-200 hover:scale-105 hover:bg-red-200 hover:text-red-700 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:scale-100"
                   >
-                    Default Address
-                  </Label>
+                    <Trash2 className="h-4 w-4" />
+                  </button> */}
                 </div>
+                <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3">
+                  <p>
+                    <span className="font-semibold">Name:</span> {address.first_name || ''} {address.last_name || ''}
+                  </p>
+                  <p>
+                    <span className="font-semibold">Email:</span> {address.email || 'N/A'}
+                  </p>
+                  <p>
+                    <span className="font-semibold">Phone:</span> {address.phone || 'N/A'}
+                  </p>
+                  <p>
+                    <span className="font-semibold">City:</span> {address.city || 'N/A'}
+                  </p>
+                  <p>
+                    <span className="font-semibold">Province:</span> {address.province || 'N/A'}
+                  </p>
+                  <p>
+                    <span className="font-semibold">Country:</span> {address.country || 'N/A'}
+                  </p>
+                  <p>
+                    <span className="font-semibold">Postal Code:</span> {address.post_code || 'N/A'}
+                  </p>
+                  <p>
+                    <span className="font-semibold">Street:</span> {address.street_address || 'N/A'}
+                  </p>
+                  <p>
+                    <span className="font-semibold">Type:</span> {address.type || 'N/A'}
+                  </p>
+                  {/* Default Address Checkbox */}
+                  <div className="flex items-center space-x-2">
+                    <Checkbox
+                      id={`default-${address._id}`}
+                      checked={Boolean(address.is_default)}
+                      onCheckedChange={(checked) => handleSetDefaultAddress(address._id, checked)}
+                      disabled={isLoading}
+                    />
+                    <Label
+                      htmlFor={`default-${address._id}`}
+                      className="text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    >
+                      Default Address
+                    </Label>
+                  </div>
+                </div>
+                {isLoading && (
+                  <div className="bg-opacity-50 absolute inset-0 flex items-center justify-center rounded-lg bg-white">
+                    <div className="h-8 w-8 animate-spin rounded-full border-b-2 border-[#D00234]"></div>
+                  </div>
+                )}
               </div>
-              {isLoading && (
-                <div className="bg-opacity-50 absolute inset-0 flex items-center justify-center rounded-lg bg-white">
-                  <div className="h-8 w-8 animate-spin rounded-full border-b-2 border-[#D00234]"></div>
-                </div>
-              )}
-            </div>
-          ))
+            );
+          })
         ) : (
           <div className="py-8 text-center">
             <p className="text-gray-500">No addresses found. Please add a new address.</p>

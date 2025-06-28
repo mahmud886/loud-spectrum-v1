@@ -2,15 +2,21 @@
 
 import { addNewAddress, getAddresses, updateAddress } from '@/app/actions/user-actions';
 import { Checkbox } from '@/components/ui/checkbox';
-import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Textarea } from '@/components/ui/textarea';
+import { getCities, getCountries, getStates } from '@/services/location-services';
+import { X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { toast } from 'sonner';
 
 export default function AddAddressDialog({ onSave, editMode = false, editAddress = null, trigger = null }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [countries, setCountries] = useState([]);
+  const [provinces, setProvinces] = useState([]);
+  const [cities, setCities] = useState([]);
   const [addressData, setAddressData] = useState({
     first_name: '',
     last_name: '',
@@ -23,6 +29,68 @@ export default function AddAddressDialog({ onSave, editMode = false, editAddress
     street_address: '',
     is_default: false,
   });
+
+  // Load countries on component mount
+  useEffect(() => {
+    const fetchCountries = async () => {
+      try {
+        const data = await getCountries();
+        setCountries(
+          data.map((country) => ({
+            value: country.iso2,
+            label: country.name,
+          })),
+        );
+      } catch (error) {
+        toast.error('Failed to load countries');
+      }
+    };
+    fetchCountries();
+  }, []);
+
+  // Load provinces when country changes
+  useEffect(() => {
+    const fetchStates = async () => {
+      if (!addressData.country) {
+        setProvinces([]);
+        return;
+      }
+      try {
+        const data = await getStates(addressData.country);
+        setProvinces(
+          data.map((state) => ({
+            value: state.iso2,
+            label: state.name,
+          })),
+        );
+      } catch (error) {
+        toast.error('Failed to load provinces/states');
+      }
+    };
+    fetchStates();
+  }, [addressData.country]);
+
+  // Load cities when province changes
+  useEffect(() => {
+    const fetchCities = async () => {
+      if (!addressData.country || !addressData.province) {
+        setCities([]);
+        return;
+      }
+      try {
+        const data = await getCities(addressData.country, addressData.province);
+        setCities(
+          data.map((city) => ({
+            value: city.name,
+            label: city.name,
+          })),
+        );
+      } catch (error) {
+        toast.error('Failed to load cities');
+      }
+    };
+    fetchCities();
+  }, [addressData.country, addressData.province]);
 
   // Populate form when editing
   useEffect(() => {
@@ -58,6 +126,22 @@ export default function AddAddressDialog({ onSave, editMode = false, editAddress
 
   const handleInputChange = (e) => {
     setAddressData({ ...addressData, [e.target.name]: e.target.value });
+  };
+
+  const handleSelectChange = (name, value) => {
+    setAddressData((prev) => {
+      const newData = { ...prev, [name]: value };
+
+      // Reset dependent fields when parent field changes
+      if (name === 'country') {
+        newData.province = '';
+        newData.city = '';
+      } else if (name === 'province') {
+        newData.city = '';
+      }
+
+      return newData;
+    });
   };
 
   const handleCheckboxChange = (checked) => {
@@ -139,74 +223,309 @@ export default function AddAddressDialog({ onSave, editMode = false, editAddress
     }
   };
 
+  const handleClose = () => {
+    setIsOpen(false);
+    if (!editMode) {
+      resetForm();
+    }
+  };
+
+  const handleBackdropClick = (e) => {
+    if (e.target === e.currentTarget) {
+      handleClose();
+    }
+  };
+
+  // Prevent body scroll when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
   return (
-    <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogTrigger asChild>
-        {trigger || (
-          <button className="main-button-black rounded-[10px] px-6 py-2">
-            {editMode ? 'Edit Address' : 'Add New Address'}
-          </button>
-        )}
-      </DialogTrigger>
-      <DialogContent className="max-h-[90vh] overflow-y-auto md:max-w-5xl">
-        <DialogHeader>
-          <DialogTitle>{editMode ? 'Edit Address' : 'Add New Address'}</DialogTitle>
-        </DialogHeader>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          {[
-            ['First Name', 'first_name'],
-            ['Last Name', 'last_name'],
-            ['Email', 'email'],
-            ['Phone', 'phone'],
-            ['City', 'city'],
-            ['Province', 'province'],
-            ['Country', 'country'],
-            ['Postal Code', 'post_code'],
-            ['Street', 'street_address'],
-          ].map(([label, name]) => (
-            <div key={name}>
-              <Label className="input-label" htmlFor={name}>
-                {label}
-              </Label>
-              <Input
-                id={name}
-                name={name}
-                value={addressData[name]}
-                onChange={handleInputChange}
-                placeholder={`Please enter ${label}`}
-                className="input-field"
+    <>
+      {/* Trigger Button */}
+      {trigger ? (
+        <div onClick={() => setIsOpen(true)} className="cursor-pointer">
+          {trigger}
+        </div>
+      ) : (
+        <button onClick={() => setIsOpen(true)} className="main-button-black rounded-[10px] px-6 py-2">
+          {editMode ? 'Edit Address' : 'Add New Address'}
+        </button>
+      )}
+
+      {/* Modal Overlay */}
+      {isOpen && (
+        <div
+          className="bg-opacity-50 fixed inset-0 z-50 flex items-center justify-center bg-black p-4"
+          onClick={handleBackdropClick}
+        >
+          {/* Modal Content */}
+          <div className="relative max-h-[90vh] w-full max-w-5xl overflow-hidden rounded-lg bg-white shadow-xl">
+            {/* Header */}
+            <div className="flex items-center justify-between border-b px-6 py-4">
+              <h2 className="text-umbra-100 font-sans text-[24px] font-normal">
+                {editMode ? 'Edit Address' : 'Add New Address'}
+              </h2>
+              <button
+                onClick={handleClose}
+                className="text-gray-500 transition-colors hover:text-gray-700"
                 disabled={isLoading}
-              />
+              >
+                <X className="h-6 w-6" />
+              </button>
             </div>
-          ))}
-        </div>
 
-        {/* Default Address Checkbox */}
-        <div className="mt-4 flex items-center space-x-2">
-          <Checkbox
-            id="is_default"
-            checked={addressData.is_default}
-            onCheckedChange={handleCheckboxChange}
-            disabled={isLoading}
-          />
-          <Label
-            htmlFor="is_default"
-            className="text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-          >
-            Set as default address
-          </Label>
-        </div>
+            {/* Body */}
+            <div className="overflow-y-auto p-6" style={{ maxHeight: 'calc(90vh - 140px)' }}>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                {/* First Name */}
+                <div>
+                  <Label className="input-label" htmlFor="first_name">
+                    First Name
+                  </Label>
+                  <Input
+                    id="first_name"
+                    name="first_name"
+                    value={addressData.first_name}
+                    onChange={handleInputChange}
+                    placeholder="Please enter First Name"
+                    className="input-field"
+                    disabled={isLoading}
+                  />
+                </div>
 
-        <DialogFooter className="mt-4">
-          <button
-            className="main-button-black inline-flex w-full items-center justify-center rounded-[10px] px-6 py-2"
-            onClick={handleSave}
-            disabled={isLoading}
-          >
-            {isLoading ? (editMode ? 'Updating...' : 'Saving...') : editMode ? 'Update' : 'Save'}
-          </button>
-        </DialogFooter>
-      </DialogContent>
-    </Dialog>
+                {/* Last Name */}
+                <div>
+                  <Label className="input-label" htmlFor="last_name">
+                    Last Name
+                  </Label>
+                  <Input
+                    id="last_name"
+                    name="last_name"
+                    value={addressData.last_name}
+                    onChange={handleInputChange}
+                    placeholder="Please enter Last Name"
+                    className="input-field"
+                    disabled={isLoading}
+                  />
+                </div>
+
+                {/* Email */}
+                <div>
+                  <Label className="input-label" htmlFor="email">
+                    Email
+                  </Label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    value={addressData.email}
+                    onChange={handleInputChange}
+                    placeholder="Please enter Email"
+                    className="input-field"
+                    disabled={isLoading}
+                  />
+                </div>
+
+                {/* Phone */}
+                <div>
+                  <Label className="input-label" htmlFor="phone">
+                    Phone
+                  </Label>
+                  <Input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    value={addressData.phone}
+                    onChange={handleInputChange}
+                    placeholder="Please enter Phone"
+                    className="input-field"
+                    disabled={isLoading}
+                  />
+                </div>
+
+                {/* Country */}
+                <div>
+                  <Label className="input-label" htmlFor="country">
+                    Country
+                  </Label>
+                  <Select
+                    value={addressData.country}
+                    onValueChange={(value) => handleSelectChange('country', value)}
+                    disabled={isLoading}
+                  >
+                    <SelectTrigger className="bg-umbra-5 hover:bg-umbra-10 text-umbra-100 min-h-[48px] w-full rounded-[10px] px-4 py-2 font-mono text-[16px] font-normal">
+                      <SelectValue placeholder="Please select Country" />
+                    </SelectTrigger>
+                    <SelectContent className="text-umbra-100 font-mono text-[16px]">
+                      {countries.map((country) => (
+                        <SelectItem key={country.value} value={country.value}>
+                          {country.label}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                {/* Province */}
+                <div>
+                  <Label className="input-label" htmlFor="province">
+                    Province/State
+                  </Label>
+                  {provinces?.length > 0 ? (
+                    <Select
+                      value={addressData.province}
+                      onValueChange={(value) => handleSelectChange('province', value)}
+                      disabled={isLoading || !addressData.country}
+                    >
+                      <SelectTrigger className="bg-umbra-5 hover:bg-umbra-10 text-umbra-100 min-h-[48px] w-full rounded-[10px] px-4 py-2 font-mono text-[16px] font-normal">
+                        <SelectValue placeholder="Please select Province/State" />
+                      </SelectTrigger>
+                      <SelectContent className="text-umbra-100 font-mono text-[16px]">
+                        {provinces.map((province) => (
+                          <SelectItem key={province.value} value={province.value}>
+                            {province.label}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  ) : (
+                    <Input
+                      id="province"
+                      name="province"
+                      value={addressData.province}
+                      onChange={handleInputChange}
+                      placeholder="Please enter Province/State"
+                      className="input-field"
+                      disabled={isLoading}
+                    />
+                  )}
+                </div>
+
+                {/* City */}
+                <div>
+                  <Label className="input-label" htmlFor="city">
+                    City
+                  </Label>
+                  {cities?.length > 0 ? (
+                    <Select
+                      value={addressData.city}
+                      onValueChange={(value) => handleSelectChange('city', value)}
+                      disabled={isLoading || !addressData.province}
+                    >
+                      <SelectTrigger className="bg-umbra-5 hover:bg-umbra-10 text-umbra-100 min-h-[48px] w-full rounded-[10px] px-4 py-2 font-mono text-[16px] font-normal">
+                        <SelectValue placeholder="Please select City" />
+                      </SelectTrigger>
+                      <SelectContent className="text-umbra-100 font-mono text-[16px]">
+                        {cities.map((city) => (
+                          <SelectItem key={city.value} value={city.value}>
+                            {city.label}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  ) : (
+                    <Input
+                      id="city"
+                      name="city"
+                      value={addressData.city}
+                      onChange={handleInputChange}
+                      placeholder="Please enter City"
+                      className="input-field"
+                      disabled={isLoading}
+                    />
+                  )}
+                </div>
+
+                {/* Postal Code */}
+                <div>
+                  <Label className="input-label" htmlFor="post_code">
+                    Postal Code
+                  </Label>
+                  <Input
+                    id="post_code"
+                    name="post_code"
+                    value={addressData.post_code}
+                    onChange={handleInputChange}
+                    placeholder="Please enter Postal Code"
+                    className="input-field"
+                    disabled={isLoading}
+                  />
+                </div>
+              </div>
+
+              {/* Street Address */}
+              <div className="mt-4">
+                <Label className="input-label" htmlFor="street_address">
+                  Street Address
+                </Label>
+                <Textarea
+                  id="street_address"
+                  name="street_address"
+                  rows={3}
+                  value={addressData.street_address}
+                  onChange={handleInputChange}
+                  placeholder="Please enter Street Address"
+                  className="bg-umbra-5 placeholder:text-umbra-100 hover:bg-umbra-10 w-full rounded-[10px] px-4 py-2 font-mono text-[16px] leading-[140%] font-normal"
+                  disabled={isLoading}
+                />
+              </div>
+
+              {/* Default Address Checkbox */}
+              <div className="mt-4 flex items-center space-x-2">
+                <Checkbox
+                  id="is_default"
+                  checked={addressData.is_default}
+                  onCheckedChange={handleCheckboxChange}
+                  disabled={isLoading}
+                />
+                <Label
+                  htmlFor="is_default"
+                  className="text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                >
+                  Set as default address
+                </Label>
+              </div>
+            </div>
+
+            {/* Footer */}
+            <div className="border-t px-6 py-4">
+              <div className="flex justify-end gap-3">
+                <button
+                  className="rounded-[10px] border border-gray-300 px-6 py-2 text-gray-700 transition-colors hover:bg-gray-50"
+                  onClick={handleClose}
+                  disabled={isLoading}
+                >
+                  Cancel
+                </button>
+                <button
+                  className="main-button-black inline-flex items-center justify-center rounded-[10px] px-6 py-2"
+                  onClick={handleSave}
+                  disabled={isLoading}
+                >
+                  {isLoading ? (editMode ? 'Updating...' : 'Saving...') : editMode ? 'Update' : 'Save'}
+                </button>
+              </div>
+            </div>
+
+            {/* Loading Overlay */}
+            {isLoading && (
+              <div className="bg-opacity-80 absolute inset-0 flex items-center justify-center bg-white">
+                <div className="h-8 w-8 animate-spin rounded-full border-b-2 border-[#D00234]"></div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+    </>
   );
 }
