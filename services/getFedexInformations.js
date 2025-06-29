@@ -1,6 +1,12 @@
 'use server';
 import { cookies } from 'next/headers';
 
+/**
+ * Fetches FedEx information for a given shipping payload
+ * @param {Object} shippingPayload - The shipping payload containing shipping information
+ * @returns {Promise<Object>} The FedEx information
+ * @throws {Error} If the fetch fails
+ */
 // const fedexData = {
 //   requestedShipment: {
 //     dropOffType: 'DROPOFF_AT_FEDEX_LOCATION',

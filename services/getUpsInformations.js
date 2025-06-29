@@ -1,6 +1,12 @@
 'use server';
 import { cookies } from 'next/headers';
 
+/**
+ * Fetches UPS information for a given shipping payload
+ * @param {Object} shippingPayload - The shipping payload containing shipping information
+ * @returns {Promise<Object>} The UPS information
+ * @throws {Error} If the fetch fails
+ */
 // const upsData = {
 //   Shipment: {
 //     Shipper: {

@@ -1,5 +1,10 @@
 import { cookies } from 'next/headers';
 
+/**
+ * Fetches order addresses from the API
+ * @returns {Promise<Object>} The order addresses data
+ * @throws {Error} If the fetch fails
+ */
 export const getOrderAddress = async () => {
   try {
     const cookieStore = await cookies();
