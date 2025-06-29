@@ -62,6 +62,29 @@ const CheckoutPage = () => {
     try {
       const finalPayload = payload ?? paymentPayload;
 
+      // Validate payload for NaN values
+      const validatePayload = (obj, path = '') => {
+        for (const [key, value] of Object.entries(obj)) {
+          const currentPath = path ? `${path}.${key}` : key;
+          if (typeof value === 'number' && isNaN(value)) {
+            console.error(`NaN value found at ${currentPath}:`, value);
+          } else if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
+            validatePayload(value, currentPath);
+          } else if (Array.isArray(value)) {
+            value.forEach((item, index) => {
+              if (typeof item === 'object' && item !== null) {
+                validatePayload(item, `${currentPath}[${index}]`);
+              } else if (typeof item === 'number' && isNaN(item)) {
+                console.error(`NaN value found at ${currentPath}[${index}]:`, item);
+              }
+            });
+          }
+        }
+      };
+
+      validatePayload(finalPayload);
+      console.log('Final Payload being sent:', JSON.stringify(finalPayload, null, 2));
+
       const response = await fetch('/api/payment/cash-on-delivery', {
         method: 'POST',
         headers: {
@@ -72,61 +95,64 @@ const CheckoutPage = () => {
         }),
       });
 
+      console.log('Response:', response);
       setShowWireTransferModal(false);
 
       const { data, error, message } = await response.json();
 
+      console.log('data', data);
+
       if (!error) {
         setOrderedData(data);
-        dispatch(clearCart());
+        // dispatch(clearCart());
         dispatch(completeOrder({ orderId: data?._id }));
         setIsOrderCompleted(true);
 
         // Step 2: Save Order and Send Confirmation Email
-        try {
-          const emailResponse = await fetch('/api/email', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              orderPayload: finalPayload,
-              orderDetails: data,
-            }),
-          });
+        // try {
+        //   const emailResponse = await fetch('/api/email', {
+        //     method: 'POST',
+        //     headers: {
+        //       'Content-Type': 'application/json',
+        //     },
+        //     body: JSON.stringify({
+        //       orderPayload: finalPayload,
+        //       orderDetails: data,
+        //     }),
+        //   });
 
-          const emailResult = await emailResponse.json();
-          if (emailResult.error) {
-            console.warn('Email Error:', emailResult.error);
-          }
-        } catch (emailError) {
-          console.warn('Email sending failed:', emailError);
-        }
+        //   const emailResult = await emailResponse.json();
+        //   if (emailResult.error) {
+        //     console.warn('Email Error:', emailResult.error);
+        //   }
+        // } catch (emailError) {
+        //   console.warn('Email sending failed:', emailError);
+        // }
 
-        router.push(`/order-confirmation/${data?._id}`);
+        // router.push(`/order-confirmation/${data?._id}`);
       } else {
         dispatch(setCheckoutError(message || 'Payment failed'));
 
         // Send failure email
-        try {
-          const emailResponse = await fetch('/api/email-failed', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              orderPayload: finalPayload,
-              orderDetails: data,
-            }),
-          });
+        // try {
+        //   const emailResponse = await fetch('/api/email-failed', {
+        //     method: 'POST',
+        //     headers: {
+        //       'Content-Type': 'application/json',
+        //     },
+        //     body: JSON.stringify({
+        //       orderPayload: finalPayload,
+        //       orderDetails: data,
+        //     }),
+        //   });
 
-          const emailResult = await emailResponse.json();
-          if (emailResult.error) {
-            console.warn('Email Error:', emailResult.error);
-          }
-        } catch (emailError) {
-          console.warn('Failed email sending failed:', emailError);
-        }
+        //   const emailResult = await emailResponse.json();
+        //   if (emailResult.error) {
+        //     console.warn('Email Error:', emailResult.error);
+        //   }
+        // } catch (emailError) {
+        //   console.warn('Failed email sending failed:', emailError);
+        // }
       }
     } catch (error) {
       setShowWireTransferModal(false);
@@ -192,12 +218,11 @@ const CheckoutPage = () => {
       const wirePayload = {
         ...paymentPayload,
         payment_info: {
-          account_holder_name: wireFormData.accountHolderName,
+          transection_id: wireFormData.transactionId, // Note: backend uses 'transection_id' (typo in backend)
           account_number: wireFormData.accountNumber,
-          transaction_id: wireFormData.transactionId,
-          payment_method: 'ach-wire-transfer',
+          account_name: wireFormData.accountHolderName,
         },
-        payment_status: 'Pending', // Wire transfers need manual verification
+        payment_status: 'Unpaid', // Wire transfers start as unpaid until verified
       };
 
       // For wire transfer, we'll use the cash-on-delivery endpoint but with wire transfer info
