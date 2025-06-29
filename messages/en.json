@@ -169,6 +169,43 @@
       }
     }
   },
+  "OrderConfirmation": {
+    "title": "Order Confirmed!",
+    "thankYou": "Thank you for your order. We've received your order and will start processing it soon.",
+    "orderNotFound": "Order Not Found",
+    "orderNotFoundMessage": "We couldn't find the order you're looking for.",
+    "continueShoppingButton": "Continue Shopping",
+    "viewAllOrdersButton": "View All Orders",
+    "orderDetails": "Order Details",
+    "orderItems": "Order Items",
+    "orderSummary": "Order Summary",
+    "shippingAddress": "Shipping Address",
+    "billingAddress": "Billing Address",
+    "whatsNext": "What's Next?",
+    "whatsNextDescription": "You'll receive an email confirmation shortly with your order details and tracking information once your order ships.",
+    "supportMessage": "If you have any questions about your order, please contact our customer support.",
+    "fields": {
+      "orderNumber": "Order Number",
+      "orderDate": "Order Date",
+      "orderStatus": "Order Status",
+      "paymentStatus": "Payment Status",
+      "orderType": "Order Type",
+      "paymentMethod": "Payment Method",
+      "totalAmount": "Total Amount",
+      "subtotal": "Subtotal",
+      "shipping": "Shipping",
+      "tax": "Tax",
+      "discount": "Discount",
+      "total": "Total",
+      "quantity": "Qty",
+      "price": "Price"
+    },
+    "paymentMethods": {
+      "COD": "Cash on Delivery",
+      "CARD": "Credit/Debit Card",
+      "ACH/WT": "Wire Transfer"
+    }
+  },
   "Navbar": {
     "Log_in": "Login",
     "logout_success": "Logout successfully",

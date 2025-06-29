@@ -61,7 +61,6 @@ export const POST = async (req) => {
     },
     body: serializedOrderPayload,
   });
-  console.log(res);
 
   if (res.ok) {
     const orderRes = await res.json();

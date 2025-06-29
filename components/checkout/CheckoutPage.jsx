@@ -98,15 +98,35 @@ const CheckoutPage = () => {
       console.log('Response:', response);
       setShowWireTransferModal(false);
 
-      const { data, error, message } = await response.json();
+      const responseData = await response.json();
+      const { data: orderResponse, error, message } = responseData;
 
-      console.log('data', data);
+      console.log('Full response:', responseData);
+      console.log('Order response:', orderResponse);
+      console.log('error:', error);
+      console.log('message:', message);
+
+      // The actual order data is nested in orderResponse.data
+      const actualOrderData = orderResponse?.data;
+      console.log('Actual order data:', actualOrderData);
+      console.log('actualOrderData._id:', actualOrderData?._id);
 
       if (!error) {
-        setOrderedData(data);
+        setOrderedData(actualOrderData);
         // dispatch(clearCart());
-        dispatch(completeOrder({ orderId: data?._id }));
-        setIsOrderCompleted(true);
+
+        // Get the order ID with fallbacks
+        const orderId = actualOrderData?._id || actualOrderData?.id || actualOrderData?.orderId || null;
+        console.log('Extracted order ID:', orderId);
+
+        if (orderId) {
+          dispatch(completeOrder({ orderId }));
+          setIsOrderCompleted(true);
+          router.push(`/order-confirmation/${orderId}`);
+        } else {
+          console.error('No order ID found in response data');
+          dispatch(setCheckoutError('Order created but ID not found'));
+        }
 
         // Step 2: Save Order and Send Confirmation Email
         // try {
@@ -117,7 +137,7 @@ const CheckoutPage = () => {
         //     },
         //     body: JSON.stringify({
         //       orderPayload: finalPayload,
-        //       orderDetails: data,
+        //       orderDetails: actualOrderData,
         //     }),
         //   });
 
@@ -128,8 +148,6 @@ const CheckoutPage = () => {
         // } catch (emailError) {
         //   console.warn('Email sending failed:', emailError);
         // }
-
-        // router.push(`/order-confirmation/${data?._id}`);
       } else {
         dispatch(setCheckoutError(message || 'Payment failed'));
 
@@ -142,7 +160,7 @@ const CheckoutPage = () => {
         //     },
         //     body: JSON.stringify({
         //       orderPayload: finalPayload,
-        //       orderDetails: data,
+        //       orderDetails: actualOrderData,
         //     }),
         //   });
 
