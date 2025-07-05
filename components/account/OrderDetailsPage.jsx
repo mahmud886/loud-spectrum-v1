@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 
 const OrderDetailsPage = ({ orderId }) => {
   const [orderDetails, setOrderDetails] = useState(null);
+  const [allProducts, setAllProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const token = useAuthToken();
   const router = useRouter();
@@ -18,6 +19,7 @@ const OrderDetailsPage = ({ orderId }) => {
         try {
           const order = await getOrderById(orderId, token);
           setOrderDetails(order?.data);
+          setAllProducts([...order?.data?.products, ...order?.data?.ws_products]);
         } catch (error) {
           console.error('Error fetching order details:', error);
         } finally {
@@ -73,14 +75,15 @@ const OrderDetailsPage = ({ orderId }) => {
             </div>
             {/* Table Rows */}
             <div className="divide-y">
-              {orderDetails?.products?.map((item) => (
-                <div key={item} className="grid grid-cols-4 gap-4 py-1">
-                  <div className="h-7 rounded bg-gray-200"></div>
-                  <div className="h-7 rounded bg-gray-200"></div>
-                  <div className="h-7 rounded bg-gray-200"></div>
-                  <div className="h-7 rounded bg-gray-200"></div>
-                </div>
-              ))}
+              {allProducts?.length > 0 &&
+                allProducts?.map((item) => (
+                  <div key={item} className="grid grid-cols-4 gap-4 py-1">
+                    <div className="h-7 rounded bg-gray-200"></div>
+                    <div className="h-7 rounded bg-gray-200"></div>
+                    <div className="h-7 rounded bg-gray-200"></div>
+                    <div className="h-7 rounded bg-gray-200"></div>
+                  </div>
+                ))}
             </div>
           </div>
         </div>
@@ -193,6 +196,9 @@ const OrderDetailsPage = ({ orderId }) => {
                     <th className="text-umbra-100 px-4 py-2 font-sans text-[16px] font-normal">Quantity</th>
                     <th className="text-umbra-100 px-4 py-2 font-sans text-[16px] font-normal">Price</th>
                     <th className="text-umbra-100 px-4 py-2 font-sans text-[16px] font-normal">Total</th>
+                    <th className="text-umbra-100 px-4 py-2 font-sans text-[16px] font-normal">Volume</th>
+                    <th className="text-umbra-100 px-4 py-2 font-sans text-[16px] font-normal">Flavor</th>
+                    <th className="text-umbra-100 px-4 py-2 font-sans text-[16px] font-normal">Type</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -207,6 +213,42 @@ const OrderDetailsPage = ({ orderId }) => {
                       </td>
                       <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">
                         ${item?.total?.toFixed(2)}
+                      </td>
+                      <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">
+                        {item?.selectedVolume || 'N/A'}
+                      </td>
+                      <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">
+                        {item?.flavor || 'N/A'}
+                      </td>
+                      <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">
+                        <p className="text-umbra-100 bg-alive/50 rounded-[10px] px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal capitalize">
+                          Regular
+                        </p>
+                      </td>
+                    </tr>
+                  ))}
+                  {orderDetails?.ws_products?.map((item) => (
+                    <tr key={item._id} className="border-b">
+                      <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">
+                        {item?.product?.name}
+                      </td>
+                      <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">{item?.quantity}</td>
+                      <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">
+                        ${item?.price?.toFixed(2)}
+                      </td>
+                      <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">
+                        ${item?.total?.toFixed(2)}
+                      </td>
+                      <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">
+                        {item?.selectedVolume || 'N/A'}
+                      </td>
+                      <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">
+                        {item?.flavor || 'N/A'}
+                      </td>
+                      <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">
+                        <p className="text-umbra-100 rounded-[10px] bg-red-100 px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal capitalize">
+                          Wholesale
+                        </p>
                       </td>
                     </tr>
                   ))}
@@ -281,13 +323,39 @@ const OrderDetailsPage = ({ orderId }) => {
                 </div>
                 <div className="mb-2 flex justify-between">
                   <span className="text-umbra-100 font-sans text-[14px] font-normal">Payment Status</span>
-                  <span className="text-umbra-100 font-sans text-[14px] font-normal">
+                  <span
+                    className={`text-umbra-100 rounded-[10px] px-2 py-1 font-sans text-[12px] leading-[120%] font-normal capitalize ${
+                      orderDetails?.payment_status === 'Unpaid'
+                        ? 'bg-red-700 text-white'
+                        : 'bg-green-100 text-green-800'
+                    }`}
+                  >
                     {orderDetails?.payment_status}
                   </span>
                 </div>
                 <div className="mb-2 flex justify-between">
                   <span className="text-umbra-100 font-sans text-[14px] font-normal">Order Status</span>
-                  <span className="text-umbra-100 font-sans text-[14px] font-normal">{orderDetails?.order_status}</span>
+                  <span
+                    className={`text-umbra-100 rounded-[10px] px-2 py-1 font-sans text-[12px] leading-[120%] font-normal capitalize ${
+                      orderDetails?.order_status === 'Waiting For Payment'
+                        ? 'bg-yellow-100 text-yellow-800'
+                        : orderDetails?.order_status === 'Waiting For Payment Approve'
+                          ? 'bg-orange-100 text-orange-800'
+                          : orderDetails?.order_status === 'Processing'
+                            ? 'bg-blue-100 text-blue-800'
+                            : orderDetails?.order_status === 'Shipped'
+                              ? 'bg-purple-100 text-purple-800'
+                              : orderDetails?.order_status === 'Fulfillment'
+                                ? 'bg-green-100 text-green-800'
+                                : orderDetails?.order_status === 'Reject'
+                                  ? 'bg-red-100 text-red-800'
+                                  : orderDetails?.order_status === 'Refunded'
+                                    ? 'bg-gray-100 text-gray-800'
+                                    : 'bg-gray-100 text-gray-800'
+                    }`}
+                  >
+                    {orderDetails?.order_status}
+                  </span>
                 </div>
                 <div className="mb-2 flex justify-between">
                   <span className="text-umbra-100 font-sans text-[14px] font-normal">Order Date</span>

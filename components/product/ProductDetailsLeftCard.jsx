@@ -53,6 +53,18 @@ const ProductDetailsLeftCard = ({ product }) => {
   }, [product?._id]);
   const { starComponents } = getStarRatingData(reviews);
 
+  // Find the selected subProduct based on volume
+  const selectedSubProduct = product.subproducts?.find((subProduct) => {
+    const attribute = JSON.parse(subProduct.attribute);
+    return attribute.volume === selectedVolume;
+  });
+
+  // Create modified product with selectedSubProduct
+  const modifiedProduct = {
+    ...product,
+    subProducts: selectedSubProduct,
+  };
+
   const handleAddToCart = () => {
     if (!selectedVolume) {
       setShowVolumeError(true);
@@ -63,7 +75,7 @@ const ProductDetailsLeftCard = ({ product }) => {
     dispatch(
       addToCart({
         id: product._id,
-        product,
+        product: modifiedProduct,
         quantity,
         price: selectedPrice,
         selectedVolume,

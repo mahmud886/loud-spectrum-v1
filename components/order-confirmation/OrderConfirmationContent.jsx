@@ -164,21 +164,110 @@ const OrderConfirmationContent = ({ orderData }) => {
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
-            {allProducts.map((item, index) => (
-              <div key={item._id || index} className="flex items-center justify-between rounded-lg border p-4">
-                <div className="flex-1">
-                  <h4 className="font-semibold text-gray-900">{item.product?.name || `Product ${index + 1}`}</h4>
-                  <div className="mt-1 flex items-center gap-4 text-sm text-gray-600">
-                    <span>Qty: {item.quantity}</span>
-                    <span>Price: {formatPrice(item.price)}</span>
-                    {type === 'Wholesale' && <Badge variant="secondary">Wholesale</Badge>}
+            {/* Regular Products */}
+            {products.length > 0 && (
+              <div className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <h3 className="font-semibold text-gray-900">Regular Products</h3>
+                  <Badge
+                    variant="default"
+                    className="text-umbra-100 rounded-[10px] bg-green-100 px-2 py-1 font-sans text-[12px] leading-[120%] font-normal capitalize"
+                  >
+                    Regular
+                  </Badge>
+                </div>
+                {products.map((item, index) => (
+                  <div
+                    key={item._id || `regular-${index}`}
+                    className="flex items-center justify-between rounded-lg border border-green-200 bg-green-50/30 p-4"
+                  >
+                    <div className="flex-1">
+                      <h4 className="font-semibold text-gray-900">
+                        {item.product?.name || item.name || `Product ${index + 1}`}
+                      </h4>
+                      <div className="mt-1 flex items-center gap-4 text-sm text-gray-600">
+                        <span>Qty: {item.quantity}</span>
+                        <span>SKU: {item.product?.sku || 'N/A'}</span>
+                      </div>
+                      <div className="mt-2 flex items-center gap-2">
+                        <Badge
+                          variant="default"
+                          className="text-umbra-100 rounded-[10px] bg-green-100 px-2 py-1 font-sans text-[12px] leading-[120%] font-normal capitalize"
+                        >
+                          Regular
+                        </Badge>
+                        <Badge
+                          variant="default"
+                          className="bg-umbra-5 text-umbra-100 rounded-[10px] px-2 py-1 font-sans text-[12px] leading-[120%] font-normal"
+                        >
+                          {item.selectedVolume} 10ml
+                        </Badge>
+                        <Badge
+                          variant="default"
+                          className="bg-classic/20 text-umbra-100 rounded-[10px] px-2 py-1 font-sans text-[12px] leading-[120%] font-normal"
+                        >
+                          flavor: {item.flavor}
+                        </Badge>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <p className="font-semibold text-green-700">{formatPrice(item.total)}</p>
+                    </div>
                   </div>
-                </div>
-                <div className="text-right">
-                  <p className="font-semibold">{formatPrice(item.total)}</p>
-                </div>
+                ))}
               </div>
-            ))}
+            )}
+
+            {/* Wholesale Products */}
+            {ws_products.length > 0 && (
+              <div className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <h3 className="font-semibold text-gray-900">Wholesale Products</h3>
+                  <Badge variant="default" className="bg-red-100 text-red-800 hover:bg-red-200">
+                    Wholesale
+                  </Badge>
+                </div>
+                {ws_products.map((item, index) => (
+                  <div
+                    key={item._id || `wholesale-${index}`}
+                    className="flex items-center justify-between rounded-lg border border-red-100 bg-red-50/30 p-4"
+                  >
+                    <div className="flex-1">
+                      <h4 className="font-semibold text-gray-900">
+                        {item.product?.name || item.name || `Product ${index + 1}`}
+                      </h4>
+                      <div className="mt-1 flex items-center gap-2 text-sm text-gray-600">
+                        <span>Qty: {item.quantity}</span>
+                        <span>SKU: {item.product?.sku || 'N/A'}</span>
+                      </div>
+                      <div className="mt-2 flex items-center gap-2">
+                        <Badge
+                          variant="default"
+                          className="text-umbra-100 rounded-[10px] bg-red-100 px-2 py-1 font-sans text-[12px] leading-[120%] font-normal capitalize"
+                        >
+                          Wholesale
+                        </Badge>
+                        <Badge
+                          variant="default"
+                          className="bg-umbra-5 text-umbra-100 rounded-[10px] px-2 py-1 font-sans text-[12px] leading-[120%] font-normal"
+                        >
+                          {item.selectedVolume} 1ml
+                        </Badge>
+                        <Badge
+                          variant="default"
+                          className="bg-classic/20 text-umbra-100 rounded-[10px] px-2 py-1 font-sans text-[12px] leading-[120%] font-normal"
+                        >
+                          flavor: {item.flavor}
+                        </Badge>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <p className="font-semibold text-red-700">{formatPrice(item.total)}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </CardContent>
       </Card>

@@ -29,6 +29,12 @@ const ProductBuyDialog = ({ open, onOpenChange, product }) => {
     }
   }, [selectedPrice, selectedVolume]);
 
+  // Find the selected subProduct based on volume
+  const selectedSubProduct = product.subProducts?.find((subProduct) => {
+    const attribute = JSON.parse(subProduct.attribute);
+    return attribute.volume === selectedVolume;
+  });
+
   const handleAddToCart = () => {
     if (!selectedVolume) {
       setShowVolumeError(true);
@@ -36,10 +42,22 @@ const ProductBuyDialog = ({ open, onOpenChange, product }) => {
       return;
     }
     setShowVolumeError(false);
+
+    if (!selectedSubProduct) {
+      toast.error('Selected volume not found');
+      return;
+    }
+
+    // Create modified product with selectedSubProduct
+    const modifiedProduct = {
+      ...product,
+      subProducts: selectedSubProduct,
+    };
+
     dispatch(
       addToCart({
         id: product._id,
-        product,
+        product: modifiedProduct,
         quantity,
         price: selectedPrice,
         selectedVolume,

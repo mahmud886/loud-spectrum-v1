@@ -254,8 +254,6 @@ const CheckoutPage = () => {
     }
   };
 
-  console.log('selectedPaymentMethod', selectedPaymentMethod);
-
   // Handle card input change
   const handleCardInputChange = (e) => {
     const { name, value } = e.target;
