@@ -1,11 +1,11 @@
 import { randomUUID } from 'crypto';
-import { config } from 'dotenv';
+// import { config } from 'dotenv';
 import { cookies } from 'next/headers';
-import { Client } from 'square';
+import { SquareClient } from 'square';
 
-config();
+// config();
 
-const { paymentsApi } = new Client({
+const { paymentsApi } = new SquareClient({
   accessToken: process.env.SQUARE_ACCESS_TOKEN,
   environment: 'sandbox',
 });
