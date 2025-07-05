@@ -15,7 +15,6 @@ const WholesaleProductCard = ({ product }) => {
   const [error, setError] = useState(false);
   const dispatch = useDispatch();
   const t = useTranslations('ProductDetails');
-  console.log(product);
   const validateFlavor = (value) => {
     setError(!value.trim());
   };
@@ -46,7 +45,6 @@ const WholesaleProductCard = ({ product }) => {
     setQuantity(1);
     setFlavor('');
   };
-  console.log(flavor);
 
   return (
     <div className="bg-white-100 text-umbra-100 border-1 p-5 shadow-sm md:h-auto md:w-full">

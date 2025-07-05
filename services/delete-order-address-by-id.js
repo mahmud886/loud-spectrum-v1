@@ -1,3 +1,10 @@
+/**
+ * Deletes order addresses by their IDs
+ * @param {string|string[]} addressId - The ID or array of IDs of the addresses to delete
+ * @param {string} authToken - The authentication token for the request
+ * @returns {Promise<Object>} The response data
+ * @throws {Error} If the fetch fails
+ */
 export const deleteOrderAddressById = async (addressId, authToken) => {
   try {
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/orders/address`, {

@@ -1,17 +1,31 @@
 import { useRouter } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
-import { useState } from 'react';
 
-const ContinueToPayment = () => {
-  const [loading, setLoading] = useState(false);
+const ConfirmPayment = ({ onProcessPayment, isLoading = false, selectedPaymentMethod }) => {
   const router = useRouter();
   const t = useTranslations('CheckoutPage.ContinueToPayment');
 
-  const handleContinuePayment = () => {
-    setLoading(true);
-    setTimeout(() => {
+  const handleContinuePayment = async () => {
+    if (!selectedPaymentMethod) {
+      alert('Please select a payment method first');
+      return;
+    }
+
+    if (selectedPaymentMethod === 'cash-on-delivery') {
+      // Process cash on delivery payment
+      if (onProcessPayment) {
+        await onProcessPayment();
+      }
+    } else if (selectedPaymentMethod === 'debit-credit-card') {
+      // Card dialog should handle Square payment processing
+      alert('Please complete the card payment form');
+    } else if (selectedPaymentMethod === 'ach-wire-transfer') {
+      // Wire transfer dialog should handle wire transfer processing
+      alert('Please complete the wire transfer form');
+    } else {
+      // Fallback - navigate to payment page
       router.push('/payment');
-    }, 1500);
+    }
   };
 
   return (
@@ -20,15 +34,15 @@ const ContinueToPayment = () => {
         <button
           onClick={handleContinuePayment}
           className={`main-button-black inline-flex w-full items-center justify-center rounded-full px-6 py-4 transition-colors ${
-            loading ? 'cursor-not-allowed opacity-50' : 'hover:bg-umbra-40'
+            isLoading ? 'cursor-not-allowed opacity-50' : 'hover:bg-umbra-40'
           }`}
-          disabled={loading}
+          disabled={isLoading || !selectedPaymentMethod}
         >
-          {loading ? t('button.loading') : t('button.default')}
+          {isLoading ? t('button.loading') : t('button.default')}
         </button>
       </div>
     </div>
   );
 };
 
-export default ContinueToPayment;
+export default ConfirmPayment;
