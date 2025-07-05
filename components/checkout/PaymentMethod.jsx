@@ -3,11 +3,15 @@
 import { cn } from '@/lib/utils';
 import { CheckCircle2 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import { useSelector } from 'react-redux';
 
 const paymentMethods = ['debit-credit-card', 'ach-wire-transfer', 'cash-on-delivery'];
 
 const PaymentMethod = ({ value, onValueChange }) => {
   const t = useTranslations('CheckoutPage.PaymentMethod');
+
+  // Get loading state from Redux
+  const isLoading = useSelector((state) => state.checkout.isProcessing);
 
   const handleChange = (selectedValue) => {
     if (value === selectedValue) {
@@ -15,6 +19,10 @@ const PaymentMethod = ({ value, onValueChange }) => {
     } else {
       onValueChange(selectedValue);
     }
+  };
+
+  const handlePaymentMethod = (methodKey) => {
+    handleChange(methodKey);
   };
 
   return (
@@ -29,11 +37,13 @@ const PaymentMethod = ({ value, onValueChange }) => {
             <button
               key={methodKey}
               type="button"
-              onClick={() => handleChange(methodKey)}
+              onClick={() => handlePaymentMethod(methodKey)}
+              disabled={isLoading}
               className={cn(
                 'group relative flex min-h-[80px] cursor-pointer items-center justify-between gap-4 rounded-[10px] border px-4 py-2 transition-all',
                 'hover:border-umbra-40',
                 isChecked ? 'bg-stardust border-transparent' : 'border-umbra-10',
+                isLoading && 'cursor-not-allowed opacity-50',
               )}
             >
               <CheckCircle2
