@@ -1,6 +1,6 @@
 /**
  * Parses product attributes from subProducts
- * @param {Object|Array} productOrSubProducts - Either a product object containing subProducts or a subProducts array directly
+ * @param {Object|Array} productOrSubProducts - Either a product object containing subProducts, a subProducts array directly, or a single product object
  * @param {string} attributeKey - The key of the attribute to extract (e.g. 'volume')
  * @returns {Array<{value: string, label: string}>} Array of parsed attribute options
  */
@@ -11,6 +11,9 @@ export const parseProductAttributes = (productOrSubProducts, attributeKey) => {
     subProducts = productOrSubProducts;
   } else if (productOrSubProducts?.subProducts) {
     subProducts = productOrSubProducts.subProducts;
+  } else if (productOrSubProducts?.attribute) {
+    // Handle single product object (like the sample product)
+    subProducts = [productOrSubProducts];
   } else {
     console.warn('No valid subProducts found:', productOrSubProducts);
     return [];
