@@ -47,11 +47,12 @@ export const POST = async (req) => {
   const baseUrl = process.env.NEXT_PUBLIC_API_URL;
 
   // Check if this is a wholesale order based on the type field
-  const isWholesaleOrder = cleanedData?.type === 'Wholesale';
-  const url = `${baseUrl}/api/orders${isWholesaleOrder ? '/wholesale' : ''}`;
+  // const isWholesaleOrder = cleanedData?.type === 'Wholesale';
+  // const url = `${baseUrl}/api/orders${isWholesaleOrder ? '/wholesale' : ''}`;
+  const url = `${baseUrl}/api/orders`;
 
   console.log('Backend URL:', url);
-  console.log('Is wholesale order:', isWholesaleOrder);
+  // console.log('Is wholesale order:', isWholesaleOrder);
 
   const res = await fetch(url, {
     method: 'POST',

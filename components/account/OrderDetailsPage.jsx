@@ -1,6 +1,5 @@
 'use client';
 
-import { parseProductAttributes } from '@/helpers/product-attributes';
 import { useAuthToken } from '@/hooks/useAuthToken';
 import { useRouter } from '@/i18n/navigation';
 import { getOrderById } from '@/services/get-order-by-id';
@@ -170,9 +169,6 @@ const OrderDetailsPage = ({ orderId }) => {
     </div>
   );
 
-  // const productAttributes = parseProductAttributes(orderDetails?.products?.[0]?.product, 'volume');
-  // console.log(productAttributes?.[0]?.value);
-  console.log(orderDetails);
   return (
     <div className="mx-auto w-full max-w-full p-4 md:p-0">
       {/* Back to Orders Button */}
@@ -196,63 +192,108 @@ const OrderDetailsPage = ({ orderId }) => {
               <table className="w-full table-auto text-left">
                 <thead className="bg-stardust/20">
                   <tr>
-                    <th className="text-umbra-100 px-4 py-2 font-sans text-[16px] font-normal">Product</th>
-                    <th className="text-umbra-100 px-4 py-2 font-sans text-[16px] font-normal">Quantity</th>
-                    <th className="text-umbra-100 px-4 py-2 font-sans text-[16px] font-normal">Price</th>
-                    <th className="text-umbra-100 px-4 py-2 font-sans text-[16px] font-normal">Total</th>
-                    <th className="text-umbra-100 px-4 py-2 font-sans text-[16px] font-normal">Volume</th>
-                    <th className="text-umbra-100 px-4 py-2 font-sans text-[16px] font-normal">Flavor</th>
-                    <th className="text-umbra-100 px-4 py-2 font-sans text-[16px] font-normal">Type</th>
+                    <th className="text-umbra-100 px-4 py-2 text-center font-sans text-[16px] font-normal">Product</th>
+                    <th className="text-umbra-100 px-4 py-2 text-center font-sans text-[16px] font-normal">Quantity</th>
+                    <th className="text-umbra-100 px-4 py-2 text-center font-sans text-[16px] font-normal">Price</th>
+                    <th className="text-umbra-100 px-4 py-2 text-center font-sans text-[16px] font-normal">Total</th>
+                    <th className="text-umbra-100 px-4 py-2 text-center font-sans text-[16px] font-normal">Volume</th>
+                    <th className="text-umbra-100 px-4 py-2 text-center font-sans text-[16px] font-normal">Flavor</th>
+                    <th className="text-umbra-100 px-4 py-2 text-center font-sans text-[16px] font-normal">Type</th>
                   </tr>
                 </thead>
                 <tbody>
                   {orderDetails?.products?.map((item) => (
                     <tr key={item._id} className="border-b">
-                      <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">
+                      <td className="text-umbra-100 px-4 py-2 text-center font-sans text-[14px] font-normal">
                         {item?.product?.name}
                       </td>
-                      <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">{item?.quantity}</td>
-                      <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">
+                      <td className="text-umbra-100 px-4 py-2 text-center font-sans text-[14px] font-normal">
+                        {item?.quantity}
+                      </td>
+                      <td className="text-umbra-100 px-4 py-2 text-center font-sans text-[14px] font-normal">
                         ${item?.price?.toFixed(2)}
                       </td>
-                      <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">
+                      <td className="text-umbra-100 px-4 py-2 text-center font-sans text-[14px] font-normal">
                         ${item?.total?.toFixed(2)}
                       </td>
-                      <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">
-                        {parseProductAttributes(item?.product, 'volume')?.[0]?.value || 'N/A'}
+                      <td className="text-umbra-100 px-4 py-2 text-center font-sans text-[14px] font-normal">
+                        {(() => {
+                          try {
+                            const attribute = item?.product?.attribute;
+                            if (attribute) {
+                              const parsed = JSON.parse(attribute);
+                              return parsed?.volume || 'N/A';
+                            }
+                            return 'N/A';
+                          } catch (error) {
+                            console.warn('Failed to parse volume attribute:', error);
+                            return 'N/A';
+                          }
+                        })()}
                       </td>
-                      <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">
-                        {item?.flavor || 'N/A'}
+                      <td className="text-umbra-100 px-4 py-2 text-center font-sans text-[14px] font-normal">
+                        {(() => {
+                          try {
+                            const flavor = item?.flavor || 'N/A';
+                            return flavor === 'N/A' ? (
+                              <span className="text-umbra-100 font-sans text-[12px] font-normal">N/A</span>
+                            ) : (
+                              <span className="text-umbra-100 bg-sweet/10 rounded-full px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal capitalize">
+                                {flavor}
+                              </span>
+                            );
+                          } catch (error) {
+                            console.warn('Failed to parse attribute JSON:', item?.attribute);
+                            return <span className="text-umbra-100 font-sans text-[12px] font-normal">N/A</span>;
+                          }
+                        })()}
                       </td>
-                      <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">
-                        <p className="text-umbra-100 bg-alive/50 rounded-[10px] px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal capitalize">
+                      <td className="text-umbra-100 px-4 py-2 text-center font-sans text-[14px] font-normal">
+                        <button className="text-umbra-100 bg-alive/10 rounded-full px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal capitalize">
                           Regular
-                        </p>
+                        </button>
                       </td>
                     </tr>
                   ))}
                   {orderDetails?.ws_products?.map((item) => (
                     <tr key={item._id} className="border-b">
-                      <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">
+                      <td className="text-umbra-100 px-4 py-2 text-center font-sans text-[14px] font-normal">
                         {item?.product?.name}
                       </td>
-                      <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">{item?.quantity}</td>
-                      <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">
+                      <td className="text-umbra-100 px-4 py-2 text-center font-sans text-[14px] font-normal">
+                        {item?.quantity}
+                      </td>
+                      <td className="text-umbra-100 px-4 py-2 text-center font-sans text-[14px] font-normal">
                         ${item?.price?.toFixed(2)}
                       </td>
-                      <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">
+                      <td className="text-umbra-100 px-4 py-2 text-center font-sans text-[14px] font-normal">
                         ${item?.total?.toFixed(2)}
                       </td>
-                      <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">
+                      <td className="text-umbra-100 px-4 py-2 text-center font-sans text-[14px] font-normal">
                         {item?.selectedVolume || '1ml'}
                       </td>
-                      <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">
-                        {item?.flavor || 'N/A'}
+                      <td className="text-umbra-100 px-4 py-2 text-center font-sans text-[14px] font-normal capitalize">
+                        {(() => {
+                          try {
+                            const parsed = JSON.parse(item?.attribute);
+                            const flavor = parsed?.flavor || 'N/A';
+                            return flavor === 'N/A' ? (
+                              <span className="text-umbra-100 font-sans text-[12px] font-normal">N/A</span>
+                            ) : (
+                              <span className="text-umbra-100 bg-sweet/10 rounded-full px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal capitalize">
+                                {flavor}
+                              </span>
+                            );
+                          } catch (error) {
+                            console.warn('Failed to parse attribute JSON:', item?.attribute);
+                            return <span className="text-umbra-100 font-sans text-[12px] font-normal">N/A</span>;
+                          }
+                        })()}
                       </td>
-                      <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">
-                        <p className="text-umbra-100 rounded-[10px] bg-red-100 px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal capitalize">
+                      <td className="text-umbra-100 px-4 py-2 text-center font-sans text-[14px] font-normal">
+                        <button className="text-umbra-100 bg-alive/10 rounded-full px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal capitalize">
                           Wholesale
-                        </p>
+                        </button>
                       </td>
                     </tr>
                   ))}
