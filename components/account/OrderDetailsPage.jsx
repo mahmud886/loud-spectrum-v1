@@ -1,5 +1,6 @@
 'use client';
 
+import { parseProductAttributes } from '@/helpers/product-attributes';
 import { useAuthToken } from '@/hooks/useAuthToken';
 import { useRouter } from '@/i18n/navigation';
 import { getOrderById } from '@/services/get-order-by-id';
@@ -169,6 +170,9 @@ const OrderDetailsPage = ({ orderId }) => {
     </div>
   );
 
+  // const productAttributes = parseProductAttributes(orderDetails?.products?.[0]?.product, 'volume');
+  // console.log(productAttributes?.[0]?.value);
+  console.log(orderDetails);
   return (
     <div className="mx-auto w-full max-w-full p-4 md:p-0">
       {/* Back to Orders Button */}
@@ -215,7 +219,7 @@ const OrderDetailsPage = ({ orderId }) => {
                         ${item?.total?.toFixed(2)}
                       </td>
                       <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">
-                        {item?.selectedVolume || 'N/A'}
+                        {parseProductAttributes(item?.product, 'volume')?.[0]?.value || 'N/A'}
                       </td>
                       <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">
                         {item?.flavor || 'N/A'}
@@ -240,7 +244,7 @@ const OrderDetailsPage = ({ orderId }) => {
                         ${item?.total?.toFixed(2)}
                       </td>
                       <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">
-                        {item?.selectedVolume || 'N/A'}
+                        {item?.selectedVolume || '1ml'}
                       </td>
                       <td className="text-umbra-100 px-4 py-2 font-sans text-[14px] font-normal">
                         {item?.flavor || 'N/A'}
