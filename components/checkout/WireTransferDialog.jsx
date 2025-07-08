@@ -73,7 +73,7 @@ const WireTransferDialog = ({ open, onClose, formData, onChange, onSubmit }) => 
                   </label>
                   <Input
                     type="text"
-                    name="accountName"
+                    name="accountHolderName"
                     value={formData.accountHolderName}
                     onChange={onChange}
                     placeholder={t('accountName')}
