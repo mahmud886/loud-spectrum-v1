@@ -3,9 +3,52 @@
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { useTranslations } from 'next-intl';
+import { toast } from 'sonner';
 
 const DebitCreditCardDialog = ({ open, onClose, formData, onChange, onSubmit }) => {
   const t = useTranslations('CheckoutPage.PaymentDialog');
+
+  const validateCardForm = () => {
+    const requiredFields = {
+      cardHolderName: t('cardHolderName'),
+      expiry: 'Expiry Date',
+      securityCode: 'Security Code',
+      postalCode: 'Postal Code',
+    };
+
+    const missingFields = [];
+    Object.entries(requiredFields).forEach(([field, label]) => {
+      if (!formData[field] || String(formData[field]).trim() === '') {
+        missingFields.push(label);
+      }
+    });
+
+    if (missingFields.length > 0) {
+      toast.error('Incomplete Card Information', {
+        description: `Please fill in: ${missingFields.join(', ')}`,
+        duration: 4000,
+      });
+      return false;
+    }
+
+    return true;
+  };
+
+  const handleSubmit = () => {
+    if (!validateCardForm()) {
+      return;
+    }
+
+    toast.success('Card Information Validated', {
+      description: 'Processing your card payment...',
+      duration: 2000,
+    });
+
+    // Call the original onSubmit
+    if (onSubmit) {
+      onSubmit();
+    }
+  };
 
   return (
     <Dialog open={open} onOpenChange={onClose}>
@@ -62,7 +105,7 @@ const DebitCreditCardDialog = ({ open, onClose, formData, onChange, onSubmit }) 
             </div>
           </div>
           <button
-            onClick={onSubmit}
+            onClick={handleSubmit}
             className="main-button-black inline-flex w-full items-center justify-center rounded-full px-6 py-3"
           >
             {t('saveButton')}

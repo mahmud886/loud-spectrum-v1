@@ -1,5 +1,6 @@
 import { useRouter } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
+import { toast } from 'sonner';
 
 const ConfirmPayment = ({ onProcessPayment, isLoading = false, selectedPaymentMethod }) => {
   const router = useRouter();
@@ -7,7 +8,10 @@ const ConfirmPayment = ({ onProcessPayment, isLoading = false, selectedPaymentMe
 
   const handleContinuePayment = async () => {
     if (!selectedPaymentMethod) {
-      alert('Please select a payment method first');
+      toast.error('Payment Method Required', {
+        description: 'Please select a payment method first',
+        duration: 4000,
+      });
       return;
     }
 
@@ -18,10 +22,16 @@ const ConfirmPayment = ({ onProcessPayment, isLoading = false, selectedPaymentMe
       }
     } else if (selectedPaymentMethod === 'debit-credit-card') {
       // Card dialog should handle Square payment processing
-      alert('Please complete the card payment form');
+      toast.warning('Complete Card Information', {
+        description: 'Please complete the card payment form',
+        duration: 4000,
+      });
     } else if (selectedPaymentMethod === 'ach-wire-transfer') {
       // Wire transfer dialog should handle wire transfer processing
-      alert('Please complete the wire transfer form');
+      toast.warning('Complete Wire Transfer Information', {
+        description: 'Please complete the wire transfer form',
+        duration: 4000,
+      });
     } else {
       // Fallback - navigate to payment page
       router.push('/payment');

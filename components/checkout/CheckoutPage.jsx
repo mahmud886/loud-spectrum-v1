@@ -11,9 +11,13 @@ import { useRouter } from '@/i18n/navigation';
 import { clearCart } from '@/lib/store/slices/cartSlice';
 import {
   completeOrder,
+  selectBillingAddress,
   selectCardFormData,
   selectPaymentPayload,
+  selectSelectedCourier,
   selectSelectedPaymentMethod,
+  selectShippingAddress,
+  selectShippingType,
   selectShowCardDialog,
   selectShowWireDialog,
   selectWireFormData,
@@ -28,6 +32,7 @@ import {
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'sonner';
 import ChooseYourCourier from './ChooseYourCourier';
 import ShippingAndBillingAddress from './ShippingAndBillingAddress';
 
@@ -49,6 +54,232 @@ const CheckoutPage = () => {
   const showCardDialog = useSelector(selectShowCardDialog);
   const showWireDialog = useSelector(selectShowWireDialog);
   const paymentPayload = useSelector(selectPaymentPayload);
+  const shippingAddress = useSelector(selectShippingAddress);
+  const billingAddress = useSelector(selectBillingAddress);
+  const selectedCourier = useSelector(selectSelectedCourier);
+  const selectedShippingType = useSelector(selectShippingType);
+
+  // Cart selectors
+  const cartItems = useSelector((state) => state.cart.items);
+  const cartTotalQuantity = useSelector((state) => state.cart.totalQuantity);
+  const cartTotalAmount = useSelector((state) => state.cart.totalAmount);
+
+  // Validation functions
+  const validateCart = () => {
+    if (!cartItems || cartItems.length === 0) {
+      toast.error('Cart is Empty', {
+        description: 'Please add some products to your cart before proceeding to checkout',
+        duration: 4000,
+        // action: {
+        //   label: 'Go Shopping',
+        //   onClick: () => router.push('/shop'),
+        // },
+      });
+
+      return router.push('/shop');
+    }
+
+    if (cartTotalQuantity === 0) {
+      toast.error('No Items in Cart', {
+        description: 'Your cart appears to be empty. Please add products to continue',
+        duration: 4000,
+      });
+      return router.push('/shop');
+    }
+
+    if (cartTotalAmount <= 0) {
+      toast.error('Invalid Cart Total', {
+        description: 'There seems to be an issue with your cart total. Please refresh and try again',
+        duration: 4000,
+      });
+      return router.push('/shop');
+    }
+
+    return true;
+  };
+
+  const validateShippingAddress = () => {
+    const requiredFields = {
+      firstName: 'First Name',
+      lastName: 'Last Name',
+      email: 'Email',
+      phone: 'Phone',
+      country: 'Country',
+      city: 'City',
+      province: 'Province/State',
+      postalCode: 'Postal Code',
+      streetAddress: 'Street Address',
+    };
+
+    const missingFields = [];
+    Object.entries(requiredFields).forEach(([field, label]) => {
+      if (!shippingAddress[field] || String(shippingAddress[field]).trim() === '') {
+        missingFields.push(label);
+      }
+    });
+
+    if (missingFields.length > 0) {
+      toast.error('Missing Shipping Information', {
+        description: `Please fill in: ${missingFields.join(', ')}`,
+        duration: 4000,
+      });
+      return false;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(shippingAddress.email)) {
+      toast.error('Invalid Email', {
+        description: 'Please enter a valid email address',
+        duration: 4000,
+      });
+      return false;
+    }
+
+    return true;
+  };
+
+  const validateBillingAddress = () => {
+    if (billingAddress.sameAsShipping) {
+      return true; // No need to validate if same as shipping
+    }
+
+    const requiredFields = {
+      firstName: 'First Name',
+      lastName: 'Last Name',
+      email: 'Email',
+      phone: 'Phone',
+      country: 'Country',
+      city: 'City',
+      province: 'Province/State',
+      postalCode: 'Postal Code',
+      streetAddress: 'Street Address',
+    };
+
+    const missingFields = [];
+    Object.entries(requiredFields).forEach(([field, label]) => {
+      if (!billingAddress[field] || String(billingAddress[field]).trim() === '') {
+        missingFields.push(label);
+      }
+    });
+
+    if (missingFields.length > 0) {
+      toast.error('Missing Billing Information', {
+        description: `Please fill in: ${missingFields.join(', ')}`,
+        duration: 4000,
+      });
+      return false;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(billingAddress.email)) {
+      toast.error('Invalid Billing Email', {
+        description: 'Please enter a valid billing email address',
+        duration: 4000,
+      });
+      return false;
+    }
+
+    return true;
+  };
+
+  const validateCourier = () => {
+    if (!selectedCourier) {
+      toast.error('Select Shipping Method', {
+        description: 'Please choose a shipping courier',
+        duration: 4000,
+      });
+      return false;
+    }
+
+    if (!selectedShippingType) {
+      toast.error('Select Shipping Type', {
+        description: 'Please choose a shipping type from the dropdown',
+        duration: 4000,
+      });
+      return false;
+    }
+
+    return true;
+  };
+
+  const validatePaymentMethod = () => {
+    if (!selectedPaymentMethod) {
+      toast.error('Select Payment Method', {
+        description: 'Please choose a payment method',
+        duration: 4000,
+      });
+      return false;
+    }
+    return true;
+  };
+
+  const validateCardForm = () => {
+    const requiredFields = {
+      cardHolderName: 'Card Holder Name',
+      expiry: 'Expiry Date',
+      securityCode: 'Security Code',
+      postalCode: 'Postal Code',
+    };
+
+    const missingFields = [];
+    Object.entries(requiredFields).forEach(([field, label]) => {
+      if (!cardFormData[field] || String(cardFormData[field]).trim() === '') {
+        missingFields.push(label);
+      }
+    });
+
+    if (missingFields.length > 0) {
+      toast.error('Incomplete Card Information', {
+        description: `Please fill in: ${missingFields.join(', ')}`,
+        duration: 4000,
+      });
+      return false;
+    }
+
+    return true;
+  };
+
+  const validateWireForm = () => {
+    const requiredFields = {
+      accountHolderName: 'Account Holder Name',
+      accountNumber: 'Account Number',
+      transactionId: 'Transaction ID',
+    };
+
+    const missingFields = [];
+    Object.entries(requiredFields).forEach(([field, label]) => {
+      if (!wireFormData[field] || String(wireFormData[field]).trim() === '') {
+        missingFields.push(label);
+      }
+    });
+
+    if (missingFields.length > 0) {
+      toast.error('Incomplete Wire Transfer Information', {
+        description: `Please fill in: ${missingFields.join(', ')}`,
+        duration: 4000,
+      });
+      return false;
+    }
+
+    return true;
+  };
+
+  const validateCompleteForm = () => {
+    // Validate in order of importance
+    if (!validateCart()) return false;
+    if (!validateShippingAddress()) return false;
+    if (!validateBillingAddress()) return false;
+    if (!validateCourier()) return false;
+    if (!validatePaymentMethod()) return false;
+
+    // Payment method specific validation
+    if (selectedPaymentMethod === 'debit-credit-card' && !validateCardForm()) return false;
+    if (selectedPaymentMethod === 'ach-wire-transfer' && !validateWireForm()) return false;
+
+    return true;
+  };
 
   const handlePaymentMethodChange = (value) => {
     dispatch(setSelectedPaymentMethod(value));
@@ -56,6 +287,11 @@ const CheckoutPage = () => {
 
   // Cash on Delivery Payment Processing
   const processPayment = async (payload = null) => {
+    // Validate form before processing
+    if (!validateCompleteForm()) {
+      return;
+    }
+
     setIsLoading(true);
     dispatch(setIsProcessing(true));
 
@@ -85,6 +321,13 @@ const CheckoutPage = () => {
       validatePayload(finalPayload);
       console.log('Final Payload being sent:', JSON.stringify(finalPayload, null, 2));
 
+      // Show processing toast
+      toast.loading('Processing Payment...', {
+        description: 'Please wait while we process your order',
+        duration: Infinity,
+        id: 'payment-processing',
+      });
+
       const response = await fetch('/api/payment/cash-on-delivery', {
         method: 'POST',
         headers: {
@@ -106,6 +349,9 @@ const CheckoutPage = () => {
       console.log('error:', error);
       console.log('message:', message);
 
+      // Dismiss processing toast
+      toast.dismiss('payment-processing');
+
       // The actual order data is nested in orderResponse.data
       const actualOrderData = orderResponse?.data;
       console.log('Actual order data:', actualOrderData);
@@ -122,10 +368,22 @@ const CheckoutPage = () => {
         if (orderId) {
           dispatch(completeOrder({ orderId }));
           setIsOrderCompleted(true);
+
+          // Show success toast
+          toast.success('Order Placed Successfully!', {
+            description: `Your order has been confirmed. Order ID: ${orderId}`,
+            duration: 5000,
+            icon: '🎉',
+          });
+
           router.push(`/order-confirmation/${orderId}`);
         } else {
           console.error('No order ID found in response data');
           dispatch(setCheckoutError('Order created but ID not found'));
+          toast.error('Order Error', {
+            description: 'Order was created but we could not retrieve the order ID',
+            duration: 5000,
+          });
         }
 
         // Step 2: Save Order and Send Confirmation Email
@@ -150,6 +408,10 @@ const CheckoutPage = () => {
         // }
       } else {
         dispatch(setCheckoutError(message || 'Payment failed'));
+        toast.error('Payment Failed', {
+          description: message || 'There was an error processing your payment. Please try again.',
+          duration: 5000,
+        });
 
         // Send failure email
         // try {
@@ -176,6 +438,14 @@ const CheckoutPage = () => {
       setShowWireTransferModal(false);
       dispatch(setCheckoutError('Payment processing failed'));
       console.error('Payment Error:', error);
+
+      // Dismiss processing toast
+      toast.dismiss('payment-processing');
+
+      toast.error('Payment Error', {
+        description: 'There was an error processing your payment. Please check your information and try again.',
+        duration: 5000,
+      });
     } finally {
       setIsLoading(false);
       dispatch(setIsProcessing(false));
@@ -184,10 +454,22 @@ const CheckoutPage = () => {
 
   // Square Payment Processing
   const processSquarePayment = async (token) => {
+    // Validate form before processing
+    if (!validateCompleteForm()) {
+      return;
+    }
+
     setIsLoading(true);
     dispatch(setIsProcessing(true));
 
     try {
+      // Show processing toast
+      toast.loading('Processing Card Payment...', {
+        description: 'Please wait while we process your card payment',
+        duration: Infinity,
+        id: 'card-payment-processing',
+      });
+
       const response = await fetch('/api/payment/square', {
         method: 'POST',
         headers: {
@@ -201,20 +483,43 @@ const CheckoutPage = () => {
 
       const { data, error, message } = await response.json();
 
+      // Dismiss processing toast
+      toast.dismiss('card-payment-processing');
+
       if (!error) {
         setOrderedData(data);
         dispatch(clearCart());
         dispatch(completeOrder({ orderId: data?._id }));
         setIsOrderCompleted(true);
+
+        // Show success toast
+        toast.success('Card Payment Successful!', {
+          description: `Your payment has been processed. Order ID: ${data?._id}`,
+          duration: 5000,
+          icon: '💳',
+        });
+
         router.push(`/order-confirmation/${data?._id}`);
       } else {
         dispatch(setCheckoutError(message || 'Square payment failed'));
+        toast.error('Card Payment Failed', {
+          description: message || 'There was an error processing your card payment. Please try again.',
+          duration: 5000,
+        });
         // Handle payment failure - could redirect to failure page
         // router.push('/payment-callback/fail');
       }
     } catch (error) {
       dispatch(setCheckoutError('Square payment processing failed'));
       console.error('Square Payment Error:', error);
+
+      // Dismiss processing toast
+      toast.dismiss('card-payment-processing');
+
+      toast.error('Card Payment Error', {
+        description: 'There was an error processing your card payment. Please check your card details and try again.',
+        duration: 5000,
+      });
     } finally {
       setIsLoading(false);
       dispatch(setIsProcessing(false));
@@ -223,8 +528,7 @@ const CheckoutPage = () => {
 
   // Wire Transfer Payment Processing
   const processWireTransferPayment = async () => {
-    if (!wireFormData.accountHolderName || !wireFormData.accountNumber || !wireFormData.transactionId) {
-      dispatch(setCheckoutError('Please fill in all wire transfer details'));
+    if (!validateWireForm()) {
       return;
     }
 
@@ -248,6 +552,11 @@ const CheckoutPage = () => {
     } catch (error) {
       dispatch(setCheckoutError('Wire transfer processing failed'));
       console.error('Wire Transfer Error:', error);
+
+      toast.error('Wire Transfer Error', {
+        description: 'There was an error processing your wire transfer. Please check your details and try again.',
+        duration: 5000,
+      });
     } finally {
       setIsLoading(false);
       dispatch(setIsProcessing(false));

@@ -3,9 +3,51 @@
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { useTranslations } from 'next-intl';
+import { toast } from 'sonner';
 
 const WireTransferDialog = ({ open, onClose, formData, onChange, onSubmit }) => {
   const t = useTranslations('CheckoutPage.WireTransferDialog');
+
+  const validateWireForm = () => {
+    const requiredFields = {
+      accountHolderName: t('accountName'),
+      accountNumber: t('accountNumber'),
+      transactionId: t('transactionId'),
+    };
+
+    const missingFields = [];
+    Object.entries(requiredFields).forEach(([field, label]) => {
+      if (!formData[field] || String(formData[field]).trim() === '') {
+        missingFields.push(label);
+      }
+    });
+
+    if (missingFields.length > 0) {
+      toast.error('Incomplete Wire Transfer Information', {
+        description: `Please fill in: ${missingFields.join(', ')}`,
+        duration: 4000,
+      });
+      return false;
+    }
+
+    return true;
+  };
+
+  const handleSubmit = () => {
+    if (!validateWireForm()) {
+      return;
+    }
+
+    toast.success('Wire Transfer Information Validated', {
+      description: 'Processing your wire transfer...',
+      duration: 2000,
+    });
+
+    // Call the original onSubmit
+    if (onSubmit) {
+      onSubmit();
+    }
+  };
 
   return (
     <Dialog open={open} onOpenChange={(isOpen) => !isOpen && onClose()}>
@@ -104,7 +146,7 @@ const WireTransferDialog = ({ open, onClose, formData, onChange, onSubmit }) => 
                     {t('cancel')}
                   </button>
                   <button
-                    onClick={onSubmit}
+                    onClick={handleSubmit}
                     className="main-button-black inline-flex w-full items-center justify-center rounded-full px-6 py-3"
                   >
                     {t('save')}
