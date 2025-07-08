@@ -338,32 +338,31 @@ const CheckoutPage = () => {
         }),
       });
 
-      console.log('Response:', response);
       setShowWireTransferModal(false);
 
       const responseData = await response.json();
       const { data: orderResponse, error, message } = responseData;
 
-      console.log('Full response:', responseData);
-      console.log('Order response:', orderResponse);
-      console.log('error:', error);
-      console.log('message:', message);
+      // console.log('Full response:', responseData);
+      // console.log('Order response:', orderResponse);
+      // console.log('error:', error);
+      // console.log('message:', message);
 
       // Dismiss processing toast
       toast.dismiss('payment-processing');
 
       // The actual order data is nested in orderResponse.data
       const actualOrderData = orderResponse?.data;
-      console.log('Actual order data:', actualOrderData);
-      console.log('actualOrderData._id:', actualOrderData?._id);
+      // console.log('Actual order data:', actualOrderData);
+      // console.log('actualOrderData._id:', actualOrderData?._id);
 
       if (!error) {
         setOrderedData(actualOrderData);
-        // dispatch(clearCart());
+        dispatch(clearCart());
 
         // Get the order ID with fallbacks
         const orderId = actualOrderData?._id || actualOrderData?.id || actualOrderData?.orderId || null;
-        console.log('Extracted order ID:', orderId);
+        // console.log('Extracted order ID:', orderId);
 
         if (orderId) {
           dispatch(completeOrder({ orderId }));
@@ -540,15 +539,15 @@ const CheckoutPage = () => {
       const wirePayload = {
         ...paymentPayload,
         payment_info: {
-          transection_id: wireFormData.transactionId, // Note: backend uses 'transection_id' (typo in backend)
+          transection_id: wireFormData.transactionId,
           account_number: wireFormData.accountNumber,
           account_name: wireFormData.accountHolderName,
         },
-        payment_status: 'Unpaid', // Wire transfers start as unpaid until verified
+        payment_status: 'Unpaid',
       };
 
-      // For wire transfer, we'll use the cash-on-delivery endpoint but with wire transfer info
       await processPayment(wirePayload);
+      await dispatch(clearCart());
     } catch (error) {
       dispatch(setCheckoutError('Wire transfer processing failed'));
       console.error('Wire Transfer Error:', error);
