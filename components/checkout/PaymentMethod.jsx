@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils';
 import { CheckCircle2 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useSelector } from 'react-redux';
+import { toast } from 'sonner';
 
 const paymentMethods = ['debit-credit-card', 'ach-wire-transfer', 'cash-on-delivery'];
 
@@ -16,8 +17,19 @@ const PaymentMethod = ({ value, onValueChange }) => {
   const handleChange = (selectedValue) => {
     if (value === selectedValue) {
       onValueChange('');
+      toast.info('Payment Method Deselected', {
+        description: 'No payment method selected',
+        duration: 2000,
+      });
     } else {
       onValueChange(selectedValue);
+      // Show success toast based on payment method
+      const methodName = t(`methods.${selectedValue}.name`);
+      toast.success('Payment Method Selected', {
+        description: `${methodName} selected successfully`,
+        duration: 2000,
+        icon: '✅',
+      });
     }
   };
 

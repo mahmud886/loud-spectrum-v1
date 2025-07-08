@@ -51,12 +51,12 @@ export default function UserOrdersPage({ orders }) {
           <Table>
             <TableHeader>
               <TableRow className="bg-background after:bg-border sticky top-0 after:absolute after:inset-x-0 after:bottom-0 after:h-px after:content-[''] [&>*]:whitespace-nowrap">
-                <TableHead className="font-sans font-normal">Order ID</TableHead>
-                <TableHead className="font-sans font-normal">Order Date</TableHead>
-                <TableHead className="font-sans font-normal">Quantity</TableHead>
-                <TableHead className="font-sans font-normal">Total Amount</TableHead>
-                <TableHead className="font-sans font-normal">Status</TableHead>
-                <TableHead className="font-sans font-normal">Payment Status</TableHead>
+                <TableHead className="text-center font-sans font-normal">Order ID</TableHead>
+                <TableHead className="text-center font-sans font-normal">Order Date</TableHead>
+                <TableHead className="text-center font-sans font-normal">Quantity</TableHead>
+                <TableHead className="text-center font-sans font-normal">Total Amount</TableHead>
+                <TableHead className="text-center font-sans font-normal">Status</TableHead>
+                <TableHead className="text-center font-sans font-normal">Payment Status</TableHead>
                 <TableHead className="text-center font-sans font-normal">Action</TableHead>
                 <TableHead className="text-center font-sans font-normal">Details</TableHead>
               </TableRow>
@@ -64,50 +64,61 @@ export default function UserOrdersPage({ orders }) {
             <TableBody>
               {orders.map((order) => (
                 <TableRow key={order._id} className="odd:bg-muted/50 [&>*]:whitespace-nowrap">
-                  <TableCell>
+                  <TableCell className="text-center">
                     <Link
                       href={`/account/orders/${order._id}`}
-                      className="bg-stardust/80 hover:bg-stardust text-umbra-100 rounded-[10px] px-2 py-1 text-[10px]"
+                      className="bg-stardust/80 hover:bg-stardust text-umbra-100 rounded-full px-2 py-1 text-[10px]"
                     >
                       {order.code}
                     </Link>
                   </TableCell>
-                  <TableCell>{formatDate(order.created_at)}</TableCell>
-                  <TableCell>{calculateTotalQuantity(order.products)}</TableCell>
-                  <TableCell>${order.total.toFixed(2)}</TableCell>
-                  <TableCell>
+                  <TableCell className="text-center">{formatDate(order.created_at)}</TableCell>
+                  <TableCell className="text-center">
+                    {order.products?.reduce((total, item) => total + (item.quantity || 0), 0) +
+                      order.ws_products?.reduce((total, item) => total + (item.quantity || 0), 0)}
+                  </TableCell>
+                  <TableCell className="text-center">${order.total.toFixed(2)}</TableCell>
+                  <TableCell className="text-center">
                     <Badge
                       className={
                         order.order_status === 'Delivered'
-                          ? 'bg-green-100 text-green-800'
+                          ? 'rounded-full bg-green-50 px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal text-green-600'
                           : order.order_status === 'Pending'
-                            ? 'bg-blue-100 text-blue-800'
-                            : 'bg-pink-100 text-pink-800'
+                            ? 'rounded-full bg-blue-50 px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal text-blue-600'
+                            : 'rounded-full bg-pink-50 px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal text-pink-600'
                       }
                     >
                       {order.order_status}
                     </Badge>
                   </TableCell>
-                  <TableCell>
+                  <TableCell className="text-center">
                     <Badge
                       className={
-                        order.payment_status === 'Paid' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
+                        order.payment_status === 'Paid'
+                          ? 'rounded-full bg-green-50 px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal text-green-600'
+                          : 'rounded-full bg-red-100 px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal text-red-800'
                       }
                     >
                       {order.payment_status}
                     </Badge>
                   </TableCell>
                   <TableCell className="text-center">
-                    {order.payment_status === 'Unpaid' ? (
-                      <Badge className="bg-red-100 text-red-800">Pay Now</Badge>
-                    ) : (
-                      <Badge className="bg-green-50 font-normal text-green-600">Paid</Badge>
-                    )}
+                    <div className="flex items-center justify-center">
+                      {order.payment_status === 'Unpaid' ? (
+                        <Badge className="rounded-full bg-red-100 px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal text-red-800">
+                          Pay Now
+                        </Badge>
+                      ) : (
+                        <Badge className="rounded-full bg-green-50 px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal text-green-600">
+                          Paid
+                        </Badge>
+                      )}
+                    </div>
                   </TableCell>
                   <TableCell className="text-center">
                     <Badge
                       onClick={() => handleViewClick(order._id)}
-                      className="cursor-pointer bg-green-50 font-normal text-green-600"
+                      className="cursor-pointer rounded-full bg-green-50 px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal text-green-600"
                     >
                       View
                     </Badge>

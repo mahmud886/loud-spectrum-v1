@@ -102,41 +102,51 @@ const OrderConfirmationContent = ({ orderData }) => {
       {/* Order Summary Card */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
+          <CardTitle className="flex items-center justify-center gap-2 text-center">
             <Hash className="h-5 w-5" />
             {t('orderDetails')}
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-            <div>
+          <div className="grid grid-cols-1 items-center justify-center gap-4 md:grid-cols-2 lg:grid-cols-4">
+            <div className="text-center">
               <p className="text-sm font-medium text-gray-500">Order Number</p>
-              <p className="text-lg font-semibold">{code}</p>
+              <p className="text-sm font-semibold capitalize">{code}</p>
             </div>
-            <div>
+            <div className="text-center">
               <p className="text-sm font-medium text-gray-500">Order Date</p>
-              <p className="text-lg font-semibold">{formatDate(created_at)}</p>
+              <p className="text-sm font-semibold capitalize">{formatDate(created_at)}</p>
             </div>
-            <div>
+            <div className="text-center">
               <p className="text-sm font-medium text-gray-500">Order Status</p>
-              <Badge variant={getStatusBadgeVariant(order_status)}>{order_status}</Badge>
+              <Badge
+                variant={getStatusBadgeVariant(order_status)}
+                className="text-umbra-100 rounded-full bg-green-100 px-2 py-1 font-sans text-[12px] leading-[120%] font-normal capitalize"
+              >
+                {order_status}
+              </Badge>
             </div>
-            <div>
+            <div className="text-center">
               <p className="text-sm font-medium text-gray-500">Payment Status</p>
-              <Badge variant={getPaymentStatusBadgeVariant(payment_status)}>{payment_status}</Badge>
+              <Badge
+                variant={getPaymentStatusBadgeVariant(payment_status)}
+                className="text-umbra-100 rounded-full bg-red-100 px-2 py-1 font-sans text-[12px] leading-[120%] font-normal capitalize"
+              >
+                {payment_status}
+              </Badge>
             </div>
           </div>
 
           <Separator />
 
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-            <div>
+          <div className="grid grid-cols-1 items-center justify-between gap-4 md:grid-cols-3">
+            <div className="text-center">
               <p className="text-sm font-medium text-gray-500">Order Type</p>
-              <p className="text-lg font-semibold">{type}</p>
+              <p className="text-sm font-semibold capitalize">{type}</p>
             </div>
-            <div>
+            <div className="text-center">
               <p className="text-sm font-medium text-gray-500">Payment Method</p>
-              <p className="text-lg font-semibold">
+              <p className="text-sm font-semibold capitalize">
                 {payment_type === 'COD'
                   ? 'Cash on Delivery'
                   : payment_type === 'CARD'
@@ -146,9 +156,9 @@ const OrderConfirmationContent = ({ orderData }) => {
                       : payment_type}
               </p>
             </div>
-            <div>
+            <div className="text-center">
               <p className="text-sm font-medium text-gray-500">Total Amount</p>
-              <p className="text-xl font-bold text-green-600">{formatPrice(total)}</p>
+              <p className="text-sm font-bold text-green-600">{formatPrice(total)}</p>
             </div>
           </div>
         </CardContent>
@@ -171,7 +181,7 @@ const OrderConfirmationContent = ({ orderData }) => {
                   <h3 className="font-semibold text-gray-900">Regular Products</h3>
                   <Badge
                     variant="default"
-                    className="text-umbra-100 rounded-[10px] bg-green-100 px-2 py-1 font-sans text-[12px] leading-[120%] font-normal capitalize"
+                    className="text-umbra-100 rounded-full bg-green-100 px-2 py-1 font-sans text-[12px] leading-[120%] font-normal capitalize"
                   >
                     Regular
                   </Badge>
@@ -186,27 +196,40 @@ const OrderConfirmationContent = ({ orderData }) => {
                         {item.product?.name || item.name || `Product ${index + 1}`}
                       </h4>
                       <div className="mt-1 flex items-center gap-4 text-sm text-gray-600">
-                        <span>Qty: {item.quantity}</span>
-                        <span>SKU: {item.product?.sku || 'N/A'}</span>
+                        <span className="rounded-full bg-green-100 px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal text-green-600 capitalize">
+                          Qty: {item.quantity}
+                        </span>
+                        <span className="rounded-full bg-green-100 px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal text-green-600 capitalize">
+                          sku: {item.product?.sku || 'N/A'}
+                        </span>
                       </div>
                       <div className="mt-2 flex items-center gap-2">
                         <Badge
                           variant="default"
-                          className="text-umbra-100 rounded-[10px] bg-green-100 px-2 py-1 font-sans text-[12px] leading-[120%] font-normal capitalize"
+                          className="text-umbra-100 rounded-full bg-green-100 px-2 py-1 font-sans text-[12px] leading-[120%] font-normal capitalize"
                         >
                           Regular
                         </Badge>
                         <Badge
                           variant="default"
-                          className="bg-umbra-5 text-umbra-100 rounded-[10px] px-2 py-1 font-sans text-[12px] leading-[120%] font-normal"
+                          className="bg-umbra-5 text-umbra-100 rounded-full px-2 py-1 font-sans text-[12px] leading-[120%] font-normal"
                         >
-                          {item.selectedVolume} 10ml
+                          {item.selectedVolume} 1ml
                         </Badge>
                         <Badge
                           variant="default"
-                          className="bg-classic/20 text-umbra-100 rounded-[10px] px-2 py-1 font-sans text-[12px] leading-[120%] font-normal"
+                          className="bg-classic/20 text-umbra-100 rounded-full px-2 py-1 font-sans text-[12px] leading-[120%] font-normal"
                         >
-                          flavor: {item.flavor}
+                          {(() => {
+                            try {
+                              const parsed = JSON.parse(item?.attribute);
+                              const flavor = parsed?.flavor || 'N/A';
+                              return flavor === 'N/A' ? 'N/A' : flavor;
+                            } catch (error) {
+                              console.warn('Failed to parse attribute JSON:', item?.attribute);
+                              return 'N/A';
+                            }
+                          })()}
                         </Badge>
                       </div>
                     </div>
@@ -223,7 +246,10 @@ const OrderConfirmationContent = ({ orderData }) => {
               <div className="space-y-3">
                 <div className="flex items-center gap-2">
                   <h3 className="font-semibold text-gray-900">Wholesale Products</h3>
-                  <Badge variant="default" className="bg-red-100 text-red-800 hover:bg-red-200">
+                  <Badge
+                    variant="default"
+                    className="text-umbra-100 rounded-full bg-red-100 px-2 py-1 font-sans text-[12px] leading-[120%] font-normal capitalize"
+                  >
                     Wholesale
                   </Badge>
                 </div>
@@ -237,27 +263,40 @@ const OrderConfirmationContent = ({ orderData }) => {
                         {item.product?.name || item.name || `Product ${index + 1}`}
                       </h4>
                       <div className="mt-1 flex items-center gap-2 text-sm text-gray-600">
-                        <span>Qty: {item.quantity}</span>
-                        <span>SKU: {item.product?.sku || 'N/A'}</span>
+                        <span className="rounded-full bg-red-100 px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal text-red-600 capitalize">
+                          Qty: {item.quantity}
+                        </span>
+                        <span className="rounded-full bg-red-100 px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal text-red-600 capitalize">
+                          sku: {item.product?.sku || 'N/A'}
+                        </span>
                       </div>
                       <div className="mt-2 flex items-center gap-2">
                         <Badge
                           variant="default"
-                          className="text-umbra-100 rounded-[10px] bg-red-100 px-2 py-1 font-sans text-[12px] leading-[120%] font-normal capitalize"
+                          className="text-umbra-100 rounded-full bg-red-100 px-2 py-1 font-sans text-[12px] leading-[120%] font-normal capitalize"
                         >
                           Wholesale
                         </Badge>
                         <Badge
                           variant="default"
-                          className="bg-umbra-5 text-umbra-100 rounded-[10px] px-2 py-1 font-sans text-[12px] leading-[120%] font-normal"
+                          className="bg-umbra-5 text-umbra-100 rounded-full px-2 py-1 font-sans text-[12px] leading-[120%] font-normal capitalize"
                         >
                           {item.selectedVolume} 1ml
                         </Badge>
                         <Badge
                           variant="default"
-                          className="bg-classic/20 text-umbra-100 rounded-[10px] px-2 py-1 font-sans text-[12px] leading-[120%] font-normal"
+                          className="bg-classic/20 text-umbra-100 rounded-full px-2 py-1 font-sans text-[12px] leading-[120%] font-normal"
                         >
-                          flavor: {item.flavor}
+                          {(() => {
+                            try {
+                              const parsed = JSON.parse(item?.attribute);
+                              const flavor = parsed?.flavor || 'N/A';
+                              return flavor === 'N/A' ? 'N/A' : flavor;
+                            } catch (error) {
+                              console.warn('Failed to parse attribute JSON:', item?.attribute);
+                              return 'N/A';
+                            }
+                          })()}
                         </Badge>
                       </div>
                     </div>
@@ -364,13 +403,13 @@ const OrderConfirmationContent = ({ orderData }) => {
       <div className="flex flex-col justify-center gap-4 sm:flex-row">
         <Link
           href="/shop"
-          className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-6 py-3 text-gray-700 shadow-sm transition-colors hover:bg-gray-50"
+          className="inline-flex items-center justify-center rounded-full border border-gray-300 bg-white px-6 py-3 text-center font-sans text-[16px] leading-[120%] font-normal text-gray-700 shadow-sm transition-colors hover:bg-gray-50"
         >
           Continue Shopping
         </Link>
         <Link
           href="/account/orders"
-          className="inline-flex items-center justify-center rounded-md bg-black px-6 py-3 text-white transition-colors hover:bg-gray-800"
+          className="inline-flex items-center justify-center rounded-full bg-black px-6 py-3 text-center font-sans text-[16px] leading-[120%] font-normal text-white transition-colors hover:bg-gray-800"
         >
           View All Orders
         </Link>
