@@ -4,12 +4,15 @@ import {
   applyCoupon,
   removeCoupon,
   selectDiscountCoupon,
+  selectOrderSummary,
   setCouponCode,
   setCouponError,
 } from '@/lib/store/slices/checkoutSlice';
+import { getVerifyDiscountCoupon } from '@/services/get-verify-discount-coupon';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'sonner';
 
 const DiscountCoupon = () => {
   const dispatch = useDispatch();
@@ -17,6 +20,7 @@ const DiscountCoupon = () => {
   const [isApplying, setIsApplying] = useState(false);
 
   const discountCoupon = useSelector(selectDiscountCoupon);
+  const orderSummary = useSelector(selectOrderSummary);
 
   const handleInputChange = (e) => {
     dispatch(setCouponCode(e.target.value));
@@ -29,35 +33,58 @@ const DiscountCoupon = () => {
     }
 
     setIsApplying(true);
+    dispatch(setCouponError(null));
 
     try {
-      // Simulate API call for coupon validation
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      const response = await getVerifyDiscountCoupon(discountCoupon.code);
 
-      // Mock coupon validation logic
-      const validCoupons = {
-        SAVE10: { discountAmount: 10, type: 'fixed' },
-        SAVE20: { discountAmount: 20, type: 'fixed' },
-        PERCENT15: { discountAmount: 0.15, type: 'percentage' },
-      };
-
-      const coupon = validCoupons[discountCoupon.code.toUpperCase()];
-
-      if (coupon) {
-        let discountAmount;
-        if (coupon.type === 'percentage') {
-          // For percentage discounts, you'd calculate based on subtotal
-          // This is a simplified example
-          discountAmount = 100 * coupon.discountAmount; // Assuming $100 subtotal
-        } else {
-          discountAmount = coupon.discountAmount;
-        }
-
-        dispatch(applyCoupon({ discountAmount }));
-      } else {
-        dispatch(setCouponError('Invalid coupon code'));
+      if (response.error) {
+        toast.error(response.message || 'Invalid coupon code');
+        dispatch(setCouponError(response.message || 'Invalid coupon code'));
+        return;
       }
+      const couponData = response.data?.data;
+
+      if (!couponData) {
+        toast.error('Invalid coupon response');
+        dispatch(setCouponError('Invalid coupon response'));
+        return;
+      }
+
+      if (couponData.status !== 'Active') {
+        toast.error('This coupon is not active');
+        dispatch(setCouponError('This coupon is not active'));
+        return;
+      }
+
+      let discountAmount = 0;
+      const subtotal = orderSummary.subtotal;
+
+      if (couponData.discount_type === 'Fixed') {
+        discountAmount = couponData.discount_value;
+      } else if (couponData.discount_type === 'Percentage') {
+        discountAmount = (couponData.discount_value / 100) * subtotal;
+      } else {
+        toast.error('Unsupported discount type');
+        dispatch(setCouponError('Unsupported discount type'));
+        return;
+      }
+
+      discountAmount = Math.min(discountAmount, subtotal);
+
+      toast.success(`Coupon applied! You saved $${discountAmount.toFixed(2)}`);
+      dispatch(
+        applyCoupon({
+          discountAmount,
+          couponType: couponData.discount_type,
+          couponId: couponData._id,
+          couponCode: couponData.code,
+          originalDiscountValue: couponData.discount_value,
+        }),
+      );
     } catch (error) {
+      console.error('Error applying coupon:', error);
+      toast.error('Failed to apply coupon. Please try again.');
       dispatch(setCouponError('Failed to apply coupon. Please try again.'));
     } finally {
       setIsApplying(false);
@@ -66,6 +93,17 @@ const DiscountCoupon = () => {
 
   const handleRemoveCoupon = () => {
     dispatch(removeCoupon());
+  };
+
+  const getDiscountDisplayText = () => {
+    if (discountCoupon.applied) {
+      if (discountCoupon.couponType === 'Percentage') {
+        return `Coupon applied! You saved ${discountCoupon.originalDiscountValue}% ($${discountCoupon.discountAmount.toFixed(2)})`;
+      } else {
+        return `Coupon applied! You saved $${discountCoupon.discountAmount.toFixed(2)}`;
+      }
+    }
+    return '';
   };
 
   return (
@@ -100,11 +138,7 @@ const DiscountCoupon = () => {
       </div>
 
       {/* Success message */}
-      {discountCoupon.applied && (
-        <div className="text-sm font-medium text-green-600">
-          Coupon applied! You saved ${discountCoupon.discountAmount.toFixed(2)}
-        </div>
-      )}
+      {discountCoupon.applied && <div className="text-sm font-medium text-green-600">{getDiscountDisplayText()}</div>}
 
       {/* Error message */}
       {discountCoupon.error && <div className="text-sm font-medium text-red-600">{discountCoupon.error}</div>}
