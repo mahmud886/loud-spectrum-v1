@@ -3,6 +3,7 @@
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
 import { selectShippingAddress, updateShippingAddress } from '@/lib/store/slices/checkoutSlice';
+import { getOrderAddress } from '@/services/get-order-address';
 import { getCities, getCountries, getStates } from '@/services/location-services';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
@@ -21,6 +22,30 @@ const ShippingAddress = () => {
   const [openProvince, setOpenProvince] = useState(false);
   const [openCity, setOpenCity] = useState(false);
   const [isCustomCity, setIsCustomCity] = useState(false);
+
+  useEffect(() => {
+    const fetchOrderAddress = async () => {
+      const data = await getOrderAddress();
+      const address = data?.data?.addresss;
+      const defaultAddress = address?.find((defaultAddress) => defaultAddress.is_default);
+      if (defaultAddress) {
+        dispatch(
+          updateShippingAddress({
+            firstName: defaultAddress.first_name,
+            lastName: defaultAddress.last_name,
+            email: defaultAddress.email,
+            phone: defaultAddress.phone,
+            country: defaultAddress.country,
+            province: defaultAddress.state,
+            city: defaultAddress.city,
+            postalCode: defaultAddress.postal_code,
+            streetAddress: defaultAddress.street_address,
+          }),
+        );
+      }
+    };
+    fetchOrderAddress();
+  }, []);
 
   useEffect(() => {
     const fetchCountries = async () => {
