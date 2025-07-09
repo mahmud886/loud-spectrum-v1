@@ -6,6 +6,7 @@ import TopNav from '@/components/TopNav';
 import { useAuthToken } from '@/hooks/useAuthToken';
 import { Link, usePathname, useRouter } from '@/i18n/navigation';
 import { logout } from '@/lib/store/slices/authSlice';
+import { clearCheckoutOnLogin } from '@/lib/store/slices/checkoutSlice';
 import { LogInIcon, ShoppingCartIcon, UserIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
@@ -34,6 +35,8 @@ const Navbar = ({ locale }) => {
       if (response.ok) {
         toast.success(t('Navbar.logout_success'));
         dispatch(logout());
+        // Clear checkout state on logout
+        dispatch(clearCheckoutOnLogin());
         router.push('/');
       }
     } catch (error) {

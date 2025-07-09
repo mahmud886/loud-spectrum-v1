@@ -363,45 +363,47 @@ const ChooseYourCourier = () => {
       </RadioGroup.Root>
 
       {/* Shipping Logic Information */}
-      <div className="space-y-2">
-        {/* User Type and Destination */}
-        <div className="rounded-[10px] border border-purple-200 bg-purple-50 p-3">
-          <p className="text-sm text-purple-800">
-            <span className="font-medium">User Type:</span> {isWholesaler() ? 'Wholesaler' : 'Customer'} |
-            <span className="ml-2 font-medium">Destination:</span> {isInternational() ? 'International' : 'USA'}
-            {isCaliforniaUS() && <span className="ml-2 text-xs">(CA - Sales Tax: 7.75%)</span>}
-            {!shippingAddress?.country && (
-              <span className="ml-2 text-xs text-red-500">(Address not set - initializing...)</span>
-            )}
-          </p>
-        </div>
-
-        {/* Volume Information */}
-        {totalVolume > 0 && (
-          <div className="rounded-[10px] border border-blue-200 bg-blue-50 p-3">
-            <p className="text-sm text-blue-800">
-              <span className="font-medium">Total Volume:</span> {totalVolume}ml
-              {totalVolume <= 5 && <span className="ml-2 text-xs">(≤5ml products)</span>}
-              {totalVolume > 5 && totalVolume < 50 && <span className="ml-2 text-xs">(5-50ml products)</span>}
-              {totalVolume >= 50 && (
-                <span className="ml-2 text-xs">(≥50ml products - Hazardous shipping required)</span>
+      {process.env.NODE_ENV === 'development' && (
+        <div className="space-y-2">
+          {/* User Type and Destination */}
+          <div className="rounded-[10px] border border-purple-200 bg-purple-50 p-3">
+            <p className="text-sm text-purple-800">
+              <span className="font-medium">User Type:</span> {isWholesaler() ? 'Wholesaler' : 'Customer'} |
+              <span className="ml-2 font-medium">Destination:</span> {isInternational() ? 'International' : 'USA'}
+              {isCaliforniaUS() && <span className="ml-2 text-xs">(CA - Sales Tax: 7.75%)</span>}
+              {!shippingAddress?.country && (
+                <span className="ml-2 text-xs text-red-500">(Address not set - initializing...)</span>
               )}
             </p>
           </div>
-        )}
 
-        {/* Tax Information */}
-        {orderSummary.subtotal > 0 && (
-          <div className="rounded-[10px] border border-green-200 bg-green-50 p-3">
-            <p className="text-sm text-green-800">
-              <span className="font-medium">Subtotal:</span> ${orderSummary.subtotal.toFixed(2)} |
-              <span className="ml-2 font-medium">Tax:</span> ${orderSummary.tax.toFixed(2)}
-              {isCaliforniaUS() && <span className="ml-2 text-xs">(CA Sales Tax: 7.75%)</span>}
-              {!isCaliforniaUS() && <span className="ml-2 text-xs">(No tax applied)</span>}
-            </p>
-          </div>
-        )}
-      </div>
+          {/* Volume Information */}
+          {totalVolume > 0 && (
+            <div className="rounded-[10px] border border-blue-200 bg-blue-50 p-3">
+              <p className="text-sm text-blue-800">
+                <span className="font-medium">Total Volume:</span> {totalVolume}ml
+                {totalVolume <= 5 && <span className="ml-2 text-xs">(≤5ml products)</span>}
+                {totalVolume > 5 && totalVolume < 50 && <span className="ml-2 text-xs">(5-50ml products)</span>}
+                {totalVolume >= 50 && (
+                  <span className="ml-2 text-xs">(≥50ml products - Hazardous shipping required)</span>
+                )}
+              </p>
+            </div>
+          )}
+
+          {/* Tax Information */}
+          {orderSummary.subtotal > 0 && (
+            <div className="rounded-[10px] border border-green-200 bg-green-50 p-3">
+              <p className="text-sm text-green-800">
+                <span className="font-medium">Subtotal:</span> ${orderSummary.subtotal.toFixed(2)} |
+                <span className="ml-2 font-medium">Tax:</span> ${orderSummary.tax.toFixed(2)}
+                {isCaliforniaUS() && <span className="ml-2 text-xs">(CA Sales Tax: 7.75%)</span>}
+                {!isCaliforniaUS() && <span className="ml-2 text-xs">(No tax applied)</span>}
+              </p>
+            </div>
+          )}
+        </div>
+      )}
 
       {/* Shipping Type Dropdown */}
       <div className="mt-6">

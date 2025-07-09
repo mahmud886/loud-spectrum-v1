@@ -2,6 +2,7 @@
 
 import { Link } from '@/i18n/navigation';
 import { logout } from '@/lib/store/slices/authSlice';
+import { clearCheckoutOnLogin } from '@/lib/store/slices/checkoutSlice';
 import clsx from 'clsx';
 import { LayoutDashboard, LocateFixed, LogOut, MapPin, ShoppingBag, User } from 'lucide-react';
 import { useTranslations } from 'next-intl';
@@ -26,6 +27,8 @@ const SideMenuList = () => {
       if (response.ok) {
         toast.success(t('Navbar.logout_success'));
         dispatch(logout());
+        // Clear checkout state on logout
+        dispatch(clearCheckoutOnLogin());
         router.push('/');
       }
     } catch (error) {

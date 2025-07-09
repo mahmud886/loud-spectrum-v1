@@ -2,17 +2,23 @@
 
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
-import { selectShippingAddress, updateShippingAddress } from '@/lib/store/slices/checkoutSlice';
+import { Link } from '@/i18n/navigation';
+import { selectCurrentUser } from '@/lib/store/slices/authSlice';
+import { selectShippingAddress, setDefaultAddresses, updateShippingAddress } from '@/lib/store/slices/checkoutSlice';
+import { getOrderAddress } from '@/services/get-order-address';
 import { getCities, getCountries, getStates } from '@/services/location-services';
+import { ArrowRight } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'sonner';
+import { Badge } from '../ui/badge';
 
 const ShippingAddress = () => {
   const t = useTranslations('CheckoutPage.ShippingAndBillingAddress');
   const dispatch = useDispatch();
   const shippingAddress = useSelector(selectShippingAddress);
+  const currentUser = useSelector(selectCurrentUser);
   const [countries, setCountries] = useState([]);
   const [provinces, setProvinces] = useState([]);
   const [cities, setCities] = useState([]);
@@ -21,6 +27,44 @@ const ShippingAddress = () => {
   const [openProvince, setOpenProvince] = useState(false);
   const [openCity, setOpenCity] = useState(false);
   const [isCustomCity, setIsCustomCity] = useState(false);
+  const [hasSetDefaultAddress, setHasSetDefaultAddress] = useState(false);
+
+  // Check for default addresses when component mounts or user changes
+  useEffect(() => {
+    const setDefaultAddressFromUser = () => {
+      if (currentUser && currentUser.addresss && Array.isArray(currentUser.addresss) && !hasSetDefaultAddress) {
+        const defaultAddress = currentUser.addresss.find((addr) => addr.is_default);
+        if (defaultAddress) {
+          dispatch(setDefaultAddresses({ defaultAddress }));
+          setHasSetDefaultAddress(true);
+        }
+      }
+    };
+
+    setDefaultAddressFromUser();
+  }, [currentUser, dispatch, hasSetDefaultAddress]);
+
+  // Legacy fallback: Fetch addresses from API if not available in Redux user state
+  useEffect(() => {
+    const fetchOrderAddress = async () => {
+      // Only fetch if we don't have addresses in user state and haven't set default yet
+      if (currentUser && (!currentUser.addresss || !Array.isArray(currentUser.addresss)) && !hasSetDefaultAddress) {
+        try {
+          const data = await getOrderAddress();
+          const address = data?.data?.addresss;
+          const defaultAddress = address?.find((defaultAddress) => defaultAddress.is_default);
+          if (defaultAddress) {
+            dispatch(setDefaultAddresses({ defaultAddress }));
+            setHasSetDefaultAddress(true);
+          }
+        } catch (error) {
+          console.error('Error fetching default address:', error);
+        }
+      }
+    };
+
+    fetchOrderAddress();
+  }, [currentUser, dispatch, hasSetDefaultAddress]);
 
   useEffect(() => {
     const fetchCountries = async () => {
@@ -130,7 +174,23 @@ const ShippingAddress = () => {
 
   return (
     <form className="mx-auto w-full space-y-6">
-      <h2 className="text-umbra-100 font-sans text-[24px] font-normal">{t('headingShipping')}</h2>
+      <div className="flex items-center justify-between gap-2">
+        <h2 className="text-umbra-100 font-sans text-[24px] font-normal">{t('headingShipping')}</h2>
+        <div className="flex items-center gap-2">
+          <Link
+            href="/account/address-book"
+            className="text-umbra-100 flex items-center gap-2 font-mono text-[10px] font-normal hover:underline"
+          >
+            <span className="text-umbra-100 font-mono text-[10px] font-normal">
+              Addresses are saved in your account.
+            </span>
+            <ArrowRight className="h-4 w-4" />
+            <Badge variant="outline" className="bg-umbra-5 text-umbra-100">
+              Manage Addresses
+            </Badge>
+          </Link>
+        </div>
+      </div>
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {/* First Name */}
