@@ -2,6 +2,7 @@
 
 import { validateLogin } from '@/helpers/validations/login-validation';
 import { setCredentials, setError, setLoading } from '@/lib/store/slices/authSlice';
+import { clearCheckoutOnLogin, setDefaultAddresses } from '@/lib/store/slices/checkoutSlice';
 import { Eye, EyeOff } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useRouter, useSearchParams } from 'next/navigation';
@@ -58,8 +59,20 @@ const Login = () => {
         return;
       }
 
+      // Clear checkout state on fresh login
+      dispatch(clearCheckoutOnLogin());
+
       // Update Redux store with user data
       dispatch(setCredentials(result.data));
+
+      // Set default addresses if available
+      if (result.data.addresss && Array.isArray(result.data.addresss)) {
+        const defaultAddress = result.data.addresss.find((addr) => addr.is_default);
+        if (defaultAddress) {
+          dispatch(setDefaultAddresses({ defaultAddress }));
+        }
+      }
+
       toast.success(t('login_success'));
 
       // Redirect to the original requested page or home page
