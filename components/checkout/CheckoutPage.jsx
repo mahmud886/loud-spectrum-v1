@@ -12,7 +12,6 @@ import { clearCart } from '@/lib/store/slices/cartSlice';
 import {
   completeOrder,
   selectBillingAddress,
-  selectCardFormData,
   selectPaymentPayload,
   selectSelectedCourier,
   selectSelectedPaymentMethod,
@@ -21,7 +20,6 @@ import {
   selectShowCardDialog,
   selectShowWireDialog,
   selectWireFormData,
-  setCardFormField,
   setCheckoutError,
   setIsProcessing,
   setSelectedPaymentMethod,
@@ -49,7 +47,6 @@ const CheckoutPage = () => {
 
   // Redux selectors
   const selectedPaymentMethod = useSelector(selectSelectedPaymentMethod);
-  const cardFormData = useSelector(selectCardFormData);
   const wireFormData = useSelector(selectWireFormData);
   const showCardDialog = useSelector(selectShowCardDialog);
   const showWireDialog = useSelector(selectShowWireDialog);
@@ -215,32 +212,6 @@ const CheckoutPage = () => {
     return true;
   };
 
-  const validateCardForm = () => {
-    const requiredFields = {
-      cardHolderName: 'Card Holder Name',
-      expiry: 'Expiry Date',
-      securityCode: 'Security Code',
-      postalCode: 'Postal Code',
-    };
-
-    const missingFields = [];
-    Object.entries(requiredFields).forEach(([field, label]) => {
-      if (!cardFormData[field] || String(cardFormData[field]).trim() === '') {
-        missingFields.push(label);
-      }
-    });
-
-    if (missingFields.length > 0) {
-      toast.error('Incomplete Card Information', {
-        description: `Please fill in: ${missingFields.join(', ')}`,
-        duration: 4000,
-      });
-      return false;
-    }
-
-    return true;
-  };
-
   const validateWireForm = () => {
     const requiredFields = {
       accountHolderName: 'Account Holder Name',
@@ -275,7 +246,7 @@ const CheckoutPage = () => {
     if (!validatePaymentMethod()) return false;
 
     // Payment method specific validation
-    if (selectedPaymentMethod === 'debit-credit-card' && !validateCardForm()) return false;
+    // Note: Card validation is handled by Square, so we skip it here
     if (selectedPaymentMethod === 'ach-wire-transfer' && !validateWireForm()) return false;
 
     return true;
@@ -480,7 +451,26 @@ const CheckoutPage = () => {
         }),
       });
 
-      const { data, error, message } = await response.json();
+      console.log('Square API Response Status:', response.status);
+      console.log('Square API Response Headers:', response.headers.get('content-type'));
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const responseText = await response.text();
+      console.log('Square API Raw Response:', responseText);
+
+      let responseData;
+      try {
+        responseData = JSON.parse(responseText);
+      } catch (parseError) {
+        console.error('Failed to parse Square API response:', parseError);
+        console.error('Response was:', responseText);
+        throw new Error('Invalid JSON response from payment API');
+      }
+
+      const { data, error, message, success } = responseData;
 
       // Dismiss processing toast
       toast.dismiss('card-payment-processing');
@@ -562,12 +552,6 @@ const CheckoutPage = () => {
     }
   };
 
-  // Handle card input change
-  const handleCardInputChange = (e) => {
-    const { name, value } = e.target;
-    dispatch(setCardFormField({ name, value }));
-  };
-
   // Handle wire form input change
   const handleWireFormChange = (e) => {
     const { name, value } = e.target;
@@ -576,8 +560,7 @@ const CheckoutPage = () => {
 
   // Submit handler for debit / credit card form
   const handleCardSubmit = async (token) => {
-    console.log('Card Info Submitted:', cardFormData);
-    dispatch(setShowCardDialog(false));
+    console.log('Square Token Received in CheckoutPage:', token);
 
     // Process Square payment with token
     if (token) {
@@ -628,13 +611,7 @@ const CheckoutPage = () => {
       </div>
 
       {/* Show card form dialog */}
-      <DebitCreditCardDialog
-        open={showCardDialog}
-        onClose={handleCardDialogClose}
-        formData={cardFormData}
-        onChange={handleCardInputChange}
-        onSubmit={handleCardSubmit}
-      />
+      <DebitCreditCardDialog open={showCardDialog} onClose={handleCardDialogClose} onSubmit={handleCardSubmit} />
 
       {/* Show wire transfer dialog */}
       <WireTransferDialog
