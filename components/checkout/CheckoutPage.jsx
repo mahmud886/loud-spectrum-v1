@@ -23,11 +23,14 @@ import {
   selectWireFormData,
   setCheckoutError,
   setIsProcessing,
+  setSelectedCourier,
   setSelectedPaymentMethod,
+  setShippingType,
   setShowCardDialog,
   setShowWireDialog,
   setWireFormField,
 } from '@/lib/store/slices/checkoutSlice';
+
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -67,6 +70,9 @@ const CheckoutPage = () => {
   useEffect(() => {
     dispatch(setIsProcessing(false));
     setIsLoading(false);
+
+    // Note: FedEx is set as default courier in Redux store initialState
+    // Courier will be reset to empty string when order completes/fails
 
     // Cleanup function to reset processing state when component unmounts
     return () => {
@@ -470,6 +476,16 @@ const CheckoutPage = () => {
           setIsLoading(false);
           console.log('Checkout state force reset');
         },
+        resetCourierAndShipping: () => {
+          dispatch(setSelectedCourier(''));
+          dispatch(setShippingType(''));
+          console.log('Courier and shipping reset to empty');
+        },
+        setDefaultCourier: () => {
+          dispatch(setSelectedCourier('fedex'));
+          dispatch(setShippingType(''));
+          console.log('Courier set to fedex (default)');
+        },
       };
     }
   }, [
@@ -630,6 +646,10 @@ const CheckoutPage = () => {
           dispatch(setShowCardDialog(false));
           dispatch(setShowWireDialog(false));
 
+          // Reset courier and shipping selection
+          dispatch(setSelectedCourier(''));
+          dispatch(setShippingType(''));
+
           // Show success toast
           toast.success('Order Placed Successfully!', {
             description: `Your order has been confirmed. Order ID: ${orderId}`,
@@ -647,6 +667,10 @@ const CheckoutPage = () => {
           dispatch(setShowCardDialog(false));
           dispatch(setShowWireDialog(false));
 
+          // Reset courier and shipping selection on error
+          dispatch(setSelectedCourier(''));
+          dispatch(setShippingType(''));
+
           toast.error('Order Error', {
             description: 'Order was created but we could not retrieve the order ID',
             duration: 5000,
@@ -659,6 +683,10 @@ const CheckoutPage = () => {
         dispatch(setSelectedPaymentMethod(''));
         dispatch(setShowCardDialog(false));
         dispatch(setShowWireDialog(false));
+
+        // Reset courier and shipping selection on error
+        dispatch(setSelectedCourier(''));
+        dispatch(setShippingType(''));
 
         toast.error('Payment Failed', {
           description: message || 'There was an error processing your payment. Please try again.',
@@ -674,6 +702,10 @@ const CheckoutPage = () => {
       dispatch(setSelectedPaymentMethod(''));
       dispatch(setShowCardDialog(false));
       dispatch(setShowWireDialog(false));
+
+      // Reset courier and shipping selection on error
+      dispatch(setSelectedCourier(''));
+      dispatch(setShippingType(''));
 
       // Dismiss processing toast
       toast.dismiss('payment-processing');
@@ -755,6 +787,10 @@ const CheckoutPage = () => {
         dispatch(setShowCardDialog(false));
         dispatch(setShowWireDialog(false));
 
+        // Reset courier and shipping selection
+        dispatch(setSelectedCourier(''));
+        dispatch(setShippingType(''));
+
         // Show success toast
         toast.success('Card Payment Successful!', {
           description: `Your payment has been processed. Order ID: ${data?._id}`,
@@ -771,6 +807,10 @@ const CheckoutPage = () => {
         dispatch(setShowCardDialog(false));
         dispatch(setShowWireDialog(false));
 
+        // Reset courier and shipping selection on error
+        dispatch(setSelectedCourier(''));
+        dispatch(setShippingType(''));
+
         toast.error('Card Payment Failed', {
           description: message || 'There was an error processing your card payment. Please try again.',
           duration: 5000,
@@ -786,6 +826,10 @@ const CheckoutPage = () => {
       dispatch(setSelectedPaymentMethod(''));
       dispatch(setShowCardDialog(false));
       dispatch(setShowWireDialog(false));
+
+      // Reset courier and shipping selection on error
+      dispatch(setSelectedCourier(''));
+      dispatch(setShippingType(''));
 
       // Dismiss processing toast
       toast.dismiss('card-payment-processing');
@@ -852,6 +896,10 @@ const CheckoutPage = () => {
           dispatch(setShowCardDialog(false));
           dispatch(setShowWireDialog(false));
 
+          // Reset courier and shipping selection
+          dispatch(setSelectedCourier(''));
+          dispatch(setShippingType(''));
+
           toast.success('Wire Transfer Order Placed!', {
             description: `Your order has been confirmed. Order ID: ${orderId}`,
             duration: 5000,
@@ -867,6 +915,10 @@ const CheckoutPage = () => {
           dispatch(setShowCardDialog(false));
           dispatch(setShowWireDialog(false));
 
+          // Reset courier and shipping selection on error
+          dispatch(setSelectedCourier(''));
+          dispatch(setShippingType(''));
+
           toast.error('Order Error', {
             description: 'Order was created but we could not retrieve the order ID',
             duration: 5000,
@@ -879,6 +931,10 @@ const CheckoutPage = () => {
         dispatch(setSelectedPaymentMethod(''));
         dispatch(setShowCardDialog(false));
         dispatch(setShowWireDialog(false));
+
+        // Reset courier and shipping selection on error
+        dispatch(setSelectedCourier(''));
+        dispatch(setShippingType(''));
 
         toast.error('Wire Transfer Failed', {
           description: message || 'There was an error processing your wire transfer. Please try again.',
@@ -893,6 +949,10 @@ const CheckoutPage = () => {
       dispatch(setSelectedPaymentMethod(''));
       dispatch(setShowCardDialog(false));
       dispatch(setShowWireDialog(false));
+
+      // Reset courier and shipping selection on error
+      dispatch(setSelectedCourier(''));
+      dispatch(setShippingType(''));
 
       toast.error('Wire Transfer Error', {
         description: 'There was an error processing your wire transfer. Please check your details and try again.',
