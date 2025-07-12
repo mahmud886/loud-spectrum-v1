@@ -42,7 +42,7 @@ const ChooseYourCourier = () => {
   const t = useTranslations('CheckoutPage.CourierSelection');
 
   // Redux selectors
-
+  // Note: selectedCourier defaults to 'fedex' in store but resets to '' after order completion
   const selectedCourier = useSelector(selectSelectedCourier);
   const selectedShippingType = useSelector(selectShippingType);
   const orderSummary = useSelector(selectOrderSummary);

@@ -1,155 +1,235 @@
+'use server';
 import { randomUUID } from 'crypto';
-// import { config } from 'dotenv';
 import { cookies } from 'next/headers';
-import { SquareClient } from 'square';
+import { Client } from 'square';
 
-// config();
-
-const { paymentsApi } = new SquareClient({
-  accessToken: process.env.SQUARE_ACCESS_TOKEN,
+const { paymentsApi } = new Client({
+  accessToken: 'EAAAlySOp8rRv9UJuEmBUXMV4Szhxk7oMPNPYBl0_hIHg53xpRxzVaPK3WqfaJzt',
   environment: 'sandbox',
 });
 
-/**
- * Serializes BigInt values to strings
- * @param {string} key - The key of the value to serialize
- * @param {any} value - The value to serialize
- * @returns {string|any} The serialized value
- */
+// Function to handle BigInt serialization
 const serializeBigInt = (key, value) => {
   return typeof value === 'bigint' ? value.toString() : value;
 };
 
-/**
- * Handles the POST request for Square payment processing
- * @param {Request} req - The request object
- * @returns {Promise<Response>} The response object
- */
 export const POST = async (req) => {
-  const { sourceId, data } = await req.json();
+  try {
+    const { sourceId, data } = await req.json();
 
-  /**
-   * Validates the sourceId parameter
-   * @returns {Response} The response object
-   */
-  if (!sourceId) {
-    return new Response(JSON.stringify({ error: 'sourceId is required' }), {
-      status: 400,
-      headers: { 'Content-Type': 'application/json' },
-    });
-  }
-
-  /**
-   * Creates a payment using the Square API
-   * @returns {Promise<Object>} The payment result
-   */
-  const amountInCents = Math.round(data.total * 100);
-  const { result } = await paymentsApi.createPayment({
-    idempotencyKey: randomUUID(),
-    sourceId: sourceId,
-    amountMoney: {
-      currency: 'USD',
-      amount: amountInCents.toString(),
-    },
-  });
-
-  const { id, orderId, locationId, approvedMoney, status, sourceType, createdAt } = result?.payment;
-
-  /**
-   * Creates an order payload for the payment
-   * @returns {Object} The order payload
-   */
-  if (status === 'COMPLETED') {
-    console.log('completed');
-    const orderPayload = {
-      ...data,
-      payment_status: 'Paid',
-      payment_info: {
-        transection_id: id,
-        order_id: orderId,
-        location_id: locationId,
-        approved_money: approvedMoney,
-        card_details: {
-          // Card details can be added here if needed
-        },
-        status: status,
-        source_type: sourceType,
-        created_at: createdAt,
-      },
-    };
-
-    const serializedOrderPayload = JSON.stringify(orderPayload, serializeBigInt);
-
-    /**
-     * Gets the authentication token from the cookies
-     */
-    const authToken = cookies().get('authToken').value;
-
-    /**
-     * Gets the base URL from the environment variables
-     */
-    const baseUrl = process.env.API_URL;
-    const url = `${baseUrl}/api/orders${data?.products[0]?.product_type === 'Wholesale' ? '/wholesale' : ''}`;
-
-    /**
-     * Fetches the order from the API
-     * @returns {Promise<Response>} The response object
-     */
-    const res = await fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `${authToken}`, // Add the token here
-      },
-      body: serializedOrderPayload,
-    });
-
-    /**
-     * Checks if the response is successful
-     * @returns {Promise<Response>} The response object
-     */
-    if (res.ok) {
-      const orderRes = await res.json();
-      if (!orderRes.error) {
-        /**
-         * Serializes the order response
-         * @returns {Response} The response object
-         */
-        const serializedData = JSON.stringify(orderRes, serializeBigInt);
-        return new Response(serializedData, {
-          status: 200,
-          headers: { 'Content-Type': 'application/json' },
-        });
-      }
+    // Basic validation
+    if (!sourceId) {
+      return new Response(JSON.stringify({ error: 'sourceId is required' }), {
+        status: 400,
+        headers: { 'Content-Type': 'application/json' },
+      });
     }
 
-    /**
-     * Returns the serialized order payload
-     * @returns {Response} The response object
-     */
-    return new Response(serializedOrderPayload, {
-      status: 200,
-      headers: { 'Content-Type': 'application/json' },
-    });
-  }
+    if (!data || !data.total) {
+      return new Response(JSON.stringify({ error: 'Payment data and total are required' }), {
+        status: 400,
+        headers: { 'Content-Type': 'application/json' },
+      });
+    }
 
-  /**
-   * Returns a response indicating payment failure
-   * @returns {Response} The response object
-   */
-  return new Response('Payment failed', {
-    status: 200,
-    headers: { 'Content-Type': 'application/json' },
-  });
+    const amountInCents = Math.round(data.total * 100);
+
+    // Use the same approach as your working old codebase
+    const { result } = await paymentsApi.createPayment({
+      idempotencyKey: randomUUID(),
+      sourceId: sourceId,
+      amountMoney: {
+        currency: 'USD',
+        amount: amountInCents.toString(), // Use string like in old codebase
+      },
+    });
+
+    console.log('Square Payment Result:', result);
+
+    const { id, orderId, locationId, approvedMoney, status, sourceType, createdAt } = result?.payment;
+
+    if (status === 'COMPLETED') {
+      console.log('Payment completed successfully');
+
+      const orderPayload = {
+        ...data,
+        payment_status: 'Paid',
+        payment_info: {
+          transection_id: id,
+          order_id: orderId,
+          location_id: locationId,
+          approved_money: approvedMoney,
+          card_details: {
+            // Card details can be added here if needed
+          },
+          status: status,
+          source_type: sourceType,
+          created_at: createdAt,
+        },
+      };
+
+      const serializedOrderPayload = JSON.stringify(orderPayload, serializeBigInt);
+      console.log('Order payload:', serializedOrderPayload);
+
+      // Get auth token
+      const cookieStore = await cookies();
+      const authToken = cookieStore.get('authToken')?.value;
+
+      if (!authToken) {
+        console.error('No auth token found in cookies');
+        return new Response(
+          JSON.stringify({
+            error: 'Authentication token not found',
+            success: false,
+          }),
+          {
+            status: 401,
+            headers: { 'Content-Type': 'application/json' },
+          },
+        );
+      }
+
+      console.log('Auth token found:', !!authToken);
+
+      // Get API URL
+      const baseUrl = process.env.API_URL;
+      if (!baseUrl) {
+        console.error('API_URL environment variable not set');
+        return new Response(
+          JSON.stringify({
+            error: 'Server configuration error',
+            success: false,
+          }),
+          {
+            status: 500,
+            headers: { 'Content-Type': 'application/json' },
+          },
+        );
+      }
+
+      const url = `${baseUrl}/api/orders${data?.products?.[0]?.product_type === 'Wholesale' ? '/wholesale' : ''}`;
+      console.log('Sending order to:', url);
+
+      try {
+        const res = await fetch(url, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `${authToken}`,
+          },
+          body: serializedOrderPayload,
+        });
+
+        console.log('Order API Response Status:', res.status);
+
+        if (res.ok) {
+          try {
+            const orderRes = await res.json();
+            console.log('Order API Response:', orderRes);
+
+            if (!orderRes.error) {
+              const serializedData = JSON.stringify(orderRes, serializeBigInt);
+              return new Response(serializedData, {
+                status: 200,
+                headers: { 'Content-Type': 'application/json' },
+              });
+            } else {
+              console.error('Order API returned error:', orderRes.error);
+              return new Response(
+                JSON.stringify({
+                  error: orderRes.error || 'Order creation failed',
+                  success: false,
+                }),
+                {
+                  status: 400,
+                  headers: { 'Content-Type': 'application/json' },
+                },
+              );
+            }
+          } catch (jsonError) {
+            console.error('Failed to parse order API response as JSON:', jsonError);
+            const responseText = await res.text();
+            console.error('Order API Response Text:', responseText);
+            return new Response(
+              JSON.stringify({
+                error: 'Invalid response from order API',
+                success: false,
+              }),
+              {
+                status: 500,
+                headers: { 'Content-Type': 'application/json' },
+              },
+            );
+          }
+        } else {
+          const errorText = await res.text();
+          console.error('Order API Error Response:', res.status, errorText);
+          return new Response(
+            JSON.stringify({
+              error: `Order API error: ${res.status}`,
+              success: false,
+            }),
+            {
+              status: res.status,
+              headers: { 'Content-Type': 'application/json' },
+            },
+          );
+        }
+      } catch (fetchError) {
+        console.error('Failed to fetch order API:', fetchError);
+        return new Response(
+          JSON.stringify({
+            error: 'Failed to create order',
+            success: false,
+          }),
+          {
+            status: 500,
+            headers: { 'Content-Type': 'application/json' },
+          },
+        );
+      }
+    } else {
+      console.error('Payment not completed. Status:', status);
+      return new Response(
+        JSON.stringify({
+          error: `Payment failed with status: ${status}`,
+          success: false,
+        }),
+        {
+          status: 400,
+          headers: { 'Content-Type': 'application/json' },
+        },
+      );
+    }
+  } catch (error) {
+    console.error('Square Payment Route Error:', error);
+    return new Response(
+      JSON.stringify({
+        error: 'Internal server error',
+        success: false,
+        details: error.message,
+      }),
+      {
+        status: 500,
+        headers: { 'Content-Type': 'application/json' },
+      },
+    );
+  }
 };
 
-/**
- * Handles the GET request for Square payment processing
- * @returns {Response} The response object
- */
 export const GET = async () => {
-  return new Response('Method GET Not Allowed', {
-    status: 405,
-    headers: { Allow: 'POST' },
-  });
+  return new Response(
+    JSON.stringify({
+      message: 'Square API endpoint',
+      squareClientInitialized: !!paymentsApi,
+      hasAccessToken: true,
+      squareVersion: '43.0.0',
+    }),
+    {
+      status: 200,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    },
+  );
 };
