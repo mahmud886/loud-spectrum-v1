@@ -12,6 +12,7 @@ import { clearCart } from '@/lib/store/slices/cartSlice';
 import {
   completeOrder,
   selectBillingAddress,
+  selectIsProcessing,
   selectPaymentPayload,
   selectSelectedCourier,
   selectSelectedPaymentMethod,
@@ -28,7 +29,7 @@ import {
   setWireFormField,
 } from '@/lib/store/slices/checkoutSlice';
 import { useTranslations } from 'next-intl';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'sonner';
 import ChooseYourCourier from './ChooseYourCourier';
@@ -55,11 +56,34 @@ const CheckoutPage = () => {
   const billingAddress = useSelector(selectBillingAddress);
   const selectedCourier = useSelector(selectSelectedCourier);
   const selectedShippingType = useSelector(selectShippingType);
+  const isProcessing = useSelector(selectIsProcessing);
 
   // Cart selectors
   const cartItems = useSelector((state) => state.cart.items);
   const cartTotalQuantity = useSelector((state) => state.cart.totalQuantity);
   const cartTotalAmount = useSelector((state) => state.cart.totalAmount);
+
+  // Reset processing state when component mounts
+  useEffect(() => {
+    dispatch(setIsProcessing(false));
+    setIsLoading(false);
+
+    // Cleanup function to reset processing state when component unmounts
+    return () => {
+      dispatch(setIsProcessing(false));
+      setIsLoading(false);
+    };
+  }, [dispatch]);
+
+  // Reset processing state function
+  const handleResetProcessingState = () => {
+    dispatch(setIsProcessing(false));
+    setIsLoading(false);
+    toast.success('Processing State Reset', {
+      description: 'Payment methods are now available',
+      duration: 2000,
+    });
+  };
 
   // Validation functions
   const validateCart = () => {
@@ -212,6 +236,255 @@ const CheckoutPage = () => {
     return true;
   };
 
+  // Comprehensive validation for payment button state
+  const validateRequiredFields = () => {
+    // Check if cart has items
+    if (!cartItems || cartItems.length === 0 || cartTotalQuantity === 0) {
+      return false;
+    }
+
+    // Check shipping address required fields
+    const shippingRequired = [
+      'firstName',
+      'lastName',
+      'email',
+      'phone',
+      'country',
+      'city',
+      'province',
+      'postalCode',
+      'streetAddress',
+    ];
+
+    for (const field of shippingRequired) {
+      if (!shippingAddress[field] || String(shippingAddress[field]).trim() === '') {
+        return false;
+      }
+    }
+
+    // Check billing address if not same as shipping
+    if (!billingAddress.sameAsShipping) {
+      const billingRequired = [
+        'firstName',
+        'lastName',
+        'email',
+        'phone',
+        'country',
+        'city',
+        'province',
+        'postalCode',
+        'streetAddress',
+      ];
+
+      for (const field of billingRequired) {
+        if (!billingAddress[field] || String(billingAddress[field]).trim() === '') {
+          return false;
+        }
+      }
+    }
+
+    // Check courier and shipping type
+    if (!selectedCourier || !selectedShippingType) {
+      return false;
+    }
+
+    // Check payment method
+    if (!selectedPaymentMethod) {
+      return false;
+    }
+
+    return true;
+  };
+
+  // Validation for payment method selection (without requiring payment method itself)
+  const validateFieldsForPaymentMethodSelection = () => {
+    // Check if cart has items
+    if (!cartItems || cartItems.length === 0 || cartTotalQuantity === 0) {
+      return false;
+    }
+
+    // Check shipping address required fields
+    const shippingRequired = [
+      'firstName',
+      'lastName',
+      'email',
+      'phone',
+      'country',
+      'city',
+      'province',
+      'postalCode',
+      'streetAddress',
+    ];
+
+    for (const field of shippingRequired) {
+      if (!shippingAddress[field] || String(shippingAddress[field]).trim() === '') {
+        return false;
+      }
+    }
+
+    // Check billing address if not same as shipping
+    if (!billingAddress.sameAsShipping) {
+      const billingRequired = [
+        'firstName',
+        'lastName',
+        'email',
+        'phone',
+        'country',
+        'city',
+        'province',
+        'postalCode',
+        'streetAddress',
+      ];
+
+      for (const field of billingRequired) {
+        if (!billingAddress[field] || String(billingAddress[field]).trim() === '') {
+          return false;
+        }
+      }
+    }
+
+    // Check courier and shipping type
+    if (!selectedCourier || !selectedShippingType) {
+      return false;
+    }
+
+    // Don't require payment method for payment method selection
+    return true;
+  };
+
+  // Check if payment method selection should be disabled
+  const isPaymentMethodDisabled = !validateFieldsForPaymentMethodSelection() || isProcessing || isLoading;
+
+  // Check if payment button should be disabled
+  const isPaymentButtonDisabled = !validateRequiredFields() || isProcessing || isLoading;
+
+  // Get missing fields message for user feedback
+  const getMissingFieldsMessage = (forPaymentMethod = false) => {
+    const missing = [];
+
+    if (!cartItems || cartItems.length === 0) {
+      missing.push('Add products to cart');
+    }
+
+    if (!shippingAddress.firstName || !shippingAddress.lastName) {
+      missing.push('Shipping name');
+    }
+
+    if (!shippingAddress.email) {
+      missing.push('Email address');
+    }
+
+    if (!shippingAddress.phone) {
+      missing.push('Phone number');
+    }
+
+    if (!shippingAddress.country) {
+      missing.push('Country');
+    }
+
+    if (!shippingAddress.city) {
+      missing.push('City');
+    }
+
+    if (!shippingAddress.province) {
+      missing.push('Province/State');
+    }
+
+    if (!shippingAddress.postalCode) {
+      missing.push('Postal code');
+    }
+
+    if (!shippingAddress.streetAddress) {
+      missing.push('Street address');
+    }
+
+    if (!billingAddress.sameAsShipping) {
+      if (!billingAddress.firstName || !billingAddress.lastName) {
+        missing.push('Billing name');
+      }
+      if (!billingAddress.email) {
+        missing.push('Billing email');
+      }
+      if (!billingAddress.phone) {
+        missing.push('Billing phone');
+      }
+      if (!billingAddress.country) {
+        missing.push('Billing country');
+      }
+      if (!billingAddress.city) {
+        missing.push('Billing city');
+      }
+      if (!billingAddress.province) {
+        missing.push('Billing province/state');
+      }
+      if (!billingAddress.postalCode) {
+        missing.push('Billing postal code');
+      }
+      if (!billingAddress.streetAddress) {
+        missing.push('Billing street address');
+      }
+    }
+
+    if (!selectedCourier) {
+      missing.push('Shipping courier');
+    }
+
+    if (!selectedShippingType) {
+      missing.push('Shipping type');
+    }
+
+    // Only include payment method requirement for payment button, not for payment method selection
+    if (!forPaymentMethod && !selectedPaymentMethod) {
+      missing.push('Payment method');
+    }
+
+    return missing;
+  };
+
+  // Development utility - expose debug functions to window
+  useEffect(() => {
+    if (process.env.NODE_ENV === 'development') {
+      window.checkoutDebug = {
+        handleResetProcessingState,
+        getCurrentState: () => ({
+          isProcessing,
+          isLoading,
+          selectedPaymentMethod,
+          shippingAddress,
+          billingAddress,
+          selectedCourier,
+          selectedShippingType,
+          isPaymentButtonDisabled,
+          isPaymentMethodDisabled,
+        }),
+        getValidationState: () => ({
+          validateRequiredFields: validateRequiredFields(),
+          validateFieldsForPaymentMethodSelection: validateFieldsForPaymentMethodSelection(),
+          missingFieldsForPayment: getMissingFieldsMessage(false),
+          missingFieldsForPaymentMethod: getMissingFieldsMessage(true),
+          isPaymentButtonDisabled,
+          isPaymentMethodDisabled,
+        }),
+        forceReset: () => {
+          dispatch(setIsProcessing(false));
+          setIsLoading(false);
+          console.log('Checkout state force reset');
+        },
+      };
+    }
+  }, [
+    isProcessing,
+    isLoading,
+    selectedPaymentMethod,
+    shippingAddress,
+    billingAddress,
+    selectedCourier,
+    selectedShippingType,
+    handleResetProcessingState,
+    isPaymentButtonDisabled,
+    isPaymentMethodDisabled,
+  ]);
+
   const validateWireForm = () => {
     const requiredFields = {
       accountHolderName: 'Account Holder Name',
@@ -253,6 +526,16 @@ const CheckoutPage = () => {
   };
 
   const handlePaymentMethodChange = (value) => {
+    // If trying to select a payment method (not deselect), check if required fields are filled
+    if (value && value !== selectedPaymentMethod && !validateFieldsForPaymentMethodSelection()) {
+      const missingFields = getMissingFieldsMessage(true); // true = for payment method selection
+      toast.error('Complete Required Information First', {
+        description: `Please fill in: ${missingFields.slice(0, 3).join(', ')}${missingFields.length > 3 ? `... and ${missingFields.length - 3} more` : ''}`,
+        duration: 5000,
+      });
+      return; // Don't set the payment method
+    }
+
     dispatch(setSelectedPaymentMethod(value));
   };
 
@@ -260,6 +543,9 @@ const CheckoutPage = () => {
   const processPayment = async (payload = null) => {
     // Validate form before processing
     if (!validateCompleteForm()) {
+      // Reset processing state if validation fails
+      dispatch(setIsProcessing(false));
+      setIsLoading(false);
       return;
     }
 
@@ -339,6 +625,11 @@ const CheckoutPage = () => {
           dispatch(completeOrder({ orderId }));
           setIsOrderCompleted(true);
 
+          // Reset payment state and close dialogs
+          dispatch(setSelectedPaymentMethod(''));
+          dispatch(setShowCardDialog(false));
+          dispatch(setShowWireDialog(false));
+
           // Show success toast
           toast.success('Order Placed Successfully!', {
             description: `Your order has been confirmed. Order ID: ${orderId}`,
@@ -350,64 +641,39 @@ const CheckoutPage = () => {
         } else {
           console.error('No order ID found in response data');
           dispatch(setCheckoutError('Order created but ID not found'));
+
+          // Reset payment state and close dialogs on error
+          dispatch(setSelectedPaymentMethod(''));
+          dispatch(setShowCardDialog(false));
+          dispatch(setShowWireDialog(false));
+
           toast.error('Order Error', {
             description: 'Order was created but we could not retrieve the order ID',
             duration: 5000,
           });
         }
-
-        // Step 2: Save Order and Send Confirmation Email
-        // try {
-        //   const emailResponse = await fetch('/api/email', {
-        //     method: 'POST',
-        //     headers: {
-        //       'Content-Type': 'application/json',
-        //     },
-        //     body: JSON.stringify({
-        //       orderPayload: finalPayload,
-        //       orderDetails: actualOrderData,
-        //     }),
-        //   });
-
-        //   const emailResult = await emailResponse.json();
-        //   if (emailResult.error) {
-        //     console.warn('Email Error:', emailResult.error);
-        //   }
-        // } catch (emailError) {
-        //   console.warn('Email sending failed:', emailError);
-        // }
       } else {
         dispatch(setCheckoutError(message || 'Payment failed'));
+
+        // Reset payment state and close dialogs on error
+        dispatch(setSelectedPaymentMethod(''));
+        dispatch(setShowCardDialog(false));
+        dispatch(setShowWireDialog(false));
+
         toast.error('Payment Failed', {
           description: message || 'There was an error processing your payment. Please try again.',
           duration: 5000,
         });
-
-        // Send failure email
-        // try {
-        //   const emailResponse = await fetch('/api/email-failed', {
-        //     method: 'POST',
-        //     headers: {
-        //       'Content-Type': 'application/json',
-        //     },
-        //     body: JSON.stringify({
-        //       orderPayload: finalPayload,
-        //       orderDetails: actualOrderData,
-        //     }),
-        //   });
-
-        //   const emailResult = await emailResponse.json();
-        //   if (emailResult.error) {
-        //     console.warn('Email Error:', emailResult.error);
-        //   }
-        // } catch (emailError) {
-        //   console.warn('Failed email sending failed:', emailError);
-        // }
       }
     } catch (error) {
       setShowWireTransferModal(false);
       dispatch(setCheckoutError('Payment processing failed'));
       console.error('Payment Error:', error);
+
+      // Reset payment state and close dialogs on error
+      dispatch(setSelectedPaymentMethod(''));
+      dispatch(setShowCardDialog(false));
+      dispatch(setShowWireDialog(false));
 
       // Dismiss processing toast
       toast.dismiss('payment-processing');
@@ -426,6 +692,9 @@ const CheckoutPage = () => {
   const processSquarePayment = async (token) => {
     // Validate form before processing
     if (!validateCompleteForm()) {
+      // Reset processing state if validation fails
+      dispatch(setIsProcessing(false));
+      setIsLoading(false);
       return;
     }
 
@@ -481,6 +750,11 @@ const CheckoutPage = () => {
         dispatch(completeOrder({ orderId: data?._id }));
         setIsOrderCompleted(true);
 
+        // Reset payment state and close dialogs
+        dispatch(setSelectedPaymentMethod(''));
+        dispatch(setShowCardDialog(false));
+        dispatch(setShowWireDialog(false));
+
         // Show success toast
         toast.success('Card Payment Successful!', {
           description: `Your payment has been processed. Order ID: ${data?._id}`,
@@ -491,6 +765,12 @@ const CheckoutPage = () => {
         router.push(`/order-confirmation/${data?._id}`);
       } else {
         dispatch(setCheckoutError(message || 'Square payment failed'));
+
+        // Reset payment state and close dialogs on error
+        dispatch(setSelectedPaymentMethod(''));
+        dispatch(setShowCardDialog(false));
+        dispatch(setShowWireDialog(false));
+
         toast.error('Card Payment Failed', {
           description: message || 'There was an error processing your card payment. Please try again.',
           duration: 5000,
@@ -501,6 +781,11 @@ const CheckoutPage = () => {
     } catch (error) {
       dispatch(setCheckoutError('Square payment processing failed'));
       console.error('Square Payment Error:', error);
+
+      // Reset payment state and close dialogs on error
+      dispatch(setSelectedPaymentMethod(''));
+      dispatch(setShowCardDialog(false));
+      dispatch(setShowWireDialog(false));
 
       // Dismiss processing toast
       toast.dismiss('card-payment-processing');
@@ -518,6 +803,9 @@ const CheckoutPage = () => {
   // Wire Transfer Payment Processing
   const processWireTransferPayment = async () => {
     if (!validateWireForm()) {
+      // Reset processing state if validation fails
+      dispatch(setIsProcessing(false));
+      setIsLoading(false);
       return;
     }
 
@@ -536,11 +824,75 @@ const CheckoutPage = () => {
         payment_status: 'Unpaid',
       };
 
-      await processPayment(wirePayload);
-      await dispatch(clearCart());
+      // Process wire transfer payment directly without calling processPayment
+      // to avoid nested isProcessing state management
+      const response = await fetch('/api/payment/cash-on-delivery', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          data: wirePayload,
+        }),
+      });
+
+      const responseData = await response.json();
+      const { data: orderResponse, error, message } = responseData;
+
+      if (!error) {
+        const actualOrderData = orderResponse?.data;
+        const orderId = actualOrderData?._id || actualOrderData?.id || actualOrderData?.orderId || null;
+
+        if (orderId) {
+          dispatch(completeOrder({ orderId }));
+          dispatch(clearCart());
+
+          // Reset payment state and close dialogs
+          dispatch(setSelectedPaymentMethod(''));
+          dispatch(setShowCardDialog(false));
+          dispatch(setShowWireDialog(false));
+
+          toast.success('Wire Transfer Order Placed!', {
+            description: `Your order has been confirmed. Order ID: ${orderId}`,
+            duration: 5000,
+            icon: '🎉',
+          });
+
+          router.push(`/order-confirmation/${orderId}`);
+        } else {
+          dispatch(setCheckoutError('Order created but ID not found'));
+
+          // Reset payment state and close dialogs on error
+          dispatch(setSelectedPaymentMethod(''));
+          dispatch(setShowCardDialog(false));
+          dispatch(setShowWireDialog(false));
+
+          toast.error('Order Error', {
+            description: 'Order was created but we could not retrieve the order ID',
+            duration: 5000,
+          });
+        }
+      } else {
+        dispatch(setCheckoutError(message || 'Wire transfer failed'));
+
+        // Reset payment state and close dialogs on error
+        dispatch(setSelectedPaymentMethod(''));
+        dispatch(setShowCardDialog(false));
+        dispatch(setShowWireDialog(false));
+
+        toast.error('Wire Transfer Failed', {
+          description: message || 'There was an error processing your wire transfer. Please try again.',
+          duration: 5000,
+        });
+      }
     } catch (error) {
       dispatch(setCheckoutError('Wire transfer processing failed'));
       console.error('Wire Transfer Error:', error);
+
+      // Reset payment state and close dialogs on error
+      dispatch(setSelectedPaymentMethod(''));
+      dispatch(setShowCardDialog(false));
+      dispatch(setShowWireDialog(false));
 
       toast.error('Wire Transfer Error', {
         description: 'There was an error processing your wire transfer. Please check your details and try again.',
@@ -600,11 +952,70 @@ const CheckoutPage = () => {
             <ChooseYourCourier />
             <DiscountCoupon />
             <OrderSummary />
-            <PaymentMethod value={selectedPaymentMethod} onValueChange={handlePaymentMethodChange} />
+
+            {/* Progress indicator when payment methods are disabled */}
+            {isPaymentMethodDisabled && !isProcessing && (
+              <div className="mt-4 rounded-[10px] border border-blue-200 bg-blue-50 p-4">
+                <div className="flex items-start">
+                  <div className="flex-shrink-0">
+                    <svg className="mt-0.5 h-5 w-5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                  </div>
+                  <div className="ml-3">
+                    <h3 className="text-sm font-medium text-blue-800">Complete Information to Continue</h3>
+                    <div className="mt-2 text-sm text-blue-700">
+                      <p className="mb-2">To proceed with payment, please complete:</p>
+                      <div className="grid grid-cols-1 gap-1">
+                        {getMissingFieldsMessage(true).map((field, index) => (
+                          <div key={index} className="flex items-center">
+                            <div className="mr-2 h-2 w-2 rounded-full bg-blue-400"></div>
+                            <span>{field}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            <PaymentMethod
+              value={selectedPaymentMethod}
+              onValueChange={handlePaymentMethodChange}
+              isDisabled={isPaymentMethodDisabled}
+              getMissingFieldsMessage={() => getMissingFieldsMessage(true)}
+            />
+
+            {/* Debug/Reset Button - Show when processing is stuck */}
+            {isProcessing && (
+              <div className="mt-4 rounded-[10px] border-2 border-red-200 bg-red-50 p-4">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h4 className="font-medium text-red-800">Payment Methods Disabled</h4>
+                    <p className="text-sm text-red-600">Processing state is active. Click reset if stuck.</p>
+                  </div>
+                  <button
+                    onClick={handleResetProcessingState}
+                    className="rounded-md bg-red-600 px-4 py-2 text-white transition-colors hover:bg-red-700"
+                  >
+                    Reset
+                  </button>
+                </div>
+              </div>
+            )}
+
             <ConfirmPayment
               onProcessPayment={processPayment}
               isLoading={isLoading}
               selectedPaymentMethod={selectedPaymentMethod}
+              isDisabled={isPaymentButtonDisabled}
+              getMissingFieldsMessage={() => getMissingFieldsMessage(false)}
             />
           </div>
         </div>

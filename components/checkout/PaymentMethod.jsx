@@ -8,13 +8,25 @@ import { toast } from 'sonner';
 
 const paymentMethods = ['debit-credit-card', 'ach-wire-transfer', 'cash-on-delivery'];
 
-const PaymentMethod = ({ value, onValueChange }) => {
+const PaymentMethod = ({ value, onValueChange, isDisabled = false, getMissingFieldsMessage = () => [] }) => {
   const t = useTranslations('CheckoutPage.PaymentMethod');
 
   // Get loading state from Redux
   const isLoading = useSelector((state) => state.checkout.isProcessing);
 
   const handleChange = (selectedValue) => {
+    // If disabled and trying to select a new payment method, show missing fields message
+    if (isDisabled && selectedValue && selectedValue !== value) {
+      const missingFields = getMissingFieldsMessage();
+      if (missingFields.length > 0) {
+        toast.error('Complete Required Information First', {
+          description: `Please fill in: ${missingFields.slice(0, 3).join(', ')}${missingFields.length > 3 ? '...' : ''}`,
+          duration: 4000,
+        });
+        return;
+      }
+    }
+
     if (value === selectedValue) {
       onValueChange('');
       toast.info('Payment Method Deselected', {
@@ -41,21 +53,54 @@ const PaymentMethod = ({ value, onValueChange }) => {
     <div className="border-umbra-10 mt-4 space-y-5 rounded-[10px] border-1 p-4">
       <h4 className="text-umbra-100 font-sans text-[18px] font-normal">{t('title')}</h4>
 
+      {/* Show warning when payment methods are disabled */}
+      {/* {isDisabled && !isLoading && (
+        <div className="rounded-md border border-amber-200 bg-amber-50 p-3">
+          <div className="flex items-start">
+            <svg className="mt-0.5 mr-2 h-5 w-5 flex-shrink-0 text-amber-400" viewBox="0 0 20 20" fill="currentColor">
+              <path
+                fillRule="evenodd"
+                d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <div>
+              <p className="mb-1 text-sm font-medium text-amber-800">
+                Complete Required Information to Enable Payment Methods
+              </p>
+              <div className="text-sm text-amber-700">
+                <p>Missing:</p>
+                <ul className="mt-1 ml-2 list-inside list-disc">
+                  {getMissingFieldsMessage()
+                    .slice(0, 4)
+                    .map((field, index) => (
+                      <li key={index}>{field}</li>
+                    ))}
+                  {getMissingFieldsMessage().length > 4 && <li>and {getMissingFieldsMessage().length - 4} more...</li>}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      )} */}
+
       <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
         {paymentMethods.map((methodKey) => {
           const isChecked = value === methodKey;
+          // Only disable payment method selection if it's not already selected and required fields are missing
+          const isMethodDisabled = isLoading || (isDisabled && !isChecked);
 
           return (
             <button
               key={methodKey}
               type="button"
               onClick={() => handlePaymentMethod(methodKey)}
-              disabled={isLoading}
+              disabled={isMethodDisabled}
               className={cn(
                 'group relative flex min-h-[80px] cursor-pointer items-center justify-between gap-4 rounded-[10px] border px-4 py-2 transition-all',
-                'hover:border-umbra-40',
+                !isMethodDisabled && 'hover:border-umbra-40',
                 isChecked ? 'bg-stardust border-transparent' : 'border-umbra-10',
-                isLoading && 'cursor-not-allowed opacity-50',
+                isMethodDisabled && 'cursor-not-allowed opacity-50',
               )}
             >
               <CheckCircle2
