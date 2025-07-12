@@ -78,6 +78,7 @@
       "ShippingType": {
         "label": "Choose Your Shipping Type*",
         "placeholder": "Select your shipping type",
+        "selectCourierFirst": "Select courier first",
         "standard": "Standard Shipping (5-7 business days)",
         "express": "Express Shipping (2-3 business days)",
         "overnight": "Overnight Shipping (1 business day)",

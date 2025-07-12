@@ -78,6 +78,7 @@
       "ShippingType": {
         "label": "Wählen Sie Ihren Versandtyp*",
         "placeholder": "Wählen Sie Ihren Versandtyp",
+        "selectCourierFirst": "Wählen Sie zuerst den Kurier",
         "standard": "Standardversand (5-7 Werktage)",
         "express": "Expressversand (2-3 Werktage)",
         "overnight": "Übernachtversand (1 Werktag)",

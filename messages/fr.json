@@ -78,6 +78,7 @@
       "ShippingType": {
         "label": "Choisissez votre type de livraison*",
         "placeholder": "Sélectionnez votre type de livraison",
+        "selectCourierFirst": "Sélectionnez d'abord le transporteur",
         "standard": "Livraison standard (5-7 jours ouvrés)",
         "express": "Livraison express (2-3 jours ouvrés)",
         "overnight": "Livraison en 24 heures (1 jour ouvré)",

@@ -78,6 +78,7 @@
       "ShippingType": {
         "label": "配送タイプを選択してください*",
         "placeholder": "配送タイプを選択してください",
+        "selectCourierFirst": "まず配送会社を選択してください",
         "standard": "標準配送 (5-7営業日)",
         "express": "エクスプレス配送 (2-3営業日)",
         "overnight": "翌日配送 (1営業日)",

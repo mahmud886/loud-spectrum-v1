@@ -78,6 +78,7 @@
       "ShippingType": {
         "label": "Elija su tipo de envío*",
         "placeholder": "Seleccione su tipo de envío",
+        "selectCourierFirst": "Seleccione primero el mensajero",
         "standard": "Envío estándar (5-7 días hábiles)",
         "express": "Envío exprés (2-3 días hábiles)",
         "overnight": "Envío nocturno (1 día hábil)",
