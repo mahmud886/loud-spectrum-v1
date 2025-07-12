@@ -169,6 +169,48 @@
       }
     }
   },
+  "OrderConfirmation": {
+    "title": "¡Pedido confirmado!",
+    "thankYou": "Gracias por su pedido. Hemos recibido su pedido y lo procesaremos pronto.",
+    "orderNotFound": "Pedido no encontrado",
+    "orderNotFoundMessage": "No pudimos encontrar el pedido que está buscando.",
+    "continueShoppingButton": "Continuar comprando",
+    "viewAllOrdersButton": "Ver todos los pedidos",
+    "orderDetails": "Detalles del pedido",
+    "orderItems": "Artículos del pedido",
+    "orderSummary": "Resumen del pedido",
+    "shippingAddress": "Dirección de envío",
+    "billingAddress": "Dirección de facturación",
+    "whatsNext": "¿Qué sigue?",
+    "whatsNextDescription": "Recibirá una confirmación por correo electrónico en breve con los detalles de su pedido e información de seguimiento una vez que se envíe su pedido.",
+    "supportMessage": "Si tiene alguna pregunta sobre su pedido, póngase en contacto con nuestro servicio al cliente.",
+    "fields": {
+      "orderNumber": "Número de pedido",
+      "orderDate": "Fecha del pedido",
+      "orderStatus": "Estado del pedido",
+      "paymentStatus": "Estado del pago",
+      "orderType": "Tipo de pedido",
+      "paymentMethod": "Método de pago",
+      "totalAmount": "Monto total",
+      "subtotal": "Subtotal",
+      "shipping": "Envío",
+      "tax": "Impuesto",
+      "discount": "Descuento",
+      "total": "Total",
+      "quantity": "Cantidad",
+      "price": "Precio",
+      "regularProducts": "Productos regulares",
+      "wholesaleProducts": "Productos al por mayor",
+      "sku": "SKU",
+      "regular": "Regular",
+      "wholesale": "Al por mayor"
+    },
+    "paymentMethods": {
+      "COD": "Pago contra entrega",
+      "CARD": "Tarjeta de crédito/débito",
+      "ACH/WT": "Transferencia bancaria"
+    }
+  },
   "Navbar": {
     "Log_in": "Iniciar sesión",
     "logout_success": "Cierre de sesión exitoso",

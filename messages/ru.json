@@ -172,6 +172,48 @@
       }
     }
   },
+  "OrderConfirmation": {
+    "title": "Заказ подтвержден!",
+    "thankYou": "Спасибо за ваш заказ. Мы получили ваш заказ и скоро приступим к его обработке.",
+    "orderNotFound": "Заказ не найден",
+    "orderNotFoundMessage": "Мы не смогли найти заказ, который вы ищете.",
+    "continueShoppingButton": "Продолжить покупки",
+    "viewAllOrdersButton": "Посмотреть все заказы",
+    "orderDetails": "Детали заказа",
+    "orderItems": "Товары заказа",
+    "orderSummary": "Сводка заказа",
+    "shippingAddress": "Адрес доставки",
+    "billingAddress": "Адрес выставления счета",
+    "whatsNext": "Что дальше?",
+    "whatsNextDescription": "Вы вскоре получите email с подтверждением и деталями заказа, а также информацию для отслеживания после отправки заказа.",
+    "supportMessage": "Если у вас есть вопросы по вашему заказу, пожалуйста, обратитесь в нашу службу поддержки.",
+    "fields": {
+      "orderNumber": "Номер заказа",
+      "orderDate": "Дата заказа",
+      "orderStatus": "Статус заказа",
+      "paymentStatus": "Статус платежа",
+      "orderType": "Тип заказа",
+      "paymentMethod": "Способ оплаты",
+      "totalAmount": "Общая сумма",
+      "subtotal": "Промежуточный итог",
+      "shipping": "Доставка",
+      "tax": "Налог",
+      "discount": "Скидка",
+      "total": "Итого",
+      "quantity": "Количество",
+      "price": "Цена",
+      "regularProducts": "Обычные товары",
+      "wholesaleProducts": "Оптовые товары",
+      "sku": "SKU",
+      "regular": "Обычный",
+      "wholesale": "Оптовый"
+    },
+    "paymentMethods": {
+      "COD": "Оплата при получении",
+      "CARD": "Кредитная/дебетовая карта",
+      "ACH/WT": "Банковский перевод"
+    }
+  },
   "Navbar": {
     "Log_in": "Войти",
     "Cart": "Корзина",

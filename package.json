@@ -36,6 +36,7 @@
     "nextjs-toploader": "^3.8.16",
     "plaiceholder": "^3.0.0",
     "react": "^19.0.0",
+    "react-confetti": "^6.4.0",
     "react-dom": "^19.0.0",
     "react-redux": "^9.2.0",
     "react-square-web-payments-sdk": "^3.2.1",

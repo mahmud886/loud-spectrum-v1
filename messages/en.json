@@ -199,7 +199,12 @@
       "discount": "Discount",
       "total": "Total",
       "quantity": "Qty",
-      "price": "Price"
+      "price": "Price",
+      "regularProducts": "Regular Products",
+      "wholesaleProducts": "Wholesale Products",
+      "sku": "SKU",
+      "regular": "Regular",
+      "wholesale": "Wholesale"
     },
     "paymentMethods": {
       "COD": "Cash on Delivery",

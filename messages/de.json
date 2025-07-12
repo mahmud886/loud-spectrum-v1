@@ -170,6 +170,48 @@
       }
     }
   },
+  "OrderConfirmation": {
+    "title": "Bestellung bestätigt!",
+    "thankYou": "Vielen Dank für Ihre Bestellung. Wir haben Ihre Bestellung erhalten und werden sie bald bearbeiten.",
+    "orderNotFound": "Bestellung nicht gefunden",
+    "orderNotFoundMessage": "Wir konnten die gesuchte Bestellung nicht finden.",
+    "continueShoppingButton": "Weiter einkaufen",
+    "viewAllOrdersButton": "Alle Bestellungen anzeigen",
+    "orderDetails": "Bestelldetails",
+    "orderItems": "Bestellartikel",
+    "orderSummary": "Bestellübersicht",
+    "shippingAddress": "Lieferadresse",
+    "billingAddress": "Rechnungsadresse",
+    "whatsNext": "Was kommt als Nächstes?",
+    "whatsNextDescription": "Sie erhalten in Kürze eine E-Mail-Bestätigung mit Ihren Bestelldetails und Tracking-Informationen, sobald Ihre Bestellung versandt wird.",
+    "supportMessage": "Wenn Sie Fragen zu Ihrer Bestellung haben, wenden Sie sich bitte an unseren Kundenservice.",
+    "fields": {
+      "orderNumber": "Bestellnummer",
+      "orderDate": "Bestelldatum",
+      "orderStatus": "Bestellstatus",
+      "paymentStatus": "Zahlungsstatus",
+      "orderType": "Bestelltyp",
+      "paymentMethod": "Zahlungsmethode",
+      "totalAmount": "Gesamtbetrag",
+      "subtotal": "Zwischensumme",
+      "shipping": "Versand",
+      "tax": "Steuer",
+      "discount": "Rabatt",
+      "total": "Gesamt",
+      "quantity": "Menge",
+      "price": "Preis",
+      "regularProducts": "Reguläre Produkte",
+      "wholesaleProducts": "Großhandelsprodukte",
+      "sku": "SKU",
+      "regular": "Regulär",
+      "wholesale": "Großhandel"
+    },
+    "paymentMethods": {
+      "COD": "Nachnahme",
+      "CARD": "Kredit-/Debitkarte",
+      "ACH/WT": "Überweisung"
+    }
+  },
   "Navbar": {
     "Log_in": "Anmelden",
     "Cart": "Warenkorb",

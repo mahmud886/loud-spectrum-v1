@@ -170,6 +170,48 @@
       }
     }
   },
+  "OrderConfirmation": {
+    "title": "注文が確認されました！",
+    "thankYou": "ご注文ありがとうございます。ご注文を受け付けました。まもなく処理を開始いたします。",
+    "orderNotFound": "注文が見つかりません",
+    "orderNotFoundMessage": "お探しの注文が見つかりませんでした。",
+    "continueShoppingButton": "買い物を続ける",
+    "viewAllOrdersButton": "すべての注文を表示",
+    "orderDetails": "注文詳細",
+    "orderItems": "注文商品",
+    "orderSummary": "注文概要",
+    "shippingAddress": "配送先住所",
+    "billingAddress": "請求先住所",
+    "whatsNext": "次に何が起こりますか？",
+    "whatsNextDescription": "ご注文の詳細が記載された確認メールが間もなく届きます。商品発送後に追跡情報もお送りします。",
+    "supportMessage": "ご注文についてご質問がございましたら、カスタマーサポートまでお問い合わせください。",
+    "fields": {
+      "orderNumber": "注文番号",
+      "orderDate": "注文日",
+      "orderStatus": "注文ステータス",
+      "paymentStatus": "支払いステータス",
+      "orderType": "注文タイプ",
+      "paymentMethod": "支払い方法",
+      "totalAmount": "合計金額",
+      "subtotal": "小計",
+      "shipping": "送料",
+      "tax": "税金",
+      "discount": "割引",
+      "total": "合計",
+      "quantity": "数量",
+      "price": "価格",
+      "regularProducts": "通常商品",
+      "wholesaleProducts": "卸売商品",
+      "sku": "SKU",
+      "regular": "通常",
+      "wholesale": "卸売"
+    },
+    "paymentMethods": {
+      "COD": "代金引換",
+      "CARD": "クレジット/デビットカード",
+      "ACH/WT": "銀行振込"
+    }
+  },
   "Navbar": {
     "Log_in": "ログイン",
     "Cart": "カート",
