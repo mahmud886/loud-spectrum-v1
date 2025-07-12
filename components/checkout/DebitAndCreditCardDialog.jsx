@@ -1,117 +1,218 @@
 'use client';
 
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import { Input } from '@/components/ui/input';
+import { selectBillingAddress, selectOrderSummary, selectShippingAddress } from '@/lib/store/slices/checkoutSlice';
 import { useTranslations } from 'next-intl';
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { CreditCard, PaymentForm } from 'react-square-web-payments-sdk';
 import { toast } from 'sonner';
 
-const DebitCreditCardDialog = ({ open, onClose, formData, onChange, onSubmit }) => {
+const DebitCreditCardDialog = ({ open, onClose, onSubmit }) => {
   const t = useTranslations('CheckoutPage.PaymentDialog');
+  const [isFormReady, setIsFormReady] = useState(false);
+  const [isProcessing, setIsProcessing] = useState(false);
 
-  const validateCardForm = () => {
-    const requiredFields = {
-      cardHolderName: t('cardHolderName'),
-      expiry: 'Expiry Date',
-      securityCode: 'Security Code',
-      postalCode: 'Postal Code',
-    };
+  // Get billing address, shipping address, and order summary from Redux
+  const billingAddress = useSelector(selectBillingAddress);
+  const shippingAddress = useSelector(selectShippingAddress);
+  const orderSummary = useSelector(selectOrderSummary);
 
-    const missingFields = [];
-    Object.entries(requiredFields).forEach(([field, label]) => {
-      if (!formData[field] || String(formData[field]).trim() === '') {
-        missingFields.push(label);
-      }
-    });
+  // Use billing address if not same as shipping, otherwise use shipping address
+  const addressToUse = billingAddress.sameAsShipping ? shippingAddress : billingAddress;
 
-    if (missingFields.length > 0) {
-      toast.error('Incomplete Card Information', {
-        description: `Please fill in: ${missingFields.join(', ')}`,
-        duration: 4000,
-      });
-      return false;
+  // Convert total to cents for Square
+  const amountInCents = Math.round((orderSummary.total || 0) * 100);
+
+  // Reset form state when dialog opens/closes
+  useEffect(() => {
+    if (open) {
+      setIsFormReady(false);
+      setIsProcessing(false);
+      // Add a small delay to ensure dialog is fully rendered
+      const timer = setTimeout(() => {
+        setIsFormReady(true);
+      }, 300);
+      return () => clearTimeout(timer);
+    } else {
+      setIsFormReady(false);
+      setIsProcessing(false);
     }
+  }, [open]);
 
-    return true;
+  const createVerificationDetails = () => ({
+    amount: amountInCents.toString(),
+    billingContact: {
+      addressLines: [addressToUse.streetAddress || ''],
+      familyName: addressToUse.lastName || '',
+      givenName: addressToUse.firstName || '',
+      // Square expects 2-letter country codes
+      countryCode:
+        addressToUse.country === 'United States' ? 'US' : addressToUse.country === 'United Kingdom' ? 'GB' : 'US',
+      city: addressToUse.city || '',
+      postalCode: addressToUse.postalCode || '',
+    },
+    currencyCode: 'USD',
+    intent: 'CHARGE',
+  });
+
+  const handleCardTokenReceived = async (token, verifiedBuyer) => {
+    if (isProcessing) return; // Prevent double submission
+
+    setIsProcessing(true);
+    console.log('Square Token Received:', token);
+    console.log('Verified Buyer:', verifiedBuyer);
+
+    try {
+      // Close the dialog first
+      onClose();
+
+      // Call the parent's submit handler with the token
+      if (onSubmit) {
+        await onSubmit(token);
+      }
+    } catch (error) {
+      console.error('Error processing payment:', error);
+      toast.error('Payment Error', {
+        description: 'There was an error processing your payment. Please try again.',
+        duration: 5000,
+      });
+    } finally {
+      setIsProcessing(false);
+    }
   };
 
-  const handleSubmit = () => {
-    if (!validateCardForm()) {
-      return;
-    }
+  const handlePaymentFormError = (errors) => {
+    console.error('Square Payment Form Error:', errors);
+    setIsProcessing(false);
 
-    toast.success('Card Information Validated', {
-      description: 'Processing your card payment...',
-      duration: 2000,
+    // Show user-friendly error message
+    const errorMessage = errors?.[0]?.message || 'Payment form error occurred';
+    toast.error('Payment Form Error', {
+      description: errorMessage,
+      duration: 5000,
     });
+  };
 
-    // Call the original onSubmit
-    if (onSubmit) {
-      onSubmit();
-    }
+  // Square has limited CSS property support - only basic properties are allowed
+  const cardStyle = {
+    input: {
+      fontSize: '16px',
+      fontFamily: 'inherit',
+      color: '#000000',
+      backgroundColor: '#f8f9fa',
+      // Remove borderRadius and padding as they're not supported
+    },
+    'input.is-error': {
+      color: '#dc3545',
+    },
+    'input::placeholder': {
+      color: '#6c757d',
+    },
+    '.message-text': {
+      color: '#dc3545',
+    },
   };
 
   return (
     <Dialog open={open} onOpenChange={onClose}>
-      <DialogContent className="flex max-h-[90vh] w-full flex-col overflow-y-scroll rounded-lg bg-white p-6 md:h-auto md:max-w-2xl">
-        <DialogHeader>
-          <DialogTitle className="text-umbra-100 font-sans text-[20px] font-normal">{t('title')}</DialogTitle>
-        </DialogHeader>
+      <div className="payment-modal-warp">
+        <DialogContent className="modal-dialog w-[500px] max-w-full rounded-none border-0 p-0">
+          <div className="modal-content relative rounded-none border-0 p-[30px]">
+            {/* Custom Modal Header with Close Button */}
+            <div className="modal-header absolute -top-[15px] -right-[15px] z-10 border-b-0 p-0">
+              <button
+                onClick={onClose}
+                disabled={isProcessing}
+                className={`float-none m-0 p-0 text-lg font-normal text-gray-800 opacity-65 transition-colors hover:text-red-500 hover:opacity-100 ${
+                  isProcessing ? 'cursor-not-allowed opacity-30' : ''
+                }`}
+              >
+                ✕
+              </button>
+            </div>
 
-        <div className="space-y-4">
-          <div>
-            <label className="text-umbra-100 mb-1 block font-sans text-[16px] font-normal">
-              {t('cardHolderName')}*
-            </label>
-            <Input
-              name="cardHolderName"
-              placeholder={t('cardHolderName')}
-              value={formData.cardHolderName}
-              onChange={onChange}
-              className="bg-umbra-5 placeholder:text-umbra-100 hover:bg-umbra-10 min-h-[48px] w-full rounded-[10px] px-4 py-2 font-mono text-[16px] leading-[140%] font-normal"
-            />
+            {/* Modal Body */}
+            <div className="modal-body relative p-0">
+              <DialogHeader className="mb-6">
+                <DialogTitle className="text-umbra-100 font-sans text-[20px] font-normal">{t('title')}</DialogTitle>
+              </DialogHeader>
+
+              <div className="space-y-4">
+                {/* Display order amount */}
+                <div className="bg-umbra-5 rounded-lg p-4 text-center">
+                  <p className="text-umbra-100 text-sm font-medium">Total Amount</p>
+                  <p className="text-umbra-100 text-2xl font-bold">${orderSummary.total?.toFixed(2) || '0.00'}</p>
+                </div>
+
+                {/* Square Payment Form - only render when dialog is open and ready */}
+                {open && isFormReady && (
+                  <div className="space-y-4">
+                    <PaymentForm
+                      applicationId="sandbox-sq0idb-c0j4aYoIABnI_N0bjcw1yA"
+                      cardTokenizeResponseReceived={handleCardTokenReceived}
+                      createVerificationDetails={createVerificationDetails}
+                      locationId="LDE4M1RG05D9K"
+                      onError={handlePaymentFormError}
+                    >
+                      <div className="rounded-lg border border-gray-200 p-4">
+                        <CreditCard
+                          style={cardStyle}
+                          includeInputLabels={true}
+                          buttonProps={{
+                            css: {
+                              backgroundColor: '#000000',
+                              color: '#ffffff',
+                              fontWeight: '600',
+                              width: '100%',
+                              // Remove borderRadius, padding, border, cursor as they may not be supported
+                            },
+                            children: isProcessing ? 'Processing...' : 'Pay Now',
+                          }}
+                        />
+                      </div>
+                    </PaymentForm>
+                  </div>
+                )}
+
+                {/* Loading state when form is not ready */}
+                {open && !isFormReady && (
+                  <div className="rounded-lg border border-gray-200 p-8 text-center">
+                    <div className="border-umbra-100 mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-b-2"></div>
+                    <p className="text-umbra-100 text-sm">Loading payment form...</p>
+                  </div>
+                )}
+
+                {/* Billing Address Info */}
+                <div className="bg-umbra-5 rounded-lg p-4">
+                  <h4 className="text-umbra-100 mb-2 text-sm font-medium">Billing Address</h4>
+                  <div className="text-umbra-100 space-y-1 text-xs">
+                    <p>
+                      {addressToUse.firstName} {addressToUse.lastName}
+                    </p>
+                    <p>{addressToUse.streetAddress}</p>
+                    <p>
+                      {addressToUse.city}, {addressToUse.province} {addressToUse.postalCode}
+                    </p>
+                    <p>{addressToUse.country}</p>
+                  </div>
+                </div>
+
+                {/* Cancel button */}
+                <button
+                  onClick={onClose}
+                  disabled={isProcessing}
+                  className={`border-umbra-20 text-umbra-100 hover:bg-umbra-5 inline-flex w-full items-center justify-center rounded-full border px-6 py-3 ${
+                    isProcessing ? 'cursor-not-allowed opacity-50' : ''
+                  }`}
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
           </div>
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-            <div className="col-span-1">
-              <label className="text-umbra-100 mb-1 block font-sans text-[16px] font-normal">{t('expiry')}*</label>
-              <Input
-                name="expiry"
-                placeholder="MM/YY"
-                value={formData.expiry}
-                onChange={onChange}
-                className="bg-umbra-5 placeholder:text-umbra-100 hover:bg-umbra-10 min-h-[48px] w-full rounded-[10px] px-4 py-2 font-mono text-[16px] leading-[140%] font-normal"
-              />
-            </div>
-            <div className="col-span-1">
-              <label className="text-umbra-100 mb-1 block font-sans text-[16px] font-normal">
-                {t('securityCode')}*
-              </label>
-              <Input
-                name="securityCode"
-                placeholder="CVV"
-                value={formData.securityCode}
-                onChange={onChange}
-                className="bg-umbra-5 placeholder:text-umbra-100 hover:bg-umbra-10 min-h-[48px] w-full rounded-[10px] px-4 py-2 font-mono text-[16px] leading-[140%] font-normal"
-              />
-            </div>
-            <div className="col-span-1">
-              <label className="text-umbra-100 mb-1 block font-sans text-[16px] font-normal">{t('postalCode')}</label>
-              <Input
-                name="postalCode"
-                placeholder="UK"
-                value={formData.postalCode}
-                onChange={onChange}
-                className="bg-umbra-5 placeholder:text-umbra-100 hover:bg-umbra-10 min-h-[48px] w-full rounded-[10px] px-4 py-2 font-mono text-[16px] leading-[140%] font-normal"
-              />
-            </div>
-          </div>
-          <button
-            onClick={handleSubmit}
-            className="main-button-black inline-flex w-full items-center justify-center rounded-full px-6 py-3"
-          >
-            {t('saveButton')}
-          </button>
-        </div>
-      </DialogContent>
+        </DialogContent>
+      </div>
     </Dialog>
   );
 };
