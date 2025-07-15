@@ -21,8 +21,8 @@ const TrySamplePackHero = async ({ samplePackCategory }) => {
               : '/assets/images/sample-pack/sample-pack-hero.png'
           }
           alt="Background"
-          width={1440}
-          height={797}
+          width={1560}
+          height={878}
           className="absolute top-0 left-1/2 z-0 hidden h-full -translate-x-1/2 object-cover md:block md:w-[1920px]"
           priority
         />
@@ -48,10 +48,14 @@ const TrySamplePackHero = async ({ samplePackCategory }) => {
 
       <div className="relative block h-[619px] overflow-hidden bg-black md:hidden">
         <Image
-          src="/assets/images/sample-pack/sample-pack-hero-mobile.png"
+          src={
+            samplePackCategory?.[0]?.image
+              ? `${process.env.NEXT_PUBLIC_API_URL}/public${samplePackCategory?.[0]?.image}`
+              : '/assets/images/sample-pack/sample-pack-hero.png'
+          }
           alt="Background"
-          width={375}
-          height={619}
+          width={1560}
+          height={878}
           className="absolute top-0 left-1/2 z-0 h-[619px] w-full -translate-x-1/2 object-cover"
           priority
         />
@@ -59,7 +63,7 @@ const TrySamplePackHero = async ({ samplePackCategory }) => {
 
       {/*Mobile Mode*/}
       <div className="flex justify-center py-8 md:hidden">
-        <SamplePackHeroCard />
+        <SamplePackHeroCard filteredSamplePackProducts={filteredSamplePackProducts} />
       </div>
     </>
   );
