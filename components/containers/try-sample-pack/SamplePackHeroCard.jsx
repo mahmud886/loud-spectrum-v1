@@ -1,10 +1,9 @@
-import React from 'react';
-import { useTranslations } from 'next-intl';
-import { MinusIcon, PlusIcon, Star } from 'lucide-react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
+import { MinusIcon, PlusIcon, Star } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
-const SamplePackHeroCard = () => {
+const SamplePackHeroCard = ({ filteredSamplePackProducts }) => {
   const t = useTranslations('TrySamplePack');
   return (
     <div className="bg-white-100 text-umbra-100 p-5 md:h-[587px] md:w-[413px]">
@@ -37,15 +36,20 @@ const SamplePackHeroCard = () => {
             </div>
             <div className="space-y-2">
               <div>
-                <Select>
-                  <SelectTrigger className="text-umbra-100 bg-umbra-5 h-[42px] w-full font-mono text-[16px] leading-[140%] font-normal">
-                    <SelectValue placeholder={t('ChooseFormula')} />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="1">710Terps</SelectItem>
-                    <SelectItem value="2">Suace Terp</SelectItem>
-                  </SelectContent>
-                </Select>
+                {filteredSamplePackProducts?.length > 0 && (
+                  <Select>
+                    <SelectTrigger className="text-umbra-100 bg-umbra-5 h-[42px] w-full font-mono text-[16px] leading-[140%] font-normal">
+                      <SelectValue placeholder={t('ChooseFormula')} />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {filteredSamplePackProducts.map((item) => (
+                        <SelectItem key={item._id} value={item._id}>
+                          {item.name}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                )}
               </div>
               <div className="relative w-full">
                 <p className="text-umbra-100 pointer-events-none absolute top-2 left-3 font-mono text-[16px] leading-[140%] font-normal tracking-normal">
