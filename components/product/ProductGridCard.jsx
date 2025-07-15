@@ -41,10 +41,15 @@ const ProductGridCard = ({ product }) => {
             >
               <Image
                 className="h-[150px] w-auto object-cover md:h-[254px] md:w-[174px]"
-                src="/assets/images/products/mother.png"
+                // src="/assets/images/products/mother.png"
+                src={
+                  product?.image
+                    ? `${process.env.NEXT_PUBLIC_API_URL}/public${product.image}`
+                    : '/assets/images/products/mother.png'
+                }
                 alt="Product"
-                width={411}
-                height={548}
+                width={256}
+                height={256}
                 priority={true}
               />
             </motion.div>

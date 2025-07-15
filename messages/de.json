@@ -369,7 +369,12 @@
       "buyNow": "Jetzt kaufen",
       "tag": "Cannabis-basiert"
     },
-    "AllProducts": "Alle Produkte"
+    "AllProducts": "Alle Produkte",
+    "NoProductsInCategory": "Keine Produkte in dieser Kategorie",
+    "NoProductsAvailable": "Keine Produkte verfügbar",
+    "NoProductsInCategoryDescription": "Versuchen Sie, verschiedene Kategorien auszuwählen oder Filter zu löschen, um mehr Produkte zu sehen.",
+    "NoProductsAvailableDescription": "Wir aktualisieren derzeit unseren Bestand. Bitte schauen Sie bald wieder vorbei für neue Produkte.",
+    "ClearFilters": "Filter löschen"
   },
   "ProductDetails": {
     "AddToCart": "In den Warenkorb",

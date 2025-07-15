@@ -369,7 +369,12 @@
       "buyNow": "今すぐ購入",
       "tag": "大麻由来"
     },
-    "AllProducts": "すべての商品"
+    "AllProducts": "すべての商品",
+    "NoProductsInCategory": "このカテゴリには商品がありません",
+    "NoProductsAvailable": "利用可能な商品がありません",
+    "NoProductsInCategoryDescription": "異なるカテゴリを選択するか、フィルターをクリアして、より多くの商品を表示してください。",
+    "NoProductsAvailableDescription": "現在、在庫を更新中です。新しい商品については、近日中に再度確認してください。",
+    "ClearFilters": "フィルターをクリア"
   },
   "ProductDetails": {
     "AddToCart": "カートに追加",
