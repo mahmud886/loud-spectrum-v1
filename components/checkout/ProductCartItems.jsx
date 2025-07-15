@@ -11,11 +11,11 @@ const ProductCartItems = ({ item }) => {
   return (
     <div className="border-umbra-10 bg-umbra-5 flex items-center gap-4 rounded-md border-1 py-2.5 pr-5 pl-2.5">
       <Image
-        src="/assets/images/cart-item.jpg"
+        src={item.image ? `${process.env.NEXT_PUBLIC_API_URL}/public${item.image}` : '/assets/images/cart-item.jpg'}
         alt={item.name}
-        width={70}
-        height={70}
-        className="h-[70px] w-[70px] rounded object-cover md:h-[100px] md:w-[100px]"
+        width={96}
+        height={96}
+        className="h-[100px] w-[80px] rounded object-cover md:h-[100px] md:w-[100px]"
       />
       <div className="flex w-full flex-col justify-between gap-2">
         <div className="flex flex-col items-start justify-between gap-1">
