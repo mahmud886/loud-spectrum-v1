@@ -81,6 +81,9 @@ const ShopPage = async () => {
   const [categories, categoryProducts] = await Promise.all([getCategories(), getCategoryProducts('all')]);
   const websiteUrl = process.env.NEXT_PUBLIC_WEBSITE_URL || 'https://loudspectrum.com';
 
+  // Filter only active categories
+  const activeCategories = categories?.data?.categories?.filter((category) => category.status === 'Active') || [];
+
   // Generate structured data for the shop page
   const structuredData = {
     '@context': 'https://schema.org',
@@ -132,7 +135,7 @@ const ShopPage = async () => {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       <ShopHero />
-      <TerpeneProductsContainer categories={categories?.data?.categories} categoryProducts={categoryProducts?.data} />
+      <TerpeneProductsContainer categories={activeCategories} categoryProducts={categoryProducts?.data} />
       <div className="container pt-20 pb-[160px]">
         <ShopQualityPromise />
       </div>
