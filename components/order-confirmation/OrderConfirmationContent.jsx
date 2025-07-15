@@ -17,7 +17,6 @@ const OrderConfirmationContent = ({ orderData }) => {
     width: 0,
     height: 0,
   });
-  console.log('orderData', orderData);
 
   // Handle window resize for confetti
   useEffect(() => {

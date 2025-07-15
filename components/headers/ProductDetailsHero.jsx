@@ -1,14 +1,22 @@
 import ProductDetailsLeftCard from '@/components/product/ProductDetailsLeftCard';
 import ProductDetailsRightCard from '@/components/product/ProductDetailsRightCard';
+import { getCategories } from '@/services/get-categories';
 import Image from 'next/image';
 import { Suspense } from 'react';
 
-const ProductDetailsHero = ({ product }) => {
+const ProductDetailsHero = async ({ product }) => {
+  const categories = await getCategories();
+  const exactCategory = categories?.data?.categories?.find((category) => category._id === product?.category._id);
   return (
     <>
       <div className="relative hidden h-[1082px] overflow-hidden bg-black md:block">
         <Image
-          src="/assets/images/products/product-page-hero.png"
+          // src="/assets/images/products/product-page-hero.png"
+          src={
+            exactCategory?.image
+              ? `${process.env.NEXT_PUBLIC_API_URL}/public${exactCategory?.image}`
+              : '/assets/images/products/product-page-hero.png'
+          }
           alt="Background"
           width={1440}
           height={797}
