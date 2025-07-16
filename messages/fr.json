@@ -369,7 +369,12 @@
       "buyNow": "Acheter maintenant",
       "tag": "Dérivé du cannabis"
     },
-    "AllProducts": "Tous les produits"
+    "AllProducts": "Tous les produits",
+    "NoProductsInCategory": "Aucun produit dans cette catégorie",
+    "NoProductsAvailable": "Aucun produit disponible",
+    "NoProductsInCategoryDescription": "Essayez de sélectionner différentes catégories ou effacez les filtres pour voir plus de produits.",
+    "NoProductsAvailableDescription": "Nous mettons actuellement à jour notre inventaire. Veuillez revenir bientôt pour de nouveaux produits.",
+    "ClearFilters": "Effacer les filtres"
   },
   "ProductDetails": {
     "AddToCart": "Ajouter au panier",

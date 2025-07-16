@@ -42,7 +42,7 @@ const ProductDetailsPage = async ({ params }) => {
       <SpectrumAccordion items={accordionData} />
       <ProductReviews productId={productDetails?._id} />
       <AddAReview productId={productDetails?._id} authToken={authToken?.value} />
-      <RelatedProducts />
+      <RelatedProducts productDetails={productDetails} />
     </div>
   );
 };

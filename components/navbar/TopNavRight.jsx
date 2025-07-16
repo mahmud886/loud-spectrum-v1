@@ -1,6 +1,7 @@
 'use client';
 
 import CloseButton from '@/components/navbar/CloseButton';
+import { encodeCategoryForUrl } from '@/helpers/url-category-utils';
 import { useAuthToken } from '@/hooks/useAuthToken';
 import { Link } from '@/i18n/navigation';
 import { LogInIcon, ShoppingCartIcon, UserIcon } from 'lucide-react';
@@ -12,6 +13,24 @@ const TopNavRight = ({ onClose, setCartOpen }) => {
   const authToken = useAuthToken();
   const t = useTranslations('Navbar');
   const topNav = t.raw('TopNav');
+
+  // Category mapping for URL routing
+  const getCategoryUrl = (categoryName) => {
+    // Map translated names to their English equivalents for URL routing
+    const categoryMap = {
+      [topNav.Alive]: 'alive',
+      [topNav.Dank]: 'dank',
+      [topNav.Sweet]: 'sweet',
+      [topNav.Classic]: 'classic',
+      [topNav.Active]: 'active',
+      [topNav.Relaxed]: 'relaxed',
+      [topNav.Sample_packs]: 'sample-packs',
+    };
+
+    const englishCategory = categoryMap[categoryName] || categoryName.toLowerCase();
+    return `/shop/${encodeCategoryForUrl(englishCategory)}`;
+  };
+
   return (
     <div className="flex h-full flex-col justify-between">
       <div className="flex w-full items-center justify-end gap-4">
@@ -66,7 +85,7 @@ const TopNavRight = ({ onClose, setCartOpen }) => {
                 {section.items.map((name, idx) => (
                   <Link
                     key={idx}
-                    href="/"
+                    href={getCategoryUrl(name)}
                     className="text-umbra-100 hover:text-umbra-40 mx-[5px] font-sans text-[20px] font-normal transition-colors duration-300 ease-in-out"
                   >
                     {name}

@@ -1,30 +1,7 @@
-// import ShopQualityPromise from '@/components/containers/shop/ShopQualityPromise';
-// import TerpeneProductsContainer from '@/components/containers/shop/TerpeneProductsContainer';
-// import { getCategories } from '@/services/get-categories';
-// import { getCategoryProducts } from '@/services/get-category-products';
-
-// const ShopPage = async () => {
-//   const [categories, categoryProducts] = await Promise.all([getCategories(), getCategoryProducts('all')]);
-//   const websiteUrl = process.env.NEXT_PUBLIC_WEBSITE_URL || 'https://loudspectrum.com';
-
-//   // Filter only active categories
-//   const activeCategories = categories?.data?.categories?.filter((category) => category.status === 'Active') || [];
-
-//   return (
-//     <>
-//       <TerpeneProductsContainer categories={activeCategories} categoryProducts={categoryProducts?.data} />
-//       <div className="container pt-20 pb-[160px]">
-//         <ShopQualityPromise />
-//       </div>
-//     </>
-//   );
-// };
-
-// export default ShopPage;
-
 import ShopQualityPromise from '@/components/containers/shop/ShopQualityPromise';
 import TerpeneProductsContainer from '@/components/containers/shop/TerpeneProductsContainer';
 import ShopHero from '@/components/headers/ShopHero';
+import { decodeCategoryFromUrl } from '@/helpers/url-category-utils';
 import { getCategories } from '@/services/get-categories';
 
 const websiteUrl = process.env.NEXT_PUBLIC_WEBSITE_URL || 'https://loudspectrum.com';
@@ -75,8 +52,10 @@ const structuredData = {
   },
 };
 
-export async function generateMetadata() {
-  const websiteUrl = process.env.NEXT_PUBLIC_WEBSITE_URL || 'https://loudspectrum.com';
+export async function generateMetadata({ params }) {
+  const { category } = await params;
+
+  const decodedCategory = await decodeCategoryFromUrl(category);
 
   return {
     title: 'Shop | Loud Spectrum - Premium Terpene Products',
@@ -98,7 +77,7 @@ export async function generateMetadata() {
       description:
         'Discover our premium collection of terpene products. Shop high-quality, lab-tested terpenes for enhanced flavor and experience. Free shipping on orders over $50.',
       type: 'website',
-      url: `${websiteUrl}/shop`,
+      url: `${websiteUrl}/shop/${decodedCategory}`,
       siteName: 'Loud Spectrum',
       locale: 'en_US',
       images: [
@@ -119,14 +98,14 @@ export async function generateMetadata() {
       images: [`${websiteUrl}/images/shop-twitter-image.jpg`],
     },
     alternates: {
-      canonical: `${websiteUrl}/shop`,
+      canonical: `${websiteUrl}/shop/${decodedCategory}`,
       languages: {
-        'en-US': `${websiteUrl}/en/shop`,
-        'es-ES': `${websiteUrl}/es/shop`,
-        'fr-FR': `${websiteUrl}/fr/shop`,
-        'de-DE': `${websiteUrl}/de/shop`,
-        'ja-JP': `${websiteUrl}/ja/shop`,
-        'ru-RU': `${websiteUrl}/ru/shop`,
+        'en-US': `${websiteUrl}/en/shop/${decodedCategory}`,
+        'es-ES': `${websiteUrl}/es/shop/${decodedCategory}`,
+        'fr-FR': `${websiteUrl}/fr/shop/${decodedCategory}`,
+        'de-DE': `${websiteUrl}/de/shop/${decodedCategory}`,
+        'ja-JP': `${websiteUrl}/ja/shop/${decodedCategory}`,
+        'ru-RU': `${websiteUrl}/ru/shop/${decodedCategory}`,
       },
     },
     robots: {
@@ -148,16 +127,24 @@ export async function generateMetadata() {
   };
 }
 
-const ShopPage = async () => {
+const CategoryShopPage = async ({ params }) => {
+  const { category } = await params;
+
+  const decodedCategory = await decodeCategoryFromUrl(category);
+
   const categories = await getCategories();
 
+  // const [categories, categoryProducts] = await Promise.all([getCategories(), getCategoryProducts('all')]);
+
   const activeCategories = categories?.data?.categories?.filter((category) => category.status === 'Active') || [];
+
+  const exactCategory = activeCategories?.find((category) => category.slug === decodedCategory);
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
-      <ShopHero />
-      <TerpeneProductsContainer categories={activeCategories} categoryId={'all'} />
+      <ShopHero category={exactCategory} />
+      <TerpeneProductsContainer categories={activeCategories} categoryId={exactCategory?._id} />
       <div className="container pt-20 pb-[160px]">
         <ShopQualityPromise />
       </div>
@@ -165,4 +152,4 @@ const ShopPage = async () => {
   );
 };
 
-export default ShopPage;
+export default CategoryShopPage;

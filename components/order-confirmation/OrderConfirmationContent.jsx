@@ -6,6 +6,7 @@ import { Separator } from '@/components/ui/separator';
 import { Link } from '@/i18n/navigation';
 import { CheckCircle, CreditCard, Hash, MapPin, Package, Truck } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import Confetti from 'react-confetti';
 
@@ -246,46 +247,59 @@ const OrderConfirmationContent = ({ orderData }) => {
                     key={item._id || `regular-${index}`}
                     className="flex items-center justify-between rounded-lg border border-green-200 bg-green-50/30 p-4"
                   >
-                    <div className="flex-1">
-                      <h4 className="font-semibold text-gray-900">
-                        {item.product?.name || item.name || `Product ${index + 1}`}
-                      </h4>
-                      <div className="mt-1 flex items-center gap-4 text-sm text-gray-600">
-                        <span className="rounded-full bg-green-100 px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal text-green-600 capitalize">
-                          {t('fields.quantity')}: {item.quantity}
-                        </span>
-                        <span className="rounded-full bg-green-100 px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal text-green-600 capitalize">
-                          {t('fields.sku')}: {item.product?.sku || 'N/A'}
-                        </span>
-                      </div>
-                      <div className="mt-2 flex items-center gap-2">
-                        <Badge
-                          variant="default"
-                          className="text-umbra-100 rounded-full bg-green-100 px-2 py-1 font-sans text-[12px] leading-[120%] font-normal capitalize"
-                        >
-                          {t('fields.regular')}
-                        </Badge>
-                        <Badge
-                          variant="default"
-                          className="bg-umbra-5 text-umbra-100 rounded-full px-2 py-1 font-sans text-[12px] leading-[120%] font-normal"
-                        >
-                          {item.selectedVolume} 1ml
-                        </Badge>
-                        <Badge
-                          variant="default"
-                          className="bg-classic/20 text-umbra-100 rounded-full px-2 py-1 font-sans text-[12px] leading-[120%] font-normal"
-                        >
-                          {(() => {
-                            try {
-                              const parsed = JSON.parse(item?.attribute);
-                              const flavor = parsed?.flavor || 'N/A';
-                              return flavor === 'N/A' ? 'N/A' : flavor;
-                            } catch (error) {
-                              console.warn('Failed to parse attribute JSON:', item?.attribute);
-                              return 'N/A';
-                            }
-                          })()}
-                        </Badge>
+                    <div className="flex items-center gap-4">
+                      <Image
+                        src={
+                          item.product?.image
+                            ? `${process.env.NEXT_PUBLIC_API_URL}/public${item.product.image}`
+                            : '/assets/images/cart-item.jpg'
+                        }
+                        alt={item.product?.name || item.name || `Product ${index + 1}`}
+                        width={96}
+                        height={96}
+                        className="h-[100px] w-[80px] rounded object-cover md:h-auto md:w-auto"
+                      />
+                      <div className="flex-1">
+                        <h4 className="font-semibold text-gray-900">
+                          {item.product?.name || item.name || `Product ${index + 1}`}
+                        </h4>
+                        <div className="mt-1 flex items-center gap-4 text-sm text-gray-600">
+                          <span className="rounded-full bg-green-100 px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal text-green-600 capitalize">
+                            {t('fields.quantity')}: {item.quantity}
+                          </span>
+                          <span className="rounded-full bg-green-100 px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal text-green-600 capitalize">
+                            {t('fields.sku')}: {item.product?.sku || 'N/A'}
+                          </span>
+                        </div>
+                        <div className="mt-2 flex items-center gap-2">
+                          <Badge
+                            variant="default"
+                            className="text-umbra-100 rounded-full bg-green-100 px-2 py-1 font-sans text-[12px] leading-[120%] font-normal capitalize"
+                          >
+                            {t('fields.regular')}
+                          </Badge>
+                          <Badge
+                            variant="default"
+                            className="bg-umbra-5 text-umbra-100 rounded-full px-2 py-1 font-sans text-[12px] leading-[120%] font-normal"
+                          >
+                            {item.selectedVolume} 1ml
+                          </Badge>
+                          <Badge
+                            variant="default"
+                            className="bg-classic/20 text-umbra-100 rounded-full px-2 py-1 font-sans text-[12px] leading-[120%] font-normal"
+                          >
+                            {(() => {
+                              try {
+                                const parsed = JSON.parse(item?.attribute);
+                                const flavor = parsed?.flavor || 'N/A';
+                                return flavor === 'N/A' ? 'N/A' : flavor;
+                              } catch (error) {
+                                console.warn('Failed to parse attribute JSON:', item?.attribute);
+                                return 'N/A';
+                              }
+                            })()}
+                          </Badge>
+                        </div>
                       </div>
                     </div>
                     <div className="text-right">
@@ -313,46 +327,59 @@ const OrderConfirmationContent = ({ orderData }) => {
                     key={item._id || `wholesale-${index}`}
                     className="flex items-center justify-between rounded-lg border border-red-100 bg-red-50/30 p-4"
                   >
-                    <div className="flex-1">
-                      <h4 className="font-semibold text-gray-900">
-                        {item.product?.name || item.name || `Product ${index + 1}`}
-                      </h4>
-                      <div className="mt-1 flex items-center gap-2 text-sm text-gray-600">
-                        <span className="rounded-full bg-red-100 px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal text-red-600 capitalize">
-                          {t('fields.quantity')}: {item.quantity}
-                        </span>
-                        <span className="rounded-full bg-red-100 px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal text-red-600 capitalize">
-                          {t('fields.sku')}: {item.product?.sku || 'N/A'}
-                        </span>
-                      </div>
-                      <div className="mt-2 flex items-center gap-2">
-                        <Badge
-                          variant="default"
-                          className="text-umbra-100 rounded-full bg-red-100 px-2 py-1 font-sans text-[12px] leading-[120%] font-normal capitalize"
-                        >
-                          {t('fields.wholesale')}
-                        </Badge>
-                        <Badge
-                          variant="default"
-                          className="bg-umbra-5 text-umbra-100 rounded-full px-2 py-1 font-sans text-[12px] leading-[120%] font-normal capitalize"
-                        >
-                          {item.selectedVolume} 1ml
-                        </Badge>
-                        <Badge
-                          variant="default"
-                          className="bg-classic/20 text-umbra-100 rounded-full px-2 py-1 font-sans text-[12px] leading-[120%] font-normal"
-                        >
-                          {(() => {
-                            try {
-                              const parsed = JSON.parse(item?.attribute);
-                              const flavor = parsed?.flavor || 'N/A';
-                              return flavor === 'N/A' ? 'N/A' : flavor;
-                            } catch (error) {
-                              console.warn('Failed to parse attribute JSON:', item?.attribute);
-                              return 'N/A';
-                            }
-                          })()}
-                        </Badge>
+                    <div className="flex items-center gap-4">
+                      <Image
+                        src={
+                          item.product?.image
+                            ? `${process.env.NEXT_PUBLIC_API_URL}/public${item.product.image}`
+                            : '/assets/images/cart-item.jpg'
+                        }
+                        alt={item.product?.name || item.name || `Product ${index + 1}`}
+                        width={96}
+                        height={96}
+                        className="h-[100px] w-[80px] rounded object-cover md:h-auto md:w-auto"
+                      />
+                      <div className="flex-1">
+                        <h4 className="font-semibold text-gray-900">
+                          {item.product?.name || item.name || `Product ${index + 1}`}
+                        </h4>
+                        <div className="mt-1 flex items-center gap-2 text-sm text-gray-600">
+                          <span className="rounded-full bg-red-100 px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal text-red-600 capitalize">
+                            {t('fields.quantity')}: {item.quantity}
+                          </span>
+                          <span className="rounded-full bg-red-100 px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal text-red-600 capitalize">
+                            {t('fields.sku')}: {item.product?.sku || 'N/A'}
+                          </span>
+                        </div>
+                        <div className="mt-2 flex items-center gap-2">
+                          <Badge
+                            variant="default"
+                            className="text-umbra-100 rounded-full bg-red-100 px-2 py-1 font-sans text-[12px] leading-[120%] font-normal capitalize"
+                          >
+                            {t('fields.wholesale')}
+                          </Badge>
+                          <Badge
+                            variant="default"
+                            className="bg-umbra-5 text-umbra-100 rounded-full px-2 py-1 font-sans text-[12px] leading-[120%] font-normal capitalize"
+                          >
+                            {item.selectedVolume} 1ml
+                          </Badge>
+                          <Badge
+                            variant="default"
+                            className="bg-classic/20 text-umbra-100 rounded-full px-2 py-1 font-sans text-[12px] leading-[120%] font-normal"
+                          >
+                            {(() => {
+                              try {
+                                const parsed = JSON.parse(item?.attribute);
+                                const flavor = parsed?.flavor || 'N/A';
+                                return flavor === 'N/A' ? 'N/A' : flavor;
+                              } catch (error) {
+                                console.warn('Failed to parse attribute JSON:', item?.attribute);
+                                return 'N/A';
+                              }
+                            })()}
+                          </Badge>
+                        </div>
                       </div>
                     </div>
                     <div className="text-right">

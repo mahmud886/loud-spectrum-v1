@@ -4,6 +4,77 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
 
 export default function RadioGroupButtons({ categories, onCategoryChange }) {
+  const [selected, setSelected] = useState('All');
+
+  const options = ['All', ...categories.map((category) => category.name)];
+
+  const selectOption = (option) => {
+    setSelected(option);
+
+    if (option === 'All') {
+      onCategoryChange?.([]);
+    } else {
+      const selectedCategory = categories.find((cat) => cat.name === option);
+      onCategoryChange?.(selectedCategory ? [selectedCategory] : []);
+    }
+  };
+
+  console.log('categories', categories);
+
+  return (
+    <div className="w-full">
+      <div className="mx-auto w-full max-w-md space-y-2" role="group" aria-label="Filter Options">
+        {options.map((option) => {
+          const isSelected = selected === option;
+
+          return (
+            <motion.button
+              key={option}
+              type="button"
+              onClick={() => selectOption(option)}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className={clsx(
+                'group relative flex w-full cursor-pointer items-center justify-between rounded-sm border px-3 py-2 text-white transition',
+                isSelected ? 'bg-stardust' : 'bg-white-100',
+              )}
+              aria-pressed={isSelected}
+              layout
+            >
+              <span className="text-umbra-100 font-mono text-[16px] leading-[140%]">{option}</span>
+              <span
+                className={clsx(
+                  'flex h-[9px] w-[9px] items-center justify-center rounded-full border transition-all duration-300',
+                  isSelected ? 'border-[#0D1117]' : 'border-gray-400',
+                )}
+              >
+                <AnimatePresence>
+                  {isSelected && (
+                    <motion.span
+                      className="h-[5px] w-[5px] rounded-full bg-[#0D1117]"
+                      initial={{ scale: 0, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      exit={{ scale: 0, opacity: 0 }}
+                      transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                    />
+                  )}
+                </AnimatePresence>
+              </span>
+            </motion.button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+/* OLD CODE - Multi-select version
+'use client';
+import clsx from 'clsx';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useState } from 'react';
+
+export default function RadioGroupButtons({ categories, onCategoryChange }) {
   const [selected, setSelected] = useState(['All']);
 
   const options = ['All', ...categories.map((category) => category.name)];
@@ -74,6 +145,7 @@ export default function RadioGroupButtons({ categories, onCategoryChange }) {
     </div>
   );
 }
+*/
 
 /*'use client';
 import { useState } from 'react';

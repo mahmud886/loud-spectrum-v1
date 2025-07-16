@@ -369,7 +369,12 @@
       "buyNow": "Buy Now",
       "tag": "Cannabis Derived"
     },
-    "AllProducts": "All Products"
+    "AllProducts": "All Products",
+    "NoProductsInCategory": "No products in this category",
+    "NoProductsAvailable": "No products available",
+    "NoProductsInCategoryDescription": "Try selecting different categories or clear filters to see more products.",
+    "NoProductsAvailableDescription": "We're currently updating our inventory. Please check back soon for new products.",
+    "ClearFilters": "Clear Filters"
   },
   "ProductDetails": {
     "AddToCart": "Add To Cart",

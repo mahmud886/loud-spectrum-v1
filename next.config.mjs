@@ -8,7 +8,7 @@ const nextConfig = {
   compress: true,
   reactStrictMode: true,
   images: {
-    domains: ['loudspectrum.com'],
+    domains: ['loudspectrum.com', 'api.loudspectrum.com'],
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
@@ -51,18 +51,19 @@ const nextConfig = {
   experimental: {
     optimizeCss: {
       inlineFonts: true,
-      preloadFonts: true,
+      preloadFonts: false, // Disable font preloading to reduce warnings
     },
     optimizePackageImports: ['@/components', '@/lib'],
   },
   webpack: (config, { dev, isServer }) => {
-    // Optimize CSS loading
+    // Optimize CSS loading - reduce aggressive splitting to prevent preload warnings
     if (!dev && !isServer) {
       config.optimization.splitChunks.cacheGroups.styles = {
         name: 'styles',
         test: /\.(css|scss)$/,
-        chunks: 'all',
+        chunks: 'initial', // Changed from 'all' to 'initial' to reduce preloading
         enforce: true,
+        priority: 1,
       };
     }
     return config;

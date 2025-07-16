@@ -26,6 +26,7 @@ const ProductDetailsLeftCard = ({ product }) => {
   const volumeOptions = parseProductAttributes(product?.subproducts, 'volume');
   const { min, max } = getProductPriceRange(product?.subproducts);
   const selectedPrice = getProductPriceByVolume(product?.subproducts, selectedVolume);
+  const formulaOptions = parseProductAttributes(product?.subproducts, 'formula');
 
   useEffect(() => {
     if (selectedPrice) {
@@ -90,7 +91,7 @@ const ProductDetailsLeftCard = ({ product }) => {
   return (
     <div className="bg-white-100 text-umbra-100 p-5 md:h-[587px] md:w-[413px]">
       <div className="flex h-full w-full flex-col items-start justify-between gap-5">
-        <div className="self-start">
+        <div className="w-full self-start">
           <div className="space-y-5">
             <div className="flex items-center justify-between gap-5">
               <button className="border-alive text-alive rounded-[3px] border-1 px-2 text-[12px] font-normal">
@@ -134,15 +135,20 @@ const ProductDetailsLeftCard = ({ product }) => {
             </div>
             <div className="space-y-2">
               <div>
-                <Select>
-                  <SelectTrigger className="bg-umbra-5 text-umbra-100 h-[42px] w-full font-mono text-[16px] leading-[140%] font-normal">
-                    <SelectValue placeholder={t('ChooseFormula')} />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="1">710Terps</SelectItem>
-                    <SelectItem value="2">Suace Terp</SelectItem>
-                  </SelectContent>
-                </Select>
+                {formulaOptions?.length > 0 && (
+                  <Select>
+                    <SelectTrigger className="bg-umbra-5 text-umbra-100 h-[42px] w-full font-mono text-[16px]">
+                      <SelectValue placeholder={t('ChooseFormula')} />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {formulaOptions?.map((option) => (
+                        <SelectItem key={option?.value} value={option?.value}>
+                          {option?.label}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                )}
               </div>
               <div>
                 <Select

@@ -371,7 +371,12 @@
       "buyNow": "Купить сейчас",
       "tag": "Из каннабиса"
     },
-    "AllProducts": "Все продукты"
+    "AllProducts": "Все продукты",
+    "NoProductsInCategory": "В этой категории нет товаров",
+    "NoProductsAvailable": "Нет доступных товаров",
+    "NoProductsInCategoryDescription": "Попробуйте выбрать другие категории или очистите фильтры, чтобы увидеть больше товаров.",
+    "NoProductsAvailableDescription": "Мы в настоящее время обновляем наш ассортимент. Пожалуйста, вернитесь в ближайшее время для новых товаров.",
+    "ClearFilters": "Очистить фильтры"
   },
   "ProductDetails": {
     "AddToCart": "Добавить в корзину",
