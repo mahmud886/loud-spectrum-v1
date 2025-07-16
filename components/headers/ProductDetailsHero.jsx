@@ -36,7 +36,7 @@ const ProductDetailsHero = async ({ product }) => {
               >
                 {product && <ProductDetailsLeftCard product={product} />}
               </Suspense>
-              <ProductDetailsRightCard />
+              <ProductDetailsRightCard product={product} />
             </div>
           </div>
         </div>
