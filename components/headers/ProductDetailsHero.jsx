@@ -55,7 +55,11 @@ const ProductDetailsHero = async ({ product }) => {
       {/*  For Mobile */}
       <div className="relative block h-[619px] overflow-hidden bg-black md:hidden">
         <Image
-          src="/assets/images/products/product-page-hero.png"
+          src={
+            exactCategory?.image
+              ? `${process.env.NEXT_PUBLIC_API_URL}/public${exactCategory?.image}`
+              : '/assets/images/products/product-page-hero.png'
+          }
           alt="Background"
           width={375}
           height={619}
