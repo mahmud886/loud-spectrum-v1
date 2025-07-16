@@ -24,6 +24,7 @@
 
 import ShopQualityPromise from '@/components/containers/shop/ShopQualityPromise';
 import TerpeneProductsContainer from '@/components/containers/shop/TerpeneProductsContainer';
+import ShopHero from '@/components/headers/ShopHero';
 import { getCategories } from '@/services/get-categories';
 
 const websiteUrl = process.env.NEXT_PUBLIC_WEBSITE_URL || 'https://loudspectrum.com';
