@@ -66,7 +66,7 @@ export async function generateMetadata({ params }) {
 }
 
 const ProductDetailsLayout = async ({ children, params }) => {
-  const { slug } = await params;
+  const { category, slug } = await params;
   const productDetails = await getProductDetails(slug);
 
   return (

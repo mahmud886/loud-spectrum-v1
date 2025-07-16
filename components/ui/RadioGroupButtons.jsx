@@ -19,6 +19,8 @@ export default function RadioGroupButtons({ categories, onCategoryChange }) {
     }
   };
 
+  console.log('categories', categories);
+
   return (
     <div className="w-full">
       <div className="mx-auto w-full max-w-md space-y-2" role="group" aria-label="Filter Options">

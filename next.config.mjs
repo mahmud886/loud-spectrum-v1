@@ -51,18 +51,19 @@ const nextConfig = {
   experimental: {
     optimizeCss: {
       inlineFonts: true,
-      preloadFonts: true,
+      preloadFonts: false, // Disable font preloading to reduce warnings
     },
     optimizePackageImports: ['@/components', '@/lib'],
   },
   webpack: (config, { dev, isServer }) => {
-    // Optimize CSS loading
+    // Optimize CSS loading - reduce aggressive splitting to prevent preload warnings
     if (!dev && !isServer) {
       config.optimization.splitChunks.cacheGroups.styles = {
         name: 'styles',
         test: /\.(css|scss)$/,
-        chunks: 'all',
+        chunks: 'initial', // Changed from 'all' to 'initial' to reduce preloading
         enforce: true,
+        priority: 1,
       };
     }
     return config;

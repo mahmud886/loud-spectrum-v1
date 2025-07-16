@@ -2,6 +2,7 @@
 
 import ProductBuyDialog from '@/components/product/ProductBuyDialog';
 import { getProductPriceRange } from '@/helpers/get-product-price-ranges';
+import { encodeCategoryForUrl } from '@/helpers/url-category-utils';
 import { Link } from '@/i18n/navigation';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
@@ -31,7 +32,10 @@ const ProductGridCard = ({ product }) => {
           className="relative flex h-[220px] min-h-[220px] w-full min-w-[162px] flex-col justify-around border bg-[#F0F0F0] p-2.5 md:h-[384px] md:min-h-[384px] md:w-[305px] md:min-w-[305px]"
         >
           {/* Image Section */}
-          <Link href={`/shop/${product.slug}`} className="flex items-center justify-center overflow-hidden md:mt-16">
+          <Link
+            href={`/shop/${encodeCategoryForUrl(product?.category_name)}/${product.slug}`}
+            className="flex items-center justify-center overflow-hidden md:mt-16"
+          >
             <motion.div
               variants={{
                 rest: { scale: 1 },
@@ -50,7 +54,7 @@ const ProductGridCard = ({ product }) => {
                 alt="Product"
                 width={256}
                 height={256}
-                priority={true}
+                // Remove priority={true} - only use for above-the-fold images
               />
             </motion.div>
           </Link>

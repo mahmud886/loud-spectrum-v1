@@ -1,16 +1,21 @@
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
-const ShopHero = () => {
+const ShopHero = ({ category }) => {
   const t = useTranslations('TerpeneShop.ShopHero');
 
   return (
     <div className="relative h-[510px] overflow-hidden bg-black md:h-[797px]">
       <Image
-        src="/assets/images/shop-hero.png"
+        // src="/assets/images/shop-hero.png"
+        src={
+          category?.image
+            ? `${process.env.NEXT_PUBLIC_API_URL}/public${category?.image}`
+            : '/assets/images/shop-hero.png'
+        }
         alt="Background"
-        width={1440}
-        height={797}
+        width={1920}
+        height={1291}
         className="absolute top-0 left-1/2 z-0 h-full w-full -translate-x-1/2 object-cover md:w-[1920px]"
         priority
       />

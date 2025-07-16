@@ -2,6 +2,7 @@
 
 import ProductBuyDialog from '@/components/product/ProductBuyDialog';
 import { getProductPriceRange } from '@/helpers/get-product-price-ranges';
+import { encodeCategoryForUrl } from '@/helpers/url-category-utils';
 import { Link } from '@/i18n/navigation';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
@@ -33,7 +34,10 @@ const ProductCard = ({ product }) => {
           className="relative flex h-[408px] w-full min-w-[162px] flex-col justify-around border bg-[#F0F0F0] p-2.5 md:h-[372px] md:w-[305px]"
         >
           {/* Image Section */}
-          <Link href={`/shop/${product?.slug}`} className="flex items-center justify-center overflow-hidden md:mt-16">
+          <Link
+            href={`/shop/${encodeCategoryForUrl(product?.category_name)}/${product.slug}`}
+            className="flex items-center justify-center overflow-hidden md:mt-16"
+          >
             <motion.div
               variants={{
                 rest: { scale: 1 },
