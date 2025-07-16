@@ -8,7 +8,7 @@ const SamplePackHeroCard = ({ filteredSamplePackProducts }) => {
   return (
     <div className="bg-white-100 text-umbra-100 p-5 md:h-[587px] md:w-[413px]">
       <div className="flex h-full w-full flex-col items-start justify-between gap-5">
-        <div className="self-start">
+        <div className="w-full self-start">
           <div className="space-y-5">
             <div className="flex items-center justify-between gap-5">
               <p className="text-umbra-100 inline-flex items-center justify-start gap-2 font-mono text-[14px] leading-[130%] font-normal">

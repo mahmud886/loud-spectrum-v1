@@ -1,6 +1,7 @@
 'use client';
 
 import ProductBuyDialog from '@/components/product/ProductBuyDialog';
+import { getProductPriceRange } from '@/helpers/get-product-price-ranges';
 import { Link } from '@/i18n/navigation';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
@@ -9,11 +10,11 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
-const ProductCard = () => {
+const ProductCard = ({ product }) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const { min, max } = getProductPriceRange(product?.subProducts);
 
   const handleBuyNowClick = () => {
-    console.log('BuyNowClick');
     setIsDialogOpen(true);
   };
 
@@ -24,7 +25,6 @@ const ProductCard = () => {
 
   const isShopPage =
     cleanPath.startsWith('/shop') || cleanPath.startsWith('/try-sample-pack') || cleanPath.startsWith('/account');
-
   return (
     <>
       <motion.div initial="rest" whileHover="hover" animate="rest" className="cursor-pointer">
@@ -33,7 +33,7 @@ const ProductCard = () => {
           className="relative flex h-[408px] w-full min-w-[162px] flex-col justify-around border bg-[#F0F0F0] p-2.5 md:h-[372px] md:w-[305px]"
         >
           {/* Image Section */}
-          <Link href={`/shop/1`} className="flex items-center justify-center overflow-hidden md:mt-16">
+          <Link href={`/shop/${product?.slug}`} className="flex items-center justify-center overflow-hidden md:mt-16">
             <motion.div
               variants={{
                 rest: { scale: 1 },
@@ -43,7 +43,11 @@ const ProductCard = () => {
             >
               <Image
                 className="h-[320px] w-auto object-cover md:h-[254px] md:w-[174px]"
-                src="/assets/images/products/mother.png"
+                src={
+                  product?.image
+                    ? `${process.env.NEXT_PUBLIC_API_URL}/public${product.image}`
+                    : '/assets/images/products/mother.png'
+                }
                 alt="Product"
                 width={411}
                 height={548}
@@ -54,7 +58,9 @@ const ProductCard = () => {
 
           {/* Tag Button (Hidden on mobile) */}
           <div className="ml- hidden md:block">
-            <button className="border-umbra-100 rounded-[3px] border px-2 text-[9px] font-normal">{t('tag')}</button>
+            <button className="border-umbra-100 rounded-[3px] border px-2 text-[9px] font-normal">
+              {product?.category_name || t('tag')}
+            </button>
           </div>
 
           {/* Buy Now Button (Mobile - at the bottom) */}
@@ -84,13 +90,19 @@ const ProductCard = () => {
 
         {/* Product Title and Price */}
         <div className="mt-[15px]">
-          <h2 className={clsx('text-[22px] font-normal', isShopPage ? 'text-black' : 'text-white-100')}>Mango OG</h2>
-          <p className={clsx('text-[19px]', isShopPage ? 'text-umbra-40' : 'text-white-40')}>$10.00 – $2,999.00</p>
+          <h2 className={clsx('text-[22px] font-normal', isShopPage ? 'text-black' : 'text-white-100')}>
+            {product?.name}
+          </h2>
+          <p className={clsx('text-[15px] md:text-[19px]', isShopPage ? 'text-umbra-40' : 'text-white-40')}>
+            {min === max ? `$${min.toFixed(2)}` : `$${min.toFixed(2)} – $${max.toFixed(2)}`}
+          </p>
         </div>
       </motion.div>
 
       {/* ProductBuyDialog */}
-      {isDialogOpen && <ProductBuyDialog open={isDialogOpen} onOpenChange={() => setIsDialogOpen(false)} />}
+      {isDialogOpen && (
+        <ProductBuyDialog open={isDialogOpen} onOpenChange={() => setIsDialogOpen(false)} product={product} />
+      )}
     </>
   );
 };

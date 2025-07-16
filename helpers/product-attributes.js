@@ -30,7 +30,7 @@ export const parseProductAttributes = (productOrSubProducts, attributeKey) => {
       try {
         // Check if attribute exists
         if (!subProduct.attribute) {
-          console.warn(`No attribute found in subProduct ${index}`);
+          // console.warn(`No attribute found in subProduct ${index}`);
           return null;
         }
 
@@ -39,14 +39,14 @@ export const parseProductAttributes = (productOrSubProducts, attributeKey) => {
         try {
           attributes = JSON.parse(subProduct.attribute);
         } catch (e) {
-          console.warn(`Failed to parse attribute JSON in subProduct ${index}:`, subProduct.attribute);
+          // console.warn(`Failed to parse attribute JSON in subProduct ${index}:`, subProduct.attribute);
           return null;
         }
 
         // Check if the requested attribute exists
         const value = attributes[attributeKey];
         if (!value) {
-          console.warn(`No ${attributeKey} found in attributes:`, attributes);
+          // console.warn(`No ${attributeKey} found in attributes:`, attributes);
           return null;
         }
 
@@ -55,7 +55,7 @@ export const parseProductAttributes = (productOrSubProducts, attributeKey) => {
           label: value,
         };
       } catch (e) {
-        console.error(`Error processing subProduct ${index}:`, e);
+        // console.error(`Error processing subProduct ${index}:`, e);
         return null;
       }
     })

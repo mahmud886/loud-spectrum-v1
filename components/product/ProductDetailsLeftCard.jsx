@@ -90,7 +90,7 @@ const ProductDetailsLeftCard = ({ product }) => {
   return (
     <div className="bg-white-100 text-umbra-100 p-5 md:h-[587px] md:w-[413px]">
       <div className="flex h-full w-full flex-col items-start justify-between gap-5">
-        <div className="self-start">
+        <div className="w-full self-start">
           <div className="space-y-5">
             <div className="flex items-center justify-between gap-5">
               <button className="border-alive text-alive rounded-[3px] border-1 px-2 text-[12px] font-normal">
