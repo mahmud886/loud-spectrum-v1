@@ -1,5 +1,5 @@
 'use client';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { Carousel, CarouselContent, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Progress } from '@/components/ui/progress';
 import { useEffect, useState } from 'react';
 
@@ -26,16 +26,7 @@ export default function ProductCarouselWithProgress({ children }) {
           align: 'start',
         }}
       >
-        <CarouselContent className="flex w-full gap-1">
-          {Array.from({ length: 8 }).map((_, index) => (
-            <CarouselItem
-              key={index}
-              className="pl-2 sm:basis-1 md:basis-1/2 md:pl-2 lg:basis-1/4 xl:basis-1/4 2xl:basis-1/4"
-            >
-              {children}
-            </CarouselItem>
-          ))}
-        </CarouselContent>
+        <CarouselContent className="flex w-full gap-1">{children}</CarouselContent>
 
         <div className="pt-8">
           <div className="py-2">

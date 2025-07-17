@@ -1,10 +1,10 @@
-import React from 'react';
-import { useTranslations } from 'next-intl';
-import Image from 'next/image';
 import ProductCarouselWithProgress from '@/components/carousels/ProductCarouselWithProgress';
 import ProductCard from '@/components/product/ProductCard';
+import { CarouselItem } from '@/components/ui/carousel';
+import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 
-const NewPageHero = () => {
+const NewPageHero = ({ categoryProducts }) => {
   const t = useTranslations('NewPage.newPageHeroBanner');
 
   return (
@@ -45,7 +45,14 @@ const NewPageHero = () => {
               Discover What's New
             </h2>
             <ProductCarouselWithProgress>
-              <ProductCard />
+              {categoryProducts?.slice(0, 20).map((product) => (
+                <CarouselItem
+                  key={product._id}
+                  className="pl-2 sm:basis-1 md:basis-1/2 md:pl-2 lg:basis-1/4 xl:basis-1/4 2xl:basis-1/4"
+                >
+                  <ProductCard product={product} />
+                </CarouselItem>
+              ))}
             </ProductCarouselWithProgress>
           </div>
         </div>

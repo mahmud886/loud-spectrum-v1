@@ -1,18 +1,27 @@
-import React from 'react';
-import MeetYourSampleSelectionProducts from '@/components/containers/try-sample-pack/MeetYourSampleSelectionProducts';
+import RelatedProducts from '@/components/containers/product/RelatedProducts';
 import SpectrumAccordion from '@/components/containers/SpectrumAccordion';
+import MeetYourSampleSelectionProducts from '@/components/containers/try-sample-pack/MeetYourSampleSelectionProducts';
 import SamplePackAddAReview from '@/components/containers/try-sample-pack/SamplePackAddAReview';
 import SamplePackReviews from '@/components/containers/try-sample-pack/SamplePackReviews';
-import RelatedProducts from '@/components/containers/product/RelatedProducts';
+import { getCategories } from '@/services/get-categories';
+import { getCategoryProducts } from '@/services/get-category-products';
 
-const TrySamplePackPage = () => {
+const TrySamplePackPage = async () => {
+  const [categories, listOfProducts] = await Promise.all([getCategories(), getCategoryProducts()]);
+
+  const samplePackCategory = categories?.data?.categories?.filter((category) => category.name.includes('Sample Pack'));
+
+  const filteredSamplePackProducts =
+    (await listOfProducts?.data?.filter((product) =>
+      samplePackCategory?.some((category) => product.category_id === category._id),
+    )) || [];
   return (
     <>
-      <MeetYourSampleSelectionProducts />
+      <MeetYourSampleSelectionProducts samplePackCategory={samplePackCategory} />
       <SpectrumAccordion items={accordionData} />
       <SamplePackReviews />
       <SamplePackAddAReview />
-      <RelatedProducts />
+      <RelatedProducts productDetails={filteredSamplePackProducts?.[0]} />
     </>
   );
 };

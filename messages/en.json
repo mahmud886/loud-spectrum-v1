@@ -511,7 +511,17 @@
       "username_error": "Username must be at least 3 characters",
       "password_error": "Password must be at least 6 characters",
       "confirm_password_error": "Confirm password must be at least 6 characters",
-      "agreeTerms": "I agree to the terms and conditions"
+      "agreeTerms": "I agree to the terms and conditions",
+      "waitingForApproval": {
+        "title": "Registration Under Review",
+        "description": "Thank you for your interest in becoming a Loud Spectrum wholesale partner. Your application is currently being reviewed by our team.",
+        "registrationDetails": "Registration Details",
+        "status": "Status",
+        "pendingApproval": "Pending Approval",
+        "inactive": "Inactive",
+        "nextSteps": "What's Next?",
+        "nextStepsDescription": "Our team will review your application and get back to you within 24-48 hours. You'll receive an email notification once your account is approved."
+      }
     },
     "WholesaleRegistrationWorks": {
       "THowItWorks": "How It Works",

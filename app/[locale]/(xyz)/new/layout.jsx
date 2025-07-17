@@ -1,10 +1,11 @@
-import React from 'react';
 import NewPageHero from '@/components/headers/NewPageHero';
+import { getCategoryProducts } from '@/services/get-category-products';
 
-const NewTerpeneLayout = ({ children }) => {
+const NewTerpeneLayout = async ({ children }) => {
+  const categoryProducts = await getCategoryProducts('all');
   return (
     <div>
-      <NewPageHero />
+      <NewPageHero categoryProducts={categoryProducts?.data} />
       {children}
     </div>
   );

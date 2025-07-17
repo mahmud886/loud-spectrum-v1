@@ -70,8 +70,11 @@ const OrderSummary = () => {
           </div>
         )}
         <div className="flex items-center justify-between">
-          <span>{t('tax')}</span>
-          <span>{orderSummary.tax > 0 ? `$${orderSummary.tax.toFixed(2)}` : t('taxFree')}</span>
+          <span>
+            {t('tax')}
+            {orderSummary.tax ? <span className="ml-2 text-[10px]">(CA - Sales Tax: 7.75%) </span> : ''}
+          </span>
+          <span>{orderSummary.tax > 0 ? `${orderSummary.tax.toFixed(2)}` : t('taxFree')}</span>
         </div>
         <div className="flex items-center justify-between">
           <span>{t('shipping')}</span>

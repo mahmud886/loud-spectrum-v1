@@ -1,17 +1,68 @@
 'use client';
 
 import CloseButton from '@/components/navbar/CloseButton';
+import HashLink from '@/components/ui/hash-link';
 import { Link } from '@/i18n/navigation';
+import { logout } from '@/lib/store/slices/authSlice';
+import { clearCheckoutOnLogin } from '@/lib/store/slices/checkoutSlice';
 import { LogInIcon, Search, ShoppingCartIcon, UserIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'sonner';
 
 const MobileNav = ({ onClose, setCartOpen }) => {
+  const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
   const user = useSelector((state) => state.auth.user);
+  const { isAuthenticated } = useSelector((state) => state.auth);
   const t = useTranslations('Navbar');
   const topNav = useTranslations('Navbar.TopNav');
+
+  // Handle logout functionality
+  const handleLogout = async () => {
+    try {
+      const response = await fetch('/api/auth/logout', {
+        method: 'POST',
+      });
+
+      if (response.ok) {
+        toast.success(t('Navbar.logout_success'));
+        dispatch(logout());
+        // Clear checkout state on logout
+        dispatch(clearCheckoutOnLogin());
+        router.push('/');
+      }
+    } catch (error) {
+      toast.error(t('Navbar.logout_failed'));
+      console.error('Logout failed:', error);
+    }
+  };
+
+  // Determine the wholesale link based on user status
+  const getWholesaleLink = () => {
+    if (!isAuthenticated || !user) {
+      // Not logged in - go to wholesale registration form
+      return '/wholesale-registration#wholesale-form';
+    }
+
+    if (user.role === 'wholesaler') {
+      if (user.status === 'Active') {
+        // Active wholesaler - go to wholesale store
+        return '/wholesale-store';
+      } else {
+        // Inactive wholesaler - go to under review section
+        return '/wholesale-registration#wholesale-under-review';
+      }
+    } else {
+      // Customer - go to wholesale registration form
+      return '/wholesale-registration#wholesale-form';
+    }
+  };
+
+  const wholesaleHref = getWholesaleLink();
+  const isHashLink = wholesaleHref.includes('#');
+
   return (
     <div className="flex h-full flex-col justify-between">
       <div className="flex flex-col gap-10">
@@ -94,18 +145,36 @@ const MobileNav = ({ onClose, setCartOpen }) => {
         </div>
       </div>
       <div className="flex flex-col gap-4">
-        <Link
-          href={`/wholesale-store`}
-          className="main-button-black inline-flex w-full items-center justify-center rounded-full px-6 py-4"
-        >
-          Wholesale
-        </Link>
-        <Link
-          href={`/login`}
-          className="outline-button-white inline-flex w-full items-center justify-center rounded-full border px-6 py-4"
-        >
-          Login
-        </Link>
+        {isHashLink ? (
+          <HashLink
+            href={wholesaleHref}
+            className="main-button-black inline-flex w-full items-center justify-center rounded-full px-6 py-4"
+          >
+            Wholesale
+          </HashLink>
+        ) : (
+          <Link
+            href={wholesaleHref}
+            className="main-button-black inline-flex w-full items-center justify-center rounded-full px-6 py-4"
+          >
+            Wholesale
+          </Link>
+        )}
+        {isAuthenticated && user ? (
+          <button
+            onClick={handleLogout}
+            className="outline-button-white inline-flex w-full items-center justify-center rounded-full border px-6 py-4"
+          >
+            Logout
+          </button>
+        ) : (
+          <Link
+            href={`/login`}
+            className="outline-button-white inline-flex w-full items-center justify-center rounded-full border px-6 py-4"
+          >
+            Login
+          </Link>
+        )}
       </div>
     </div>
   );
