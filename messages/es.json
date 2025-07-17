@@ -510,7 +510,17 @@
       "username_error": "Nombre de usuario debe tener al menos 3 caracteres",
       "password_error": "Contraseña debe tener al menos 6 caracteres",
       "confirm_password_error": "Contraseña debe tener al menos 6 caracteres",
-      "agreeTerms": "Acepto los términos y condiciones"
+      "agreeTerms": "Acepto los términos y condiciones",
+      "waitingForApproval": {
+        "title": "Registro en Revisión",
+        "description": "Gracias por tu interés en convertirte en socio mayorista de Loud Spectrum. Tu solicitud está siendo revisada por nuestro equipo.",
+        "registrationDetails": "Detalles del Registro",
+        "status": "Estado",
+        "pendingApproval": "Pendiente de Aprobación",
+        "inactive": "Inactivo",
+        "nextSteps": "¿Qué Sigue?",
+        "nextStepsDescription": "Nuestro equipo revisará tu solicitud y te contactará dentro de 24-48 horas. Recibirás una notificación por correo electrónico una vez que tu cuenta sea aprobada."
+      }
     },
     "WholesaleRegistrationWorks": {
       "THowItWorks": "Cómo funciona",

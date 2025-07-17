@@ -511,7 +511,17 @@
       "username_error": "ユーザー名は3文字以上必要です",
       "password_error": "パスワードは6文字以上必要です",
       "confirm_password_error": "パスワードは6文字以上必要です",
-      "agreeTerms": "利用規約に同意します"
+      "agreeTerms": "利用規約に同意します",
+      "waitingForApproval": {
+        "title": "登録審査中",
+        "description": "Loud Spectrum の業務用パートナーになることにご興味をいただき、ありがとうございます。お客様の申請は現在、弊社チームによって審査中です。",
+        "registrationDetails": "登録詳細",
+        "status": "ステータス",
+        "pendingApproval": "承認待ち",
+        "inactive": "非アクティブ",
+        "nextSteps": "次のステップ",
+        "nextStepsDescription": "弊社チームがお客様の申請を審査し、24-48時間以内にご連絡いたします。アカウントが承認されましたら、メールで通知いたします。"
+      }
     },
     "WholesaleRegistrationWorks": {
       "THowItWorks": "ご利用の流れ",

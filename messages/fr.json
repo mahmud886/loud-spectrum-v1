@@ -511,7 +511,17 @@
       "username_error": "Nom d'utilisateur doit contenir au moins 3 caractères",
       "password_error": "Mot de passe doit contenir au moins 6 caractères",
       "confirm_password_error": "Mot de passe doit contenir au moins 6 caractères",
-      "agreeTerms": "J'accepte les conditions d'utilisation"
+      "agreeTerms": "J'accepte les conditions d'utilisation",
+      "waitingForApproval": {
+        "title": "Inscription en cours de révision",
+        "description": "Merci pour votre intérêt à devenir un partenaire grossiste Loud Spectrum. Votre demande est actuellement en cours d'examen par notre équipe.",
+        "registrationDetails": "Détails de l'inscription",
+        "status": "Statut",
+        "pendingApproval": "En attente d'approbation",
+        "inactive": "Inactif",
+        "nextSteps": "Que se passe-t-il ensuite?",
+        "nextStepsDescription": "Notre équipe examinera votre demande et vous contactera dans les 24-48 heures. Vous recevrez une notification par e-mail une fois votre compte approuvé."
+      }
     },
     "WholesaleRegistrationWorks": {
       "THowItWorks": "Comment ça marche",

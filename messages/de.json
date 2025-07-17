@@ -510,7 +510,17 @@
       "username_error": "Benutzername muss mindestens 3 Zeichen lang sein",
       "password_error": "Passwort muss mindestens 6 Zeichen lang sein",
       "confirm_password_error": "Passwort muss mindestens 6 Zeichen lang sein",
-      "agreeTerms": "Ich stimme den Nutzungsbedingungen zu"
+      "agreeTerms": "Ich stimme den Nutzungsbedingungen zu",
+      "waitingForApproval": {
+        "title": "Registrierung wird überprüft",
+        "description": "Vielen Dank für Ihr Interesse, ein Loud Spectrum Großhandelspartner zu werden. Ihre Bewerbung wird derzeit von unserem Team überprüft.",
+        "registrationDetails": "Registrierungsdetails",
+        "status": "Status",
+        "pendingApproval": "Genehmigung ausstehend",
+        "inactive": "Inaktiv",
+        "nextSteps": "Wie geht es weiter?",
+        "nextStepsDescription": "Unser Team wird Ihre Bewerbung überprüfen und sich innerhalb von 24-48 Stunden bei Ihnen melden. Sie erhalten eine E-Mail-Benachrichtigung, sobald Ihr Konto genehmigt wurde."
+      }
     },
     "WholesaleRegistrationWorks": {
       "THowItWorks": "So funktioniert es",

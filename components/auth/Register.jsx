@@ -1,7 +1,6 @@
 'use client';
 
 import { registerSchema } from '@/helpers/validations/register-validation';
-import { Link } from '@/i18n/navigation';
 import { setCredentials } from '@/lib/store/slices/authSlice';
 import { Eye, EyeOff } from 'lucide-react';
 import { useTranslations } from 'next-intl';
@@ -11,6 +10,7 @@ import { useDispatch } from 'react-redux';
 import { toast } from 'sonner';
 import { z } from 'zod';
 import { Checkbox } from '../ui/checkbox';
+import HashLink from '../ui/hash-link';
 
 const Register = () => {
   const t = useTranslations('LoginPage.Registration');
@@ -246,17 +246,13 @@ const Register = () => {
           >
             {isSubmitting ? 'Registering...' : t('registerButton')}
           </button>
-          <Link
+          <HashLink
             href="/wholesale-registration#wholesale-form"
-            onClick={(e) => {
-              e.preventDefault();
-              window.location.href = '/wholesale-registration#wholesale-form';
-            }}
             type="button"
             className="main-button-white hover:bg-umbra-10 inline-flex w-full items-center justify-center rounded-full border border-black bg-transparent px-6 py-3 text-black transition"
           >
             {t('wholesalerButton')}
-          </Link>
+          </HashLink>
         </div>
       </form>
     </div>
