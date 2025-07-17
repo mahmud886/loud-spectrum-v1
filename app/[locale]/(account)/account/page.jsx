@@ -1,10 +1,11 @@
-'use client';
-
-import { PackageCheck, RotateCw, Clock, ShoppingBag } from 'lucide-react';
 import ProductCard from '@/components/product/ProductCard';
-import React from 'react';
+import { Link } from '@/i18n/navigation';
+import { getCategoryProducts } from '@/services/get-category-products';
+import { ArrowRightIcon, Clock, PackageCheck, RotateCw, ShoppingBag } from 'lucide-react';
 
-export default function DashboardPage() {
+export default async function DashboardPage() {
+  const products = await getCategoryProducts('all');
+
   const stats = [
     {
       title: 'Delivered Orders',
@@ -49,11 +50,20 @@ export default function DashboardPage() {
       </div>
 
       <div>
-        <h6 className="my-6 text-[24px] font-normal text-gray-800">Continue Buying</h6>
+        <div className="my-4 flex items-center justify-between rounded-xl border p-4">
+          <h6 className="text-[24px] font-normal text-gray-800">Continue Buying</h6>
+          <Link href="/shop" className="text-umbra-100 flex items-center gap-2 font-mono text-[10px] font-normal">
+            <button className="main-button-black flex items-center gap-2 rounded-full px-6 py-2 opacity-100 transition-opacity duration-200 ease-in-out group-hover:opacity-100">
+              Shop
+              <ArrowRightIcon className="h-4 w-4" />
+            </button>
+          </Link>
+        </div>
+
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
+          {products?.data?.slice(0, 3).map((product) => (
+            <ProductCard key={product._id} product={product} />
+          ))}
         </div>
       </div>
     </div>
