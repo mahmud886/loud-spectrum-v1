@@ -48,6 +48,8 @@ const OrderConfirmationContent = ({ orderData }) => {
     }
   }, [orderData]);
 
+  console.log('orderData', orderData);
+
   if (!orderData) {
     return (
       <div className="flex min-h-[400px] items-center justify-center">
@@ -282,7 +284,16 @@ const OrderConfirmationContent = ({ orderData }) => {
                             variant="default"
                             className="bg-umbra-5 text-umbra-100 rounded-full px-2 py-1 font-sans text-[12px] leading-[120%] font-normal"
                           >
-                            {item.selectedVolume} 1ml
+                            {(() => {
+                              try {
+                                const parsed = JSON.parse(item?.product?.attribute);
+                                const volume = parsed?.volume || 'N/A';
+                                return volume === 'N/A' ? 'N/A' : `${volume}`;
+                              } catch (error) {
+                                // console.warn('Failed to parse attribute JSON:', item?.attribute);
+                                return 'N/A';
+                              }
+                            })()}
                           </Badge>
                           <Badge
                             variant="default"
@@ -290,11 +301,11 @@ const OrderConfirmationContent = ({ orderData }) => {
                           >
                             {(() => {
                               try {
-                                const parsed = JSON.parse(item?.attribute);
+                                const parsed = JSON.parse(item?.product?.attribute);
                                 const flavor = parsed?.flavor || 'N/A';
                                 return flavor === 'N/A' ? 'N/A' : flavor;
                               } catch (error) {
-                                console.warn('Failed to parse attribute JSON:', item?.attribute);
+                                // console.warn('Failed to parse attribute JSON:', item?.attribute);
                                 return 'N/A';
                               }
                             })()}
