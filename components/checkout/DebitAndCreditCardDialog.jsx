@@ -149,10 +149,10 @@ const DebitCreditCardDialog = ({ open, onClose, onSubmit }) => {
                 {open && isFormReady && (
                   <div className="space-y-4">
                     <PaymentForm
-                      applicationId="sandbox-sq0idb-c0j4aYoIABnI_N0bjcw1yA"
+                      applicationId={process.env.NEXT_PUBLIC_SQUARE_APPLICATION_ID}
                       cardTokenizeResponseReceived={handleCardTokenReceived}
                       createVerificationDetails={createVerificationDetails}
-                      locationId="LDE4M1RG05D9K"
+                      locationId={process.env.NEXT_PUBLIC_SQUARE_LOCATION_ID}
                       onError={handlePaymentFormError}
                     >
                       <div className="rounded-lg border border-gray-200 p-4">
