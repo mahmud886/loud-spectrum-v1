@@ -14,7 +14,7 @@ export const updateUserProfile = async (id, formData) => {
       };
     }
 
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/users/${id}`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/users-public/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
