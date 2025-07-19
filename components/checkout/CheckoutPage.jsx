@@ -31,6 +31,7 @@ import {
   setWireFormField,
 } from '@/lib/store/slices/checkoutSlice';
 
+import { selectCartItems, selectCartTotalAmount, selectCartTotalQuantity } from '@/lib/store/slices/cartSlice';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -62,9 +63,9 @@ const CheckoutPage = () => {
   const isProcessing = useSelector(selectIsProcessing);
 
   // Cart selectors
-  const cartItems = useSelector((state) => state.cart.items);
-  const cartTotalQuantity = useSelector((state) => state.cart.totalQuantity);
-  const cartTotalAmount = useSelector((state) => state.cart.totalAmount);
+  const cartItems = useSelector(selectCartItems);
+  const cartTotalQuantity = useSelector(selectCartTotalQuantity);
+  const cartTotalAmount = useSelector(selectCartTotalAmount);
 
   // Reset processing state when component mounts
   useEffect(() => {

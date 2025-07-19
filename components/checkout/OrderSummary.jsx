@@ -1,5 +1,6 @@
 'use client';
 
+import { selectCartItems } from '@/lib/store/slices/cartSlice';
 import {
   selectDiscountCoupon,
   selectOrderSummary,
@@ -12,7 +13,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 const OrderSummary = () => {
   const dispatch = useDispatch();
-  const cartItems = useSelector((state) => state.cart.items);
+  const cartItems = useSelector(selectCartItems);
   const orderSummary = useSelector(selectOrderSummary);
   const discountCoupon = useSelector(selectDiscountCoupon);
   const t = useTranslations('CheckoutPage.OrderSummary');

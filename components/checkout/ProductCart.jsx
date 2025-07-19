@@ -1,12 +1,13 @@
 import ProductCartItems from '@/components/checkout/ProductCartItems';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Link } from '@/i18n/navigation';
+import { selectCartItems } from '@/lib/store/slices/cartSlice';
 import { ShoppingCartIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useSelector } from 'react-redux';
 
 const ProductCart = () => {
-  const cartItems = useSelector((state) => state.cart.items);
+  const cartItems = useSelector(selectCartItems);
   const t = useTranslations('CheckoutPage.ProductCart');
 
   return (

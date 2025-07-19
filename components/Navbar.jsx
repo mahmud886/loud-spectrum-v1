@@ -6,6 +6,7 @@ import TopNav from '@/components/TopNav';
 import { useAuthToken } from '@/hooks/useAuthToken';
 import { Link, usePathname, useRouter } from '@/i18n/navigation';
 import { logout } from '@/lib/store/slices/authSlice';
+import { selectCartItems } from '@/lib/store/slices/cartSlice';
 import { clearCheckoutOnLogin } from '@/lib/store/slices/checkoutSlice';
 import { LogInIcon, ShoppingCartIcon, UserIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
@@ -19,7 +20,7 @@ const Navbar = ({ locale }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
 
-  const cartItems = useSelector((state) => state.cart.items);
+  const cartItems = useSelector(selectCartItems);
   const authToken = useAuthToken();
   const dispatch = useDispatch();
   const pathname = usePathname();

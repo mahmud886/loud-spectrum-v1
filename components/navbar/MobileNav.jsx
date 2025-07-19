@@ -4,6 +4,7 @@ import CloseButton from '@/components/navbar/CloseButton';
 import HashLink from '@/components/ui/hash-link';
 import { Link } from '@/i18n/navigation';
 import { logout } from '@/lib/store/slices/authSlice';
+import { selectCartItems } from '@/lib/store/slices/cartSlice';
 import { clearCheckoutOnLogin } from '@/lib/store/slices/checkoutSlice';
 import { LogInIcon, Search, ShoppingCartIcon, UserIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
@@ -13,7 +14,7 @@ import { toast } from 'sonner';
 
 const MobileNav = ({ onClose, setCartOpen }) => {
   const dispatch = useDispatch();
-  const cartItems = useSelector((state) => state.cart.items);
+  const cartItems = useSelector(selectCartItems);
   const user = useSelector((state) => state.auth.user);
   const { isAuthenticated } = useSelector((state) => state.auth);
   const t = useTranslations('Navbar');

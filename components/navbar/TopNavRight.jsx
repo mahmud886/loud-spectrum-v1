@@ -4,12 +4,13 @@ import CloseButton from '@/components/navbar/CloseButton';
 import { encodeCategoryForUrl } from '@/helpers/url-category-utils';
 import { useAuthToken } from '@/hooks/useAuthToken';
 import { Link } from '@/i18n/navigation';
+import { selectCartItems } from '@/lib/store/slices/cartSlice';
 import { LogInIcon, ShoppingCartIcon, UserIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useSelector } from 'react-redux';
 
 const TopNavRight = ({ onClose, setCartOpen }) => {
-  const cartItems = useSelector((state) => state.cart.items);
+  const cartItems = useSelector(selectCartItems);
   const authToken = useAuthToken();
   const t = useTranslations('Navbar');
   const topNav = t.raw('TopNav');

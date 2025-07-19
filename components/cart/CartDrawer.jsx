@@ -3,13 +3,14 @@
 import CartItem from '@/components/cart/CartItem';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { useRouter } from '@/i18n/navigation';
+import { selectCartItems } from '@/lib/store/slices/cartSlice';
 import { ShoppingCartIcon, X } from 'lucide-react';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 const CartDrawer = ({ isOpen, onClose }) => {
   const router = useRouter();
-  const cartItems = useSelector((state) => state.cart.items);
+  const cartItems = useSelector(selectCartItems);
   const totalAmmount = cartItems?.reduce((acc, item) => acc + item.totalPrice, 0);
 
   useEffect(() => {
