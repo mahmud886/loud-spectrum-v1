@@ -10,7 +10,7 @@ import { useSelector } from 'react-redux';
 const CartDrawer = ({ isOpen, onClose }) => {
   const router = useRouter();
   const cartItems = useSelector((state) => state.cart.items);
-  const totalAmmount = cartItems.reduce((acc, item) => acc + item.totalPrice, 0);
+  const totalAmmount = cartItems?.reduce((acc, item) => acc + item.totalPrice, 0);
 
   useEffect(() => {
     if (isOpen) {
