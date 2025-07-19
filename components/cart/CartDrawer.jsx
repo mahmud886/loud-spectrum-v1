@@ -32,7 +32,9 @@ const CartDrawer = ({ isOpen, onClose }) => {
         <div className="flex items-start justify-between p-5">
           <div className="space-y-2">
             <h2 className="text-umbra-100 font-sans text-[32px] leading-[120%] font-normal">Your Cart</h2>
-            <h6 className="text-umbra-40 font-mono text-[16px] leading-[130%] font-normal">{cartItems.length} items</h6>
+            <h6 className="text-umbra-40 font-mono text-[16px] leading-[130%] font-normal">
+              {cartItems?.length} items
+            </h6>
           </div>
           <button onClick={onClose}>
             <X size={27} className="text-umbra-100 hover:text-umbra-40 cursor-pointer" />
@@ -41,14 +43,14 @@ const CartDrawer = ({ isOpen, onClose }) => {
 
         {/* Cart Items */}
         <ScrollArea className="h-[calc(100dvh-350px)] space-y-4 p-4">
-          {cartItems.length === 0 ? (
+          {cartItems?.length === 0 ? (
             <div className="flex h-[calc(100dvh-450px)] w-full flex-col items-center justify-center">
               <ShoppingCartIcon size={100} className="text-umbra-40" />
               <p className="text-umbra-40 text-center">Your cart is empty.</p>
             </div>
           ) : (
             <div className="space-y-2.5">
-              {cartItems.map((item, idx) => (
+              {cartItems?.map((item, idx) => (
                 <CartItem key={idx} item={item} />
               ))}
             </div>
