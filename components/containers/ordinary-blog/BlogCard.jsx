@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const BlogCard = ({ blog }) => {
   const imageUrl = blog?.image || '/assets/images/blog/single-blog.png';
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || '';
+  const baseUrl = process.env.NEXT_PUBLIC_WEBSITE_URL || 'https://loudspectrum.com';
   const fullImageUrl = blog?.image && !blog.image.startsWith('http') ? `${baseUrl}${blog.image}` : imageUrl;
 
   return (

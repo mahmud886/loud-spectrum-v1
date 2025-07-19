@@ -7,7 +7,7 @@ const FeaturedBlog = ({ featuredBlog }) => {
 
   // Get the image URL - use the actual image from blog data or fallback
   const imageUrl = featuredBlog?.image || '/assets/images/blog/blog-image-featuted.png';
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || '';
+  const baseUrl = process.env.NEXT_PUBLIC_WEBSITE_URL || 'https://loudspectrum.com';
   const fullImageUrl =
     featuredBlog?.image && !featuredBlog.image.startsWith('http') ? `${baseUrl}${featuredBlog.image}` : imageUrl;
 

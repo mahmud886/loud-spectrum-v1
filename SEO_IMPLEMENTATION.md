@@ -62,7 +62,7 @@ Your blog object structure is fully utilized for SEO:
 Add these to your `.env.local` file:
 
 ```env
-NEXT_PUBLIC_SITE_URL=https://your-domain.com
+NEXT_PUBLIC_WEBSITE_URL=https://your-domain.com
 NEXT_PUBLIC_WEBSITE_URL=https://your-domain.com
 NEXT_PUBLIC_API_URL=your_api_base_url
 ```

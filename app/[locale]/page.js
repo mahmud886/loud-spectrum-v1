@@ -8,6 +8,17 @@ import QualityPromise from '@/components/containers/QualityPromise';
 import ShopByMood from '@/components/containers/ShopByMood';
 import TransitionAnimation from '@/components/containers/TransitionAnimation';
 
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
+  const websiteUrl = process.env.NEXT_PUBLIC_WEBSITE_URL || 'https://loudspectrum.com';
+
+  return {
+    alternates: {
+      canonical: websiteUrl,
+    },
+  };
+}
+
 export default function Home() {
   return (
     <div className="bg-white-100 flex flex-col">

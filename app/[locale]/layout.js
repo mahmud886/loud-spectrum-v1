@@ -52,7 +52,7 @@ export async function generateMetadata({ params }) {
         'Discover premium terpene products for enhanced flavor and experience. Shop high-quality, lab-tested terpenes with free shipping on orders over $50.',
       images: [
         {
-          url: `${websiteUrl}/images/og-image.jpg`,
+          url: `${websiteUrl}/assets/images/homepage-image.jpeg`,
           width: 1200,
           height: 630,
           alt: 'Loud Spectrum - Premium Terpene Products',
@@ -69,7 +69,6 @@ export async function generateMetadata({ params }) {
       images: [`${websiteUrl}/images/twitter-image.jpg`],
     },
     alternates: {
-      canonical: websiteUrl,
       languages: {
         'en-US': `${websiteUrl}/en`,
         'es-ES': `${websiteUrl}/es`,
@@ -117,7 +116,7 @@ export default async function RootLayout({ children, params }) {
     '@id': websiteUrl,
     name: 'Loud Spectrum',
     url: websiteUrl,
-    logo: `${websiteUrl}/images/logo.png`,
+    logo: `${websiteUrl}/assets/svgs/logos/logo-dark.svg`,
     sameAs: [
       'https://www.facebook.com/loudspectrum',
       'https://www.instagram.com/loudspectrum',

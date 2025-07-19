@@ -5,7 +5,7 @@ import BlogContents from '../../../../../components/containers/ordinary-blog/Blo
 
 // Generate JSON-LD structured data
 function generateBlogJsonLd(blog) {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://your-domain.com';
+  const baseUrl = process.env.NEXT_PUBLIC_WEBSITE_URL || 'https://loudspectrum.com';
 
   return {
     '@context': 'https://schema.org',
@@ -54,7 +54,7 @@ export async function generateMetadata({ params }) {
     }
 
     const blog = blogData;
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://your-domain.com';
+    const baseUrl = process.env.NEXT_PUBLIC_WEBSITE_URL || 'https://loudspectrum.com';
     const fullImageUrl = blog.image ? `${baseUrl}${blog.image}` : null;
 
     return {
@@ -129,7 +129,6 @@ const BlogPage = async ({ params }) => {
 
   // Fetch blog data for the page
   const blogData = await getBlogDetails(blogId);
-  console.log('blogData', blogData);
 
   // Handle error or missing blog
   if (!blogData || blogData.error) {
