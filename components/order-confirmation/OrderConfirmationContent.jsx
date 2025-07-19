@@ -48,8 +48,6 @@ const OrderConfirmationContent = ({ orderData }) => {
     }
   }, [orderData]);
 
-  console.log('orderData', orderData);
-
   if (!orderData) {
     return (
       <div className="flex min-h-[400px] items-center justify-center">

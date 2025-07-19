@@ -31,7 +31,7 @@ const ProductCard = ({ product }) => {
       <motion.div initial="rest" whileHover="hover" animate="rest" className="cursor-pointer">
         <motion.div
           transition={{ duration: 0.3 }}
-          className="relative flex h-[408px] w-full min-w-[162px] flex-col justify-around border bg-[#F0F0F0] p-2.5 md:h-[372px] md:w-[305px]"
+          className="relative flex h-[408px] w-full min-w-[162px] flex-col justify-around border bg-[#F5F5F5] p-2.5 md:h-[372px] md:w-[305px]"
         >
           {/* Image Section */}
           <Link
