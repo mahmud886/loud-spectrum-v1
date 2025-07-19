@@ -95,8 +95,10 @@ const Footer = () => {
               <Link
                 href="/wholesale-registration"
                 onClick={(e) => {
-                  e.preventDefault();
-                  window.location.href = '/wholesale-registration#wholesale-form';
+                  if (typeof window !== 'undefined') {
+                    e.preventDefault();
+                    window.location.href = '/wholesale-registration#wholesale-form';
+                  }
                 }}
                 className="main-button-white inline-flex h-[44px] w-[244px] items-center justify-center rounded-full font-normal"
               >
@@ -240,8 +242,10 @@ const Footer = () => {
                 <Link
                   href="/wholesale-registration"
                   onClick={(e) => {
-                    e.preventDefault();
-                    window.location.href = '/wholesale-registration#wholesale-form';
+                    if (typeof window !== 'undefined') {
+                      e.preventDefault();
+                      window.location.href = '/wholesale-registration#wholesale-form';
+                    }
                   }}
                   className="main-button-white inline-flex h-[44px] w-full items-center justify-center rounded-full font-normal"
                 >

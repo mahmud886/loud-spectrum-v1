@@ -103,8 +103,11 @@ export default function UserAddressBook({ userAddressBook }) {
     try {
       setIsLoading(true);
 
-      // Show confirmation dialog
-      const confirmed = window.confirm('Are you sure you want to delete this address? This action cannot be undone.');
+      // Show confirmation dialog only on client side
+      let confirmed = false;
+      if (typeof window !== 'undefined') {
+        confirmed = window.confirm('Are you sure you want to delete this address? This action cannot be undone.');
+      }
 
       if (!confirmed) {
         setIsLoading(false);
@@ -136,6 +139,9 @@ export default function UserAddressBook({ userAddressBook }) {
   const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
+    // Only add event listeners on client side
+    if (typeof window === 'undefined') return;
+
     const handleError = (error) => {
       console.error('UserAddressBook Error:', error);
       setHasError(true);
@@ -156,7 +162,14 @@ export default function UserAddressBook({ userAddressBook }) {
         <h1 className="text-umbra-100 mb-4 font-sans text-[24px] font-normal">Address Book</h1>
         <div className="py-8 text-center">
           <p className="text-red-500">Something went wrong loading your addresses. Please try refreshing the page.</p>
-          <button onClick={() => window.location.reload()} className="main-button-black mt-4 rounded-[10px] px-6 py-2">
+          <button
+            onClick={() => {
+              if (typeof window !== 'undefined') {
+                window.location.reload();
+              }
+            }}
+            className="main-button-black mt-4 rounded-[10px] px-6 py-2"
+          >
             Refresh Page
           </button>
         </div>

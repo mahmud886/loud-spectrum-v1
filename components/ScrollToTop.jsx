@@ -58,10 +58,13 @@ function ScrollToTop({
   };
 
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: scrollBehavior,
-    });
+    // Only scroll on client side
+    if (typeof window !== 'undefined') {
+      window.scrollTo({
+        top: 0,
+        behavior: scrollBehavior,
+      });
+    }
   }, [pathname, scrollBehavior]);
 
   // If transitions are disabled, return children without animation

@@ -1,7 +1,7 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 
 /**
  * Custom hook that automatically scrolls to top when route changes
@@ -13,7 +13,10 @@ const useScrollToTopOnRouteChange = (options = {}) => {
   const { smooth = true, duration = 500 } = options;
   const pathname = usePathname();
 
-  useEffect(() => {
+  const scrollToTop = useCallback(() => {
+    // Only execute on client side
+    if (typeof window === 'undefined') return;
+
     if (smooth) {
       const start = window.pageYOffset;
       const startTime = performance.now();
@@ -33,7 +36,11 @@ const useScrollToTopOnRouteChange = (options = {}) => {
     } else {
       window.scrollTo(0, 0);
     }
-  }, [pathname, smooth, duration]);
+  }, [smooth, duration]);
+
+  useEffect(() => {
+    scrollToTop();
+  }, [pathname, scrollToTop]);
 };
 
 export default useScrollToTopOnRouteChange;

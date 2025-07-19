@@ -70,8 +70,8 @@ export const useLayoutTransition = ({
     if (pathname !== previousPath) {
       setIsTransitioning(true);
 
-      // Scroll to top if enabled
-      if (enableScrollToTop) {
+      // Scroll to top if enabled and on client side
+      if (enableScrollToTop && typeof window !== 'undefined') {
         window.scrollTo({
           top: 0,
           behavior: scrollBehavior,
@@ -91,6 +91,9 @@ export const useLayoutTransition = ({
   // Smooth scroll to element
   const scrollToElement = useCallback(
     (elementId, offset = 0) => {
+      // Only execute on client side
+      if (typeof window === 'undefined') return;
+
       const element = document.getElementById(elementId);
       if (element) {
         const elementPosition = element.offsetTop - offset;
@@ -105,6 +108,9 @@ export const useLayoutTransition = ({
 
   // Smooth scroll to top
   const scrollToTop = useCallback(() => {
+    // Only execute on client side
+    if (typeof window === 'undefined') return;
+
     window.scrollTo({
       top: 0,
       behavior: scrollBehavior,

@@ -65,9 +65,16 @@ const Navbar = ({ locale }) => {
   );
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 10);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    // Only add scroll listener on client side
+    if (typeof window !== 'undefined') {
+      const handleScroll = () => setIsScrolled(window.scrollY > 10);
+
+      // Set initial scroll state
+      handleScroll();
+
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }
   }, []);
 
   const navBg = isSpecialPath

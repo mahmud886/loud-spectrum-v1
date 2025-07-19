@@ -14,7 +14,9 @@ const HashLink = ({ href, children, onClick, className, ...rest }) => {
     // Check if href contains a hash
     if (href.includes('#')) {
       e.preventDefault();
-      window.location.href = href;
+      if (typeof window !== 'undefined') {
+        window.location.href = href;
+      }
     }
 
     // Call the original onClick if provided

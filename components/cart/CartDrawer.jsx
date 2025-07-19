@@ -64,7 +64,7 @@ const CartDrawer = ({ isOpen, onClose }) => {
               <h4 className="text-umbra-100 font-sans text-[20px] leading-[120%] font-normal">Subtotal</h4>
               <div className="space-y-2.5 text-right">
                 <h6 className="text-umbra-100 font-sans text-[32px] leading-[120%] font-normal">
-                  ${totalAmmount.toFixed(2)}
+                  ${totalAmmount?.toFixed(2)}
                 </h6>
                 <p className="text-umbra-40 font-mono text-[15px] leading-[100%] font-normal tracking-[-0.85px]">
                   Shipping and taxes calculated at checkout

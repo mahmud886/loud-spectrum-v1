@@ -13,6 +13,9 @@ const useScrollToTop = (options = {}) => {
   const { smooth = true, duration = 500 } = options;
 
   const scrollToTop = useCallback(() => {
+    // Only execute on client side
+    if (typeof window === 'undefined') return;
+
     if (smooth) {
       const start = window.pageYOffset;
       const startTime = performance.now();

@@ -6,6 +6,9 @@ const TransitionAnimation = () => {
   const containerRef = useRef(null);
 
   useEffect(() => {
+    // Only run on client side
+    if (typeof window === 'undefined') return;
+
     const handleScroll = () => {
       if (!containerRef.current) return;
 

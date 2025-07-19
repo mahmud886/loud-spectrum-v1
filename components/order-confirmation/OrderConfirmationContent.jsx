@@ -20,6 +20,9 @@ const OrderConfirmationContent = ({ orderData }) => {
 
   // Handle window resize for confetti
   useEffect(() => {
+    // Only run on client side
+    if (typeof window === 'undefined') return;
+
     const handleResize = () => {
       setWindowDimension({
         width: window.innerWidth,
