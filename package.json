@@ -7,7 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "clean": "rm -rf .next"
+    "clean": "rm -rf .next",
+    "pm2:start": "chmod +x start-pm2.sh && ./start-pm2.sh",
+    "pm2:stop": "chmod +x stop-pm2.sh && ./stop-pm2.sh",
+    "pm2:restart": "npm run pm2:stop && npm run pm2:start",
+    "pm2:logs": "pm2 logs loud-spectrum-v1",
+    "pm2:status": "pm2 status"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.4",
