@@ -1,10 +1,10 @@
 'use client';
 
 import { Checkbox } from '@/components/ui/checkbox';
+import { useRouter } from '@/i18n/navigation';
 import { setCredentials } from '@/lib/store/slices/authSlice';
 import { Eye, EyeOff } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { toast } from 'sonner';
@@ -75,7 +75,6 @@ const WholesaleRegistrationForm = ({ id }) => {
       });
 
       const result = await response.json();
-      console.log(result);
 
       if (!response.ok) {
         throw new Error(result.message || 'Registration failed');
@@ -83,13 +82,13 @@ const WholesaleRegistrationForm = ({ id }) => {
 
       dispatch(
         setCredentials({
-          id: result.data._id,
-          name: result.data.name,
-          email: result.data.email,
-          phone_number: result.data.phone_number,
-          role: result.data.role,
-          status: result.data.status,
-          token: result.data.token,
+          id: result?.data?.id || '',
+          name: result?.data?.name || '',
+          email: result?.data?.email || '',
+          phone_number: result?.data?.phone_number || validatedData.phone_number,
+          role: result?.data?.role || 'wholesaler',
+          status: result?.data?.status || '',
+          token: result?.data?.token || '',
         }),
       );
 
@@ -98,6 +97,15 @@ const WholesaleRegistrationForm = ({ id }) => {
       });
 
       router.push('/login');
+
+      await fetch('/api/emails/wholesale-registration/review', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          registrationData: { ...formValues, id: result?.data?.id, status: 'Under Review' },
+          recipient: validatedData.email,
+        }),
+      });
     } catch (error) {
       if (error instanceof z.ZodError) {
         const formattedErrors = {};

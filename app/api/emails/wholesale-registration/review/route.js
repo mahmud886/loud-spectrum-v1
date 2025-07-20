@@ -15,7 +15,7 @@ export async function POST(request) {
 
     const { data, error } = await resend.emails.send({
       from: 'Loud Spectrum <noreply@loudspectrum.com>',
-      to: [recipient],
+      to: process.env.NODE_ENV === 'production' ? [recipient] : ['iqbal886mahmud@gmail.com'],
       subject: `Wholesale Registration Under Review - Thank You for Your Application`,
       react: WholesaleRegistrationUnderReviewEmail({ registrationData }),
     });

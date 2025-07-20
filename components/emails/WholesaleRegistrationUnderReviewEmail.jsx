@@ -17,30 +17,19 @@ import {
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL_EMAIL
   ? process.env.NEXT_PUBLIC_BASE_URL_EMAIL
-  : 'http://localhost:3000';
+  : 'https://loudspectrum.com';
 
 const WholesaleRegistrationUnderReviewEmail = ({ registrationData }) => {
   const {
-    _id,
-    company_name,
-    contact_name,
-    email,
-    phone,
-    business_type,
-    tax_id,
-    website,
-    address,
-    city,
-    state,
-    zip_code,
-    country,
-    status,
-    created_at,
-    review_started_at,
-    reviewer_name,
-    estimated_completion_date,
-    required_documents,
-    priority_level,
+    id = '',
+    name = '',
+    company = '',
+    phone_number = '',
+    email = '',
+    website = '',
+    country = '',
+    username = '',
+    status = '',
   } = registrationData;
 
   const formatDate = (dateString) => {
@@ -115,10 +104,10 @@ const WholesaleRegistrationUnderReviewEmail = ({ registrationData }) => {
               </Text>
             </Section>
 
-            <Text className="mb-4 text-lg">Dear {contact_name},</Text>
+            <Text className="mb-4 text-lg">Dear {name},</Text>
             <Text className="mb-6 leading-relaxed text-gray-700">
-              Thank you for submitting your wholesale registration application for <strong>{company_name}</strong>. We
-              have received your application and it is currently under review by our wholesale partnerships team.
+              Thank you for submitting your wholesale registration application for <strong>{company}</strong>. We have
+              received your application and it is currently under review by our wholesale partnerships team.
               <br />
               <br />
               We appreciate your interest in partnering with Loud Spectrum and will provide you with an update as soon
@@ -130,32 +119,15 @@ const WholesaleRegistrationUnderReviewEmail = ({ registrationData }) => {
               <Row>
                 <Column>
                   <Text className="m-0 font-semibold text-blue-800">Registration ID</Text>
-                  <Text className="m-0 font-mono text-blue-700">{_id}</Text>
+                  <Text className="m-0 font-mono text-blue-700">{id}</Text>
                 </Column>
                 <Column className="text-right">
-                  <Text className="m-0 text-blue-700">Submitted: {formatDate(created_at)}</Text>
+                  {/* No created_at, so just show status */}
                   <Text className="m-0 text-blue-700">
-                    Status: <span className="font-semibold">Under Review</span>
+                    Status: <span className="font-semibold">{status || 'Under Review'}</span>
                   </Text>
                 </Column>
               </Row>
-              {review_started_at && (
-                <Row className="mt-2">
-                  <Column>
-                    <Text className="m-0 text-sm text-blue-600">
-                      Review started: {formatDate(review_started_at)}({calculateDaysInReview(review_started_at)} days
-                      ago)
-                    </Text>
-                  </Column>
-                </Row>
-              )}
-              {reviewer_name && (
-                <Row className="mt-2">
-                  <Column>
-                    <Text className="m-0 text-sm text-blue-600">Assigned reviewer: {reviewer_name}</Text>
-                  </Column>
-                </Row>
-              )}
             </Section>
 
             <Hr className="my-4 border-t border-gray-200" />
@@ -167,11 +139,10 @@ const WholesaleRegistrationUnderReviewEmail = ({ registrationData }) => {
               <Section className="mb-4 rounded-lg bg-blue-50 p-4">
                 <Text className="m-0 mb-2 font-semibold text-blue-800">📅 Expected Timeline</Text>
                 <Text className="m-0 text-sm text-blue-700">
-                  {estimated_completion_date
-                    ? `Expected completion: ${formatDate(estimated_completion_date)}`
-                    : 'Standard review time: 5-7 business days'}
+                  {/* estimated_completion_date */}
+                  Standard review time: 5-7 business days
                 </Text>
-                {priority_level && <Text className="m-0 mt-1 text-xs text-blue-600">Priority: {priority_level}</Text>}
+                {/* priority_level */}
               </Section>
 
               <Section className="mb-4 rounded-lg bg-blue-50 p-4">
@@ -194,15 +165,7 @@ const WholesaleRegistrationUnderReviewEmail = ({ registrationData }) => {
                 </Text>
               </Section>
 
-              {required_documents && required_documents.length > 0 && (
-                <Section className="mb-4 rounded-lg bg-yellow-50 p-4">
-                  <Text className="m-0 mb-2 font-semibold text-yellow-800">📄 Additional Documents Needed</Text>
-                  <Text className="m-0 text-sm text-yellow-700">{required_documents.join(', ')}</Text>
-                  <Text className="m-0 mt-1 text-xs text-yellow-600">
-                    Please provide these documents to expedite your review.
-                  </Text>
-                </Section>
-              )}
+              {/* required_documents */}
             </Section>
 
             <Hr className="my-4 border-t border-gray-200" />
@@ -249,31 +212,33 @@ const WholesaleRegistrationUnderReviewEmail = ({ registrationData }) => {
               <Row className="mb-4">
                 <Column className="w-1/2">
                   <Text className="m-0 text-sm font-medium text-gray-500">Company Name</Text>
-                  <Text className="m-0 text-sm font-semibold">{company_name}</Text>
+                  <Text className="m-0 text-sm font-semibold">{company}</Text>
                 </Column>
-                <Column className="w-1/2">
-                  <Text className="m-0 text-sm font-medium text-gray-500">Business Type</Text>
-                  <Text className="m-0 text-sm font-semibold capitalize">{business_type}</Text>
-                </Column>
-              </Row>
-
-              <Row className="mb-4">
                 <Column className="w-1/2">
                   <Text className="m-0 text-sm font-medium text-gray-500">Contact Person</Text>
-                  <Text className="m-0 text-sm font-semibold">{contact_name}</Text>
+                  <Text className="m-0 text-sm font-semibold">{name}</Text>
                 </Column>
+              </Row>
+              <Row className="mb-4">
                 <Column className="w-1/2">
                   <Text className="m-0 text-sm font-medium text-gray-500">Email</Text>
                   <Text className="m-0 text-sm font-semibold">{email}</Text>
                 </Column>
+                <Column className="w-1/2">
+                  <Text className="m-0 text-sm font-medium text-gray-500">Phone</Text>
+                  <Text className="m-0 text-sm font-semibold">{phone_number}</Text>
+                </Column>
               </Row>
-
               <Row className="mb-4">
                 <Column>
-                  <Text className="m-0 text-sm font-medium text-gray-500">Business Address</Text>
-                  <Text className="m-0 text-sm font-semibold">
-                    {address}, {city}, {state} {zip_code}, {country}
-                  </Text>
+                  <Text className="m-0 text-sm font-medium text-gray-500">Website</Text>
+                  <Text className="m-0 text-sm font-semibold">{website}</Text>
+                </Column>
+              </Row>
+              <Row className="mb-4">
+                <Column>
+                  <Text className="m-0 text-sm font-medium text-gray-500">Country</Text>
+                  <Text className="m-0 text-sm font-semibold">{country}</Text>
                 </Column>
               </Row>
             </Section>
@@ -315,7 +280,7 @@ const WholesaleRegistrationUnderReviewEmail = ({ registrationData }) => {
                 <br />
                 <strong>Hours:</strong> Monday - Friday, 9 AM - 6 PM PST
                 <br />
-                <strong>Reference:</strong> Registration ID {_id}
+                <strong>Reference:</strong> Registration ID {id}
               </Text>
             </Section>
 

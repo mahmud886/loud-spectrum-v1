@@ -1,4 +1,3 @@
-import { cookies } from 'next/headers';
 import { NextResponse } from 'next/server';
 
 export async function POST(req) {
@@ -20,16 +19,16 @@ export async function POST(req) {
       return NextResponse.json({ message: 'Authentication failed' }, { status: apiResponse.status });
     }
 
-    const expires = new Date(Date.now() + 3 * 24 * 60 * 60 * 1000); //3 days
-    const cookieStore = await cookies();
-    await cookieStore.set({
-      name: 'authToken',
-      secure: process.env.NODE_ENV === 'production',
-      value: data?.token,
-      httpOnly: true,
-      path: '/',
-      expires: expires,
-    });
+    // const expires = new Date(Date.now() + 3 * 24 * 60 * 60 * 1000);
+    // const cookieStore = await cookies();
+    // await cookieStore.set({
+    //   name: 'authToken',
+    //   secure: process.env.NODE_ENV === 'production',
+    //   value: data?.token,
+    //   httpOnly: true,
+    //   path: '/',
+    //   expires: expires,
+    // });
 
     return NextResponse.json({ message: 'Registration successful', data: data });
   } catch (error) {
