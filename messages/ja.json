@@ -654,11 +654,99 @@
   "Youtube": "ユーチューブ",
   "Instagram": "インスタグラム",
   "Quality_&_Safety": "品質と安全性",
-  "Legal": "法律上の",
+  "Legal": "法的免責事項",
   "Privacy_Policy": "プライバシーポリシー",
   "Terms_&_Conditions": "利用規約",
+  "LegalPage": {
+    "LegalDisclaimer": "法的免責事項",
+    "intro": "Loud Spectrum（旧Medical Terpenes）は、テルペン製品の開発、マーケティング、流通において透明性と法令遵守に努めています。",
+    "moreInfo": "ご質問や法的なお問合せは次のメールアドレスまでご連絡ください：",
+    "RegulatoryCompliance": {
+      "title": "規制遵守",
+      "noControlledSubstances": "規制物質なし：Loud Spectrumの製品には、CBD（カンナビジオール）、THC（テトラヒドロカンナビノール）を含む、連邦法または州法で規制されているカンナビノイド等は一切含まれていません。",
+      "terpenesOnly": "テルペンのみ：当社の製品は純粋な植物由来テルペンおよびテルペンブレンドのみで構成されています。すべての成分はGRAS（一般的に安全と認められている）リストに掲載されており、米国の食品および化粧品基準に準拠しています。",
+      "notForDirectUse": "直接吸入・摂取不可：当社のテルペンは、化粧品、食品・飲料の香料、フレグランス用途など、専門用途のみにご利用ください。"
+    },
+    "JurisdictionResponsibility": {
+      "title": "管轄と責任",
+      "buyerResponsibility": "購入者の責任：当社製品の使用、所持、適用が現地・州・連邦法に準拠しているかはお客様の責任です。Loud Spectrumは誤用や違法な流通について一切の責任を負いません。",
+      "internationalOrders": "海外注文：当社は輸出規制を遵守し世界中に発送しますが、通関遅延や没収については責任を負いません。ご注文前にお客様の国でのテルペン輸入の合法性をご確認ください。"
+    },
+    "NoMedicalClaims": {
+      "title": "医療的主張なし",
+      "content": "Loud Spectrumはテルペンの効能や用途について医療的主張を一切行いません。当社製品は病気の診断、治療、治癒、予防を目的としたものではありません。提供される情報はすべて教育目的のみです。"
+    },
+    "IntellectualProperty": {
+      "title": "知的財産権",
+      "content": "本サイトのすべてのコンテンツ（ブランド、商品名、画像、配合等）はLoud Spectrumの知的財産であり、書面による許可なく複製・再配布できません。"
+    }
+  },
   "The_Premier_Terpene_Experience": "最高のテルペン体験",
   "Enhance_your_products_with_the_widest_range_of_premium_terpenes_scientifically_crafted_to_elevate_every_experience": "科学的に作られた高品質なテルペンの豊富なラインナップで、あらゆる体験をより特別なものに。",
   "Explore_the_shop": "ショップを見る",
-  "Try_a_Sample_Pack": "サンプルパックを試す"
+  "Try_a_Sample_Pack": "サンプルパックを試す",
+
+  "ShippingReturns": {
+    "ShippingPolicy": {
+      "title": "配送ポリシー",
+      "globalShipping": "世界中への配送が可能です。USPS、UPS、FedExなどの信頼できる運送業者を利用しています。",
+      "shippingOptionsTitle": "配送オプションと料金：",
+      "under100": "$100未満のご注文：チェックアウト時に標準送料が適用されます。",
+      "over100": "$100以上のご注文：送料無料でお届けします。",
+      "expedited": "お急ぎの場合：ご注文前にご連絡いただければ、追加料金で速達配送オプションをご案内します。",
+      "processingTime": "処理時間：ご注文は通常1～3営業日以内に処理されます。発送後、追跡情報をお送りします。"
+    },
+    "RefundsReturns": {
+      "title": "返金・返品について",
+      "allSalesFinal": "全ての販売は最終です：商品の性質上、全ての販売は最終となります。返品には厳格な品質・安全基準を適用しています。",
+      "returnEligibilityTitle": "返品の条件：",
+      "unopened": "パッケージおよび商品は未開封・未使用で、元の状態である必要があります。",
+      "returnShippingCost": "返品送料はお客様のご負担となります。",
+      "noOpenedReturns": "開封済み商品の返品・交換はお受けできません。",
+      "noCustomRefund": "カスタマイズ注文は返金不可です。",
+      "returnProcess": "返品手続き：返品や交換をご希望の場合は、商品到着後7日以内にorder@loudspectrum.comまでご連絡ください。承認された返品は14日以内にご返送ください。"
+    },
+    "ImportantNotes": {
+      "title": "重要事項",
+      "domesticOrders": "国内注文は通常1～7日でお届けします。運送業者の遅延については責任を負いかねます。",
+      "damagedReport": "破損品や誤配送品は、配達後3日以内にご連絡ください。",
+      "questions": "ご質問やサポートはorder@loudspectrum.comまでメール、またはお問い合わせフォームをご利用ください。"
+    }
+  },
+  "Thank_you_for_choosing_Loud_Spectrum": "Loud Spectrum（旧Medical Terpenes）をお選びいただきありがとうございます。私たちは高品質なテルペン製品を世界中のお客様に効率的かつ透明性をもってお届けすることをお約束します。",
+  "For_any_questions_or_support": "ご質問やサポートは次のメールアドレスまでご連絡ください：",
+
+  "QualitySafety": {
+    "intro": "Loud Spectrumでは、品質は私たちの技術であり、安全は私たちの約束です。私たちは、純度、一貫性、遵守に関する最高の標準を満たすテルペン製品を提供することに責任を持っています。",
+    "moreInfo": "品質保証に関する詳細情報やMSDSドキュメントのリクエストについては、次のメールアドレスまでご連絡ください：",
+    "ProductPurityIntegrity": {
+      "title": "製品の純度と信頼性",
+      "pureTerpenes": "100% 純粋なテルペン：私たちの製品には充填剤、添加物、切り剤が含まれておらず、高品質な植物由来のソース/花から派生しています。",
+      "foodGrade": "食品グレード & GRAS-リスト：Loud Spectrumのテルペンは、FDAが食品・飲料用に一般に安全と認められた成分を使用して製造されています。",
+      "nonGMO": "非GMO：遺伝的変異を使用していないため、小麦、大豆、乳製品などの一般的なアレルゲンを含む製品はありません。"
+    },
+    "QualityControlTesting": {
+      "title": "品質管理とテスト",
+      "rigorousTesting": "私たちのテルペンのすべてのバッチは、厳格な内部テストと第三者テストを受けて、次のことを確認しています：",
+      "identityConsistency": "同一性と一貫性：ガスクロマトグラフィー（GC）やその他の検証済み方法によって確認されます。",
+      "purityScreening": "純度と汚染物質のスクリーニング：私たちは次のものをスクリーニングしています：",
+      "residualSolvents": "残留溶剤",
+      "heavyMetals": "重金属",
+      "microbialContamination": "微生物汚染",
+      "pesticideResidues": "殺虫剤残留",
+      "batchTracking": "バッチ追跡：各ボトルはバッチにトレース可能で、完全な透明性と責任を持っています。"
+    },
+    "SafetyAssurance": {
+      "title": "安全保証",
+      "msdsGuidelines": "マテリアルセキュリティデータシート（MSDS）に従った厳格な取り扱いとラベル付けのガイドラインに従っています：",
+      "highlyConcentrated": "高濃度：テルペンは強力であり、使用前に希釈する必要があります。",
+      "professionalUse": "専門用途のみ：直接消費または希釈されていないアプリケーションには意図されていません。",
+      "storage": "冷たく乾燥した場所に保存してください。日光や点火源から遠ざけてください。子供やペットから手が届かないようにしてください。",
+      "msdsCompliance": "MSDS遵守：私たちのすべての製品は、法規制と取り扱いの明確化のために最新のMSDSドキュメントが添付されています。"
+    },
+    "CautionNotice": {
+      "title": "注意事項",
+      "caution": "テルペンは強烈な芳香性と生体活性性を持っています。不適切な使用は刺激や感受性を引き起こす可能性があります。希釈されていない製品を取り扱う場合は、常に適切な保護具（手袋、ゴーグル）を着用してください。"
+    }
+  }
 }

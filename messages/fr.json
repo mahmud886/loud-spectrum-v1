@@ -656,9 +656,97 @@
   "Quality_&_Safety": "Qualité et sécurité",
   "Legal": "Mentions légales",
   "Privacy_Policy": "Politique de confidentialité",
-  "Terms_&_Conditions": "Conditions générales",
+  "Terms_&_Conditions": "Conditions d'utilisation",
+  "LegalPage": {
+    "LegalDisclaimer": "Avertissement légal",
+    "intro": "Loud Spectrum (anciennement Medical Terpenes) s'engage à la transparence et à la conformité légale dans le développement, la commercialisation et la distribution de nos produits à base de terpènes.",
+    "moreInfo": "Pour toute question ou demande légale, contactez-nous à",
+    "RegulatoryCompliance": {
+      "title": "Conformité Réglementaire",
+      "noControlledSubstances": "Aucune Substance Contrôlée : Les produits Loud Spectrum ne contiennent aucun cannabinoïde, y compris mais sans s'y limiter le CBD (Cannabidiol), le THC (Tétrahydrocannabinol) ou tout autre composé réglementé par la loi fédérale ou d'État.",
+      "terpenesOnly": "Terpènes Uniquement : Nos offres sont composées uniquement de terpènes botaniques purs et de mélanges de terpènes. Tous les ingrédients sont listés GRAS (généralement reconnus comme sûrs) et conformes aux normes alimentaires et cosmétiques américaines.",
+      "notForDirectUse": "Non destiné à l'inhalation ou à la consommation directe : Nos terpènes sont destinés à un usage professionnel uniquement, y compris la formulation dans les cosmétiques, l'aromatisation des aliments/boissons et les applications de parfumerie."
+    },
+    "JurisdictionResponsibility": {
+      "title": "Juridiction & Responsabilité",
+      "buyerResponsibility": "Responsabilité de l'Acheteur : Il est de la seule responsabilité du client de s'assurer que l'utilisation, la possession et l'application de nos produits sont conformes aux lois locales, étatiques et fédérales. Loud Spectrum décline toute responsabilité en cas de mauvaise utilisation ou de distribution illégale.",
+      "internationalOrders": "Commandes Internationales : Nous expédions dans le monde entier conformément à la réglementation sur l'exportation. Cependant, nous ne sommes pas responsables des retards ou confiscations douanières. Les clients doivent vérifier la légalité de l'importation de terpènes dans leur pays avant de commander."
+    },
+    "NoMedicalClaims": {
+      "title": "Aucune Allégation Médicale",
+      "content": "Loud Spectrum ne fait aucune allégation médicale concernant les bienfaits ou usages des terpènes. Nos produits ne sont pas destinés à diagnostiquer, traiter, guérir ou prévenir une maladie. Toutes les informations fournies sont à titre éducatif uniquement."
+    },
+    "IntellectualProperty": {
+      "title": "Propriété Intellectuelle",
+      "content": "Tout le contenu de ce site, y compris la marque, les noms de produits, les images et les formulations, est la propriété intellectuelle de Loud Spectrum et ne peut être copié ou redistribué sans autorisation écrite."
+    }
+  },
   "The_Premier_Terpene_Experience": "L'expérience ultime des terpènes",
   "Enhance_your_products_with_the_widest_range_of_premium_terpenes_scientifically_crafted_to_elevate_every_experience": "Améliorez vos produits avec la plus large gamme de terpènes de qualité, conçus scientifiquement pour sublimer chaque expérience.",
   "Explore_the_shop": "Explorer la boutique",
-  "Try_a_Sample_Pack": "Essayer un pack d’échantillons"
+  "Try_a_Sample_Pack": "Essayer un pack d’échantillons",
+
+  "ShippingReturns": {
+    "ShippingPolicy": {
+      "title": "Politique d'expédition",
+      "globalShipping": "Expédition mondiale disponible : Nous expédions fièrement à des clients du monde entier via des transporteurs de confiance : USPS, UPS et FedEx.",
+      "shippingOptionsTitle": "Options et tarifs d'expédition :",
+      "under100": "Commandes inférieures à 100 $ : Des frais d'expédition standard s'appliqueront lors du paiement.",
+      "over100": "Commandes supérieures à 100 $ : Profitez de la livraison gratuite de notre part.",
+      "expedited": "Expédition express : Besoin d'une livraison plus rapide ? Contactez-nous avant de passer votre commande et nous vous proposerons des options d'expédition accélérée moyennant des frais supplémentaires.",
+      "processingTime": "Délais de traitement : Les commandes sont généralement traitées sous 1 à 3 jours ouvrés. Vous recevrez les informations de suivi une fois votre commande expédiée."
+    },
+    "RefundsReturns": {
+      "title": "Remboursements et retours",
+      "allSalesFinal": "Toutes les ventes sont finales : En raison de la nature sensible de nos produits, toutes les ventes sont finales. Nous suivons des normes strictes de qualité et de sécurité pour les retours.",
+      "returnEligibilityTitle": "Éligibilité au retour :",
+      "unopened": "Les colis et produits doivent être non ouverts, non utilisés et dans leur état d'origine intact.",
+      "returnShippingCost": "Tous les frais de retour sont à la charge du client.",
+      "noOpenedReturns": "Nous n'acceptons pas les retours ou échanges d'articles ouverts.",
+      "noCustomRefund": "Les commandes personnalisées ne sont pas remboursables.",
+      "returnProcess": "Procédure de retour : Si vous souhaitez demander un retour ou un échange, veuillez contacter notre équipe de support order@loudspectrum.com dans les 7 jours suivant la réception de votre commande. Les retours approuvés doivent être renvoyés sous 14 jours."
+    },
+    "ImportantNotes": {
+      "title": "Notes importantes",
+      "domesticOrders": "Les commandes nationales sont généralement livrées entre 1 et 7 jours. Nous ne sommes pas responsables des retards du transporteur.",
+      "damagedReport": "Les articles endommagés ou incorrects doivent être signalés dans les 3 jours suivant la livraison.",
+      "questions": "Pour toute question ou assistance, n'hésitez pas à nous écrire à order@loudspectrum.com ou à utiliser notre formulaire de contact."
+    }
+  },
+  "Thank_you_for_choosing_Loud_Spectrum": "Merci d'avoir choisi Loud Spectrum (anciennement Medical Terpenes). Nous nous engageons à livrer nos produits de terpènes premium efficacement et en toute transparence à des clients du monde entier.",
+  "For_any_questions_or_support": "Pour toute question ou assistance, n'hésitez pas à nous écrire à ",
+
+  "QualitySafety": {
+    "intro": "Chez Loud Spectrum, la qualité est notre art et la sécurité notre engagement. Nous nous engageons à livrer des produits de terpènes qui répondent aux plus hauts standards de pureté, de cohérence et de conformité.",
+    "moreInfo": "Pour plus d'informations sur la garantie de la qualité ou pour demander des documents MSDS, contactez-nous à",
+    "ProductPurityIntegrity": {
+      "title": "Pureté et Intégrité du Produit",
+      "pureTerpenes": "100% Terpènes Pures: Nos produits ne contiennent pas de fillers, d'additifs, d'agents de coupe et sont dérivés de sources botaniques de haute qualité/fleurs.",
+      "foodGrade": "Alimentaire de Grade & GRAS-Listé: Tous les terpènes de Loud Spectrum sont fabriqués à l'aide d'ingrédients qui sont généralement reconnus comme sûrs (GRAS) par la FDA pour l'utilisation dans les aliments et les boissons.",
+      "nonGMO": "Non-GMO: Nous ne utilisons pas d'organismes génétiquement modifiés, et nos produits sont exempts de contaminants communs tels que le gluten, le soja et la lactose."
+    },
+    "QualityControlTesting": {
+      "title": "Contrôle de Qualité et Tests",
+      "rigorousTesting": "Chaque lot de nos terpènes subit des tests rigoureux tant internes que de tiers pour s'assurer que:",
+      "identityConsistency": "Identité et Cohérence: Vérifiés par chromatographie en phase gazeuse (GC) et d'autres méthodes validées.",
+      "purityScreening": "Purity & Contaminant Screening: Nous écrans pour:",
+      "residualSolvents": "Résidus de solvants",
+      "heavyMetals": "Métaux lourds",
+      "microbialContamination": "Contamination microbienne",
+      "pesticideResidues": "Résidus de pesticides",
+      "batchTracking": "Suivi de lot: Chaque bouteille est traceable jusqu'à son lot pour une transparence et une responsabilité complètes."
+    },
+    "SafetyAssurance": {
+      "title": "Garantie de Sécurité",
+      "msdsGuidelines": "Nous suivons des directives strictes de manutention et d'étiquetage conformément au Document de Sécurité des Matériaux (MSDS):",
+      "highlyConcentrated": "Fortement Concentré: Nos terpènes sont puissants et doivent être dilués avant d'être utilisés.",
+      "professionalUse": "Pour Utilisation Professionnelle Seulement: Non destiné à la consommation directe ou à l'application non diluée.",
+      "storage": "Stockage: Stocker dans un endroit frais et sec, loin des sources de lumière et de la source d'allumage. Garder hors de portée des enfants et des animaux de compañie.",
+      "msdsCompliance": "Compliance MSDS: Tous nos produits sont accompagnés de documentation MSDS à jour pour une clarté réglementaire et de gestion."
+    },
+    "CautionNotice": {
+      "title": "Avis de Précaution",
+      "caution": "Les terpènes sont très aromatiques et bioactifs. Un usage incorrect peut provoquer une irritation ou une sensibilisation. Toujours porter un équipement de protection approprié (gants, lunettes) lors de l'utilisation de produits non dilués."
+    }
+  }
 }
