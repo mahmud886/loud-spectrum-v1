@@ -472,7 +472,14 @@
       "namePlaceholder": "Name*",
       "emailPlaceholder": "E-Mail*",
       "messagePlaceholder": "Ihre Nachricht*",
-      "submitButton": "Nachricht senden"
+      "submitButton": "Nachricht senden",
+      "submittingButton": "Wird gesendet...",
+      "success": "Ihre Nachricht wurde gesendet. Wir melden uns bald bei Ihnen!",
+      "error": "Etwas ist schiefgelaufen. Bitte versuchen Sie es später erneut.",
+      "nameError": "Der Name muss 2-50 Zeichen lang sein und darf nur Buchstaben, Zahlen und Leerzeichen enthalten.",
+      "emailError": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+      "messageError": "Die Nachricht muss zwischen 10 und 1000 Zeichen lang sein.",
+      "checkboxMessage": "Mit dem Absenden dieses Formulars stimmen Sie zu, gelegentlich Updates und Marketing-E-Mails von uns zu erhalten. Sie können sich jederzeit abmelden."
     }
   },
   "Wholesale": {

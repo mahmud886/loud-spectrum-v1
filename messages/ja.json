@@ -473,7 +473,14 @@
       "namePlaceholder": "名前*",
       "emailPlaceholder": "メールアドレス*",
       "messagePlaceholder": "メッセージ*",
-      "submitButton": "メッセージを送信"
+      "submitButton": "メッセージを送信",
+      "submittingButton": "送信中...",
+      "success": "メッセージが送信されました。追ってご連絡いたします！",
+      "error": "エラーが発生しました。後でもう一度お試しください。",
+      "nameError": "名前は2～50文字で、英数字とスペースのみ使用できます。",
+      "emailError": "有効なメールアドレスを入力してください。",
+      "messageError": "メッセージは10～1000文字で入力してください。",
+      "checkboxMessage": "このフォームを送信することで、私たちからの定期的な更新やマーケティングメールを受け取ることに同意します。いつでも退会できます。"
     }
   },
   "Wholesale": {

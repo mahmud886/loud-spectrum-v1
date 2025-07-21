@@ -473,7 +473,14 @@
       "namePlaceholder": "Name*",
       "emailPlaceholder": "Email*",
       "messagePlaceholder": "Your Message*",
-      "submitButton": "Send Message"
+      "submitButton": "Send Message",
+      "submittingButton": "Sending...",
+      "success": "Your message has been sent. We'll get back to you soon!",
+      "error": "Something went wrong. Please try again later.",
+      "nameError": "Name must be 2-50 characters and only contain letters, numbers, and spaces.",
+      "emailError": "Please enter a valid email address.",
+      "messageError": "Message must be 10-1000 characters.",
+      "checkboxMessage": "By submitting this form, you agree to receive occasional updates and marketing emails from us. You can unsubscribe at any time."
     }
   },
   "Wholesale": {

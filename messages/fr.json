@@ -473,7 +473,14 @@
       "namePlaceholder": "Nom*",
       "emailPlaceholder": "Email*",
       "messagePlaceholder": "Votre message*",
-      "submitButton": "Envoyer le message"
+      "submitButton": "Envoyer le message",
+      "submittingButton": "Envoi en cours...",
+      "success": "Votre message a été envoyé. Nous vous répondrons bientôt !",
+      "error": "Une erreur s'est produite. Veuillez réessayer plus tard.",
+      "nameError": "Le nom doit comporter entre 2 et 50 caractères et ne contenir que des lettres, des chiffres et des espaces.",
+      "emailError": "Veuillez saisir une adresse e-mail valide.",
+      "messageError": "Le message doit comporter entre 10 et 1000 caractères.",
+      "checkboxMessage": "En soumettant ce formulaire, vous acceptez de recevoir occasionnellement des mises à jour et des e-mails marketing de notre part. Vous pouvez vous désabonner à tout moment."
     }
   },
   "Wholesale": {
