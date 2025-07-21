@@ -122,7 +122,7 @@ const Footer = () => {
             {/* Bottom Section */}
             <div className="mt-10 flex flex-col items-center justify-between border-t border-gray-700 pt-6 text-sm text-gray-400 md:flex-row">
               <p className="text-white-100/50 font-sans text-[17px]">
-                Est. 2015 &nbsp; | &nbsp; Copyright © 2024 Medical Terpenes
+                Est. 2015 &nbsp; | &nbsp; Copyright © {new Date().getFullYear()} Loud Spectrum
               </p>
               <div className="flex space-x-6">
                 <Link href={`/quality-safety`} className="footer-text2">
@@ -269,7 +269,7 @@ const Footer = () => {
                 </Link>
               </div>
               <p className="text-white-100/50 font-sans text-[17px] leading-10">
-                Est. 2015 &nbsp; | &nbsp; Copyright © 2024 Medical Terpenes
+                Est. 2015 &nbsp; | &nbsp; Copyright © {new Date().getFullYear()} Loud Spectrum
               </p>
             </div>
           </div>
