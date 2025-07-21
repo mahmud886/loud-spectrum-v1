@@ -4,18 +4,23 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { getProductPriceByVolume } from '@/helpers/get-product-price-by-volume';
 import { getProductPriceRange } from '@/helpers/get-product-price-ranges';
 import { parseProductAttributes } from '@/helpers/product-attributes';
+import { getStarRatingData, renderStars } from '@/helpers/star-rating';
 import { addToCart } from '@/lib/store/slices/cartSlice';
-import { MinusIcon, PlusIcon, Star, XIcon } from 'lucide-react';
+import { getProductReviews } from '@/services/get-product-reviews';
+import { MinusIcon, PlusIcon, XIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { toast } from 'sonner';
+import Shimmer from '../ui/shimmer';
 
 const ProductBuyDialog = ({ open, onOpenChange, product }) => {
   const t = useTranslations('ProductDetails');
   const [quantity, setQuantity] = useState(1);
   const [selectedVolume, setSelectedVolume] = useState('');
   const [showVolumeError, setShowVolumeError] = useState(false);
+  const [reviews, setReviews] = useState([]);
+  const [reviewsLoading, setReviewsLoading] = useState(true);
   const dispatch = useDispatch();
 
   const volumeOptions = parseProductAttributes(product, 'volume');
@@ -29,6 +34,27 @@ const ProductBuyDialog = ({ open, onOpenChange, product }) => {
       toast.success(`Selected price: $${selectedPrice.toFixed(2)} for ${selectedVolume}`);
     }
   }, [selectedPrice, selectedVolume]);
+
+  useEffect(() => {
+    const fetchReviews = async () => {
+      if (product?._id) {
+        try {
+          setReviewsLoading(true);
+          const reviewsData = await getProductReviews(product._id);
+          setReviews(reviewsData || []);
+        } catch (error) {
+          console.error('Error fetching product reviews:', error);
+          setReviews([]);
+        } finally {
+          setReviewsLoading(false);
+        }
+      }
+    };
+
+    fetchReviews();
+  }, [product?._id]);
+
+  const { starComponents } = getStarRatingData(reviews);
 
   // Find the selected subProduct based on volume
   const selectedSubProduct = product.subProducts?.find((subProduct) => {
@@ -92,16 +118,25 @@ const ProductBuyDialog = ({ open, onOpenChange, product }) => {
                 <button className="border-alive text-alive rounded-[3px] border-1 px-2 text-[10px] font-normal md:text-[12px]">
                   {t('CannabisDerived')}
                 </button>
-                <p className="text-umbra-100 inline-flex items-center justify-start gap-2 font-mono text-[10px] leading-[130%] font-normal md:text-[14px]">
-                  <span className="flex items-center justify-start">
-                    {Array(5)
-                      .fill(null)
-                      .map((_, i) => (
-                        <Star key={i} size={15} fill={'#000000'} />
-                      ))}
-                  </span>{' '}
-                  6 {t('Reviews')}
-                </p>
+                <div className="text-umbra-100 inline-flex items-center justify-start gap-2 font-mono text-[10px] leading-[130%] font-normal md:text-[14px]">
+                  {reviewsLoading ? (
+                    <div className="flex items-center gap-2">
+                      <Shimmer className="h-[15px] w-[75px] rounded" />
+                      <Shimmer className="h-[15px] w-[60px] rounded" />
+                    </div>
+                  ) : (
+                    <>
+                      {/* <span className={'flex items-center justify-start'}>{starComponents}</span> {reviews.length}{' '}
+                    {t('Reviews')} */}
+                      <span className={'flex items-center justify-start'}>
+                        {reviews.length === 0
+                          ? renderStars(5, { size: 15, fillColor: '#ffffff', strokeColor: '#00000' })
+                          : starComponents}
+                      </span>{' '}
+                      {reviews.length} {t('Reviews')}
+                    </>
+                  )}
+                </div>
               </div>
               <div className="space-y-2">
                 <h2 className="text-umbra-100 font-sans text-[44px] leading-[120%] font-normal">{product?.name}</h2>

@@ -4,7 +4,7 @@ import Shimmer from '@/components/ui/shimmer';
 import { getProductPriceByVolume } from '@/helpers/get-product-price-by-volume';
 import { getProductPriceRange } from '@/helpers/get-product-price-ranges';
 import { parseProductAttributes } from '@/helpers/product-attributes';
-import { getStarRatingData } from '@/helpers/star-rating';
+import { getStarRatingData, renderStars } from '@/helpers/star-rating';
 import { addToCart } from '@/lib/store/slices/cartSlice';
 import { getProductReviews } from '@/services/get-product-reviews';
 import { MinusIcon, PlusIcon } from 'lucide-react';
@@ -105,8 +105,14 @@ const ProductDetailsLeftCard = ({ product }) => {
                   </div>
                 ) : (
                   <>
-                    <span className={'flex items-center justify-start'}>{starComponents}</span> {reviews.length}{' '}
-                    {t('Reviews')}
+                    {/* <span className={'flex items-center justify-start'}>{starComponents}</span> {reviews.length}{' '}
+                    {t('Reviews')} */}
+                    <span className={'flex items-center justify-start'}>
+                      {reviews.length === 0
+                        ? renderStars(5, { size: 15, fillColor: '#ffffff', strokeColor: '#00000' })
+                        : starComponents}
+                    </span>{' '}
+                    {reviews.length} {t('Reviews')}
                   </>
                 )}
               </div>
