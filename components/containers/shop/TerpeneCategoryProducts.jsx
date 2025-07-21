@@ -8,7 +8,6 @@ import TerpeneCategoryProductsLoading from './TerpeneCategoryProductsLoading';
 // Component that fetches and displays products
 async function TerpeneCategoryProductsContent({ categoryId }) {
   const categoryProducts = await getCategoryProducts(categoryId);
-
   if (categoryProducts?.data?.length === 0) {
     return <NoProductsFound hasFilters={false} />;
   }
@@ -16,9 +15,11 @@ async function TerpeneCategoryProductsContent({ categoryId }) {
   return (
     <div className="w-full space-y-10 md:w-[75%]">
       <div className="grid grid-cols-2 gap-3 space-y-8 md:grid-cols-3 md:gap-5 md:space-y-16">
-        {categoryProducts?.data?.map((product) => (
-          <ProductGridCard key={product._id} product={product} />
-        ))}
+        {categoryProducts?.data
+          ?.filter((product) => product.status === 'Active' && product.is_deleted === false)
+          .map((product) => (
+            <ProductGridCard key={product._id} product={product} />
+          ))}
       </div>
       <div className="border-1"></div>
       {/* <ProductPagination /> */}
