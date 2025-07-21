@@ -56,8 +56,8 @@ export default function UserOrdersPage({ orders }) {
                 <TableHead className="text-center font-sans font-normal">Quantity</TableHead>
                 <TableHead className="text-center font-sans font-normal">Total Amount</TableHead>
                 <TableHead className="text-center font-sans font-normal">Status</TableHead>
-                <TableHead className="text-center font-sans font-normal">Payment Status</TableHead>
-                <TableHead className="text-center font-sans font-normal">Action</TableHead>
+                {/* <TableHead className="text-center font-sans font-normal">Payment Status</TableHead>
+                <TableHead className="text-center font-sans font-normal">Action</TableHead> */}
                 <TableHead className="text-center font-sans font-normal">Details</TableHead>
               </TableRow>
             </TableHeader>
@@ -91,7 +91,7 @@ export default function UserOrdersPage({ orders }) {
                       {order.order_status}
                     </Badge>
                   </TableCell>
-                  <TableCell className="text-center">
+                  {/* <TableCell className="text-center">
                     <Badge
                       className={
                         order.payment_status === 'Paid'
@@ -101,8 +101,8 @@ export default function UserOrdersPage({ orders }) {
                     >
                       {order.payment_status}
                     </Badge>
-                  </TableCell>
-                  <TableCell className="text-center">
+                  </TableCell> */}
+                  {/* <TableCell className="text-center">
                     <div className="flex items-center justify-center">
                       {order.payment_status === 'Unpaid' ? (
                         <Badge className="rounded-full bg-red-100 px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal text-red-800">
@@ -114,7 +114,7 @@ export default function UserOrdersPage({ orders }) {
                         </Badge>
                       )}
                     </div>
-                  </TableCell>
+                  </TableCell> */}
                   <TableCell className="text-center">
                     <Badge
                       onClick={() => handleViewClick(order._id)}
