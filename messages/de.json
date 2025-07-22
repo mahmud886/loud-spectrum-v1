@@ -656,30 +656,6 @@
   "Legal": "Rechtliches",
   "Privacy_Policy": "Datenschutzrichtlinie",
   "Terms_&_Conditions": "Allgemeine Geschäftsbedingungen",
-  "LegalPage": {
-    "LegalDisclaimer": "Rechtliche Hinweise",
-    "intro": "Loud Spectrum (ehemals Medical Terpenes) verpflichtet sich zu Transparenz und rechtlicher Konformität bei der Entwicklung, Vermarktung und dem Vertrieb unserer terpene-basierten Produkte.",
-    "moreInfo": "Für rechtliche Fragen oder Anfragen kontaktieren Sie uns bitte unter",
-    "RegulatoryCompliance": {
-      "title": "Regulatorische Konformität",
-      "noControlledSubstances": "Keine kontrollierten Substanzen: Loud Spectrum Produkte enthalten keine Cannabinoide, einschließlich, aber nicht beschränkt auf CBD (Cannabidiol), THC (Tetrahydrocannabinol) oder andere regulierte Verbindungen nach Bundes- oder Landesrecht.",
-      "terpenesOnly": "Nur Terpene: Unser Angebot besteht ausschließlich aus reinen, botanischen Terpenen und Terpenmischungen. Alle Zutaten sind GRAS-gelistet (allgemein als sicher anerkannt) und entsprechen den US-amerikanischen Lebensmittel- und Kosmetikstandards.",
-      "notForDirectUse": "Nicht zur direkten Inhalation oder zum Verzehr: Unsere Terpene sind ausschließlich für den professionellen Gebrauch bestimmt, einschließlich der Formulierung in Kosmetika, Lebensmittel-/Getränkearomen und Duftanwendungen."
-    },
-    "JurisdictionResponsibility": {
-      "title": "Gerichtsbarkeit & Verantwortung",
-      "buyerResponsibility": "Verantwortung des Käufers: Es liegt in der alleinigen Verantwortung des Kunden sicherzustellen, dass die Verwendung, der Besitz und die Anwendung unserer Produkte den lokalen, bundesstaatlichen und bundesrechtlichen Vorschriften entsprechen. Loud Spectrum übernimmt keine Haftung für Missbrauch oder unrechtmäßige Verteilung.",
-      "internationalOrders": "Internationale Bestellungen: Wir versenden weltweit in Übereinstimmung mit den Exportvorschriften. Für Verzögerungen oder Beschlagnahmungen beim Zoll übernehmen wir jedoch keine Verantwortung. Kunden sollten die Legalität des Terpenimports in ihrem Land vor der Bestellung überprüfen."
-    },
-    "NoMedicalClaims": {
-      "title": "Keine medizinischen Ansprüche",
-      "content": "Loud Spectrum macht keine medizinischen Aussagen über die Vorteile oder Anwendungen von Terpenen. Unsere Produkte sind nicht zur Diagnose, Behandlung, Heilung oder Vorbeugung von Krankheiten bestimmt. Alle bereitgestellten Informationen dienen ausschließlich Bildungszwecken."
-    },
-    "IntellectualProperty": {
-      "title": "Geistiges Eigentum",
-      "content": "Alle Inhalte dieser Website, einschließlich Marken, Produktnamen, Bilder und Formulierungen, sind geistiges Eigentum von Loud Spectrum und dürfen ohne schriftliche Genehmigung nicht kopiert oder weiterverbreitet werden."
-    }
-  },
   "The_Premier_Terpene_Experience": "Das erstklassige Terpen-Erlebnis",
   "Enhance_your_products_with_the_widest_range_of_premium_terpenes_scientifically_crafted_to_elevate_every_experience": "Verbessern Sie Ihre Produkte mit der breitesten Auswahl an hochwertigen Terpenen, wissenschaftlich entwickelt, um jedes Erlebnis zu bereichern.",
   "Explore_the_shop": "Shop erkunden",
@@ -746,6 +722,224 @@
     "CautionNotice": {
       "title": "Warnhinweis",
       "caution": "Terpene sind hoch aromatisch und bioaktiv. Unsachgemäßer Gebrauch kann zu Reizungen oder Sensibilisierung führen. Tragen Sie beim Umgang mit unverdünnten Produkten stets geeignete Schutzausrüstung (Handschuhe, Schutzbrille)."
+    }
+  },
+  "LegalPage": {
+    "LegalDisclaimer": "Rechtliche Hinweise",
+    "intro": "Loud Spectrum (ehemals Medical Terpenes) verpflichtet sich zu Transparenz und rechtlicher Konformität bei der Entwicklung, Vermarktung und dem Vertrieb unserer terpene-basierten Produkte.",
+    "moreInfo": "Für rechtliche Fragen oder Anfragen kontaktieren Sie uns bitte unter",
+    "RegulatoryCompliance": {
+      "title": "Regulatorische Konformität",
+      "noControlledSubstances": "Keine kontrollierten Substanzen: Loud Spectrum Produkte enthalten keine Cannabinoide, einschließlich, aber nicht beschränkt auf CBD (Cannabidiol), THC (Tetrahydrocannabinol) oder andere regulierte Verbindungen nach Bundes- oder Landesrecht.",
+      "terpenesOnly": "Nur Terpene: Unser Angebot besteht ausschließlich aus reinen, botanischen Terpenen und Terpenmischungen. Alle Zutaten sind GRAS-gelistet (allgemein als sicher anerkannt) und entsprechen den US-amerikanischen Lebensmittel- und Kosmetikstandards.",
+      "notForDirectUse": "Nicht zur direkten Inhalation oder zum Verzehr: Unsere Terpene sind ausschließlich für den professionellen Gebrauch bestimmt, einschließlich der Formulierung in Kosmetika, Lebensmittel-/Getränkearomen und Duftanwendungen."
+    },
+    "JurisdictionResponsibility": {
+      "title": "Gerichtsbarkeit & Verantwortung",
+      "buyerResponsibility": "Verantwortung des Käufers: Es liegt in der alleinigen Verantwortung des Kunden sicherzustellen, dass die Verwendung, der Besitz und die Anwendung unserer Produkte den lokalen, bundesstaatlichen und bundesrechtlichen Vorschriften entsprechen. Loud Spectrum übernimmt keine Haftung für Missbrauch oder unrechtmäßige Verteilung.",
+      "internationalOrders": "Internationale Bestellungen: Wir versenden weltweit in Übereinstimmung mit den Exportvorschriften. Für Verzögerungen oder Beschlagnahmungen beim Zoll übernehmen wir jedoch keine Verantwortung. Kunden sollten die Legalität des Terpenimports in ihrem Land vor der Bestellung überprüfen."
+    },
+    "NoMedicalClaims": {
+      "title": "Keine medizinischen Ansprüche",
+      "content": "Loud Spectrum macht keine medizinischen Aussagen über die Vorteile oder Anwendungen von Terpenen. Unsere Produkte sind nicht zur Diagnose, Behandlung, Heilung oder Vorbeugung von Krankheiten bestimmt. Alle bereitgestellten Informationen dienen ausschließlich Bildungszwecken."
+    },
+    "IntellectualProperty": {
+      "title": "Geistiges Eigentum",
+      "content": "Alle Inhalte dieser Website, einschließlich Marken, Produktnamen, Bilder und Formulierungen, sind geistiges Eigentum von Loud Spectrum und dürfen ohne schriftliche Genehmigung nicht kopiert oder weiterverbreitet werden."
+    }
+  },
+  "PrivacyPolicy": {
+    "title": "Datenschutzerklärung",
+    "SECTION_1": {
+      "title": "ABSCHNITT 1 – WAS MACHEN WIR MIT IHREN INFORMATIONEN?",
+      "content": [
+        "Wenn Sie etwas in unserem Shop kaufen, erfassen wir im Rahmen des Kauf- und Verkaufsprozesses die persönlichen Daten, die Sie uns geben, wie Ihren Namen, Ihre Adresse und Ihre E-Mail-Adresse.",
+        "E-Mail-Marketing (falls zutreffend): Mit Ihrer Erlaubnis können wir Ihnen E-Mails über unseren Shop, neue Produkte und andere Updates senden."
+      ]
+    },
+    "SECTION_2": {
+      "title": "ABSCHNITT 2 – EINWILLIGUNG",
+      "content": [
+        "Wie erhalten wir Ihre Einwilligung?",
+        "Wenn Sie uns persönliche Informationen zur Verfügung stellen, um eine Transaktion abzuschließen, Ihre Kreditkarte zu verifizieren, eine Bestellung aufzugeben, eine Lieferung zu arrangieren oder einen Kauf zurückzugeben, gehen wir davon aus, dass Sie damit einverstanden sind, dass wir diese Informationen nur für diesen bestimmten Zweck erfassen und verwenden.",
+        "Wenn wir Sie aus einem sekundären Grund, wie z.B. Marketing, um Ihre persönlichen Daten bitten, werden wir Sie entweder direkt um Ihre ausdrückliche Einwilligung bitten oder Ihnen die Möglichkeit geben, dies abzulehnen.",
+        "Wie kann ich meine Einwilligung widerrufen?",
+        "Wenn Sie nach Ihrer Zustimmung Ihre Meinung ändern, können Sie Ihre Einwilligung für die Kontaktaufnahme, die fortgesetzte Erfassung, Nutzung oder Offenlegung Ihrer Informationen jederzeit widerrufen, indem Sie uns unter info@medicalterpenes.com kontaktieren."
+      ]
+    },
+    "SECTION_3": {
+      "title": "ABSCHNITT 3 – OFFENLEGUNG",
+      "content": [
+        "Wir können Ihre persönlichen Daten offenlegen, wenn wir gesetzlich dazu verpflichtet sind oder wenn Sie gegen unsere Nutzungsbedingungen verstoßen.",
+        "Zahlung:",
+        "Wenn Sie ein direktes Zahlungs-Gateway wählen, um Ihren Kauf abzuschließen, speichert Stripe Gateway Payment Ihre Kreditkartendaten. Diese werden gemäß dem Payment Card Industry Data Security Standard (PCI-DSS) verschlüsselt. Ihre Transaktionsdaten werden nur so lange gespeichert, wie es zur Abwicklung Ihrer Transaktion erforderlich ist. Danach werden Ihre Transaktionsdaten gelöscht.",
+        "Alle direkten Zahlungs-Gateways halten sich an die von PCI-DSS festgelegten Standards, die von der PCI Security Standards Council verwaltet werden, einer gemeinsamen Initiative von Marken wie Visa, MasterCard, American Express und Discover.",
+        "Die PCI-DSS-Anforderungen helfen, die sichere Handhabung von Kreditkarteninformationen durch unseren Shop und seine Dienstleister zu gewährleisten."
+      ]
+    },
+    "SECTION_5": {
+      "title": "ABSCHNITT 5 – DIENSTE VON DRITTANBIETERN",
+      "content": [
+        "Im Allgemeinen werden die von uns genutzten Drittanbieter Ihre Informationen nur in dem Umfang erfassen, verwenden und offenlegen, wie es erforderlich ist, damit sie die Dienstleistungen erbringen können, die sie uns zur Verfügung stellen.",
+        "Bestimmte Drittanbieter, wie Zahlungs-Gateways und andere Zahlungsabwickler, haben jedoch ihre eigenen Datenschutzrichtlinien in Bezug auf die Informationen, die wir ihnen für Ihre transaktionsbezogenen Käufe bereitstellen müssen.",
+        "Für diese Anbieter empfehlen wir Ihnen, deren Datenschutzrichtlinien zu lesen, damit Sie verstehen, wie Ihre persönlichen Daten von diesen Anbietern behandelt werden.",
+        "Insbesondere sollten Sie beachten, dass bestimmte Anbieter oder deren Einrichtungen sich in einer anderen Gerichtsbarkeit befinden können als Sie oder wir. Wenn Sie sich also für eine Transaktion entscheiden, die die Dienste eines Drittanbieters umfasst, können Ihre Informationen den Gesetzen der Gerichtsbarkeit(en) unterliegen, in denen sich dieser Dienstleister oder seine Einrichtungen befinden.",
+        "Wenn Sie beispielsweise in Kanada ansässig sind und Ihre Transaktion von einem Zahlungs-Gateway in den Vereinigten Staaten abgewickelt wird, können Ihre persönlichen Daten, die zur Durchführung dieser Transaktion verwendet werden, gemäß den Gesetzen der Vereinigten Staaten, einschließlich des Patriot Act, offengelegt werden.",
+        "Sobald Sie unsere Website verlassen oder auf eine Anwendung oder Website eines Drittanbieters weitergeleitet werden, gelten diese Datenschutzerklärung und unsere Nutzungsbedingungen nicht mehr.",
+        "Links",
+        "Wenn Sie auf Links in unserem Shop klicken, können diese Sie von unserer Seite wegführen. Wir sind nicht verantwortlich für die Datenschutzpraktiken anderer Websites und empfehlen Ihnen, deren Datenschutzerklärungen zu lesen."
+      ]
+    },
+    "SECTION_6": {
+      "title": "ABSCHNITT 6 – SICHERHEIT",
+      "content": [
+        "Um Ihre persönlichen Daten zu schützen, ergreifen wir angemessene Vorsichtsmaßnahmen und folgen branchenüblichen Best Practices, um sicherzustellen, dass sie nicht unangemessen verloren gehen, missbraucht, abgerufen, offengelegt, verändert oder zerstört werden.",
+        "Wenn Sie uns Ihre Kreditkarteninformationen zur Verfügung stellen, werden diese mit SSL-Technologie verschlüsselt und mit AES-256-Verschlüsselung gespeichert. Obwohl keine Methode der Übertragung über das Internet oder der elektronischen Speicherung 100% sicher ist, befolgen wir alle PCI-DSS-Anforderungen und implementieren zusätzliche allgemein anerkannte Industriestandards.",
+        "Durch die Nutzung dieser Website erklären Sie, dass Sie mindestens das gesetzliche Mindestalter in Ihrem Bundesland oder Ihrer Provinz erreicht haben oder dass Sie das gesetzliche Mindestalter in Ihrem Bundesland oder Ihrer Provinz erreicht haben und uns Ihre Zustimmung gegeben haben, Ihren minderjährigen Angehörigen die Nutzung dieser Website zu gestatten."
+      ]
+    },
+    "SECTION_8": {
+      "title": "ABSCHNITT 8 – ÄNDERUNGEN DIESER DATENSCHUTZERKLÄRUNG",
+      "content": [
+        "Wir behalten uns das Recht vor, diese Datenschutzerklärung jederzeit zu ändern, daher sollten Sie sie regelmäßig überprüfen. Änderungen und Klarstellungen treten sofort nach ihrer Veröffentlichung auf der Website in Kraft. Wenn wir wesentliche Änderungen an dieser Richtlinie vornehmen, werden wir Sie hier darüber informieren, damit Sie wissen, welche Informationen wir erfassen, wie wir sie verwenden und unter welchen Umständen wir sie gegebenenfalls verwenden und/oder offenlegen.",
+        "Wenn unser Shop von einem anderen Unternehmen übernommen oder mit diesem fusioniert wird, können Ihre Informationen an die neuen Eigentümer übertragen werden, damit wir weiterhin Produkte an Sie verkaufen können."
+      ]
+    },
+    "QUESTIONS": {
+      "title": "FRAGEN UND KONTAKTINFORMATIONEN",
+      "content": [
+        "Wenn Sie: Zugriff auf, Berichtigung, Änderung oder Löschung Ihrer persönlichen Daten wünschen, die wir über Sie gespeichert haben, eine Beschwerde einreichen oder einfach mehr Informationen wünschen, kontaktieren Sie unseren Datenschutzbeauftragten unter info@sauceterps.com",
+        "[Betreff: Datenschutzbeauftragter]",
+        "[Los Angeles, CA, Vereinigte Staaten]"
+      ]
+    }
+  },
+  "TermsAndConditions": {
+    "title": "Terms & Conditions",
+    "OVERVIEW": {
+      "title": "OVERVIEW",
+      "content": [
+        "This website is operated by Sauce Terps. Throughout the site, the terms “we”, “us” and “our” refer to Sauce Terps. Sauce Terps, offers this website, including all information, tools, and services available from this site to you, the user, conditioned upon your acceptance of all terms, conditions, policies and notices stated here.",
+        "By visiting our site and/ or purchasing something from us, you engage in our “Service” and agree to be bound by the following terms and conditions (“Terms of Service”, “Terms”), including those additional terms and conditions and policies referenced herein and/or available by hyperlink. These Terms of Service apply to all users of the site, including without limitation users who are browsers, vendors, customers, merchants, and/ or contributors of content.",
+        "Please read these Terms of Service carefully before accessing or using our website. By accessing or using any part of the site, you agree to be bound by these Terms of Service. If you do not agree to all the terms and conditions of this agreement, then you may not access the website or use any services. If these Terms of Service are considered an offer, acceptance is expressly limited to these Terms of Service.",
+        "Any new features or tools which are added to the current store shall also be subject to the Terms of Service. You can review the most current version of the Terms of Service at any time on this page. We reserve the right to update, change or replace any part of these Terms of Service by posting updates and/or changes to our website. It is your responsibility to check this page periodically for changes. Your continued use of or access to the website following the posting of any changes constitutes acceptance of those changes."
+      ]
+    },
+    "SECTION_1": {
+      "title": "SECTION 1 – DEFINITIONS",
+      "content": [
+        "The terms “we”, “us” and “our” refer to Sauce Terps. “You” refers to the buyer or viewer of our services.",
+        "The term “Service” refers to the website operated by Sauce Terps.",
+        "The term “Terms of Service” refers to the terms and conditions as outlined in this document, including those additional terms and conditions and policies referenced herein and/or available by hyperlink."
+      ]
+    },
+    "SECTION_2": {
+      "title": "SECTION 2 – AGREEMENT TO TERMS",
+      "content": [
+        "By accessing or using the website, you are agreeing to be bound by these Terms of Service and our Privacy Policy. If you disagree with any part of these Terms of Service or our Privacy Policy, you do not have permission to access the website or use the services. If these Terms of Service are considered an offer, acceptance is expressly limited to these Terms of Service.",
+        "Any new features or tools which are added to the current store shall also be subject to the Terms of Service."
+      ]
+    },
+    "SECTION_3": {
+      "title": "SECTION 3 – SECTION 3 – ORDER ACCEPTANCE",
+      "content": [
+        "Please read these Terms of Service carefully before placing an order. You are providing your information so that we can perform the services you request. This constitutes a contractual agreement between you and Sauce Terps for the purchase of the products described in the Order Confirmation.",
+        "The descriptions of products on our website are as accurate as possible. However, we do not warrant that product descriptions or other content of this website is error-free, complete, or current. If a product offered by us itself is not as described, your sole remedy is to return it in unused condition."
+      ]
+    },
+    "SECTION_4": {
+      "title": "SECTION 4 – SECTION 4 – PRICING AND AVAILABILITY",
+      "content": [
+        "Prices for our products are subject to change without notice. We reserve the right at any time to modify or discontinue the Service (or any part or content thereof) without notice at any time. We shall not be liable to you or to any third-party for any modification, price change, suspension or discontinuance of the Service.",
+        "We reserve the right to limit the quantities of any products or services that we offer. All descriptions of products or product pricing are subject to change at any time without notice, at the sole discretion of Sauce Terps. We reserve the right to discontinue any product at any time. Any offer for any product or service made on this site is void where prohibited."
+      ]
+    },
+    "SECTION_5": {
+      "title": "SECTION 5 – SECTION 5 – PRODUCTS OR SERVICES (if applicable)",
+      "content": [
+        "Certain products or services may be available exclusively online through the website. These products or services may have limited quantities and are subject to return or exchange only according to our Return Policy.",
+        "We have made every effort to display as accurately as possible the colors and images of our products that appear on the website. We cannot guarantee that your computer monitor's display of any color will be accurate."
+      ]
+    },
+    "SECTION_6": {
+      "title": "SECTION 6 – SECTION 6 – OWNERSHIP",
+      "content": [
+        "All products and services are the property of Sauce Terps and are protected by copyright and other intellectual property laws.",
+        "You agree not to reproduce, duplicate, copy, sell, resell or exploit any portion of the Service, use of the Service, or access to the Service or any contact on the website through which the service is provided, without express written permission by Sauce Terps.",
+        "The headings used in this agreement are included for convenience only and will not limit or otherwise affect any term."
+      ]
+    },
+    "SECTION_7": {
+      "title": "SECTION 7 – SECTION 7 – MODIFICATIONS TO THE SERVICE AND PRICES",
+      "content": [
+        "Prices for our products are subject to change without notice. We reserve the right at any time to modify or discontinue the Service (or any part or content thereof) without notice at any time. We shall not be liable to you or to any third-party for any modification, price change, suspension or discontinuance of the Service.",
+        "We reserve the right to limit the quantities of any products or services that we offer. All descriptions of products or product pricing are subject to change at any time without notice, at the sole discretion of Sauce Terps. We reserve the right to discontinue any product at any time. Any offer for any product or service made on this site is void where prohibited."
+      ]
+    },
+    "SECTION_8": {
+      "title": "SECTION 8 – SECTION 8 – ORDER CANCELLATION",
+      "content": [
+        "Orders can be cancelled if they have not been processed or shipped. If your order has been processed or shipped, you must follow our return policy."
+      ]
+    },
+    "SECTION_9": {
+      "title": "SECTION 9 – SECTION 9 – RETURNS (if applicable)",
+      "content": [
+        "Our Return Policy only applies to products that are defective or damaged. If you have received a damaged or defective product, please contact us at info@sauceterps.com within 7 days of receiving your order. If your return is approved, we will initiate a refund to your credit card (or original method of payment). You will receive the credit within a certain amount of days, depending on your card issuer's policies."
+      ]
+    },
+    "SECTION_10": {
+      "title": "SECTION 10 – SECTION 10 – SECTION 10 – PROMOTIONS",
+      "content": [
+        "We may use your information to provide you with promotional information about third parties and other third-party offers that we believe you may find interesting if you tell us that you wish to receive such information.",
+        "You can opt out of receiving any, or all, of these communications from us by following the unsubscribe link or instructions provided in any email we send or by contacting us."
+      ]
+    },
+    "SECTION_11": {
+      "title": "SECTION 11 – SECTION 11 – SECTION 11 – PROTECTION OF YOUR INFORMATION",
+      "content": [
+        "We adopt appropriate data collection, storage and processing practices and security measures to protect against unauthorized access, alteration, disclosure or destruction of your personal information, username, password, transaction information and data stored on our Site.",
+        "Sensitive and private data exchange between the Site and its Users happens over a SSL secured communication channel and is encrypted and protected with digital signatures."
+      ]
+    },
+    "SECTION_12": {
+      "title": "SECTION 12 – SECTION 12 – SECTION 12 – ELECTRONIC COMMUNICATIONS",
+      "content": [
+        "You agree to receive electronic communications from us. You agree that all agreements, notices, disclosures and other communications that we provide to you electronically, via email and on the Site, satisfy any legal requirement that such communications be in writing.",
+        "You hereby acknowledge that electronic mail is not a secure method of communication and that electronic communications can be intercepted, lost, deleted, altered, corrupted, delayed, incomplete or contain viruses. Sauce Terps shall not be liable for any errors or omissions in the electronic communications sent by you or received by Sauce Terps."
+      ]
+    },
+    "SECTION_13": {
+      "title": "SECTION 13 – SECTION 13 – SECTION 13 – INTERNATIONAL USERS",
+      "content": [
+        "By using the website, you agree to comply with all applicable laws regarding online conduct and acceptable content. You are responsible for ensuring that your use of the website complies with the laws of your jurisdiction, including but not limited to copyright laws. You agree that you will not use the website for any illegal purpose or in violation of any local, national or international law.",
+        "You agree that you will not use the website in a way that may damage, disable, overburden, or impair the website or interfere with any other party's use of the website, including their ability to engage in real-time activities through the website."
+      ]
+    },
+    "SECTION_14": {
+      "title": "SECTION 14 – SECTION 14 – SECTION 14 – INTELLECTUAL PROPERTY",
+      "content": [
+        "The website and its original content, features and functionality are owned by Sauce Terps and are protected by international copyright, trademark, patent, trade secret and other intellectual property or proprietary rights laws.",
+        "Sauce Terps's trademarks and trade dress may not be used in connection with any product or service without the prior written consent of Sauce Terps."
+      ]
+    },
+    "SECTION_15": {
+      "title": "SECTION 15 – SECTION 15 – SECTION 15 – SECTION 15 – ACCOUNT TERMINATION",
+      "content": [
+        "We may, in our sole discretion, at any time and for any or no reason, discontinue the Service, or any part thereof. This may include, but is not limited to, any products available on the website or any content of the website, with or without prior notice to you. You agree that Sauce Terps shall not be liable to you or any third-party for any modification, suspension or discontinuance of the Service.",
+        "You agree that Sauce Terps shall not be liable to you or any third-party for any modification, suspension or discontinuance of the Service."
+      ]
+    },
+    "SECTION_16": {
+      "title": "SECTION 16 – SECTION 16 – SECTION 16 – SECTION 16 – MODIFICATIONS TO THESE TERMS OF SERVICE",
+      "content": [
+        "Sauce Terps reserves the right, at its sole discretion, to modify or replace these Terms of Service at any time. If a revision is material we will provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.",
+        "By continuing to access or use our website after any revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, you are no longer authorized to use the website."
+      ]
+    },
+    "SECTION_17": {
+      "title": "SECTION 17 – SECTION 17 – SECTION 17 – SECTION 17 – QUESTIONS AND CONTACT INFORMATION",
+      "content": ["If you have any questions about these Terms, please contact us."]
     }
   }
 }
