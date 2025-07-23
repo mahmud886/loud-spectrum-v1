@@ -1,6 +1,7 @@
 'use client';
 
 import CloseButton from '@/components/navbar/CloseButton';
+import SearchModal from '@/components/SearchModal';
 import HashLink from '@/components/ui/hash-link';
 import { Link } from '@/i18n/navigation';
 import { logout } from '@/lib/store/slices/authSlice';
@@ -9,6 +10,7 @@ import { clearCheckoutOnLogin } from '@/lib/store/slices/checkoutSlice';
 import { LogInIcon, Search, ShoppingCartIcon, UserIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'sonner';
 
@@ -19,6 +21,7 @@ const MobileNav = ({ onClose, setCartOpen }) => {
   const { isAuthenticated } = useSelector((state) => state.auth);
   const t = useTranslations('Navbar');
   const topNav = useTranslations('Navbar.TopNav');
+  const [searchOpen, setSearchOpen] = useState(false);
 
   // Handle logout functionality
   const handleLogout = async () => {
@@ -115,11 +118,13 @@ const MobileNav = ({ onClose, setCartOpen }) => {
           </div>
         </div>
         <div className="group relative mt-4 w-full">
-          <input
-            type="text"
-            placeholder="Search products"
-            className="border-umbra-20 group-hover:text-umbra-100 text-umbra-100 placeholder-text-umbra-20 w-full border-b bg-transparent py-5 pr-10 text-sm transition duration-300 focus:outline-none"
-          />
+          <button
+            type="button"
+            className="border-umbra-20 group-hover:text-umbra-100 text-umbra-100 placeholder-text-umbra-20 w-full border-b bg-transparent py-5 pr-10 text-left text-sm transition duration-300 focus:outline-none"
+            onClick={() => setSearchOpen(true)}
+          >
+            Search products
+          </button>
           <div className="border-umbra-5/10 bg-umbra-5 text-umbra-10 group-hover:border-umbra-10 group-hover:bg-umbra-10 group-hover:text-umbra-100 absolute top-1/2 right-0 -translate-y-1/2 rounded-full border p-3 transition duration-300">
             <Search width={13} height={13} color="currentColor" />
           </div>
@@ -177,6 +182,7 @@ const MobileNav = ({ onClose, setCartOpen }) => {
           </Link>
         )}
       </div>
+      <SearchModal open={searchOpen} onOpenChange={setSearchOpen} />
     </div>
   );
 };

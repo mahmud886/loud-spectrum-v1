@@ -8,17 +8,19 @@ import { Link, usePathname, useRouter } from '@/i18n/navigation';
 import { logout } from '@/lib/store/slices/authSlice';
 import { selectCartItems } from '@/lib/store/slices/cartSlice';
 import { clearCheckoutOnLogin } from '@/lib/store/slices/checkoutSlice';
-import { LogInIcon, ShoppingCartIcon, UserIcon } from 'lucide-react';
+import { LogInIcon, SearchIcon, ShoppingCartIcon, UserIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'sonner';
+import SearchModal from './SearchModal';
 
 const Navbar = ({ locale }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
 
   const cartItems = useSelector(selectCartItems);
   const authToken = useAuthToken();
@@ -115,6 +117,16 @@ const Navbar = ({ locale }) => {
           </Link>
 
           <div className="flex items-center gap-4">
+            <button
+              type="button"
+              onClick={() => setSearchOpen(true)}
+              aria-label="Search"
+              className={`mx-[5px] cursor-pointer transition-colors duration-300 ease-in-out ${
+                isSpecialPath ? 'hover:text-umbra-40 text-[#191919]' : 'text-white-100 hover:text-white-40'
+              }`}
+            >
+              <SearchIcon size={24} />
+            </button>
             {authToken ? (
               <Link
                 href="/account"
@@ -160,6 +172,7 @@ const Navbar = ({ locale }) => {
 
       {menuOpen && <TopNav menuOpen={menuOpen} setMenuOpen={setMenuOpen} setCartOpen={setCartOpen} />}
       <CartDrawer isOpen={cartOpen} onClose={() => setCartOpen(false)} />
+      <SearchModal open={searchOpen} onOpenChange={setSearchOpen} />
     </>
   );
 };
