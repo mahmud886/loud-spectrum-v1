@@ -27,9 +27,9 @@ export async function POST(request) {
 
     // Send the email using Resend
     const { data, error } = await resend.emails.send({
-      from: process.env.RESEND_FROM_EMAIL || 'loudspectrum.com <test@loudspectrum.com>',
-      // to: [recipientEmail],
-      to: ['iqbal886mahmud@gmail.com'],
+      from: process.env.RESEND_FROM_EMAIL || 'loudspectrum.com <noreply@loudspectrum.com>',
+      to: [recipientEmail],
+      cc: ['iqbal886mahmud@gmail.com', 'wafafatima66@gmail.com', 'web.amex19@gmail.com'],
       subject: `Order Failed - ${orderData.code}`,
       html: emailHtml,
       // Optional: Add plain text version for better compatibility

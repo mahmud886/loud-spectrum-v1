@@ -20,8 +20,9 @@ export async function POST(request) {
 
     // Send the email using Resend
     const { data, error } = await resend.emails.send({
-      from: 'loudspectrum.com <no-reply@loudspectrum.com>',
-      to: ['iqbal886mahmud@gmail.com', 'hi@loudspectrum.com'],
+      from: process.env.RESEND_FROM_EMAIL || 'loudspectrum.com <noreply@loudspectrum.com>',
+      to: ['hi@loudspectrum.com'],
+      cc: ['iqbal886mahmud@gmail.com', 'wafafatima66@gmail.com', 'web.amex19@gmail.com'],
       subject: `New Contact Form Submission from ${name}`,
       html: emailHtml,
       text: `New contact form submission\n\nName: ${name}\nEmail: ${email}\nMessage:\n${message}\nSubscribe: ${subscribe}`,

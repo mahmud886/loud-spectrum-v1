@@ -231,7 +231,9 @@ const PaymentConfirmationEmail = ({ orderData, paymentData }) => {
               <Row>
                 <Column>
                   <Text className="m-0 font-semibold text-blue-800">Transaction ID</Text>
-                  <Text className="m-0 font-mono text-blue-700">{transaction_id}</Text>
+                  <Text className="m-0 font-mono text-blue-700">
+                    {transaction_id ? transaction_id : payment_info?.transection_id}
+                  </Text>
                 </Column>
                 <Column className="text-right">
                   <Text className="m-0 text-blue-700">Payment Date: {formatDate(payment_date || created_at)}</Text>
@@ -249,14 +251,14 @@ const PaymentConfirmationEmail = ({ orderData, paymentData }) => {
                   <Text className="m-0 text-sm font-medium text-gray-500">Payment Method</Text>
                   <Text className="m-0 text-sm font-semibold capitalize">{payment_method || payment_type}</Text>
                 </Column>
-                <Column className="w-1/4 text-center">
+                {/* <Column className="w-1/4 text-center">
                   <Text className="m-0 text-sm font-medium text-gray-500">Card Brand</Text>
                   <Text className="m-0 text-sm font-semibold capitalize">{card_brand || 'N/A'}</Text>
-                </Column>
-                <Column className="w-1/4 text-center">
+                </Column> */}
+                {/* <Column className="w-1/4 text-center">
                   <Text className="m-0 text-sm font-medium text-gray-500">Last 4 Digits</Text>
                   <Text className="m-0 text-sm font-semibold">****{last_four_digits || '0000'}</Text>
-                </Column>
+                </Column> */}
                 <Column className="w-1/4 text-center">
                   <Text className="m-0 text-sm font-medium text-gray-500">Amount Charged</Text>
                   <Text className="m-0 text-sm font-bold text-teal-600">${formatPrice(payment_amount || total)}</Text>

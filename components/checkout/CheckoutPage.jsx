@@ -8,7 +8,6 @@ import PaymentMethod from '@/components/checkout/PaymentMethod';
 import ProductCart from '@/components/checkout/ProductCart';
 import WireTransferDialog from '@/components/checkout/WireTransferDialog';
 import { useRouter } from '@/i18n/navigation';
-import { clearCart } from '@/lib/store/slices/cartSlice';
 import {
   completeOrder,
   selectBillingAddress,
@@ -31,7 +30,12 @@ import {
   setWireFormField,
 } from '@/lib/store/slices/checkoutSlice';
 
-import { selectCartItems, selectCartTotalAmount, selectCartTotalQuantity } from '@/lib/store/slices/cartSlice';
+import {
+  clearCart,
+  selectCartItems,
+  selectCartTotalAmount,
+  selectCartTotalQuantity,
+} from '@/lib/store/slices/cartSlice';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -475,17 +479,17 @@ const CheckoutPage = () => {
         forceReset: () => {
           dispatch(setIsProcessing(false));
           setIsLoading(false);
-          console.log('Checkout state force reset');
+          // console.log('Checkout state force reset');
         },
         resetCourierAndShipping: () => {
           dispatch(setSelectedCourier(''));
           dispatch(setShippingType(''));
-          console.log('Courier and shipping reset to empty');
+          // console.log('Courier and shipping reset to empty');
         },
         setDefaultCourier: () => {
           dispatch(setSelectedCourier('fedex'));
           dispatch(setShippingType(''));
-          console.log('Courier set to fedex (default)');
+          // console.log('Courier set to fedex (default)');
         },
       };
     }
@@ -593,7 +597,7 @@ const CheckoutPage = () => {
       };
 
       validatePayload(finalPayload);
-      console.log('Final Payload being sent:', JSON.stringify(finalPayload, null, 2));
+      // console.log('Final Payload being sent:', JSON.stringify(finalPayload, null, 2));
 
       // Show processing toast
       toast.loading('Processing Payment...', {
@@ -627,8 +631,11 @@ const CheckoutPage = () => {
 
       // The actual order data is nested in orderResponse.data
       const actualOrderData = orderResponse?.data;
-      // console.log('Actual order data:', actualOrderData);
-      // console.log('actualOrderData._id:', actualOrderData?._id);
+      const recipientEmail = actualOrderData?.billing_details?.email || actualOrderData?.shipping_details?.email;
+      const recipientName =
+        (actualOrderData?.billing_details?.first_name || actualOrderData?.shipping_details?.first_name) +
+        ' ' +
+        (actualOrderData?.billing_details?.last_name || actualOrderData?.shipping_details?.last_name);
 
       if (!error) {
         setOrderedData(actualOrderData);
@@ -658,6 +665,16 @@ const CheckoutPage = () => {
             icon: '🎉',
           });
 
+          const res = await fetch('/api/emails/order/confirmation', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              orderData: actualOrderData,
+              recipientEmail,
+              recipientName,
+            }),
+          });
+
           router.push(`/order-confirmation/${orderId}`);
         } else {
           console.error('No order ID found in response data');
@@ -676,9 +693,31 @@ const CheckoutPage = () => {
             description: 'Order was created but we could not retrieve the order ID',
             duration: 5000,
           });
+          const res = await fetch('/api/emails/order/failed', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              orderData: actualOrderData,
+              recipientEmail,
+              recipientName,
+              rejectionReason: message,
+            }),
+          });
         }
       } else {
         dispatch(setCheckoutError(message || 'Payment failed'));
+
+        const res = await fetch('/api/emails/payment/rejection', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            orderData: actualOrderData,
+            paymentData: finalPayload,
+            recipientEmail,
+            recipientName,
+            rejectionReason: message,
+          }),
+        });
 
         // Reset payment state and close dialogs on error
         dispatch(setSelectedPaymentMethod(''));
@@ -698,6 +737,18 @@ const CheckoutPage = () => {
       setShowWireTransferModal(false);
       dispatch(setCheckoutError('Payment processing failed'));
       console.error('Payment Error:', error);
+
+      const res = await fetch('/api/emails/payment/rejection', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          orderData: actualOrderData,
+          paymentData: finalPayload,
+          recipientEmail,
+          recipientName,
+          rejectionReason: error,
+        }),
+      });
 
       // Reset payment state and close dialogs on error
       dispatch(setSelectedPaymentMethod(''));
@@ -753,26 +804,31 @@ const CheckoutPage = () => {
         }),
       });
 
-      console.log('Square API Response Status:', response.status);
-      console.log('Square API Response Headers:', response.headers.get('content-type'));
+      // console.log('Square API Response Status:', response.status);
+      // console.log('Square API Response Headers:', response.headers.get('content-type'));
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
       const responseText = await response.text();
-      console.log('Square API Raw Response:', responseText);
+      // console.log('Square API Raw Response:', responseText);
 
       let responseData;
       try {
         responseData = JSON.parse(responseText);
       } catch (parseError) {
-        console.error('Failed to parse Square API response:', parseError);
-        console.error('Response was:', responseText);
+        // console.error('Failed to parse Square API response:', parseError);
+        // console.error('Response was:', responseText);
         throw new Error('Invalid JSON response from payment API');
       }
 
       const { data, error, message, success } = responseData;
+      const recipientEmail = data?.billing_details?.email || data?.shipping_details?.email;
+      const recipientName =
+        (data?.billing_details?.first_name || data?.shipping_details?.first_name) +
+        ' ' +
+        (data?.billing_details?.last_name || data?.shipping_details?.last_name);
 
       // Dismiss processing toast
       toast.dismiss('card-payment-processing');
@@ -799,6 +855,28 @@ const CheckoutPage = () => {
           icon: '💳',
         });
 
+        // sending order confirmation email
+        const resOrder = await fetch('/api/emails/order/confirmation', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            orderData: data,
+            recipientEmail,
+            recipientName,
+          }),
+        });
+        // sending payment confirmation email
+        const resPayment = await fetch('/api/emails/payment/confirmation', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            orderData: data,
+            paymentData: paymentPayload,
+            recipientEmail,
+            recipientName,
+          }),
+        });
+
         router.push(`/order-confirmation/${data?._id}`);
       } else {
         dispatch(setCheckoutError(message || 'Square payment failed'));
@@ -816,8 +894,17 @@ const CheckoutPage = () => {
           description: message || 'There was an error processing your card payment. Please try again.',
           duration: 5000,
         });
-        // Handle payment failure - could redirect to failure page
-        // router.push('/payment-callback/fail');
+        // sending order failed email
+        const res = await fetch('/api/emails/order/failed', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            orderData: data,
+            recipientEmail,
+            recipientName,
+            rejectionReason: message,
+          }),
+        });
       }
     } catch (error) {
       dispatch(setCheckoutError('Square payment processing failed'));
@@ -838,6 +925,18 @@ const CheckoutPage = () => {
       toast.error('Card Payment Error', {
         description: 'There was an error processing your card payment. Please check your card details and try again.',
         duration: 5000,
+      });
+      // sending payment rejection email
+      const res = await fetch('/api/emails/payment/rejection', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          orderData: data,
+          paymentData: paymentPayload,
+          recipientEmail,
+          recipientName,
+          rejectionReason: error,
+        }),
       });
     } finally {
       setIsLoading(false);
@@ -887,6 +986,11 @@ const CheckoutPage = () => {
       if (!error) {
         const actualOrderData = orderResponse?.data;
         const orderId = actualOrderData?._id || actualOrderData?.id || actualOrderData?.orderId || null;
+        const recipientEmail = actualOrderData?.billing_details?.email || actualOrderData?.shipping_details?.email;
+        const recipientName =
+          (actualOrderData?.billing_details?.first_name || actualOrderData?.shipping_details?.first_name) +
+          ' ' +
+          (actualOrderData?.billing_details?.last_name || actualOrderData?.shipping_details?.last_name);
 
         if (orderId) {
           dispatch(completeOrder({ orderId }));
@@ -907,6 +1011,29 @@ const CheckoutPage = () => {
             icon: '🎉',
           });
 
+          // sending order confirmation email
+          const resOrder = await fetch('/api/emails/order/confirmation', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              orderData: actualOrderData,
+              recipientEmail,
+              recipientName,
+            }),
+          });
+
+          // sending payment confirmation email
+          const resPayment = await fetch('/api/emails/payment/confirmation', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              orderData: actualOrderData,
+              paymentData: wirePayload,
+              recipientEmail,
+              recipientName,
+            }),
+          });
+
           router.push(`/order-confirmation/${orderId}`);
         } else {
           dispatch(setCheckoutError('Order created but ID not found'));
@@ -923,6 +1050,18 @@ const CheckoutPage = () => {
           toast.error('Order Error', {
             description: 'Order was created but we could not retrieve the order ID',
             duration: 5000,
+          });
+
+          // sending order failed email
+          const res = await fetch('/api/emails/order/failed', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              orderData: actualOrderData,
+              recipientEmail,
+              recipientName,
+              rejectionReason: message,
+            }),
           });
         }
       } else {
@@ -973,7 +1112,7 @@ const CheckoutPage = () => {
 
   // Submit handler for debit / credit card form
   const handleCardSubmit = async (token) => {
-    console.log('Square Token Received in CheckoutPage:', token);
+    // console.log('Square Token Received in CheckoutPage:', token);
 
     // Process Square payment with token
     if (token) {
@@ -983,7 +1122,7 @@ const CheckoutPage = () => {
 
   // Submit handler for wire transfer
   const handleWireSubmit = async () => {
-    console.log('Wire info Submitted:', wireFormData);
+    // console.log('Wire info Submitted:', wireFormData);
     dispatch(setShowWireDialog(false));
 
     // Process wire transfer payment

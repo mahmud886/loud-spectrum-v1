@@ -9,6 +9,11 @@ export async function POST(request) {
   try {
     const { orderData, paymentData, recipientEmail, recipientName } = await request.json();
 
+    // console.log('orderDataPayment', orderData);
+    // console.log('paymentDataPayment', paymentData);
+    // console.log('recipientEmailPayment', recipientEmail);
+    // console.log('recipientNamePayment', recipientName);
+
     // Validate required fields
     if (!orderData || !paymentData || !recipientEmail) {
       return NextResponse.json(
@@ -30,12 +35,11 @@ export async function POST(request) {
 
     // Send the email using Resend
     const { data, error } = await resend.emails.send({
-      from: process.env.RESEND_FROM_EMAIL || 'loudspectrum.com <test@loudspectrum.com>',
-      // to: [recipientEmail],
-      to: ['iqbal886mahmud@gmail.com'],
+      from: process.env.RESEND_FROM_EMAIL || 'loudspectrum.com <noreply@loudspectrum.com>',
+      to: [recipientEmail],
+      cc: ['iqbal886mahmud@gmail.com', 'wafafatima66@gmail.com', 'web.amex19@gmail.com'],
       subject: `Payment Confirmation - ${orderData.code}`,
       html: emailHtml,
-      // Optional: Add plain text version for better compatibility
       text: `
         Payment Confirmation
 
