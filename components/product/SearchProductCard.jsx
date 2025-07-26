@@ -18,7 +18,7 @@ const SearchProductCard = ({ product, onOpenChange }) => {
     <motion.div initial="rest" whileHover="hover" animate="rest" className="cursor-pointer">
       <Link
         href={`/shop/${encodeCategoryForUrl(product?.category_name)}/${product.slug}`}
-        className="relative flex h-[220px] min-h-[220px] w-full min-w-[162px] flex-col justify-around border bg-[#F5F5F5] p-2.5 md:h-[384px] md:min-h-[384px] md:w-[305px] md:min-w-[305px]"
+        className="relative flex h-[220px] min-h-[220px] w-full min-w-[162px] flex-col justify-around border bg-[#F5F5F5] p-2.5 md:h-[300px] md:min-h-[300px] md:w-full md:min-w-full"
         onClick={() => onOpenChange?.(false)}
       >
         {/* Image Section */}
@@ -28,10 +28,10 @@ const SearchProductCard = ({ product, onOpenChange }) => {
             hover: { scale: 1.1 },
           }}
           transition={{ duration: 0.4 }}
-          className="flex items-center justify-center overflow-hidden md:mt-16"
+          className="flex items-center justify-center overflow-hidden"
         >
           <Image
-            className="h-[150px] w-auto object-cover md:h-[254px] md:w-[174px]"
+            className="h-[150px] w-auto object-cover md:h-[220px] md:w-[150px]"
             src={
               product?.image
                 ? `${process.env.NEXT_PUBLIC_API_URL}/public${product.image}`
@@ -43,24 +43,24 @@ const SearchProductCard = ({ product, onOpenChange }) => {
           />
         </motion.div>
 
-        {/* Tag Button (Hidden on mobile) */}
-        <div className="ml-3 hidden md:block">
+        {/* Tag Button (Top of image, hidden on mobile) */}
+        <div className="absolute top-1 left-2 z-10">
           <button
-            className="border-umbra-100 rounded-[3px] border px-2 text-[9px] font-normal"
+            className="border-umbra-100 rounded-[3px] border bg-white/90 px-2 text-[8px] font-normal"
             type="button"
             tabIndex={-1}
           >
             {product?.category?.name}
           </button>
         </div>
+        {/* Product Title and Price */}
+        <div className="absolute bottom-3 left-2 flex flex-col items-start text-left">
+          <h2 className={clsx('text-[10px] font-normal text-black md:text-[10px]')}>{product.name}</h2>
+          <p className={clsx('text-umbra-40 text-[8px] md:text-[9px]')}>
+            {min === max ? `$${min.toFixed(2)}` : `$${min.toFixed(2)} – $${max.toFixed(2)}`}
+          </p>
+        </div>
       </Link>
-      {/* Product Title and Price */}
-      <div className="mt-[15px]">
-        <h2 className={clsx('text-[18px] font-normal text-black md:text-[22px]')}>{product.name}</h2>
-        <p className={clsx('text-umbra-40 text-[15px] md:text-[19px]')}>
-          {min === max ? `$${min.toFixed(2)}` : `$${min.toFixed(2)} – $${max.toFixed(2)}`}
-        </p>
-      </div>
     </motion.div>
   );
 };

@@ -15,6 +15,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'sonner';
 import SearchModal from './SearchModal';
+import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip';
 
 const Navbar = ({ locale }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -116,55 +117,85 @@ const Navbar = ({ locale }) => {
             />
           </Link>
 
-          <div className="flex items-center gap-4">
-            <button
-              type="button"
-              onClick={() => setSearchOpen(true)}
-              aria-label="Search"
-              className={`mx-[5px] cursor-pointer transition-colors duration-300 ease-in-out ${
-                isSpecialPath ? 'hover:text-umbra-40 text-[#191919]' : 'text-white-100 hover:text-white-40'
-              }`}
-            >
-              <SearchIcon size={24} />
-            </button>
+          <div className="flex items-center gap-2 md:gap-3">
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <button
+                  type="button"
+                  onClick={() => setSearchOpen(true)}
+                  aria-label="Search"
+                  className={`cursor-pointer rounded-full border p-2 transition-colors duration-300 ease-in-out ${
+                    isSpecialPath ? 'hover:text-umbra-40 text-[#191919]' : 'text-white-100 hover:text-white-40'
+                  }`}
+                >
+                  <SearchIcon size={16} />
+                </button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Search Products</p>
+              </TooltipContent>
+            </Tooltip>
+
             {authToken ? (
-              <Link
-                href="/account"
-                className={`mx-[5px] flex items-center gap-2 font-sans text-[20px] font-normal transition-colors duration-300 ease-in-out md:flex ${
-                  isSpecialPath ? 'hover:text-umbra-40 text-[#191919]' : 'text-white-100 hover:text-white-40'
-                }`}
-              >
-                <UserIcon size={24} />
-              </Link>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    href="/account"
+                    className={`flex items-center gap-2 rounded-full border p-2 font-sans text-[16px] font-normal transition-colors duration-300 ease-in-out md:flex ${
+                      isSpecialPath ? 'hover:text-umbra-40 text-[#191919]' : 'text-white-100 hover:text-white-40'
+                    }`}
+                  >
+                    <UserIcon size={16} />
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Go to Your Account</p>
+                </TooltipContent>
+              </Tooltip>
             ) : (
-              <Link
-                href="/login"
-                className={`mx-[5px] flex items-center gap-2 font-sans text-[20px] font-normal transition-colors duration-300 ease-in-out md:flex ${
-                  isSpecialPath ? 'hover:text-umbra-40 text-[#191919]' : 'text-white-100 hover:text-white-40'
-                }`}
-              >
-                <LogInIcon size={24} />
-                {/* <span className="hidden md:inline">{t('Navbar.Log_in')}</span> */}
-              </Link>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    href="/login"
+                    className={`flex items-center gap-2 rounded-full border p-2 font-sans text-[16px] font-normal transition-colors duration-300 ease-in-out md:flex ${
+                      isSpecialPath ? 'hover:text-umbra-40 text-[#191919]' : 'text-white-100 hover:text-white-40'
+                    }`}
+                  >
+                    <LogInIcon size={16} />
+                    {/* <span className="hidden md:inline">{t('Navbar.Log_in')}</span> */}
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Log In</p>
+                </TooltipContent>
+              </Tooltip>
             )}
 
-            <button
-              type="button"
-              onClick={() => {
-                setCartOpen(true);
-              }}
-              aria-label={`${t('Cart')} (${cartItems?.length || 0} items)`}
-              className={`relative mx-[5px] cursor-pointer transition-colors duration-300 ease-in-out ${
-                isSpecialPath ? 'hover:text-umbra-40 text-[#191919]' : 'text-white-100 hover:text-white-40'
-              }`}
-            >
-              <ShoppingCartIcon size={24} />
-              {cartItems?.length > 0 && (
-                <span className="bg-alive absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full text-[12px] font-medium text-white">
-                  {cartItems.length}
-                </span>
-              )}
-            </button>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setCartOpen(true);
+                  }}
+                  aria-label={`${t('Cart')} (${cartItems?.length || 0} items)`}
+                  className={`relative cursor-pointer rounded-full border p-2 transition-colors duration-300 ease-in-out ${
+                    isSpecialPath ? 'hover:text-umbra-40 text-[#191919]' : 'text-white-100 hover:text-white-40'
+                  }`}
+                >
+                  <ShoppingCartIcon size={16} />
+                  {cartItems?.length > 0 && (
+                    <span className="bg-alive absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full text-[12px] font-medium text-white">
+                      {cartItems.length}
+                    </span>
+                  )}
+                </button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Open Cart</p>
+              </TooltipContent>
+            </Tooltip>
+
             <MenuButton setMenuOpen={setMenuOpen} isSpecialPath={isSpecialPath} />
           </div>
         </div>
