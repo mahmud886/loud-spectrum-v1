@@ -1,15 +1,23 @@
 import BlogCard from '@/components/containers/ordinary-blog/BlogCard';
 import FeaturedBlog from '@/components/containers/ordinary-blog/FeaturedBlog';
 import SideBlogs from '@/components/containers/ordinary-blog/SideBlogs';
+import { Suspense } from 'react';
+import BlogCardShimmer from './BlogCardShimmer';
 import BlogFilter from './BlogFilter';
+import FeaturedBlogShimmer from './FeaturedBlogShimmer';
+import SideBlogsShimmer from './SideBlogsShimmer';
 
 const OrdinaryBlogSection = ({ blogs }) => {
   return (
     <div className="mb-[100px]">
       <div className="my-10 grid grid-cols-1 gap-x-10 md:grid-cols-[53.52%_42.58%]">
-        <FeaturedBlog featuredBlog={blogs?.[0]} />
+        <Suspense fallback={<FeaturedBlogShimmer />}>
+          <FeaturedBlog featuredBlog={blogs?.[0]} />
+        </Suspense>
         <div className="">
-          <SideBlogs blogs={blogs?.slice(1, 4)} />
+          <Suspense fallback={<SideBlogsShimmer />}>
+            <SideBlogs blogs={blogs?.slice(1, 4)} />
+          </Suspense>
         </div>
       </div>
       <div className="border-1"></div>
@@ -24,9 +32,19 @@ const OrdinaryBlogSection = ({ blogs }) => {
       </div>
 
       <div className="mb-[50px] grid grid-cols-1 gap-6 gap-x-4 md:grid-cols-3 md:gap-y-20">
-        {blogs?.map((blog) => (
-          <BlogCard key={blog._id} blog={blog} />
-        ))}
+        <Suspense
+          fallback={
+            <>
+              {[...Array(6)].map((_, idx) => (
+                <BlogCardShimmer key={idx} />
+              ))}
+            </>
+          }
+        >
+          {blogs?.map((blog) => (
+            <BlogCard key={blog._id} blog={blog} />
+          ))}
+        </Suspense>
       </div>
       <div className="border-1"></div>
       {/* <div className="py-16">

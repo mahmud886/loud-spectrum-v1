@@ -1,5 +1,9 @@
+import BlogCardShimmer from '@/components/containers/ordinary-blog/BlogCardShimmer';
+import FeaturedBlogShimmer from '@/components/containers/ordinary-blog/FeaturedBlogShimmer';
 import OrdinaryBlogSection from '@/components/containers/ordinary-blog/OrdinaryBlogSection';
+import SideBlogsShimmer from '@/components/containers/ordinary-blog/SideBlogsShimmer';
 import { getBlogs } from '@/services/get-blogs';
+import { Suspense } from 'react';
 
 // Generate metadata for the blog listing page
 export async function generateMetadata({ params }) {
@@ -71,8 +75,42 @@ export async function generateMetadata({ params }) {
   };
 }
 
-const BlogPage = async () => {
+// Blog content component that fetches data
+async function BlogContent() {
   const blogs = await getBlogs();
+  return <OrdinaryBlogSection blogs={blogs} />;
+}
+
+// Shimmer fallback for the entire blog section
+function BlogSectionShimmer() {
+  return (
+    <div className="mb-[100px]">
+      <div className="my-10 grid grid-cols-1 gap-x-10 md:grid-cols-[53.52%_42.58%]">
+        <FeaturedBlogShimmer />
+        <div className="">
+          <SideBlogsShimmer />
+        </div>
+      </div>
+      <div className="border-1"></div>
+
+      <div className="my-10">
+        <div className="flex flex-col-reverse items-start justify-between gap-4 sm:flex-row">
+          <div className="h-8 w-40 animate-pulse rounded bg-gray-200"></div>
+          <div className="h-8 w-32 animate-pulse rounded bg-gray-200"></div>
+        </div>
+      </div>
+
+      <div className="mb-[50px] grid grid-cols-1 gap-6 gap-x-4 md:grid-cols-3 md:gap-y-20">
+        {[...Array(6)].map((_, idx) => (
+          <BlogCardShimmer key={idx} />
+        ))}
+      </div>
+      <div className="border-1"></div>
+    </div>
+  );
+}
+
+const BlogPage = async () => {
   return (
     <div className="container mt-[200px]">
       <div className="space-y-10">
@@ -82,7 +120,9 @@ const BlogPage = async () => {
         <div className="border-1"></div>
       </div>
       <main className="">
-        <OrdinaryBlogSection blogs={blogs} />
+        <Suspense fallback={<BlogSectionShimmer />}>
+          <BlogContent />
+        </Suspense>
       </main>
     </div>
   );
