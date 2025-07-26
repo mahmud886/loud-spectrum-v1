@@ -1,29 +1,27 @@
+import { Badge } from '@/components/ui/badge';
 import { formatDate } from '@/helpers/get-formated-date';
 import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
 
 const FeaturedBlog = ({ featuredBlog }) => {
-  // Format date to be more readable
-
-  // Get the image URL - use the actual image from blog data or fallback
-  const imageUrl = featuredBlog?.image || '/assets/images/blog/blog-image-featuted.png';
-  const baseUrl = process.env.NEXT_PUBLIC_WEBSITE_URL || 'https://loudspectrum.com';
-  const fullImageUrl =
-    featuredBlog?.image && !featuredBlog.image.startsWith('http') ? `${baseUrl}${featuredBlog.image}` : imageUrl;
-
   return (
     <>
       <div className="group flex flex-col justify-between space-y-6">
         <div className="relative overflow-hidden">
           <Link href={`/blog/${featuredBlog?._id}`} className="group w-full">
-            <Image
-              // src={fullImageUrl}
-              src="/assets/images/blog/blog-image-featuted.png"
-              alt={featuredBlog?.alt_tag || featuredBlog?.title || 'blog-image-featured'}
-              width={685}
-              height={380}
-              className="h-[380px] w-full transform object-cover transition-transform duration-500 group-hover:scale-110 md:w-[685px]"
-            />
+            <div className="h-[380px] w-[685px]">
+              <Image
+                src={
+                  featuredBlog?.image
+                    ? `${process.env.NEXT_PUBLIC_API_URL}/public${featuredBlog.image}`
+                    : '/assets/images/blog/blog-image-featuted.png'
+                }
+                alt={featuredBlog?.alt_tag || featuredBlog?.title || 'blog-image-featured'}
+                width={685}
+                height={380}
+                className="h-full w-full transform object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+            </div>
           </Link>
           <div className="absolute top-[8%] right-[5%]">
             <Link
@@ -36,14 +34,23 @@ const FeaturedBlog = ({ featuredBlog }) => {
         </div>
 
         <div>
-          <div className="flex items-center justify-between">
-            <div className="flex gap-2">
-              <button className="main-button-black border-umbra-100 !md:text-[16px] rounded-md border-1 px-2 py-1 !text-[14px] md:px-4 md:py-2">
+          <div className="flex items-start justify-between">
+            <div className="flex max-w-[85%] flex-wrap items-center gap-2">
+              <Badge
+                variant="outline"
+                className="main-button-black border-umbra-100 !md:text-[16px] !max-h-[34px] rounded-md border-1 px-2 py-1 !text-[14px] md:px-4 md:py-2"
+              >
                 Featured
-              </button>
-              <button className="outline-button-white !md:text-[16px] !bg-white-100 border-umbra-100 rounded-sm border-1 px-2 py-0 !text-[14px] md:px-4 md:py-2">
-                {featuredBlog?.tags}
-              </button>
+              </Badge>
+              {featuredBlog?.tags?.split(',').map((tag, idx) => (
+                <Badge
+                  variant="outline"
+                  key={idx}
+                  className="!bg-white-100 border-umbra-100 h-[30px] rounded-sm border-1 px-2 py-0 !text-[12px] font-normal md:h-[34px] md:px-4"
+                >
+                  {tag.trim()}
+                </Badge>
+              ))}
             </div>
             <p className="text-umbra-100 font-mono text-[14px] leading-[130%] font-normal">
               {featuredBlog?.created_at ? formatDate(featuredBlog.created_at) : ''}

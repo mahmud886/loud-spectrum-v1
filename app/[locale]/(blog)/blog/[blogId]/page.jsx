@@ -54,7 +54,7 @@ export async function generateMetadata({ params }) {
     }
 
     const blog = blogData;
-    const baseUrl = process.env.NEXT_PUBLIC_WEBSITE_URL || 'https://loudspectrum.com';
+    const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'https://loudspectrum.com';
     const fullImageUrl = blog.image ? `${baseUrl}${blog.image}` : null;
 
     return {

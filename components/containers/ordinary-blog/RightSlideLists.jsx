@@ -6,7 +6,6 @@ import Image from 'next/image';
 const RightSlideLists = async ({ blogId }) => {
   const blogs = await getBlogs();
   const blogPosts = blogs.filter((blog) => blog._id !== blogId);
-  console.log('blogPosts', blogPosts);
 
   return (
     <div>
@@ -16,18 +15,23 @@ const RightSlideLists = async ({ blogId }) => {
         </h5>
       </div>
       <div>
-        {blogPosts.map((blog, index) => (
+        {blogPosts?.map((blog, index) => (
           <div key={index} className="group border-umbra-40 border-t py-5">
             <div className="flex w-full flex-col items-center gap-5 overflow-hidden bg-white md:flex-row">
               <Link href={`/blog/${blog?._id}`} className="w-[170px] overflow-hidden">
-                <Image
-                  width={120}
-                  height={102}
-                  // src={post.imageUrl}
-                  src="/assets/images/blog/side-blog.png"
-                  alt={blog?.title}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110 md:h-[102px] md:w-[120px]"
-                />
+                <div className="h-[102px] w-[120px] overflow-hidden">
+                  <Image
+                    width={120}
+                    height={102}
+                    src={
+                      blog?.image
+                        ? `${process.env.NEXT_PUBLIC_API_URL}/public${blog?.image}`
+                        : '/assets/images/blog/side-blog.png'
+                    }
+                    alt={blog?.alt_tag || blog?.title || 'blog-image-featuted'}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                </div>
               </Link>
 
               <div className="flex w-full flex-col justify-between gap-3 py-2">
