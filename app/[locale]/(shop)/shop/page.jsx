@@ -1,31 +1,11 @@
-// import ShopQualityPromise from '@/components/containers/shop/ShopQualityPromise';
-// import TerpeneProductsContainer from '@/components/containers/shop/TerpeneProductsContainer';
-// import { getCategories } from '@/services/get-categories';
-// import { getCategoryProducts } from '@/services/get-category-products';
-
-// const ShopPage = async () => {
-//   const [categories, categoryProducts] = await Promise.all([getCategories(), getCategoryProducts('all')]);
-//   const websiteUrl = process.env.NEXT_PUBLIC_WEBSITE_URL || 'https://loudspectrum.com';
-
-//   // Filter only active categories
-//   const activeCategories = categories?.data?.categories?.filter((category) => category.status === 'Active') || [];
-
-//   return (
-//     <>
-//       <TerpeneProductsContainer categories={activeCategories} categoryProducts={categoryProducts?.data} />
-//       <div className="container pt-20 pb-[160px]">
-//         <ShopQualityPromise />
-//       </div>
-//     </>
-//   );
-// };
-
-// export default ShopPage;
-
 import ShopQualityPromise from '@/components/containers/shop/ShopQualityPromise';
+import ShopQualityPromiseShimmer from '@/components/containers/shop/ShopQualityPromiseShimmer';
 import TerpeneProductsContainer from '@/components/containers/shop/TerpeneProductsContainer';
+import TerpeneProductsContainerShimmer from '@/components/containers/shop/TerpeneProductsContainerShimmer';
 import ShopHero from '@/components/headers/ShopHero';
+import ShopHeroShimmer from '@/components/headers/ShopHeroShimmer';
 import { getCategories } from '@/services/get-categories';
+import { Suspense } from 'react';
 
 const websiteUrl = process.env.NEXT_PUBLIC_WEBSITE_URL || 'https://loudspectrum.com';
 
@@ -148,18 +128,41 @@ export async function generateMetadata() {
   };
 }
 
-const ShopPage = async () => {
-  const categories = await getCategories();
+// Async component for shop hero
+async function ShopHeroContent() {
+  return <ShopHero />;
+}
 
+// Async component for terpene products container
+async function TerpeneProductsContainerContent() {
+  const categories = await getCategories();
   const activeCategories = categories?.data?.categories?.filter((category) => category.status === 'Active') || [];
 
+  return <TerpeneProductsContainer categories={activeCategories} categoryId={'all'} />;
+}
+
+// Async component for shop quality promise
+async function ShopQualityPromiseContent() {
+  return <ShopQualityPromise />;
+}
+
+const ShopPage = async () => {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
-      <ShopHero />
-      <TerpeneProductsContainer categories={activeCategories} categoryId={'all'} />
+
+      <Suspense fallback={<ShopHeroShimmer />}>
+        <ShopHeroContent />
+      </Suspense>
+
+      <Suspense fallback={<TerpeneProductsContainerShimmer />}>
+        <TerpeneProductsContainerContent />
+      </Suspense>
+
       <div className="container pt-20 pb-[160px]">
-        <ShopQualityPromise />
+        <Suspense fallback={<ShopQualityPromiseShimmer />}>
+          <ShopQualityPromiseContent />
+        </Suspense>
       </div>
     </>
   );
