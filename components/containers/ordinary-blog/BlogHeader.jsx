@@ -3,10 +3,6 @@ import { formatDate } from '@/helpers/get-formated-date';
 import Image from 'next/image';
 
 const BlogHeader = ({ blogData }) => {
-  if (!blogData) {
-    return <div>Loading...</div>;
-  }
-
   return (
     <>
       <div className="flex items-end justify-between pb-6 md:pb-[80px]">

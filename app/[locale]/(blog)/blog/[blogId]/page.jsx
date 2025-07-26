@@ -1,6 +1,9 @@
+import BlogContentsShimmer from '@/components/containers/ordinary-blog/BlogContentsShimmer';
 import BlogHeader from '@/components/containers/ordinary-blog/BlogHeader';
+import BlogHeaderShimmer from '@/components/containers/ordinary-blog/BlogHeaderShimmer';
 import DynamicBreadcrumb from '@/components/DynamicBreadcrumb';
 import { getBlogDetails } from '@/services/get-blog-details';
+import { Suspense } from 'react';
 import BlogContents from '../../../../../components/containers/ordinary-blog/BlogContents';
 
 // Generate JSON-LD structured data
@@ -124,37 +127,44 @@ export async function generateMetadata({ params }) {
   }
 }
 
+// Async component for blog header
+async function BlogHeaderContent({ blogId }) {
+  const blogData = await getBlogDetails(blogId);
+
+  if (!blogData || blogData.error) {
+    throw new Error('Blog not found');
+  }
+
+  return <BlogHeader blogData={blogData} />;
+}
+
+// Async component for blog contents
+async function BlogContentsContent({ blogId }) {
+  const blogData = await getBlogDetails(blogId);
+
+  if (!blogData || blogData.error) {
+    throw new Error('Blog not found');
+  }
+
+  // Since BlogContents is now async, we need to await it
+  return await BlogContents({ blogData });
+}
+
 const BlogPage = async ({ params }) => {
   const { blogId } = await params;
 
-  // Fetch blog data for the page
-  const blogData = await getBlogDetails(blogId);
-
-  // Handle error or missing blog
-  if (!blogData || blogData.error) {
-    return (
-      <div className="container mt-[200px]">
-        <div className="text-center">
-          <h1 className="mb-4 text-2xl font-bold">Blog Post Not Found</h1>
-          <p>The requested blog post could not be found.</p>
-        </div>
-      </div>
-    );
-  }
-
-  const jsonLd = generateBlogJsonLd(blogData);
-
   return (
     <>
-      {/* JSON-LD structured data */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-
       <div className="">
         <div className="pb-10">
           <DynamicBreadcrumb />
         </div>
-        <BlogHeader blogData={blogData} />
-        <BlogContents blogData={blogData} />
+        <Suspense fallback={<BlogHeaderShimmer />}>
+          <BlogHeaderContent blogId={blogId} />
+        </Suspense>
+        <Suspense fallback={<BlogContentsShimmer />}>
+          <BlogContentsContent blogId={blogId} />
+        </Suspense>
       </div>
     </>
   );
