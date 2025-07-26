@@ -1,5 +1,7 @@
 import ProductDetailsHero from '@/components/headers/ProductDetailsHero';
+import ProductDetailsHeroShimmer from '@/components/headers/ProductDetailsHeroShimmer';
 import { getProductDetails } from '@/services/get-product-details';
+import { Suspense } from 'react';
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
@@ -65,13 +67,20 @@ export async function generateMetadata({ params }) {
   };
 }
 
-const ProductDetailsLayout = async ({ children, params }) => {
-  const { category, slug } = await params;
+// Async component for product details hero
+async function ProductDetailsHeroContent({ slug }) {
   const productDetails = await getProductDetails(slug);
+  return <ProductDetailsHero product={productDetails} />;
+}
+
+const ProductDetailsLayout = async ({ children, params }) => {
+  const { slug } = await params;
 
   return (
     <div className="">
-      <ProductDetailsHero product={productDetails} />
+      <Suspense fallback={<ProductDetailsHeroShimmer />}>
+        <ProductDetailsHeroContent slug={slug} />
+      </Suspense>
       <main>{children}</main>
     </div>
   );

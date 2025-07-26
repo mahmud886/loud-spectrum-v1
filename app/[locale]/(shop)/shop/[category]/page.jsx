@@ -1,8 +1,12 @@
 import ShopQualityPromise from '@/components/containers/shop/ShopQualityPromise';
+import ShopQualityPromiseShimmer from '@/components/containers/shop/ShopQualityPromiseShimmer';
 import TerpeneProductsContainer from '@/components/containers/shop/TerpeneProductsContainer';
+import TerpeneProductsContainerShimmer from '@/components/containers/shop/TerpeneProductsContainerShimmer';
 import ShopHero from '@/components/headers/ShopHero';
+import ShopHeroShimmer from '@/components/headers/ShopHeroShimmer';
 import { decodeCategoryFromUrl } from '@/helpers/url-category-utils';
 import { getCategories } from '@/services/get-categories';
+import { Suspense } from 'react';
 
 const websiteUrl = process.env.NEXT_PUBLIC_WEBSITE_URL || 'https://loudspectrum.com';
 
@@ -127,28 +131,65 @@ export async function generateMetadata({ params }) {
   };
 }
 
-const CategoryShopPage = async ({ params }) => {
+// Async component for shop hero with category
+async function ShopHeroContent({ category }) {
+  return <ShopHero category={category} />;
+}
+
+// Async component for terpene products container with category
+async function TerpeneProductsContainerContent({ categoryId, categories }) {
+  return <TerpeneProductsContainer categories={categories} categoryId={categoryId} />;
+}
+
+// Async component for shop quality promise
+async function ShopQualityPromiseContent() {
+  return <ShopQualityPromise />;
+}
+
+// Main async component that fetches category data
+async function CategoryShopContent({ params }) {
   const { category } = await params;
-
   const decodedCategory = await decodeCategoryFromUrl(category);
-
   const categories = await getCategories();
-
-  // const [categories, categoryProducts] = await Promise.all([getCategories(), getCategoryProducts('all')]);
-
   const activeCategories = categories?.data?.categories?.filter((category) => category.status === 'Active') || [];
-
   const exactCategory = activeCategories?.find((category) => category.slug === decodedCategory);
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
-      <ShopHero category={exactCategory} />
-      <TerpeneProductsContainer categories={activeCategories} categoryId={exactCategory?._id} />
+
+      <Suspense fallback={<ShopHeroShimmer />}>
+        <ShopHeroContent category={exactCategory} />
+      </Suspense>
+
+      <Suspense fallback={<TerpeneProductsContainerShimmer />}>
+        <TerpeneProductsContainerContent categories={activeCategories} categoryId={exactCategory?._id} />
+      </Suspense>
+
       <div className="container pt-20 pb-[160px]">
-        <ShopQualityPromise />
+        <Suspense fallback={<ShopQualityPromiseShimmer />}>
+          <ShopQualityPromiseContent />
+        </Suspense>
       </div>
     </>
+  );
+}
+
+const CategoryShopPage = async ({ params }) => {
+  return (
+    <Suspense
+      fallback={
+        <>
+          <ShopHeroShimmer />
+          <TerpeneProductsContainerShimmer />
+          <div className="container pt-20 pb-[160px]">
+            <ShopQualityPromiseShimmer />
+          </div>
+        </>
+      }
+    >
+      <CategoryShopContent params={params} />
+    </Suspense>
   );
 };
 
