@@ -209,19 +209,27 @@ const ChooseYourCourier = () => {
   }, [totalVolume, selectedCourier, t, user?.role, shippingAddress?.country, shippingAddress?.province]);
 
   // Get display cost for shipping type (dynamic or default)
+  // Shimmer component for loading state
+  const Shimmer = () => (
+    <span
+      className="inline-block h-4 w-12 animate-pulse rounded bg-gray-200 align-middle"
+      aria-label="Loading shipping cost"
+    />
+  );
+
   const getDisplayCost = (shippingType) => {
     const apiEnabledTypes = ['fedex-2-day', 'international-economy', 'ups-ground'];
 
     if (apiEnabledTypes.includes(shippingType.value) && selectedShippingType === shippingType.value) {
       if (shippingCostLoading) {
-        return 'Loading...';
+        return <Shimmer />;
       }
       if (dynamicShippingCost !== null) {
         return `$${dynamicShippingCost.toFixed(2)}`;
       }
     }
 
-    return shippingType.cost > 0 ? `$${shippingType.cost.toFixed(2)}` : '';
+    // return shippingType.cost > 0 ? `$${shippingType.cost.toFixed(2)}` : '';
   };
 
   // Handle courier change
