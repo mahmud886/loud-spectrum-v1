@@ -9,7 +9,8 @@ const SideBlogs = ({ blogs }) => {
       {blogs?.map((blog, index) => (
         <div key={index} className={`group mt-10 md:mt-0 ${index !== 0 ? 'border-umbra-40 border-t py-5' : 'pb-5'}`}>
           <div className="flex flex-col items-center gap-5 overflow-hidden bg-white transition-all duration-300 md:flex-row">
-            <Link href={`/blog/${blog?._id}`} className="w-full overflow-hidden md:w-[177px]">
+            <Link href={`/blog/${blog?.identifier_url}`} className="w-full overflow-hidden md:w-[177px]">
+              {/* <Link href={`/blog/${blog?._id}`} className="w-full overflow-hidden md:w-[177px]"> */}
               <div className="h-[150px] w-[177px]">
                 <Image
                   width={177}
@@ -41,7 +42,8 @@ const SideBlogs = ({ blogs }) => {
                     {blog?.created_at ? formatDate(blog.created_at) : ''}
                   </p>
                 </div>
-                <Link href={`/blog/${blog?._id}`} className="group w-full">
+                <Link href={`/blog/${blog?.identifier_url}`} className="group w-full">
+                  {/* <Link href={`/blog/${blog?._id}`} className="group w-full"> */}
                   <h2 className="text-umbra-100 group-hover:text-umbra-40 font-sans text-[18px] leading-[130%] font-normal tracking-normal transition-colors duration-300 md:text-[22px]">
                     {blog?.title}
                   </h2>

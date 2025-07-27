@@ -8,7 +8,8 @@ const FeaturedBlog = ({ featuredBlog }) => {
     <>
       <div className="group flex flex-col justify-between space-y-6">
         <div className="relative overflow-hidden">
-          <Link href={`/blog/${featuredBlog?._id}`} className="group w-full">
+          <Link href={`/blog/${featuredBlog?.identifier_url}`} className="group w-full">
+            {/* <Link href={`/blog/${featuredBlog?._id}`} className="group w-full"> */}
             <div className="h-[380px] w-[685px]">
               <Image
                 src={
@@ -25,7 +26,8 @@ const FeaturedBlog = ({ featuredBlog }) => {
           </Link>
           <div className="absolute top-[8%] right-[5%]">
             <Link
-              href={`/blog/${featuredBlog?._id}`}
+              href={`/blog/${featuredBlog?.identifier_url}`}
+              // href={`/blog/${featuredBlog?._id}`}
               className="outline-button-black !md:text-[17px] cursor-pointer rounded-full px-3 py-1 !text-[14px] md:px-6 md:py-2"
             >
               Read More
@@ -57,7 +59,8 @@ const FeaturedBlog = ({ featuredBlog }) => {
             </p>
           </div>
         </div>
-        <Link href={`/blog/${featuredBlog?._id}`} className="group w-full">
+        <Link href={`/blog/${featuredBlog?.identifier_url}`} className="group w-full">
+          {/* <Link href={`/blog/${featuredBlog?._id}`} className="group w-full"> */}
           <h2 className="text-umbra-100 group-hover:text-umbra-40 font-sans text-[18px] leading-[130%] font-normal tracking-normal transition-colors duration-300 md:text-[28px]">
             {featuredBlog?.title}
           </h2>
@@ -66,7 +69,8 @@ const FeaturedBlog = ({ featuredBlog }) => {
 
       <div className="center mt-10 flex w-full items-center justify-between pb-0 md:hidden">
         <Link
-          href={`/blog/${featuredBlog?._id}`}
+          href={`/blog/${featuredBlog?.identifier_url}`}
+          // href={`/blog/${featuredBlog?._id}`}
           className="main-button-black border-umbra-100 flex w-full items-center justify-center rounded-full border-1 px-6 py-3 text-[17px]"
         >
           Read featured article

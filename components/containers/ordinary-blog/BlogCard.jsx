@@ -9,7 +9,8 @@ const BlogCard = ({ blog }) => {
       <div className="relative">
         <div>
           <div className="overflow-hidden">
-            <Link href={`/blog/${blog?._id}`} className="group w-full">
+            <Link href={`/blog/${blog?.identifier_url}`} className="group w-full">
+              {/* <Link href={`/blog/${blog?._id}`} className="group w-full"> */}
               <div className="h-[380px] w-[413px]">
                 <Image
                   src={
@@ -27,7 +28,8 @@ const BlogCard = ({ blog }) => {
           </div>
           <div className="absolute top-[8%] right-[5%]">
             <Link
-              href={`/blog/${blog?._id}`}
+              href={`/blog/${blog?.identifier_url}`}
+              // href={`/blog/${blog?._id}`}
               className="outline-button-black !md:text-[17px] cursor-pointer rounded-full px-3 py-1 !text-[14px] md:px-6 md:py-2"
             >
               Read More
@@ -54,7 +56,8 @@ const BlogCard = ({ blog }) => {
           </p>
         </div>
       </div>
-      <Link href={`/blog/${blog?._id}`} className="group w-full">
+      <Link href={`/blog/${blog?.identifier_url}`} className="group w-full">
+        {/* <Link href={`/blog/${blog?._id}`} className="group w-full"> */}
         <h2 className="text-umbra-100 group-hover:text-umbra-40 font-sans text-[18px] leading-[130%] font-normal tracking-normal transition-colors duration-300 md:text-[22px]">
           {blog?.title}
         </h2>

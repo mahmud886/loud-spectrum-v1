@@ -1,10 +1,10 @@
+import BlogContents from '@/components/containers/ordinary-blog/BlogContents';
 import BlogContentsShimmer from '@/components/containers/ordinary-blog/BlogContentsShimmer';
 import BlogHeader from '@/components/containers/ordinary-blog/BlogHeader';
 import BlogHeaderShimmer from '@/components/containers/ordinary-blog/BlogHeaderShimmer';
 import DynamicBreadcrumb from '@/components/DynamicBreadcrumb';
-import { getBlogDetails } from '@/services/get-blog-details';
+import { getBlogDetailsBySlug } from '@/services/get-blog-details-by-slug';
 import { Suspense } from 'react';
-import BlogContents from '../../../../../components/containers/ordinary-blog/BlogContents';
 
 // Generate JSON-LD structured data
 function generateBlogJsonLd(blog) {
@@ -44,10 +44,10 @@ function generateBlogJsonLd(blog) {
 
 // Generate metadata for SEO
 export async function generateMetadata({ params }) {
-  const { blogId } = await params;
+  const { identifierUrl } = await params;
 
   try {
-    const blogData = await getBlogDetails(blogId);
+    const blogData = await getBlogDetailsBySlug(identifierUrl);
 
     if (!blogData || blogData.error) {
       return {
@@ -73,7 +73,7 @@ export async function generateMetadata({ params }) {
       openGraph: {
         title: blog.meta_title || blog.title,
         description: blog.meta_description || blog.content?.replace(/<[^>]*>/g, '').substring(0, 160),
-        url: `${baseUrl}/blog/${blogId}`,
+        url: `${baseUrl}/blog/${identifierUrl}`,
         siteName: 'Loud Spectrum',
         images: fullImageUrl
           ? [
@@ -105,7 +105,7 @@ export async function generateMetadata({ params }) {
 
       // Additional metadata
       alternates: {
-        canonical: `${baseUrl}/blog/${blogId}`,
+        canonical: `${baseUrl}/blog/${identifierUrl}`,
       },
 
       // Robots metadata
@@ -128,8 +128,8 @@ export async function generateMetadata({ params }) {
 }
 
 // Async component for blog header
-async function BlogHeaderContent({ blogId }) {
-  const blogData = await getBlogDetails(blogId);
+async function BlogHeaderContent({ identifierUrl }) {
+  const blogData = await getBlogDetailsBySlug(identifierUrl);
 
   if (!blogData || blogData.error) {
     throw new Error('Blog not found');
@@ -139,8 +139,8 @@ async function BlogHeaderContent({ blogId }) {
 }
 
 // Async component for blog contents
-async function BlogContentsContent({ blogId }) {
-  const blogData = await getBlogDetails(blogId);
+async function BlogContentsContent({ identifierUrl }) {
+  const blogData = await getBlogDetailsBySlug(identifierUrl);
 
   if (!blogData || blogData.error) {
     throw new Error('Blog not found');
@@ -151,7 +151,7 @@ async function BlogContentsContent({ blogId }) {
 }
 
 const BlogPage = async ({ params }) => {
-  const { blogId } = await params;
+  const { identifierUrl } = await params;
 
   return (
     <>
@@ -160,10 +160,10 @@ const BlogPage = async ({ params }) => {
           <DynamicBreadcrumb />
         </div>
         <Suspense fallback={<BlogHeaderShimmer />}>
-          <BlogHeaderContent blogId={blogId} />
+          <BlogHeaderContent identifierUrl={identifierUrl} />
         </Suspense>
         <Suspense fallback={<BlogContentsShimmer />}>
-          <BlogContentsContent blogId={blogId} />
+          <BlogContentsContent identifierUrl={identifierUrl} />
         </Suspense>
       </div>
     </>

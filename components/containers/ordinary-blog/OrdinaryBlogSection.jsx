@@ -42,7 +42,7 @@ const OrdinaryBlogSection = ({ blogs }) => {
           }
         >
           {blogs?.map((blog) => (
-            <BlogCard key={blog._id} blog={blog} />
+            <BlogCard key={blog?.identifier_url} blog={blog} />
           ))}
         </Suspense>
       </div>
