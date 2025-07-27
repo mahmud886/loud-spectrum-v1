@@ -318,6 +318,14 @@ const ChooseYourCourier = () => {
     }
   };
 
+  // Reset courier when total volume changes
+  useEffect(() => {
+    if (selectedCourier) {
+      dispatch(setSelectedCourier(''));
+      dispatch(setShippingType(''));
+    }
+  }, [totalVolume, dispatch, shippingAddress?.country, shippingAddress?.province, shippingAddress?.postalCode]);
+
   // Reset shipping type if current selection is not available for new volume/courier
   useEffect(() => {
     if (selectedShippingType && availableShippingTypes.length > 0) {
