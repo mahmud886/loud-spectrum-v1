@@ -15,7 +15,7 @@ export const getVerifyDiscountCoupon = async (couponCode) => {
     if (!authToken) {
       throw new Error('Unauthorized: Authentication token is required');
     }
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/coupons/verify`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/coupons-public/verify`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
