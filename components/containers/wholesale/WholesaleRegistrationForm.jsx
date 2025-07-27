@@ -2,11 +2,12 @@
 
 import { Checkbox } from '@/components/ui/checkbox';
 import { useRouter } from '@/i18n/navigation';
-import { setCredentials } from '@/lib/store/slices/authSlice';
+import { logout, selectIsAuthenticated } from '@/lib/store/slices/authSlice';
+import { clearCheckoutOnLogin } from '@/lib/store/slices/checkoutSlice';
 import { Eye, EyeOff } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'sonner';
 import { z } from 'zod';
 
@@ -14,6 +15,7 @@ const WholesaleRegistrationForm = ({ id }) => {
   const t = useTranslations('Wholesale');
   const router = useRouter();
   const dispatch = useDispatch();
+  const isAuthenticated = useSelector(selectIsAuthenticated);
   const [showPassword, setShowPassword] = useState(false);
   const [agree, setAgree] = useState(false);
   const [errors, setErrors] = useState({});
@@ -80,23 +82,42 @@ const WholesaleRegistrationForm = ({ id }) => {
         throw new Error(result.message || 'Registration failed');
       }
 
-      dispatch(
-        setCredentials({
-          id: result?.data?.id || '',
-          name: result?.data?.name || '',
-          email: result?.data?.email || '',
-          phone_number: result?.data?.phone_number || validatedData.phone_number,
-          role: result?.data?.role || 'wholesaler',
-          status: result?.data?.status || '',
-          token: result?.data?.token || '',
-        }),
-      );
+      // dispatch(
+      //   setCredentials({
+      //     id: result?.data?.id || '',
+      //     name: result?.data?.name || '',
+      //     email: result?.data?.email || '',
+      //     phone_number: result?.data?.phone_number || validatedData.phone_number,
+      //     role: result?.data?.role || 'wholesaler',
+      //     status: result?.data?.status || '',
+      //     token: result?.data?.token || '',
+      //   }),
+      // );
+
+      if (isAuthenticated) {
+        try {
+          const response = await fetch('/api/auth/logout', {
+            method: 'POST',
+          });
+
+          if (response.ok) {
+            dispatch(logout());
+            dispatch(clearCheckoutOnLogin());
+            // Optionally, you can show a toast or not
+            // toast.success(t('Navbar.logout_success'));
+          }
+        } catch (error) {
+          // Optionally, you can show a toast or not
+          // toast.error(t('Navbar.logout_failed'));
+          console.error('Logout failed:', error);
+        }
+      }
 
       toast.success(result?.message || 'Registration successful!', {
         description: result?.data?.status,
       });
 
-      router.push('/login');
+      router.push(`/login?from=${encodeURIComponent('wholesale-registration#wholesale-under-review')}`);
 
       await fetch('/api/emails/wholesale-registration/review', {
         method: 'POST',
