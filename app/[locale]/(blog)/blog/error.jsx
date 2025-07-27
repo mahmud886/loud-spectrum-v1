@@ -13,7 +13,7 @@ export default function BlogSectionError({ error, reset }) {
   }, [error]);
 
   return (
-    <div className="container mx-auto mt-[200px] px-4 py-16">
+    <div className="container mx-auto my-[100px]">
       <div className="mx-auto max-w-2xl text-center">
         {/* Error Icon */}
         <div className="mb-8">
@@ -59,14 +59,14 @@ export default function BlogSectionError({ error, reset }) {
         <div className="flex flex-col justify-center gap-4 sm:flex-row">
           <button
             onClick={reset}
-            className="bg-primary hover:bg-primary/90 focus:ring-primary inline-flex items-center rounded-md border border-transparent px-6 py-3 text-base font-medium text-white transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-none"
+            className="main-button-black inline-flex items-center rounded-full px-6 py-3 text-base font-medium transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-none"
           >
             {t('sectionError.tryAgain', { defaultValue: 'Try Again' })}
           </button>
 
           <Link
             href="/"
-            className="focus:ring-primary inline-flex items-center rounded-md border border-gray-300 bg-white px-6 py-3 text-base font-medium text-gray-700 transition-colors hover:bg-gray-50 focus:ring-2 focus:ring-offset-2 focus:outline-none"
+            className="outline-button-white inline-flex items-center rounded-full px-6 py-3 text-base font-medium transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-none"
           >
             {t('sectionError.backToHome', { defaultValue: 'Back to Home' })}
           </Link>

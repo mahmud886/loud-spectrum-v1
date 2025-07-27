@@ -1040,5 +1040,51 @@
         "faq": "FAQ"
       }
     }
+  },
+  "MainPage": {
+    "notFound": {
+      "title": "Page Not Found",
+      "description": "Sorry, the page you're looking for doesn't exist or may have been moved.",
+      "backToHome": "Back to Home",
+      "contactUs": "Contact Us",
+      "explore": {
+        "title": "Explore Our Site",
+        "description": "While you're here, why not explore some of our other great content?",
+        "about": "About Us",
+        "aboutDescription": "Learn about our mission and values",
+        "shop": "Shop",
+        "shopDescription": "Browse our premium terpene products",
+        "contact": "Contact",
+        "contactDescription": "Get in touch with our team"
+      }
+    },
+    "error": {
+      "title": "Something went wrong",
+      "description": "We encountered an error while loading this page. Please try again or contact support if the problem persists.",
+      "tryAgain": "Try Again",
+      "backToHome": "Back to Home",
+      "development": {
+        "title": "Development Error Details",
+        "description": "This error information is only visible in development mode.",
+        "showDetails": "Show Error Details"
+      },
+      "alternatives": {
+        "title": "Explore Other Sections",
+        "description": "While we fix this issue, you can explore other parts of our website.",
+        "shop": "Visit Shop",
+        "shopDescription": "Browse our premium terpene products",
+        "about": "About Us",
+        "aboutDescription": "Learn about our mission and values",
+        "contact": "Contact Us",
+        "contactDescription": "Get in touch with our team",
+        "faq": "FAQ",
+        "faqDescription": "Find answers to common questions"
+      },
+      "contactSupport": {
+        "title": "Still having issues?",
+        "description": "If this problem continues, please contact our support team and we'll help you resolve it.",
+        "contactUs": "Contact Support"
+      }
+    }
   }
 }

@@ -1040,5 +1040,51 @@
         "faq": "FAQ"
       }
     }
+  },
+  "MainPage": {
+    "notFound": {
+      "title": "Page non trouvée",
+      "description": "Désolé, la page que vous recherchez n'existe pas ou a peut-être été déplacée.",
+      "backToHome": "Retour à l'Accueil",
+      "contactUs": "Contactez-nous",
+      "explore": {
+        "title": "Explorez Notre Site",
+        "description": "Pendant que vous êtes ici, pourquoi ne pas explorer certains de nos autres excellents contenus ?",
+        "about": "À Propos",
+        "aboutDescription": "Découvrez notre mission et nos valeurs",
+        "shop": "Boutique",
+        "shopDescription": "Parcourez nos produits terpènes premium",
+        "contact": "Contact",
+        "contactDescription": "Contactez notre équipe"
+      }
+    },
+    "error": {
+      "title": "Quelque chose s'est mal passé",
+      "description": "Nous avons rencontré une erreur lors du chargement de cette page. Veuillez réessayer ou contacter le support si le problème persiste.",
+      "tryAgain": "Réessayer",
+      "backToHome": "Retour à l'Accueil",
+      "development": {
+        "title": "Détails de l'erreur de développement",
+        "description": "Ces informations d'erreur ne sont visibles qu'en mode développement.",
+        "showDetails": "Afficher les détails de l'erreur"
+      },
+      "alternatives": {
+        "title": "Explorer d'Autres Sections",
+        "description": "Pendant que nous résolvons ce problème, vous pouvez explorer d'autres parties de notre site web.",
+        "shop": "Visiter la Boutique",
+        "shopDescription": "Parcourez nos produits terpènes premium",
+        "about": "À Propos",
+        "aboutDescription": "Découvrez notre mission et nos valeurs",
+        "contact": "Contactez-nous",
+        "contactDescription": "Contactez notre équipe",
+        "faq": "FAQ",
+        "faqDescription": "Trouvez des réponses aux questions courantes"
+      },
+      "contactSupport": {
+        "title": "Vous avez encore des problèmes ?",
+        "description": "Si ce problème persiste, veuillez contacter notre équipe de support et nous vous aiderons à le résoudre.",
+        "contactUs": "Contacter le Support"
+      }
+    }
   }
 }

@@ -1040,5 +1040,51 @@
         "faq": "よくある質問"
       }
     }
+  },
+  "MainPage": {
+    "notFound": {
+      "title": "ページが見つかりません",
+      "description": "申し訳ございませんが、お探しのページは存在しないか、移動された可能性があります。",
+      "backToHome": "ホームに戻る",
+      "contactUs": "お問い合わせ",
+      "explore": {
+        "title": "サイトを探索",
+        "description": "ここにいる間に、他の素晴らしいコンテンツを探索してみませんか？",
+        "about": "会社概要",
+        "aboutDescription": "私たちのミッションと価値観について学ぶ",
+        "shop": "ショップ",
+        "shopDescription": "プレミアムテルペン製品を閲覧",
+        "contact": "お問い合わせ",
+        "contactDescription": "私たちのチームに連絡"
+      }
+    },
+    "error": {
+      "title": "エラーが発生しました",
+      "description": "このページの読み込み中にエラーが発生しました。もう一度お試しいただくか、問題が続く場合はサポートにお問い合わせください。",
+      "tryAgain": "再試行",
+      "backToHome": "ホームに戻る",
+      "development": {
+        "title": "開発エラーの詳細",
+        "description": "このエラー情報は開発モードでのみ表示されます。",
+        "showDetails": "エラーの詳細を表示"
+      },
+      "alternatives": {
+        "title": "他のセクションを探索",
+        "description": "この問題を解決している間、ウェブサイトの他の部分を探索できます。",
+        "shop": "ショップを訪問",
+        "shopDescription": "プレミアムテルペン製品を閲覧",
+        "about": "会社概要",
+        "aboutDescription": "私たちのミッションと価値観について学ぶ",
+        "contact": "お問い合わせ",
+        "contactDescription": "私たちのチームに連絡",
+        "faq": "よくある質問",
+        "faqDescription": "よくある質問の答えを見つける"
+      },
+      "contactSupport": {
+        "title": "まだ問題がありますか？",
+        "description": "この問題が続く場合は、サポートチームにお問い合わせいただき、解決をお手伝いします。",
+        "contactUs": "サポートにお問い合わせ"
+      }
+    }
   }
 }

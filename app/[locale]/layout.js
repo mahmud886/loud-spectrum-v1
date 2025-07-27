@@ -102,7 +102,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default async function RootLayout({ children, params }) {
+export default async function LocaleLayout({ children, params }) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) {
     notFound();
@@ -139,7 +139,7 @@ export default async function RootLayout({ children, params }) {
         <ReduxProvider>
           <ToastProvider />
           <ScrollToTop>
-            <NextIntlClientProvider>
+            <NextIntlClientProvider locale={locale}>
               <NextTopLoader
                 initialPosition={0.08}
                 crawlSpeed={200}

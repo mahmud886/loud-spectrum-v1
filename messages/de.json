@@ -1039,5 +1039,51 @@
         "faq": "FAQ"
       }
     }
+  },
+  "MainPage": {
+    "notFound": {
+      "title": "Seite nicht gefunden",
+      "description": "Entschuldigung, die gesuchte Seite existiert nicht oder wurde möglicherweise verschoben.",
+      "backToHome": "Zurück zur Startseite",
+      "contactUs": "Kontaktieren Sie uns",
+      "explore": {
+        "title": "Entdecken Sie unsere Website",
+        "description": "Während Sie hier sind, warum erkunden Sie nicht einige unserer anderen großartigen Inhalte?",
+        "about": "Über uns",
+        "aboutDescription": "Erfahren Sie mehr über unsere Mission und Werte",
+        "shop": "Shop",
+        "shopDescription": "Durchsuchen Sie unsere Premium-Terpen-Produkte",
+        "contact": "Kontakt",
+        "contactDescription": "Kontaktieren Sie unser Team"
+      }
+    },
+    "error": {
+      "title": "Etwas ist schiefgelaufen",
+      "description": "Beim Laden dieser Seite ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie den Support, wenn das Problem weiterhin besteht.",
+      "tryAgain": "Erneut versuchen",
+      "backToHome": "Zurück zur Startseite",
+      "development": {
+        "title": "Entwicklungsfehler-Details",
+        "description": "Diese Fehlerinformationen sind nur im Entwicklungsmodus sichtbar.",
+        "showDetails": "Fehlerdetails anzeigen"
+      },
+      "alternatives": {
+        "title": "Andere Bereiche erkunden",
+        "description": "Während wir dieses Problem beheben, können Sie andere Teile unserer Website erkunden.",
+        "shop": "Shop besuchen",
+        "shopDescription": "Durchsuchen Sie unsere Premium-Terpen-Produkte",
+        "about": "Über uns",
+        "aboutDescription": "Erfahren Sie mehr über unsere Mission und Werte",
+        "contact": "Kontaktieren Sie uns",
+        "contactDescription": "Kontaktieren Sie unser Team",
+        "faq": "FAQ",
+        "faqDescription": "Finden Sie Antworten auf häufige Fragen"
+      },
+      "contactSupport": {
+        "title": "Haben Sie immer noch Probleme?",
+        "description": "Wenn dieses Problem weiterhin besteht, kontaktieren Sie bitte unser Support-Team und wir helfen Ihnen dabei, es zu lösen.",
+        "contactUs": "Support kontaktieren"
+      }
+    }
   }
 }

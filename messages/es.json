@@ -1039,5 +1039,51 @@
         "faq": "FAQ"
       }
     }
+  },
+  "MainPage": {
+    "notFound": {
+      "title": "Página no encontrada",
+      "description": "Lo sentimos, la página que buscas no existe o puede haber sido movida.",
+      "backToHome": "Volver al Inicio",
+      "contactUs": "Contáctanos",
+      "explore": {
+        "title": "Explora Nuestro Sitio",
+        "description": "Mientras estás aquí, ¿por qué no exploras algunos de nuestros otros excelentes contenidos?",
+        "about": "Acerca de Nosotros",
+        "aboutDescription": "Conoce nuestra misión y valores",
+        "shop": "Tienda",
+        "shopDescription": "Explora nuestros productos terpenos premium",
+        "contact": "Contacto",
+        "contactDescription": "Ponte en contacto con nuestro equipo"
+      }
+    },
+    "error": {
+      "title": "Algo salió mal",
+      "description": "Encontramos un error al cargar esta página. Por favor, inténtalo de nuevo o contacta con soporte si el problema persiste.",
+      "tryAgain": "Intentar de Nuevo",
+      "backToHome": "Volver al Inicio",
+      "development": {
+        "title": "Detalles del error de desarrollo",
+        "description": "Esta información de error solo es visible en modo desarrollo.",
+        "showDetails": "Mostrar detalles del error"
+      },
+      "alternatives": {
+        "title": "Explorar Otras Secciones",
+        "description": "Mientras solucionamos este problema, puedes explorar otras partes de nuestro sitio web.",
+        "shop": "Visitar Tienda",
+        "shopDescription": "Explora nuestros productos terpenos premium",
+        "about": "Acerca de Nosotros",
+        "aboutDescription": "Conoce nuestra misión y valores",
+        "contact": "Contáctanos",
+        "contactDescription": "Ponte en contacto con nuestro equipo",
+        "faq": "FAQ",
+        "faqDescription": "Encuentra respuestas a preguntas comunes"
+      },
+      "contactSupport": {
+        "title": "¿Sigues teniendo problemas?",
+        "description": "Si este problema continúa, por favor contacta con nuestro equipo de soporte y te ayudaremos a resolverlo.",
+        "contactUs": "Contactar Soporte"
+      }
+    }
   }
 }
