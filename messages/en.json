@@ -942,5 +942,103 @@
       "title": "SECTION 17 – SECTION 17 – SECTION 17 – SECTION 17 – QUESTIONS AND CONTACT INFORMATION",
       "content": ["If you have any questions about these Terms, please contact us."]
     }
+  },
+  "BlogPage": {
+    "title": "Beyond Ordinary Blog",
+    "metadata": {
+      "title": "Beyond Ordinary Blog | Loud Spectrum",
+      "description": "Explore our collection of articles about terpenes, flavor science, and the extraordinary world of botanical extracts. Stay informed with Loud Spectrum's insights and expertise.",
+      "keywords": "blog, terpenes, flavor science, botanical extracts, loud spectrum, articles, insights",
+      "fallbackTitle": "Blog | Loud Spectrum",
+      "fallbackDescription": "Explore our collection of articles about terpenes and flavor science."
+    },
+    "content": {
+      "noBlogsAvailable": {
+        "title": "No Blog Posts Available",
+        "description": "We're currently working on new content. Please check back soon!",
+        "backToHome": "Back to Home",
+        "contactUs": "Contact Us"
+      },
+      "noValidBlogs": {
+        "title": "No Valid Blog Posts",
+        "description": "We're experiencing some technical issues. Please try again later.",
+        "backToHome": "Back to Home",
+        "contactUs": "Contact Us"
+      },
+      "resultsCount": "results for",
+      "all": "all"
+    },
+    "featured": {
+      "noFeaturedBlog": {
+        "title": "No Featured Blog Available",
+        "description": "We're working on new featured content."
+      },
+      "readMore": "Read More",
+      "featured": "Featured",
+      "readFeaturedArticle": "Read featured article"
+    },
+    "sideBlogs": {
+      "noRecentPosts": {
+        "title": "No Recent Posts",
+        "description": "Check back soon for new content."
+      },
+      "noValidPosts": {
+        "title": "No Valid Posts",
+        "description": "We're experiencing some technical issues."
+      }
+    },
+    "similarReads": {
+      "title": "Similar Reads",
+      "noSimilarPosts": "No similar posts available at the moment."
+    },
+    "notFound": {
+      "title": "Blog Post Not Found",
+      "description": "Sorry, the blog post you're looking for doesn't exist or may have been moved.",
+      "backToBlog": "Back to Blog",
+      "backToHome": "Back to Home",
+      "searchSuggestion": {
+        "title": "Looking for something specific?",
+        "description": "Try browsing our blog categories or use the search function to find what you're looking for.",
+        "browseBlog": "Browse all blog posts"
+      }
+    },
+    "error": {
+      "title": "Something went wrong",
+      "description": "We encountered an error while loading this blog post. Please try again or contact support if the problem persists.",
+      "tryAgain": "Try Again",
+      "backToBlog": "Back to Blog",
+      "contactSupport": {
+        "title": "Still having issues?",
+        "description": "If this problem continues, please contact our support team and we'll help you resolve it.",
+        "contactUs": "Contact Support"
+      }
+    },
+    "sectionNotFound": {
+      "title": "Blog Section Not Found",
+      "description": "Sorry, the blog section you're looking for doesn't exist or may have been moved.",
+      "backToHome": "Back to Home",
+      "contactUs": "Contact Us",
+      "explore": {
+        "title": "Explore Our Site",
+        "description": "While you're here, why not explore some of our other great content?",
+        "about": "About Us",
+        "shop": "Shop",
+        "contact": "Contact"
+      }
+    },
+    "sectionError": {
+      "title": "Blog Loading Error",
+      "description": "We encountered an error while loading the blog section. Please try again or contact support if the problem persists.",
+      "tryAgain": "Try Again",
+      "backToHome": "Back to Home",
+      "alternatives": {
+        "title": "Explore Other Sections",
+        "description": "While we fix this issue, you can explore other parts of our website.",
+        "shop": "Visit Shop",
+        "about": "About Us",
+        "contact": "Contact Us",
+        "faq": "FAQ"
+      }
+    }
   }
 }

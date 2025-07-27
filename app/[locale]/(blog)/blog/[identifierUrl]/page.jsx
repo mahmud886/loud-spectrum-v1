@@ -4,6 +4,7 @@ import BlogHeader from '@/components/containers/ordinary-blog/BlogHeader';
 import BlogHeaderShimmer from '@/components/containers/ordinary-blog/BlogHeaderShimmer';
 import DynamicBreadcrumb from '@/components/DynamicBreadcrumb';
 import { getBlogDetailsBySlug } from '@/services/get-blog-details-by-slug';
+import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 
 // Generate JSON-LD structured data
@@ -48,14 +49,6 @@ export async function generateMetadata({ params }) {
 
   try {
     const blogData = await getBlogDetailsBySlug(identifierUrl);
-
-    if (!blogData || blogData.error) {
-      return {
-        title: 'Blog Not Found',
-        description: 'The requested blog post could not be found.',
-      };
-    }
-
     const blog = blogData;
     const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'https://loudspectrum.com';
     const fullImageUrl = blog.image ? `${baseUrl}${blog.image}` : null;
@@ -131,8 +124,8 @@ export async function generateMetadata({ params }) {
 async function BlogHeaderContent({ identifierUrl }) {
   const blogData = await getBlogDetailsBySlug(identifierUrl);
 
-  if (!blogData || blogData.error) {
-    throw new Error('Blog not found');
+  if (!blogData || blogData.error || blogData.notFound) {
+    notFound();
   }
 
   return <BlogHeader blogData={blogData} />;
@@ -142,19 +135,18 @@ async function BlogHeaderContent({ identifierUrl }) {
 async function BlogContentsContent({ identifierUrl }) {
   const blogData = await getBlogDetailsBySlug(identifierUrl);
 
-  if (!blogData || blogData.error) {
-    throw new Error('Blog not found');
+  if (!blogData || blogData.error || blogData.notFound) {
+    notFound();
   }
 
-  // Since BlogContents is now async, we need to await it
-  return await BlogContents({ blogData });
+  return <BlogContents blogData={blogData} />;
 }
 
 const BlogPage = async ({ params }) => {
   const { identifierUrl } = await params;
 
   return (
-    <>
+    <div className="container mt-[200px]">
       <div className="">
         <div className="pb-10">
           <DynamicBreadcrumb />
@@ -166,7 +158,7 @@ const BlogPage = async ({ params }) => {
           <BlogContentsContent identifierUrl={identifierUrl} />
         </Suspense>
       </div>
-    </>
+    </div>
   );
 };
 

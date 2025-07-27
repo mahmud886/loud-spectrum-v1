@@ -1,9 +1,24 @@
 import { Badge } from '@/components/ui/badge';
 import { formatDate } from '@/helpers/get-formated-date';
 import { Link } from '@/i18n/navigation';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
 const FeaturedBlog = ({ featuredBlog }) => {
+  const t = useTranslations('BlogPage');
+
+  // Validate featuredBlog
+  if (!featuredBlog || !featuredBlog._id || !featuredBlog.title) {
+    return (
+      <div className="flex flex-col items-center justify-center space-y-6 py-20">
+        <div className="text-center">
+          <h3 className="mb-2 text-xl font-semibold text-gray-900">{t('featured.noFeaturedBlog.title')}</h3>
+          <p className="text-gray-600">{t('featured.noFeaturedBlog.description')}</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <>
       <div className="group flex flex-col justify-between space-y-6">
@@ -30,7 +45,7 @@ const FeaturedBlog = ({ featuredBlog }) => {
               // href={`/blog/${featuredBlog?._id}`}
               className="outline-button-black !md:text-[17px] cursor-pointer rounded-full px-3 py-1 !text-[14px] md:px-6 md:py-2"
             >
-              Read More
+              {t('featured.readMore')}
             </Link>
           </div>
         </div>
@@ -42,7 +57,7 @@ const FeaturedBlog = ({ featuredBlog }) => {
                 variant="outline"
                 className="main-button-black border-umbra-100 !md:text-[16px] !max-h-[34px] rounded-md border-1 px-2 py-1 !text-[14px] md:px-4 md:py-2"
               >
-                Featured
+                {t('featured.featured')}
               </Badge>
               {featuredBlog?.tags?.split(',').map((tag, idx) => (
                 <Badge
@@ -73,7 +88,7 @@ const FeaturedBlog = ({ featuredBlog }) => {
           // href={`/blog/${featuredBlog?._id}`}
           className="main-button-black border-umbra-100 flex w-full items-center justify-center rounded-full border-1 px-6 py-3 text-[17px]"
         >
-          Read featured article
+          {t('featured.readFeaturedArticle')}
         </Link>
       </div>
     </>

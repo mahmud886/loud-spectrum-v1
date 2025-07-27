@@ -941,5 +941,103 @@
       "title": "SECTION 17 – SECTION 17 – SECTION 17 – SECTION 17 – QUESTIONS AND CONTACT INFORMATION",
       "content": ["If you have any questions about these Terms, please contact us."]
     }
+  },
+  "BlogPage": {
+    "title": "Jenseits des gewöhnlichen Blogs",
+    "metadata": {
+      "title": "Jenseits des gewöhnlichen Blogs | Loud Spectrum",
+      "description": "Entdecken Sie unsere Sammlung von Artikeln über Terpene, Geschmackswissenschaft und die außergewöhnliche Welt der botanischen Extrakte. Bleiben Sie mit Loud Spectrums Einblicken und Expertise informiert.",
+      "keywords": "blog, terpene, geschmackswissenschaft, botanische extrakte, loud spectrum, artikel, einblicke",
+      "fallbackTitle": "Blog | Loud Spectrum",
+      "fallbackDescription": "Entdecken Sie unsere Sammlung von Artikeln über Terpene und Geschmackswissenschaft."
+    },
+    "content": {
+      "noBlogsAvailable": {
+        "title": "Keine Blog-Beiträge verfügbar",
+        "description": "Wir arbeiten derzeit an neuen Inhalten. Bitte schauen Sie bald wieder vorbei!",
+        "backToHome": "Zurück zur Startseite",
+        "contactUs": "Kontaktieren Sie uns"
+      },
+      "noValidBlogs": {
+        "title": "Keine gültigen Blog-Beiträge",
+        "description": "Wir haben einige technische Probleme. Bitte versuchen Sie es später erneut.",
+        "backToHome": "Zurück zur Startseite",
+        "contactUs": "Kontaktieren Sie uns"
+      },
+      "resultsCount": "Ergebnisse für",
+      "all": "alle"
+    },
+    "featured": {
+      "noFeaturedBlog": {
+        "title": "Kein hervorgehobener Blog verfügbar",
+        "description": "Wir arbeiten an neuen hervorgehobenen Inhalten."
+      },
+      "readMore": "Weiterlesen",
+      "featured": "Hervorgehoben",
+      "readFeaturedArticle": "Hervorgehobenen Artikel lesen"
+    },
+    "sideBlogs": {
+      "noRecentPosts": {
+        "title": "Keine aktuellen Beiträge",
+        "description": "Schauen Sie bald wieder vorbei für neue Inhalte."
+      },
+      "noValidPosts": {
+        "title": "Keine gültigen Beiträge",
+        "description": "Wir haben einige technische Probleme."
+      }
+    },
+    "similarReads": {
+      "title": "Ähnliche Lektüre",
+      "noSimilarPosts": "Derzeit sind keine ähnlichen Beiträge verfügbar."
+    },
+    "notFound": {
+      "title": "Blog-Beitrag nicht gefunden",
+      "description": "Entschuldigung, der gesuchte Blog-Beitrag existiert nicht oder wurde möglicherweise verschoben.",
+      "backToBlog": "Zurück zum Blog",
+      "backToHome": "Zurück zur Startseite",
+      "searchSuggestion": {
+        "title": "Suchen Sie etwas Bestimmtes?",
+        "description": "Versuchen Sie, durch unsere Blog-Kategorien zu stöbern oder verwenden Sie die Suchfunktion, um zu finden, was Sie suchen.",
+        "browseBlog": "Alle Blog-Beiträge durchsuchen"
+      }
+    },
+    "error": {
+      "title": "Etwas ist schiefgelaufen",
+      "description": "Beim Laden dieses Blog-Beitrags ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie den Support, wenn das Problem weiterhin besteht.",
+      "tryAgain": "Erneut versuchen",
+      "backToBlog": "Zurück zum Blog",
+      "contactSupport": {
+        "title": "Haben Sie immer noch Probleme?",
+        "description": "Wenn dieses Problem weiterhin besteht, kontaktieren Sie bitte unser Support-Team und wir helfen Ihnen dabei, es zu lösen.",
+        "contactUs": "Support kontaktieren"
+      }
+    },
+    "sectionNotFound": {
+      "title": "Blog-Bereich nicht gefunden",
+      "description": "Entschuldigung, der gesuchte Blog-Bereich existiert nicht oder wurde möglicherweise verschoben.",
+      "backToHome": "Zurück zur Startseite",
+      "contactUs": "Kontaktieren Sie uns",
+      "explore": {
+        "title": "Entdecken Sie unsere Website",
+        "description": "Während Sie hier sind, warum erkunden Sie nicht einige unserer anderen großartigen Inhalte?",
+        "about": "Über uns",
+        "shop": "Shop",
+        "contact": "Kontakt"
+      }
+    },
+    "sectionError": {
+      "title": "Blog-Ladefehler",
+      "description": "Beim Laden des Blog-Bereichs ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie den Support, wenn das Problem weiterhin besteht.",
+      "tryAgain": "Erneut versuchen",
+      "backToHome": "Zurück zur Startseite",
+      "alternatives": {
+        "title": "Andere Bereiche erkunden",
+        "description": "Während wir dieses Problem beheben, können Sie andere Teile unserer Website erkunden.",
+        "shop": "Shop besuchen",
+        "about": "Über uns",
+        "contact": "Kontaktieren Sie uns",
+        "faq": "FAQ"
+      }
+    }
   }
 }

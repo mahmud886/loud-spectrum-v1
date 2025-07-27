@@ -1,14 +1,34 @@
 import BlogCardShimmer from '@/components/containers/ordinary-blog/BlogCardShimmer';
+import BlogPageTitle from '@/components/containers/ordinary-blog/BlogPageTitle';
 import FeaturedBlogShimmer from '@/components/containers/ordinary-blog/FeaturedBlogShimmer';
 import OrdinaryBlogSection from '@/components/containers/ordinary-blog/OrdinaryBlogSection';
 import SideBlogsShimmer from '@/components/containers/ordinary-blog/SideBlogsShimmer';
 import { getBlogs } from '@/services/get-blogs';
+import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 
 // Generate metadata for the blog listing page
 export async function generateMetadata({ params }) {
   const { locale } = await params;
   const websiteUrl = process.env.NEXT_PUBLIC_WEBSITE_URL || 'https://loudspectrum.com';
+
+  // Check if blogs are available for metadata
+  try {
+    const result = await getBlogs();
+    if (result.error || result.notFound) {
+      // If blogs are not available, still return basic metadata
+      return {
+        title: 'Blog | Loud Spectrum',
+        description: 'Explore our collection of articles about terpenes and flavor science.',
+        alternates: {
+          canonical: `${websiteUrl}/blog`,
+        },
+      };
+    }
+  } catch (error) {
+    // If metadata generation fails, return basic metadata
+    console.error('Error generating blog metadata:', error);
+  }
 
   return {
     title: 'Beyond Ordinary Blog | Loud Spectrum',
@@ -77,8 +97,17 @@ export async function generateMetadata({ params }) {
 
 // Blog content component that fetches data
 async function BlogContent() {
-  const blogs = await getBlogs();
-  return <OrdinaryBlogSection blogs={blogs} />;
+  const result = await getBlogs();
+
+  // Handle error cases
+  if (result.error || result.notFound) {
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Blog content error:', result.message);
+    }
+    notFound();
+  }
+
+  return <OrdinaryBlogSection blogs={result.blogs} />;
 }
 
 // Shimmer fallback for the entire blog section
@@ -113,12 +142,7 @@ function BlogSectionShimmer() {
 const BlogPage = async () => {
   return (
     <div className="container mt-[200px]">
-      <div className="space-y-10">
-        <h1 className="text-umbra-100 font-sans text-[35px] leading-[120%] font-normal tracking-normal md:text-[60px]">
-          Beyond Ordinary Blog
-        </h1>
-        <div className="border-1"></div>
-      </div>
+      <BlogPageTitle />
       <main className="">
         <Suspense fallback={<BlogSectionShimmer />}>
           <BlogContent />

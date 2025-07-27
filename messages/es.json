@@ -941,5 +941,103 @@
       "title": "SECTION 17 – SECTION 17 – SECTION 17 – SECTION 17 – QUESTIONS AND CONTACT INFORMATION",
       "content": ["If you have any questions about these Terms, please contact us."]
     }
+  },
+  "BlogPage": {
+    "title": "Blog Más Allá de lo Ordinario",
+    "metadata": {
+      "title": "Blog Más Allá de lo Ordinario | Loud Spectrum",
+      "description": "Explora nuestra colección de artículos sobre terpenos, ciencia del sabor y el mundo extraordinario de los extractos botánicos. Mantente informado con las perspectivas y experiencia de Loud Spectrum.",
+      "keywords": "blog, terpenos, ciencia del sabor, extractos botánicos, loud spectrum, artículos, perspectivas",
+      "fallbackTitle": "Blog | Loud Spectrum",
+      "fallbackDescription": "Explora nuestra colección de artículos sobre terpenos y ciencia del sabor."
+    },
+    "content": {
+      "noBlogsAvailable": {
+        "title": "No Hay Artículos de Blog Disponibles",
+        "description": "Actualmente estamos trabajando en nuevo contenido. ¡Por favor, vuelve pronto!",
+        "backToHome": "Volver al Inicio",
+        "contactUs": "Contáctanos"
+      },
+      "noValidBlogs": {
+        "title": "No Hay Artículos de Blog Válidos",
+        "description": "Estamos experimentando algunos problemas técnicos. Por favor, inténtalo más tarde.",
+        "backToHome": "Volver al Inicio",
+        "contactUs": "Contáctanos"
+      },
+      "resultsCount": "resultados para",
+      "all": "todo"
+    },
+    "featured": {
+      "noFeaturedBlog": {
+        "title": "No Hay Blog Destacado Disponible",
+        "description": "Estamos trabajando en nuevo contenido destacado."
+      },
+      "readMore": "Leer Más",
+      "featured": "Destacado",
+      "readFeaturedArticle": "Leer artículo destacado"
+    },
+    "sideBlogs": {
+      "noRecentPosts": {
+        "title": "No Hay Artículos Recientes",
+        "description": "Vuelve pronto para nuevo contenido."
+      },
+      "noValidPosts": {
+        "title": "No Hay Artículos Válidos",
+        "description": "Estamos experimentando algunos problemas técnicos."
+      }
+    },
+    "similarReads": {
+      "title": "Lecturas Similares",
+      "noSimilarPosts": "No hay artículos similares disponibles en este momento."
+    },
+    "notFound": {
+      "title": "Artículo de Blog No Encontrado",
+      "description": "Lo sentimos, el artículo de blog que buscas no existe o puede haber sido movido.",
+      "backToBlog": "Volver al Blog",
+      "backToHome": "Volver al Inicio",
+      "searchSuggestion": {
+        "title": "¿Buscas algo específico?",
+        "description": "Intenta navegar por nuestras categorías de blog o usa la función de búsqueda para encontrar lo que buscas.",
+        "browseBlog": "Explorar todos los artículos de blog"
+      }
+    },
+    "error": {
+      "title": "Algo salió mal",
+      "description": "Encontramos un error al cargar este artículo de blog. Por favor, inténtalo de nuevo o contacta con soporte si el problema persiste.",
+      "tryAgain": "Intentar de Nuevo",
+      "backToBlog": "Volver al Blog",
+      "contactSupport": {
+        "title": "¿Sigues teniendo problemas?",
+        "description": "Si este problema continúa, por favor contacta con nuestro equipo de soporte y te ayudaremos a resolverlo.",
+        "contactUs": "Contactar Soporte"
+      }
+    },
+    "sectionNotFound": {
+      "title": "Sección de Blog No Encontrada",
+      "description": "Lo sentimos, la sección de blog que buscas no existe o puede haber sido movida.",
+      "backToHome": "Volver al Inicio",
+      "contactUs": "Contáctanos",
+      "explore": {
+        "title": "Explora Nuestro Sitio",
+        "description": "Mientras estás aquí, ¿por qué no exploras algunos de nuestros otros excelentes contenidos?",
+        "about": "Acerca de Nosotros",
+        "shop": "Tienda",
+        "contact": "Contacto"
+      }
+    },
+    "sectionError": {
+      "title": "Error de Carga del Blog",
+      "description": "Encontramos un error al cargar la sección del blog. Por favor, inténtalo de nuevo o contacta con soporte si el problema persiste.",
+      "tryAgain": "Intentar de Nuevo",
+      "backToHome": "Volver al Inicio",
+      "alternatives": {
+        "title": "Explorar Otras Secciones",
+        "description": "Mientras solucionamos este problema, puedes explorar otras partes de nuestro sitio web.",
+        "shop": "Visitar Tienda",
+        "about": "Acerca de Nosotros",
+        "contact": "Contáctanos",
+        "faq": "FAQ"
+      }
+    }
   }
 }

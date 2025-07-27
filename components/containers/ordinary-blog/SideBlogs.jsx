@@ -1,12 +1,41 @@
 import { Badge } from '@/components/ui/badge';
 import { formatDate } from '@/helpers/get-formated-date';
 import { Link } from '@/i18n/navigation';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
 const SideBlogs = ({ blogs }) => {
+  const t = useTranslations('BlogPage');
+
+  // Validate blogs array
+  if (!blogs || !Array.isArray(blogs) || blogs.length === 0) {
+    return (
+      <div className="flex flex-col items-center justify-center py-10">
+        <div className="text-center">
+          <h3 className="mb-2 text-lg font-semibold text-gray-900">{t('sideBlogs.noRecentPosts.title')}</h3>
+          <p className="text-gray-600">{t('sideBlogs.noRecentPosts.description')}</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Filter out invalid blog posts
+  const validBlogs = blogs.filter((blog) => blog && blog._id && blog.title);
+
+  if (validBlogs.length === 0) {
+    return (
+      <div className="flex flex-col items-center justify-center py-10">
+        <div className="text-center">
+          <h3 className="mb-2 text-lg font-semibold text-gray-900">{t('sideBlogs.noValidPosts.title')}</h3>
+          <p className="text-gray-600">{t('sideBlogs.noValidPosts.description')}</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div>
-      {blogs?.map((blog, index) => (
+      {validBlogs.map((blog, index) => (
         <div key={index} className={`group mt-10 md:mt-0 ${index !== 0 ? 'border-umbra-40 border-t py-5' : 'pb-5'}`}>
           <div className="flex flex-col items-center gap-5 overflow-hidden bg-white transition-all duration-300 md:flex-row">
             <Link href={`/blog/${blog?.identifier_url}`} className="w-full overflow-hidden md:w-[177px]">

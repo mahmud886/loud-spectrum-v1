@@ -942,5 +942,103 @@
       "title": "SECTION 17 – SECTION 17 – SECTION 17 – SECTION 17 – QUESTIONS AND CONTACT INFORMATION",
       "content": ["If you have any questions about these Terms, please contact us."]
     }
+  },
+  "BlogPage": {
+    "title": "非凡なブログ",
+    "metadata": {
+      "title": "非凡なブログ | Loud Spectrum",
+      "description": "テルペン、フレーバーサイエンス、植物エキスの非凡な世界に関する記事のコレクションをご覧ください。Loud Spectrumの洞察と専門知識で情報を入手してください。",
+      "keywords": "ブログ, テルペン, フレーバーサイエンス, 植物エキス, loud spectrum, 記事, 洞察",
+      "fallbackTitle": "ブログ | Loud Spectrum",
+      "fallbackDescription": "テルペンとフレーバーサイエンスに関する記事のコレクションをご覧ください。"
+    },
+    "content": {
+      "noBlogsAvailable": {
+        "title": "ブログ記事が利用できません",
+        "description": "現在新しいコンテンツを作成中です。もうすぐお戻りください！",
+        "backToHome": "ホームに戻る",
+        "contactUs": "お問い合わせ"
+      },
+      "noValidBlogs": {
+        "title": "有効なブログ記事がありません",
+        "description": "技術的な問題が発生しています。後でもう一度お試しください。",
+        "backToHome": "ホームに戻る",
+        "contactUs": "お問い合わせ"
+      },
+      "resultsCount": "件の結果",
+      "all": "すべて"
+    },
+    "featured": {
+      "noFeaturedBlog": {
+        "title": "注目のブログが利用できません",
+        "description": "新しい注目コンテンツを作成中です。"
+      },
+      "readMore": "続きを読む",
+      "featured": "注目",
+      "readFeaturedArticle": "注目記事を読む"
+    },
+    "sideBlogs": {
+      "noRecentPosts": {
+        "title": "最近の投稿がありません",
+        "description": "新しいコンテンツのためにもうすぐお戻りください。"
+      },
+      "noValidPosts": {
+        "title": "有効な投稿がありません",
+        "description": "技術的な問題が発生しています。"
+      }
+    },
+    "similarReads": {
+      "title": "関連記事",
+      "noSimilarPosts": "現在関連記事は利用できません。"
+    },
+    "notFound": {
+      "title": "ブログ記事が見つかりません",
+      "description": "申し訳ございませんが、お探しのブログ記事は存在しないか、移動された可能性があります。",
+      "backToBlog": "ブログに戻る",
+      "backToHome": "ホームに戻る",
+      "searchSuggestion": {
+        "title": "何か特定のものをお探しですか？",
+        "description": "ブログカテゴリを閲覧するか、検索機能を使用してお探しのものを見つけてください。",
+        "browseBlog": "すべてのブログ記事を閲覧"
+      }
+    },
+    "error": {
+      "title": "エラーが発生しました",
+      "description": "このブログ記事の読み込み中にエラーが発生しました。もう一度お試しいただくか、問題が続く場合はサポートにお問い合わせください。",
+      "tryAgain": "再試行",
+      "backToBlog": "ブログに戻る",
+      "contactSupport": {
+        "title": "まだ問題がありますか？",
+        "description": "この問題が続く場合は、サポートチームにお問い合わせいただき、解決をお手伝いします。",
+        "contactUs": "サポートにお問い合わせ"
+      }
+    },
+    "sectionNotFound": {
+      "title": "ブログセクションが見つかりません",
+      "description": "申し訳ございませんが、お探しのブログセクションは存在しないか、移動された可能性があります。",
+      "backToHome": "ホームに戻る",
+      "contactUs": "お問い合わせ",
+      "explore": {
+        "title": "サイトを探索",
+        "description": "ここにいる間に、他の素晴らしいコンテンツを探索してみませんか？",
+        "about": "会社概要",
+        "shop": "ショップ",
+        "contact": "お問い合わせ"
+      }
+    },
+    "sectionError": {
+      "title": "ブログ読み込みエラー",
+      "description": "ブログセクションの読み込み中にエラーが発生しました。もう一度お試しいただくか、問題が続く場合はサポートにお問い合わせください。",
+      "tryAgain": "再試行",
+      "backToHome": "ホームに戻る",
+      "alternatives": {
+        "title": "他のセクションを探索",
+        "description": "この問題を解決している間、ウェブサイトの他の部分を探索できます。",
+        "shop": "ショップを訪問",
+        "about": "会社概要",
+        "contact": "お問い合わせ",
+        "faq": "よくある質問"
+      }
+    }
   }
 }

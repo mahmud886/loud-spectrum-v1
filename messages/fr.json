@@ -942,5 +942,103 @@
       "title": "SECTION 17 – SECTION 17 – SECTION 17 – SECTION 17 – QUESTIONS AND CONTACT INFORMATION",
       "content": ["If you have any questions about these Terms, please contact us."]
     }
+  },
+  "BlogPage": {
+    "title": "Blog Au-delà de l'Ordinaire",
+    "metadata": {
+      "title": "Blog Au-delà de l'Ordinaire | Loud Spectrum",
+      "description": "Explorez notre collection d'articles sur les terpènes, la science du goût et le monde extraordinaire des extraits botaniques. Restez informé avec les insights et l'expertise de Loud Spectrum.",
+      "keywords": "blog, terpènes, science du goût, extraits botaniques, loud spectrum, articles, insights",
+      "fallbackTitle": "Blog | Loud Spectrum",
+      "fallbackDescription": "Explorez notre collection d'articles sur les terpènes et la science du goût."
+    },
+    "content": {
+      "noBlogsAvailable": {
+        "title": "Aucun Article de Blog Disponible",
+        "description": "Nous travaillons actuellement sur de nouveaux contenus. Veuillez revenir bientôt !",
+        "backToHome": "Retour à l'Accueil",
+        "contactUs": "Contactez-nous"
+      },
+      "noValidBlogs": {
+        "title": "Aucun Article de Blog Valide",
+        "description": "Nous rencontrons quelques problèmes techniques. Veuillez réessayer plus tard.",
+        "backToHome": "Retour à l'Accueil",
+        "contactUs": "Contactez-nous"
+      },
+      "resultsCount": "résultats pour",
+      "all": "tout"
+    },
+    "featured": {
+      "noFeaturedBlog": {
+        "title": "Aucun Blog en Vedette Disponible",
+        "description": "Nous travaillons sur de nouveaux contenus en vedette."
+      },
+      "readMore": "Lire Plus",
+      "featured": "En Vedette",
+      "readFeaturedArticle": "Lire l'article en vedette"
+    },
+    "sideBlogs": {
+      "noRecentPosts": {
+        "title": "Aucun Article Récent",
+        "description": "Revenez bientôt pour de nouveaux contenus."
+      },
+      "noValidPosts": {
+        "title": "Aucun Article Valide",
+        "description": "Nous rencontrons quelques problèmes techniques."
+      }
+    },
+    "similarReads": {
+      "title": "Lectures Similaires",
+      "noSimilarPosts": "Aucun article similaire disponible pour le moment."
+    },
+    "notFound": {
+      "title": "Article de Blog Non Trouvé",
+      "description": "Désolé, l'article de blog que vous recherchez n'existe pas ou a peut-être été déplacé.",
+      "backToBlog": "Retour au Blog",
+      "backToHome": "Retour à l'Accueil",
+      "searchSuggestion": {
+        "title": "Vous cherchez quelque chose de spécifique ?",
+        "description": "Essayez de parcourir nos catégories de blog ou utilisez la fonction de recherche pour trouver ce que vous cherchez.",
+        "browseBlog": "Parcourir tous les articles de blog"
+      }
+    },
+    "error": {
+      "title": "Quelque chose s'est mal passé",
+      "description": "Nous avons rencontré une erreur lors du chargement de cet article de blog. Veuillez réessayer ou contacter le support si le problème persiste.",
+      "tryAgain": "Réessayer",
+      "backToBlog": "Retour au Blog",
+      "contactSupport": {
+        "title": "Vous avez encore des problèmes ?",
+        "description": "Si ce problème persiste, veuillez contacter notre équipe de support et nous vous aiderons à le résoudre.",
+        "contactUs": "Contacter le Support"
+      }
+    },
+    "sectionNotFound": {
+      "title": "Section Blog Non Trouvée",
+      "description": "Désolé, la section blog que vous recherchez n'existe pas ou a peut-être été déplacée.",
+      "backToHome": "Retour à l'Accueil",
+      "contactUs": "Contactez-nous",
+      "explore": {
+        "title": "Explorez Notre Site",
+        "description": "Pendant que vous êtes ici, pourquoi ne pas explorer certains de nos autres excellents contenus ?",
+        "about": "À Propos",
+        "shop": "Boutique",
+        "contact": "Contact"
+      }
+    },
+    "sectionError": {
+      "title": "Erreur de Chargement du Blog",
+      "description": "Nous avons rencontré une erreur lors du chargement de la section blog. Veuillez réessayer ou contacter le support si le problème persiste.",
+      "tryAgain": "Réessayer",
+      "backToHome": "Retour à l'Accueil",
+      "alternatives": {
+        "title": "Explorer d'Autres Sections",
+        "description": "Pendant que nous résolvons ce problème, vous pouvez explorer d'autres parties de notre site web.",
+        "shop": "Visiter la Boutique",
+        "about": "À Propos",
+        "contact": "Contactez-nous",
+        "faq": "FAQ"
+      }
+    }
   }
 }

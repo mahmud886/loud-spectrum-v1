@@ -15,9 +15,38 @@ export async function getBlogs() {
     }
 
     const data = await res.json();
-    return data?.data?.posts || [];
+
+    // Validate the API response structure
+    if (!data || !data.data || !Array.isArray(data.data.posts)) {
+      if (process.env.NODE_ENV === 'development') {
+        console.log('Invalid API response structure for blogs:', data);
+      }
+      return { error: true, message: 'Invalid API response', blogs: [] };
+    }
+
+    const blogs = data.data.posts;
+
+    // Check if we have any valid blogs
+    if (!blogs || blogs.length === 0) {
+      if (process.env.NODE_ENV === 'development') {
+        console.log('No blogs found in API response');
+      }
+      return { notFound: true, message: 'No blogs available', blogs: [] };
+    }
+
+    // Filter out invalid blog posts
+    const validBlogs = blogs.filter((blog) => blog && blog.identifier_url && blog.title);
+
+    if (validBlogs.length === 0) {
+      if (process.env.NODE_ENV === 'development') {
+        console.log('No valid blogs found after filtering');
+      }
+      return { notFound: true, message: 'No valid blogs available', blogs: [] };
+    }
+
+    return { blogs: validBlogs, count: validBlogs.length };
   } catch (error) {
     console.error('Error fetching blogs:', error);
-    throw new Error('Failed to fetch blogs. Please try again later.');
+    return { error: true, message: error.message, blogs: [] };
   }
 }

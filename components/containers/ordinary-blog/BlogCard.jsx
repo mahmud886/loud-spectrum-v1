@@ -1,9 +1,11 @@
 import { Badge } from '@/components/ui/badge';
 import { formatDate } from '@/helpers/get-formated-date';
 import { Link } from '@/i18n/navigation';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
 const BlogCard = ({ blog }) => {
+  const t = useTranslations('BlogPage');
   return (
     <div className="group flex flex-col space-y-6">
       <div className="relative">
@@ -32,7 +34,7 @@ const BlogCard = ({ blog }) => {
               // href={`/blog/${blog?._id}`}
               className="outline-button-black !md:text-[17px] cursor-pointer rounded-full px-3 py-1 !text-[14px] md:px-6 md:py-2"
             >
-              Read More
+              {t('featured.readMore')}
             </Link>
           </div>
         </div>
