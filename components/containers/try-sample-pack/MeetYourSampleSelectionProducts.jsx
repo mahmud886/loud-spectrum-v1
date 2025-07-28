@@ -11,7 +11,6 @@ const MeetYourSampleSelectionProducts = async ({ samplePackCategory }) => {
       samplePackCategory?.some((category) => product.category_id === category._id),
     )) || [];
 
-  console.log('filteredSamplePackProducts', filteredSamplePackProducts);
   return (
     <div className="container py-[60px] pt-[60px] md:py-[160px] md:pt-[160]">
       <div className="space-y-4 md:space-y-6">
