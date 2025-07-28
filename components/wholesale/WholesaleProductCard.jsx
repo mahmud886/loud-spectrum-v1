@@ -54,7 +54,11 @@ const WholesaleProductCard = ({ product }) => {
             <div className="mx-auto overflow-hidden md:h-auto md:w-[371px]">
               <WholesaleProductCarousel>
                 <Image
-                  src="/assets/images/products/product-line-1.png"
+                  src={
+                    product?.productDetails?.image
+                      ? `${process.env.NEXT_PUBLIC_API_URL}/public${product?.productDetails?.image}`
+                      : '/assets/images/products/product-line-1.png'
+                  }
                   alt="wholesale product"
                   width={371}
                   height={503}
