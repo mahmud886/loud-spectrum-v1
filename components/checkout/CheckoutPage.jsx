@@ -1192,24 +1192,6 @@ const CheckoutPage = () => {
               getMissingFieldsMessage={() => getMissingFieldsMessage(true)}
             />
 
-            {/* Debug/Reset Button - Show when processing is stuck */}
-            {isProcessing && (
-              <div className="mt-4 rounded-[10px] border-2 border-red-200 bg-red-50 p-4">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h4 className="font-medium text-red-800">Payment Methods Disabled</h4>
-                    <p className="text-sm text-red-600">Processing state is active. Click reset if stuck.</p>
-                  </div>
-                  <button
-                    onClick={handleResetProcessingState}
-                    className="rounded-md bg-red-600 px-4 py-2 text-white transition-colors hover:bg-red-700"
-                  >
-                    Reset
-                  </button>
-                </div>
-              </div>
-            )}
-
             <ConfirmPayment
               onProcessPayment={processPayment}
               isLoading={isLoading}

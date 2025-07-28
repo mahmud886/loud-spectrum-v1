@@ -40,10 +40,6 @@ const AddAReview = ({ productId, authToken }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!token) {
-      toast.error('Please login to submit a review');
-      return;
-    }
     if (validateForm()) {
       setIsSubmitting(true);
       try {

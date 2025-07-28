@@ -6,6 +6,7 @@ import ShopHero from '@/components/headers/ShopHero';
 import ShopHeroShimmer from '@/components/headers/ShopHeroShimmer';
 import { decodeCategoryFromUrl } from '@/helpers/url-category-utils';
 import { getCategories } from '@/services/get-categories';
+import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 
 const websiteUrl = process.env.NEXT_PUBLIC_WEBSITE_URL || 'https://loudspectrum.com';
@@ -151,8 +152,19 @@ async function CategoryShopContent({ params }) {
   const { category } = await params;
   const decodedCategory = await decodeCategoryFromUrl(category);
   const categories = await getCategories();
-  const activeCategories = categories?.data?.categories?.filter((category) => category.status === 'Active') || [];
-  const exactCategory = activeCategories?.find((category) => category.slug === decodedCategory);
+
+  // Check for API errors or not found responses
+  if (!categories || categories.error || categories.notFound) {
+    notFound();
+  }
+
+  const activeCategories = categories.data.categories.filter((category) => category.status === 'Active') || [];
+  const exactCategory = activeCategories.find((category) => category.slug === decodedCategory);
+
+  // Check if category exists, if not show 404
+  if (!exactCategory) {
+    notFound();
+  }
 
   return (
     <>
@@ -163,7 +175,7 @@ async function CategoryShopContent({ params }) {
       </Suspense>
 
       <Suspense fallback={<TerpeneProductsContainerShimmer />}>
-        <TerpeneProductsContainerContent categories={activeCategories} categoryId={exactCategory?._id} />
+        <TerpeneProductsContainerContent categories={activeCategories} categoryId={exactCategory._id} />
       </Suspense>
 
       <div className="container pt-20 pb-[160px]">

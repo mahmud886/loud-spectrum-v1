@@ -8,20 +8,21 @@ export function encodeCategoryForUrl(categoryName) {
   if (!categoryName) return '';
 
   // Convert to lowercase, replace spaces with hyphens, then URL encode
+  // This preserves existing hyphens in category names
   return encodeURIComponent(categoryName.toLowerCase().replace(/\s+/g, '-'));
 }
 
 /**
  * Decode category name from URL
- * Converts hyphens back to spaces and applies URL decoding
+ * Applies URL decoding but preserves hyphens (don't convert to spaces)
  * @param {string} urlCategory - The URL category to decode
  * @returns {string} - Decoded category name
  */
 export function decodeCategoryFromUrl(urlCategory) {
   if (!urlCategory) return '';
 
-  // URL decode first, then replace hyphens with spaces
-  return decodeURIComponent(urlCategory).replace(/-/g, ' ');
+  // URL decode only, preserve hyphens as they are part of the category name
+  return decodeURIComponent(urlCategory);
 }
 
 /**

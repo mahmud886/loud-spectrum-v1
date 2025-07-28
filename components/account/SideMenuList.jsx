@@ -47,7 +47,7 @@ const SideMenuList = () => {
   ];
 
   return (
-    <nav className="space-y-3">
+    <nav className="space-y-3 p-2">
       {menuItems.map((item) => {
         const Icon = item.icon;
         return (

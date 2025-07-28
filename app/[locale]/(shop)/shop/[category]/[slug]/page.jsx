@@ -8,6 +8,7 @@ import RelatedProducts from '@/components/containers/product/RelatedProducts';
 import RelatedProductsShimmer from '@/components/containers/product/RelatedProductsShimmer';
 import { getProductDetails } from '@/services/get-product-details';
 import { cookies } from 'next/headers';
+import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 
 // Async component for spectrum accordion
@@ -59,9 +60,16 @@ async function RelatedProductsContent({ productDetails }) {
 // Main async component that fetches product data
 async function ProductDetailsContent({ params }) {
   const { slug } = await params;
+
+  // Validate the product (category is already validated in layout)
   const productDetails = await getProductDetails(slug);
   const cookieStore = await cookies();
   const authToken = cookieStore.get('authToken');
+
+  // Check for API errors or not found responses for product
+  if (!productDetails || productDetails.error || productDetails.notFound) {
+    notFound();
+  }
 
   return (
     <div className="md:mt-[160px]">
@@ -70,11 +78,11 @@ async function ProductDetailsContent({ params }) {
       </Suspense>
 
       <Suspense fallback={<ProductReviewsShimmer />}>
-        <ProductReviewsContent productId={productDetails?._id} />
+        <ProductReviewsContent productId={productDetails._id} />
       </Suspense>
 
       <Suspense fallback={<AddAReviewShimmer />}>
-        <AddAReviewContent productId={productDetails?._id} authToken={authToken?.value} />
+        <AddAReviewContent productId={productDetails._id} authToken={authToken?.value} />
       </Suspense>
 
       <Suspense fallback={<RelatedProductsShimmer />}>

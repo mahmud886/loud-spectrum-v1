@@ -56,8 +56,14 @@ const ProductDetailsLeftCard = ({ product }) => {
 
   // Find the selected subProduct based on volume
   const selectedSubProduct = product.subproducts?.find((subProduct) => {
-    const attribute = JSON.parse(subProduct.attribute);
-    return attribute.volume === selectedVolume;
+    if (!subProduct?.attribute) return false;
+    try {
+      const attribute = JSON.parse(subProduct.attribute);
+      return attribute?.volume === selectedVolume;
+    } catch (error) {
+      console.error('Error parsing subProduct attribute:', error);
+      return false;
+    }
   });
 
   // Create modified product with selectedSubProduct

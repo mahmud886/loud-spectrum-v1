@@ -16,9 +16,37 @@ export async function getProductDetails(slug) {
     }
 
     const data = await res.json();
-    return data?.data?.products?.[0];
+
+    // Validate the API response structure
+    if (!data || !data.data || !Array.isArray(data.data.products)) {
+      if (process.env.NODE_ENV === 'development') {
+        console.log(`Invalid API response structure for product slug: ${slug}`, data);
+      }
+      return { notFound: true, message: 'Invalid API response' };
+    }
+
+    // Check if we have a valid product
+    const product = data.data.products[0];
+
+    // If products array is empty or no product found, return not found
+    if (data.data.products.length === 0 || !product || Object.keys(product).length === 0) {
+      if (process.env.NODE_ENV === 'development') {
+        console.log(`Product not found for slug: ${slug}`);
+      }
+      return { notFound: true, message: 'Product not found' };
+    }
+
+    // Additional validation: check if the product has required fields
+    if (!product._id || !product.name) {
+      if (process.env.NODE_ENV === 'development') {
+        console.log(`Invalid product data for slug: ${slug}`, product);
+      }
+      return { notFound: true, message: 'Invalid product data' };
+    }
+
+    return product;
   } catch (error) {
     console.error('Error fetching product details:', error);
-    throw new Error('Failed to fetch product details. Please try again later.');
+    return { error: true, message: error.message };
   }
 }

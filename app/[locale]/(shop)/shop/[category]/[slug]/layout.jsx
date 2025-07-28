@@ -1,21 +1,52 @@
 import ProductDetailsHero from '@/components/headers/ProductDetailsHero';
 import ProductDetailsHeroShimmer from '@/components/headers/ProductDetailsHeroShimmer';
+import { decodeCategoryFromUrl } from '@/helpers/url-category-utils';
+import { getCategories } from '@/services/get-categories';
 import { getProductDetails } from '@/services/get-product-details';
+import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 
 export async function generateMetadata({ params }) {
-  const { slug } = await params;
+  const { category, slug } = await params;
+
+  // First, validate the category
+  const decodedCategory = await decodeCategoryFromUrl(category);
+  const categories = await getCategories();
+
+  // Check for API errors or not found responses for categories
+  if (!categories || categories.error || categories.notFound) {
+    notFound();
+  }
+
+  const activeCategories = categories.data.categories.filter((cat) => cat.status === 'Active') || [];
+  const exactCategory = activeCategories.find((cat) => cat.slug === decodedCategory);
+
+  // Check if category exists, if not show 404
+  if (!exactCategory) {
+    notFound();
+  }
+
+  // For metadata, we'll try to get the product but won't fail if it doesn't exist
+  // The page component will handle product validation
   const product = await getProductDetails(slug);
 
-  const title = `${product?.name || 'Product'} | Loud Spectrum`;
-  const description = product?.meta_description || 'Check out this amazing product on our store';
-  const imageUrl = product?.images?.[0] || '';
+  // If product doesn't exist, return fallback metadata
+  if (!product || product.error || product.notFound) {
+    return {
+      title: 'Product Not Found | Loud Spectrum',
+      description: 'The requested product could not be found.',
+    };
+  }
+
+  const title = `${product.name || 'Product'} | Loud Spectrum`;
+  const description = product.meta_description || 'Check out this amazing product on our store';
+  const imageUrl = product.images?.[0] || '';
   const websiteUrl = process.env.NEXT_PUBLIC_WEBSITE_URL || 'https://loudspectrum.com';
 
   return {
     title,
     description,
-    keywords: product?.tag?.join(', ') || '',
+    keywords: product.tag?.join(', ') || '',
     alternates: {
       canonical: `${websiteUrl}/shop/${slug}`,
       languages: {
@@ -38,7 +69,7 @@ export async function generateMetadata({ params }) {
               url: imageUrl,
               width: 1200,
               height: 630,
-              alt: product?.name || 'Product Image',
+              alt: product.name || 'Product Image',
             },
           ]
         : [],
@@ -68,18 +99,43 @@ export async function generateMetadata({ params }) {
 }
 
 // Async component for product details hero
-async function ProductDetailsHeroContent({ slug }) {
+async function ProductDetailsHeroContent({ category, slug }) {
+  // First, validate the category
+  const decodedCategory = await decodeCategoryFromUrl(category);
+  const categories = await getCategories();
+
+  // Check for API errors or not found responses for categories
+  if (!categories || categories.error || categories.notFound) {
+    notFound();
+  }
+
+  const activeCategories = categories.data.categories.filter((cat) => cat.status === 'Active') || [];
+  const exactCategory = activeCategories.find((cat) => cat.slug === decodedCategory);
+
+  // Check if category exists, if not show 404
+  if (!exactCategory) {
+    notFound();
+  }
+
+  // For the hero component, we'll try to get the product but won't fail if it doesn't exist
+  // The page component will handle product validation
   const productDetails = await getProductDetails(slug);
+
+  // If product doesn't exist, return null or a placeholder
+  if (!productDetails || productDetails.error || productDetails.notFound) {
+    return null; // Let the page component handle the not-found case
+  }
+
   return <ProductDetailsHero product={productDetails} />;
 }
 
 const ProductDetailsLayout = async ({ children, params }) => {
-  const { slug } = await params;
+  const { category, slug } = await params;
 
   return (
     <div className="">
       <Suspense fallback={<ProductDetailsHeroShimmer />}>
-        <ProductDetailsHeroContent slug={slug} />
+        <ProductDetailsHeroContent category={category} slug={slug} />
       </Suspense>
       <main>{children}</main>
     </div>

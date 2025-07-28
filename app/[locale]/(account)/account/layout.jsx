@@ -6,7 +6,7 @@ export default function AccountLayout({ children }) {
     <div className="container pt-[150px] pb-[150px]">
       <div className="flex min-h-full flex-col gap-2 md:min-h-[80dvh] md:flex-row">
         {/* Sidebar - 20% */}
-        <aside className="border-umbra-5 bg-umbra-10/20 w-full rounded-[10px] border-1 p-6 md:w-[20%]">
+        <aside className="border-umbra-5 bg-umbra-10/20 w-full rounded-[10px] border-1 md:w-[20%]">
           {/* User Info */}
           <UserInformation />
           <SideMenuList />
