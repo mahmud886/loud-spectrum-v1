@@ -1,6 +1,7 @@
 'use client';
 
 import ArrowRight from '@/components/svgs/arrow-right';
+import { Link } from '@/i18n/navigation';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
@@ -21,7 +22,7 @@ const ProductLineCard = ({ productVariant = 'Default' }) => {
   const borderClass = variantClasses[productVariant]?.split(' ')[1] || variantClasses.Default.split(' ')[1];
 
   return (
-    <div className="group cursor-pointer">
+    <Link href={`/shop/${productVariant.toLowerCase()}`} className="group cursor-pointer">
       <motion.div
         initial="rest"
         whileHover="hover"
@@ -70,7 +71,8 @@ const ProductLineCard = ({ productVariant = 'Default' }) => {
               transition={{ duration: 0.2 }}
               className="absolute inset-0 flex items-center justify-center gap-2"
             >
-              {t('buttons.wholesale')} <ArrowRight />
+              {t('buttons.shopTheLine')} <ArrowRight />
+              {/* {t('buttons.wholesale')} <ArrowRight /> */}
             </motion.span>
           </motion.button>
         </div>
@@ -135,7 +137,7 @@ const ProductLineCard = ({ productVariant = 'Default' }) => {
           </button>
         </motion.div>
       </motion.div>
-    </div>
+    </Link>
   );
 };
 
