@@ -1041,6 +1041,89 @@
       }
     }
   },
+  "ShopPage": {
+    "sectionNotFound": {
+      "title": "ショップセクションが見つかりません",
+      "description": "申し訳ございませんが、お探しのショップセクションは存在しないか、移動された可能性があります。",
+      "backToHome": "ホームに戻る",
+      "contactUs": "お問い合わせ",
+      "explore": {
+        "title": "サイトを探索",
+        "description": "ここにいる間に、他の素晴らしいコンテンツを探索してみませんか？",
+        "about": "会社概要",
+        "blog": "ブログ",
+        "contact": "お問い合わせ"
+      }
+    },
+    "sectionError": {
+      "title": "ショップ読み込みエラー",
+      "description": "ショップセクションの読み込み中にエラーが発生しました。もう一度お試しいただくか、問題が続く場合はサポートにお問い合わせください。",
+      "tryAgain": "再試行",
+      "backToHome": "ホームに戻る",
+      "alternatives": {
+        "title": "他のセクションを探索",
+        "description": "この問題を解決している間、ウェブサイトの他の部分を探索できます。",
+        "blog": "ブログを読む",
+        "about": "会社概要",
+        "contact": "お問い合わせ",
+        "faq": "よくある質問"
+      }
+    },
+    "categoryNotFound": {
+      "title": "カテゴリが見つかりません",
+      "description": "申し訳ございませんが、お探しの商品カテゴリは存在しないか、移動された可能性があります。",
+      "backToShop": "ショップに戻る",
+      "contactUs": "お問い合わせ",
+      "explore": {
+        "title": "ショップを探索",
+        "description": "ここにいる間に、他の商品カテゴリを探索してみませんか？",
+        "allProducts": "すべての商品",
+        "blog": "ブログ",
+        "about": "会社概要"
+      }
+    },
+    "categoryError": {
+      "title": "カテゴリ読み込みエラー",
+      "description": "この商品カテゴリの読み込み中にエラーが発生しました。もう一度お試しいただくか、問題が続く場合はサポートにお問い合わせください。",
+      "tryAgain": "再試行",
+      "backToShop": "ショップに戻る",
+      "alternatives": {
+        "title": "他のカテゴリを探索",
+        "description": "この問題を解決している間、他の商品カテゴリを探索できます。",
+        "allProducts": "すべての商品",
+        "blog": "ブログを読む",
+        "about": "会社概要",
+        "contact": "お問い合わせ"
+      }
+    },
+    "productNotFound": {
+      "title": "商品が見つかりません",
+      "description": "申し訳ございませんが、お探しの商品は存在しないか、移動された可能性があります。",
+      "backToShop": "ショップに戻る",
+      "contactUs": "お問い合わせ",
+      "explore": {
+        "title": "商品を探索",
+        "description": "ここにいる間に、他の素晴らしい商品を探索してみませんか？",
+        "allProducts": "すべての商品",
+        "blog": "ブログ",
+        "about": "会社概要"
+      }
+    },
+    "productError": {
+      "title": "商品読み込みエラー",
+      "description": "この商品の読み込み中にエラーが発生しました。もう一度お試しいただくか、問題が続く場合はサポートにお問い合わせください。",
+      "tryAgain": "再試行",
+      "backToShop": "ショップに戻る",
+      "alternatives": {
+        "title": "他の商品を探索",
+        "description": "この問題を解決している間、ショップの他の商品を探索できます。",
+        "allProducts": "すべての商品",
+        "blog": "ブログを読む",
+        "about": "会社概要",
+        "contact": "お問い合わせ"
+      }
+    }
+  },
   "MainPage": {
     "notFound": {
       "title": "ページが見つかりません",

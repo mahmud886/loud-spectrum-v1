@@ -1040,6 +1040,89 @@
       }
     }
   },
+  "ShopPage": {
+    "sectionNotFound": {
+      "title": "Sección de Tienda No Encontrada",
+      "description": "Lo sentimos, la sección de tienda que buscas no existe o puede haber sido movida.",
+      "backToHome": "Volver al Inicio",
+      "contactUs": "Contáctanos",
+      "explore": {
+        "title": "Explora Nuestro Sitio",
+        "description": "Mientras estás aquí, ¿por qué no exploras algunos de nuestros otros excelentes contenidos?",
+        "about": "Acerca de Nosotros",
+        "blog": "Blog",
+        "contact": "Contacto"
+      }
+    },
+    "sectionError": {
+      "title": "Error de Carga de la Tienda",
+      "description": "Encontramos un error al cargar la sección de la tienda. Por favor, inténtalo de nuevo o contacta con soporte si el problema persiste.",
+      "tryAgain": "Intentar de Nuevo",
+      "backToHome": "Volver al Inicio",
+      "alternatives": {
+        "title": "Explorar Otras Secciones",
+        "description": "Mientras solucionamos este problema, puedes explorar otras partes de nuestro sitio web.",
+        "blog": "Leer Blog",
+        "about": "Acerca de Nosotros",
+        "contact": "Contáctanos",
+        "faq": "FAQ"
+      }
+    },
+    "categoryNotFound": {
+      "title": "Categoría No Encontrada",
+      "description": "Lo sentimos, la categoría de productos que buscas no existe o puede haber sido movida.",
+      "backToShop": "Volver a la Tienda",
+      "contactUs": "Contáctanos",
+      "explore": {
+        "title": "Explora Nuestra Tienda",
+        "description": "Mientras estás aquí, ¿por qué no exploras nuestras otras categorías de productos?",
+        "allProducts": "Todos los Productos",
+        "blog": "Blog",
+        "about": "Acerca de Nosotros"
+      }
+    },
+    "categoryError": {
+      "title": "Error de Carga de Categoría",
+      "description": "Encontramos un error al cargar esta categoría de productos. Por favor, inténtalo de nuevo o contacta con soporte si el problema persiste.",
+      "tryAgain": "Intentar de Nuevo",
+      "backToShop": "Volver a la Tienda",
+      "alternatives": {
+        "title": "Explorar Otras Categorías",
+        "description": "Mientras solucionamos este problema, puedes explorar otras categorías de productos.",
+        "allProducts": "Todos los Productos",
+        "blog": "Leer Blog",
+        "about": "Acerca de Nosotros",
+        "contact": "Contáctanos"
+      }
+    },
+    "productNotFound": {
+      "title": "Producto No Encontrado",
+      "description": "Lo sentimos, el producto que buscas no existe o puede haber sido movido.",
+      "backToShop": "Volver a la Tienda",
+      "contactUs": "Contáctanos",
+      "explore": {
+        "title": "Explora Nuestros Productos",
+        "description": "Mientras estás aquí, ¿por qué no exploras nuestros otros excelentes productos?",
+        "allProducts": "Todos los Productos",
+        "blog": "Blog",
+        "about": "Acerca de Nosotros"
+      }
+    },
+    "productError": {
+      "title": "Error de Carga de Producto",
+      "description": "Encontramos un error al cargar este producto. Por favor, inténtalo de nuevo o contacta con soporte si el problema persiste.",
+      "tryAgain": "Intentar de Nuevo",
+      "backToShop": "Volver a la Tienda",
+      "alternatives": {
+        "title": "Explorar Otros Productos",
+        "description": "Mientras solucionamos este problema, puedes explorar otros productos en nuestra tienda.",
+        "allProducts": "Todos los Productos",
+        "blog": "Leer Blog",
+        "about": "Acerca de Nosotros",
+        "contact": "Contáctanos"
+      }
+    }
+  },
   "MainPage": {
     "notFound": {
       "title": "Página no encontrada",

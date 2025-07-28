@@ -1041,6 +1041,89 @@
       }
     }
   },
+  "ShopPage": {
+    "sectionNotFound": {
+      "title": "Shop Section Not Found",
+      "description": "Sorry, the shop section you're looking for doesn't exist or may have been moved.",
+      "backToHome": "Back to Home",
+      "contactUs": "Contact Us",
+      "explore": {
+        "title": "Explore Our Site",
+        "description": "While you're here, why not explore some of our other great content?",
+        "about": "About Us",
+        "blog": "Blog",
+        "contact": "Contact"
+      }
+    },
+    "sectionError": {
+      "title": "Shop Loading Error",
+      "description": "We encountered an error while loading the shop section. Please try again or contact support if the problem persists.",
+      "tryAgain": "Try Again",
+      "backToHome": "Back to Home",
+      "alternatives": {
+        "title": "Explore Other Sections",
+        "description": "While we fix this issue, you can explore other parts of our website.",
+        "blog": "Read Blog",
+        "about": "About Us",
+        "contact": "Contact Us",
+        "faq": "FAQ"
+      }
+    },
+    "categoryNotFound": {
+      "title": "Category Not Found",
+      "description": "Sorry, the product category you're looking for doesn't exist or may have been moved.",
+      "backToShop": "Back to Shop",
+      "contactUs": "Contact Us",
+      "explore": {
+        "title": "Explore Our Shop",
+        "description": "While you're here, why not explore our other product categories?",
+        "allProducts": "All Products",
+        "blog": "Blog",
+        "about": "About Us"
+      }
+    },
+    "categoryError": {
+      "title": "Category Loading Error",
+      "description": "We encountered an error while loading this product category. Please try again or contact support if the problem persists.",
+      "tryAgain": "Try Again",
+      "backToShop": "Back to Shop",
+      "alternatives": {
+        "title": "Explore Other Categories",
+        "description": "While we fix this issue, you can explore other product categories.",
+        "allProducts": "All Products",
+        "blog": "Read Blog",
+        "about": "About Us",
+        "contact": "Contact Us"
+      }
+    },
+    "productNotFound": {
+      "title": "Product Not Found",
+      "description": "Sorry, the product you're looking for doesn't exist or may have been moved.",
+      "backToShop": "Back to Shop",
+      "contactUs": "Contact Us",
+      "explore": {
+        "title": "Explore Our Products",
+        "description": "While you're here, why not explore our other great products?",
+        "allProducts": "All Products",
+        "blog": "Blog",
+        "about": "About Us"
+      }
+    },
+    "productError": {
+      "title": "Product Loading Error",
+      "description": "We encountered an error while loading this product. Please try again or contact support if the problem persists.",
+      "tryAgain": "Try Again",
+      "backToShop": "Back to Shop",
+      "alternatives": {
+        "title": "Explore Other Products",
+        "description": "While we fix this issue, you can explore other products in our shop.",
+        "allProducts": "All Products",
+        "blog": "Read Blog",
+        "about": "About Us",
+        "contact": "Contact Us"
+      }
+    }
+  },
   "MainPage": {
     "notFound": {
       "title": "Page Not Found",

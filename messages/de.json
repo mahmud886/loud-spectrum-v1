@@ -1040,6 +1040,89 @@
       }
     }
   },
+  "ShopPage": {
+    "sectionNotFound": {
+      "title": "Shop-Bereich nicht gefunden",
+      "description": "Entschuldigung, der gesuchte Shop-Bereich existiert nicht oder wurde möglicherweise verschoben.",
+      "backToHome": "Zurück zur Startseite",
+      "contactUs": "Kontaktieren Sie uns",
+      "explore": {
+        "title": "Entdecken Sie unsere Website",
+        "description": "Während Sie hier sind, warum erkunden Sie nicht einige unserer anderen großartigen Inhalte?",
+        "about": "Über uns",
+        "blog": "Blog",
+        "contact": "Kontakt"
+      }
+    },
+    "sectionError": {
+      "title": "Shop-Ladefehler",
+      "description": "Beim Laden des Shop-Bereichs ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie den Support, wenn das Problem weiterhin besteht.",
+      "tryAgain": "Erneut versuchen",
+      "backToHome": "Zurück zur Startseite",
+      "alternatives": {
+        "title": "Andere Bereiche erkunden",
+        "description": "Während wir dieses Problem beheben, können Sie andere Teile unserer Website erkunden.",
+        "blog": "Blog lesen",
+        "about": "Über uns",
+        "contact": "Kontaktieren Sie uns",
+        "faq": "FAQ"
+      }
+    },
+    "categoryNotFound": {
+      "title": "Kategorie nicht gefunden",
+      "description": "Entschuldigung, die gesuchte Produktkategorie existiert nicht oder wurde möglicherweise verschoben.",
+      "backToShop": "Zurück zum Shop",
+      "contactUs": "Kontaktieren Sie uns",
+      "explore": {
+        "title": "Entdecken Sie unseren Shop",
+        "description": "Während Sie hier sind, warum erkunden Sie nicht unsere anderen Produktkategorien?",
+        "allProducts": "Alle Produkte",
+        "blog": "Blog",
+        "about": "Über uns"
+      }
+    },
+    "categoryError": {
+      "title": "Kategorie-Ladefehler",
+      "description": "Beim Laden dieser Produktkategorie ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie den Support, wenn das Problem weiterhin besteht.",
+      "tryAgain": "Erneut versuchen",
+      "backToShop": "Zurück zum Shop",
+      "alternatives": {
+        "title": "Andere Kategorien erkunden",
+        "description": "Während wir dieses Problem beheben, können Sie andere Produktkategorien erkunden.",
+        "allProducts": "Alle Produkte",
+        "blog": "Blog lesen",
+        "about": "Über uns",
+        "contact": "Kontaktieren Sie uns"
+      }
+    },
+    "productNotFound": {
+      "title": "Produkt nicht gefunden",
+      "description": "Entschuldigung, das gesuchte Produkt existiert nicht oder wurde möglicherweise verschoben.",
+      "backToShop": "Zurück zum Shop",
+      "contactUs": "Kontaktieren Sie uns",
+      "explore": {
+        "title": "Entdecken Sie unsere Produkte",
+        "description": "Während Sie hier sind, warum erkunden Sie nicht unsere anderen großartigen Produkte?",
+        "allProducts": "Alle Produkte",
+        "blog": "Blog",
+        "about": "Über uns"
+      }
+    },
+    "productError": {
+      "title": "Produkt-Ladefehler",
+      "description": "Beim Laden dieses Produkts ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie den Support, wenn das Problem weiterhin besteht.",
+      "tryAgain": "Erneut versuchen",
+      "backToShop": "Zurück zum Shop",
+      "alternatives": {
+        "title": "Andere Produkte erkunden",
+        "description": "Während wir dieses Problem beheben, können Sie andere Produkte in unserem Shop erkunden.",
+        "allProducts": "Alle Produkte",
+        "blog": "Blog lesen",
+        "about": "Über uns",
+        "contact": "Kontaktieren Sie uns"
+      }
+    }
+  },
   "MainPage": {
     "notFound": {
       "title": "Seite nicht gefunden",

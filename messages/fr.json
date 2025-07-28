@@ -1041,6 +1041,89 @@
       }
     }
   },
+  "ShopPage": {
+    "sectionNotFound": {
+      "title": "Section Boutique Non Trouvée",
+      "description": "Désolé, la section boutique que vous recherchez n'existe pas ou a peut-être été déplacée.",
+      "backToHome": "Retour à l'Accueil",
+      "contactUs": "Contactez-nous",
+      "explore": {
+        "title": "Explorez Notre Site",
+        "description": "Pendant que vous êtes ici, pourquoi ne pas explorer certains de nos autres excellents contenus ?",
+        "about": "À Propos",
+        "blog": "Blog",
+        "contact": "Contact"
+      }
+    },
+    "sectionError": {
+      "title": "Erreur de Chargement de la Boutique",
+      "description": "Nous avons rencontré une erreur lors du chargement de la section boutique. Veuillez réessayer ou contacter le support si le problème persiste.",
+      "tryAgain": "Réessayer",
+      "backToHome": "Retour à l'Accueil",
+      "alternatives": {
+        "title": "Explorer d'Autres Sections",
+        "description": "Pendant que nous résolvons ce problème, vous pouvez explorer d'autres parties de notre site web.",
+        "blog": "Lire le Blog",
+        "about": "À Propos",
+        "contact": "Contactez-nous",
+        "faq": "FAQ"
+      }
+    },
+    "categoryNotFound": {
+      "title": "Catégorie Non Trouvée",
+      "description": "Désolé, la catégorie de produits que vous recherchez n'existe pas ou a peut-être été déplacée.",
+      "backToShop": "Retour à la Boutique",
+      "contactUs": "Contactez-nous",
+      "explore": {
+        "title": "Explorez Notre Boutique",
+        "description": "Pendant que vous êtes ici, pourquoi ne pas explorer nos autres catégories de produits ?",
+        "allProducts": "Tous les Produits",
+        "blog": "Blog",
+        "about": "À Propos"
+      }
+    },
+    "categoryError": {
+      "title": "Erreur de Chargement de Catégorie",
+      "description": "Nous avons rencontré une erreur lors du chargement de cette catégorie de produits. Veuillez réessayer ou contacter le support si le problème persiste.",
+      "tryAgain": "Réessayer",
+      "backToShop": "Retour à la Boutique",
+      "alternatives": {
+        "title": "Explorer d'Autres Catégories",
+        "description": "Pendant que nous résolvons ce problème, vous pouvez explorer d'autres catégories de produits.",
+        "allProducts": "Tous les Produits",
+        "blog": "Lire le Blog",
+        "about": "À Propos",
+        "contact": "Contactez-nous"
+      }
+    },
+    "productNotFound": {
+      "title": "Produit Non Trouvé",
+      "description": "Désolé, le produit que vous recherchez n'existe pas ou a peut-être été déplacé.",
+      "backToShop": "Retour à la Boutique",
+      "contactUs": "Contactez-nous",
+      "explore": {
+        "title": "Explorez Nos Produits",
+        "description": "Pendant que vous êtes ici, pourquoi ne pas explorer nos autres excellents produits ?",
+        "allProducts": "Tous les Produits",
+        "blog": "Blog",
+        "about": "À Propos"
+      }
+    },
+    "productError": {
+      "title": "Erreur de Chargement de Produit",
+      "description": "Nous avons rencontré une erreur lors du chargement de ce produit. Veuillez réessayer ou contacter le support si le problème persiste.",
+      "tryAgain": "Réessayer",
+      "backToShop": "Retour à la Boutique",
+      "alternatives": {
+        "title": "Explorer d'Autres Produits",
+        "description": "Pendant que nous résolvons ce problème, vous pouvez explorer d'autres produits dans notre boutique.",
+        "allProducts": "Tous les Produits",
+        "blog": "Lire le Blog",
+        "about": "À Propos",
+        "contact": "Contactez-nous"
+      }
+    }
+  },
   "MainPage": {
     "notFound": {
       "title": "Page non trouvée",
