@@ -1169,5 +1169,36 @@
         "contactUs": "サポートにお問い合わせ"
       }
     }
+  },
+  "OrderPage": {
+    "orderNotFound": {
+      "title": "注文が見つかりません",
+      "description": "お探しの注文が見つかりませんでした。キャンセルされたか、削除されたか、注文IDが間違っている可能性があります。",
+      "viewOrders": "注文履歴を表示",
+      "backToOrders": "注文履歴に戻る",
+      "continueShopping": "ショッピングを続ける",
+      "explore": {
+        "title": "サポートが必要ですか？",
+        "description": "注文を見つけるのに問題がある場合は、お手伝いいたします。",
+        "contact": "サポートにお問い合わせ",
+        "faq": "よくある質問",
+        "account": "マイアカウント"
+      }
+    },
+    "orderError": {
+      "title": "注文読み込みエラー",
+      "description": "注文の詳細を読み込み中にエラーが発生しました。もう一度お試しいただくか、問題が続く場合はサポートにお問い合わせください。",
+      "tryAgain": "再試行",
+      "viewOrders": "注文履歴を表示",
+      "backToOrders": "注文に戻る",
+      "alternatives": {
+        "title": "サポートが必要ですか？",
+        "description": "問題が続く場合は、お手伝いいたします。",
+        "contact": "サポートにお問い合わせ",
+        "faq": "よくある質問",
+        "shop": "ショッピングを続ける",
+        "account": "マイアカウント"
+      }
+    }
   }
 }

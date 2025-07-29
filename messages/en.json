@@ -1169,5 +1169,36 @@
         "contactUs": "Contact Support"
       }
     }
+  },
+  "OrderPage": {
+    "orderNotFound": {
+      "title": "Order Not Found",
+      "description": "We couldn't find the order you're looking for. It may have been cancelled, deleted, or the order ID is incorrect.",
+      "viewOrders": "View My Orders",
+      "backToOrders": "Back to My Orders",
+      "continueShopping": "Continue Shopping",
+      "explore": {
+        "title": "Need Help?",
+        "description": "If you're having trouble finding your order, we're here to help.",
+        "contact": "Contact Support",
+        "faq": "FAQ",
+        "account": "My Account"
+      }
+    },
+    "orderError": {
+      "title": "Order Loading Error",
+      "description": "We encountered an error while loading your order details. Please try again or contact support if the problem persists.",
+      "tryAgain": "Try Again",
+      "viewOrders": "View My Orders",
+      "backToOrders": "Back to Orders",
+      "alternatives": {
+        "title": "Need Help?",
+        "description": "If you continue to have issues, we're here to help.",
+        "contact": "Contact Support",
+        "faq": "FAQ",
+        "shop": "Continue Shopping",
+        "account": "My Account"
+      }
+    }
   }
 }

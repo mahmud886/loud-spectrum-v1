@@ -1,6 +1,6 @@
 import OrderConfirmationContent from '@/components/order-confirmation/OrderConfirmationContent';
 import { getOrderDetails } from '@/services/get-order-details-by-id';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 
 export default async function OrderConfirmationPage({ params }) {
   const { orderId } = await params;
@@ -8,8 +8,33 @@ export default async function OrderConfirmationPage({ params }) {
   try {
     const orderResponse = await getOrderDetails(orderId);
 
-    if (orderResponse.error || !orderResponse.data) {
-      console.error('Order not found:', orderResponse.message);
+    // Handle different types of errors
+    if (orderResponse.authError) {
+      // Redirect to login page for authentication errors
+      // console.error('Authentication error:', orderResponse.message);
+      redirect('/login');
+    }
+
+    if (orderResponse.notFound) {
+      // Show 404 for order not found
+      // console.error('Order not found:', orderResponse.message);
+      notFound();
+    }
+
+    if (orderResponse.serverError) {
+      // Handle server errors - show 404 instead of throwing error
+      // console.error('Server error:', orderResponse.message);
+      notFound();
+    }
+
+    if (orderResponse.error) {
+      // Handle other errors - show 404 instead of throwing error
+      // console.error('Error fetching order:', orderResponse.message);
+      notFound();
+    }
+
+    if (!orderResponse.data) {
+      // console.error('Invalid order response:', orderResponse);
       notFound();
     }
 
@@ -21,7 +46,7 @@ export default async function OrderConfirmationPage({ params }) {
       </div>
     );
   } catch (error) {
-    console.error('Error loading order:', error);
+    // console.error('Error loading order:', error);
     notFound();
   }
 }

@@ -1169,5 +1169,36 @@
         "contactUs": "Contacter le Support"
       }
     }
+  },
+  "OrderPage": {
+    "orderNotFound": {
+      "title": "Commande Non Trouvée",
+      "description": "Nous n'avons pas pu trouver la commande que vous recherchez. Elle peut avoir été annulée, supprimée, ou l'ID de commande est incorrect.",
+      "viewOrders": "Voir Mes Commandes",
+      "backToOrders": "Retour à Mes Commandes",
+      "continueShopping": "Continuer les Achats",
+      "explore": {
+        "title": "Besoin d'Aide ?",
+        "description": "Si vous avez des difficultés à trouver votre commande, nous sommes là pour vous aider.",
+        "contact": "Contacter le Support",
+        "faq": "FAQ",
+        "account": "Mon Compte"
+      }
+    },
+    "orderError": {
+      "title": "Erreur de Chargement de Commande",
+      "description": "Nous avons rencontré une erreur lors du chargement des détails de votre commande. Veuillez réessayer ou contacter le support si le problème persiste.",
+      "tryAgain": "Réessayer",
+      "viewOrders": "Voir Mes Commandes",
+      "backToOrders": "Retour aux Commandes",
+      "alternatives": {
+        "title": "Besoin d'Aide ?",
+        "description": "Si vous continuez à avoir des problèmes, nous sommes là pour vous aider.",
+        "contact": "Contacter le Support",
+        "faq": "FAQ",
+        "shop": "Continuer les Achats",
+        "account": "Mon Compte"
+      }
+    }
   }
 }

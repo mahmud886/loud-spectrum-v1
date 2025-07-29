@@ -194,11 +194,12 @@ const ProductDetailsLeftCard = ({ product }) => {
                     <SelectValue placeholder={t('ChooseVolume')} />
                   </SelectTrigger>
                   <SelectContent>
-                    {volumeOptions.map((option) => (
-                      <SelectItem key={option.value} value={option.value}>
-                        {option.label}
-                      </SelectItem>
-                    ))}
+                    {volumeOptions?.length > 0 &&
+                      volumeOptions?.map((option, idx) => (
+                        <SelectItem key={`${option.value}-${idx}`} value={option.value}>
+                          {option.label}
+                        </SelectItem>
+                      ))}
                   </SelectContent>
                 </Select>
               </div>

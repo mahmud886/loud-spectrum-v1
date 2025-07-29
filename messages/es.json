@@ -1168,5 +1168,36 @@
         "contactUs": "Contactar Soporte"
       }
     }
+  },
+  "OrderPage": {
+    "orderNotFound": {
+      "title": "Pedido No Encontrado",
+      "description": "No pudimos encontrar el pedido que buscas. Puede haber sido cancelado, eliminado, o el ID del pedido es incorrecto.",
+      "viewOrders": "Ver Mis Pedidos",
+      "backToOrders": "Volver a Mis Pedidos",
+      "continueShopping": "Continuar Comprando",
+      "explore": {
+        "title": "¿Necesitas Ayuda?",
+        "description": "Si tienes problemas para encontrar tu pedido, estamos aquí para ayudarte.",
+        "contact": "Contactar Soporte",
+        "faq": "Preguntas Frecuentes",
+        "account": "Mi Cuenta"
+      }
+    },
+    "orderError": {
+      "title": "Error de Carga del Pedido",
+      "description": "Encontramos un error al cargar los detalles de tu pedido. Por favor, inténtalo de nuevo o contacta con soporte si el problema persiste.",
+      "tryAgain": "Intentar de Nuevo",
+      "viewOrders": "Ver Mis Pedidos",
+      "backToOrders": "Volver a Pedidos",
+      "alternatives": {
+        "title": "¿Necesitas Ayuda?",
+        "description": "Si continúas teniendo problemas, estamos aquí para ayudarte.",
+        "contact": "Contactar Soporte",
+        "faq": "Preguntas Frecuentes",
+        "shop": "Continuar Comprando",
+        "account": "Mi Cuenta"
+      }
+    }
   }
 }

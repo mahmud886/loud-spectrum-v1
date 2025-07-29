@@ -1,3 +1,4 @@
+import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 
 const FlavorScience = () => {
@@ -13,7 +14,9 @@ const FlavorScience = () => {
             })}
           </h5>
           <div>
-            <button className="main-button-black rounded-full p-2 px-6">{t('Button')}</button>
+            <Link href="/lab" className="main-button-black rounded-full p-2 px-6">
+              {t('Button')}
+            </Link>
           </div>
         </div>
       </div>

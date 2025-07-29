@@ -1,6 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
-import { PlusIcon } from 'lucide-react';
+import { MenuIcon } from 'lucide-react';
 import { useState } from 'react';
 import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/tooltip';
 
@@ -25,7 +25,7 @@ const MenuButton = ({ setMenuOpen, isSpecialPath }) => {
               isSpecialPath ? 'hover:text-umbra-40 text-umbra-100' : 'hover:text-white-40 text-white'
             }`}
           >
-            <PlusIcon width={24} height={24} />
+            <MenuIcon width={20} height={20} />
           </motion.div>
         </div>
       </TooltipTrigger>

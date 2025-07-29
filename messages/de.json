@@ -1168,5 +1168,36 @@
         "contactUs": "Support kontaktieren"
       }
     }
+  },
+  "OrderPage": {
+    "orderNotFound": {
+      "title": "Bestellung nicht gefunden",
+      "description": "Wir konnten die gesuchte Bestellung nicht finden. Sie wurde möglicherweise storniert, gelöscht oder die Bestell-ID ist falsch.",
+      "viewOrders": "Meine Bestellungen anzeigen",
+      "backToOrders": "Zurück zu meinen Bestellungen",
+      "continueShopping": "Weiter einkaufen",
+      "explore": {
+        "title": "Brauchen Sie Hilfe?",
+        "description": "Wenn Sie Probleme haben, Ihre Bestellung zu finden, sind wir hier, um zu helfen.",
+        "contact": "Support kontaktieren",
+        "faq": "FAQ",
+        "account": "Mein Konto"
+      }
+    },
+    "orderError": {
+      "title": "Bestellungs-Ladefehler",
+      "description": "Beim Laden Ihrer Bestelldetails ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie den Support, wenn das Problem weiterhin besteht.",
+      "tryAgain": "Erneut versuchen",
+      "viewOrders": "Meine Bestellungen anzeigen",
+      "backToOrders": "Zurück zu Bestellungen",
+      "alternatives": {
+        "title": "Brauchen Sie Hilfe?",
+        "description": "Wenn Sie weiterhin Probleme haben, sind wir hier, um zu helfen.",
+        "contact": "Support kontaktieren",
+        "faq": "FAQ",
+        "shop": "Weiter einkaufen",
+        "account": "Mein Konto"
+      }
+    }
   }
 }
