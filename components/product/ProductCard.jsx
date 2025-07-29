@@ -1,6 +1,7 @@
 'use client';
 
 import ProductBuyDialog from '@/components/product/ProductBuyDialog';
+import DiscountPriceDisplay from '@/components/ui/DiscountPriceDisplay';
 import { getProductPriceRange } from '@/helpers/get-product-price-ranges';
 import { encodeCategoryForUrl } from '@/helpers/url-category-utils';
 import { Link } from '@/i18n/navigation';
@@ -97,9 +98,29 @@ const ProductCard = ({ product }) => {
           <h2 className={clsx('text-[22px] font-normal', isShopPage ? 'text-black' : 'text-white-100')}>
             {product?.name}
           </h2>
-          <p className={clsx('text-[15px] md:text-[19px]', isShopPage ? 'text-umbra-40' : 'text-white-40')}>
-            {min === max ? `$${min.toFixed(2)}` : `$${min.toFixed(2)} – $${max.toFixed(2)}`}
-          </p>
+
+          {/* Price Display with Discount */}
+          <DiscountPriceDisplay
+            category={product?.category}
+            minPrice={min}
+            maxPrice={max}
+            originalPriceClass={clsx(
+              'text-[13px] md:text-[19px] line-through opacity-60',
+              isShopPage ? 'text-umbra-40' : 'text-white-40',
+            )}
+            discountedPriceClass={clsx(
+              'text-[13px] md:text-[19px] font-normal',
+              isShopPage ? 'text-black' : 'text-white-100',
+            )}
+            regularPriceClass={clsx('text-[13px] md:text-[19px]', isShopPage ? 'text-umbra-40' : 'text-white-40')}
+            discountTextClass={clsx(
+              'rounded-full px-1.5 py-0.5 text-[8px] md:text-xs font-normal',
+              isShopPage ? 'bg-red-500 text-white' : 'bg-red-500 text-white',
+            )}
+            containerClass="flex flex-col gap-1"
+            showOriginalPrice={true}
+            showDiscountText={true}
+          />
         </div>
       </motion.div>
 

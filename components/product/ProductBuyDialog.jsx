@@ -1,6 +1,8 @@
 'use client';
 
+import DiscountPriceDisplay from '@/components/ui/DiscountPriceDisplay';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { calculateDiscountForSelectedPrice } from '@/helpers/calculate-discount';
 import { getProductPriceByVolume } from '@/helpers/get-product-price-by-volume';
 import { getProductPriceRange } from '@/helpers/get-product-price-ranges';
 import { parseProductAttributes } from '@/helpers/product-attributes';
@@ -29,11 +31,15 @@ const ProductBuyDialog = ({ open, onOpenChange, product }) => {
 
   const selectedPrice = getProductPriceByVolume(product?.subProducts, selectedVolume);
 
+  // Calculate discount for selected price (for cart functionality)
+  const selectedPriceDiscount = calculateDiscountForSelectedPrice(product?.category, selectedPrice);
+
   useEffect(() => {
     if (selectedPrice) {
-      toast.success(`Selected price: $${selectedPrice.toFixed(2)} for ${selectedVolume}`);
+      const displayPrice = selectedPriceDiscount.hasDiscount ? selectedPriceDiscount.discountedPrice : selectedPrice;
+      toast.success(`Selected price: $${displayPrice.toFixed(2)} for ${selectedVolume}`);
     }
-  }, [selectedPrice, selectedVolume]);
+  }, [selectedPrice, selectedVolume, selectedPriceDiscount]);
 
   useEffect(() => {
     const fetchReviews = async () => {
@@ -75,6 +81,9 @@ const ProductBuyDialog = ({ open, onOpenChange, product }) => {
       return;
     }
 
+    // Use discounted price if available
+    const finalPrice = selectedPriceDiscount.hasDiscount ? selectedPriceDiscount.discountedPrice : selectedPrice;
+
     // Create modified product with selectedSubProduct
     const modifiedProduct = {
       ...product,
@@ -86,7 +95,7 @@ const ProductBuyDialog = ({ open, onOpenChange, product }) => {
         id: product._id,
         product: modifiedProduct,
         quantity,
-        price: selectedPrice,
+        price: finalPrice,
         selectedVolume,
         isRegular: true,
         flavor: '',
@@ -96,6 +105,8 @@ const ProductBuyDialog = ({ open, onOpenChange, product }) => {
     setSelectedVolume('');
     setQuantity(1);
   };
+
+  console.log(product?.category);
 
   if (!open) return null;
 
@@ -126,8 +137,6 @@ const ProductBuyDialog = ({ open, onOpenChange, product }) => {
                     </div>
                   ) : (
                     <>
-                      {/* <span className={'flex items-center justify-start'}>{starComponents}</span> {reviews.length}{' '}
-                    {t('Reviews')} */}
                       <span className={'flex items-center justify-start'}>
                         {reviews.length === 0
                           ? renderStars(5, { size: 15, fillColor: '#ffffff', strokeColor: '#00000' })
@@ -140,9 +149,19 @@ const ProductBuyDialog = ({ open, onOpenChange, product }) => {
               </div>
               <div className="space-y-2">
                 <h2 className="text-umbra-100 font-sans text-[44px] leading-[120%] font-normal">{product?.name}</h2>
-                <h6 className="text-umbra-100 font-sans text-[22px] leading-[130%] font-normal">
-                  {min === max ? `$${min.toFixed(2)}` : `$${min.toFixed(2)} – $${max.toFixed(2)}`}
-                </h6>
+                <DiscountPriceDisplay
+                  category={product?.category}
+                  minPrice={min}
+                  maxPrice={max}
+                  selectedPrice={selectedPrice}
+                  originalPriceClass="text-18px text-umbra-100/30 line-through"
+                  discountedPriceClass="text-umbra-100 text-[22px]"
+                  regularPriceClass="text-umbra-100 text-[22px]"
+                  discountTextClass="rounded-full px-1.5 py-0.5 text-[14px] md:text-xs font-normal bg-red-500 text-white bg-red-500 text-white"
+                  containerClass="flex flex-col gap-1 font-sans leading-[130%] font-normal tracking-normal"
+                  showOriginalPrice={true}
+                  showDiscountText={true}
+                />
               </div>
               <hr className="terpene-border" />
               <div className="space-y-2">
