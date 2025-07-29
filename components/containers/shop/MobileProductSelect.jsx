@@ -16,10 +16,31 @@ import { usePathname } from 'next/navigation';
 export default function MobileProductSelect({ categories, totalCategoryProducts }) {
   const pathname = usePathname();
   const currentCategory = getCategoryFromPathname(pathname);
+
   const sortedCategories = [
-    { name: 'All', _id: 'all', productCount: totalCategoryProducts },
-    ...categories.sort((a, b) => a.name.localeCompare(b.name)),
+    { name: 'All', _id: 'all', slug: 'all', productCount: totalCategoryProducts },
+    ...categories
+      .sort((a, b) => a.name.localeCompare(b.name))
+      .map((category) => ({
+        ...category,
+        productCount: category.productCount || 0,
+      })),
   ];
+
+  // Find the current category by matching slug or name
+  const getCurrentCategoryId = () => {
+    if (currentCategory === 'all') {
+      return 'all';
+    }
+
+    const foundCategory = sortedCategories.find((cat) => {
+      const categorySlug = cat.slug || '';
+      const encodedName = encodeCategoryForUrl(cat.name);
+      return categorySlug === currentCategory || encodedName === currentCategory;
+    });
+
+    return foundCategory?._id || 'all';
+  };
 
   const handleChange = (value) => {
     const selectedCategory = sortedCategories.find((cat) => cat._id === value);
@@ -33,10 +54,7 @@ export default function MobileProductSelect({ categories, totalCategoryProducts 
 
   return (
     <>
-      <Select
-        value={sortedCategories.find((cat) => cat.name.toLowerCase() === currentCategory)?._id || 'all'}
-        onValueChange={handleChange}
-      >
+      <Select value={getCurrentCategoryId()} onValueChange={handleChange}>
         <SelectTrigger className="bg-umbra-5 min-h-12 w-full text-[17px] md:min-h-[42px] md:max-w-[280px] md:min-w-[156px]">
           <SelectValue placeholder="Filter by Category" />
         </SelectTrigger>
@@ -56,7 +74,7 @@ export default function MobileProductSelect({ categories, totalCategoryProducts 
         <Link
           key={category._id}
           id={`mobile-category-link-${category._id}`}
-          href={`/shop/${encodeCategoryForUrl(category.name)}`}
+          href={category.name === 'All' ? '/shop/all' : `/shop/${category.slug || encodeCategoryForUrl(category.name)}`}
           className="hidden"
         >
           {category.name}

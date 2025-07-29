@@ -23,12 +23,17 @@ export default function CategoryButton({ categories, totalCategoryProducts }) {
   return (
     <div className="mx-auto w-full max-w-md space-y-2" role="group" aria-label="Filter Options">
       {sortedCategories.map((category) => {
-        const isActive = category.name.toLowerCase() === currentCategory;
+        const encodedCategoryName = encodeCategoryForUrl(category.name);
+        const categorySlug = category.slug || '';
+        const isActiveByName = encodedCategoryName === currentCategory;
+        const isActiveBySlug = categorySlug === currentCategory;
+        const isActiveForAll = category.name === 'All' && currentCategory === 'all';
+        const isActive = isActiveByName || isActiveBySlug || isActiveForAll;
 
         return (
           <div key={category.name}>
             {category?.productCount > 0 && (
-              <Link href={`/shop/${encodeCategoryForUrl(category.name)}`} className="block w-full">
+              <Link href={category.name === 'All' ? '/shop/all' : `/shop/${categorySlug}`} className="block w-full">
                 <motion.button
                   type="button"
                   whileHover={{ scale: 1.02 }}

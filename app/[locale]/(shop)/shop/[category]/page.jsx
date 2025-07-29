@@ -59,13 +59,20 @@ const structuredData = {
 
 export async function generateMetadata({ params }) {
   const { category } = await params;
-
   const decodedCategory = await decodeCategoryFromUrl(category);
 
+  // Handle "all" category specially for metadata
+  const isAllCategory = decodedCategory === 'all';
+  const categoryName = isAllCategory ? 'All Products' : decodedCategory;
+  const categoryUrl = isAllCategory ? `${websiteUrl}/shop/all` : `${websiteUrl}/shop/${decodedCategory}`;
+
   return {
-    title: 'Shop | Loud Spectrum - Premium Terpene Products',
-    description:
-      'Discover our premium collection of terpene products. Shop high-quality, lab-tested terpenes for enhanced flavor and experience. Free shipping on orders over $50.',
+    title: isAllCategory
+      ? 'All Products | Loud Spectrum - Premium Terpene Products'
+      : `${categoryName?.toUpperCase()} | Loud Spectrum - Premium Terpene Products`,
+    description: isAllCategory
+      ? 'Discover our complete collection of premium terpene products. Shop high-quality, lab-tested terpenes for enhanced flavor and experience. Free shipping on orders over $50.'
+      : `Explore our premium ${categoryName.toLowerCase()} terpene products. Shop high-quality, lab-tested terpenes for enhanced flavor and experience. Free shipping on orders over $50.`,
     keywords:
       'terpenes, terpene products, premium terpenes, cannabis terpenes, terpene shop, terpene extracts, terpene isolates, terpene blends, terpene profiles, terpene flavors',
     authors: [{ name: 'Loud Spectrum' }],
@@ -78,11 +85,14 @@ export async function generateMetadata({ params }) {
     },
     metadataBase: new URL(websiteUrl),
     openGraph: {
-      title: 'Shop | Loud Spectrum - Premium Terpene Products',
-      description:
-        'Discover our premium collection of terpene products. Shop high-quality, lab-tested terpenes for enhanced flavor and experience. Free shipping on orders over $50.',
+      title: isAllCategory
+        ? 'All Products | Loud Spectrum - Premium Terpene Products'
+        : `${categoryName?.toUpperCase()} | Loud Spectrum - Premium Terpene Products`,
+      description: isAllCategory
+        ? 'Discover our complete collection of premium terpene products. Shop high-quality, lab-tested terpenes for enhanced flavor and experience. Free shipping on orders over $50.'
+        : `Explore our premium ${categoryName?.toLowerCase()} terpene products. Shop high-quality, lab-tested terpenes for enhanced flavor and experience. Free shipping on orders over $50.`,
       type: 'website',
-      url: `${websiteUrl}/shop/${decodedCategory}`,
+      url: categoryUrl,
       siteName: 'Loud Spectrum',
       locale: 'en_US',
       images: [
@@ -96,14 +106,17 @@ export async function generateMetadata({ params }) {
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'Shop | Loud Spectrum - Premium Terpene Products',
-      description:
-        'Discover our premium collection of terpene products. Shop high-quality, lab-tested terpenes for enhanced flavor and experience. Free shipping on orders over $50.',
+      title: isAllCategory
+        ? 'All Products | Loud Spectrum - Premium Terpene Products'
+        : `${categoryName?.toUpperCase()} | Loud Spectrum - Premium Terpene Products`,
+      description: isAllCategory
+        ? 'Discover our complete collection of premium terpene products. Shop high-quality, lab-tested terpenes for enhanced flavor and experience. Free shipping on orders over $50.'
+        : `Explore our premium ${categoryName?.toLowerCase()} terpene products. Shop high-quality, lab-tested terpenes for enhanced flavor and experience. Free shipping on orders over $50.`,
       creator: '@loudspectrum',
       images: [`${websiteUrl}/images/shop-twitter-image.jpg`],
     },
     alternates: {
-      canonical: `${websiteUrl}/shop/${decodedCategory}`,
+      canonical: categoryUrl,
       languages: {
         'en-US': `${websiteUrl}/en/shop/${decodedCategory}`,
         'es-ES': `${websiteUrl}/es/shop/${decodedCategory}`,
@@ -159,6 +172,31 @@ async function CategoryShopContent({ params }) {
   }
 
   const activeCategories = categories.data.categories.filter((category) => category.status === 'Active') || [];
+
+  // Handle "all" category specially - it's not a real category but a filter
+  if (decodedCategory === 'all') {
+    return (
+      <>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+
+        <Suspense fallback={<ShopHeroShimmer />}>
+          <ShopHeroContent category={{ name: 'All Products', slug: 'all' }} />
+        </Suspense>
+
+        <Suspense fallback={<TerpeneProductsContainerShimmer />}>
+          <TerpeneProductsContainerContent categories={activeCategories} categoryId="all" />
+        </Suspense>
+
+        <div className="container pt-20 pb-[160px]">
+          <Suspense fallback={<ShopQualityPromiseShimmer />}>
+            <ShopQualityPromiseContent />
+          </Suspense>
+        </div>
+      </>
+    );
+  }
+
+  // For real categories, find the exact category
   const exactCategory = activeCategories.find((category) => category.slug === decodedCategory);
 
   // Check if category exists, if not show 404
