@@ -388,10 +388,11 @@
   "TrySamplePack": {
     "Reviews": "Reseñas",
     "ChooseFormula": "Elegir fórmula",
+    "SelectVolume": "Seleccionar volumen",
     "CustomizeYourPack": "Personaliza tu paquete",
     "AddToCart": "Agregar al carrito",
     "StartingAt": "Desde",
-    "Note": "Nota: Informar al cliente lo que debe hacer para realizar cambios - Loud Spectrum actualizará el texto final."
+    "Note": "Nota: ¿Quieres añadir, cambiar o quitar algo? Solo escribe tus preferencias aquí y personalizaremos tu paquete para ti."
   },
   "TerpeneChartHero": {
     "heading": "La Tabla de Terpenos del Espectro Intenso",

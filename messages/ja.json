@@ -389,10 +389,11 @@
   "TrySamplePack": {
     "Reviews": "レビュー",
     "ChooseFormula": "フォーミュラを選択",
+    "SelectVolume": "体積を選択",
     "CustomizeYourPack": "パックをカスタマイズ",
     "AddToCart": "カートに追加",
     "StartingAt": "開始価格：",
-    "Note": "注意：カスタマイズするために顧客が行う必要があることを伝える – Loud Spectrumが最終的な文言を更新します。"
+    "Note": "注意：何かを追加、交換、または削除したい場合は、ここにあなたの選択を書き込んで、私たちがあなたのパックをカスタマイズします。"
   },
   "TerpeneChartHero": {
     "heading": "ラウドスペクトル・テルペンチャート",

@@ -388,10 +388,11 @@
   "TrySamplePack": {
     "Reviews": "Bewertungen",
     "ChooseFormula": "Formel wählen",
+    "SelectVolume": "Volumen auswählen",
     "CustomizeYourPack": "Paket anpassen",
     "AddToCart": "In den Warenkorb",
     "StartingAt": "Ab",
-    "Note": "Hinweis: Kunden informieren, was sie tun müssen, um Anpassungen vorzunehmen – Loud Spectrum wird den endgültigen Text aktualisieren."
+    "Note": "Hinweis: Möchten Sie etwas hinzufügen, austauschen oder entfernen? Schreiben Sie einfach Ihre Wünsche hier rein und wir passen Ihr Paket für Sie an."
   },
   "TerpeneChartHero": {
     "heading": "Die Lautspektrum-Terpen-Tabelle",

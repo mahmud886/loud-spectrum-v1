@@ -106,8 +106,6 @@ const ProductBuyDialog = ({ open, onOpenChange, product }) => {
     setQuantity(1);
   };
 
-  console.log(product?.category);
-
   if (!open) return null;
 
   return (

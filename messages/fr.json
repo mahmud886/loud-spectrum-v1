@@ -389,10 +389,11 @@
   "TrySamplePack": {
     "Reviews": "Avis",
     "ChooseFormula": "Choisir la formule",
+    "SelectVolume": "Sélectionner le volume",
     "CustomizeYourPack": "Personnalisez votre pack",
     "AddToCart": "Ajouter au panier",
     "StartingAt": "À partir de",
-    "Note": "Remarque : Informer le client de ce qu’il doit faire pour effectuer des modifications – Loud Spectrum mettra à jour le texte final."
+    "Note": "Remarque : Vous voulez ajouter, échanger ou supprimer quelque chose ? Écrivez simplement vos choix ici et nous personnaliserons votre pack pour vous."
   },
   "TerpeneChartHero": {
     "heading": "Le Tableau des Terpènes du Spectre Intense",
