@@ -3,7 +3,7 @@ import CategoryButton from './CategoryButton';
 import MobileProductSelect from './MobileProductSelect';
 import TerpeneCategoryProducts from './TerpeneCategoryProducts';
 
-const TerpeneProductsContainer = ({ categories, categoryId }) => {
+const TerpeneProductsContainer = ({ categories, categoryId, productTypes, isProductType }) => {
   const t = useTranslations('TerpeneShop');
   const totalCategoryProducts = categories?.reduce((acc, category) => acc + category.productCount, 0);
 
@@ -17,13 +17,25 @@ const TerpeneProductsContainer = ({ categories, categoryId }) => {
             </h5>
           </div>
           <div className="block md:hidden">
-            <MobileProductSelect categories={categories} totalCategoryProducts={totalCategoryProducts} />
+            <MobileProductSelect
+              categories={categories}
+              totalCategoryProducts={totalCategoryProducts}
+              productTypes={productTypes || []}
+            />
           </div>
           <div className="hidden md:block">
-            <CategoryButton categories={categories} totalCategoryProducts={totalCategoryProducts} />
+            <CategoryButton
+              categories={categories}
+              totalCategoryProducts={totalCategoryProducts}
+              productTypes={productTypes || []}
+            />
           </div>
         </div>
-        <TerpeneCategoryProducts categoryId={categoryId} />
+        <TerpeneCategoryProducts
+          categoryId={categoryId}
+          productTypes={productTypes || []}
+          isProductType={isProductType}
+        />
       </div>
     </div>
   );

@@ -13,7 +13,7 @@ import { encodeCategoryForUrl, getCategoryFromPathname } from '@/helpers/url-cat
 import { Link } from '@/i18n/navigation';
 import { usePathname } from 'next/navigation';
 
-export default function MobileProductSelect({ categories, totalCategoryProducts }) {
+export default function MobileProductSelect({ categories, totalCategoryProducts, productTypes }) {
   const pathname = usePathname();
   const currentCategory = getCategoryFromPathname(pathname);
 
@@ -25,6 +25,12 @@ export default function MobileProductSelect({ categories, totalCategoryProducts 
         ...category,
         productCount: category.productCount || 0,
       })),
+    ...productTypes?.map((productType) => ({
+      _id: productType._id,
+      name: productType.name,
+      slug: productType.slug || productType.name,
+      productCount: productType?.productCount || 0,
+    })),
   ];
 
   // Find the current category by matching slug or name
@@ -61,7 +67,7 @@ export default function MobileProductSelect({ categories, totalCategoryProducts 
         <SelectContent>
           <SelectGroup>
             <SelectLabel className="!text-[17px]">Filter</SelectLabel>
-            {sortedCategories.map((category) => (
+            {sortedCategories?.map((category) => (
               <SelectItem key={category._id} value={category._id}>
                 {category.name} <span className="text-umbra-40 text-[12px]">({category?.productCount || 0})</span>
               </SelectItem>
@@ -70,7 +76,7 @@ export default function MobileProductSelect({ categories, totalCategoryProducts 
         </SelectContent>
       </Select>
 
-      {sortedCategories.map((category) => (
+      {sortedCategories?.map((category) => (
         <Link
           key={category._id}
           id={`mobile-category-link-${category._id}`}

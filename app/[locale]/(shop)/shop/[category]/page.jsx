@@ -6,6 +6,7 @@ import ShopHero from '@/components/headers/ShopHero';
 import ShopHeroShimmer from '@/components/headers/ShopHeroShimmer';
 import { decodeCategoryFromUrl } from '@/helpers/url-category-utils';
 import { getCategories } from '@/services/get-categories';
+import { getProductTypes } from '@/services/get-product-types';
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 
@@ -145,14 +146,21 @@ export async function generateMetadata({ params }) {
   };
 }
 
-// Async component for shop hero with category
+// Async component for a shop hero with category
 async function ShopHeroContent({ category }) {
   return <ShopHero category={category} />;
 }
 
 // Async component for terpene products container with category
-async function TerpeneProductsContainerContent({ categoryId, categories }) {
-  return <TerpeneProductsContainer categories={categories} categoryId={categoryId} />;
+async function TerpeneProductsContainerContent({ categoryId, categories, productTypes, isProductType }) {
+  return (
+    <TerpeneProductsContainer
+      categories={categories}
+      categoryId={categoryId}
+      productTypes={productTypes}
+      isProductType={isProductType}
+    />
+  );
 }
 
 // Async component for shop quality promise
@@ -160,18 +168,31 @@ async function ShopQualityPromiseContent() {
   return <ShopQualityPromise />;
 }
 
-// Main async component that fetches category data
+// Main async part that fetches category data
 async function CategoryShopContent({ params }) {
   const { category } = await params;
   const decodedCategory = await decodeCategoryFromUrl(category);
-  const categories = await getCategories();
-
-  // Check for API errors or not found responses
-  if (!categories || categories.error || categories.notFound) {
-    notFound();
-  }
+  const [categories, productTypes] = await Promise.all([getCategories(), getProductTypes()]);
 
   const activeCategories = categories.data.categories.filter((category) => category.status === 'Active') || [];
+
+  const activeProductTypes =
+    productTypes?.data
+      ?.filter((productType) => productType.status === 'Active' && productType.is_deleted === false)
+      .map((productType) => ({
+        name: productType.name,
+        slug: productType.slug || productType.name,
+        _id: productType._id,
+        productCount: productType?.productCount || 0,
+      })) || [];
+
+  let isProductType = { type: false, name: null, slug: null, _id: null };
+  for (const productType of activeProductTypes) {
+    if (productType.name === decodedCategory || productType.slug === decodedCategory) {
+      isProductType = { type: true, name: productType.name, slug: productType.slug, _id: productType._id };
+      break;
+    }
+  }
 
   // Handle "all" category specially - it's not a real category but a filter
   if (decodedCategory === 'all') {
@@ -184,7 +205,12 @@ async function CategoryShopContent({ params }) {
         </Suspense>
 
         <Suspense fallback={<TerpeneProductsContainerShimmer />}>
-          <TerpeneProductsContainerContent categories={activeCategories} categoryId="all" />
+          <TerpeneProductsContainerContent
+            categories={activeCategories}
+            categoryId="all"
+            isProductType={isProductType || false}
+            productTypes={activeProductTypes || []}
+          />
         </Suspense>
 
         <div className="container pt-20 pb-[160px]">
@@ -200,7 +226,7 @@ async function CategoryShopContent({ params }) {
   const exactCategory = activeCategories.find((category) => category.slug === decodedCategory);
 
   // Check if category exists, if not show 404
-  if (!exactCategory) {
+  if (!exactCategory && !isProductType?.type) {
     notFound();
   }
 
@@ -213,7 +239,12 @@ async function CategoryShopContent({ params }) {
       </Suspense>
 
       <Suspense fallback={<TerpeneProductsContainerShimmer />}>
-        <TerpeneProductsContainerContent categories={activeCategories} categoryId={exactCategory._id} />
+        <TerpeneProductsContainerContent
+          categories={activeCategories}
+          categoryId={exactCategory?._id}
+          isProductType={isProductType || false}
+          productTypes={activeProductTypes || []}
+        />
       </Suspense>
 
       <div className="container pt-20 pb-[160px]">

@@ -1,3 +1,4 @@
+import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
@@ -15,9 +16,15 @@ const ShopByMood = () => {
               </h2>
             </div>
             <div className="mt-6 hidden flex-wrap items-center justify-center gap-1 md:flex md:justify-start md:gap-4 lg:justify-start lg:gap-4">
-              <button className="outline-button-black cursor-grab rounded-full px-6 py-2">{t('Active')}</button>
-              <button className="outline-button-black cursor-grab rounded-full px-6 py-2">{t('Relaxed')}</button>
-              <button className="outline-button-black cursor-grab rounded-full px-6 py-2">{t('Hybrid')}</button>
+              <Link href="/shop/Active" className="outline-button-black cursor-grab rounded-full px-6 py-2">
+                {t('Active')}
+              </Link>
+              <Link href="/shop/Relax" className="outline-button-black cursor-grab rounded-full px-6 py-2">
+                {t('Relaxed')}
+              </Link>
+              <Link href="/shop/Hybrid" className="outline-button-black cursor-grab rounded-full px-6 py-2">
+                {t('Hybrid')}
+              </Link>
             </div>
           </div>
           <div className="h-full w-full">
@@ -30,9 +37,15 @@ const ShopByMood = () => {
             />
           </div>
           <div className="flex flex-wrap items-center justify-center gap-1.5 md:hidden lg:md:hidden">
-            <button className="outline-button-black cursor-grab rounded-full px-6 py-2">{t('Active')}</button>
-            <button className="outline-button-black cursor-grab rounded-full px-6 py-2">{t('Relaxed')}</button>
-            <button className="outline-button-black cursor-grab rounded-full px-6 py-2">{t('Hybrid')}</button>
+            <Link href="/shop/Active" className="outline-button-black cursor-grab rounded-full px-6 py-2">
+              {t('Active')}
+            </Link>
+            <Link href="/shop/Relax" className="outline-button-black cursor-grab rounded-full px-6 py-2">
+              {t('Relaxed')}
+            </Link>
+            <Link href="/shop/Hybrid" className="outline-button-black cursor-grab rounded-full px-6 py-2">
+              {t('Hybrid')}
+            </Link>
           </div>
         </div>
       </div>
