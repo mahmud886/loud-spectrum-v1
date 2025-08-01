@@ -53,10 +53,10 @@ export const getOrderDetails = async (orderId) => {
     const orderData = data.data;
 
     // Debug logging in development
-    if (process.env.NODE_ENV === 'development') {
-      console.log(`Order data for orderId: ${orderId}`, orderData);
-      console.log(`Order data keys:`, Object.keys(orderData || {}));
-    }
+    // if (process.env.NODE_ENV === 'development') {
+    //   console.log(`Order data for orderId: ${orderId}`, orderData);
+    //   console.log(`Order data keys:`, Object.keys(orderData || {}));
+    // }
 
     // If order data is empty or invalid, return not found
     if (!orderData || Object.keys(orderData).length === 0) {

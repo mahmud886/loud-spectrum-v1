@@ -54,7 +54,7 @@ export const addNewAddress = async (formData) => {
       };
     }
 
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/orders/address`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/address`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -88,7 +88,7 @@ export const updateAddress = async (addressId, formData) => {
       };
     }
 
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/orders/address/${addressId}`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/address/${addressId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -129,7 +129,7 @@ export const getAddresses = async () => {
       };
     }
 
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/orders/address`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/address`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

@@ -7,7 +7,7 @@
  */
 export const deleteOrderAddressById = async (addressId, authToken) => {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/orders/address`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/address`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
