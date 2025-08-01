@@ -80,7 +80,7 @@ const WhatAreTerpenesSlider = () => {
       facts: t.raw('alive.facts'),
       label: t('alive.label'),
       image: '/assets/images/terpene-guide/alive-slider.png',
-      link: '/shop',
+      link: '/shop/alive',
       buttonLabel: t('alive.shop'),
     },
     {
@@ -89,7 +89,7 @@ const WhatAreTerpenesSlider = () => {
       facts: t.raw('dank.facts'),
       label: t('dank.label'),
       image: '/assets/images/terpene-guide/dank-slider.png',
-      link: '/shop',
+      link: '/shop/dank',
       buttonLabel: t('dank.shop'),
     },
     {
@@ -98,7 +98,7 @@ const WhatAreTerpenesSlider = () => {
       facts: t.raw('sweet.facts'),
       label: t('sweet.label'),
       image: '/assets/images/terpene-guide/sweet-slider.png',
-      link: '/shop',
+      link: '/shop/sweet',
       buttonLabel: t('sweet.shop'),
     },
     {
@@ -107,7 +107,7 @@ const WhatAreTerpenesSlider = () => {
       facts: t.raw('classic.facts'),
       label: t('classic.label'),
       image: '/assets/images/terpene-guide/classic-slider.png',
-      link: '/shop',
+      link: '/shop/classic',
       buttonLabel: t('classic.shop'),
     },
   ];

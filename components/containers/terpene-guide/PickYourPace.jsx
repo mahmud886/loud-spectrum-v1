@@ -1,3 +1,4 @@
+import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
@@ -29,9 +30,9 @@ const PickYourPace = () => {
               </div>
             </div>
             <div className="absolute bottom-[12%] w-full px-5 pb-5 md:top-[5%] md:right-[5%] md:bottom-auto md:w-auto md:px-0 md:pb-0">
-              <button className="outline-button-black w-full rounded-full px-6 py-2 md:w-auto">
+              <Link href="/shop/Active" className="outline-button-black w-full rounded-full px-6 py-2 md:w-auto">
                 {t('shopActive')}
-              </button>
+              </Link>
             </div>
             <h2 className="text-umbra-100 mt-5 cursor-pointer font-sans text-[32px] leading-[120%]">{t('active')}</h2>
           </div>
@@ -49,9 +50,9 @@ const PickYourPace = () => {
               </div>
 
               <div className="absolute bottom-[12%] w-full px-5 pb-5 md:top-[5%] md:right-[5%] md:bottom-auto md:w-auto md:px-0 md:pb-0">
-                <button className="outline-button-black w-full rounded-full px-6 py-2 md:w-auto">
+                <Link href="/shop/Relax" className="outline-button-black w-full rounded-full px-6 py-2 md:w-auto">
                   {t('shopRelaxed')}
-                </button>
+                </Link>
               </div>
             </div>
             <h2 className="text-umbra-100 mt-5 font-sans text-[32px] leading-[120%]">{t('relaxed')}</h2>
@@ -68,9 +69,9 @@ const PickYourPace = () => {
                 />
               </div>
               <div className="absolute bottom-[12%] w-full px-5 pb-5 md:top-[5%] md:right-[5%] md:bottom-auto md:w-auto md:px-0 md:pb-0">
-                <button className="outline-button-black w-full rounded-full px-6 py-2 md:w-auto">
+                <Link href="/shop/Hybrid" className="outline-button-black w-full rounded-full px-6 py-2 md:w-auto">
                   {t('shopHybrid')}
-                </button>
+                </Link>
               </div>
             </div>
             <h2 className="text-umbra-100 mt-5 font-sans text-[32px] leading-[120%]">{t('hybrid')}</h2>
