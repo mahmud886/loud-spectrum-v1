@@ -6,18 +6,26 @@ import clsx from 'clsx';
 import { AnimatePresence, motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 
-export default function CategoryButton({ categories, totalCategoryProducts }) {
+export default function CategoryButton({ categories, totalCategoryProducts, productTypes }) {
   const pathname = usePathname();
   const currentCategory = getCategoryFromPathname(pathname);
 
   const sortedCategories = [
-    { name: 'All', _id: 'all', productCount: totalCategoryProducts },
+    { _id: 'all', name: 'All', productCount: totalCategoryProducts },
+
     ...categories
-      .sort((a, b) => a.name.localeCompare(b.name))
+      // .sort((a, b) => a.name.localeCompare(b.name))
       .map((category) => ({
         ...category,
         productCount: category.productCount || 0,
       })),
+    // add product types to the categories array
+    ...productTypes?.map((productType) => ({
+      _id: productType._id,
+      name: productType.name,
+      slug: productType.slug || productType.name,
+      productCount: productType?.productCount || 0,
+    })),
   ];
 
   return (
@@ -32,7 +40,8 @@ export default function CategoryButton({ categories, totalCategoryProducts }) {
 
         return (
           <div key={category.name}>
-            {category?.productCount > 0 && (
+            {/* {category?.productCount > 0 && ( */}
+            {category && (
               <Link href={category.name === 'All' ? '/shop/all' : `/shop/${categorySlug}`} className="block w-full">
                 <motion.button
                   type="button"

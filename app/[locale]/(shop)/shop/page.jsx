@@ -5,6 +5,7 @@ import TerpeneProductsContainerShimmer from '@/components/containers/shop/Terpen
 import ShopHero from '@/components/headers/ShopHero';
 import ShopHeroShimmer from '@/components/headers/ShopHeroShimmer';
 import { getCategories } from '@/services/get-categories';
+import { getProductTypes } from '@/services/get-product-types';
 import { Suspense } from 'react';
 
 const websiteUrl = process.env.NEXT_PUBLIC_WEBSITE_URL || 'https://loudspectrum.com';
@@ -128,17 +129,29 @@ export async function generateMetadata() {
   };
 }
 
-// Async component for shop hero
+// Async component for a shop hero
 async function ShopHeroContent() {
   return <ShopHero />;
 }
 
 // Async component for terpene products container
 async function TerpeneProductsContainerContent() {
-  const categories = await getCategories();
-  const activeCategories = categories?.data?.categories?.filter((category) => category.status === 'Active') || [];
+  const [categories, productTypes] = await Promise.all([getCategories(), getProductTypes()]);
 
-  return <TerpeneProductsContainer categories={activeCategories} categoryId={'all'} />;
+  const activeCategories = categories?.data?.categories?.filter((category) => category.status === 'Active') || [];
+  const activeProductTypes =
+    productTypes?.data
+      ?.filter((productType) => productType.status === 'Active' && productType.is_deleted === false)
+      .map((productType) => ({
+        name: productType.name,
+        slug: productType.slug || productType.name,
+        _id: productType._id,
+        productCount: productType?.productCount || 0,
+      })) || [];
+
+  return (
+    <TerpeneProductsContainer categories={activeCategories} categoryId={'all'} productTypes={activeProductTypes} />
+  );
 }
 
 // Async component for shop quality promise

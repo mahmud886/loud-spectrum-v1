@@ -1,7 +1,6 @@
 'use client';
 
 import CloseButton from '@/components/navbar/CloseButton';
-import { encodeCategoryForUrl } from '@/helpers/url-category-utils';
 import { useAuthToken } from '@/hooks/useAuthToken';
 import { Link } from '@/i18n/navigation';
 import { selectCartItems } from '@/lib/store/slices/cartSlice';
@@ -23,13 +22,13 @@ const TopNavRight = ({ onClose, setCartOpen }) => {
       [topNav.Dank]: 'dank',
       [topNav.Sweet]: 'sweet',
       [topNav.Classic]: 'classic',
-      [topNav.Active]: 'active',
-      [topNav.Relaxed]: 'relaxed',
+      [topNav.Active]: 'Active',
+      [topNav.Relaxed]: 'Relax',
       [topNav.Sample_packs]: 'sample-packs',
     };
 
     const englishCategory = categoryMap[categoryName] || categoryName.toLowerCase();
-    return `/shop/${encodeCategoryForUrl(englishCategory)}`;
+    return `/shop/${englishCategory}`;
   };
 
   return (
