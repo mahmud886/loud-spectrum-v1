@@ -3,12 +3,20 @@
 import BillingAddress from '@/components/checkout/BillingAddress';
 import ShippingAddress from '@/components/checkout/ShippingAddress';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { selectBillingAddress, setSameAsShipping } from '@/lib/store/slices/checkoutSlice';
 import { useTranslations } from 'next-intl';
-import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 const ShippingAndBillingAddress = () => {
-  const [billingOption, setBillingOption] = useState('same');
+  const billingAddress = useSelector(selectBillingAddress);
+  const dispatch = useDispatch();
   const t = useTranslations('CheckoutPage.ShippingAndBillingAddress');
+
+  const billingOption = billingAddress.sameAsShipping ? 'same' : 'different';
+
+  const handleBillingOptionChange = (value) => {
+    dispatch(setSameAsShipping(value === 'same'));
+  };
 
   return (
     <div className="space-y-8 p-4">
@@ -16,7 +24,11 @@ const ShippingAndBillingAddress = () => {
 
       <div className="mx-auto w-full">
         {/* Responsive inline radio group */}
-        <RadioGroup value={billingOption} onValueChange={setBillingOption} className="flex flex-col gap-3 md:flex-row">
+        <RadioGroup
+          value={billingOption}
+          onValueChange={handleBillingOptionChange}
+          className="flex flex-col gap-3 md:flex-row"
+        >
           {/* Same as shipping */}
           <label
             htmlFor="same"
