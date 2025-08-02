@@ -1,7 +1,9 @@
 'use client';
 
+import { authenticateUser } from '@/app/actions/auth';
 import { registerSchema } from '@/helpers/validations/register-validation';
 import { setCredentials } from '@/lib/store/slices/authSlice';
+import { clearCheckoutOnLogin } from '@/lib/store/slices/checkoutSlice';
 import { Eye, EyeOff } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
@@ -58,15 +60,20 @@ const Register = () => {
       if (!response.ok) {
         throw new Error(result.message || 'Registration failed');
       }
+      // direct login after register
+      await authenticateUser(formData);
+      // registration suceesfull then clear the checkout state
+      dispatch(clearCheckoutOnLogin());
+      // set the user credentials
       dispatch(
         setCredentials({
-          id: result.data._id,
-          name: result.data.name,
-          email: result.data.email,
-          phone_number: result.data.phone_number,
-          role: result.data.role,
-          status: result.data.status,
-          token: result.data.token,
+          id: result?.data?._id || '',
+          name: result?.data?.name || formData?.get('name') || '',
+          email: result?.data?.email || formData?.get('email') || '',
+          phone_number: result?.data?.phone_number || formData?.get('phone_number') || '',
+          role: result?.data?.role || 'customer',
+          status: result?.data?.status || 'Active',
+          token: result?.data?.token || '',
         }),
       );
 
@@ -76,7 +83,7 @@ const Register = () => {
       });
 
       // Redirect to login page after successful registration
-      router.push('/login');
+      router.push('/account');
     } catch (error) {
       if (error instanceof z.ZodError) {
         // Convert Zod errors to a more usable format

@@ -4,7 +4,7 @@ import { updateUserProfile } from '@/app/actions/user-actions';
 import { validateUserInfo } from '@/helpers/validations/user-info-validation';
 import { selectCurrentUser, setCredentials } from '@/lib/store/slices/authSlice';
 import { motion } from 'framer-motion';
-import { Edit, UserIcon } from 'lucide-react';
+import { Edit } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'sonner';
@@ -104,12 +104,12 @@ export default function PersonalInfoPage() {
 
         <div className="flex h-[300px] flex-col items-center justify-center gap-10 md:flex-row">
           {/* User photo */}
-          <motion.div
+          {/* <motion.div
             className="bg-stardust flex h-[200px] w-[200px] flex-shrink-0 items-center justify-center overflow-hidden rounded-full border border-gray-300"
             whileHover={{ scale: 1.02 }}
           >
             <UserIcon className="text-umbra-40 h-32 w-32" />
-          </motion.div>
+          </motion.div> */}
 
           {/* Display or Edit Form */}
           <div className="flex w-full flex-col gap-4">

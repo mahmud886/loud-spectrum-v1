@@ -2,7 +2,7 @@
 
 import { cookies } from 'next/headers';
 
-export async function authenticateUser(prevState, formData) {
+export async function authenticateUser(formData) {
   try {
     const url = `${process.env.NEXT_PUBLIC_API_URL}/login`;
     const options = {
@@ -11,8 +11,8 @@ export async function authenticateUser(prevState, formData) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        email: formData.get('email'),
-        password: formData.get('password'),
+        email: formData?.get('email'),
+        password: formData?.get('password'),
       }),
     };
 
@@ -36,15 +36,13 @@ export async function authenticateUser(prevState, formData) {
       };
     }
 
-    // Set cookie
-    const expires = new Date(Date.now() + 3 * 24 * 60 * 60 * 1000); // 3 days
+    // const expires = new Date(Date.now() + 3 * 24 * 60 * 60 * 1000); // 3 days
     const cookieStore = cookies();
     cookieStore.set({
       name: 'authToken',
       secure: process.env.NODE_ENV === 'production',
       value: data?.token,
       path: '/',
-      expires: expires,
     });
 
     return {
