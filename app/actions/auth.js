@@ -37,8 +37,9 @@ export async function authenticateUser(formData) {
     }
 
     // const expires = new Date(Date.now() + 3 * 24 * 60 * 60 * 1000); // 3 days
-    const cookieStore = cookies();
-    cookieStore.set({
+    const cookieStore = await cookies();
+    await cookieStore.delete('authToken');
+    await cookieStore.set({
       name: 'authToken',
       secure: process.env.NODE_ENV === 'production',
       value: data?.token,
