@@ -5,6 +5,10 @@ import Image from 'next/image';
 const TrySamplePackHero = async ({ samplePackCategory }) => {
   const listOfProducts = await getCategoryProducts();
 
+  // const productReviews = await getAllProductReviews();
+
+  // console.log('productReviews', productReviews);
+
   const filteredSamplePackProducts =
     (await listOfProducts?.data?.filter((product) =>
       samplePackCategory?.some((category) => product.category_id === category._id),

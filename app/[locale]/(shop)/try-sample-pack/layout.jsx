@@ -5,7 +5,6 @@ const ProductDetailsLayout = async ({ children }) => {
   const categories = await getCategories();
 
   const samplePackCategory = categories?.data?.categories?.filter((category) => category.name.includes('Sample Pack'));
-
   return (
     <div className="">
       <TrySamplePackHero samplePackCategory={samplePackCategory} />

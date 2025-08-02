@@ -1,9 +1,13 @@
 'use client';
 
+import DiscountPriceDisplay from '@/components/ui/DiscountPriceDisplay';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
+import { calculateDiscountForSelectedPrice } from '@/helpers/calculate-discount';
+import { getCategoryColorClasses, getCategoryTextClasses } from '@/helpers/get-category-color-classes';
+import { getProductPriceRange } from '@/helpers/get-product-price-ranges';
 import { addToCartAndOpenDrawer } from '@/lib/store/slices/cartSlice';
-import { MinusIcon, PlusIcon, Star } from 'lucide-react';
+import { MinusIcon, PlusIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
@@ -20,7 +24,14 @@ const SamplePackHeroCard = ({ filteredSamplePackProducts }) => {
   const [showVolumeError, setShowVolumeError] = useState(false);
   const [showRemarkError, setShowRemarkError] = useState(false);
   const [showSelectedProductError, setShowSelectedProductError] = useState(false);
+
+  const [min, setMin] = useState(null);
+  const [max, setMax] = useState(null);
+
   const dispatch = useDispatch();
+
+  // Calculate discount for selected price (for cart functionality)
+  const selectedPriceDiscount = calculateDiscountForSelectedPrice(selectedProduct?.category, selectedPrice);
 
   const handleSelectVolume = (value) => {
     if (selectedProduct && selectedProduct.subProducts) {
@@ -46,7 +57,11 @@ const SamplePackHeroCard = ({ filteredSamplePackProducts }) => {
 
   const handleProductSelection = (value) => {
     const product = filteredSamplePackProducts.find((item) => item._id === value);
+
     if (product) {
+      const { min, max } = getProductPriceRange(product?.subProducts);
+      setMin(min);
+      setMax(max);
       setSelectedProduct(product);
       setSelectedProductName(product.name);
       setShowSelectedProductError(false);
@@ -79,6 +94,12 @@ const SamplePackHeroCard = ({ filteredSamplePackProducts }) => {
     }
   }, [selectedProduct]);
 
+  useEffect(() => {
+    if (selectedPrice) {
+      const displayPrice = selectedPriceDiscount.hasDiscount ? selectedPriceDiscount.discountedPrice : selectedPrice;
+    }
+  }, [selectedPrice, selectedVolume, selectedPriceDiscount]);
+
   const handleAddToCart = () => {
     if (!selectedProduct) {
       setShowSelectedProductError(true);
@@ -96,12 +117,14 @@ const SamplePackHeroCard = ({ filteredSamplePackProducts }) => {
       return;
     }
 
+    // Use discounted price if available
+    const finalPrice = selectedPriceDiscount.hasDiscount ? selectedPriceDiscount.discountedPrice : selectedPrice;
     dispatch(
       addToCartAndOpenDrawer({
         id: selectedProduct._id,
         product: modifiedProduct,
         quantity,
-        price: selectedPrice,
+        price: finalPrice,
         selectedVolume,
         isRegular: true,
         flavor: selectedProductName,
@@ -127,7 +150,7 @@ const SamplePackHeroCard = ({ filteredSamplePackProducts }) => {
       <div className="flex h-full w-full flex-col items-start justify-between gap-5">
         <div className="w-full self-start">
           <div className="space-y-5">
-            <div className="flex items-center justify-between gap-5">
+            {/* <div className="flex items-center justify-between gap-5">
               <p className="text-umbra-100 inline-flex items-center justify-start gap-2 font-mono text-[14px] leading-[130%] font-normal">
                 <span className={'flex items-center justify-start'}>
                   <Star size={15} fill={'#00000'} />
@@ -138,11 +161,33 @@ const SamplePackHeroCard = ({ filteredSamplePackProducts }) => {
                 </span>{' '}
                 6 {t('Reviews')}
               </p>
-            </div>
+            </div> */}
+            <button
+              className={`${getCategoryColorClasses(selectedProduct?.category?.name)} mb-2 rounded-[3px] border-1 px-2 text-[12px] font-normal capitalize`}
+            >
+              {selectedProduct?.category?.name ? selectedProduct?.category?.name : 'Sample Packs'}
+            </button>
             <div className="space-y-2">
               <h6 className="text-umbra-100 font-sans text-[22px] leading-[130%] font-normal tracking-normal">
-                {selectedPrice ? `$${selectedPrice.toFixed(2)}` : `${t('StartingAt')} $10.00`}
+                {selectedPrice ? '' : `${t('StartingAt')} $10.00`}
               </h6>
+
+              {selectedPrice ? (
+                <DiscountPriceDisplay
+                  category={selectedProduct?.category}
+                  selectedPrice={selectedPrice}
+                  originalPriceClass="text-18px text-umbra-100/30 line-through"
+                  discountedPriceClass={`text-[22px] ${getCategoryTextClasses(selectedProduct?.category?.name)}`}
+                  regularPriceClass="text-umbra-100/30 text-[22px] line-through"
+                  discountTextClass={`text-[14px]  md:text-xs font-bold ${getCategoryTextClasses(selectedProduct?.category?.name)}`}
+                  containerClass="flex flex-col gap-1 font-sans leading-[130%] font-normal tracking-normal"
+                  showOriginalPrice={true}
+                  showDiscountText={true}
+                />
+              ) : (
+                ''
+              )}
+
               {selectedProduct && (
                 <p className="text-umbra-40 font-mono text-[14px] leading-[140%] font-normal">
                   {selectedProduct.name} - {selectedVolume}
@@ -151,10 +196,12 @@ const SamplePackHeroCard = ({ filteredSamplePackProducts }) => {
             </div>
             <hr className="terpene-border" />
             <div className="space-y-2">
-              <p className="text-umbra-40 font-mono text-[16px] leading-[140%] font-normal tracking-normal">
-                {selectedProduct?.description ||
-                  'Mango OG is a relaxing, herbal remedy strain made by crossing KC 33 with Afghani. This profile produces euphoric and uplifting effects that are sure to boost your mood.'}
-              </p>
+              <div className="scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent max-h-[100px] overflow-y-auto">
+                <p className="text-umbra-40 font-mono text-[16px] leading-[140%] font-normal tracking-normal">
+                  {selectedProduct?.short_description ||
+                    'Mango OG is a relaxing, herbal remedy strain made by crossing KC 33 with Afghani. Produces euphoric and uplifting effects that are sure to boost your mood.'}
+                </p>
+              </div>
             </div>
             <div className="space-y-2">
               <div>
@@ -202,7 +249,8 @@ const SamplePackHeroCard = ({ filteredSamplePackProducts }) => {
 
                         return uniqueVolumes.map((item) => (
                           <SelectItem key={item.id} value={item.volume}>
-                            {item.volume} - ${item.price}
+                            {item.volume}
+                            {/* - ${item.price} */}
                           </SelectItem>
                         ));
                       })()}
