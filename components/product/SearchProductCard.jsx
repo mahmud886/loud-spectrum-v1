@@ -1,5 +1,6 @@
 'use client';
 
+import { getCategoryTextClasses } from '@/helpers/get-category-color-classes';
 import { getProductPriceRange } from '@/helpers/get-product-price-ranges';
 import { encodeCategoryForUrl } from '@/helpers/url-category-utils';
 import { Link } from '@/i18n/navigation';
@@ -7,6 +8,7 @@ import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import DiscountPriceDisplay from '../ui/DiscountPriceDisplay';
 
 const SearchProductCard = ({ product, onOpenChange }) => {
   const { min, max } = getProductPriceRange(product?.subProducts);
@@ -56,11 +58,36 @@ const SearchProductCard = ({ product, onOpenChange }) => {
           </button>
         </div>
         {/* Product Title and Price */}
-        <div className="absolute bottom-3 left-3 z-10 flex w-full flex-col items-start bg-[#F5F5F5] text-left">
+        {/* <div className="absolute bottom-3 left-3 z-10 flex w-full flex-col items-start bg-[#F5F5F5] text-left">
           <h2 className={clsx('text-[16px] font-normal text-black md:text-[18px]')}>{product.name}</h2>
           <p className={clsx('text-umbra-40 text-[11px] md:text-[12px]')}>
             {min === max ? `$${min.toFixed(2)}` : `$${min.toFixed(2)} – $${max.toFixed(2)}`}
           </p>
+        </div> */}
+        <div className="absolute bottom-3 left-3 z-10 flex w-full flex-col items-start bg-[#F5F5F5] text-left">
+          <h2 className={clsx('text-[16px] font-normal text-black md:text-[18px]')}>{product.name}</h2>
+          {/* Price Display with Discount */}
+          <DiscountPriceDisplay
+            category={product?.category}
+            minPrice={min}
+            maxPrice={max}
+            originalPriceClass={clsx(
+              'text-umbra-40 text-[11px] md:text-[12px] line-through opacity-60',
+              isShopPage ? 'text-umbra-40' : 'text-white-40',
+            )}
+            discountedPriceClass={clsx(
+              'text-umbra-40 text-[11px] md:text-[12px] font-normal',
+              getCategoryTextClasses(product?.category?.name),
+            )}
+            regularPriceClass={clsx(
+              'text-umbra-40 text-[11px] md:text-[12px]',
+              isShopPage ? 'text-umbra-40' : 'text-white-40',
+            )}
+            discountTextClass={clsx('text-[8px] md:text-xs font-bold', getCategoryTextClasses(product?.category?.name))}
+            containerClass="flex flex-col gap-1"
+            showOriginalPrice={true}
+            showDiscountText={true}
+          />
         </div>
       </Link>
     </motion.div>
