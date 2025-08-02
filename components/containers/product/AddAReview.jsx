@@ -67,7 +67,6 @@ const AddAReview = ({ productId, authToken, categoryId }) => {
           review: '',
           rating: 0,
           product_id: productId,
-          category_id: categoryId,
         });
       } catch (error) {
         console.error('Submit error:', error);

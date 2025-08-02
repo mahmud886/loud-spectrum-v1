@@ -1,18 +1,19 @@
 import SamplePackHeroCard from '@/components/containers/try-sample-pack/SamplePackHeroCard';
+import { getAllProductReviews } from '@/services/get-all-product-reviews';
 import { getCategoryProducts } from '@/services/get-category-products';
 import Image from 'next/image';
 
 const TrySamplePackHero = async ({ samplePackCategory }) => {
-  const listOfProducts = await getCategoryProducts();
-
-  // const productReviews = await getAllProductReviews();
-
-  // console.log('productReviews', productReviews);
+  const [listOfProducts, productReviews] = await Promise.all([getCategoryProducts(), getAllProductReviews()]);
 
   const filteredSamplePackProducts =
     (await listOfProducts?.data?.filter((product) =>
       samplePackCategory?.some((category) => product.category_id === category._id),
     )) || [];
+
+  const filteredProductReviews = productReviews
+    ?.filter((review) => review?.status === 'Active')
+    ?.filter((review) => review?.category_slug === samplePackCategory?.[0]?.slug);
 
   return (
     <>
@@ -34,7 +35,10 @@ const TrySamplePackHero = async ({ samplePackCategory }) => {
         <div className="absolute inset-0 z-10 container hidden h-[987px] w-full overflow-hidden md:block">
           <div className="relative z-10 flex h-full w-full flex-col items-center justify-center gap-[40px]">
             <div className="flex w-full items-start justify-between gap-[40px]">
-              <SamplePackHeroCard filteredSamplePackProducts={filteredSamplePackProducts} />
+              <SamplePackHeroCard
+                filteredSamplePackProducts={filteredSamplePackProducts}
+                filteredProductReviews={filteredProductReviews}
+              />
             </div>
           </div>
         </div>
@@ -67,7 +71,10 @@ const TrySamplePackHero = async ({ samplePackCategory }) => {
 
       {/*Mobile Mode*/}
       <div className="flex justify-center py-8 md:hidden">
-        <SamplePackHeroCard filteredSamplePackProducts={filteredSamplePackProducts} />
+        <SamplePackHeroCard
+          filteredSamplePackProducts={filteredSamplePackProducts}
+          filteredProductReviews={filteredProductReviews}
+        />
       </div>
     </>
   );

@@ -6,6 +6,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { calculateDiscountForSelectedPrice } from '@/helpers/calculate-discount';
 import { getCategoryColorClasses, getCategoryTextClasses } from '@/helpers/get-category-color-classes';
 import { getProductPriceRange } from '@/helpers/get-product-price-ranges';
+import { getStarRatingData, renderStars } from '@/helpers/star-rating';
 import { addToCartAndOpenDrawer } from '@/lib/store/slices/cartSlice';
 import { MinusIcon, PlusIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
@@ -13,7 +14,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { toast } from 'sonner';
 
-const SamplePackHeroCard = ({ filteredSamplePackProducts }) => {
+const SamplePackHeroCard = ({ filteredSamplePackProducts, filteredProductReviews }) => {
   const t = useTranslations('TrySamplePack');
   const [quantity, setQuantity] = useState(1);
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -32,6 +33,8 @@ const SamplePackHeroCard = ({ filteredSamplePackProducts }) => {
 
   // Calculate discount for selected price (for cart functionality)
   const selectedPriceDiscount = calculateDiscountForSelectedPrice(selectedProduct?.category, selectedPrice);
+
+  const { starComponents } = getStarRatingData(filteredProductReviews);
 
   const handleSelectVolume = (value) => {
     if (selectedProduct && selectedProduct.subProducts) {
@@ -150,23 +153,24 @@ const SamplePackHeroCard = ({ filteredSamplePackProducts }) => {
       <div className="flex h-full w-full flex-col items-start justify-between gap-5">
         <div className="w-full self-start">
           <div className="space-y-5">
-            {/* <div className="flex items-center justify-between gap-5">
+            <div className="flex items-center justify-between gap-5">
+              <button
+                className={`${getCategoryColorClasses(filteredProductReviews?.[0]?.category?.name)} mb-0 rounded-[3px] border-1 px-2 text-[12px] font-normal capitalize`}
+              >
+                {filteredProductReviews?.[0]?.category?.name
+                  ? filteredProductReviews?.[0]?.category?.name
+                  : 'Sample Packs'}
+              </button>
               <p className="text-umbra-100 inline-flex items-center justify-start gap-2 font-mono text-[14px] leading-[130%] font-normal">
                 <span className={'flex items-center justify-start'}>
-                  <Star size={15} fill={'#00000'} />
-                  <Star size={15} fill={'#00000'} />
-                  <Star size={15} fill={'#00000'} />
-                  <Star size={15} fill={'#00000'} />
-                  <Star size={15} fill={'#00000'} />
+                  {filteredProductReviews?.length === 0
+                    ? renderStars(5, { size: 15, fillColor: '#ffffff', strokeColor: '#00000' })
+                    : starComponents}
                 </span>{' '}
-                6 {t('Reviews')}
+                {filteredProductReviews?.length} {t('Reviews')}
               </p>
-            </div> */}
-            <button
-              className={`${getCategoryColorClasses(selectedProduct?.category?.name)} mb-2 rounded-[3px] border-1 px-2 text-[12px] font-normal capitalize`}
-            >
-              {selectedProduct?.category?.name ? selectedProduct?.category?.name : 'Sample Packs'}
-            </button>
+            </div>
+
             <div className="space-y-2">
               <h6 className="text-umbra-100 font-sans text-[22px] leading-[130%] font-normal tracking-normal">
                 {selectedPrice ? '' : `${t('StartingAt')} $10.00`}

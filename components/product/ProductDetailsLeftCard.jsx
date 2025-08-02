@@ -125,11 +125,11 @@ const ProductDetailsLeftCard = ({ product }) => {
                 ) : (
                   <>
                     <span className={'flex items-center justify-start'}>
-                      {reviews.length === 0
+                      {reviews?.length === 0
                         ? renderStars(5, { size: 15, fillColor: '#ffffff', strokeColor: '#00000' })
                         : starComponents}
                     </span>{' '}
-                    {reviews.length} {t('Reviews')}
+                    {reviews?.length} {t('Reviews')}
                   </>
                 )}
               </div>

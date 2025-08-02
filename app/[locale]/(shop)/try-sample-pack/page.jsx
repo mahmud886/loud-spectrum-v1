@@ -1,6 +1,7 @@
 import RelatedProducts from '@/components/containers/product/RelatedProducts';
 import SpectrumAccordion from '@/components/containers/SpectrumAccordion';
 import MeetYourSampleSelectionProducts from '@/components/containers/try-sample-pack/MeetYourSampleSelectionProducts';
+import SamplePackReviews from '@/components/containers/try-sample-pack/SamplePackReviews';
 import { getCategories } from '@/services/get-categories';
 import { getCategoryProducts } from '@/services/get-category-products';
 
@@ -17,7 +18,7 @@ const TrySamplePackPage = async () => {
     <>
       <MeetYourSampleSelectionProducts samplePackCategory={samplePackCategory} />
       <SpectrumAccordion items={accordionData} />
-      {/* <SamplePackReviews /> */}
+      <SamplePackReviews />
       {/* <SamplePackAddAReview /> */}
       <RelatedProducts productDetails={filteredSamplePackProducts?.[0]} />
     </>
