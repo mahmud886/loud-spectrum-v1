@@ -61,7 +61,7 @@ const OrderConfirmationEmail = ({ orderData }) => {
           <Body className="bg-white p-6">
             <Container className="rounded-lg bg-white p-6 shadow-md">
               {/* Logo Header */}
-              <Section className="mb-6 text-center">
+              {/* <Section className="mb-6 text-center">
                 <Img
                   src={`${baseUrl}/assets/svgs/logos/logo-dark.svg`}
                   alt="Loud Spectrum Logo"
@@ -69,6 +69,12 @@ const OrderConfirmationEmail = ({ orderData }) => {
                   height="60"
                   className="mx-auto"
                 />
+              </Section> */}
+
+              <Section className="mb-6 text-center">
+                <Text className="bg-[linear-gradient(90deg,_#101820_21.53%,_#0077C8_44.13%,_#C0AEE7_74.27%,_#DDDAE8_107.64%)] bg-clip-text text-3xl font-bold text-transparent">
+                  LOUD SPECTRUM
+                </Text>
               </Section>
 
               <Section className="text-center">
@@ -161,7 +167,7 @@ const OrderConfirmationEmail = ({ orderData }) => {
         <Body className="bg-gray-50 p-6">
           <Container className="rounded-lg bg-white p-6 shadow-md">
             {/* Logo Header */}
-            <Section className="mb-6 text-center">
+            {/* <Section className="mb-6 text-center">
               <Img
                 src={`${baseUrl}/assets/svgs/logos/logo-dark.svg`}
                 alt="Loud Spectrum Logo"
@@ -169,6 +175,12 @@ const OrderConfirmationEmail = ({ orderData }) => {
                 height="60"
                 className="mx-auto"
               />
+            </Section> */}
+
+            <Section className="mb-6 text-center">
+              <Text className="bg-[linear-gradient(90deg,_#101820_21.53%,_#0077C8_44.13%,_#C0AEE7_74.27%,_#DDDAE8_107.64%)] bg-clip-text text-3xl font-bold text-transparent">
+                LOUD SPECTRUM
+              </Text>
             </Section>
 
             <Section className="rounded-md bg-green-50 p-4">

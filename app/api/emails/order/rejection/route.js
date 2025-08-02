@@ -28,8 +28,9 @@ export async function POST(request) {
     // Send the email using Resend
     const { data, error } = await resend.emails.send({
       from: process.env.RESEND_FROM_EMAIL || 'loudspectrum.com <noreply@loudspectrum.com>',
-      to: [recipientEmail],
-      cc: ['iqbal886mahmud@gmail.com', 'wafafatima66@gmail.com', 'web.amex19@gmail.com'],
+      // to: [recipientEmail],
+      to: process.env.NODE_ENV === 'production' ? [recipientEmail] : ['web.amex19@gmail.com'],
+      // cc: ['iqbal886mahmud@gmail.com', 'wafafatima66@gmail.com', 'web.amex19@gmail.com'],
       subject: `Order Rejected - ${orderData.code}`,
       html: emailHtml,
       text: `
