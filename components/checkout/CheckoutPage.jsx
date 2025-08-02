@@ -1012,27 +1012,27 @@ const CheckoutPage = () => {
           });
 
           // sending order confirmation email
-          const resOrder = await fetch('/api/emails/order/confirmation', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              orderData: actualOrderData,
-              recipientEmail,
-              recipientName,
-            }),
-          });
+          // const resOrder = await fetch('/api/emails/order/confirmation', {
+          //   method: 'POST',
+          //   headers: { 'Content-Type': 'application/json' },
+          //   body: JSON.stringify({
+          //     orderData: actualOrderData,
+          //     recipientEmail,
+          //     recipientName,
+          //   }),
+          // });
 
           // sending payment confirmation email
-          const resPayment = await fetch('/api/emails/payment/confirmation', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              orderData: actualOrderData,
-              paymentData: wirePayload,
-              recipientEmail,
-              recipientName,
-            }),
-          });
+          // const resPayment = await fetch('/api/emails/payment/confirmation', {
+          //   method: 'POST',
+          //   headers: { 'Content-Type': 'application/json' },
+          //   body: JSON.stringify({
+          //     orderData: actualOrderData,
+          //     paymentData: wirePayload,
+          //     recipientEmail,
+          //     recipientName,
+          //   }),
+          // });
 
           router.push(`/order-confirmation/${orderId}`);
         } else {
@@ -1053,16 +1053,16 @@ const CheckoutPage = () => {
           });
 
           // sending order failed email
-          const res = await fetch('/api/emails/order/failed', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              orderData: actualOrderData,
-              recipientEmail,
-              recipientName,
-              rejectionReason: message,
-            }),
-          });
+          // const res = await fetch('/api/emails/order/failed', {
+          //   method: 'POST',
+          //   headers: { 'Content-Type': 'application/json' },
+          //   body: JSON.stringify({
+          //     orderData: actualOrderData,
+          //     recipientEmail,
+          //     recipientName,
+          //     rejectionReason: message,
+          //   }),
+          // });
         }
       } else {
         dispatch(setCheckoutError(message || 'Wire transfer failed'));
