@@ -7,7 +7,7 @@ import { getProductPriceByVolume } from '@/helpers/get-product-price-by-volume';
 import { getProductPriceRange } from '@/helpers/get-product-price-ranges';
 import { parseProductAttributes } from '@/helpers/product-attributes';
 import { getStarRatingData, renderStars } from '@/helpers/star-rating';
-import { addToCart } from '@/lib/store/slices/cartSlice';
+import { addToCartAndOpenDrawer } from '@/lib/store/slices/cartSlice';
 import { getProductReviews } from '@/services/get-product-reviews';
 import { MinusIcon, PlusIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
@@ -90,7 +90,7 @@ const ProductDetailsLeftCard = ({ product }) => {
     const finalPrice = selectedPriceDiscount.hasDiscount ? selectedPriceDiscount.discountedPrice : selectedPrice;
 
     dispatch(
-      addToCart({
+      addToCartAndOpenDrawer({
         id: product._id,
         product: modifiedProduct,
         quantity,

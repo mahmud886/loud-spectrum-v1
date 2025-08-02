@@ -52,7 +52,7 @@ const TopNavRight = ({ onClose, setCartOpen }) => {
         <button
           type="button"
           onClick={() => {
-            setCartOpen(true);
+            setCartOpen();
           }}
           aria-label={`${t('Cart')} (${cartItems?.length || 0} items)`}
           className="text-umbra-100 hover:text-umbra-40 relative mx-[5px] cursor-pointer transition-colors duration-300 ease-in-out"

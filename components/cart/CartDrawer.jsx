@@ -5,13 +5,14 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { useRouter } from '@/i18n/navigation';
 import { selectCartItems } from '@/lib/store/slices/cartSlice';
 import { ShoppingCartIcon, X } from 'lucide-react';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 
 const CartDrawer = ({ isOpen, onClose }) => {
   const router = useRouter();
   const cartItems = useSelector(selectCartItems);
   const totalAmmount = cartItems?.reduce((acc, item) => acc + item.totalPrice, 0);
+  const drawerRef = useRef(null);
 
   useEffect(() => {
     if (isOpen) {
@@ -22,8 +23,25 @@ const CartDrawer = ({ isOpen, onClose }) => {
     return () => (document.body.style.overflow = '');
   }, [isOpen]);
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isOpen && drawerRef.current && !drawerRef.current.contains(event.target)) {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen, onClose]);
+
   return (
     <div
+      ref={drawerRef}
       className={`fixed top-0 right-0 z-50 h-[100dvh] w-full bg-white shadow-lg transition-transform duration-300 ease-in-out md:w-[484px] ${
         isOpen ? 'translate-x-0' : 'translate-x-full'
       }`}

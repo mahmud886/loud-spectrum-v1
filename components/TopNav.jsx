@@ -7,11 +7,14 @@ import TopNavLeft from './navbar/TopNavLeft';
 import TopNavMiddle from './navbar/TopNavMiddle';
 import TopNavRight from './navbar/TopNavRight';
 import MobileNav from '@/components/navbar/MobileNav';
+import { toggleCartDrawer } from '@/lib/store/slices/uiSlice';
+import { useDispatch } from 'react-redux';
 
-const TopNav = ({ setMenuOpen, menuOpen, setCartOpen }) => {
+const TopNav = ({ setMenuOpen, menuOpen }) => {
   const t = useTranslations('');
   const [shouldRender, setShouldRender] = useState(true);
   const menuRef = useRef(null);
+  const dispatch = useDispatch();
 
   const handleClose = () => {
     setShouldRender(false);
@@ -90,7 +93,7 @@ const TopNav = ({ setMenuOpen, menuOpen, setCartOpen }) => {
                   transition={{ duration: 0.4, delay: 0.3 }}
                   className="w-[480px] bg-white py-[50px] pr-[80px] pl-[60px]"
                 >
-                  <TopNavRight onClose={handleClose} setCartOpen={setCartOpen} />
+                  <TopNavRight onClose={handleClose} setCartOpen={() => dispatch(toggleCartDrawer())} />
                 </motion.div>
               </div>
             </motion.div>
@@ -115,7 +118,7 @@ const TopNav = ({ setMenuOpen, menuOpen, setCartOpen }) => {
                   transition={{ duration: 0.4, delay: 0.3 }}
                   className="h-screen w-full bg-white px-5 py-12"
                 >
-                  <MobileNav onClose={handleClose} setCartOpen={setCartOpen} />
+                  <MobileNav onClose={handleClose} setCartOpen={() => dispatch(toggleCartDrawer())} />
                 </motion.div>
               </div>
             </motion.div>

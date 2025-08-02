@@ -1,7 +1,7 @@
 'use client';
 
 import WholesaleProductCarousel from '@/components/carousels/WholesaleProductCarousel';
-import { addToCart } from '@/lib/store/slices/cartSlice';
+import { addToCartAndOpenDrawer } from '@/lib/store/slices/cartSlice';
 import { MinusIcon, PlusIcon, Star } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
@@ -27,7 +27,7 @@ const WholesaleProductCard = ({ product }) => {
     }
     setError(false);
     dispatch(
-      addToCart({
+      addToCartAndOpenDrawer({
         id: product._id,
         product: {
           ...product,

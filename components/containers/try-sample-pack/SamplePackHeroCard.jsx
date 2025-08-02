@@ -2,7 +2,7 @@
 
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
-import { addToCart } from '@/lib/store/slices/cartSlice';
+import { addToCartAndOpenDrawer } from '@/lib/store/slices/cartSlice';
 import { MinusIcon, PlusIcon, Star } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
@@ -97,7 +97,7 @@ const SamplePackHeroCard = ({ filteredSamplePackProducts }) => {
     }
 
     dispatch(
-      addToCart({
+      addToCartAndOpenDrawer({
         id: selectedProduct._id,
         product: modifiedProduct,
         quantity,
