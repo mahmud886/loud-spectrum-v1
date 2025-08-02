@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { toast } from 'sonner';
 
-const AddAReview = ({ productId, authToken }) => {
+const AddAReview = ({ productId, authToken, categoryId }) => {
   const t = useTranslations('ContactPage');
   const token = authToken;
   const [formData, setFormData] = useState({
@@ -14,6 +14,7 @@ const AddAReview = ({ productId, authToken }) => {
     review: '',
     rating: 0,
     product_id: productId,
+    category_id: categoryId,
   });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -66,6 +67,7 @@ const AddAReview = ({ productId, authToken }) => {
           review: '',
           rating: 0,
           product_id: productId,
+          category_id: categoryId,
         });
       } catch (error) {
         console.error('Submit error:', error);

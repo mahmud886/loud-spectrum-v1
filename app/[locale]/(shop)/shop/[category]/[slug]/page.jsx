@@ -48,8 +48,8 @@ async function ProductReviewsContent({ productId }) {
 }
 
 // Async component for add a review
-async function AddAReviewContent({ productId, authToken }) {
-  return <AddAReview productId={productId} authToken={authToken} />;
+async function AddAReviewContent({ productId, authToken, categoryId }) {
+  return <AddAReview productId={productId} authToken={authToken} categoryId={categoryId} />;
 }
 
 // Async component for related products
@@ -82,7 +82,11 @@ async function ProductDetailsContent({ params }) {
       </Suspense>
 
       <Suspense fallback={<AddAReviewShimmer />}>
-        <AddAReviewContent productId={productDetails._id} authToken={authToken?.value} />
+        <AddAReviewContent
+          productId={productDetails._id}
+          authToken={authToken?.value}
+          categoryId={productDetails?.category?._id}
+        />
       </Suspense>
 
       <Suspense fallback={<RelatedProductsShimmer />}>
