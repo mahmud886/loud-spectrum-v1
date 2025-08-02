@@ -3,6 +3,7 @@ import DiscountPriceDisplay from '@/components/ui/DiscountPriceDisplay';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import Shimmer from '@/components/ui/shimmer';
 import { calculateDiscountForSelectedPrice } from '@/helpers/calculate-discount';
+import { getCategoryColorClasses, getCategoryTextClasses } from '@/helpers/get-category-color-classes';
 import { getProductPriceByVolume } from '@/helpers/get-product-price-by-volume';
 import { getProductPriceRange } from '@/helpers/get-product-price-ranges';
 import { parseProductAttributes } from '@/helpers/product-attributes';
@@ -110,7 +111,9 @@ const ProductDetailsLeftCard = ({ product }) => {
         <div className="w-full self-start">
           <div className="space-y-5">
             <div className="flex items-center justify-between gap-5">
-              <button className="border-alive text-alive rounded-[3px] border-1 px-2 text-[12px] font-normal">
+              <button
+                className={`${getCategoryColorClasses(product?.category?.name)} rounded-[3px] border-1 px-2 text-[12px] font-normal capitalize`}
+              >
                 {product?.category?.name}
               </button>
               <div className="text-umbra-100 inline-flex items-center justify-start gap-2 font-mono text-[14px] leading-[130%] font-normal">
@@ -140,10 +143,10 @@ const ProductDetailsLeftCard = ({ product }) => {
                 minPrice={min}
                 maxPrice={max}
                 selectedPrice={selectedPrice}
-                originalPriceClass="text-18px text-umbra-100/30 line-through"
-                discountedPriceClass="text-umbra-100 text-[22px]"
-                regularPriceClass="text-umbra-100 text-[22px]"
-                discountTextClass="rounded-full px-1.5 py-0.5 text-[14px] md:text-xs font-normal bg-red-500 text-white bg-red-500 text-white"
+                originalPriceClass="text-18px text-umbra-40 line-through"
+                discountedPriceClass={`text-[22px] ${getCategoryTextClasses(product?.category?.name)}`}
+                regularPriceClass="text-umbra-40 text-[22px]"
+                discountTextClass={`text-[14px]  md:text-xs font-bold ${getCategoryTextClasses(product?.category?.name)}`}
                 containerClass="flex flex-col gap-1 font-sans leading-[130%] font-normal tracking-normal"
                 showOriginalPrice={true}
                 showDiscountText={true}

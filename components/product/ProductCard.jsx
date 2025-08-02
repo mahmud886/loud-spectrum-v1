@@ -2,6 +2,7 @@
 
 import ProductBuyDialog from '@/components/product/ProductBuyDialog';
 import DiscountPriceDisplay from '@/components/ui/DiscountPriceDisplay';
+import { getCategoryTextClasses } from '@/helpers/get-category-color-classes';
 import { getProductPriceRange } from '@/helpers/get-product-price-ranges';
 import { encodeCategoryForUrl } from '@/helpers/url-category-utils';
 import { Link } from '@/i18n/navigation';
@@ -110,13 +111,10 @@ const ProductCard = ({ product }) => {
             )}
             discountedPriceClass={clsx(
               'text-[13px] md:text-[19px] font-normal',
-              isShopPage ? 'text-black' : 'text-white-100',
+              getCategoryTextClasses(product?.category?.name),
             )}
             regularPriceClass={clsx('text-[13px] md:text-[19px]', isShopPage ? 'text-umbra-40' : 'text-white-40')}
-            discountTextClass={clsx(
-              'rounded-full px-1.5 py-0.5 text-[8px] md:text-xs font-normal',
-              isShopPage ? 'bg-red-500 text-white' : 'bg-red-500 text-white',
-            )}
+            discountTextClass={clsx('text-[8px] md:text-xs font-bold', getCategoryTextClasses(product?.category?.name))}
             containerClass="flex flex-col gap-1"
             showOriginalPrice={true}
             showDiscountText={true}
