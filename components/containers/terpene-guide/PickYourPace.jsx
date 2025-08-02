@@ -19,18 +19,16 @@ const PickYourPace = () => {
         <div className="mt-12 flex flex-col items-center justify-center gap-6 md:flex-row">
           <div className="group relative">
             <div className="overflow-hidden">
-              <div className="transition-transform duration-500 group-hover:scale-110">
-                <Image
-                  src="/assets/images/terpene-guide/active.jpg"
-                  alt={t('activeAlt')}
-                  width={414}
-                  height={408}
-                  className="block h-[408px] w-[414px] object-cover"
-                />
-              </div>
+              <Image
+                src="/assets/images/terpene-guide/active.jpg"
+                alt={t('activeAlt')}
+                width={414}
+                height={408}
+                className="block h-[408px] w-[414px] object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+              />
             </div>
             <div className="absolute bottom-[12%] w-full px-5 pb-5 md:top-[5%] md:right-[5%] md:bottom-auto md:w-auto md:px-0 md:pb-0">
-              <Link href="/shop/Active" className="outline-button-black w-full rounded-full px-6 py-2 md:w-auto">
+              <Link href="/shop/active" className="outline-button-black w-full rounded-full px-6 py-2 md:w-auto">
                 {t('shopActive')}
               </Link>
             </div>
@@ -39,40 +37,36 @@ const PickYourPace = () => {
 
           <div className="group relative">
             <div className="overflow-hidden">
-              <div className="transition-transform duration-500 group-hover:scale-110">
-                <Image
-                  src="/assets/images/terpene-guide/relaxed.jpg"
-                  alt={t('relaxedAlt')}
-                  width={414}
-                  height={408}
-                  className="block h-[408px] w-[414px] object-cover group-hover:scale-110"
-                />
-              </div>
-
-              <div className="absolute bottom-[12%] w-full px-5 pb-5 md:top-[5%] md:right-[5%] md:bottom-auto md:w-auto md:px-0 md:pb-0">
-                <Link href="/shop/Relax" className="outline-button-black w-full rounded-full px-6 py-2 md:w-auto">
-                  {t('shopRelaxed')}
-                </Link>
-              </div>
+              <Image
+                src="/assets/images/terpene-guide/relaxed.jpg"
+                alt={t('relaxedAlt')}
+                width={414}
+                height={408}
+                className="block h-[408px] w-[414px] object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+              />
+            </div>
+            <div className="absolute bottom-[12%] w-full px-5 pb-5 md:top-[5%] md:right-[5%] md:bottom-auto md:w-auto md:px-0 md:pb-0">
+              <Link href="/shop/relax" className="outline-button-black w-full rounded-full px-6 py-2 md:w-auto">
+                {t('shopRelaxed')}
+              </Link>
             </div>
             <h2 className="text-umbra-100 mt-5 font-sans text-[32px] leading-[120%]">{t('relaxed')}</h2>
           </div>
+
           <div className="group relative">
             <div className="overflow-hidden">
-              <div className="transition-transform duration-500 group-hover:scale-110">
-                <Image
-                  src="/assets/images/terpene-guide/hybrid.jpg"
-                  alt={t('hybridAlt')}
-                  width={414}
-                  height={408}
-                  className="block h-[408px] w-[414px] object-cover group-hover:scale-110"
-                />
-              </div>
-              <div className="absolute bottom-[12%] w-full px-5 pb-5 md:top-[5%] md:right-[5%] md:bottom-auto md:w-auto md:px-0 md:pb-0">
-                <Link href="/shop/Hybrid" className="outline-button-black w-full rounded-full px-6 py-2 md:w-auto">
-                  {t('shopHybrid')}
-                </Link>
-              </div>
+              <Image
+                src="/assets/images/terpene-guide/hybrid.jpg"
+                alt={t('hybridAlt')}
+                width={414}
+                height={408}
+                className="block h-[408px] w-[414px] object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+              />
+            </div>
+            <div className="absolute bottom-[12%] w-full px-5 pb-5 md:top-[5%] md:right-[5%] md:bottom-auto md:w-auto md:px-0 md:pb-0">
+              <Link href="/shop/hybrid" className="outline-button-black w-full rounded-full px-6 py-2 md:w-auto">
+                {t('shopHybrid')}
+              </Link>
             </div>
             <h2 className="text-umbra-100 mt-5 font-sans text-[32px] leading-[120%]">{t('hybrid')}</h2>
           </div>

@@ -22,8 +22,8 @@ const TopNavRight = ({ onClose, setCartOpen }) => {
       [topNav.Dank]: 'dank',
       [topNav.Sweet]: 'sweet',
       [topNav.Classic]: 'classic',
-      [topNav.Active]: 'Active',
-      [topNav.Relaxed]: 'Relax',
+      [topNav.Active]: 'active',
+      [topNav.Relaxed]: 'relax',
       [topNav.Sample_packs]: 'sample-packs',
     };
 

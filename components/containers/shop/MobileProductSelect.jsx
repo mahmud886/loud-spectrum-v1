@@ -61,15 +61,16 @@ export default function MobileProductSelect({ categories, totalCategoryProducts,
   return (
     <>
       <Select value={getCurrentCategoryId()} onValueChange={handleChange}>
-        <SelectTrigger className="bg-umbra-5 min-h-12 w-full text-[17px] md:min-h-[42px] md:max-w-[280px] md:min-w-[156px]">
+        <SelectTrigger className="bg-umbra-5 min-h-12 w-full text-[17px] capitalize md:min-h-[42px] md:max-w-[280px] md:min-w-[156px]">
           <SelectValue placeholder="Filter by Category" />
         </SelectTrigger>
         <SelectContent>
           <SelectGroup>
             <SelectLabel className="!text-[17px]">Filter</SelectLabel>
             {sortedCategories?.map((category) => (
-              <SelectItem key={category._id} value={category._id}>
-                {category.name} <span className="text-umbra-40 text-[12px]">({category?.productCount || 0})</span>
+              <SelectItem key={category._id} value={category._id} className="capitalize">
+                {category.name}
+                <span className="text-umbra-40 text-[12px]">({category?.productCount || 0})</span>
               </SelectItem>
             ))}
           </SelectGroup>

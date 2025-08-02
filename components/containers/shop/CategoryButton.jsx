@@ -54,7 +54,7 @@ export default function CategoryButton({ categories, totalCategoryProducts, prod
                   aria-pressed={isActive}
                   layout
                 >
-                  <p className="text-umbra-100 font-mono text-[16px] leading-[140%]">
+                  <p className="text-umbra-100 font-mono text-[16px] leading-[140%] capitalize">
                     {category?.name} <span className="text-umbra-40 text-[12px]">({category?.productCount})</span>
                   </p>
 
