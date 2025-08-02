@@ -178,7 +178,7 @@ const SamplePackHeroCard = ({ filteredSamplePackProducts }) => {
                   selectedPrice={selectedPrice}
                   originalPriceClass="text-18px text-umbra-100/30 line-through"
                   discountedPriceClass={`text-[22px] ${getCategoryTextClasses(selectedProduct?.category?.name)}`}
-                  regularPriceClass="text-umbra-100/30 text-[22px] line-through"
+                  regularPriceClass="text-umbra-100 text-[22px]"
                   discountTextClass={`text-[14px]  md:text-xs font-bold ${getCategoryTextClasses(selectedProduct?.category?.name)}`}
                   containerClass="flex flex-col gap-1 font-sans leading-[130%] font-normal tracking-normal"
                   showOriginalPrice={true}
