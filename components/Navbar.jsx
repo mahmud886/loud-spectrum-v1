@@ -94,7 +94,7 @@ const Navbar = ({ locale }) => {
     <>
       <nav className={`fixed top-0 left-0 z-50 w-full transition-colors duration-300 ${navBg} ${textColor}`}>
         <div
-          className={`container mx-auto flex items-center justify-between px-5 md:px-[40px] lg:px-[40px] xl:px-[80px] 2xl:px-[320px] ${isScrolled ? 'py-5' : 'py-12'} transition-all duration-300`}
+          className={`container flex items-center justify-between ${isScrolled ? 'py-5' : 'py-12'} transition-all duration-300`}
         >
           {!isScrolled && (
             <div className="absolute top-0 left-1/2 -z-10 w-full -translate-x-1/2">

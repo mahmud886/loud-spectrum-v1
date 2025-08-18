@@ -4,8 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --breakpoint-xl: 90rem;
-  --breakpoint-2xl: 120rem;
+  /*--breakpoint-xl: 90rem;*/
   /* Main Colors */
   --color-atmosphere: oklch(55.75% 0.1528 248.74);
   --color-aurora: oklch(77.05% 0.1077 289.03);
@@ -163,7 +162,7 @@
 
 @layer components {
   .container {
-    @apply mx-auto overflow-hidden px-[20px] md:px-[40px] lg:px-[40px] xl:px-[80px] 2xl:px-[320px];
+    @apply w-full mx-auto overflow-hidden px-4 lg:max-w-screen lg:px-20;
   }
 
   .input-label {
