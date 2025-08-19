@@ -369,6 +369,7 @@
       "buyNow": "今すぐ購入",
       "tag": "大麻由来"
     },
+    "RelatedProducts": "関連商品",
     "AllProducts": "すべての商品",
     "NoProductsInCategory": "このカテゴリには商品がありません",
     "NoProductsAvailable": "利用可能な商品がありません",
@@ -436,6 +437,21 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"
     }
   },
+  "ProductReviews": {
+    "Reviews": "レビュー",
+    "AddAReview": "レビューを追加",
+    "SelectRating": "評価を選択",
+    "SubmitReview": "レビューを送信",
+    "Submitting": "送信中...",
+    "EmailNotPublished": "メールアドレスは公開されません。"
+  },
+  "ProductCategories": {
+    "alive": "アライブ",
+    "sweet": "スイート",
+    "dank": "ダンク",
+    "classic": "クラシック",
+    "sample-packs": "サンプルパック"
+  },
   "TrySamplePack": {
     "Reviews": "レビュー",
     "ChooseFormula": "フォーミュラを選択",
@@ -443,7 +459,9 @@
     "CustomizeYourPack": "パックをカスタマイズ",
     "AddToCart": "カートに追加",
     "StartingAt": "開始価格：",
-    "Note": "注意：何かを追加、交換、または削除したい場合は、ここにあなたの選択を書き込んで、私たちがあなたのパックをカスタマイズします。"
+    "Note": "注意：何かを追加、交換、または削除したい場合は、ここにあなたの選択を書き込んで、私たちがあなたのパックをカスタマイズします。",
+    "WhatIsIncluded": "何が含まれていますか",
+    "MeetYourSampleSelection": "サンプル選択を体験"
   },
   "TerpeneChartHero": {
     "heading": "ラウドスペクトル・テルペンチャート",

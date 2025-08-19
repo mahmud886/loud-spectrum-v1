@@ -369,6 +369,7 @@
       "buyNow": "Jetzt kaufen",
       "tag": "Cannabis-basiert"
     },
+    "RelatedProducts": "Verwandte Produkte",
     "AllProducts": "Alle Produkte",
     "NoProductsInCategory": "Keine Produkte in dieser Kategorie",
     "NoProductsAvailable": "Keine Produkte verfügbar",
@@ -435,6 +436,21 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"
     }
   },
+  "ProductReviews": {
+    "Reviews": "Bewertungen",
+    "AddAReview": "Bewertung hinzufügen",
+    "SelectRating": "Bewertung auswählen",
+    "SubmitReview": "Bewertung abschicken",
+    "Submitting": "Wird gesendet...",
+    "EmailNotPublished": "Ihre E-Mail-Adresse wird nicht veröffentlicht."
+  },
+  "ProductCategories": {
+    "alive": "Lebendig",
+    "sweet": "Süß",
+    "dank": "Intensiv",
+    "classic": "Klassisch",
+    "sample-packs": "Probenpakete"
+  },
   "TrySamplePack": {
     "Reviews": "Bewertungen",
     "ChooseFormula": "Formel wählen",
@@ -442,7 +458,9 @@
     "CustomizeYourPack": "Paket anpassen",
     "AddToCart": "In den Warenkorb",
     "StartingAt": "Ab",
-    "Note": "Hinweis: Möchten Sie etwas hinzufügen, austauschen oder entfernen? Schreiben Sie einfach Ihre Wünsche hier rein und wir passen Ihr Paket für Sie an."
+    "Note": "Hinweis: Möchten Sie etwas hinzufügen, austauschen oder entfernen? Schreiben Sie einfach Ihre Wünsche hier rein und wir passen Ihr Paket für Sie an.",
+    "WhatIsIncluded": "Was ist enthalten",
+    "MeetYourSampleSelection": "Treffen Sie Ihre Probenauswahl"
   },
   "TerpeneChartHero": {
     "heading": "Die Lautspektrum-Terpen-Tabelle",

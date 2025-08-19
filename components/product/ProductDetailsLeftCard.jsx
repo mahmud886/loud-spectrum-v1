@@ -3,7 +3,7 @@ import DiscountPriceDisplay from '@/components/ui/DiscountPriceDisplay';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import Shimmer from '@/components/ui/shimmer';
 import { calculateDiscountForSelectedPrice } from '@/helpers/calculate-discount';
-import { getCategoryColorClasses, getCategoryTextClasses } from '@/helpers/get-category-color-classes';
+import { getCategoryColorClasses } from '@/helpers/get-category-color-classes';
 import { getProductPriceByVolume } from '@/helpers/get-product-price-by-volume';
 import { getProductPriceRange } from '@/helpers/get-product-price-ranges';
 import { stripHtml } from '@/helpers/get-strip-html';
@@ -145,9 +145,11 @@ const ProductDetailsLeftCard = ({ product }) => {
                 maxPrice={max}
                 selectedPrice={selectedPrice}
                 originalPriceClass="text-18px text-umbra-40 line-through"
-                discountedPriceClass={`text-[22px] ${getCategoryTextClasses(product?.category?.name)}`}
+                // discountedPriceClass={`text-[22px] ${getCategoryTextClasses(product?.category?.name)}`}
+                discountedPriceClass={`text-[22px] text-umbra-100`}
                 regularPriceClass="text-umbra-40 text-[22px]"
-                discountTextClass={`text-[14px]  md:text-xs font-bold ${getCategoryTextClasses(product?.category?.name)}`}
+                // discountTextClass={`text-[14px]  md:text-xs font-bold ${getCategoryTextClasses(product?.category?.name)}`}
+                discountTextClass={`text-[14px]  md:text-xs font-bold text-umbra-100`}
                 containerClass="flex flex-col gap-1 font-sans leading-[130%] font-normal tracking-normal"
                 showOriginalPrice={true}
                 showDiscountText={true}
@@ -166,7 +168,6 @@ const ProductDetailsLeftCard = ({ product }) => {
               <p className="text-umbra-40 line-clamp-4 font-mono text-[16px] leading-[140%] font-normal tracking-normal">
                 {stripHtml(product?.description)}
               </p>
-              ``
             </div>
             <div className="space-y-2">
               <div>

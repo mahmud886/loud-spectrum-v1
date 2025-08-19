@@ -1,9 +1,11 @@
+import { getTranslatedCategoryName } from '@/helpers/dynamic-translations';
 import clsx from 'clsx';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
 const SamplePackCard = ({ product }) => {
   const t = useTranslations('TerpeneShop.ProductCard');
+  const tCategories = useTranslations('ProductCategories');
 
   return (
     <div className="group cursor-pointer">
@@ -28,7 +30,7 @@ const SamplePackCard = ({ product }) => {
       <div className="mt-2.5 space-y-2">
         <h2 className={clsx('text-[22px] font-normal text-black')}>{product?.name}</h2>
         <button className="border-umbra-100 rounded-[3px] border px-2 text-[12px] font-normal">
-          {product?.category_name || t('tag')}
+          {getTranslatedCategoryName(tCategories, t, product?.category, 'tag')}
         </button>
       </div>
     </div>

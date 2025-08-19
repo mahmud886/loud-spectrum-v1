@@ -2,7 +2,7 @@
 
 import ProductBuyDialog from '@/components/product/ProductBuyDialog';
 import DiscountPriceDisplay from '@/components/ui/DiscountPriceDisplay';
-import { getCategoryTextClasses } from '@/helpers/get-category-color-classes';
+import { getTranslatedCategoryName } from '@/helpers/dynamic-translations';
 import { getProductPriceRange } from '@/helpers/get-product-price-ranges';
 import { encodeCategoryForUrl } from '@/helpers/url-category-utils';
 import { Link } from '@/i18n/navigation';
@@ -22,6 +22,10 @@ const ProductCard = ({ product }) => {
   };
 
   const t = useTranslations('TerpeneShop.ProductCard');
+  const tCategories = useTranslations('ProductCategories');
+
+  // Get translated category name using utility function
+  const categoryDisplayName = getTranslatedCategoryName(tCategories, t, product?.category, 'tag');
 
   const pathname = usePathname();
   const cleanPath = pathname.replace(/^\/(en|fr|de|es|ja|ru)/, '').replace(/\/$/, '');
@@ -65,7 +69,7 @@ const ProductCard = ({ product }) => {
           {/* Tag Button (Hidden on mobile) */}
           <div className="ml- hidden md:block">
             <button className="border-umbra-100 rounded-[3px] border px-2 text-[9px] font-normal">
-              {product?.category_name || t('tag')}
+              {categoryDisplayName}
             </button>
           </div>
 
@@ -109,12 +113,14 @@ const ProductCard = ({ product }) => {
               'text-[13px] md:text-[19px] line-through opacity-60',
               isShopPage ? 'text-umbra-40' : 'text-white-40',
             )}
-            discountedPriceClass={clsx(
-              'text-[13px] md:text-[19px] font-normal',
-              getCategoryTextClasses(product?.category?.name),
-            )}
+            // discountedPriceClass={clsx(
+            //   'text-[13px] md:text-[19px] font-normal',
+            //   getCategoryTextClasses(product?.category?.name),
+            // )}
+            discountedPriceClass={clsx('text-[13px] md:text-[19px] font-normal', 'text-umbra-100')}
             regularPriceClass={clsx('text-[13px] md:text-[19px]', isShopPage ? 'text-umbra-40' : 'text-white-40')}
-            discountTextClass={clsx('text-[8px] md:text-xs font-bold', getCategoryTextClasses(product?.category?.name))}
+            // discountTextClass={clsx('text-[8px] md:text-xs font-bold', getCategoryTextClasses(product?.category?.name))}
+            discountTextClass={clsx('text-[8px] md:text-xs font-bold', 'text-umbra-100')}
             containerClass="flex flex-col gap-1"
             showOriginalPrice={true}
             showDiscountText={true}

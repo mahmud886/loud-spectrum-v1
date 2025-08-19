@@ -371,6 +371,7 @@
       "buyNow": "Купить сейчас",
       "tag": "Из каннабиса"
     },
+    "RelatedProducts": "Связанные продукты",
     "AllProducts": "Все продукты",
     "NoProductsInCategory": "В этой категории нет товаров",
     "NoProductsAvailable": "Нет доступных товаров",
@@ -437,6 +438,21 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"
     }
   },
+  "ProductReviews": {
+    "Reviews": "Отзывы",
+    "AddAReview": "Добавить Отзыв",
+    "SelectRating": "Выбрать Оценку",
+    "SubmitReview": "Отправить Отзыв",
+    "Submitting": "Отправка...",
+    "EmailNotPublished": "Ваш адрес электронной почты не будет опубликован."
+  },
+  "ProductCategories": {
+    "alive": "Живой",
+    "sweet": "Сладкий",
+    "dank": "Интенсивный",
+    "classic": "Классический",
+    "sample-packs": "Образцы"
+  },
   "TrySamplePack": {
     "Reviews": "Отзывы",
     "ChooseFormula": "Выбрать формулу",
@@ -444,7 +460,9 @@
     "CustomizeYourPack": "Настройте свой набор",
     "AddToCart": "Добавить в корзину",
     "StartingAt": "Начиная с",
-    "Note": "Примечание: Хотите что-то добавить, поменять или убрать? Просто напишите свои пожелания здесь, и мы настроим ваш набор для вас."
+    "Note": "Примечание: Хотите что-то добавить, поменять или убрать? Просто напишите свои пожелания здесь, и мы настроим ваш набор для вас.",
+    "WhatIsIncluded": "Что включено",
+    "MeetYourSampleSelection": "Познакомьтесь с вашим набором образцов"
   },
   "TerpeneChartHero": {
     "heading": "Таблица Терпенов Широкого Спектра",

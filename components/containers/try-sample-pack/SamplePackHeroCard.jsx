@@ -4,6 +4,7 @@ import DiscountPriceDisplay from '@/components/ui/DiscountPriceDisplay';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
 import { calculateDiscountForSelectedPrice } from '@/helpers/calculate-discount';
+import { getTranslatedCategoryName } from '@/helpers/dynamic-translations';
 import { getCategoryColorClasses, getCategoryTextClasses } from '@/helpers/get-category-color-classes';
 import { getProductPriceRange } from '@/helpers/get-product-price-ranges';
 import { getStarRatingData, renderStars } from '@/helpers/star-rating';
@@ -15,7 +16,6 @@ import { useDispatch } from 'react-redux';
 import { toast } from 'sonner';
 
 const SamplePackHeroCard = ({ filteredSamplePackProducts, filteredProductReviews }) => {
-  const t = useTranslations('TrySamplePack');
   const [quantity, setQuantity] = useState(1);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [selectedProductName, setSelectedProductName] = useState(null);
@@ -30,6 +30,9 @@ const SamplePackHeroCard = ({ filteredSamplePackProducts, filteredProductReviews
   const [max, setMax] = useState(null);
 
   const dispatch = useDispatch();
+
+  const t = useTranslations('TrySamplePack');
+  const tCategories = useTranslations('ProductCategories');
 
   // Calculate discount for selected price (for cart functionality)
   const selectedPriceDiscount = calculateDiscountForSelectedPrice(selectedProduct?.category, selectedPrice);
@@ -158,8 +161,8 @@ const SamplePackHeroCard = ({ filteredSamplePackProducts, filteredProductReviews
                 className={`${getCategoryColorClasses(filteredProductReviews?.[0]?.category?.name)} mb-0 rounded-[3px] border-1 px-2 text-[12px] font-normal capitalize`}
               >
                 {filteredProductReviews?.[0]?.category?.name
-                  ? filteredProductReviews?.[0]?.category?.name
-                  : 'Sample Packs'}
+                  ? getTranslatedCategoryName(tCategories, t, filteredProductReviews?.[0]?.category, 'tag')
+                  : `${tCategories('sample-packs')}`}
               </button>
               <p className="text-umbra-100 inline-flex items-center justify-start gap-2 font-mono text-[14px] leading-[130%] font-normal">
                 <span className={'flex items-center justify-start'}>

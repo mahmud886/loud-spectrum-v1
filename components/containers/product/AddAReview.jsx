@@ -7,6 +7,8 @@ import { toast } from 'sonner';
 
 const AddAReview = ({ productId, authToken, categoryId }) => {
   const t = useTranslations('ContactPage');
+  const tProduct = useTranslations('ProductReviews');
+
   const token = authToken;
   const [formData, setFormData] = useState({
     name: '',
@@ -94,7 +96,9 @@ const AddAReview = ({ productId, authToken, categoryId }) => {
 
   return (
     <div className={'container py-[80px]'}>
-      <h2 className="text-umbra-100 font-sans text-[32px] leading-[120%] font-normal md:text-[44px]">Add a Review</h2>
+      <h2 className="text-umbra-100 font-sans text-[32px] leading-[120%] font-normal md:text-[44px]">
+        {tProduct('AddAReview')}
+      </h2>
       <div className="mt-6 w-full md:w-[60%]">
         <form className="space-y-4" onSubmit={handleSubmit}>
           <div className="mb-6 space-y-4">
@@ -102,7 +106,7 @@ const AddAReview = ({ productId, authToken, categoryId }) => {
               {t('contactForm.requiredNote')}
             </p>
             <p className="text-umbra-40 font-sans text-[16px] leading-[140%] font-normal">
-              Your email address will not be published.
+              {tProduct('EmailNotPublished')}
             </p>
           </div>
           <div className="flex flex-col justify-between gap-4 md:flex-row">
@@ -143,7 +147,7 @@ const AddAReview = ({ productId, authToken, categoryId }) => {
             {errors.review && <p className="mt-1 text-sm text-red-500">{errors.review}</p>}
           </div>
           <div className="flex items-center justify-start gap-4">
-            <p>Select Rating: </p>
+            <p>{tProduct('SelectRating')}: </p>
             <div className="flex gap-1">
               {[1, 2, 3, 4, 5].map((star) => (
                 <button
@@ -171,7 +175,7 @@ const AddAReview = ({ productId, authToken, categoryId }) => {
               className="main-button-black rounded-full border-1 px-6 py-2 disabled:cursor-not-allowed disabled:opacity-50"
               disabled={isSubmitting}
             >
-              {isSubmitting ? 'Submitting...' : 'Submit Review'}
+              {isSubmitting ? tProduct('Submitting') : tProduct('SubmitReview')}
             </button>
           </div>
         </form>

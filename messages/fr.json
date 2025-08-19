@@ -369,6 +369,7 @@
       "buyNow": "Acheter maintenant",
       "tag": "Dérivé du cannabis"
     },
+    "RelatedProducts": "Produits Reliés",
     "AllProducts": "Tous les produits",
     "NoProductsInCategory": "Aucun produit dans cette catégorie",
     "NoProductsAvailable": "Aucun produit disponible",
@@ -436,6 +437,21 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"
     }
   },
+  "ProductReviews": {
+    "Reviews": "Avis",
+    "AddAReview": "Ajouter un Avis",
+    "SelectRating": "Sélectionner la Note",
+    "SubmitReview": "Soumettre l'Avis",
+    "Submitting": "Envoi en cours...",
+    "EmailNotPublished": "Votre adresse e-mail ne sera pas publiée."
+  },
+  "ProductCategories": {
+    "alive": "Vivant",
+    "sweet": "Doux",
+    "dank": "Intense",
+    "classic": "Classique",
+    "sample-packs": "Packs d'Échantillons"
+  },
   "TrySamplePack": {
     "Reviews": "Avis",
     "ChooseFormula": "Choisir la formule",
@@ -443,7 +459,9 @@
     "CustomizeYourPack": "Personnalisez votre pack",
     "AddToCart": "Ajouter au panier",
     "StartingAt": "À partir de",
-    "Note": "Remarque : Vous voulez ajouter, échanger ou supprimer quelque chose ? Écrivez simplement vos choix ici et nous personnaliserons votre pack pour vous."
+    "Note": "Remarque : Vous voulez ajouter, échanger ou supprimer quelque chose ? Écrivez simplement vos choix ici et nous personnaliserons votre pack pour vous.",
+    "WhatIsIncluded": "Ce qui est inclus",
+    "MeetYourSampleSelection": "Rencontrez votre sélection d'échantillons"
   },
   "TerpeneChartHero": {
     "heading": "Le Tableau des Terpènes du Spectre Intense",

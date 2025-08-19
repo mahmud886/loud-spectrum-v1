@@ -369,6 +369,7 @@
       "buyNow": "Buy Now",
       "tag": "Cannabis Derived"
     },
+    "RelatedProducts": "Related Products",
     "AllProducts": "All Products",
     "NoProductsInCategory": "No products in this category",
     "NoProductsAvailable": "No products available",
@@ -436,6 +437,21 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"
     }
   },
+  "ProductReviews": {
+    "Reviews": "Reviews",
+    "AddAReview": "Add a Review",
+    "SelectRating": "Select Rating",
+    "SubmitReview": "Submit Review",
+    "Submitting": "Submitting...",
+    "EmailNotPublished": "Your email address will not be published."
+  },
+  "ProductCategories": {
+    "alive": "Alive",
+    "sweet": "Sweet",
+    "dank": "Dank",
+    "classic": "Classic",
+    "sample-packs": "Sample Packs"
+  },
   "TrySamplePack": {
     "Reviews": "Reviews",
     "ChooseFormula": "Choose Formula",
@@ -443,7 +459,9 @@
     "CustomizeYourPack": "Customize Your Pack",
     "AddToCart": "Add To Cart",
     "StartingAt": "Starting at",
-    "Note": "Note: Want to add, swap, or remove something? Just write your choices in here and we’ll customize your pack for you."
+    "Note": "Note: Want to add, swap, or remove something? Just write your choices in here and we’ll customize your pack for you.",
+    "WhatIsIncluded": "What’s Included",
+    "MeetYourSampleSelection": "Meet Your Sample Selection"
   },
   "TerpeneChartHero": {
     "heading": "The Loud Spectrum Terpene Chart",

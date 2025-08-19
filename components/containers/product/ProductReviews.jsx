@@ -1,8 +1,10 @@
 import ReviewAndTestimonialCarouselWithProgress from '@/components/carousels/ReviewAndTestimonialCarouselWithProgress';
 import ProductReviewCard from '@/components/product/ProductReviewCard';
 import { getProductReviews } from '@/services/get-product-reviews';
+import { getTranslations } from 'next-intl/server';
 
 const ProductReviews = async ({ productId }) => {
+  const t = await getTranslations('ProductReviews');
   const reviews = await getProductReviews(productId);
   return (
     <>
@@ -10,7 +12,7 @@ const ProductReviews = async ({ productId }) => {
         <>
           <div className={'container pb-6 md:pb-[80px]'}>
             <h2 className="text-umbra-100 font-sans text-[32px] leading-[120%] font-normal md:text-[44px]">
-              Reviews <span className="text-umbra-40">({reviews?.length})</span>
+              {t('Reviews')} <span className="text-umbra-40">({reviews?.length})</span>
             </h2>
             <div>
               <ReviewAndTestimonialCarouselWithProgress>
