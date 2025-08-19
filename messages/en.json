@@ -386,6 +386,56 @@
     "PleaseSelectVolume": "Please Select Volume",
     "PleaseSelectFormula": "Please Select Formula"
   },
+  "ProductDetailsAccordion": {
+    "AboutTheProduct": {
+      "title": "About the Product"
+    },
+    "FeaturesAndBenefits": {
+      "title": "Features & Benefits",
+      "ProductFeatures": "Product Features:",
+      "features": {
+        "cGMPFacility": "Made in our cGMP facility",
+        "naturalIngredients": "Made with natural ingredients",
+        "pureTerpenes": "Made with pure refined double distilled terpenes",
+        "incredibleFlavors": "Incredible flavors",
+        "strainSpecific": "Strain Specific",
+        "fullSpectrum": "Full Spectrum",
+        "botanicallyDerived": "Botanically Derived",
+        "oilSoluble": "Oil-soluble",
+        "enhancesEffect": "Enhances flavor, aroma, and entourage effect",
+        "wholesalePricing": "Wholesale pricing available",
+        "ultraConcentrated": "Ultra-concentrated",
+        "madeInUSA": "Made in the USA"
+      },
+      "PotentialBenefits": "Potential Benefits:",
+      "benefitsDescription": "Each terpene strain profile has its own unique blend of Terpenes and with so many variations, the experience of the \"entourage effect\" varies greatly from profile to profile.*",
+      "fdaDisclaimer": "*These statements have not been substantiated by the FDA. It is not intended to diagnose, cure, prevent or relieve any disease."
+    },
+    "HowToUse": {
+      "title": "How to Use",
+      "instructions": {
+        "dilution": "Dilute before use with all oil-based concentrates (1-10%).",
+        "drinks": "For drinks and beverages, we recommend <1% of the total volume. Try our Water Soluble Formulations for better solubility.",
+        "gummies": "For gummies, we recommend <1% of the total volume. Try our Water Soluble Formulations for better solubility."
+      }
+    },
+    "Details": {
+      "title": "Details",
+      "availableSizes": "Available Sizes:",
+      "sizesDescription": "1g (1.1ml), 4.2g (5ml), 17g (20ml), 43g (50ml), 86g (100ml), 215g (250ml), 430g (500ml), 860g (1,000ml), 3,440g (1 Gallon).",
+      "transparencyNote": "We sell our products in grams for full transparency. Selling by milliliters can be misleading, as terpene products are typically measured in grams for maximum accuracy and reproducibility.",
+      "natural": "Natural:",
+      "naturalDescription": "This terpene profile is strain-specific, full spectrum, and botanically derived. We use only the finest domestically sourced terpene isolates to ensure consistent quality and taste, double distilled to maximize potency and flavor. Fabricated in our state-of-the-art cGMP certified facility by our team of master chemists, we provide only the best profiles available on the market today.",
+      "technology": "Technology:",
+      "technologyDescription": "Produced in our advanced cGMP facility, all terpene isolates are double distilled for maximum aroma and potency. Every product is screened at our satellite testing location in Irvine, CA for pesticides, heavy metals, and residual solvents using in-house Mass Spectrometers, as well as third-party tested. Our terpene profiles are finely tuned through intensive research and development to achieve the best tasting aroma profiles. We take pride in our technology and leave no stone unturned to deliver the highest quality and best tasting terpene profiles.",
+      "userExperience": "User Experience:",
+      "userExperienceDescription": "Terpene profiles deliver a unique aromatic experience, often crafted with over 100 terpene isolates. This results in what is commonly known as the \"entourage effect,\" providing a variety of distinct feelings and sensations."
+    },
+    "CertificateOfAnalysis": {
+      "title": "Certificate of Analysis",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"
+    }
+  },
   "TrySamplePack": {
     "Reviews": "Reviews",
     "ChooseFormula": "Choose Formula",

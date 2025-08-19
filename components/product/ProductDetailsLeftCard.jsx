@@ -6,6 +6,7 @@ import { calculateDiscountForSelectedPrice } from '@/helpers/calculate-discount'
 import { getCategoryColorClasses, getCategoryTextClasses } from '@/helpers/get-category-color-classes';
 import { getProductPriceByVolume } from '@/helpers/get-product-price-by-volume';
 import { getProductPriceRange } from '@/helpers/get-product-price-ranges';
+import { stripHtml } from '@/helpers/get-strip-html';
 import { parseProductAttributes } from '@/helpers/product-attributes';
 import { getStarRatingData, renderStars } from '@/helpers/star-rating';
 import { addToCartAndOpenDrawer } from '@/lib/store/slices/cartSlice';
@@ -62,7 +63,7 @@ const ProductDetailsLeftCard = ({ product }) => {
   const { starComponents } = getStarRatingData(reviews);
 
   // Find the selected subProduct based on volume
-  const selectedSubProduct = product.subproducts?.find((subProduct) => {
+  const selectedSubProduct = product?.subproducts?.find((subProduct) => {
     if (!subProduct?.attribute) return false;
     try {
       const attribute = JSON.parse(subProduct.attribute);
@@ -162,9 +163,10 @@ const ProductDetailsLeftCard = ({ product }) => {
                   </span>
                 ))}
               </h6>
-              <p className="text-umbra-40 line-clamp-3 font-mono text-[16px] leading-[140%] font-normal tracking-normal">
-                {product?.meta_description}
+              <p className="text-umbra-40 line-clamp-4 font-mono text-[16px] leading-[140%] font-normal tracking-normal">
+                {stripHtml(product?.description)}
               </p>
+              ``
             </div>
             <div className="space-y-2">
               <div>

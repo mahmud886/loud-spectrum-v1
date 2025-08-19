@@ -386,6 +386,56 @@
     "PleaseSelectVolume": "Veuillez sélectionner un volume",
     "PleaseSelectFormula": "Veuillez sélectionner une formule"
   },
+  "ProductDetailsAccordion": {
+    "AboutTheProduct": {
+      "title": "À Propos du Produit"
+    },
+    "FeaturesAndBenefits": {
+      "title": "Caractéristiques et Avantages",
+      "ProductFeatures": "Caractéristiques du Produit :",
+      "features": {
+        "cGMPFacility": "Fabriqué dans notre installation cGMP",
+        "naturalIngredients": "Fabriqué avec des ingrédients naturels",
+        "pureTerpenes": "Fabriqué avec des terpènes purs raffinés doublement distillés",
+        "incredibleFlavors": "Saveurs incroyables",
+        "strainSpecific": "Spécifique à la souche",
+        "fullSpectrum": "Spectre complet",
+        "botanicallyDerived": "Dérivé botaniquement",
+        "oilSoluble": "Soluble dans l'huile",
+        "enhancesEffect": "Améliore la saveur, l'arôme et l'effet d'entourage",
+        "wholesalePricing": "Prix de gros disponibles",
+        "ultraConcentrated": "Ultra-concentré",
+        "madeInUSA": "Fabriqué aux États-Unis"
+      },
+      "PotentialBenefits": "Avantages Potentiels :",
+      "benefitsDescription": "Chaque profil de souche de terpènes a son propre mélange unique de terpènes et avec tant de variations, l'expérience de \"l'effet d'entourage\" varie considérablement d'un profil à l'autre.*",
+      "fdaDisclaimer": "*Ces déclarations n'ont pas été confirmées par la FDA. Il n'est pas destiné à diagnostiquer, guérir, prévenir ou soulager une maladie."
+    },
+    "HowToUse": {
+      "title": "Comment Utiliser",
+      "instructions": {
+        "dilution": "Diluer avant utilisation avec tous les concentrés à base d'huile (1-10%).",
+        "drinks": "Pour les boissons, nous recommandons <1% du volume total. Essayez nos formulations solubles dans l'eau pour une meilleure solubilité.",
+        "gummies": "Pour les bonbons gélifiés, nous recommandons <1% du volume total. Essayez nos formulations solubles dans l'eau pour une meilleure solubilité."
+      }
+    },
+    "Details": {
+      "title": "Détails",
+      "availableSizes": "Tailles Disponibles :",
+      "sizesDescription": "1g (1,1ml), 4,2g (5ml), 17g (20ml), 43g (50ml), 86g (100ml), 215g (250ml), 430g (500ml), 860g (1 000ml), 3 440g (1 Gallon).",
+      "transparencyNote": "Nous vendons nos produits en grammes pour une transparence totale. Vendre en millilitres peut être trompeur, car les produits à base de terpènes sont généralement mesurés en grammes pour une précision et une reproductibilité maximales.",
+      "natural": "Naturel :",
+      "naturalDescription": "Ce profil de terpènes est spécifique à la souche, à spectre complet et dérivé botaniquement. Nous utilisons uniquement les meilleurs isolats de terpènes d'origine nationale pour garantir une qualité et un goût constants, doublement distillés pour maximiser la puissance et la saveur. Fabriqué dans notre installation certifiée cGMP de pointe par notre équipe de chimistes maîtres, nous ne fournissons que les meilleurs profils disponibles sur le marché aujourd'hui.",
+      "technology": "Technologie :",
+      "technologyDescription": "Produit dans notre installation cGMP avancée, tous les isolats de terpènes sont doublement distillés pour un arôme et une puissance maximaux. Chaque produit est testé dans notre site de test satellite à Irvine, CA pour les pesticides, les métaux lourds et les solvants résiduels en utilisant des spectromètres de masse internes, ainsi que testé par des tiers. Nos profils de terpènes sont finement ajustés grâce à une recherche et développement intensifs pour obtenir les meilleurs profils d'arôme. Nous sommes fiers de notre technologie et ne laissons rien au hasard pour livrer les profils de terpènes de la plus haute qualité et au meilleur goût.",
+      "userExperience": "Expérience Utilisateur :",
+      "userExperienceDescription": "Les profils de terpènes offrent une expérience aromatique unique, souvent élaborée avec plus de 100 isolats de terpènes. Cela résulte en ce qui est communément appelé \"l'effet d'entourage\", offrant une variété de sensations et de sentiments distincts."
+    },
+    "CertificateOfAnalysis": {
+      "title": "Certificat d'Analyse",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"
+    }
+  },
   "TrySamplePack": {
     "Reviews": "Avis",
     "ChooseFormula": "Choisir la formule",

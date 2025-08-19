@@ -386,6 +386,56 @@
     "PleaseSelectVolume": "体積を選択してください",
     "PleaseSelectFormula": "処方を選択してください"
   },
+  "ProductDetailsAccordion": {
+    "AboutTheProduct": {
+      "title": "製品について"
+    },
+    "FeaturesAndBenefits": {
+      "title": "特徴と利点",
+      "ProductFeatures": "製品の特徴：",
+      "features": {
+        "cGMPFacility": "cGMP認定施設で製造",
+        "naturalIngredients": "天然成分で製造",
+        "pureTerpenes": "純粋で精製された二重蒸留テルペンで製造",
+        "incredibleFlavors": "素晴らしいフレーバー",
+        "strainSpecific": "品種特異性",
+        "fullSpectrum": "フルスペクトラム",
+        "botanicallyDerived": "植物由来",
+        "oilSoluble": "油溶性",
+        "enhancesEffect": "フレーバー、香り、アントラージュ効果を向上",
+        "wholesalePricing": "卸売価格利用可能",
+        "ultraConcentrated": "超濃縮",
+        "madeInUSA": "アメリカ製"
+      },
+      "PotentialBenefits": "潜在的な利点：",
+      "benefitsDescription": "各テルペン品種プロファイルには独自のテルペンブレンドがあり、多くのバリエーションにより、「アントラージュ効果」の体験はプロファイルごとに大きく異なります。*",
+      "fdaDisclaimer": "*これらの記述はFDAによって実証されていません。病気の診断、治癒、予防、または緩和を目的としたものではありません。"
+    },
+    "HowToUse": {
+      "title": "使用方法",
+      "instructions": {
+        "dilution": "すべての油性濃縮物と使用前に希釈してください（1-10%）。",
+        "drinks": "飲み物や飲料には、総量の<1%をお勧めします。より良い溶解性のために、水溶性製剤をお試しください。",
+        "gummies": "グミには、総量の<1%をお勧めします。より良い溶解性のために、水溶性製剤をお試しください。"
+      }
+    },
+    "Details": {
+      "title": "詳細",
+      "availableSizes": "利用可能なサイズ：",
+      "sizesDescription": "1g (1.1ml), 4.2g (5ml), 17g (20ml), 43g (50ml), 86g (100ml), 215g (250ml), 430g (500ml), 860g (1,000ml), 3,440g (1ガロン)。",
+      "transparencyNote": "完全な透明性のため、製品をグラム単位で販売しています。ミリリットルでの販売は誤解を招く可能性があり、テルペン製品は通常、最大の精度と再現性のためにグラムで測定されます。",
+      "natural": "天然：",
+      "naturalDescription": "このテルペンプロファイルは品種特異的、フルスペクトラム、植物由来です。一貫した品質と味を保証するために、最高品質の国産テルペン分離株のみを使用し、効力とフレーバーを最大化するために二重蒸留されています。マスター化学者チームによる最先端のcGMP認定施設で製造され、今日の市場で利用可能な最高のプロファイルのみを提供しています。",
+      "technology": "技術：",
+      "technologyDescription": "先進的なcGMP施設で製造され、すべてのテルペン分離株は最大の香りと効力のために二重蒸留されています。すべての製品は、カリフォルニア州アーバインの衛星テスト施設で、社内質量分析計を使用して農薬、重金属、残留溶媒について検査され、第三者機関でもテストされています。私たちのテルペンプロファイルは、最高の味の香りプロファイルを実現するために集中的な研究開発により微調整されています。私たちは技術に誇りを持ち、最高品質で最高の味のテルペンプロファイルを提供するために妥協しません。",
+      "userExperience": "ユーザー体験：",
+      "userExperienceDescription": "テルペンプロファイルは、しばしば100以上のテルペン分離株で作られた独特の香りの体験を提供します。これにより、一般的に「アントラージュ効果」として知られるものが生まれ、様々な独特の感覚や感情を提供します。"
+    },
+    "CertificateOfAnalysis": {
+      "title": "分析証明書",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"
+    }
+  },
   "TrySamplePack": {
     "Reviews": "レビュー",
     "ChooseFormula": "フォーミュラを選択",

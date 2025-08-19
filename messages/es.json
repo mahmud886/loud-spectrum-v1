@@ -385,6 +385,56 @@
     "PleaseSelectVolume": "Por favor, seleccione el volumen",
     "PleaseSelectFormula": "Por favor, seleccione la fórmula"
   },
+  "ProductDetailsAccordion": {
+    "AboutTheProduct": {
+      "title": "Sobre el Producto"
+    },
+    "FeaturesAndBenefits": {
+      "title": "Características y Beneficios",
+      "ProductFeatures": "Características del Producto:",
+      "features": {
+        "cGMPFacility": "Fabricado en nuestra instalación cGMP",
+        "naturalIngredients": "Hecho con ingredientes naturales",
+        "pureTerpenes": "Hecho con terpenos puros refinados doblemente destilados",
+        "incredibleFlavors": "Sabores increíbles",
+        "strainSpecific": "Específico de la cepa",
+        "fullSpectrum": "Espectro completo",
+        "botanicallyDerived": "Derivado botánicamente",
+        "oilSoluble": "Soluble en aceite",
+        "enhancesEffect": "Mejora el sabor, aroma y efecto séquito",
+        "wholesalePricing": "Precios mayoristas disponibles",
+        "ultraConcentrated": "Ultra-concentrado",
+        "madeInUSA": "Hecho en EE.UU."
+      },
+      "PotentialBenefits": "Beneficios Potenciales:",
+      "benefitsDescription": "Cada perfil de cepa de terpenos tiene su propia mezcla única de terpenos y con tantas variaciones, la experiencia del \"efecto séquito\" varía enormemente de perfil a perfil.*",
+      "fdaDisclaimer": "*Estas declaraciones no han sido sustanciadas por la FDA. No está destinado a diagnosticar, curar, prevenir o aliviar ninguna enfermedad."
+    },
+    "HowToUse": {
+      "title": "Cómo Usar",
+      "instructions": {
+        "dilution": "Diluir antes del uso con todos los concentrados a base de aceite (1-10%).",
+        "drinks": "Para bebidas, recomendamos <1% del volumen total. Pruebe nuestras formulaciones solubles en agua para mejor solubilidad.",
+        "gummies": "Para gomitas, recomendamos <1% del volumen total. Pruebe nuestras formulaciones solubles en agua para mejor solubilidad."
+      }
+    },
+    "Details": {
+      "title": "Detalles",
+      "availableSizes": "Tamaños Disponibles:",
+      "sizesDescription": "1g (1.1ml), 4.2g (5ml), 17g (20ml), 43g (50ml), 86g (100ml), 215g (250ml), 430g (500ml), 860g (1,000ml), 3,440g (1 Galón).",
+      "transparencyNote": "Vendemos nuestros productos en gramos para total transparencia. Vender por mililitros puede ser engañoso, ya que los productos de terpenos se miden típicamente en gramos para máxima precisión y reproducibilidad.",
+      "natural": "Natural:",
+      "naturalDescription": "Este perfil de terpenos es específico de la cepa, de espectro completo y derivado botánicamente. Utilizamos solo los mejores aislados de terpenos de origen nacional para garantizar calidad y sabor consistentes, doblemente destilados para maximizar potencia y sabor. Fabricado en nuestra instalación certificada cGMP de última generación por nuestro equipo de químicos maestros, proporcionamos solo los mejores perfiles disponibles en el mercado hoy.",
+      "technology": "Tecnología:",
+      "technologyDescription": "Producido en nuestra instalación cGMP avanzada, todos los aislados de terpenos son doblemente destilados para máximo aroma y potencia. Cada producto es examinado en nuestra ubicación de pruebas satelital en Irvine, CA para pesticidas, metales pesados y solventes residuales usando espectrómetros de masa internos, así como probado por terceros. Nuestros perfiles de terpenos están finamente ajustados a través de investigación y desarrollo intensivo para lograr los mejores perfiles de aroma. Nos enorgullecemos de nuestra tecnología y no dejamos piedra sin mover para entregar los perfiles de terpenos de la más alta calidad y mejor sabor.",
+      "userExperience": "Experiencia del Usuario:",
+      "userExperienceDescription": "Los perfiles de terpenos ofrecen una experiencia aromática única, a menudo elaborada con más de 100 aislados de terpenos. Esto resulta en lo que comúnmente se conoce como el \"efecto séquito\", proporcionando una variedad de sensaciones y sentimientos distintos."
+    },
+    "CertificateOfAnalysis": {
+      "title": "Certificado de Análisis",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"
+    }
+  },
   "TrySamplePack": {
     "Reviews": "Reseñas",
     "ChooseFormula": "Elegir fórmula",

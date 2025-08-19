@@ -7,35 +7,79 @@ import ProductReviewsShimmer from '@/components/containers/product/ProductReview
 import RelatedProducts from '@/components/containers/product/RelatedProducts';
 import RelatedProductsShimmer from '@/components/containers/product/RelatedProductsShimmer';
 import { getProductDetails } from '@/services/get-product-details';
+import { getTranslations } from 'next-intl/server';
 import { cookies } from 'next/headers';
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 
 // Async component for spectrum accordion
 async function SpectrumAccordionContent({ productDetails }) {
+  const t = await getTranslations('ProductDetailsAccordion');
+
   const accordionData = [
     {
-      title: 'About the Product',
-      description: productDetails?.meta_description,
-    },
-    {
-      title: 'Features & Benefits',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation',
-    },
-    {
-      title: 'How to Use',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation',
-    },
-    {
-      title: 'Details',
+      title: t('AboutTheProduct.title'),
       description: productDetails?.description,
     },
     {
-      title: 'Certificate of Analysis',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation',
+      title: t('FeaturesAndBenefits.title'),
+      description: (
+        <>
+          <h6 className="mb-2 font-normal">{t('FeaturesAndBenefits.ProductFeatures')}</h6>
+          <ul className="mb-4 list-disc space-y-1 pl-6">
+            <li>{t('FeaturesAndBenefits.features.cGMPFacility')}</li>
+            <li>{t('FeaturesAndBenefits.features.naturalIngredients')}</li>
+            <li>{t('FeaturesAndBenefits.features.pureTerpenes')}</li>
+            <li>{t('FeaturesAndBenefits.features.incredibleFlavors')}</li>
+            <li>{t('FeaturesAndBenefits.features.strainSpecific')}</li>
+            <li>{t('FeaturesAndBenefits.features.fullSpectrum')}</li>
+            <li>{t('FeaturesAndBenefits.features.botanicallyDerived')}</li>
+            <li>{t('FeaturesAndBenefits.features.oilSoluble')}</li>
+            <li>{t('FeaturesAndBenefits.features.enhancesEffect')}</li>
+            <li>{t('FeaturesAndBenefits.features.wholesalePricing')}</li>
+            <li>{t('FeaturesAndBenefits.features.ultraConcentrated')}</li>
+            <li>{t('FeaturesAndBenefits.features.madeInUSA')}</li>
+          </ul>
+          <h6 className="mb-1 font-normal">{t('FeaturesAndBenefits.PotentialBenefits')}</h6>
+          <p className="mb-2">{t('FeaturesAndBenefits.benefitsDescription')}</p>
+          <p className="text-xs font-normal italic">{t('FeaturesAndBenefits.fdaDisclaimer')}</p>
+        </>
+      ),
+    },
+    {
+      title: t('HowToUse.title'),
+      description: (
+        <ul className="list-disc space-y-2 pl-6">
+          <li>{t('HowToUse.instructions.dilution')}</li>
+          <li>{t('HowToUse.instructions.drinks')}</li>
+          <li>{t('HowToUse.instructions.gummies')}</li>
+        </ul>
+      ),
+    },
+    {
+      title: t('Details.title'),
+      description: (
+        <div className="space-y-4 font-mono text-[16px] leading-[140%] font-normal">
+          <div>
+            <strong>{t('Details.availableSizes')}</strong> {t('Details.sizesDescription')}
+            <br />
+            <span>{t('Details.transparencyNote')}</span>
+          </div>
+          <div>
+            <strong>{t('Details.natural')}</strong> {t('Details.naturalDescription')}
+          </div>
+          <div>
+            <strong>{t('Details.technology')}</strong> {t('Details.technologyDescription')}
+          </div>
+          <div>
+            <strong>{t('Details.userExperience')}</strong> {t('Details.userExperienceDescription')}
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: t('CertificateOfAnalysis.title'),
+      description: t('CertificateOfAnalysis.description'),
     },
   ];
 

@@ -385,6 +385,56 @@
     "CannabisDerived": "Aus Cannabis gewonnen",
     "PleaseSelectVolume": "Bitte Volumen auswählen"
   },
+  "ProductDetailsAccordion": {
+    "AboutTheProduct": {
+      "title": "Über das Produkt"
+    },
+    "FeaturesAndBenefits": {
+      "title": "Eigenschaften & Vorteile",
+      "ProductFeatures": "Produkteigenschaften:",
+      "features": {
+        "cGMPFacility": "Hergestellt in unserer cGMP-Anlage",
+        "naturalIngredients": "Hergestellt mit natürlichen Zutaten",
+        "pureTerpenes": "Hergestellt mit reinen, raffinierten, doppelt destillierten Terpenen",
+        "incredibleFlavors": "Unglaubliche Aromen",
+        "strainSpecific": "Sortenspezifisch",
+        "fullSpectrum": "Vollspektrum",
+        "botanicallyDerived": "Botanisch gewonnen",
+        "oilSoluble": "Öllöslich",
+        "enhancesEffect": "Verbessert Geschmack, Aroma und Entourage-Effekt",
+        "wholesalePricing": "Großhandelspreise verfügbar",
+        "ultraConcentrated": "Ultra-konzentriert",
+        "madeInUSA": "Hergestellt in den USA"
+      },
+      "PotentialBenefits": "Potenzielle Vorteile:",
+      "benefitsDescription": "Jedes Terpen-Sortenprofil hat seine eigene einzigartige Mischung von Terpenen und mit so vielen Variationen variiert die Erfahrung des \"Entourage-Effekts\" stark von Profil zu Profil.*",
+      "fdaDisclaimer": "*Diese Aussagen wurden nicht von der FDA bestätigt. Es ist nicht zur Diagnose, Heilung, Vorbeugung oder Linderung von Krankheiten bestimmt."
+    },
+    "HowToUse": {
+      "title": "Anwendung",
+      "instructions": {
+        "dilution": "Vor der Verwendung mit allen ölbasierten Konzentraten verdünnen (1-10%).",
+        "drinks": "Für Getränke empfehlen wir <1% des Gesamtvolumens. Probieren Sie unsere wasserlöslichen Formulierungen für bessere Löslichkeit.",
+        "gummies": "Für Gummibärchen empfehlen wir <1% des Gesamtvolumens. Probieren Sie unsere wasserlöslichen Formulierungen für bessere Löslichkeit."
+      }
+    },
+    "Details": {
+      "title": "Details",
+      "availableSizes": "Verfügbare Größen:",
+      "sizesDescription": "1g (1,1ml), 4,2g (5ml), 17g (20ml), 43g (50ml), 86g (100ml), 215g (250ml), 430g (500ml), 860g (1.000ml), 3.440g (1 Gallone).",
+      "transparencyNote": "Wir verkaufen unsere Produkte in Gramm für vollständige Transparenz. Der Verkauf in Millilitern kann irreführend sein, da Terpenprodukte normalerweise in Gramm für maximale Genauigkeit und Reproduzierbarkeit gemessen werden.",
+      "natural": "Natürlich:",
+      "naturalDescription": "Dieses Terpenprofil ist sortenspezifisch, vollspektral und botanisch gewonnen. Wir verwenden nur die besten im Inland bezogenen Terpenisolate, um konstante Qualität und Geschmack zu gewährleisten, doppelt destilliert für maximale Potenz und Aroma. Hergestellt in unserer hochmodernen cGMP-zertifizierten Anlage von unserem Team von Meisterchemikern, bieten wir nur die besten auf dem Markt verfügbaren Profile.",
+      "technology": "Technologie:",
+      "technologyDescription": "Hergestellt in unserer fortschrittlichen cGMP-Anlage werden alle Terpenisolate doppelt destilliert für maximales Aroma und Potenz. Jedes Produkt wird an unserem Satelliten-Teststandort in Irvine, CA auf Pestizide, Schwermetalle und Lösungsmittelrückstände mit hauseigenen Massenspektrometern sowie durch Dritte getestet. Unsere Terpenprofile werden durch intensive Forschung und Entwicklung fein abgestimmt, um die besten Aromaprofile zu erreichen. Wir sind stolz auf unsere Technologie und lassen nichts unversucht, um die höchste Qualität und die besten Terpenprofile zu liefern.",
+      "userExperience": "Benutzererfahrung:",
+      "userExperienceDescription": "Terpenprofile liefern ein einzigartiges aromatisches Erlebnis, oft mit über 100 Terpenisolaten hergestellt. Dies führt zu dem, was allgemein als \"Entourage-Effekt\" bekannt ist und eine Vielzahl von unterschiedlichen Gefühlen und Empfindungen bietet."
+    },
+    "CertificateOfAnalysis": {
+      "title": "Analysezertifikat",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"
+    }
+  },
   "TrySamplePack": {
     "Reviews": "Bewertungen",
     "ChooseFormula": "Formel wählen",
