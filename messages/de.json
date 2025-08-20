@@ -137,8 +137,8 @@
           "description": "Zahlen Sie per ACH oder Überweisung"
         },
         "cash-on-delivery": {
-          "name": "Nachnahme",
-          "description": "Zahlen Sie bei Lieferung in bar"
+          "name": "Lokaler Abholung",
+          "description": "Abholen Sie Ihre Bestellung bei uns"
         }
       }
     },

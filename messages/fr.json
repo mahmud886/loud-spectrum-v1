@@ -137,8 +137,8 @@
           "description": "Payez par virement ACH ou bancaire"
         },
         "cash-on-delivery": {
-          "name": "Paiement à la livraison",
-          "description": "Payez en espèces à la livraison"
+          "name": "Retrait local",
+          "description": "Récupérez votre commande à notre lieu"
         }
       }
     },

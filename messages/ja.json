@@ -137,8 +137,8 @@
           "description": "ACHまたは電信送金で支払い"
         },
         "cash-on-delivery": {
-          "name": "代金引換",
-          "description": "配送時に現金で支払い"
+          "name": "ローカルピックアップ",
+          "description": "注文をお店で受け取る"
         }
       }
     },

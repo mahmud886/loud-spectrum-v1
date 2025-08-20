@@ -137,8 +137,8 @@
           "description": "Pay via ACH or wire transfer"
         },
         "cash-on-delivery": {
-          "name": "Cash on Delivery",
-          "description": "Pay in cash upon delivery"
+          "name": "Local Pickup",
+          "description": "Pickup your order at our location"
         }
       }
     },

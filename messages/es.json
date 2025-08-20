@@ -136,8 +136,8 @@
           "description": "Pague mediante transferencia ACH o por cable"
         },
         "cash-on-delivery": {
-          "name": "Pago contra entrega",
-          "description": "Pague en efectivo al recibir el pedido"
+          "name": "Recogida local",
+          "description": "Recoge tu pedido en nuestra ubicación"
         }
       }
     },
