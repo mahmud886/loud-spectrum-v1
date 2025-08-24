@@ -5,6 +5,7 @@
     "login": "Anmelden",
     "logout": "Abmelden",
     "register": "Registrieren",
+    "forgot_password": "Passwort vergessen?",
     "Login": {
       "emailLabel": "E-Mail*",
       "emailPlaceholder": "Geben Sie Ihre E-Mail ein",
@@ -37,6 +38,43 @@
       "wholesalerButton": "Großhandelskonto erstellen",
       "togglePassword": "Passwort anzeigen/verbergen",
       "toggleConfirmPassword": "Passwortbestätigung anzeigen/verbergen"
+    }
+  },
+  "ForgotPasswordPage": {
+    "title": "Passwort zurücksetzen",
+    "description": "Geben Sie Ihre E-Mail-Adresse ein und wir senden Ihnen einen Link zum Zurücksetzen Ihres Passworts.",
+    "ForgotPassword": {
+      "emailLabel": "E-Mail*",
+      "emailPlaceholder": "Geben Sie Ihre E-Mail-Adresse ein",
+      "submitButton": "Reset-Link senden",
+      "sending": "Senden...",
+      "request_success": "Passwort-Reset-E-Mail erfolgreich gesendet",
+      "request_failed": "Fehler beim Senden der Passwort-Reset-E-Mail",
+      "success_title": "Überprüfen Sie Ihre E-Mail",
+      "success_description": "Wir haben einen Passwort-Reset-Link an Ihre E-Mail-Adresse gesendet.",
+      "back_to_login": "Zurück zur Anmeldung"
+    }
+  },
+  "ResetPasswordPage": {
+    "title": "Neues Passwort festlegen",
+    "description": "Geben Sie unten Ihr neues Passwort ein. Stellen Sie sicher, dass es stark und sicher ist.",
+    "ResetPassword": {
+      "passwordLabel": "Neues Passwort*",
+      "passwordPlaceholder": "Geben Sie Ihr neues Passwort ein",
+      "confirmPasswordLabel": "Neues Passwort bestätigen*",
+      "confirmPasswordPlaceholder": "Bestätigen Sie Ihr neues Passwort",
+      "submitButton": "Passwort zurücksetzen",
+      "resetting": "Zurücksetzen...",
+      "togglePassword": "Passwort anzeigen/verbergen",
+      "toggleConfirmPassword": "Passwortbestätigung anzeigen/verbergen",
+      "request_success": "Passwort erfolgreich zurückgesetzt",
+      "request_failed": "Fehler beim Zurücksetzen des Passworts",
+      "success_title": "Passwort-Reset abgeschlossen",
+      "success_description": "Ihr Passwort wurde erfolgreich zurückgesetzt. Sie können sich jetzt mit Ihrem neuen Passwort anmelden.",
+      "invalid_token_title": "Ungültiger Reset-Link",
+      "invalid_token_description": "Dieser Passwort-Reset-Link ist ungültig oder abgelaufen. Bitte fordern Sie einen neuen an.",
+      "request_new_reset": "Neuen Reset-Link anfordern",
+      "back_to_login": "Zurück zur Anmeldung"
     }
   },
   "UI": {

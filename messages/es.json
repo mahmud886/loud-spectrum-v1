@@ -5,6 +5,7 @@
     "login": "Iniciar sesión",
     "logout": "Cerrar sesión",
     "register": "Registrarse",
+    "forgot_password": "¿Olvidaste tu contraseña?",
     "Login": {
       "emailLabel": "Correo electrónico*",
       "emailPlaceholder": "Introduce tu correo electrónico",
@@ -37,6 +38,43 @@
       "wholesalerButton": "Crear cuenta de mayorista",
       "togglePassword": "Mostrar/ocultar contraseña",
       "toggleConfirmPassword": "Mostrar/ocultar confirmación de contraseña"
+    }
+  },
+  "ForgotPasswordPage": {
+    "title": "Restablecer tu contraseña",
+    "description": "Introduce tu correo electrónico y te enviaremos un enlace para restablecer tu contraseña.",
+    "ForgotPassword": {
+      "emailLabel": "Correo electrónico*",
+      "emailPlaceholder": "Introduce tu correo electrónico",
+      "submitButton": "Enviar enlace de restablecimiento",
+      "sending": "Enviando...",
+      "request_success": "Correo de restablecimiento de contraseña enviado exitosamente",
+      "request_failed": "Error al enviar el correo de restablecimiento de contraseña",
+      "success_title": "Revisa tu correo",
+      "success_description": "Hemos enviado un enlace de restablecimiento de contraseña a tu correo electrónico.",
+      "back_to_login": "Volver al inicio de sesión"
+    }
+  },
+  "ResetPasswordPage": {
+    "title": "Establecer nueva contraseña",
+    "description": "Introduce tu nueva contraseña a continuación. Asegúrate de que sea fuerte y segura.",
+    "ResetPassword": {
+      "passwordLabel": "Nueva contraseña*",
+      "passwordPlaceholder": "Introduce tu nueva contraseña",
+      "confirmPasswordLabel": "Confirmar nueva contraseña*",
+      "confirmPasswordPlaceholder": "Confirma tu nueva contraseña",
+      "submitButton": "Restablecer contraseña",
+      "resetting": "Restableciendo...",
+      "togglePassword": "Mostrar/ocultar contraseña",
+      "toggleConfirmPassword": "Mostrar/ocultar confirmación de contraseña",
+      "request_success": "Contraseña restablecida exitosamente",
+      "request_failed": "Error al restablecer la contraseña",
+      "success_title": "Restablecimiento de contraseña completado",
+      "success_description": "Tu contraseña ha sido restablecida exitosamente. Ahora puedes iniciar sesión con tu nueva contraseña.",
+      "invalid_token_title": "Enlace de restablecimiento inválido",
+      "invalid_token_description": "Este enlace de restablecimiento de contraseña es inválido o ha expirado. Por favor solicita uno nuevo.",
+      "request_new_reset": "Solicitar nuevo enlace de restablecimiento",
+      "back_to_login": "Volver al inicio de sesión"
     }
   },
   "UI": {

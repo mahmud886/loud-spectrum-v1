@@ -5,6 +5,7 @@
     "login": "ログイン",
     "logout": "ログアウト",
     "register": "登録",
+    "forgot_password": "パスワードをお忘れですか？",
     "Login": {
       "emailLabel": "メールアドレス*",
       "emailPlaceholder": "メールアドレスを入力してください",
@@ -37,6 +38,43 @@
       "wholesalerButton": "卸売アカウントを作成",
       "togglePassword": "パスワードの表示/非表示",
       "toggleConfirmPassword": "確認パスワードの表示/非表示"
+    }
+  },
+  "ForgotPasswordPage": {
+    "title": "パスワードをリセット",
+    "description": "メールアドレスを入力すると、パスワードリセット用のリンクをお送りします。",
+    "ForgotPassword": {
+      "emailLabel": "メールアドレス*",
+      "emailPlaceholder": "メールアドレスを入力してください",
+      "submitButton": "リセットリンクを送信",
+      "sending": "送信中...",
+      "request_success": "パスワードリセットメールを正常に送信しました",
+      "request_failed": "パスワードリセットメールの送信に失敗しました",
+      "success_title": "メールをご確認ください",
+      "success_description": "パスワードリセット用のリンクをメールアドレスに送信しました。",
+      "back_to_login": "ログインに戻る"
+    }
+  },
+  "ResetPasswordPage": {
+    "title": "新しいパスワードを設定",
+    "description": "下に新しいパスワードを入力してください。強力で安全なものにしてください。",
+    "ResetPassword": {
+      "passwordLabel": "新しいパスワード*",
+      "passwordPlaceholder": "新しいパスワードを入力してください",
+      "confirmPasswordLabel": "新しいパスワードの確認*",
+      "confirmPasswordPlaceholder": "新しいパスワードを再入力してください",
+      "submitButton": "パスワードをリセット",
+      "resetting": "リセット中...",
+      "togglePassword": "パスワードの表示/非表示",
+      "toggleConfirmPassword": "確認パスワードの表示/非表示",
+      "request_success": "パスワードが正常にリセットされました",
+      "request_failed": "パスワードのリセットに失敗しました",
+      "success_title": "パスワードリセット完了",
+      "success_description": "パスワードが正常にリセットされました。新しいパスワードでログインできます。",
+      "invalid_token_title": "無効なリセットリンク",
+      "invalid_token_description": "このパスワードリセットリンクは無効か期限切れです。新しいものをリクエストしてください。",
+      "request_new_reset": "新しいリセットリンクをリクエスト",
+      "back_to_login": "ログインに戻る"
     }
   },
   "UI": {

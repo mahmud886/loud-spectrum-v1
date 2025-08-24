@@ -5,6 +5,7 @@
     "login": "Login",
     "logout": "Logout",
     "register": "Register",
+    "forgot_password": "Forgot Password?",
     "Login": {
       "emailLabel": "Email*",
       "emailPlaceholder": "Enter your email",
@@ -37,6 +38,43 @@
       "wholesalerButton": "Create Wholesaler Account",
       "togglePassword": "Toggle password visibility",
       "toggleConfirmPassword": "Toggle confirm password visibility"
+    }
+  },
+  "ForgotPasswordPage": {
+    "title": "Reset Your Password",
+    "description": "Enter your email address and we'll send you a link to reset your password.",
+    "ForgotPassword": {
+      "emailLabel": "Email*",
+      "emailPlaceholder": "Enter your email address",
+      "submitButton": "Send Reset Link",
+      "sending": "Sending...",
+      "request_success": "Password reset email sent successfully",
+      "request_failed": "Failed to send password reset email",
+      "success_title": "Check your email",
+      "success_description": "We've sent a password reset link to your email address.",
+      "back_to_login": "Back to Login"
+    }
+  },
+  "ResetPasswordPage": {
+    "title": "Set New Password",
+    "description": "Enter your new password below. Make sure it's strong and secure.",
+    "ResetPassword": {
+      "passwordLabel": "New Password*",
+      "passwordPlaceholder": "Enter your new password",
+      "confirmPasswordLabel": "Confirm New Password*",
+      "confirmPasswordPlaceholder": "Confirm your new password",
+      "submitButton": "Reset Password",
+      "resetting": "Resetting...",
+      "togglePassword": "Toggle password visibility",
+      "toggleConfirmPassword": "Toggle confirm password visibility",
+      "request_success": "Password reset successfully",
+      "request_failed": "Failed to reset password",
+      "success_title": "Password Reset Complete",
+      "success_description": "Your password has been successfully reset. You can now log in with your new password.",
+      "invalid_token_title": "Invalid Reset Link",
+      "invalid_token_description": "This password reset link is invalid or has expired. Please request a new one.",
+      "request_new_reset": "Request New Reset Link",
+      "back_to_login": "Back to Login"
     }
   },
   "UI": {

@@ -1,6 +1,7 @@
 'use client';
 
 import { validateLogin } from '@/helpers/validations/login-validation';
+import { Link } from '@/i18n/navigation';
 import { setCredentials, setError, setLoading } from '@/lib/store/slices/authSlice';
 import { clearCheckoutOnLogin, setDefaultAddresses } from '@/lib/store/slices/checkoutSlice';
 import { Eye, EyeOff } from 'lucide-react';
@@ -12,6 +13,7 @@ import { toast } from 'sonner';
 
 const Login = () => {
   const t = useTranslations('LoginPage.Login');
+  const tPage = useTranslations('LoginPage');
   const router = useRouter();
   const searchParams = useSearchParams();
   const dispatch = useDispatch();
@@ -117,6 +119,12 @@ const Login = () => {
             </button>
           </div>
           {errors.password && <p className="mt-1 text-sm text-red-500">{errors.password}</p>}
+        </div>
+
+        <div className="flex justify-end">
+          <Link href="/forgot-password" className="text-umbra-100 hover:text-umbra-60 text-sm transition-colors">
+            {tPage('forgot_password')}
+          </Link>
         </div>
 
         <div className="mt-6 w-full">

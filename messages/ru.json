@@ -6,6 +6,7 @@
 
     "logout": "Выйти",
     "register": "Регистрация",
+    "forgot_password": "Забыли пароль?",
     "Login": {
       "emailLabel": "Электронная почта*",
       "emailPlaceholder": "Введите вашу почту",
@@ -38,6 +39,43 @@
       "wholesalerButton": "Создать аккаунт оптовика",
       "togglePassword": "Показать/скрыть пароль",
       "toggleConfirmPassword": "Показать/скрыть подтверждение пароля"
+    }
+  },
+  "ForgotPasswordPage": {
+    "title": "Сбросить пароль",
+    "description": "Введите свой адрес электронной почты, и мы отправим вам ссылку для сброса пароля.",
+    "ForgotPassword": {
+      "emailLabel": "Электронная почта*",
+      "emailPlaceholder": "Введите адрес электронной почты",
+      "submitButton": "Отправить ссылку для сброса",
+      "sending": "Отправка...",
+      "request_success": "Письмо для сброса пароля отправлено успешно",
+      "request_failed": "Не удалось отправить письмо для сброса пароля",
+      "success_title": "Проверьте вашу почту",
+      "success_description": "Мы отправили ссылку для сброса пароля на ваш адрес электронной почты.",
+      "back_to_login": "Вернуться к входу"
+    }
+  },
+  "ResetPasswordPage": {
+    "title": "Установить новый пароль",
+    "description": "Введите новый пароль ниже. Убедитесь, что он надежный и безопасный.",
+    "ResetPassword": {
+      "passwordLabel": "Новый пароль*",
+      "passwordPlaceholder": "Введите новый пароль",
+      "confirmPasswordLabel": "Подтвердить новый пароль*",
+      "confirmPasswordPlaceholder": "Подтвердите новый пароль",
+      "submitButton": "Сбросить пароль",
+      "resetting": "Сброс...",
+      "togglePassword": "Показать/скрыть пароль",
+      "toggleConfirmPassword": "Показать/скрыть подтверждение пароля",
+      "request_success": "Пароль успешно сброшен",
+      "request_failed": "Не удалось сбросить пароль",
+      "success_title": "Сброс пароля завершен",
+      "success_description": "Ваш пароль был успешно сброшен. Теперь вы можете войти с новым паролем.",
+      "invalid_token_title": "Неверная ссылка для сброса",
+      "invalid_token_description": "Эта ссылка для сброса пароля недействительна или истекла. Пожалуйста, запросите новую.",
+      "request_new_reset": "Запросить новую ссылку для сброса",
+      "back_to_login": "Вернуться к входу"
     }
   },
   "UI": {

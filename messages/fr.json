@@ -5,6 +5,7 @@
     "login": "Connexion",
     "logout": "Déconnexion",
     "register": "S'inscrire",
+    "forgot_password": "Mot de passe oublié ?",
     "Login": {
       "emailLabel": "Email*",
       "emailPlaceholder": "Entrez votre email",
@@ -37,6 +38,43 @@
       "wholesalerButton": "Créer un compte grossiste",
       "togglePassword": "Afficher/masquer le mot de passe",
       "toggleConfirmPassword": "Afficher/masquer la confirmation du mot de passe"
+    }
+  },
+  "ForgotPasswordPage": {
+    "title": "Réinitialiser votre mot de passe",
+    "description": "Saisissez votre adresse email et nous vous enverrons un lien pour réinitialiser votre mot de passe.",
+    "ForgotPassword": {
+      "emailLabel": "Email*",
+      "emailPlaceholder": "Saisissez votre adresse email",
+      "submitButton": "Envoyer le lien de réinitialisation",
+      "sending": "Envoi...",
+      "request_success": "Email de réinitialisation du mot de passe envoyé avec succès",
+      "request_failed": "Échec de l'envoi de l'email de réinitialisation",
+      "success_title": "Vérifiez votre email",
+      "success_description": "Nous avons envoyé un lien de réinitialisation à votre adresse email.",
+      "back_to_login": "Retour à la connexion"
+    }
+  },
+  "ResetPasswordPage": {
+    "title": "Définir un nouveau mot de passe",
+    "description": "Saisissez votre nouveau mot de passe ci-dessous. Assurez-vous qu'il soit fort et sécurisé.",
+    "ResetPassword": {
+      "passwordLabel": "Nouveau mot de passe*",
+      "passwordPlaceholder": "Saisissez votre nouveau mot de passe",
+      "confirmPasswordLabel": "Confirmer le nouveau mot de passe*",
+      "confirmPasswordPlaceholder": "Confirmez votre nouveau mot de passe",
+      "submitButton": "Réinitialiser le mot de passe",
+      "resetting": "Réinitialisation...",
+      "togglePassword": "Afficher/masquer le mot de passe",
+      "toggleConfirmPassword": "Afficher/masquer la confirmation du mot de passe",
+      "request_success": "Mot de passe réinitialisé avec succès",
+      "request_failed": "Échec de la réinitialisation du mot de passe",
+      "success_title": "Réinitialisation du mot de passe terminée",
+      "success_description": "Votre mot de passe a été réinitialisé avec succès. Vous pouvez maintenant vous connecter avec votre nouveau mot de passe.",
+      "invalid_token_title": "Lien de réinitialisation invalide",
+      "invalid_token_description": "Ce lien de réinitialisation de mot de passe est invalide ou a expiré. Veuillez en demander un nouveau.",
+      "request_new_reset": "Demander un nouveau lien de réinitialisation",
+      "back_to_login": "Retour à la connexion"
     }
   },
   "UI": {
