@@ -39,9 +39,17 @@
       "toggleConfirmPassword": "Passwortbestätigung anzeigen/verbergen"
     }
   },
+  "UI": {
+    "FullPageLoader": {
+      "logoAlt": "Loud Spectrum",
+      "securityNote": "Sichere Transaktion läuft"
+    }
+  },
   "CheckoutPage": {
     "PageTitle": "Kasse",
     "ShippingAndBillingAddress": {
+      "ManageAddresses": "Adressen verwalten",
+      "AddressesAreSavedInYourAccount": "Adressen werden in Ihrem Konto gespeichert.",
       "headingShipping": "Versandadresse",
       "headingBilling": "Rechnungsadresse",
       "firstNameLabel": "Vorname*",
@@ -148,7 +156,11 @@
       "securityCode": "Sicherheitscode",
       "postalCode": "Postleitzahl",
       "saveButton": "Speichern",
-      "title": "Kartendaten eingeben"
+      "title": "Kartendaten eingeben",
+      "fullPageLoader": {
+        "title": "Kartenzahlung wird verarbeitet...",
+        "description": "Wir verarbeiten Ihre Kartenzahlung. Bitte warten Sie, während wir Ihre Zahlungsinformationen bestätigen."
+      }
     },
     "WireTransferDialog": {
       "bankDetails": "Bankdetails",
@@ -161,12 +173,70 @@
       "transactionId": "Transaktions-ID",
       "accountName": "Kontoinhaber",
       "cancel": "Abbrechen",
-      "save": "Speichern"
+      "save": "Speichern",
+      "fullPageLoader": {
+        "title": "Überweisung wird verarbeitet...",
+        "description": "Wir verarbeiten Ihre Überweisung. Bitte warten Sie, während wir Ihre Zahlungsinformationen bestätigen."
+      }
     },
     "ContinueToPayment": {
       "button": {
         "default": "Weiter zur Zahlung",
-        "loading": "Wird bearbeitet..."
+        "loading": "Wird bearbeitet...",
+        "cashOnDelivery": "Bestellung aufgeben (Nachnahme)",
+        "cardPayment": "Weiter zur Kartenzahlung",
+        "wireTransfer": "Weiter zur Überweisung"
+      },
+      "toast": {
+        "paymentMethodRequired": {
+          "title": "Zahlungsmethode erforderlich",
+          "description": "Bitte wählen Sie zuerst eine Zahlungsmethode"
+        },
+        "completeRequiredInfo": {
+          "title": "Erforderliche Informationen vervollständigen",
+          "description": "Bitte füllen Sie aus: {fields}{remaining}",
+          "showAllLabel": "Alle anzeigen",
+          "allFieldsTitle": "Erforderliche Felder"
+        },
+        "formValidationError": {
+          "title": "Formularvalidierungsfehler",
+          "description": "Bitte überprüfen Sie, ob alle erforderlichen Felder ausgefüllt sind"
+        },
+        "paymentProcessingError": {
+          "title": "Zahlungsverarbeitungsfehler",
+          "description": "Die Zahlungsverarbeitungsfunktion ist nicht verfügbar"
+        },
+        "cardPayment": {
+          "title": "Kartenzahlung",
+          "description": "Bitte vervollständigen Sie Ihre Karteninformationen"
+        },
+        "wireTransfer": {
+          "title": "Überweisung",
+          "description": "Bitte vervollständigen Sie Ihre Überweisungsinformationen"
+        },
+        "paymentError": {
+          "title": "Zahlungsfehler",
+          "description": "Bei der Verarbeitung Ihrer Zahlung ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut."
+        }
+      },
+      "validation": {
+        "completeFields": "Vervollständigen Sie {count} erforderliche{plural} Feld{plural}",
+        "missingTooltip": "Fehlend: {fields}{more}"
+      },
+      "fullPageLoader": {
+        "cashOnDelivery": {
+          "title": "Ihre Bestellung wird bearbeitet...",
+          "description": "Wir bearbeiten Ihre Nachnahme-Bestellung. Bitte warten Sie, während wir Ihre Bestelldetails bestätigen."
+        },
+        "default": {
+          "title": "Zahlung wird bearbeitet...",
+          "description": "Bitte warten Sie, während wir Sie zur Vervollständigung Ihrer Zahlung weiterleiten. Schließen Sie dieses Fenster nicht."
+        }
+      },
+      "missingFields": {
+        "header": "Erforderliche Informationen vervollständigen",
+        "instruction": "Bitte füllen Sie die folgenden erforderlichen Felder aus:",
+        "andMore": "und {count} weitere..."
       }
     }
   },

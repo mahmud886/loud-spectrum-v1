@@ -39,9 +39,17 @@
       "toggleConfirmPassword": "Toggle confirm password visibility"
     }
   },
+  "UI": {
+    "FullPageLoader": {
+      "logoAlt": "Loud Spectrum",
+      "securityNote": "Secure transaction in progress"
+    }
+  },
   "CheckoutPage": {
     "PageTitle": "Checkout",
     "ShippingAndBillingAddress": {
+      "ManageAddresses": "Manage Addresses",
+      "AddressesAreSavedInYourAccount": "Addresses are saved in your account.",
       "headingShipping": "Shipping Address",
       "headingBilling": "Billing Address",
       "firstNameLabel": "First Name*",
@@ -148,7 +156,11 @@
       "securityCode": "Security Code",
       "postalCode": "Postal Code",
       "saveButton": "Save",
-      "title": "Enter Card Details"
+      "title": "Enter Card Details",
+      "fullPageLoader": {
+        "title": "Processing Card Payment...",
+        "description": "We're securely processing your card payment. Please wait and do not close this window."
+      }
     },
     "WireTransferDialog": {
       "bankDetails": "Bank Details",
@@ -161,12 +173,74 @@
       "transactionId": "Transaction ID",
       "accountName": "Account Name",
       "cancel": "Cancel",
-      "save": "Save"
+      "save": "Save",
+      "fullPageLoader": {
+        "title": "Processing Wire Transfer...",
+        "description": "We're processing your wire transfer information. Please wait while we confirm your payment details."
+      }
     },
     "ContinueToPayment": {
       "button": {
         "default": "Continue to Payment",
-        "loading": "Processing..."
+        "loading": "Processing...",
+        "cashOnDelivery": "Place Order (Cash on Delivery)",
+        "cardPayment": "Continue to Card Payment",
+        "wireTransfer": "Continue to Wire Transfer",
+        "fullPageLoader": {
+          "title": "Processing Payment...",
+          "description": "Please wait while we redirect you to complete your payment. Do not close this window."
+        }
+      },
+      "toast": {
+        "paymentMethodRequired": {
+          "title": "Payment Method Required",
+          "description": "Please select a payment method first"
+        },
+        "completeRequiredInfo": {
+          "title": "Complete Required Information",
+          "description": "Please fill in: {fields}{remaining}",
+          "showAllLabel": "Show All",
+          "allFieldsTitle": "Required Fields"
+        },
+        "formValidationError": {
+          "title": "Form Validation Error",
+          "description": "Please check all required fields are completed"
+        },
+        "paymentProcessingError": {
+          "title": "Payment Processing Error",
+          "description": "Payment processing function is not available"
+        },
+        "cardPayment": {
+          "title": "Card Payment",
+          "description": "Please complete your card information"
+        },
+        "wireTransfer": {
+          "title": "Wire Transfer",
+          "description": "Please complete your wire transfer information"
+        },
+        "paymentError": {
+          "title": "Payment Error",
+          "description": "An error occurred while processing your payment. Please try again."
+        }
+      },
+      "validation": {
+        "completeFields": "Complete {count} Required Field{plural}",
+        "missingTooltip": "Missing: {fields}{more}"
+      },
+      "fullPageLoader": {
+        "cashOnDelivery": {
+          "title": "Processing Your Order...",
+          "description": "We're processing your cash on delivery order. Please wait while we confirm your order details."
+        },
+        "default": {
+          "title": "Processing Payment...",
+          "description": "Please wait while we redirect you to complete your payment. Do not close this window."
+        }
+      },
+      "missingFields": {
+        "header": "Complete Required Information",
+        "instruction": "Please fill in the following required fields:",
+        "andMore": "and {count} more..."
       }
     }
   },

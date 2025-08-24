@@ -40,9 +40,17 @@
       "toggleConfirmPassword": "Показать/скрыть подтверждение пароля"
     }
   },
+  "UI": {
+    "FullPageLoader": {
+      "logoAlt": "Loud Spectrum",
+      "securityNote": "Выполняется безопасная транзакция"
+    }
+  },
   "CheckoutPage": {
     "PageTitle": "Оформление заказа",
     "ShippingAndBillingAddress": {
+      "ManageAddresses": "Управление адресами",
+      "AddressesAreSavedInYourAccount": "Адреса сохранены в вашем аккаунте.",
       "headingShipping": "Адрес доставки",
       "headingBilling": "Адрес для выставления счета",
       "firstNameLabel": "Имя*",
@@ -150,7 +158,11 @@
       "securityCode": "Код безопасности",
       "postalCode": "Почтовый индекс",
       "saveButton": "Сохранить",
-      "title": "Введите данные вашей карты"
+      "title": "Введите данные вашей карты",
+      "fullPageLoader": {
+        "title": "Обработка платежа...",
+        "description": "Мы обрабатываем ваш платеж. Пожалуйста, подождите, пока мы подтверждаем детали платежа."
+      }
     },
     "WireTransferDialog": {
       "bankDetails": "Банковские реквизиты",
@@ -163,12 +175,70 @@
       "transactionId": "Идентификатор транзакции",
       "accountName": "Название счета",
       "cancel": "Отменить",
-      "save": "Сохранить"
+      "save": "Сохранить",
+      "fullPageLoader": {
+        "title": "Обработка платежа...",
+        "description": "Мы обрабатываем ваш платеж. Пожалуйста, подождите, пока мы подтверждаем детали платежа."
+      }
     },
     "ContinueToPayment": {
       "button": {
         "default": "Перейти к оплате",
-        "loading": "Обработка..."
+        "loading": "Обработка...",
+        "cashOnDelivery": "Оформить заказ (Наложенный платеж)",
+        "cardPayment": "Перейти к оплате картой",
+        "wireTransfer": "Перейти к банковскому переводу"
+      },
+      "toast": {
+        "paymentMethodRequired": {
+          "title": "Требуется способ оплаты",
+          "description": "Пожалуйста, сначала выберите способ оплаты"
+        },
+        "completeRequiredInfo": {
+          "title": "Заполните обязательную информацию",
+          "description": "Пожалуйста, заполните: {fields}{remaining}",
+          "showAllLabel": "Показать все",
+          "allFieldsTitle": "Обязательные поля"
+        },
+        "formValidationError": {
+          "title": "Ошибка валидации формы",
+          "description": "Пожалуйста, проверьте, что все обязательные поля заполнены"
+        },
+        "paymentProcessingError": {
+          "title": "Ошибка обработки платежа",
+          "description": "Функция обработки платежей недоступна"
+        },
+        "cardPayment": {
+          "title": "Оплата картой",
+          "description": "Пожалуйста, заполните информацию о вашей карте"
+        },
+        "wireTransfer": {
+          "title": "Банковский перевод",
+          "description": "Пожалуйста, заполните информацию о банковском переводе"
+        },
+        "paymentError": {
+          "title": "Ошибка платежа",
+          "description": "Произошла ошибка при обработке вашего платежа. Пожалуйста, попробуйте снова."
+        }
+      },
+      "validation": {
+        "completeFields": "Заполните {count} обязательное поле",
+        "missingTooltip": "Отсутствует: {fields}{more}"
+      },
+      "fullPageLoader": {
+        "cashOnDelivery": {
+          "title": "Обработка вашего заказа...",
+          "description": "Мы обрабатываем ваш заказ с наложенным платежом. Пожалуйста, подождите, пока мы подтверждаем детали заказа."
+        },
+        "default": {
+          "title": "Обработка платежа...",
+          "description": "Пожалуйста, подождите, пока мы перенаправляем вас для завершения платежа. Не закрывайте это окно."
+        }
+      },
+      "missingFields": {
+        "header": "Заполните обязательную информацию",
+        "instruction": "Пожалуйста, заполните следующие обязательные поля:",
+        "andMore": "и еще {count}..."
       }
     }
   },

@@ -39,9 +39,17 @@
       "toggleConfirmPassword": "Afficher/masquer la confirmation du mot de passe"
     }
   },
+  "UI": {
+    "FullPageLoader": {
+      "logoAlt": "Loud Spectrum",
+      "securityNote": "Transaction sécurisée en cours"
+    }
+  },
   "CheckoutPage": {
     "PageTitle": "Paiement",
     "ShippingAndBillingAddress": {
+      "ManageAddresses": "Gérer les adresses",
+      "AddressesAreSavedInYourAccount": "Les adresses sont enregistrées dans votre compte.",
       "headingShipping": "Adresse de livraison",
       "headingBilling": "Adresse de facturation",
       "firstNameLabel": "Prénom*",
@@ -148,7 +156,11 @@
       "securityCode": "Code de sécurité",
       "postalCode": "Code postal",
       "saveButton": "Enregistrer",
-      "title": "Entrez les détails de votre carte"
+      "title": "Entrez les détails de votre carte",
+      "fullPageLoader": {
+        "title": "Traitement du paiement par carte...",
+        "description": "Nous traitons votre paiement par carte. Veuillez patienter pendant que nous confirmons les détails de votre paiement."
+      }
     },
     "WireTransferDialog": {
       "bankDetails": "Détails bancaires",
@@ -161,12 +173,70 @@
       "transactionId": "ID de transaction",
       "accountName": "Nom du compte",
       "cancel": "Annuler",
-      "save": "Enregistrer"
+      "save": "Enregistrer",
+      "fullPageLoader": {
+        "title": "Traitement du virement bancaire...",
+        "description": "Nous traitons votre virement bancaire. Veuillez patienter pendant que nous confirmons les détails de votre paiement."
+      }
     },
     "ContinueToPayment": {
       "button": {
         "default": "Continuer vers le paiement",
-        "loading": "Traitement en cours..."
+        "loading": "Traitement en cours...",
+        "cashOnDelivery": "Passer commande (Paiement à la livraison)",
+        "cardPayment": "Continuer vers le paiement par carte",
+        "wireTransfer": "Continuer vers le virement bancaire"
+      },
+      "toast": {
+        "paymentMethodRequired": {
+          "title": "Méthode de paiement requise",
+          "description": "Veuillez d'abord sélectionner une méthode de paiement"
+        },
+        "completeRequiredInfo": {
+          "title": "Compléter les informations requises",
+          "description": "Veuillez remplir : {fields}{remaining}",
+          "showAllLabel": "Tout afficher",
+          "allFieldsTitle": "Champs requis"
+        },
+        "formValidationError": {
+          "title": "Erreur de validation du formulaire",
+          "description": "Veuillez vérifier que tous les champs requis sont remplis"
+        },
+        "paymentProcessingError": {
+          "title": "Erreur de traitement du paiement",
+          "description": "La fonction de traitement des paiements n'est pas disponible"
+        },
+        "cardPayment": {
+          "title": "Paiement par carte",
+          "description": "Veuillez compléter les informations de votre carte"
+        },
+        "wireTransfer": {
+          "title": "Virement bancaire",
+          "description": "Veuillez compléter les informations de votre virement bancaire"
+        },
+        "paymentError": {
+          "title": "Erreur de paiement",
+          "description": "Une erreur s'est produite lors du traitement de votre paiement. Veuillez réessayer."
+        }
+      },
+      "validation": {
+        "completeFields": "Compléter {count} champ{plural} requis",
+        "missingTooltip": "Manquant : {fields}{more}"
+      },
+      "fullPageLoader": {
+        "cashOnDelivery": {
+          "title": "Traitement de votre commande...",
+          "description": "Nous traitons votre commande avec paiement à la livraison. Veuillez patienter pendant que nous confirmons les détails de votre commande."
+        },
+        "default": {
+          "title": "Traitement du paiement...",
+          "description": "Veuillez patienter pendant que nous vous redirigons pour compléter votre paiement. Ne fermez pas cette fenêtre."
+        }
+      },
+      "missingFields": {
+        "header": "Compléter les informations requises",
+        "instruction": "Veuillez remplir les champs requis suivants :",
+        "andMore": "et {count} de plus..."
       }
     }
   },

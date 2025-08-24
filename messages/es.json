@@ -39,9 +39,17 @@
       "toggleConfirmPassword": "Mostrar/ocultar confirmación de contraseña"
     }
   },
+  "UI": {
+    "FullPageLoader": {
+      "logoAlt": "Loud Spectrum",
+      "securityNote": "Transacción segura en progreso"
+    }
+  },
   "CheckoutPage": {
     "PageTitle": "Pagar",
     "ShippingAndBillingAddress": {
+      "ManageAddresses": "Gestionar direcciones",
+      "AddressesAreSavedInYourAccount": "Las direcciones se guardan en su cuenta.",
       "headingShipping": "Dirección de envío",
       "headingBilling": "Dirección de facturación",
       "firstNameLabel": "Nombre*",
@@ -147,7 +155,11 @@
       "securityCode": "Código de seguridad",
       "postalCode": "Código Postal",
       "saveButton": "Guardar",
-      "title": "Ingrese los detalles de la tarjeta"
+      "title": "Ingrese los detalles de la tarjeta",
+      "fullPageLoader": {
+        "title": "Procesando pago con tarjeta...",
+        "description": "Estamos procesando de forma segura su pago con tarjeta. Por favor espere y no cierre esta ventana."
+      }
     },
     "WireTransferDialog": {
       "bankDetails": "Detalles bancarios",
@@ -160,12 +172,70 @@
       "transactionId": "ID de transacción",
       "accountName": "Nombre de la cuenta",
       "cancel": "Cancelar",
-      "save": "Guardar"
+      "save": "Guardar",
+      "fullPageLoader": {
+        "title": "Procesando transferencia bancaria...",
+        "description": "Estamos procesando la información de su transferencia bancaria. Por favor espere mientras confirmamos los detalles de su pago."
+      }
     },
     "ContinueToPayment": {
       "button": {
         "default": "Continuar al pago",
-        "loading": "Procesando..."
+        "loading": "Procesando...",
+        "cashOnDelivery": "Realizar pedido (Contra reembolso)",
+        "cardPayment": "Continuar al pago con tarjeta",
+        "wireTransfer": "Continuar a transferencia bancaria"
+      },
+      "toast": {
+        "paymentMethodRequired": {
+          "title": "Método de pago requerido",
+          "description": "Por favor seleccione un método de pago primero"
+        },
+        "completeRequiredInfo": {
+          "title": "Complete la información requerida",
+          "description": "Por favor complete: {fields}{remaining}",
+          "showAllLabel": "Mostrar todo",
+          "allFieldsTitle": "Campos requeridos"
+        },
+        "formValidationError": {
+          "title": "Error de validación del formulario",
+          "description": "Por favor verifique que todos los campos requeridos estén completos"
+        },
+        "paymentProcessingError": {
+          "title": "Error de procesamiento de pago",
+          "description": "La función de procesamiento de pagos no está disponible"
+        },
+        "cardPayment": {
+          "title": "Pago con tarjeta",
+          "description": "Por favor complete la información de su tarjeta"
+        },
+        "wireTransfer": {
+          "title": "Transferencia bancaria",
+          "description": "Por favor complete la información de su transferencia bancaria"
+        },
+        "paymentError": {
+          "title": "Error de pago",
+          "description": "Ocurrió un error al procesar su pago. Por favor intente de nuevo."
+        }
+      },
+      "validation": {
+        "completeFields": "Complete {count} campo{plural} requerido{plural}",
+        "missingTooltip": "Faltante: {fields}{more}"
+      },
+      "fullPageLoader": {
+        "cashOnDelivery": {
+          "title": "Procesando su pedido...",
+          "description": "Estamos procesando su pedido contra reembolso. Por favor espere mientras confirmamos los detalles de su pedido."
+        },
+        "default": {
+          "title": "Procesando pago...",
+          "description": "Por favor espere mientras lo redirigimos para completar su pago. No cierre esta ventana."
+        }
+      },
+      "missingFields": {
+        "header": "Complete la información requerida",
+        "instruction": "Por favor complete los siguientes campos requeridos:",
+        "andMore": "y {count} más..."
       }
     }
   },

@@ -39,9 +39,17 @@
       "toggleConfirmPassword": "確認パスワードの表示/非表示"
     }
   },
+  "UI": {
+    "FullPageLoader": {
+      "logoAlt": "Loud Spectrum",
+      "securityNote": "安全な取引を実行中"
+    }
+  },
   "CheckoutPage": {
     "PageTitle": "チェックアウト",
     "ShippingAndBillingAddress": {
+      "ManageAddresses": "住所を管理",
+      "AddressesAreSavedInYourAccount": "住所はあなたのアカウントに保存されます。",
       "headingShipping": "配送先住所",
       "headingBilling": "請求先住所",
       "firstNameLabel": "名*",
@@ -148,7 +156,11 @@
       "securityCode": "セキュリティコード",
       "postalCode": "郵便番号",
       "saveButton": "保存",
-      "title": "カード情報の入力"
+      "title": "カード情報の入力",
+      "fullPageLoader": {
+        "title": "カード決済を処理中...",
+        "description": "カード決済を処理しています。支払い詳細の確認をお待ちください。"
+      }
     },
     "WireTransferDialog": {
       "bankDetails": "銀行情報",
@@ -161,12 +173,70 @@
       "transactionId": "取引ID",
       "accountName": "口座名義",
       "cancel": "キャンセル",
-      "save": "保存"
+      "save": "保存",
+      "fullPageLoader": {
+        "title": "銀行振込を処理中...",
+        "description": "銀行振込を処理しています。支払い詳細の確認をお待ちください。"
+      }
     },
     "ContinueToPayment": {
       "button": {
         "default": "支払いに進む",
-        "loading": "処理中..."
+        "loading": "処理中...",
+        "cashOnDelivery": "注文を確定する（代金引換）",
+        "cardPayment": "カード決済に進む",
+        "wireTransfer": "銀行振込に進む"
+      },
+      "toast": {
+        "paymentMethodRequired": {
+          "title": "支払い方法が必要です",
+          "description": "まず支払い方法を選択してください"
+        },
+        "completeRequiredInfo": {
+          "title": "必須情報を入力してください",
+          "description": "以下を入力してください：{fields}{remaining}",
+          "showAllLabel": "すべて表示",
+          "allFieldsTitle": "必須項目"
+        },
+        "formValidationError": {
+          "title": "フォーム検証エラー",
+          "description": "すべての必須項目が入力されているかご確認ください"
+        },
+        "paymentProcessingError": {
+          "title": "支払い処理エラー",
+          "description": "支払い処理機能が利用できません"
+        },
+        "cardPayment": {
+          "title": "カード決済",
+          "description": "カード情報を入力してください"
+        },
+        "wireTransfer": {
+          "title": "銀行振込",
+          "description": "銀行振込情報を入力してください"
+        },
+        "paymentError": {
+          "title": "支払いエラー",
+          "description": "支払い処理中にエラーが発生しました。もう一度お試しください。"
+        }
+      },
+      "validation": {
+        "completeFields": "{count}つの必須項目を入力してください",
+        "missingTooltip": "未入力：{fields}{more}"
+      },
+      "fullPageLoader": {
+        "cashOnDelivery": {
+          "title": "ご注文を処理中...",
+          "description": "代金引換でのご注文を処理しています。注文詳細の確認をお待ちください。"
+        },
+        "default": {
+          "title": "支払いを処理中...",
+          "description": "支払いページにリダイレクトしています。このウィンドウを閉じないでください。"
+        }
+      },
+      "missingFields": {
+        "header": "必須情報を入力してください",
+        "instruction": "以下の必須項目を入力してください：",
+        "andMore": "その他{count}項目..."
       }
     }
   },

@@ -182,11 +182,11 @@ const ShippingAddress = () => {
             className="text-umbra-100 flex items-center gap-2 font-mono text-[10px] font-normal hover:underline"
           >
             <span className="text-umbra-100 font-mono text-[10px] font-normal">
-              Addresses are saved in your account.
+              {t('AddressesAreSavedInYourAccount')}
             </span>
             <ArrowRight className="h-4 w-4" />
             <Badge variant="outline" className="bg-umbra-5 text-umbra-100">
-              Manage Addresses
+              {t('ManageAddresses')}
             </Badge>
           </Link>
         </div>
