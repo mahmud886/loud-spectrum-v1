@@ -7,8 +7,11 @@ import { ReduxProvider } from '@/lib/providers/ReduxProvider';
 import { ToastProvider } from '@/lib/providers/ToastProvider';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
+import Script from 'next/script';
 import NextTopLoader from 'nextjs-toploader';
 import '../../styles/globals.css';
+
+const TIDIO_KEY = process.env.NEXT_PUBLIC_TIDIO_KEY;
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -157,6 +160,8 @@ export default async function LocaleLayout({ children, params }) {
             </NextIntlClientProvider>
           </ScrollToTop>
         </ReduxProvider>
+        {/* Tidio Live Chat */}
+        {TIDIO_KEY && <Script src={`//code.tidio.co/${TIDIO_KEY}.js`} strategy="lazyOnload" />}
       </body>
     </html>
   );
