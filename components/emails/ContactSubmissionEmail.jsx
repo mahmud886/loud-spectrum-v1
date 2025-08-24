@@ -4,7 +4,7 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL_EMAIL
   ? process.env.NEXT_PUBLIC_BASE_URL_EMAIL
   : 'http://localhost:3000';
 
-const ContactSubmissionEmail = ({ name, email, message, subscribe }) => {
+const ContactSubmissionEmail = ({ name, email, message, is_subscriber }) => {
   return (
     <Html>
       <Head />
@@ -76,7 +76,7 @@ const ContactSubmissionEmail = ({ name, email, message, subscribe }) => {
                 <strong>Email:</strong> {email}
               </Text>
               <Text className="m-0 text-sm text-gray-700">
-                <strong>Subscribe:</strong> {subscribe ? 'Yes' : 'No'}
+                <strong>Is Subscriber:</strong> {is_subscriber}
               </Text>
             </Section>
 

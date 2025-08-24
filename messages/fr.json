@@ -619,7 +619,49 @@
       "nameError": "Le nom doit comporter entre 2 et 50 caractères et ne contenir que des lettres, des chiffres et des espaces.",
       "emailError": "Veuillez saisir une adresse e-mail valide.",
       "messageError": "Le message doit comporter entre 10 et 1000 caractères.",
-      "checkboxMessage": "En soumettant ce formulaire, vous acceptez de recevoir occasionnellement des mises à jour et des e-mails marketing de notre part. Vous pouvez vous désabonner à tout moment."
+      "checkboxMessage": "En soumettant ce formulaire, vous acceptez de recevoir occasionnellement des mises à jour et des e-mails marketing de notre part. Vous pouvez vous désabonner à tout moment.",
+      "validation": {
+        "name": {
+          "min": "Le nom doit contenir au moins 2 caractères",
+          "max": "Le nom doit contenir moins de 50 caractères",
+          "regex": "Le nom ne peut contenir que des lettres, des chiffres et des espaces"
+        },
+        "email": {
+          "invalid": "Veuillez saisir une adresse e-mail valide",
+          "min": "L'e-mail doit contenir au moins 5 caractères",
+          "max": "L'e-mail doit contenir moins de 100 caractères"
+        },
+        "message": {
+          "min": "Le message doit contenir au moins 10 caractères",
+          "max": "Le message doit contenir moins de 1000 caractères"
+        }
+      },
+      "toast": {
+        "validationError": {
+          "title": "Erreur de validation",
+          "description": "Veuillez vérifier le formulaire pour les erreurs."
+        },
+        "contactError": {
+          "title": "Erreur de contact",
+          "description": "Échec de la soumission du formulaire de contact."
+        },
+        "partialSuccess": {
+          "title": "Succès partiel",
+          "description": "Message reçu, mais échec de la confirmation par e-mail."
+        },
+        "success": {
+          "title": "Succès",
+          "description": "Message envoyé avec succès !"
+        },
+        "submissionFailed": {
+          "title": "Échec de la soumission",
+          "description": "Impossible d'envoyer votre message. Veuillez réessayer."
+        },
+        "networkError": {
+          "title": "Erreur réseau",
+          "description": "Veuillez vérifier votre connexion et réessayer."
+        }
+      }
     }
   },
   "Wholesale": {

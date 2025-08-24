@@ -623,7 +623,49 @@
       "nameError": "Name must be 2-50 characters and only contain letters, numbers, and spaces.",
       "emailError": "Please enter a valid email address.",
       "messageError": "Message must be 10-1000 characters.",
-      "checkboxMessage": "By submitting this form, you agree to receive occasional updates and marketing emails from us. You can unsubscribe at any time."
+      "checkboxMessage": "By submitting this form, you agree to receive occasional updates and marketing emails from us. You can unsubscribe at any time.",
+      "validation": {
+        "name": {
+          "min": "Name must be at least 2 characters",
+          "max": "Name must be less than 50 characters",
+          "regex": "Name can only contain letters, numbers and spaces"
+        },
+        "email": {
+          "invalid": "Please enter a valid email address",
+          "min": "Email must be at least 5 characters",
+          "max": "Email must be less than 100 characters"
+        },
+        "message": {
+          "min": "Message must be at least 10 characters",
+          "max": "Message must be less than 1000 characters"
+        }
+      },
+      "toast": {
+        "validationError": {
+          "title": "Validation Error",
+          "description": "Please check the form for errors."
+        },
+        "contactError": {
+          "title": "Contact Error",
+          "description": "Contact submission failed."
+        },
+        "partialSuccess": {
+          "title": "Partial Success",
+          "description": "Message received, but email confirmation failed."
+        },
+        "success": {
+          "title": "Success",
+          "description": "Message sent successfully!"
+        },
+        "submissionFailed": {
+          "title": "Submission Failed",
+          "description": "Unable to submit your message. Please try again."
+        },
+        "networkError": {
+          "title": "Network Error",
+          "description": "Please check your connection and try again."
+        }
+      }
     }
   },
   "Wholesale": {

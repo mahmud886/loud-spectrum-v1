@@ -618,7 +618,49 @@
       "nameError": "Der Name muss 2-50 Zeichen lang sein und darf nur Buchstaben, Zahlen und Leerzeichen enthalten.",
       "emailError": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
       "messageError": "Die Nachricht muss zwischen 10 und 1000 Zeichen lang sein.",
-      "checkboxMessage": "Mit dem Absenden dieses Formulars stimmen Sie zu, gelegentlich Updates und Marketing-E-Mails von uns zu erhalten. Sie können sich jederzeit abmelden."
+      "checkboxMessage": "Mit dem Absenden dieses Formulars stimmen Sie zu, gelegentlich Updates und Marketing-E-Mails von uns zu erhalten. Sie können sich jederzeit abmelden.",
+      "validation": {
+        "name": {
+          "min": "Name muss mindestens 2 Zeichen haben",
+          "max": "Name muss weniger als 50 Zeichen haben",
+          "regex": "Name darf nur Buchstaben, Zahlen und Leerzeichen enthalten"
+        },
+        "email": {
+          "invalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+          "min": "E-Mail muss mindestens 5 Zeichen haben",
+          "max": "E-Mail muss weniger als 100 Zeichen haben"
+        },
+        "message": {
+          "min": "Nachricht muss mindestens 10 Zeichen haben",
+          "max": "Nachricht muss weniger als 1000 Zeichen haben"
+        }
+      },
+      "toast": {
+        "validationError": {
+          "title": "Validierungsfehler",
+          "description": "Bitte überprüfen Sie das Formular auf Fehler."
+        },
+        "contactError": {
+          "title": "Kontaktfehler",
+          "description": "Kontaktformular-Übermittlung fehlgeschlagen."
+        },
+        "partialSuccess": {
+          "title": "Teilweiser Erfolg",
+          "description": "Nachricht erhalten, aber E-Mail-Bestätigung fehlgeschlagen."
+        },
+        "success": {
+          "title": "Erfolg",
+          "description": "Nachricht erfolgreich gesendet!"
+        },
+        "submissionFailed": {
+          "title": "Übermittlung fehlgeschlagen",
+          "description": "Ihre Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut."
+        },
+        "networkError": {
+          "title": "Netzwerkfehler",
+          "description": "Bitte überprüfen Sie Ihre Verbindung und versuchen Sie es erneut."
+        }
+      }
     }
   },
   "Wholesale": {

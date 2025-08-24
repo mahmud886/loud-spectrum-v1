@@ -11,7 +11,7 @@ import { toast } from 'sonner';
 const ContactFormSection = () => {
   const t = useTranslations('ContactPage');
 
-  const [form, setForm] = useState({ name: '', email: '', message: '', subscribe: false });
+  const [form, setForm] = useState({ name: '', email: '', message: '', is_subscriber: false });
   const [errors, setErrors] = useState({});
   const [success, setSuccess] = useState('');
   const [submitting, setSubmitting] = useState(false);
@@ -32,61 +32,95 @@ const ContactFormSection = () => {
     setErrors({});
     setSuccess('');
 
-    // Client-side validation
-    const validation = validateContact(form);
-    let subscribeError = '';
-    if (!form.subscribe) {
-      subscribeError = 'You must agree to receive occasional updates and marketing emails.';
-    }
-    if (!validation.success || subscribeError) {
+    // Client-side validation with i18n support
+    const validation = validateContact(form, (key) => t(`contactForm.${key}`));
+    if (!validation.success) {
       const fieldErrors = {};
-      if (!validation.success) {
-        validation.errors.forEach((err) => {
-          fieldErrors[err.field] = err.message;
-        });
-      }
-      if (subscribeError) {
-        fieldErrors.subscribe = subscribeError;
-      }
+      validation.errors.forEach((err) => {
+        fieldErrors[err.field] = err.message;
+      });
       setErrors(fieldErrors);
-      toast.error('Validation Error', {
-        description: 'Please check the form for errors.',
+      toast.error(t('contactForm.toast.validationError.title'), {
+        description: t('contactForm.toast.validationError.description'),
       });
       setSubmitting(false);
       return;
     }
 
     try {
-      const res = await fetch('/api/emails/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
-      });
-      const data = await res.json();
-      if (!res.ok) {
-        if (data.errors) {
-          const fieldErrors = {};
-          data.errors.forEach((err) => {
-            fieldErrors[err.field] = err.message;
-          });
-          setErrors(fieldErrors);
-          toast.error('Validation Error', {
-            description: 'Please check the form for errors.',
-          });
-        } else {
-          setErrors({ general: data.message || 'Something went wrong.' });
-          toast.error('Error', {
-            description: data.message || 'Something went wrong.',
-          });
-        }
+      // Execute both API calls in parallel for better performance
+      const [contactResponse, emailResponse] = await Promise.allSettled([
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/contact-us`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(form),
+        }),
+        fetch('/api/emails/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(form),
+        }),
+      ]);
+
+      // Handle contact API response
+      let contactSuccess = false;
+      let contactData = null;
+      if (contactResponse.status === 'fulfilled') {
+        contactData = await contactResponse.value.json();
+        contactSuccess = contactResponse.value.ok;
+      }
+
+      // Handle email API response
+      let emailSuccess = false;
+      let emailData = null;
+      if (emailResponse.status === 'fulfilled') {
+        emailData = await emailResponse.value.json();
+        emailSuccess = emailResponse.value.ok;
+      }
+
+      // Process results - prioritize contact API for validation errors
+      if (!contactSuccess && contactData?.errors) {
+        const fieldErrors = {};
+        contactData.errors.forEach((err) => {
+          fieldErrors[err.field] = err.message;
+        });
+        setErrors(fieldErrors);
+        toast.error(t('contactForm.toast.validationError.title'), {
+          description: t('contactForm.toast.validationError.description'),
+        });
+      } else if (!contactSuccess && contactData?.message) {
+        setErrors({ general: contactData.message || t('contactForm.toast.contactError.description') });
+        toast.error(t('contactForm.toast.contactError.title'), {
+          description: contactData.message || t('contactForm.toast.contactError.description'),
+        });
+      } else if (!emailSuccess && emailData?.message) {
+        // Contact succeeded but email failed - still show success but warn about email
+        setSuccess(t('contactForm.toast.partialSuccess.description'));
+        setForm({ name: '', email: '', message: '', is_subscriber: false });
+        toast.warning(t('contactForm.toast.partialSuccess.title'), {
+          description: t('contactForm.toast.partialSuccess.description'),
+        });
+      } else if (contactSuccess) {
+        // Contact API succeeded - show success message
+        const successMessage = contactData?.message || emailData?.message || t('contactForm.toast.success.description');
+        setSuccess(t('contactForm.toast.partialSuccess.description'));
+        setForm({ name: '', email: '', message: '', is_subscriber: false });
+        toast.success(t('contactForm.toast.success.title'), {
+          description: successMessage,
+        });
       } else {
-        setSuccess(data.message || 'Message sent!');
-        setForm({ name: '', email: '', message: '', subscribe: false });
-        toast.success(data.message || 'Message sent!');
+        // Both failed
+        setErrors({ general: t('contactForm.toast.submissionFailed.description') });
+        toast.error(t('contactForm.toast.submissionFailed.title'), {
+          description: t('contactForm.toast.submissionFailed.description'),
+        });
       }
     } catch (err) {
-      setErrors({ general: 'Failed to send message.' });
-      toast.error('Failed to send message.');
+      console.error('Contact form submission error:', err);
+      setErrors({ general: t('contactForm.toast.networkError.description') });
+      toast.error(t('contactForm.toast.networkError.title'), {
+        description: t('contactForm.toast.networkError.description'),
+      });
     } finally {
       setSubmitting(false);
     }
@@ -123,7 +157,7 @@ const ContactFormSection = () => {
                 {t('contactForm.requiredNote')}
               </p>
               {errors.general && <div className="mb-2 text-sm text-red-600">{errors.general}</div>}
-              {success && <div className="mb-2 text-sm text-green-600">{success}</div>}
+              {/* {success && <div className="mb-2 text-sm text-green-600">{success}</div>} */}
               <div className="flex flex-col justify-between gap-4 md:flex-row">
                 <div className="flex-1">
                   <Input
@@ -132,7 +166,7 @@ const ContactFormSection = () => {
                     value={form.name}
                     onChange={handleChange}
                     placeholder={t('contactForm.namePlaceholder')}
-                    className="bg-umbra-5 placeholder:text-umbra-100 hover:bg-umbra-10 min-h-[48px] py-2 font-mono text-[16px] leading-[140%] font-normal"
+                    className={`${errors.name ? 'border-red-600' : 'border-umbra-100'} bg-umbra-5 placeholder:text-umbra-100 hover:bg-umbra-10 min-h-[48px] py-2 font-mono text-[16px] leading-[140%] font-normal`}
                   />
                   {errors.name && <div className="mt-1 text-xs text-red-600">{errors.name}</div>}
                 </div>
@@ -143,7 +177,7 @@ const ContactFormSection = () => {
                     value={form.email}
                     onChange={handleChange}
                     placeholder={t('contactForm.emailPlaceholder')}
-                    className="bg-umbra-5 placeholder:text-umbra-100 hover:bg-umbra-10 min-h-[48px] py-2 font-mono text-[16px] leading-[140%] font-normal"
+                    className={`${errors.email ? 'border-red-600' : 'border-umbra-100'} bg-umbra-5 placeholder:text-umbra-100 hover:bg-umbra-10 min-h-[48px] py-2 font-mono text-[16px] leading-[140%] font-normal`}
                   />
                   {errors.email && <div className="mt-1 text-xs text-red-600">{errors.email}</div>}
                 </div>
@@ -154,7 +188,7 @@ const ContactFormSection = () => {
                   value={form.message}
                   onChange={handleChange}
                   placeholder={t('contactForm.messagePlaceholder')}
-                  className="bg-umbra-5 placeholder:text-umbra-100 hover:bg-umbra-10 min-h-[173px] py-2 font-mono text-[16px] leading-[140%] font-normal"
+                  className={`${errors.message ? 'border-red-600' : 'border-umbra-100'} bg-umbra-5 placeholder:text-umbra-100 hover:bg-umbra-10 min-h-[48px] py-2 font-mono text-[16px] leading-[140%] font-normal`}
                 />
                 {errors.message && <div className="mt-1 text-xs text-red-600">{errors.message}</div>}
               </div>
@@ -162,14 +196,13 @@ const ContactFormSection = () => {
                 <label className="flex items-center gap-2 text-xs text-gray-700">
                   <input
                     type="checkbox"
-                    name="subscribe"
-                    checked={form.subscribe}
+                    name="is_subscriber"
+                    checked={form.is_subscriber}
                     onChange={handleChange}
                     className="accent-black"
                   />
                   {t('contactForm.checkboxMessage')}
                 </label>
-                {errors.subscribe && <div className="mt-1 text-xs text-red-600">{errors.subscribe}</div>}
               </div>
               <div className="mt-12">
                 <button

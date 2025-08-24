@@ -1,5 +1,21 @@
 import { z } from 'zod';
 
+export const createContactSchema = (t) =>
+  z.object({
+    name: z
+      .string()
+      .min(2, t('validation.name.min'))
+      .max(50, t('validation.name.max'))
+      .regex(/^[a-zA-Z0-9\s]*$/, t('validation.name.regex')),
+    email: z
+      .string()
+      .email(t('validation.email.invalid'))
+      .min(5, t('validation.email.min'))
+      .max(100, t('validation.email.max')),
+    message: z.string().min(10, t('validation.message.min')).max(1000, t('validation.message.max')),
+  });
+
+// Keep the old export for backward compatibility, but it will use English messages
 export const contactSchema = z.object({
   name: z
     .string()
@@ -17,9 +33,10 @@ export const contactSchema = z.object({
     .max(1000, 'Message must be less than 1000 characters'),
 });
 
-export const validateContact = (data) => {
+export const validateContact = (data, t = null) => {
   try {
-    return { success: true, data: contactSchema.parse(data) };
+    const schema = t ? createContactSchema(t) : contactSchema;
+    return { success: true, data: schema.parse(data) };
   } catch (error) {
     if (error instanceof z.ZodError) {
       return {

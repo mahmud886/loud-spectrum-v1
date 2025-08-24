@@ -9,24 +9,22 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function POST(request) {
   try {
     const body = await request.json();
-    const { name, email, message, subscribe } = body;
-    const validation = validateContact({ name, email, message, subscribe });
+    const { name, email, message, is_subscriber } = body;
+    const validation = validateContact({ name, email, message, is_subscriber });
     if (!validation.success) {
       return NextResponse.json({ success: false, errors: validation.errors }, { status: 400 });
     }
 
-    // Render the email component to HTML
-    const emailHtml = await render(ContactSubmissionEmail({ name, email, message, subscribe }));
+    const emailHtml = await render(
+      ContactSubmissionEmail({ name, email, message, is_subscriber: is_subscriber ? 'Yes' : 'No' }),
+    );
 
-    // Send the email using Resend
     const { data, error } = await resend.emails.send({
       from: process.env.RESEND_FROM_EMAIL || 'loudspectrum.com <noreply@loudspectrum.com>',
-      // to: ['hi@loudspectrum.com'],
-      to: process.env.NODE_ENV === 'production' ? ['hi@loudspectrum.com'] : ['web.amex19@gmail.com'],
-      // cc: ['iqbal886mahmud@gmail.com', 'wafafatima66@gmail.com', 'web.amex19@gmail.com'],
+      to: process.env.NODE_ENV === 'production' ? ['info@medicalterpenes.com'] : ['web.amex19@gmail.com'],
       subject: `New Contact Form Submission from ${name}`,
       html: emailHtml,
-      text: `New contact form submission\n\nName: ${name}\nEmail: ${email}\nMessage:\n${message}\nSubscribe: ${subscribe}`,
+      text: `New contact form submission\n\nName: ${name}\nEmail: ${email}\nMessage:\n${message}\nIs Subscriber: ${is_subscriber}`,
     });
 
     if (error) {

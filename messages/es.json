@@ -618,7 +618,49 @@
       "nameError": "El nombre debe tener entre 2 y 50 caracteres y solo puede contener letras, números y espacios.",
       "emailError": "Por favor, introduce una dirección de correo electrónico válida.",
       "messageError": "El mensaje debe tener entre 10 y 1000 caracteres.",
-      "checkboxMessage": "Al enviar este formulario, aceptas recibir actualizaciones ocasionales y correos electrónicos de marketing de nuestra parte. Puedes darte de baja en cualquier momento."
+      "checkboxMessage": "Al enviar este formulario, aceptas recibir actualizaciones ocasionales y correos electrónicos de marketing de nuestra parte. Puedes darte de baja en cualquier momento.",
+      "validation": {
+        "name": {
+          "min": "El nombre debe tener al menos 2 caracteres",
+          "max": "El nombre debe tener menos de 50 caracteres",
+          "regex": "El nombre solo puede contener letras, números y espacios"
+        },
+        "email": {
+          "invalid": "Por favor ingrese una dirección de correo válida",
+          "min": "El correo debe tener al menos 5 caracteres",
+          "max": "El correo debe tener menos de 100 caracteres"
+        },
+        "message": {
+          "min": "El mensaje debe tener al menos 10 caracteres",
+          "max": "El mensaje debe tener menos de 1000 caracteres"
+        }
+      },
+      "toast": {
+        "validationError": {
+          "title": "Error de validación",
+          "description": "Por favor revisa el formulario en busca de errores."
+        },
+        "contactError": {
+          "title": "Error de contacto",
+          "description": "Error al enviar el formulario de contacto."
+        },
+        "partialSuccess": {
+          "title": "Éxito parcial",
+          "description": "Mensaje recibido, pero falló la confirmación por correo."
+        },
+        "success": {
+          "title": "Éxito",
+          "description": "¡Mensaje enviado con éxito!"
+        },
+        "submissionFailed": {
+          "title": "Error de envío",
+          "description": "No se pudo enviar tu mensaje. Por favor intenta de nuevo."
+        },
+        "networkError": {
+          "title": "Error de red",
+          "description": "Por favor verifica tu conexión e intenta de nuevo."
+        }
+      }
     }
   },
   "Wholesale": {
