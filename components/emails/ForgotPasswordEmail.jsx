@@ -16,7 +16,7 @@ const baseUrl = process.env.NEXT_PUBLIC_WEBSITE_URL;
 
 const ForgotPasswordEmail = ({ email, token, locale }) => {
   // If resetUrl is not provided, construct it using the resetToken
-  const passwordResetUrl = `${baseUrl}/${locale}/reset-password?token=${token}`;
+  const passwordResetUrl = `${baseUrl}/${locale}/reset-password/${token}`;
 
   return (
     <Html>
