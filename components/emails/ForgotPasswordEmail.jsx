@@ -12,7 +12,7 @@ import {
   Text,
 } from '@react-email/components';
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+const baseUrl = process.env.NEXT_PUBLIC_WEBSITE_URL;
 
 const ForgotPasswordEmail = ({ email, token, locale }) => {
   // If resetUrl is not provided, construct it using the resetToken
