@@ -15,8 +15,8 @@ async function TerpeneCategoryProductsContent({ categoryId, productTypes, isProd
     }
 
     return (
-      <div className="w-full space-y-10 md:w-[75%]">
-        <div className="grid grid-cols-2 gap-3 space-y-8 md:grid-cols-3 md:gap-5 md:space-y-16">
+      <div className="w-full space-y-10 xl:w-[75%]">
+        <div className="grid grid-cols-2 gap-3 space-y-8 xl:grid-cols-3 xl:gap-5 xl:space-y-16">
           {productDetails?.data
             ?.filter((product) => product.status === 'Active' && product.is_deleted === false)
             .map((product) => (
@@ -36,8 +36,8 @@ async function TerpeneCategoryProductsContent({ categoryId, productTypes, isProd
     }
 
     return (
-      <div className="w-full space-y-10 md:w-[75%]">
-        <div className="grid grid-cols-2 gap-3 space-y-8 md:grid-cols-3 md:gap-5 md:space-y-16">
+      <div className="w-full space-y-10 xl:w-[75%]">
+        <div className="grid grid-cols-2 gap-3 space-y-8 xl:grid-cols-3 xl:gap-5 xl:space-y-16">
           {categoryProducts?.data
             ?.filter((product) => product.status === 'Active' && product.is_deleted === false)
             .map((product) => (
@@ -69,7 +69,7 @@ const NoProductsFound = ({ hasFilters }) => {
   const t = useTranslations('TerpeneShop');
 
   return (
-    <div className="w-full space-y-10 md:w-[75%]">
+    <div className="w-full space-y-10 xl:w-[75%]">
       <div className="flex flex-col items-center justify-center px-4 py-16 text-center">
         <div className="bg-umbra-10 mb-6 flex h-24 w-24 items-center justify-center rounded-full">
           <TriangleAlert size={50} />

@@ -25,7 +25,7 @@ const BlogCardShimmer = () => {
           <Shimmer className="h-5 w-20 rounded" />
         </div>
       </div>
-      <Shimmer className="h-6 w-3/4 rounded md:h-7" />
+      <Shimmer className="h-6 w-3/4 rounded xl:h-7" />
     </div>
   );
 };

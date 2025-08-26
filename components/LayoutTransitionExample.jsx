@@ -71,7 +71,7 @@ const LayoutTransitionExample = () => {
       {/* Animation Presets */}
       <section>
         <h2 className="mb-4 text-2xl font-semibold">4. Animation Presets</h2>
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 xl:grid-cols-3">
           <motion.div {...fadeIn} className="rounded-lg bg-purple-100 p-4">
             Fade In
           </motion.div>

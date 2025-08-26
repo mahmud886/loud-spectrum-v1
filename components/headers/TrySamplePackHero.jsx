@@ -17,7 +17,7 @@ const TrySamplePackHero = async ({ samplePackCategory }) => {
 
   return (
     <>
-      <div className="hidden h-[619px] overflow-hidden bg-black md:relative md:block md:h-[1082px]">
+      <div className="hidden h-[619px] overflow-hidden bg-black xl:relative xl:block xl:h-[1082px]">
         <Image
           // src="/assets/images/sample-pack/sample-pack-hero.png"
           src={
@@ -28,11 +28,11 @@ const TrySamplePackHero = async ({ samplePackCategory }) => {
           alt="Background"
           width={1560}
           height={878}
-          className="absolute top-0 left-1/2 z-0 hidden h-full -translate-x-1/2 object-cover md:block md:w-[1920px]"
+          className="absolute top-0 left-1/2 z-0 hidden h-full -translate-x-1/2 object-cover xl:block xl:w-[1920px]"
           priority
         />
 
-        <div className="absolute inset-0 z-10 container hidden h-[987px] w-full overflow-hidden md:block">
+        <div className="absolute inset-0 z-10 container hidden h-[987px] w-full overflow-hidden xl:block">
           <div className="relative z-10 flex h-full w-full flex-col items-center justify-center gap-[40px]">
             <div className="flex w-full items-start justify-between gap-[40px]">
               <SamplePackHeroCard
@@ -43,7 +43,7 @@ const TrySamplePackHero = async ({ samplePackCategory }) => {
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-1/2 z-20 hidden w-[1440px] -translate-x-1/2 md:block">
+        <div className="absolute bottom-0 left-1/2 z-20 hidden w-[1440px] -translate-x-1/2 xl:block">
           <Image
             src="/assets/images/hero-section-mask.png"
             alt="Shop Hero"
@@ -54,7 +54,7 @@ const TrySamplePackHero = async ({ samplePackCategory }) => {
         </div>
       </div>
 
-      <div className="relative block h-[619px] overflow-hidden bg-black md:hidden">
+      <div className="relative block h-[619px] overflow-hidden bg-black xl:hidden">
         <Image
           src={
             samplePackCategory?.[0]?.image
@@ -70,7 +70,7 @@ const TrySamplePackHero = async ({ samplePackCategory }) => {
       </div>
 
       {/*Mobile Mode*/}
-      <div className="flex justify-center py-8 md:hidden">
+      <div className="flex justify-center py-8 xl:hidden">
         <SamplePackHeroCard
           filteredSamplePackProducts={filteredSamplePackProducts}
           filteredProductReviews={filteredProductReviews}

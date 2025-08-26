@@ -70,7 +70,7 @@ const WholesaleRegistrationPage = () => {
                 />
               </svg>
             </div>
-            <h2 className="text-umbra-100 mb-4 font-sans text-[32px] leading-[120%] font-normal md:text-[44px]">
+            <h2 className="text-umbra-100 mb-4 font-sans text-[32px] leading-[120%] font-normal xl:text-[44px]">
               {t('wholesaleRegistrationForm.waitingForApproval.title')}
             </h2>
             <p className="text-umbra-100 mb-6 font-sans text-[18px] leading-[140%] font-normal">

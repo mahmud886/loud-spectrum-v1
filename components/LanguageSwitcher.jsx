@@ -32,7 +32,7 @@ const LanguageSwitcher = () => {
       <DropdownMenuTrigger asChild>
         <Button
           variant="outline"
-          className="border-white-20 bg-white-10 hover:bg-white-20 m-[2px] flex h-full w-full cursor-pointer items-center justify-between gap-[10px] border-1 px-4 font-sans text-[16px] font-bold hover:text-white md:h-[42px] md:w-[100px]"
+          className="border-white-20 bg-white-10 hover:bg-white-20 m-[2px] flex h-full w-full cursor-pointer items-center justify-between gap-[10px] border-1 px-4 font-sans text-[16px] font-bold hover:text-white xl:h-[42px] xl:w-[100px]"
         >
           <span className="flex items-center gap-2">
             <Globe />

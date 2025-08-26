@@ -96,10 +96,10 @@ const AddAReview = ({ productId, authToken, categoryId }) => {
 
   return (
     <div className={'container py-[80px]'}>
-      <h2 className="text-umbra-100 font-sans text-[32px] leading-[120%] font-normal md:text-[44px]">
+      <h2 className="text-umbra-100 font-sans text-[32px] leading-[120%] font-normal xl:text-[44px]">
         {tProduct('AddAReview')}
       </h2>
-      <div className="mt-6 w-full md:w-[60%]">
+      <div className="mt-6 w-full xl:w-[60%]">
         <form className="space-y-4" onSubmit={handleSubmit}>
           <div className="mb-6 space-y-4">
             <p className="text-umbra-100 font-sans text-[16px] leading-[140%] font-normal">
@@ -109,7 +109,7 @@ const AddAReview = ({ productId, authToken, categoryId }) => {
               {tProduct('EmailNotPublished')}
             </p>
           </div>
-          <div className="flex flex-col justify-between gap-4 md:flex-row">
+          <div className="flex flex-col justify-between gap-4 xl:flex-row">
             <div className="w-full">
               <Input
                 type="text"

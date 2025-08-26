@@ -8,7 +8,7 @@ const SpectrumAccordion = ({ items }) => {
   const [activeItem, setActiveItem] = useState(items?.[0]?.title || '');
 
   return (
-    <div className="container pb-20 md:pb-[160px]">
+    <div className="container pb-20 xl:pb-[160px]">
       <Accordion
         type="single"
         collapsible
@@ -20,7 +20,7 @@ const SpectrumAccordion = ({ items }) => {
           <AccordionItem key={index} value={item.title}>
             <AccordionTrigger
               className={cn(
-                'font-sans text-[18px] leading-[130%] font-normal !capitalize md:text-[22px]',
+                'font-sans text-[18px] leading-[130%] font-normal !capitalize xl:text-[22px]',
                 activeItem === item.title ? 'text-umbra-100' : 'text-umbra-40',
               )}
             >

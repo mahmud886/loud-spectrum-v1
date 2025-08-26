@@ -20,7 +20,7 @@ const ProductFilter = ({ categories, onCategoryChange }) => {
 
   return (
     <Select defaultValue="all" onValueChange={handleChange}>
-      <SelectTrigger className="bg-umbra-5 min-h-12 w-full text-[17px] md:min-h-[42px] md:max-w-[280px] md:min-w-[156px]">
+      <SelectTrigger className="bg-umbra-5 min-h-12 w-full text-[17px] xl:min-h-[42px] xl:max-w-[280px] xl:min-w-[156px]">
         <SelectValue placeholder="Filter by Category" />
       </SelectTrigger>
       <SelectContent>

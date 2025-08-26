@@ -13,8 +13,8 @@ const SamplePackReviews = async () => {
   return (
     <>
       {filteredProductReviews?.length > 0 && (
-        <div className={'container py-6 md:py-[80px]'}>
-          <h2 className="text-umbra-100 font-sans text-[32px] leading-[120%] font-normal md:text-[44px]">
+        <div className={'container py-6 xl:py-[80px]'}>
+          <h2 className="text-umbra-100 font-sans text-[32px] leading-[120%] font-normal xl:text-[44px]">
             {t('Reviews')} <span className="text-umbra-40">({filteredProductReviews?.length})</span>
           </h2>
           <div>

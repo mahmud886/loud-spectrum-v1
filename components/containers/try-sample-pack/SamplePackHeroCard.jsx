@@ -152,7 +152,7 @@ const SamplePackHeroCard = ({ filteredSamplePackProducts, filteredProductReviews
   };
 
   return (
-    <div className="bg-white-100 text-umbra-100 p-5 md:h-[587px] md:w-[413px]">
+    <div className="bg-white-100 text-umbra-100 p-5 xl:h-[587px] xl:w-[413px]">
       <div className="flex h-full w-full flex-col items-start justify-between gap-5">
         <div className="w-full self-start">
           <div className="space-y-5">
@@ -186,7 +186,7 @@ const SamplePackHeroCard = ({ filteredSamplePackProducts, filteredProductReviews
                   originalPriceClass="text-18px text-umbra-100/30 line-through"
                   discountedPriceClass={`text-[22px] ${getCategoryTextClasses(selectedProduct?.category?.name)}`}
                   regularPriceClass="text-umbra-100 text-[22px]"
-                  discountTextClass={`text-[14px]  md:text-xs font-bold ${getCategoryTextClasses(selectedProduct?.category?.name)}`}
+                  discountTextClass={`text-[14px]  xl:text-xs font-bold ${getCategoryTextClasses(selectedProduct?.category?.name)}`}
                   containerClass="flex flex-col gap-1 font-sans leading-[130%] font-normal tracking-normal"
                   showOriginalPrice={true}
                   showDiscountText={true}
@@ -279,7 +279,7 @@ const SamplePackHeroCard = ({ filteredSamplePackProducts, filteredProductReviews
             </div>
           </div>
         </div>
-        <div className="flex w-full flex-col items-center justify-between gap-5 md:flex-row">
+        <div className="flex w-full flex-col items-center justify-between gap-5 xl:flex-row">
           <div className="">
             <div className="flex items-center gap-2">
               <button
@@ -321,7 +321,7 @@ const SamplePackHeroCard = ({ filteredSamplePackProducts, filteredProductReviews
           </div>
 
           <button
-            className="main-button-black w-full rounded-full px-2 py-2 md:max-w-[132px]"
+            className="main-button-black w-full rounded-full px-2 py-2 xl:max-w-[132px]"
             onClick={handleAddToCart}
           >
             {t('AddToCart')}

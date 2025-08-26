@@ -5,7 +5,7 @@ const BlogPageTitle = () => {
 
   return (
     <div className="space-y-10">
-      <h1 className="text-umbra-100 font-sans text-[35px] leading-[120%] font-normal tracking-normal md:text-[60px]">
+      <h1 className="text-umbra-100 font-sans text-[35px] leading-[120%] font-normal tracking-normal xl:text-[60px]">
         {t('title')}
       </h1>
       <div className="border-1"></div>

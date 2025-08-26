@@ -38,7 +38,7 @@ const WholesaleStorePage = () => {
   if (loading) {
     return (
       <div className="py-20">
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-5 xl:grid-cols-3">
           {[...Array(6)].map((_, index) => (
             <WholesaleProductCardShimmer key={index} />
           ))}
@@ -57,7 +57,7 @@ const WholesaleStorePage = () => {
 
   return (
     <div className="py-20">
-      <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-5 xl:grid-cols-3">
         {products?.wholesalerProducts?.[0]?.products?.map((product) => (
           <WholesaleProductCard key={product._id} product={product} />
         ))}

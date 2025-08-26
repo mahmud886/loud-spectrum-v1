@@ -115,7 +115,7 @@ const Register = () => {
     <div className="mt-10 max-w-full">
       <form className="space-y-6" onSubmit={handleSubmit}>
         {/* Full Name & Phone */}
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 xl:grid-cols-2">
           <div>
             <label className="text-umbra-100 mb-1 block font-sans text-[16px] font-normal">{t('fullNameLabel')}</label>
             <input
@@ -143,7 +143,7 @@ const Register = () => {
         </div>
 
         {/* Email & Company */}
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 xl:grid-cols-2">
           <div>
             <label className="text-umbra-100 mb-1 block font-sans text-[16px] font-normal">{t('emailLabel')}</label>
             <input
@@ -182,7 +182,7 @@ const Register = () => {
         </div>
 
         {/* Password & Confirm Password */}
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 xl:grid-cols-2">
           <div>
             <label className="text-umbra-100 mb-1 block font-sans text-[16px] font-normal">{t('passwordLabel')}</label>
             <div className="relative">

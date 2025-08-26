@@ -32,12 +32,12 @@ const ProductGridCard = ({ product }) => {
       <motion.div initial="rest" whileHover="hover" animate="rest" className="cursor-pointer">
         <motion.div
           transition={{ duration: 0.3 }}
-          className="relative flex h-[220px] min-h-[220px] w-full min-w-[162px] flex-col justify-around border bg-[#F5F5F5] p-2.5 md:h-[384px] md:min-h-[384px] md:w-[305px] md:min-w-[305px]"
+          className="relative flex h-[220px] min-h-[220px] w-full min-w-[162px] flex-col justify-around border bg-[#F5F5F5] p-2.5 xl:h-[384px] xl:min-h-[384px] xl:w-[305px] xl:min-w-[305px]"
         >
           {/* Image Section */}
           <Link
             href={`/shop/${encodeCategoryForUrl(product?.category_name)}/${product.slug}`}
-            className="flex items-center justify-center overflow-hidden md:mt-16"
+            className="flex items-center justify-center overflow-hidden xl:mt-16"
           >
             <motion.div
               variants={{
@@ -47,7 +47,7 @@ const ProductGridCard = ({ product }) => {
               transition={{ duration: 0.4 }}
             >
               <Image
-                className="h-[150px] w-auto object-cover md:h-[254px] md:w-[174px]"
+                className="h-[150px] w-auto object-cover xl:h-[254px] xl:w-[174px]"
                 // src="/assets/images/products/mother.png"
                 src={
                   product?.image
@@ -63,7 +63,7 @@ const ProductGridCard = ({ product }) => {
           </Link>
 
           {/* Tag Button (Hidden on mobile) */}
-          <div className="ml-3 hidden md:block">
+          <div className="ml-3 hidden xl:block">
             <button
               className={`${getCategoryColorClasses(product?.category?.name)} rounded-[3px] border-1 px-2 text-[12px] font-normal capitalize`}
             >
@@ -72,7 +72,7 @@ const ProductGridCard = ({ product }) => {
           </div>
 
           {/* Buy Now Button (Mobile) */}
-          <div className="mt-auto md:hidden">
+          <div className="mt-auto xl:hidden">
             <button
               className="main-button-black w-full rounded-full px-3 py-2.5 opacity-100 transition-opacity duration-200 ease-in-out"
               onClick={handleBuyNowClick}
@@ -88,7 +88,7 @@ const ProductGridCard = ({ product }) => {
               hover: { opacity: 1, y: 0 },
             }}
             transition={{ duration: 0.4 }}
-            className="absolute top-5 right-5 hidden md:flex md:justify-end"
+            className="absolute top-5 right-5 hidden xl:flex xl:justify-end"
           >
             <button className="main-button-black w-auto rounded-full px-6 py-2" onClick={handleBuyNowClick}>
               {t('buyNow')}
@@ -98,7 +98,7 @@ const ProductGridCard = ({ product }) => {
 
         {/* Product Title and Price */}
         <div className="mt-[15px]">
-          <h2 className={clsx('text-[18px] font-normal md:text-[22px]', isShopPage ? 'text-black' : 'text-white-100')}>
+          <h2 className={clsx('text-[18px] font-normal xl:text-[22px]', isShopPage ? 'text-black' : 'text-white-100')}>
             {product.name}
           </h2>
 
@@ -108,16 +108,16 @@ const ProductGridCard = ({ product }) => {
             minPrice={min}
             maxPrice={max}
             originalPriceClass={clsx(
-              'text-[13px] md:text-[19px] line-through opacity-60',
+              'text-[13px] xl:text-[19px] line-through opacity-60',
               isShopPage ? 'text-umbra-40' : 'text-white-40',
             )}
             // discountedPriceClass={clsx(
-            //   'text-[13px] md:text-[19px] font-normal',
+            //   'text-[13px] xl:text-[19px] font-normal',
             //   getCategoryTextClasses(product?.category?.name),
             // )}
-            discountedPriceClass={clsx('text-[13px] md:text-[19px] font-normal', 'text-umbra-100')}
-            regularPriceClass={clsx('text-[13px] md:text-[19px]', isShopPage ? 'text-umbra-40' : 'text-white-40')}
-            discountTextClass={clsx('text-[8px] md:text-xs font-bold', 'text-umbra-100')}
+            discountedPriceClass={clsx('text-[13px] xl:text-[19px] font-normal', 'text-umbra-100')}
+            regularPriceClass={clsx('text-[13px] xl:text-[19px]', isShopPage ? 'text-umbra-40' : 'text-white-40')}
+            discountTextClass={clsx('text-[8px] xl:text-xs font-bold', 'text-umbra-100')}
             containerClass="flex flex-col gap-1"
             showOriginalPrice={true}
             showDiscountText={true}

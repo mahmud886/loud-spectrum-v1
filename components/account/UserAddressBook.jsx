@@ -179,12 +179,12 @@ export default function UserAddressBook({ userAddressBook }) {
 
   return (
     <div>
-      <div className="flex w-full items-center justify-between gap-2 p-4 md:p-0">
+      <div className="flex w-full items-center justify-between gap-2 p-4 xl:p-0">
         <h1 className="text-umbra-100 font-sans text-[24px] font-normal">Address Book</h1>
         <AddAddressDialog onSave={handleSaveAddress} />
       </div>
 
-      <div className="mt-5 space-y-6 p-4 md:p-0">
+      <div className="mt-5 space-y-6 p-4 xl:p-0">
         {Array.isArray(addresses) && addresses.length > 0 ? (
           addresses.map((address) => {
             // Safety check for address object
@@ -218,7 +218,7 @@ export default function UserAddressBook({ userAddressBook }) {
                     <Trash2 className="h-4 w-4" />
                   </button> */}
                 </div>
-                <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3">
+                <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 xl:grid-cols-3">
                   <p>
                     <span className="font-semibold">Name:</span> {address.first_name || ''} {address.last_name || ''}
                   </p>

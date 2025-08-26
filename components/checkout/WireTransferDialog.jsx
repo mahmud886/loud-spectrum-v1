@@ -68,10 +68,10 @@ const WireTransferDialog = ({ open, onClose, formData, onChange, onSubmit }) => 
 
       <Dialog open={open} onOpenChange={(isOpen) => !isOpen && onClose()}>
         <div>
-          <DialogContent className="flex max-h-[90vh] w-full flex-col overflow-y-auto rounded-lg bg-white p-6 md:h-auto md:max-w-5xl">
-            <div className="flex flex-col gap-8 md:flex-row">
+          <DialogContent className="flex max-h-[90vh] w-full flex-col overflow-y-auto rounded-lg bg-white p-6 xl:h-auto xl:max-w-5xl">
+            <div className="flex flex-col gap-8 xl:flex-row">
               {/* Left Side - Bank Details */}
-              <div className="h-full w-full md:w-1/2">
+              <div className="h-full w-full xl:w-1/2">
                 <DialogHeader>
                   <DialogTitle className="mb-4 text-2xl">{t('bankDetails')}</DialogTitle>
                 </DialogHeader>
@@ -105,7 +105,7 @@ const WireTransferDialog = ({ open, onClose, formData, onChange, onSubmit }) => 
               </div>
 
               {/* Right Side - Form */}
-              <div className="w-full md:w-1/2">
+              <div className="w-full xl:w-1/2">
                 <DialogHeader>
                   <DialogTitle className="mb-4 text-2xl">{t('confirmPayment')}</DialogTitle>
                 </DialogHeader>

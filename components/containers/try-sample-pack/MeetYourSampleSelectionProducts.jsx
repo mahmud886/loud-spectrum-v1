@@ -14,21 +14,21 @@ const MeetYourSampleSelectionProducts = async ({ samplePackCategory }) => {
     )) || [];
 
   return (
-    <div className="container py-[60px] pt-[60px] md:py-[160px] md:pt-[160]">
-      <div className="space-y-4 md:space-y-6">
-        <h6 className="text-umbra-40 font-sans text-[14px] leading-[100%] font-normal tracking-normal uppercase md:text-[16px]">
+    <div className="container py-[60px] pt-[60px] xl:py-[160px] xl:pt-[160]">
+      <div className="space-y-4 xl:space-y-6">
+        <h6 className="text-umbra-40 font-sans text-[14px] leading-[100%] font-normal tracking-normal uppercase xl:text-[16px]">
           {t('WhatIsIncluded')}
         </h6>
-        <h5 className="text-umbra-100 font-sans text-[32px] leading-[120%] font-normal tracking-normal md:text-[44px]">
+        <h5 className="text-umbra-100 font-sans text-[32px] leading-[120%] font-normal tracking-normal xl:text-[44px]">
           {t('MeetYourSampleSelection')}
         </h5>
       </div>
-      <div className="mt-3 md:mt-6">
+      <div className="mt-3 xl:mt-6">
         <ProductCarouselWithProgress>
           {filteredSamplePackProducts?.slice(0, 20).map((product) => (
             <CarouselItem
               key={product._id}
-              className="pl-2 sm:basis-1 md:basis-1/2 md:pl-2 lg:basis-1/4 xl:basis-1/4 2xl:basis-1/4"
+              className="pl-2 sm:basis-1 lg:basis-1/4 xl:basis-1/2 xl:basis-1/4 xl:pl-2 2xl:basis-1/4"
             >
               <SamplePackCard product={product} />
             </CarouselItem>

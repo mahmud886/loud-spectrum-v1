@@ -14,10 +14,10 @@ const RelatedProducts = async ({ productDetails }) => {
     relatedProducts = products?.data;
   }
   return (
-    <div className="container pt-20 pb-20 md:pb-[160px]">
+    <div className="container pt-20 pb-20 xl:pb-[160px]">
       <h2 className="text-umbra-100 font-sans text-[32px] leading-[120%] tracking-normal">{t('RelatedProducts')}</h2>
 
-      <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-4">
+      <div className="mt-12 grid grid-cols-1 gap-6 xl:grid-cols-4">
         {relatedProducts?.slice(0, 4).map((product) => (
           <ProductCard key={product._id} product={product} />
         ))}

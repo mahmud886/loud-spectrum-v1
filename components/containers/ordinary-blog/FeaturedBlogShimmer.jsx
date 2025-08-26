@@ -22,8 +22,8 @@ const FeaturedBlogShimmer = () => {
           <Shimmer className="h-5 w-20 rounded" />
         </div>
       </div>
-      <Shimmer className="h-7 w-3/4 rounded md:h-8" />
-      <div className="center mt-10 flex w-full items-center justify-between pb-0 md:hidden">
+      <Shimmer className="h-7 w-3/4 rounded xl:h-8" />
+      <div className="center mt-10 flex w-full items-center justify-between pb-0 xl:hidden">
         <Shimmer className="h-12 w-full rounded-full" />
       </div>
     </div>

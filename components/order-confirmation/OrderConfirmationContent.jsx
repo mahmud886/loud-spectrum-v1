@@ -175,7 +175,7 @@ const OrderConfirmationContent = ({ orderData }) => {
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="grid grid-cols-1 items-center justify-center gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 items-center justify-center gap-4 lg:grid-cols-4 xl:grid-cols-2">
             <div className="text-center">
               <p className="text-sm font-medium text-gray-500">{t('fields.orderNumber')}</p>
               <p className="text-sm font-semibold capitalize">{code}</p>
@@ -206,7 +206,7 @@ const OrderConfirmationContent = ({ orderData }) => {
 
           <Separator />
 
-          <div className="grid grid-cols-1 items-center justify-between gap-4 md:grid-cols-3">
+          <div className="grid grid-cols-1 items-center justify-between gap-4 xl:grid-cols-3">
             <div className="text-center">
               <p className="text-sm font-medium text-gray-500">{t('fields.orderType')}</p>
               <p className="text-sm font-semibold capitalize">{type}</p>
@@ -260,7 +260,7 @@ const OrderConfirmationContent = ({ orderData }) => {
                         alt={item.product?.name || item.name || `Product ${index + 1}`}
                         width={96}
                         height={96}
-                        className="h-[100px] w-[80px] rounded object-cover md:h-auto md:w-auto"
+                        className="h-[100px] w-[80px] rounded object-cover xl:h-auto xl:w-auto"
                       />
                       <div className="flex-1">
                         <h4 className="font-semibold text-gray-900">
@@ -349,7 +349,7 @@ const OrderConfirmationContent = ({ orderData }) => {
                         alt={item.product?.name || item.name || `Product ${index + 1}`}
                         width={96}
                         height={96}
-                        className="h-[100px] w-[80px] rounded object-cover md:h-auto md:w-auto"
+                        className="h-[100px] w-[80px] rounded object-cover xl:h-auto xl:w-auto"
                       />
                       <div className="flex-1">
                         <h4 className="font-semibold text-gray-900">
@@ -443,7 +443,7 @@ const OrderConfirmationContent = ({ orderData }) => {
       </Card>
 
       {/* Shipping & Billing Addresses */}
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
         {/* Shipping Address */}
         <Card>
           <CardHeader>

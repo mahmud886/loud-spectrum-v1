@@ -127,9 +127,9 @@ const ContactFormSection = () => {
   };
 
   return (
-    <div className="bg-white py-24 md:py-40">
+    <div className="bg-white py-24 xl:py-40">
       <div className="container mx-auto grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-20">
-        <div className="aspect-w-2 aspect-h-3 md:aspect-w-3 md:aspect-h-2">
+        <div className="aspect-w-2 aspect-h-3 xl:aspect-w-3 xl:aspect-h-2">
           <div className="overflow-hidden">
             <Image
               src="/assets/images/contact-image.png"
@@ -141,10 +141,10 @@ const ContactFormSection = () => {
           </div>
         </div>
 
-        <div className="mt-4 md:mt-0 md:px-0">
+        <div className="mt-4 xl:mt-0 xl:px-0">
           <div className="space-y-12">
             <div className="space-y-6">
-              <h2 className="text-umbra-100 font-sans text-[32px] leading-[120%] font-normal md:text-[44px]">
+              <h2 className="text-umbra-100 font-sans text-[32px] leading-[120%] font-normal xl:text-[44px]">
                 {t('contactForm.title')}
               </h2>
               <p className="text-umbra-100 font-sans text-[16px] leading-[140%] font-normal">
@@ -158,7 +158,7 @@ const ContactFormSection = () => {
               </p>
               {errors.general && <div className="mb-2 text-sm text-red-600">{errors.general}</div>}
               {/* {success && <div className="mb-2 text-sm text-green-600">{success}</div>} */}
-              <div className="flex flex-col justify-between gap-4 md:flex-row">
+              <div className="flex flex-col justify-between gap-4 xl:flex-row">
                 <div className="flex-1">
                   <Input
                     type="text"

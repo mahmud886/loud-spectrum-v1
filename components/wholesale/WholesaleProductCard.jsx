@@ -47,11 +47,11 @@ const WholesaleProductCard = ({ product }) => {
   };
 
   return (
-    <div className="bg-white-100 text-umbra-100 border-1 p-5 shadow-sm md:h-auto md:w-full">
+    <div className="bg-white-100 text-umbra-100 border-1 p-5 shadow-sm xl:h-auto xl:w-full">
       <div className="flex h-full w-full flex-col items-start justify-between gap-5">
         <div className="self-start">
           <div className="space-y-3">
-            <div className="mx-auto overflow-hidden md:h-auto md:w-[371px]">
+            <div className="mx-auto overflow-hidden xl:h-auto xl:w-[371px]">
               <WholesaleProductCarousel>
                 <Image
                   src={
@@ -122,8 +122,8 @@ const WholesaleProductCard = ({ product }) => {
             </div>
           </div>
         </div>
-        <div className="flex w-full flex-col items-center justify-between gap-8 md:flex-row">
-          <div className="flex w-full items-center justify-between gap-5 md:flex-row">
+        <div className="flex w-full flex-col items-center justify-between gap-8 xl:flex-row">
+          <div className="flex w-full items-center justify-between gap-5 xl:flex-row">
             <div className="flex items-center gap-2">
               <button
                 className="border-umbra-40 flex size-10 cursor-pointer items-center justify-center rounded-full border bg-white hover:bg-red-100 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-white"
@@ -164,7 +164,7 @@ const WholesaleProductCard = ({ product }) => {
           </div>
 
           <button
-            className="main-button-black w-full rounded-full px-2 py-2 md:max-w-[132px]"
+            className="main-button-black w-full rounded-full px-2 py-2 xl:max-w-[132px]"
             onClick={handleAddToCart}
           >
             {t('AddToCart')}

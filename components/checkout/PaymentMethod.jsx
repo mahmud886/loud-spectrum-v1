@@ -84,7 +84,7 @@ const PaymentMethod = ({ value, onValueChange, isDisabled = false, getMissingFie
         </div>
       )} */}
 
-      <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
+      <div className="grid gap-4 sm:grid-cols-1 xl:grid-cols-2">
         {paymentMethods.map((methodKey) => {
           const isChecked = value === methodKey;
           // Only disable payment method selection if it's not already selected and required fields are missing

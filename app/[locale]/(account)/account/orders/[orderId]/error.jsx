@@ -13,7 +13,7 @@ export default function AccountOrderError({ error, reset }) {
   }, [error]);
 
   return (
-    <div className="mx-auto w-full max-w-full p-4 md:p-0">
+    <div className="mx-auto w-full max-w-full p-4 xl:p-0">
       <div className="mx-auto max-w-2xl text-center">
         {/* Error Icon */}
         <div className="mb-8">

@@ -159,9 +159,9 @@ const WholesaleRegistrationForm = ({ id }) => {
 
   return (
     <div className="container py-[80px]" id={id || 'wholesale-form'}>
-      <div className="md:px-0">
+      <div className="xl:px-0">
         <div className="space-y-12">
-          <h2 className="text-umbra-100 font-sans text-[32px] leading-[120%] font-normal md:text-[44px]">
+          <h2 className="text-umbra-100 font-sans text-[32px] leading-[120%] font-normal xl:text-[44px]">
             {t('wholesaleRegistrationForm.formTitle')}
           </h2>
 
@@ -170,7 +170,7 @@ const WholesaleRegistrationForm = ({ id }) => {
               {t('wholesaleRegistrationForm.requiredFields')}
             </p>
 
-            <div className="flex flex-col justify-between gap-4 md:flex-row">
+            <div className="flex flex-col justify-between gap-4 xl:flex-row">
               <div className="w-full">
                 <input
                   name="name"
@@ -191,7 +191,7 @@ const WholesaleRegistrationForm = ({ id }) => {
               </div>
             </div>
 
-            <div className="flex flex-col justify-between gap-4 md:flex-row">
+            <div className="flex flex-col justify-between gap-4 xl:flex-row">
               <div className="w-full">
                 <input
                   name="phone_number"
@@ -212,7 +212,7 @@ const WholesaleRegistrationForm = ({ id }) => {
               </div>
             </div>
 
-            <div className="flex flex-col justify-between gap-4 md:flex-row">
+            <div className="flex flex-col justify-between gap-4 xl:flex-row">
               <div className="w-full">
                 <input
                   name="website"
@@ -233,7 +233,7 @@ const WholesaleRegistrationForm = ({ id }) => {
               </div>
             </div>
 
-            <div className="flex flex-col justify-between gap-4 md:flex-row">
+            <div className="flex flex-col justify-between gap-4 xl:flex-row">
               <div className="w-full">
                 <input
                   name="username"

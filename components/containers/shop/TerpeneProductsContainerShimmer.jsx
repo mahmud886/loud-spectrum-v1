@@ -4,15 +4,15 @@ import Shimmer from '@/components/ui/shimmer';
 const TerpeneProductsContainerShimmer = () => {
   return (
     <div className="container pt-[100px]">
-      <div className="flex flex-col items-start justify-between gap-12 md:flex-row">
-        <div className="w-full md:w-[20%]">
-          <div className="mb-6 md:mb-12">
-            <Shimmer className="h-7 w-32 rounded md:h-8 md:w-40" />
+      <div className="flex flex-col items-start justify-between gap-12 xl:flex-row">
+        <div className="w-full xl:w-[20%]">
+          <div className="mb-6 xl:mb-12">
+            <Shimmer className="h-7 w-32 rounded xl:h-8 xl:w-40" />
           </div>
-          <div className="block md:hidden">
+          <div className="block xl:hidden">
             <Shimmer className="h-12 w-full rounded" />
           </div>
-          <div className="hidden md:block">
+          <div className="hidden xl:block">
             <div className="space-y-3">
               {[...Array(6)].map((_, idx) => (
                 <Shimmer key={idx} className="h-10 w-full rounded" />
@@ -20,8 +20,8 @@ const TerpeneProductsContainerShimmer = () => {
             </div>
           </div>
         </div>
-        <div className="w-full space-y-10 md:w-[75%]">
-          <div className="grid grid-cols-2 gap-3 space-y-8 md:grid-cols-3 md:gap-5 md:space-y-16">
+        <div className="w-full space-y-10 xl:w-[75%]">
+          <div className="grid grid-cols-2 gap-3 space-y-8 xl:grid-cols-3 xl:gap-5 xl:space-y-16">
             {Array.from({ length: 9 }).map((_, index) => (
               <ProductGridCardShimmer key={index} />
             ))}

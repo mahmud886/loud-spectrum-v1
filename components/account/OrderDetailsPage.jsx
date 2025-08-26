@@ -106,7 +106,7 @@ const OrderDetailsPage = ({ orderId, initialOrderData = null }) => {
   };
 
   return (
-    <div className="mx-auto w-full max-w-full p-4 md:p-0">
+    <div className="mx-auto w-full max-w-full p-4 xl:p-0">
       {/* Back to Orders Button */}
       <div className="mb-6 flex items-center justify-between">
         <h1 className="text-umbra-100 font-sans text-[24px] leading-[120%] font-normal">
@@ -302,9 +302,9 @@ const OrderDetailsPage = ({ orderId, initialOrderData = null }) => {
           </div>
 
           {/* Shipping Address and Order Summary Section */}
-          <div className="flex flex-col gap-2 md:flex-row md:space-x-6">
+          <div className="flex flex-col gap-2 xl:flex-row xl:space-x-6">
             {/* Shipping Address */}
-            <div className="w-full md:flex-1">
+            <div className="w-full xl:flex-1">
               <h3 className="mb-4 text-[18px] font-normal">Address</h3>
               <div className="bg-stardust/20 divide-umbra-10 divide-y rounded-[10px]">
                 <div className="p-4">
@@ -337,7 +337,7 @@ const OrderDetailsPage = ({ orderId, initialOrderData = null }) => {
             </div>
 
             {/* Order Summary */}
-            <div className="w-full md:flex-1">
+            <div className="w-full xl:flex-1">
               <h3 className="mb-4 text-[18px] font-normal">Order Summary</h3>
               <div className="rounded-[10px] bg-gray-50 p-4">
                 <div className="mb-2 flex justify-between">

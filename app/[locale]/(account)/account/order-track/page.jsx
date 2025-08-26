@@ -35,7 +35,7 @@ export default function OrderTrackPage() {
   };
 
   return (
-    <div className="mx-auto w-full px-4 md:px-0">
+    <div className="mx-auto w-full px-4 xl:px-0">
       <h1 className="mb-6 text-[24px] font-normal">Track Your Order</h1>
 
       <div className="mb-8">

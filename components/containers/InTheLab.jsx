@@ -1,17 +1,16 @@
-import React from 'react';
-import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
+import { useTranslations } from 'next-intl';
 
 const InTheLab = () => {
   const t = useTranslations('InTheLab');
   return (
     <div className="container">
-      <div className="py-10 md:py-[80px] lg:py-[80px]">
-        <div className="flex max-w-[630px] flex-col space-y-4 md:space-y-6 lg:space-y-6">
-          <h5 className="text-umbra-40 font-sans text-[14px] font-normal uppercase md:text-[16px] lg:text-[16px]">
+      <div className="py-10 lg:py-[80px] xl:py-[80px]">
+        <div className="flex max-w-[630px] flex-col space-y-4 lg:space-y-6 xl:space-y-6">
+          <h5 className="text-umbra-40 font-sans text-[14px] font-normal uppercase lg:text-[16px] xl:text-[16px]">
             {t('In_the_Lab')}
           </h5>
-          <h2 className="font-sans text-[32px] leading-[120%] font-normal md:text-[44px] lg:text-[44px]">
+          <h2 className="font-sans text-[32px] leading-[120%] font-normal lg:text-[44px] xl:text-[44px]">
             {t('Science_Is_in_Our_DNA')}
           </h2>
           <p className="text-umbra-100 font-mono text-[20px] leading-[140%] font-normal tracking-normal">
@@ -19,22 +18,22 @@ const InTheLab = () => {
               'Traditional_terpene_delivery_has_its_limits_which_is_why_Loud_Spectrum_pushed_the_boundaries_and_developed_a_signature_Flavor_Science_process_to_elevate_terpenes_beyond_the_ordinary',
             )}
           </p>
-          <div className="mt-10 w-full md:mt-6 lg:mt-6">
+          <div className="mt-10 w-full lg:mt-6 xl:mt-6">
             <Link href={`/lab`} className="main-button-black rounded-full px-6 py-2">
               {t('Discover_the_Science')}
             </Link>
           </div>
         </div>
 
-        <div className="mt-20 md:mt-[140px] lg:mt-[140px]">
-          <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-[50px] lg:grid-cols-3 lg:gap-[50px]">
+        <div className="mt-20 lg:mt-[140px] xl:mt-[140px]">
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-3 lg:gap-[50px] xl:grid-cols-3 xl:gap-[50px]">
             <div>
               <div className="flex flex-col space-y-4">
-                <h2 className="text-umbra-100 font-sans text-[26px] leading-[130%] font-normal tracking-normal md:text-[35px] lg:text-[35px]">
+                <h2 className="text-umbra-100 font-sans text-[26px] leading-[130%] font-normal tracking-normal lg:text-[35px] xl:text-[35px]">
                   {t('1st')}
                 </h2>
                 <div className="custom-border"></div>
-                <h5 className="text-umbra-100 font-sans text-[18px] leading-[130%] font-normal tracking-normal md:text-[22px] lg:text-[22px]">
+                <h5 className="text-umbra-100 font-sans text-[18px] leading-[130%] font-normal tracking-normal lg:text-[22px] xl:text-[22px]">
                   {t('Industry_pioneers')}
                 </h5>
                 <p className="text-umbra-40 font-sans text-[16px] leading-[140%] font-normal tracking-normal">

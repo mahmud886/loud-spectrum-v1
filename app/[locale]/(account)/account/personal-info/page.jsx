@@ -102,7 +102,7 @@ export default function PersonalInfoPage() {
           {isEditing ? '' : <Edit className="h-5 w-5" />}
         </motion.button>
 
-        <div className="flex h-[300px] flex-col items-center justify-center gap-10 md:flex-row">
+        <div className="flex h-[300px] flex-col items-center justify-center gap-10 xl:flex-row">
           {/* User photo */}
           {/* <motion.div
             className="bg-stardust flex h-[200px] w-[200px] flex-shrink-0 items-center justify-center overflow-hidden rounded-full border border-gray-300"

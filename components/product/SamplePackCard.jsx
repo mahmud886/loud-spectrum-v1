@@ -12,7 +12,7 @@ const SamplePackCard = ({ product }) => {
       <div className="group-hover:border-umbra-100 h-auto w-full border border-transparent transition-colors duration-200 ease-in-out">
         <div className="flex items-center justify-center overflow-hidden">
           <Image
-            className="transition-scale h-full w-full object-cover duration-200 ease-in-out group-hover:scale-110 md:h-[372px] md:w-[305px]"
+            className="transition-scale h-full w-full object-cover duration-200 ease-in-out group-hover:scale-110 xl:h-[372px] xl:w-[305px]"
             // src="/assets/images/products/sample-pack-product.png"
             src={
               product?.image

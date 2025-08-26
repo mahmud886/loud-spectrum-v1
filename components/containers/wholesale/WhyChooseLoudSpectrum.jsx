@@ -22,10 +22,10 @@ const WhyChooseLoudSpectrum = () => {
         alt="the-lab-advantage"
         width={462}
         height={474}
-        className="hidden h-full w-full object-cover md:block md:h-[474px] md:w-[462px]"
+        className="hidden h-full w-full object-cover xl:block xl:h-[474px] xl:w-[462px]"
       />
 
-      <div className="w-full space-y-10 md:min-w-[462px]">
+      <div className="w-full space-y-10 xl:min-w-[462px]">
         <h5 className="text-umbra-100 pb-2 font-sans text-[32px] leading-[120%] font-normal tracking-normal">
           {t('WhyChooseTitle')}
         </h5>
@@ -38,10 +38,10 @@ const WhyChooseLoudSpectrum = () => {
           alt="the-lab-advantage"
           width={462}
           height={474}
-          className="block h-full w-full object-cover md:hidden md:h-[474px] md:w-[462px]"
+          className="block h-full w-full object-cover xl:hidden xl:h-[474px] xl:w-[462px]"
         />
 
-        <ul className="text-umbra-100 mb-10 font-mono text-[14px] leading-[130%] font-normal tracking-normal md:mb-0">
+        <ul className="text-umbra-100 mb-10 font-mono text-[14px] leading-[130%] font-normal tracking-normal xl:mb-0">
           {featureKeys.map((key, index) => (
             <li key={key} className={`border-umbra-40 ${index === 0 ? 'border-t' : ''} border-b py-2.5`}>
               {t(key)}

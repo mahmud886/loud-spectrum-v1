@@ -121,7 +121,7 @@ function CarouselItem({ className, ...props }) {
       aria-roledescription="slide"
       data-slot="carousel-item"
       className={cn(
-        'min-w-0 shrink-0 grow-0 basis-[90%] md:basis-full',
+        'min-w-0 shrink-0 grow-0 basis-[90%] xl:basis-full',
         orientation === 'horizontal' ? 'pl-4' : 'pt-4',
         className,
       )}
@@ -193,4 +193,4 @@ function CarouselNext({ className, variant = 'outline', size = 'icon', ...props 
   );
 }
 
-export { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, CarouselItemWholesale };
+export { Carousel, CarouselContent, CarouselItem, CarouselItemWholesale, CarouselNext, CarouselPrevious };

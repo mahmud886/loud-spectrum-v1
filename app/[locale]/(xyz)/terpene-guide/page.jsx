@@ -8,7 +8,7 @@ const TerpeneGuidePage = () => {
     <>
       <TerpeneGuideHero />
       <WhatAreTerpenes />
-      <div className="hidden md:block">
+      <div className="hidden xl:block">
         <WhatAreTerpenesSlider />
       </div>
       {/*<WhatAreTerpeneCarousel />*/}

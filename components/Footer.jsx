@@ -9,11 +9,11 @@ const Footer = () => {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 
   return (
-    <footer className="bg-umbra-100 text-white md:pt-[80px] md:pb-[50px]">
-      <div className="container px-5 md:px-[40px] lg:px-[40px] xl:px-[80px] 2xl:px-[320px]">
+    <footer className="bg-umbra-100 text-white xl:pt-[80px] xl:pb-[50px]">
+      <div className="container px-5 lg:px-[40px] xl:px-[40px] xl:px-[80px] 2xl:px-[320px]">
         {/*for desktop*/}
-        <div className="hidden flex-col justify-center space-y-[150px] md:flex">
-          <div className="mx-auto grid w-full grid-cols-1 gap-8 md:grid-cols-2">
+        <div className="hidden flex-col justify-center space-y-[150px] xl:flex">
+          <div className="mx-auto grid w-full grid-cols-1 gap-8 xl:grid-cols-2">
             {/* Menu, Account, and Support Sections */}
             <div className="flex max-w-[455px] justify-between text-sm">
               <div>
@@ -120,7 +120,7 @@ const Footer = () => {
               </div>
             </div>
             {/* Bottom Section */}
-            <div className="mt-10 flex flex-col items-center justify-between border-t border-gray-700 pt-6 text-sm text-gray-400 md:flex-row">
+            <div className="mt-10 flex flex-col items-center justify-between border-t border-gray-700 pt-6 text-sm text-gray-400 xl:flex-row">
               <p className="text-white-100/50 font-sans text-[17px]">
                 Est. 2015 &nbsp; | &nbsp; Copyright © {new Date().getFullYear()} Loud Spectrum
               </p>
@@ -144,7 +144,7 @@ const Footer = () => {
         {/*for desktop*/}
         {/*============================================================================*/}
         {/*for mobile*/}
-        <div className="visible mx-auto w-full md:hidden">
+        <div className="visible mx-auto w-full xl:hidden">
           <div className="flex flex-col gap-[80px] pt-[80px] pb-5">
             <div className="flex flex-col items-center justify-between">
               <div className="flex flex-col justify-between gap-10 pb-5">

@@ -15,7 +15,7 @@ const ProductCartItems = ({ item }) => {
         alt={item.name}
         width={96}
         height={96}
-        className="h-[100px] w-[80px] rounded object-cover md:h-[100px] md:w-[100px]"
+        className="h-[100px] w-[80px] rounded object-cover xl:h-[100px] xl:w-[100px]"
       />
       <div className="flex w-full flex-col justify-between gap-2">
         <div className="flex flex-col items-start justify-between gap-1">

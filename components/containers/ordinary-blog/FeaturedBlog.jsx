@@ -43,7 +43,7 @@ const FeaturedBlog = ({ featuredBlog }) => {
             <Link
               href={`/blog/${featuredBlog?.identifier_url}`}
               // href={`/blog/${featuredBlog?._id}`}
-              className="outline-button-black !md:text-[17px] cursor-pointer rounded-full px-3 py-1 !text-[14px] md:px-6 md:py-2"
+              className="outline-button-black !xl:text-[17px] cursor-pointer rounded-full px-3 py-1 !text-[14px] xl:px-6 xl:py-2"
             >
               {t('featured.readMore')}
             </Link>
@@ -55,7 +55,7 @@ const FeaturedBlog = ({ featuredBlog }) => {
             <div className="flex max-w-[85%] flex-wrap items-center gap-2">
               <Badge
                 variant="outline"
-                className="main-button-black border-umbra-100 !md:text-[16px] !max-h-[34px] rounded-md border-1 px-2 py-1 !text-[14px] md:px-4 md:py-2"
+                className="main-button-black border-umbra-100 !xl:text-[16px] !max-h-[34px] rounded-md border-1 px-2 py-1 !text-[14px] xl:px-4 xl:py-2"
               >
                 {t('featured.featured')}
               </Badge>
@@ -63,7 +63,7 @@ const FeaturedBlog = ({ featuredBlog }) => {
                 <Badge
                   variant="outline"
                   key={idx}
-                  className="!bg-white-100 border-umbra-100 h-[30px] rounded-sm border-1 px-2 py-0 !text-[12px] font-normal md:h-[34px] md:px-4"
+                  className="!bg-white-100 border-umbra-100 h-[30px] rounded-sm border-1 px-2 py-0 !text-[12px] font-normal xl:h-[34px] xl:px-4"
                 >
                   {tag.trim()}
                 </Badge>
@@ -76,13 +76,13 @@ const FeaturedBlog = ({ featuredBlog }) => {
         </div>
         <Link href={`/blog/${featuredBlog?.identifier_url}`} className="group w-full">
           {/* <Link href={`/blog/${featuredBlog?._id}`} className="group w-full"> */}
-          <h2 className="text-umbra-100 group-hover:text-umbra-40 font-sans text-[18px] leading-[130%] font-normal tracking-normal transition-colors duration-300 md:text-[28px]">
+          <h2 className="text-umbra-100 group-hover:text-umbra-40 font-sans text-[18px] leading-[130%] font-normal tracking-normal transition-colors duration-300 xl:text-[28px]">
             {featuredBlog?.title}
           </h2>
         </Link>
       </div>
 
-      <div className="center mt-10 flex w-full items-center justify-between pb-0 md:hidden">
+      <div className="center mt-10 flex w-full items-center justify-between pb-0 xl:hidden">
         <Link
           href={`/blog/${featuredBlog?.identifier_url}`}
           // href={`/blog/${featuredBlog?._id}`}

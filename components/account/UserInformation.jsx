@@ -25,19 +25,19 @@ export default function UserInformation() {
               <UserIcon className="h-4 w-4" /> {userInformation.name}
             </h2>
           )}
-          <div className="flex flex-row flex-wrap items-center gap-2 md:flex-col md:items-start md:gap-0">
+          <div className="flex flex-row flex-wrap items-center gap-2 xl:flex-col xl:items-start xl:gap-0">
             {userInformation?.phone_number && (
-              <p className="text-umbra-100 inline-flex items-center justify-start gap-2 font-mono text-[12px] leading-[130%] font-normal md:mb-2">
+              <p className="text-umbra-100 inline-flex items-center justify-start gap-2 font-mono text-[12px] leading-[130%] font-normal xl:mb-2">
                 <PhoneIcon className="h-4 w-4" /> {userInformation.phone_number}
               </p>
             )}
             {userInformation?.email && (
-              <p className="text-umbra-100 inline-flex items-center justify-start gap-2 font-mono text-[10px] leading-[130%] font-normal md:mb-2">
+              <p className="text-umbra-100 inline-flex items-center justify-start gap-2 font-mono text-[10px] leading-[130%] font-normal xl:mb-2">
                 <MailIcon className="h-4 w-4" /> {userInformation.email}
               </p>
             )}
             {userInformation?.role && (
-              <p className="text-umbra-100 mb-2 inline-flex items-center justify-start gap-2 font-mono text-[10px] leading-[130%] font-normal md:mb-0">
+              <p className="text-umbra-100 mb-2 inline-flex items-center justify-start gap-2 font-mono text-[10px] leading-[130%] font-normal xl:mb-0">
                 <UserRoundCog className="h-4 w-4" /> {userInformation.role}
               </p>
             )}

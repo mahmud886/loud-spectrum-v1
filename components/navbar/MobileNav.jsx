@@ -78,7 +78,7 @@ const MobileNav = ({ onClose, setCartOpen }) => {
               alt="Logo"
               width={221}
               height={36}
-              className="h-[25px] w-[153px] cursor-pointer md:h-[36px] md:w-[221px] lg:h-[36px] lg:w-[221px]"
+              className="h-[25px] w-[153px] cursor-pointer lg:h-[36px] lg:w-[221px] xl:h-[36px] xl:w-[221px]"
               priority
             />
           </Link>
@@ -87,7 +87,7 @@ const MobileNav = ({ onClose, setCartOpen }) => {
             {user ? (
               <Link
                 href="/account"
-                className={`hover:text-umbra-40 text-[#191919]' } mx-[5px] flex items-center gap-2 font-sans text-[20px] font-normal transition-colors duration-300 ease-in-out md:flex`}
+                className={`hover:text-umbra-40 text-[#191919]' } mx-[5px] flex items-center gap-2 font-sans text-[20px] font-normal transition-colors duration-300 ease-in-out xl:flex`}
               >
                 <UserIcon size={24} />
               </Link>

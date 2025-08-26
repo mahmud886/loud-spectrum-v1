@@ -34,10 +34,10 @@ export default async function DashboardPage() {
   // ];
 
   return (
-    <div className="p-4 md:p-0">
+    <div className="p-4 xl:p-0">
       <h1 className="mb-6 text-[24px] font-normal text-gray-800">User Dashboard</h1>
 
-      {/* <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
+      {/* <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {stats.map((stat) => (
           <div key={stat.title} className={`rounded-xl p-4 shadow-sm ${stat.bg} flex items-center justify-between`}>
             <div>
@@ -60,7 +60,7 @@ export default async function DashboardPage() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 xl:grid-cols-3">
           {products?.data?.slice(0, 3).map((product) => (
             <ProductCard key={product._id} product={product} />
           ))}

@@ -25,7 +25,7 @@ const SearchModal = ({ open, onOpenChange }) => {
       <div className="bg-umbra-5/80 absolute inset-0 backdrop-blur-sm" onClick={() => onOpenChange(false)} />
 
       {/* Modal Content */}
-      <div className="bg-umbra-100 relative max-h-[90vh] w-[96vw] max-w-[96vw] overflow-hidden rounded-lg shadow-xl md:w-[760px]">
+      <div className="bg-umbra-100 relative max-h-[90vh] w-[96vw] max-w-[96vw] overflow-hidden rounded-lg shadow-xl xl:w-[760px]">
         <div className="flex w-full items-center border-b border-white/10 px-4">
           <Search size={16} className="mr-3 text-white" />
           <Input
@@ -55,7 +55,7 @@ const SearchModal = ({ open, onOpenChange }) => {
 
         <div className="p-4">
           {!search ? null : loading ? (
-            <div className="grid max-h-[60vh] grid-cols-1 items-center gap-4 overflow-y-auto p-4 align-middle md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
+            <div className="grid max-h-[60vh] grid-cols-1 items-center gap-4 overflow-y-auto p-4 align-middle lg:grid-cols-2 xl:grid-cols-2">
               {Array.from({ length: 8 }).map((_, i) => (
                 <SearchModalCardShimmer key={i} />
               ))}
@@ -65,7 +65,7 @@ const SearchModal = ({ open, onOpenChange }) => {
           ) : products.length === 0 && fetched ? (
             <div className="py-4 text-center text-gray-400">No products found.</div>
           ) : (
-            <div className="grid max-h-[60vh] grid-cols-1 items-center gap-4 overflow-y-auto p-4 align-middle md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
+            <div className="grid max-h-[60vh] grid-cols-1 items-center gap-4 overflow-y-auto p-4 align-middle lg:grid-cols-2 xl:grid-cols-2">
               {products.map((product) => (
                 <SearchProductCard key={product._id} product={product} onOpenChange={onOpenChange} />
               ))}

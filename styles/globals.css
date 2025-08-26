@@ -64,7 +64,7 @@
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
   --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
+  --radius-xl: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 }
@@ -163,7 +163,7 @@
 
 @layer components {
   .container {
-    @apply mx-auto overflow-hidden px-[20px] md:px-[40px] lg:px-[40px] xl:px-[80px] 2xl:px-[320px];
+    @apply mx-auto overflow-hidden px-[20px] lg:px-[40px] xl:px-[40px] xl:px-[80px] 2xl:px-[320px];
   }
 
   .input-label {
@@ -175,11 +175,11 @@
   }
 
   .heading-6 {
-    @apply text-white-100 font-sans text-[14px] leading-[100%] font-normal tracking-normal uppercase md:text-[16px];
+    @apply text-white-100 font-sans text-[14px] leading-[100%] font-normal tracking-normal uppercase xl:text-[16px];
   }
 
   .navLinkClass {
-    @apply text-umbra-100 hover:text-umbra-40 font-sans text-[24px] leading-[100%] font-normal transition-colors duration-300 ease-in-out md:text-[32px];
+    @apply text-umbra-100 hover:text-umbra-40 font-sans text-[24px] leading-[100%] font-normal transition-colors duration-300 ease-in-out xl:text-[32px];
   }
 
   .main-gradient {
@@ -408,27 +408,27 @@
 }
 
 .blog-content h1 {
-  @apply mb-6 font-sans text-[35px] leading-[120%] font-normal tracking-normal md:text-[44px];
+  @apply mb-6 font-sans text-[35px] leading-[120%] font-normal tracking-normal xl:text-[44px];
 }
 
 .blog-content h2 {
-  @apply mb-4 font-sans text-[26px] leading-[120%] font-normal tracking-normal md:text-[35px];
+  @apply mb-4 font-sans text-[26px] leading-[120%] font-normal tracking-normal xl:text-[35px];
 }
 
 .blog-content h3 {
-  @apply mb-4 font-sans text-[22px] leading-[130%] font-normal tracking-normal md:text-[26px];
+  @apply mb-4 font-sans text-[22px] leading-[130%] font-normal tracking-normal xl:text-[26px];
 }
 
 .blog-content h4 {
-  @apply mb-3 font-sans text-[18px] leading-[130%] font-normal tracking-normal md:text-[20px];
+  @apply mb-3 font-sans text-[18px] leading-[130%] font-normal tracking-normal xl:text-[20px];
 }
 
 .blog-content h5 {
-  @apply mb-3 font-sans text-[16px] leading-[130%] font-normal tracking-normal md:text-[18px];
+  @apply mb-3 font-sans text-[16px] leading-[130%] font-normal tracking-normal xl:text-[18px];
 }
 
 .blog-content h6 {
-  @apply mb-2 font-sans text-[14px] leading-[130%] font-normal tracking-normal md:text-[16px];
+  @apply mb-2 font-sans text-[14px] leading-[130%] font-normal tracking-normal xl:text-[16px];
 }
 
 .blog-content p {

@@ -68,7 +68,7 @@ const OrdinaryBlogSection = ({ blogs }) => {
 
   return (
     <div className="mb-[100px]">
-      <div className="my-10 grid grid-cols-1 gap-x-10 md:grid-cols-[53.52%_42.58%]">
+      <div className="my-10 grid grid-cols-1 gap-x-10 xl:grid-cols-[53.52%_42.58%]">
         <Suspense fallback={<FeaturedBlogShimmer />}>
           <FeaturedBlog featuredBlog={validBlogs[0]} />
         </Suspense>
@@ -89,7 +89,7 @@ const OrdinaryBlogSection = ({ blogs }) => {
         </div>
       </div>
 
-      <div className="mb-[50px] grid grid-cols-1 gap-6 gap-x-4 md:grid-cols-3 md:gap-y-20">
+      <div className="mb-[50px] grid grid-cols-1 gap-6 gap-x-4 xl:grid-cols-3 xl:gap-y-20">
         <Suspense
           fallback={
             <>

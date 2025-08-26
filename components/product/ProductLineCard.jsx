@@ -28,7 +28,7 @@ const ProductLineCard = ({ productVariant = 'Default' }) => {
         whileHover="hover"
         animate="rest"
         className={cn(
-          'border-umbra-10 md:h-h-[408px] relative h-[400px] w-full overflow-hidden border bg-[#F0F0F0] p-5 transition-colors duration-500 ease-in-out md:w-full lg:h-[408px] lg:w-full xl:h-[408px]',
+          'border-umbra-10 xl:h-h-[408px] relative h-[400px] w-full overflow-hidden border bg-[#F0F0F0] p-5 transition-colors duration-500 ease-in-out lg:h-[408px] lg:w-full xl:h-[408px] xl:w-full',
           'group-hover:border-transparent',
           `group-hover:${borderClass}`,
         )}
@@ -44,14 +44,14 @@ const ProductLineCard = ({ productVariant = 'Default' }) => {
         />
 
         {/* Top Button */}
-        <div className="relative z-20 flex justify-center md:justify-end lg:justify-end">
+        <div className="relative z-20 flex justify-center lg:justify-end xl:justify-end">
           <motion.button
             variants={{
               rest: { opacity: 1 },
               hover: { opacity: 1 },
             }}
             transition={{ duration: 0.2 }}
-            className="outline-button-white border-umbra-10 group-hover:border-white-100 relative h-[44px] w-full cursor-pointer overflow-hidden rounded-full border px-6 py-3 opacity-100 transition-all duration-200 ease-in-out group-hover:text-white md:h-[37px] md:max-w-1/2 md:min-w-[150px] lg:h-[37px] lg:max-w-1/2 lg:min-w-[150px]"
+            className="outline-button-white border-umbra-10 group-hover:border-white-100 relative h-[44px] w-full cursor-pointer overflow-hidden rounded-full border px-6 py-3 opacity-100 transition-all duration-200 ease-in-out group-hover:text-white lg:h-[37px] lg:max-w-1/2 lg:min-w-[150px] xl:h-[37px] xl:max-w-1/2 xl:min-w-[150px]"
           >
             <motion.span
               variants={{
@@ -87,7 +87,7 @@ const ProductLineCard = ({ productVariant = 'Default' }) => {
           className="relative z-10 my-4 flex items-center justify-center overflow-hidden"
         >
           <Image
-            className="h-[250px] w-[161px] object-cover md:h-[282px] md:w-[211px] lg:h-[282px] lg:w-[211px]"
+            className="h-[250px] w-[161px] object-cover lg:h-[282px] lg:w-[211px] xl:h-[282px] xl:w-[211px]"
             src="/assets/images/products/product-line-1.png"
             alt="Product"
             width={422}

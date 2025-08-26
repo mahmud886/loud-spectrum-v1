@@ -115,7 +115,7 @@ const DiscountCoupon = () => {
           onChange={handleInputChange}
           placeholder={t('placeholder')}
           disabled={discountCoupon.applied}
-          className="bg-umbra-5 placeholder:text-umbra-100 hover:bg-umbra-10 min-h-[48px] w-[65%] rounded-[10px] px-4 py-2 font-mono text-[16px] leading-[140%] font-normal disabled:opacity-50 md:w-[80%]"
+          className="bg-umbra-5 placeholder:text-umbra-100 hover:bg-umbra-10 min-h-[48px] w-[65%] rounded-[10px] px-4 py-2 font-mono text-[16px] leading-[140%] font-normal disabled:opacity-50 xl:w-[80%]"
         />
         {!discountCoupon.applied ? (
           <button

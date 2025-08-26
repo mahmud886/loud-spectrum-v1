@@ -353,7 +353,7 @@ const ChooseYourCourier = () => {
       <RadioGroup.Root
         value={selectedCourier}
         onValueChange={handleCourierChange}
-        className="grid gap-4 sm:grid-cols-1 md:grid-cols-2"
+        className="grid gap-4 sm:grid-cols-1 xl:grid-cols-2"
       >
         {couriers.map((courier) => (
           <RadioGroup.Item

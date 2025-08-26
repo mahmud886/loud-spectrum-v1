@@ -1,8 +1,8 @@
 'use client';
 
-import { Cell, Pie, PieChart } from 'recharts';
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
 import { generateGradientColorsSequentially } from '@/helpers/generate-gradient-colors-sequentially';
+import { Cell, Pie, PieChart } from 'recharts';
 
 const TerpenePieChart = ({ terpeneData }) => {
   const filteredData = terpeneData
@@ -28,9 +28,9 @@ const TerpenePieChart = ({ terpeneData }) => {
   };
 
   return (
-    <div className="flex w-full flex-col items-center justify-center gap-8 md:flex-row md:gap-12">
+    <div className="flex w-full flex-col items-center justify-center gap-8 xl:flex-row xl:gap-12">
       {/* Chart First */}
-      <div className="w-full flex-shrink-0 md:order-2 md:w-[550px]">
+      <div className="w-full flex-shrink-0 xl:order-2 xl:w-[550px]">
         <ChartContainer config={chartConfig} className="aspect-square">
           <PieChart>
             <defs>
@@ -52,7 +52,7 @@ const TerpenePieChart = ({ terpeneData }) => {
       </div>
 
       {/* Left Side Text pc mode */}
-      <div className="hidden w-full pr-4 text-left md:order-1 md:block md:w-auto">
+      <div className="hidden w-full pr-4 text-left xl:order-1 xl:block xl:w-auto">
         <h2 className="text-umbra-100 text-lg font-semibold">Terpene Breakdown</h2>
         <ul className="text-umbra-40 space-y-2 text-sm">
           {leftData.map((item) => (
@@ -72,7 +72,7 @@ const TerpenePieChart = ({ terpeneData }) => {
       </div>
 
       {/* Right Side Text pc mode */}
-      <div className="hidden w-full text-left md:order-3 md:block md:w-auto md:pl-4">
+      <div className="hidden w-full text-left xl:order-3 xl:block xl:w-auto xl:pl-4">
         <h2 className="text-umbra-100 text-lg font-semibold">Terpene Breakdown</h2>
         <ul className="text-umbra-40 space-y-2 text-sm">
           {rightData.map((item) => (
@@ -92,7 +92,7 @@ const TerpenePieChart = ({ terpeneData }) => {
       </div>
 
       {/* Right Side Text sp mode */}
-      <div className="flex w-full items-center justify-between p-6 text-center md:order-2 md:hidden">
+      <div className="flex w-full items-center justify-between p-6 text-center xl:order-2 xl:hidden">
         <ul className="text-umbra-40 space-y-2 text-sm">
           {leftData.map((item) => (
             <li key={item.name} className="flex items-center gap-2">

@@ -1,16 +1,15 @@
-import React from 'react';
-import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 
 const ContactHero = () => {
   const t = useTranslations('ContactPage');
   return (
     <div>
-      <div className="bg-umbra-100 h-[1008px] overflow-hidden md:h-[786px]">
+      <div className="bg-umbra-100 h-[1008px] overflow-hidden xl:h-[786px]">
         <div className="z-10 container mt-[200px] w-full overflow-hidden">
           <div className="flex min-h-[580px] flex-col justify-between">
-            <div className="w-full md:w-[540px]">
-              <h1 className="pb-5 font-sans text-[35px] leading-[120%] font-normal tracking-normal text-white md:text-[60px]">
+            <div className="w-full xl:w-[540px]">
+              <h1 className="pb-5 font-sans text-[35px] leading-[120%] font-normal tracking-normal text-white xl:text-[60px]">
                 {t('contactHero.title')}
               </h1>
               <p className="font-mono text-[20px] leading-[140%] font-normal text-white">
@@ -19,8 +18,8 @@ const ContactHero = () => {
             </div>
 
             <div className="w-full">
-              <div className="mt-20 mb-4 flex w-full flex-col items-center gap-4 md:mt-0 md:mb-12 md:flex-row md:items-end">
-                <div className="flex w-full flex-col space-y-2 md:w-auto">
+              <div className="mt-20 mb-4 flex w-full flex-col items-center gap-4 xl:mt-0 xl:mb-12 xl:flex-row xl:items-end">
+                <div className="flex w-full flex-col space-y-2 xl:w-auto">
                   <span className="text-white-40 ml-4 font-mono text-[16px] leading-[140%] font-normal">
                     {t('contactHero.tollFreeLabel')}
                   </span>
@@ -29,14 +28,14 @@ const ContactHero = () => {
                   </button>
                 </div>
 
-                <div className="flex w-full flex-col space-y-2 md:w-auto">
+                <div className="flex w-full flex-col space-y-2 xl:w-auto">
                   <span className="text-white-40 ml-4 font-mono text-[16px] leading-[140%] font-normal">
                     {t('contactHero.textCallLabel')}
                   </span>
                   <button className="outline-button-black rounded-full px-6 py-2 text-white">714-905-9681</button>
                 </div>
 
-                <div className="flex w-full flex-col space-y-2 md:w-auto">
+                <div className="flex w-full flex-col space-y-2 xl:w-auto">
                   <span className="text-white-40 ml-4 font-mono text-[16px] leading-[140%] font-normal">
                     {t('contactHero.emailLabel')}
                   </span>
@@ -45,7 +44,7 @@ const ContactHero = () => {
                   </button>
                 </div>
 
-                <div className="text-white-40 mt-12 mr-auto font-mono text-[16px] leading-[140%] font-normal md:mt-0 md:ml-auto">
+                <div className="text-white-40 mt-12 mr-auto font-mono text-[16px] leading-[140%] font-normal xl:mt-0 xl:ml-auto">
                   {t('contactHero.hours')}
                 </div>
               </div>
@@ -66,7 +65,7 @@ const ContactHero = () => {
         </div>
       </div>
 
-      <div className="mx-auto w-full md:w-[1440px]">
+      <div className="mx-auto w-full xl:w-[1440px]">
         <Image
           src="/assets/images/contact-section-mask.png"
           alt="Shop Hero"

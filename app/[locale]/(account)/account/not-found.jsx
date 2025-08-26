@@ -1,20 +1,18 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Search, Home, User } from 'lucide-react';
+import { Home, Search, User } from 'lucide-react';
 import Link from 'next/link';
 
 export default function AccountNotFound() {
   return (
-    <div className="mx-auto w-full max-w-full p-4 md:p-0">
+    <div className="mx-auto w-full max-w-full p-4 xl:p-0">
       <div className="flex min-h-[60vh] items-center justify-center">
         <Card className="w-full max-w-md">
           <CardHeader className="text-center">
             <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gray-100">
               <Search className="h-8 w-8 text-gray-600" />
             </div>
-            <CardTitle className="text-xl font-semibold text-gray-900">
-              Page Not Found
-            </CardTitle>
+            <CardTitle className="text-xl font-semibold text-gray-900">Page Not Found</CardTitle>
             <CardDescription className="text-gray-600">
               The page you're looking for doesn't exist in your account area.
             </CardDescription>
@@ -44,4 +42,4 @@ export default function AccountNotFound() {
       </div>
     </div>
   );
-} 
+}

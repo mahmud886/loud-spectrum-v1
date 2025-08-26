@@ -7,8 +7,8 @@ const ExperienceExtraordinary = () => {
     <>
       <div className="bg-umbra-100">
         <div className="container pb-20">
-          <div className="pt-12 md:px-[188px] md:pt-[100px] lg:px-[188px] lg:pt-[100px]">
-            <h2 className="bg-[linear-gradient(97.43deg,#101820_7.54%,#0077C8_45.72%,rgba(192,174,231,0.2)_83.43%,rgba(221,218,232,0)_100.19%)] bg-clip-text text-center text-[50px] leading-[100%] text-transparent md:text-[130px] lg:text-[130px]">
+          <div className="pt-12 lg:px-[188px] lg:pt-[100px] xl:px-[188px] xl:pt-[100px]">
+            <h2 className="bg-[linear-gradient(97.43deg,#101820_7.54%,#0077C8_45.72%,rgba(192,174,231,0.2)_83.43%,rgba(221,218,232,0)_100.19%)] bg-clip-text text-center text-[50px] leading-[100%] text-transparent lg:text-[130px] xl:text-[130px]">
               {t('Experience_Extraordinary')}
             </h2>
           </div>
@@ -16,7 +16,7 @@ const ExperienceExtraordinary = () => {
       </div>
       <div className="bg-umbra-100">
         <div className="mx-auto w-[1440px]">
-          <div className="relative hidden items-center justify-center md:flex">
+          <div className="relative hidden items-center justify-center xl:flex">
             {/* Background image */}
             <Image
               src="/assets/svgs/pattern-extra.svg"
@@ -36,56 +36,56 @@ const ExperienceExtraordinary = () => {
             />
             {/* Top Left Text */}
             <div className="absolute top-[40%] left-[10%] flex max-w-[300px] flex-col gap-6">
-              <div className="flex flex-col space-y-2.5 md:space-y-4">
-                <h5 className="text-white-100 font-sans text-[22px] leading-[130%] font-normal md:text-[28px]">
+              <div className="flex flex-col space-y-2.5 xl:space-y-4">
+                <h5 className="text-white-100 font-sans text-[22px] leading-[130%] font-normal xl:text-[28px]">
                   The Flavor Spectrum
                 </h5>
                 <p className="text-white-40 font-mono text-[16px] leading-[140%] font-normal tracking-normal">
                   Bold profiles for every mood, moment, and memory.
                 </p>
-                <div className="border-white-20 mt-3 border-1 md:hidden"></div>
+                <div className="border-white-20 mt-3 border-1 xl:hidden"></div>
               </div>
             </div>
             <div className="absolute bottom-[30%] left-[20%] flex max-w-[300px] flex-col gap-6">
-              <div className="flex flex-col space-y-2.5 md:space-y-4">
-                <h5 className="text-white-100 font-sans text-[22px] leading-[130%] font-normal md:text-[28px]">
+              <div className="flex flex-col space-y-2.5 xl:space-y-4">
+                <h5 className="text-white-100 font-sans text-[22px] leading-[130%] font-normal xl:text-[28px]">
                   Quality Above All
                 </h5>
                 <p className="text-white-40 font-mono text-[16px] leading-[140%] font-normal tracking-normal">
                   Unmatched flavor and consistency, crafted to the highest standards.
                 </p>
-                <div className="border-white-20 mt-3 border-1 md:hidden"></div>
+                <div className="border-white-20 mt-3 border-1 xl:hidden"></div>
               </div>
             </div>
 
             {/* Top Right Text */}
             <div className="absolute top-[23%] right-[20%] flex max-w-[300px] flex-col gap-6">
-              <div className="flex flex-col space-y-2.5 md:space-y-4">
-                <h5 className="text-white-100 font-sans text-[22px] leading-[130%] font-normal md:text-[28px]">
+              <div className="flex flex-col space-y-2.5 xl:space-y-4">
+                <h5 className="text-white-100 font-sans text-[22px] leading-[130%] font-normal xl:text-[28px]">
                   Essential Ingredient
                 </h5>
                 <p className="text-white-40 font-mono text-[16px] leading-[140%] font-normal tracking-normal">
                   The cornerstone of every unforgettable cannabis experience.
                 </p>
-                <div className="border-white-20 mt-3 border-1 md:hidden"></div>
+                <div className="border-white-20 mt-3 border-1 xl:hidden"></div>
               </div>
             </div>
             <div className="absolute top-[40%] right-[10%] flex max-w-[300px] flex-col gap-6">
-              <div className="flex flex-col space-y-2.5 md:space-y-4">
-                <h5 className="text-white-100 font-sans text-[22px] leading-[130%] font-normal md:text-[28px]">
+              <div className="flex flex-col space-y-2.5 xl:space-y-4">
+                <h5 className="text-white-100 font-sans text-[22px] leading-[130%] font-normal xl:text-[28px]">
                   Masters of Craft
                 </h5>
                 <p className="text-white-40 font-mono text-[16px] leading-[140%] font-normal tracking-normal">
                   Science meets expertise to redefine terpene craftsmanship.
                 </p>
-                <div className="border-white-20 mt-3 border-1 md:hidden"></div>
+                <div className="border-white-20 mt-3 border-1 xl:hidden"></div>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div className="bg-umbra-100 container">
-        <div className="flex justify-center md:hidden">
+        <div className="flex justify-center xl:hidden">
           <Image
             src="/assets/videos/extraordinary.gif"
             width={373}
@@ -94,28 +94,28 @@ const ExperienceExtraordinary = () => {
             alt="extra-ordinary"
           />
         </div>
-        <div className="md:hidden">
+        <div className="xl:hidden">
           <div className="flex flex-col gap-6">
             {extraordinary.map((item, index) => (
-              <div key={index} className="flex flex-col space-y-2.5 md:space-y-4 lg:space-y-4">
-                <h5 className="text-white-100 font-sans text-[18px] leading-[130%] font-normal md:text-[22px] lg:text-[28px] xl:text-[28px]">
+              <div key={index} className="flex flex-col space-y-2.5 lg:space-y-4 xl:space-y-4">
+                <h5 className="text-white-100 font-sans text-[18px] leading-[130%] font-normal lg:text-[28px] xl:text-[22px] xl:text-[28px]">
                   {item.title}
                 </h5>
-                <p className="text-white-40 font-mono text-[14px] leading-[140%] font-normal tracking-normal md:text-[16px]">
+                <p className="text-white-40 font-mono text-[14px] leading-[140%] font-normal tracking-normal xl:text-[16px]">
                   {item.description}
                 </p>
-                <div className="border-white-20 mt-3 border-1 md:hidden"></div>
+                <div className="border-white-20 mt-3 border-1 xl:hidden"></div>
               </div>
             ))}
           </div>
         </div>
       </div>
-      <div className="bg-umbra-100 mx-auto w-full md:w-[1440px]">
+      <div className="bg-umbra-100 mx-auto w-full xl:w-[1440px]">
         <Image
           src="/assets/svgs/mimosa-bottom-mask.svg"
           width={1440}
           height={195}
-          className="h-[50px] w-[450px] object-cover md:h-[195px] md:w-[1440px]"
+          className="h-[50px] w-[450px] object-cover xl:h-[195px] xl:w-[1440px]"
           alt="extra-ordinary"
         />
       </div>

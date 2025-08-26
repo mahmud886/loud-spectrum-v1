@@ -94,7 +94,7 @@ const Navbar = ({ locale }) => {
     <>
       <nav className={`fixed top-0 left-0 z-50 w-full transition-colors duration-300 ${navBg} ${textColor}`}>
         <div
-          className={`container mx-auto flex items-center justify-between px-5 md:px-[40px] lg:px-[40px] xl:px-[80px] 2xl:px-[320px] ${isScrolled ? 'py-5' : 'py-12'} transition-all duration-300`}
+          className={`container mx-auto flex items-center justify-between px-5 lg:px-[40px] xl:px-[40px] xl:px-[80px] 2xl:px-[320px] ${isScrolled ? 'py-5' : 'py-12'} transition-all duration-300`}
         >
           {!isScrolled && (
             <div className="absolute top-0 left-1/2 -z-10 w-full -translate-x-1/2">
@@ -113,12 +113,12 @@ const Navbar = ({ locale }) => {
               alt="Logo"
               width={221}
               height={36}
-              className="h-[25px] w-[153px] cursor-pointer md:h-[36px] md:w-[221px] lg:h-[36px] lg:w-[221px]"
+              className="h-[25px] w-[153px] cursor-pointer lg:h-[36px] lg:w-[221px] xl:h-[36px] xl:w-[221px]"
               priority
             />
           </Link>
 
-          <div className="flex items-center gap-2 md:gap-3">
+          <div className="flex items-center gap-2 xl:gap-3">
             <Tooltip>
               <TooltipTrigger asChild>
                 <button
@@ -142,7 +142,7 @@ const Navbar = ({ locale }) => {
                 <TooltipTrigger asChild>
                   <Link
                     href="/account"
-                    className={`flex items-center gap-2 rounded-full border p-2 font-sans text-[16px] font-normal transition-colors duration-300 ease-in-out md:flex ${
+                    className={`flex items-center gap-2 rounded-full border p-2 font-sans text-[16px] font-normal transition-colors duration-300 ease-in-out xl:flex ${
                       isSpecialPath ? 'hover:text-umbra-40 text-[#191919]' : 'text-white-100 hover:text-white-40'
                     }`}
                   >
@@ -158,12 +158,12 @@ const Navbar = ({ locale }) => {
                 <TooltipTrigger asChild>
                   <Link
                     href="/login"
-                    className={`flex items-center gap-2 rounded-full border p-2 font-sans text-[16px] font-normal transition-colors duration-300 ease-in-out md:flex ${
+                    className={`flex items-center gap-2 rounded-full border p-2 font-sans text-[16px] font-normal transition-colors duration-300 ease-in-out xl:flex ${
                       isSpecialPath ? 'hover:text-umbra-40 text-[#191919]' : 'text-white-100 hover:text-white-40'
                     }`}
                   >
                     <LogInIcon size={16} />
-                    {/* <span className="hidden md:inline">{t('Navbar.Log_in')}</span> */}
+                    {/* <span className="hidden xl:inline">{t('Navbar.Log_in')}</span> */}
                   </Link>
                 </TooltipTrigger>
                 <TooltipContent>

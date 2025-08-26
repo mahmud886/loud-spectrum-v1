@@ -9,7 +9,7 @@ const ProductDetailsHero = async ({ product }) => {
   const exactCategory = categories?.data?.categories?.find((category) => category._id === product?.category._id);
   return (
     <>
-      <div className="relative hidden h-[1082px] overflow-hidden bg-black md:block">
+      <div className="relative hidden h-[1082px] overflow-hidden bg-black xl:block">
         <Image
           // src="/assets/images/products/product-page-hero.png"
           src={
@@ -20,7 +20,7 @@ const ProductDetailsHero = async ({ product }) => {
           alt="Background"
           width={1440}
           height={797}
-          className="absolute top-0 left-1/2 z-0 h-full w-full -translate-x-1/2 object-cover md:w-[1920px]"
+          className="absolute top-0 left-1/2 z-0 h-full w-full -translate-x-1/2 object-cover xl:w-[1920px]"
           priority
         />
 
@@ -29,7 +29,7 @@ const ProductDetailsHero = async ({ product }) => {
             <div className="flex w-full items-start justify-between gap-[40px]">
               <Suspense
                 fallback={
-                  <div className="bg-white-100 text-umbra-100 animate-pulse p-5 md:h-[587px] md:w-[413px]">
+                  <div className="bg-white-100 text-umbra-100 animate-pulse p-5 xl:h-[587px] xl:w-[413px]">
                     Loading...
                   </div>
                 }
@@ -53,7 +53,7 @@ const ProductDetailsHero = async ({ product }) => {
       </div>
 
       {/*  For Mobile */}
-      <div className="relative block h-[619px] overflow-hidden bg-black md:hidden">
+      <div className="relative block h-[619px] overflow-hidden bg-black xl:hidden">
         <Image
           src={
             exactCategory?.image
@@ -68,7 +68,7 @@ const ProductDetailsHero = async ({ product }) => {
         />
       </div>
 
-      <div className="flex justify-center py-8 md:hidden">
+      <div className="flex justify-center py-8 xl:hidden">
         <Suspense fallback={<div className="bg-white-100 text-umbra-100 animate-pulse p-5">Loading...</div>}>
           {product && <ProductDetailsLeftCard product={product} />}
         </Suspense>

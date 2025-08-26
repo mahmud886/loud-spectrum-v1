@@ -22,7 +22,7 @@ export default function DynamicBreadcrumb() {
 
   return (
     <Breadcrumb>
-      <BreadcrumbList className="flex items-center space-x-1 md:space-x-0">
+      <BreadcrumbList className="flex items-center space-x-1 xl:space-x-0">
         <BreadcrumbItem>
           <BreadcrumbLink asChild>
             <Link href="/" className="uppercase">

@@ -41,7 +41,7 @@ const LegalsPage = () => {
   return (
     <div className="container mt-[200px]">
       <div className="flex items-center justify-center">
-        <h2 className="text-umbra-100 w-[85%] text-center font-sans text-[35px] leading-[120%] font-normal md:w-[35%] md:text-[60px]">
+        <h2 className="text-umbra-100 w-[85%] text-center font-sans text-[35px] leading-[120%] font-normal xl:w-[35%] xl:text-[60px]">
           {t('LegalPage.LegalDisclaimer')}
         </h2>
       </div>

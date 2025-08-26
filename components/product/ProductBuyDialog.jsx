@@ -111,7 +111,7 @@ const ProductBuyDialog = ({ open, onOpenChange, product }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex h-screen items-center justify-center bg-black/60 backdrop-blur-sm">
-      <div className="bg-white-100 text-umbra-100 relative max-h-[90vh] w-[90%] overflow-y-auto rounded-lg p-5 md:h-[587px] md:w-[413px]">
+      <div className="bg-white-100 text-umbra-100 relative max-h-[90vh] w-[90%] overflow-y-auto rounded-lg p-5 xl:h-[587px] xl:w-[413px]">
         <button
           className="text-umbra-100 hover:bg-umbra-100 focus:ring-ring border-umbra-10 absolute top-5 right-5 cursor-pointer rounded-full border bg-white p-1 transition-all duration-200 ease-in-out hover:text-white focus:ring-2 focus:ring-offset-2 focus:outline-none disabled:pointer-events-none"
           onClick={() => onOpenChange(false)}
@@ -124,13 +124,13 @@ const ProductBuyDialog = ({ open, onOpenChange, product }) => {
         <div className="flex h-full w-full flex-col items-start justify-between gap-5">
           <div className="w-full self-start">
             <div className="space-y-5">
-              <div className="mt-1 flex w-[90%] items-center justify-between gap-5 md:mt-[2px]">
+              <div className="mt-1 flex w-[90%] items-center justify-between gap-5 xl:mt-[2px]">
                 <button
-                  className={`${getCategoryColorClasses(product?.category?.name)} rounded-[3px] border-1 px-2 text-[10px] font-normal md:text-[12px]`}
+                  className={`${getCategoryColorClasses(product?.category?.name)} rounded-[3px] border-1 px-2 text-[10px] font-normal xl:text-[12px]`}
                 >
                   {product?.category?.name ? product?.category?.name : t('CannabisDerived')}
                 </button>
-                <div className="text-umbra-100 inline-flex items-center justify-start gap-2 font-mono text-[10px] leading-[130%] font-normal md:text-[14px]">
+                <div className="text-umbra-100 inline-flex items-center justify-start gap-2 font-mono text-[10px] leading-[130%] font-normal xl:text-[14px]">
                   {reviewsLoading ? (
                     <div className="flex items-center gap-2">
                       <Shimmer className="h-[15px] w-[75px] rounded" />
@@ -158,7 +158,7 @@ const ProductBuyDialog = ({ open, onOpenChange, product }) => {
                   originalPriceClass="text-18px text-umbra-40 line-through"
                   discountedPriceClass={`text-[22px] ${getCategoryTextClasses(product?.category?.name)}`}
                   regularPriceClass="text-umbra-40 text-[22px]"
-                  discountTextClass={`text-[14px] md:text-xs font-bold ${getCategoryTextClasses(product?.category?.name)}`}
+                  discountTextClass={`text-[14px] xl:text-xs font-bold ${getCategoryTextClasses(product?.category?.name)}`}
                   containerClass="flex flex-col gap-1 font-sans leading-[130%] font-normal tracking-normal"
                   showOriginalPrice={true}
                   showDiscountText={true}
@@ -166,7 +166,7 @@ const ProductBuyDialog = ({ open, onOpenChange, product }) => {
               </div>
               <hr className="terpene-border" />
               <div className="space-y-2">
-                <h6 className="text-umbra-100 font-sans text-[20px] leading-snug md:text-[22px]">
+                <h6 className="text-umbra-100 font-sans text-[20px] leading-snug xl:text-[22px]">
                   {product?.tags?.split(',').map((tag, index, array) => (
                     <span key={tag.trim()}>
                       {tag.trim()}
@@ -221,8 +221,8 @@ const ProductBuyDialog = ({ open, onOpenChange, product }) => {
             </div>
           </div>
 
-          <div className="flex w-full flex-col items-center justify-between gap-8 md:flex-row">
-            <div className="flex w-full items-center justify-between gap-5 md:flex-row">
+          <div className="flex w-full flex-col items-center justify-between gap-8 xl:flex-row">
+            <div className="flex w-full items-center justify-between gap-5 xl:flex-row">
               <div className="flex items-center gap-2">
                 <button
                   className="border-umbra-40 flex size-10 cursor-pointer items-center justify-center rounded-full border bg-white disabled:cursor-not-allowed"
@@ -263,7 +263,7 @@ const ProductBuyDialog = ({ open, onOpenChange, product }) => {
             </div>
 
             <button
-              className="main-button-black w-full rounded-full px-2 py-2 md:max-w-[132px]"
+              className="main-button-black w-full rounded-full px-2 py-2 xl:max-w-[132px]"
               onClick={handleAddToCart}
             >
               {t('AddToCart')}

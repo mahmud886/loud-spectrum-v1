@@ -1,14 +1,14 @@
 'use client';
 
+import MobileNav from '@/components/navbar/MobileNav';
+import { toggleCartDrawer } from '@/lib/store/slices/uiSlice';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { useEffect, useRef, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import TopNavLeft from './navbar/TopNavLeft';
 import TopNavMiddle from './navbar/TopNavMiddle';
 import TopNavRight from './navbar/TopNavRight';
-import MobileNav from '@/components/navbar/MobileNav';
-import { toggleCartDrawer } from '@/lib/store/slices/uiSlice';
-import { useDispatch } from 'react-redux';
 
 const TopNav = ({ setMenuOpen, menuOpen }) => {
   const t = useTranslations('');
@@ -53,7 +53,7 @@ const TopNav = ({ setMenuOpen, menuOpen }) => {
       {shouldRender && (
         <>
           {/* For Larger Devices */}
-          <div className="hidden md:block">
+          <div className="hidden xl:block">
             <motion.div
               initial={{ height: 0 }}
               animate={{ height: 554 }}
@@ -62,7 +62,7 @@ const TopNav = ({ setMenuOpen, menuOpen }) => {
               className="fixed top-0 right-0 left-0 z-50 overflow-hidden"
               ref={menuRef}
             >
-              <div className="divide-umbra-40 mx-auto grid h-full w-full grid-cols-1 divide-x text-black md:w-[1440px] md:grid-cols-3">
+              <div className="divide-umbra-40 mx-auto grid h-full w-full grid-cols-1 divide-x text-black xl:w-[1440px] xl:grid-cols-3">
                 {/* Left Section */}
                 <motion.div
                   initial={{ y: -50, opacity: 0 }}
@@ -100,7 +100,7 @@ const TopNav = ({ setMenuOpen, menuOpen }) => {
           </div>
 
           {/* For Mobile Devices */}
-          <div className="md:hidden">
+          <div className="xl:hidden">
             <motion.div
               initial={{ height: 0 }}
               animate={{ height: '100vh' }}

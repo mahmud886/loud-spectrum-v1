@@ -29,7 +29,7 @@ export default function UserOrdersPage({ orders }) {
   };
 
   return (
-    <div className="mx-auto max-w-full p-4 md:p-0">
+    <div className="mx-auto max-w-full p-4 xl:p-0">
       <h1 className="text-umbra-100 mb-6 text-[24px] leading-[130%] font-normal">Your Orders</h1>
 
       {orders.length === 0 ? (

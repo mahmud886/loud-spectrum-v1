@@ -5,7 +5,7 @@ export default function AccountOrderNotFound() {
   const t = useTranslations('OrderPage');
 
   return (
-    <div className="mx-auto w-full max-w-full p-4 md:p-0">
+    <div className="mx-auto w-full max-w-full p-4 xl:p-0">
       <div className="mx-auto max-w-2xl text-center">
         {/* 404 Icon */}
         <div className="mb-8">

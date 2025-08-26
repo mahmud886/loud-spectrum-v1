@@ -116,7 +116,7 @@ async function ProductDetailsContent({ params }) {
   }
 
   return (
-    <div className="md:mt-[160px]">
+    <div className="xl:mt-[160px]">
       <Suspense fallback={<SpectrumAccordionShimmer />}>
         <SpectrumAccordionContent productDetails={productDetails} />
       </Suspense>
@@ -144,7 +144,7 @@ const ProductDetailsPage = async ({ params }) => {
   return (
     <Suspense
       fallback={
-        <div className="md:mt-[160px]">
+        <div className="xl:mt-[160px]">
           <SpectrumAccordionShimmer />
           <ProductReviewsShimmer />
           <AddAReviewShimmer />

@@ -8,7 +8,7 @@ const ProductReviewCard = ({ review }) => {
     : '';
 
   return (
-    <div className="h-full w-full px-2 md:min-h-[300px] md:w-[450px]">
+    <div className="h-full w-full px-2 xl:min-h-[300px] xl:w-[450px]">
       <div className="flex h-full flex-col items-start justify-between gap-6">
         <div className="space-y-6">
           <div>

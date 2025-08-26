@@ -37,12 +37,12 @@ const ProductCard = ({ product }) => {
       <motion.div initial="rest" whileHover="hover" animate="rest" className="cursor-pointer">
         <motion.div
           transition={{ duration: 0.3 }}
-          className="relative flex h-[408px] w-full min-w-[162px] flex-col justify-around border bg-[#F5F5F5] p-2.5 md:h-[372px] md:w-[305px]"
+          className="relative flex h-[408px] w-full min-w-[162px] flex-col justify-around border bg-[#F5F5F5] p-2.5 xl:h-[372px] xl:w-[305px]"
         >
           {/* Image Section */}
           <Link
             href={`/shop/${encodeCategoryForUrl(product?.category_name)}/${product.slug}`}
-            className="flex items-center justify-center overflow-hidden md:mt-16"
+            className="flex items-center justify-center overflow-hidden xl:mt-16"
           >
             <motion.div
               variants={{
@@ -52,7 +52,7 @@ const ProductCard = ({ product }) => {
               transition={{ duration: 0.4 }}
             >
               <Image
-                className="h-[320px] w-auto object-cover md:h-[254px] md:w-[174px]"
+                className="h-[320px] w-auto object-cover xl:h-[254px] xl:w-[174px]"
                 src={
                   product?.image
                     ? `${process.env.NEXT_PUBLIC_API_URL}/public${product.image}`
@@ -67,14 +67,14 @@ const ProductCard = ({ product }) => {
           </Link>
 
           {/* Tag Button (Hidden on mobile) */}
-          <div className="ml- hidden md:block">
+          <div className="ml- hidden xl:block">
             <button className="border-umbra-100 rounded-[3px] border px-2 text-[9px] font-normal">
               {categoryDisplayName}
             </button>
           </div>
 
           {/* Buy Now Button (Mobile - at the bottom) */}
-          <div className="mt-auto mb-2 md:mb-0 md:hidden">
+          <div className="mt-auto mb-2 xl:mb-0 xl:hidden">
             <button
               className="main-button-black w-full rounded-full px-6 py-3 opacity-100 transition-opacity duration-200 ease-in-out group-hover:opacity-100"
               onClick={handleBuyNowClick}
@@ -90,7 +90,7 @@ const ProductCard = ({ product }) => {
               hover: { opacity: 1, y: 0 },
             }}
             transition={{ duration: 0.4 }}
-            className="absolute top-5 right-5 hidden md:flex md:justify-end"
+            className="absolute top-5 right-5 hidden xl:flex xl:justify-end"
           >
             <button className="main-button-black w-auto rounded-full px-6 py-2" onClick={handleBuyNowClick}>
               {t('buyNow')}
@@ -110,17 +110,17 @@ const ProductCard = ({ product }) => {
             minPrice={min}
             maxPrice={max}
             originalPriceClass={clsx(
-              'text-[13px] md:text-[19px] line-through opacity-60',
+              'text-[13px] xl:text-[19px] line-through opacity-60',
               isShopPage ? 'text-umbra-40' : 'text-white-40',
             )}
             // discountedPriceClass={clsx(
-            //   'text-[13px] md:text-[19px] font-normal',
+            //   'text-[13px] xl:text-[19px] font-normal',
             //   getCategoryTextClasses(product?.category?.name),
             // )}
-            discountedPriceClass={clsx('text-[13px] md:text-[19px] font-normal', 'text-umbra-100')}
-            regularPriceClass={clsx('text-[13px] md:text-[19px]', isShopPage ? 'text-umbra-40' : 'text-white-40')}
-            // discountTextClass={clsx('text-[8px] md:text-xs font-bold', getCategoryTextClasses(product?.category?.name))}
-            discountTextClass={clsx('text-[8px] md:text-xs font-bold', 'text-umbra-100')}
+            discountedPriceClass={clsx('text-[13px] xl:text-[19px] font-normal', 'text-umbra-100')}
+            regularPriceClass={clsx('text-[13px] xl:text-[19px]', isShopPage ? 'text-umbra-40' : 'text-white-40')}
+            // discountTextClass={clsx('text-[8px] xl:text-xs font-bold', getCategoryTextClasses(product?.category?.name))}
+            discountTextClass={clsx('text-[8px] xl:text-xs font-bold', 'text-umbra-100')}
             containerClass="flex flex-col gap-1"
             showOriginalPrice={true}
             showDiscountText={true}

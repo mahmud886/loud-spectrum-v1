@@ -90,9 +90,9 @@ const OrderDetailsByCode = ({ orderCode, token, isOpen, onClose }) => {
       </div>
 
       {/* Address and Summary Section Shimmer */}
-      <div className="flex flex-col gap-2 md:flex-row md:space-x-6">
+      <div className="flex flex-col gap-2 xl:flex-row xl:space-x-6">
         {/* Address Section */}
-        <div className="w-full md:flex-1">
+        <div className="w-full xl:flex-1">
           <div className="mb-4 h-6 w-24 rounded bg-gray-200"></div>
           <div className="bg-stardust/20 divide-umbra-10 divide-y rounded-[10px]">
             {/* Shipping Address */}
@@ -119,7 +119,7 @@ const OrderDetailsByCode = ({ orderCode, token, isOpen, onClose }) => {
         </div>
 
         {/* Order Summary Section */}
-        <div className="w-full md:flex-1">
+        <div className="w-full xl:flex-1">
           <div className="mb-4 h-6 w-32 rounded bg-gray-200"></div>
           <div className="rounded-[10px] bg-gray-50 p-4">
             <div className="space-y-3">
@@ -176,7 +176,7 @@ const OrderDetailsByCode = ({ orderCode, token, isOpen, onClose }) => {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="flex max-h-[90vh] w-full flex-col overflow-hidden rounded-lg bg-white p-6 md:h-auto md:max-w-5xl">
+      <DialogContent className="flex max-h-[90vh] w-full flex-col overflow-hidden rounded-lg bg-white p-6 xl:h-auto xl:max-w-5xl">
         <DialogHeader>
           <DialogTitle className="text-umbra-100 inline-flex font-sans text-[24px] leading-[120%] font-normal">
             {isLoading ? (
@@ -321,9 +321,9 @@ const OrderDetailsByCode = ({ orderCode, token, isOpen, onClose }) => {
               </div>
 
               {/* Shipping Address and Order Summary Section */}
-              <div className="flex flex-col gap-2 md:flex-row md:space-x-6">
+              <div className="flex flex-col gap-2 xl:flex-row xl:space-x-6">
                 {/* Shipping Address */}
-                <div className="w-full md:flex-1">
+                <div className="w-full xl:flex-1">
                   <h3 className="mb-4 text-[18px] font-normal">Address</h3>
                   <div className="bg-stardust/20 divide-umbra-10 divide-y rounded-[10px]">
                     <div className="p-4">
@@ -356,7 +356,7 @@ const OrderDetailsByCode = ({ orderCode, token, isOpen, onClose }) => {
                 </div>
 
                 {/* Order Summary */}
-                <div className="w-full md:flex-1">
+                <div className="w-full xl:flex-1">
                   <h3 className="mb-4 text-[18px] font-normal">Order Summary</h3>
                   <div className="rounded-[10px] bg-gray-50 p-4">
                     <div className="mb-2 flex justify-between">

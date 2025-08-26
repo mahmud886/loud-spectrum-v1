@@ -107,7 +107,7 @@ const ProductDetailsLeftCard = ({ product }) => {
   };
 
   return (
-    <div className="bg-white-100 text-umbra-100 p-5 md:h-[587px] md:w-[413px]">
+    <div className="bg-white-100 text-umbra-100 p-5 xl:h-[587px] xl:w-[413px]">
       <div className="flex h-full w-full flex-col items-start justify-between gap-5">
         <div className="w-full self-start">
           <div className="space-y-5">
@@ -148,8 +148,8 @@ const ProductDetailsLeftCard = ({ product }) => {
                 // discountedPriceClass={`text-[22px] ${getCategoryTextClasses(product?.category?.name)}`}
                 discountedPriceClass={`text-[22px] text-umbra-100`}
                 regularPriceClass="text-umbra-40 text-[22px]"
-                // discountTextClass={`text-[14px]  md:text-xs font-bold ${getCategoryTextClasses(product?.category?.name)}`}
-                discountTextClass={`text-[14px]  md:text-xs font-bold text-umbra-100`}
+                // discountTextClass={`text-[14px]  xl:text-xs font-bold ${getCategoryTextClasses(product?.category?.name)}`}
+                discountTextClass={`text-[14px]  xl:text-xs font-bold text-umbra-100`}
                 containerClass="flex flex-col gap-1 font-sans leading-[130%] font-normal tracking-normal"
                 showOriginalPrice={true}
                 showDiscountText={true}
@@ -212,14 +212,14 @@ const ProductDetailsLeftCard = ({ product }) => {
             </div>
           </div>
         </div>
-        <div className="flex w-full flex-col items-center justify-between gap-8 md:flex-row">
-          <div className="md:hidden">
+        <div className="flex w-full flex-col items-center justify-between gap-8 xl:flex-row">
+          <div className="xl:hidden">
             <p className="text-umbra-100 line-clamp-3 font-mono text-[20px] leading-[140%] font-normal tracking-normal">
               {product?.meta_description}
             </p>
           </div>
-          <div className="flex w-full items-center justify-between gap-5 md:flex-row">
-            <div className="md:hidden">
+          <div className="flex w-full items-center justify-between gap-5 xl:flex-row">
+            <div className="xl:hidden">
               <button className="outline-button-white rounded-full border px-5 py-2">{t('SeePDF')}</button>
             </div>
             <div className="flex items-center gap-2">
@@ -261,7 +261,7 @@ const ProductDetailsLeftCard = ({ product }) => {
             </div>
           </div>
           <button
-            className="main-button-black w-full rounded-full px-2 py-2 md:max-w-[132px]"
+            className="main-button-black w-full rounded-full px-2 py-2 xl:max-w-[132px]"
             onClick={handleAddToCart}
           >
             {t('AddToCart')}

@@ -32,11 +32,11 @@ export default function ReviewAndTestimonialCarouselWithProgress({ children }) {
           loop: true,
         }}
       >
-        <CarouselContent className="flex w-full gap-4 md:gap-6">
+        <CarouselContent className="flex w-full gap-4 xl:gap-6">
           {React.Children.map(children, (child, index) => (
             <CarouselItem
               key={index}
-              className={`pl-0 transition-opacity duration-300 sm:basis-1 md:basis-1/3 ${
+              className={`pl-0 transition-opacity duration-300 sm:basis-1 xl:basis-1/3 ${
                 index === current ? 'opacity-100' : 'opacity-50'
               }`}
             >

@@ -42,11 +42,11 @@ const CartDrawer = ({ isOpen, onClose }) => {
   return (
     <div
       ref={drawerRef}
-      className={`fixed top-0 right-0 z-50 h-[100dvh] w-full bg-white shadow-lg transition-transform duration-300 ease-in-out md:w-[484px] ${
+      className={`fixed top-0 right-0 z-50 h-[100dvh] w-full bg-white shadow-lg transition-transform duration-300 ease-in-out xl:w-[484px] ${
         isOpen ? 'translate-x-0' : 'translate-x-full'
       }`}
     >
-      <div className="p-2 md:p-6">
+      <div className="p-2 xl:p-6">
         {/* Header */}
         <div className="flex items-start justify-between p-5">
           <div className="space-y-2">

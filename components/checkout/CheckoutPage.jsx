@@ -1140,14 +1140,14 @@ const CheckoutPage = () => {
 
   return (
     <>
-      <div className="flex w-full flex-col items-start justify-between gap-5 pb-10 md:flex-row">
-        <div className="h-auto w-full rounded-[10px] shadow-sm md:min-w-[58%]">
+      <div className="flex w-full flex-col items-start justify-between gap-5 pb-10 xl:flex-row">
+        <div className="h-auto w-full rounded-[10px] shadow-sm xl:min-w-[58%]">
           <div className="px-4">
             <ProductCart />
           </div>
           <ShippingAndBillingAddress />
         </div>
-        <div className="h-auto w-full rounded-[10px] pb-4 shadow-sm md:min-w-[40%]">
+        <div className="h-auto w-full rounded-[10px] pb-4 shadow-sm xl:min-w-[40%]">
           <div className="px-4">
             <ChooseYourCourier />
             <DiscountCoupon />

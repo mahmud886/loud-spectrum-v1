@@ -37,7 +37,7 @@ const TopNavRight = ({ onClose, setCartOpen }) => {
         {authToken ? (
           <Link
             href="/account"
-            className={`hover:text-umbra-40 text-[#191919]' } mx-[5px] flex items-center gap-2 font-sans text-[20px] font-normal transition-colors duration-300 ease-in-out md:flex`}
+            className={`hover:text-umbra-40 text-[#191919]' } mx-[5px] flex items-center gap-2 font-sans text-[20px] font-normal transition-colors duration-300 ease-in-out xl:flex`}
           >
             <UserIcon size={24} />
           </Link>

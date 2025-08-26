@@ -20,7 +20,7 @@ const LoadingShimmer = () => {
             {/* First section */}
             <div className="space-y-8">
               <div className="h-12 w-64 rounded bg-gray-200"></div>
-              <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+              <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 xl:grid-cols-2">
                 {[1, 2, 3].map((index) => (
                   <div key={index} className="space-y-4">
                     <div className="h-48 w-full rounded bg-gray-200"></div>
@@ -40,7 +40,7 @@ const LoadingShimmer = () => {
             {/* Third section */}
             <div className="space-y-8">
               <div className="h-12 w-72 rounded bg-gray-200"></div>
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+              <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
                 {[1, 2].map((index) => (
                   <div key={index} className="space-y-4">
                     <div className="h-32 w-full rounded bg-gray-200"></div>

@@ -2,9 +2,9 @@ import Shimmer from '@/components/ui/shimmer';
 
 const ProductReviewsShimmer = () => {
   return (
-    <div className="container pb-6 md:pb-[80px]">
-      <Shimmer className="mb-8 h-10 w-48 rounded md:h-12 md:w-64" />
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+    <div className="container pb-6 xl:pb-[80px]">
+      <Shimmer className="mb-8 h-10 w-48 rounded xl:h-12 xl:w-64" />
+      <div className="grid grid-cols-1 gap-6 xl:grid-cols-3">
         {[...Array(3)].map((_, index) => (
           <div key={index} className="rounded-lg border border-gray-200 p-6">
             <div className="mb-4 flex items-center gap-4">

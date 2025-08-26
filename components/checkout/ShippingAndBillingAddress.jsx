@@ -27,7 +27,7 @@ const ShippingAndBillingAddress = () => {
         <RadioGroup
           value={billingOption}
           onValueChange={handleBillingOptionChange}
-          className="flex flex-col gap-3 md:flex-row"
+          className="flex flex-col gap-3 xl:flex-row"
         >
           {/* Same as shipping */}
           <label
