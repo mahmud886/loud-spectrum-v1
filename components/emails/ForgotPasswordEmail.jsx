@@ -16,6 +16,7 @@ const baseUrl = process.env.NEXT_PUBLIC_WEBSITE_URL;
 
 const ForgotPasswordEmail = ({ email, token, locale }) => {
   // If resetUrl is not provided, construct it using the resetToken
+  // sample url = https://www.loudspectrum.com/en/reset-password/1234567890
   const passwordResetUrl = `${baseUrl}/${locale}/reset-password/${token}`;
 
   return (
