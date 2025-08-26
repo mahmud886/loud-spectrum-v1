@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 import { routing } from './i18n/routing';
 
 // Define protected routes that require authentication
-const protectedRoutes = ['/checkout', '/account', '/wholesale-store'];
+const protectedRoutes = ['/account', '/wholesale-store'];
 // Define auth routes that should not be accessible when logged in
 // const authRoutes = ['/login', '/register', '/wholesale-registration'];
 const authRoutes = ['/login', '/register'];

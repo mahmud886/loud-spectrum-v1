@@ -11,6 +11,7 @@ import { useRouter } from '@/i18n/navigation';
 import {
   completeOrder,
   selectBillingAddress,
+  selectGuestUser,
   selectIsProcessing,
   selectPaymentPayload,
   selectSelectedCourier,
@@ -41,6 +42,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'sonner';
 import ChooseYourCourier from './ChooseYourCourier';
+import GuestOrderConfirmationModal from './GuestOrderConfirmationModal';
 import ShippingAndBillingAddress from './ShippingAndBillingAddress';
 
 const CheckoutPage = () => {
@@ -54,6 +56,10 @@ const CheckoutPage = () => {
   const [isOrderCompleted, setIsOrderCompleted] = useState(false);
   const [showWireTransferModal, setShowWireTransferModal] = useState(false);
 
+  // Guest order confirmation modal state
+  const [showGuestConfirmationModal, setShowGuestConfirmationModal] = useState(false);
+  const [guestOrderData, setGuestOrderData] = useState(null);
+
   // Redux selectors
   const selectedPaymentMethod = useSelector(selectSelectedPaymentMethod);
   const wireFormData = useSelector(selectWireFormData);
@@ -65,11 +71,30 @@ const CheckoutPage = () => {
   const selectedCourier = useSelector(selectSelectedCourier);
   const selectedShippingType = useSelector(selectShippingType);
   const isProcessing = useSelector(selectIsProcessing);
+  const guestUser = useSelector(selectGuestUser);
 
   // Cart selectors
   const cartItems = useSelector(selectCartItems);
   const cartTotalQuantity = useSelector(selectCartTotalQuantity);
   const cartTotalAmount = useSelector(selectCartTotalAmount);
+
+  // Helper function to handle order completion redirect
+  const handleOrderCompletionRedirect = (orderData, orderId) => {
+    if (guestUser?.isGuest) {
+      // For guest users, show modal confirmation
+      setGuestOrderData(orderData);
+      setShowGuestConfirmationModal(true);
+    } else {
+      // For logged-in users, use the regular order confirmation page
+      router.push(`/order-confirmation/${orderId}`);
+    }
+  };
+
+  // Handle guest modal close
+  const handleGuestModalClose = () => {
+    setShowGuestConfirmationModal(false);
+    setGuestOrderData(null);
+  };
 
   // Reset processing state when component mounts
   useEffect(() => {
@@ -145,10 +170,24 @@ const CheckoutPage = () => {
 
     const missingFields = [];
     Object.entries(requiredFields).forEach(([field, label]) => {
-      if (!shippingAddress[field] || String(shippingAddress[field]).trim() === '') {
+      let fieldValue;
+
+      // For guest users, use guest email instead of shipping address email
+      if (field === 'email' && guestUser?.isGuest) {
+        fieldValue = guestUser?.customerEmail;
+      } else {
+        fieldValue = shippingAddress[field];
+      }
+
+      if (!fieldValue || String(fieldValue).trim() === '') {
         missingFields.push(label);
       }
     });
+
+    // For guest users, also validate guest email is provided
+    if (guestUser?.isGuest && (!guestUser?.customerEmail || guestUser?.customerEmail.trim() === '')) {
+      missingFields.push('Guest Email');
+    }
 
     if (missingFields.length > 0) {
       toast.error('Missing Shipping Information', {
@@ -158,9 +197,10 @@ const CheckoutPage = () => {
       return false;
     }
 
-    // Email validation
+    // Email validation - check guest email if guest user, otherwise shipping email
+    const emailToValidate = guestUser?.isGuest ? guestUser?.customerEmail : shippingAddress.email;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(shippingAddress.email)) {
+    if (!emailRegex.test(emailToValidate)) {
       toast.error('Invalid Email', {
         description: 'Please enter a valid email address',
         duration: 4000,
@@ -268,9 +308,23 @@ const CheckoutPage = () => {
     ];
 
     for (const field of shippingRequired) {
-      if (!shippingAddress[field] || String(shippingAddress[field]).trim() === '') {
+      let fieldValue;
+
+      // For guest users, use guest email instead of shipping address email
+      if (field === 'email' && guestUser?.isGuest) {
+        fieldValue = guestUser?.customerEmail;
+      } else {
+        fieldValue = shippingAddress[field];
+      }
+
+      if (!fieldValue || String(fieldValue).trim() === '') {
         return false;
       }
+    }
+
+    // For guest users, also validate guest email is provided
+    if (guestUser?.isGuest && (!guestUser?.customerEmail || guestUser?.customerEmail.trim() === '')) {
+      return false;
     }
 
     // Check billing address if not same as shipping
@@ -328,9 +382,23 @@ const CheckoutPage = () => {
     ];
 
     for (const field of shippingRequired) {
-      if (!shippingAddress[field] || String(shippingAddress[field]).trim() === '') {
+      let fieldValue;
+
+      // For guest users, use guest email instead of shipping address email
+      if (field === 'email' && guestUser?.isGuest) {
+        fieldValue = guestUser?.customerEmail;
+      } else {
+        fieldValue = shippingAddress[field];
+      }
+
+      if (!fieldValue || String(fieldValue).trim() === '') {
         return false;
       }
+    }
+
+    // For guest users, also validate guest email is provided
+    if (guestUser?.isGuest && (!guestUser?.customerEmail || guestUser?.customerEmail.trim() === '')) {
+      return false;
     }
 
     // Check billing address if not same as shipping
@@ -381,8 +449,10 @@ const CheckoutPage = () => {
       missing.push('Shipping name');
     }
 
-    if (!shippingAddress.email) {
-      missing.push('Email address');
+    // Check email - use guest email if guest user, otherwise shipping email
+    const emailToCheck = guestUser?.isGuest ? guestUser?.customerEmail : shippingAddress.email;
+    if (!emailToCheck) {
+      missing.push(guestUser?.isGuest ? 'Guest email address' : 'Email address');
     }
 
     if (!shippingAddress.phone) {
@@ -675,7 +745,7 @@ const CheckoutPage = () => {
             }),
           });
 
-          router.push(`/order-confirmation/${orderId}`);
+          handleOrderCompletionRedirect(actualOrderData, orderId);
         } else {
           console.error('No order ID found in response data');
           dispatch(setCheckoutError('Order created but ID not found'));
@@ -808,7 +878,7 @@ const CheckoutPage = () => {
       // console.log('Square API Response Headers:', response.headers.get('content-type'));
 
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        console.log(`HTTP error! status: ${response.status}`);
       }
 
       const responseText = await response.text();
@@ -877,7 +947,7 @@ const CheckoutPage = () => {
           }),
         });
 
-        router.push(`/order-confirmation/${data?._id}`);
+        handleOrderCompletionRedirect(data, data?._id);
       } else {
         dispatch(setCheckoutError(message || 'Square payment failed'));
 
@@ -1034,7 +1104,7 @@ const CheckoutPage = () => {
           //   }),
           // });
 
-          router.push(`/order-confirmation/${orderId}`);
+          handleOrderCompletionRedirect(actualOrderData, orderId);
         } else {
           dispatch(setCheckoutError('Order created but ID not found'));
 
@@ -1213,6 +1283,14 @@ const CheckoutPage = () => {
         formData={wireFormData}
         onChange={handleWireFormChange}
         onSubmit={handleWireSubmit}
+      />
+
+      {/* Guest order confirmation modal */}
+      <GuestOrderConfirmationModal
+        isOpen={showGuestConfirmationModal}
+        onClose={handleGuestModalClose}
+        orderData={guestOrderData}
+        guestEmail={guestUser?.customerEmail}
       />
     </>
   );

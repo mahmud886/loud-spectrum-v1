@@ -34,14 +34,21 @@ export const POST = async (req) => {
 
   const baseUrl = process.env.NEXT_PUBLIC_API_URL;
 
-  const url = `${baseUrl}/api/orders`;
+  // const url = `${baseUrl}/api/orders`;
+  const url = `${baseUrl}/orders`;
+
+  // Prepare headers - only include Authorization if we have a token
+  const headers = {
+    'Content-Type': 'application/json',
+  };
+
+  if (authToken) {
+    headers.Authorization = authToken;
+  }
 
   const res = await fetch(url, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: authToken,
-    },
+    headers,
     body: serializedOrderPayload,
   });
 

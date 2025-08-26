@@ -111,6 +111,53 @@
       "billingOptionSame": "配送先住所と同じ",
       "billingOptionDifferent": "別の請求先住所を使用"
     },
+    "GuestUser": {
+      "title": "ゲストチェックアウト",
+      "description": "アカウントを作成せずに注文を完了するか、将来の迅速な注文のためにオプションでアカウントを作成してください。",
+      "customerEmailLabel": "メールアドレス*",
+      "customerEmailPlaceholder": "メールアドレスを入力してください",
+      "customerEmailHelp": "注文確認と更新のためにこのメールを使用します。",
+      "customerPasswordLabel": "パスワード（オプション）",
+      "customerPasswordPlaceholder": "アカウントを保存するためのパスワードを作成",
+      "customerPasswordHelpWithPassword": "このパスワードでアカウントが作成されます。",
+      "customerPasswordHelpWithoutPassword": "アカウントを作成せずにゲストとして注文するには空白のままにしてください。",
+      "guestCheckoutActiveTitle": "ゲストチェックアウト有効",
+      "guestCheckoutActiveWithAccount": "注文完了後に{email}のアカウントが作成されます。",
+      "guestCheckoutActiveWithoutAccount": "ゲストとして注文中 メール: {email}"
+    },
+    "GuestOrderConfirmation": {
+      "title": "注文確認完了！",
+      "thankYou": "ご注文ありがとうございます！",
+      "guestOrderTitle": "ゲスト注文確認",
+      "orderConfirmationSent": "注文確認メール送信先：",
+      "importantTitle": "重要：",
+      "orderConfirmationEmail": "注文確認メールがお客様のメールアドレスに送信されました",
+      "orderNumber": "注文番号：{orderCode}",
+      "contactSupport": "お問い合わせの際は注文番号をお伝えください",
+      "orderDetailsTitle": "注文詳細",
+      "orderNumberLabel": "注文番号",
+      "orderDateLabel": "注文日",
+      "paymentMethodLabel": "支払い方法",
+      "totalAmountLabel": "合計金額",
+      "orderItemsTitle": "注文商品（{count}点）",
+      "quantityLabel": "数量：{quantity}",
+      "orderSummaryTitle": "注文概要",
+      "subtotalLabel": "小計",
+      "shippingLabel": "送料",
+      "taxLabel": "税金",
+      "discountLabel": "割引",
+      "totalLabel": "合計",
+      "continueShoppingButton": "ショッピングを続ける",
+      "createAccountButton": "アカウント作成",
+      "whatsNextTitle": "次のステップは？",
+      "whatsNextDescription": "注文の進行状況に応じて、配送の更新をメールでお送りします。",
+      "supportContact": "ご質問がございましたら、注文番号をお伝えの上サポートにお問い合わせください：{orderCode}",
+      "paymentMethods": {
+        "COD": "代金引換",
+        "CARD": "クレジット/デビットカード",
+        "ACH/WT": "ACH/銀行振込"
+      }
+    },
     "CourierSelection": {
       "label": "配送業者を選択してください*",
       "fedex": {
@@ -265,6 +312,14 @@
         "cashOnDelivery": {
           "title": "ご注文を処理中...",
           "description": "代金引換でのご注文を処理しています。注文詳細の確認をお待ちください。"
+        },
+        "cardPayment": {
+          "title": "カード決済を処理中...",
+          "description": "カード決済を処理しています。支払い詳細の確認をお待ちください。"
+        },
+        "wireTransfer": {
+          "title": "銀行振込を処理中...",
+          "description": "銀行振込を処理しています。支払い詳細の確認をお待ちください。"
         },
         "default": {
           "title": "支払いを処理中...",

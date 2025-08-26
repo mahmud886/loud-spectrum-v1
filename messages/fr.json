@@ -111,6 +111,53 @@
       "billingOptionSame": "Identique à l'adresse de livraison",
       "billingOptionDifferent": "Utiliser une adresse de facturation différente"
     },
+    "GuestUser": {
+      "title": "Commande Invité",
+      "description": "Finalisez votre commande sans créer de compte, ou créez optionnellement un compte pour des commandes futures plus rapides.",
+      "customerEmailLabel": "Adresse E-mail*",
+      "customerEmailPlaceholder": "Entrez votre adresse e-mail",
+      "customerEmailHelp": "Nous utiliserons cet e-mail pour la confirmation de commande et les mises à jour.",
+      "customerPasswordLabel": "Mot de Passe (Optionnel)",
+      "customerPasswordPlaceholder": "Créez un mot de passe pour sauvegarder votre compte",
+      "customerPasswordHelpWithPassword": "Un compte sera créé pour vous avec ce mot de passe.",
+      "customerPasswordHelpWithoutPassword": "Laissez vide pour commander en tant qu'invité sans créer de compte.",
+      "guestCheckoutActiveTitle": "Commande Invité Active",
+      "guestCheckoutActiveWithAccount": "Un compte sera créé pour {email} après la finalisation réussie de la commande.",
+      "guestCheckoutActiveWithoutAccount": "Commande en tant qu'invité avec l'e-mail : {email}"
+    },
+    "GuestOrderConfirmation": {
+      "title": "Commande Confirmée !",
+      "thankYou": "Merci pour votre commande !",
+      "guestOrderTitle": "Confirmation de Commande Invité",
+      "orderConfirmationSent": "Confirmation de commande envoyée à :",
+      "importantTitle": "Important :",
+      "orderConfirmationEmail": "La confirmation de commande a été envoyée à votre e-mail",
+      "orderNumber": "Numéro de commande : {orderCode}",
+      "contactSupport": "Contactez le support avec votre numéro de commande pour toute demande",
+      "orderDetailsTitle": "Détails de la Commande",
+      "orderNumberLabel": "Numéro de Commande",
+      "orderDateLabel": "Date de Commande",
+      "paymentMethodLabel": "Méthode de Paiement",
+      "totalAmountLabel": "Montant Total",
+      "orderItemsTitle": "Articles de la Commande ({count})",
+      "quantityLabel": "Qté : {quantity}",
+      "orderSummaryTitle": "Résumé de la Commande",
+      "subtotalLabel": "Sous-total",
+      "shippingLabel": "Livraison",
+      "taxLabel": "Taxe",
+      "discountLabel": "Remise",
+      "totalLabel": "Total",
+      "continueShoppingButton": "Continuer les Achats",
+      "createAccountButton": "Créer un Compte",
+      "whatsNextTitle": "Et Maintenant ?",
+      "whatsNextDescription": "Nous vous enverrons des mises à jour de livraison par e-mail au fur et à mesure que votre commande progresse.",
+      "supportContact": "Pour toute question, contactez le support avec le numéro de commande : {orderCode}",
+      "paymentMethods": {
+        "COD": "Paiement à la Livraison",
+        "CARD": "Carte de Crédit/Débit",
+        "ACH/WT": "ACH/Virement Bancaire"
+      }
+    },
     "CourierSelection": {
       "label": "Choisissez votre transporteur*",
       "fedex": {
@@ -265,6 +312,14 @@
         "cashOnDelivery": {
           "title": "Traitement de votre commande...",
           "description": "Nous traitons votre commande avec paiement à la livraison. Veuillez patienter pendant que nous confirmons les détails de votre commande."
+        },
+        "cardPayment": {
+          "title": "Traitement du paiement par carte...",
+          "description": "Nous traitons votre paiement par carte. Veuillez patienter pendant que nous confirmons les détails de votre paiement."
+        },
+        "wireTransfer": {
+          "title": "Traitement du virement bancaire...",
+          "description": "Nous traitons votre virement bancaire. Veuillez patienter pendant que nous confirmons les détails de votre paiement."
         },
         "default": {
           "title": "Traitement du paiement...",

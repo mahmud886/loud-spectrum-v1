@@ -111,6 +111,53 @@
       "billingOptionSame": "Same as shipping address",
       "billingOptionDifferent": "Use a different billing address"
     },
+    "GuestUser": {
+      "title": "Guest Checkout",
+      "description": "Complete your order without creating an account, or optionally create an account for faster future checkouts.",
+      "customerEmailLabel": "Email Address*",
+      "customerEmailPlaceholder": "Enter your email address",
+      "customerEmailHelp": "We'll use this email for order confirmation and updates.",
+      "customerPasswordLabel": "Password (Optional)",
+      "customerPasswordPlaceholder": "Create a password to save your account",
+      "customerPasswordHelpWithPassword": "An account will be created for you with this password.",
+      "customerPasswordHelpWithoutPassword": "Leave blank to checkout as guest without creating an account.",
+      "guestCheckoutActiveTitle": "Guest Checkout Active",
+      "guestCheckoutActiveWithAccount": "An account will be created for {email} after successful order completion.",
+      "guestCheckoutActiveWithoutAccount": "Checking out as guest with email: {email}"
+    },
+    "GuestOrderConfirmation": {
+      "title": "Order Confirmed!",
+      "thankYou": "Thank you for your order!",
+      "guestOrderTitle": "Guest Order Confirmation",
+      "orderConfirmationSent": "Order confirmation sent to:",
+      "importantTitle": "Important:",
+      "orderConfirmationEmail": "Order confirmation has been sent to your email",
+      "orderNumber": "Order number: {orderCode}",
+      "contactSupport": "Contact support with your order number for inquiries",
+      "orderDetailsTitle": "Order Details",
+      "orderNumberLabel": "Order Number",
+      "orderDateLabel": "Order Date",
+      "paymentMethodLabel": "Payment Method",
+      "totalAmountLabel": "Total Amount",
+      "orderItemsTitle": "Order Items ({count})",
+      "quantityLabel": "Qty: {quantity}",
+      "orderSummaryTitle": "Order Summary",
+      "subtotalLabel": "Subtotal",
+      "shippingLabel": "Shipping",
+      "taxLabel": "Tax",
+      "discountLabel": "Discount",
+      "totalLabel": "Total",
+      "continueShoppingButton": "Continue Shopping",
+      "createAccountButton": "Create Account",
+      "whatsNextTitle": "What's Next?",
+      "whatsNextDescription": "We'll send you shipping updates via email as your order progresses.",
+      "supportContact": "For any questions, contact support with order number: {orderCode}",
+      "paymentMethods": {
+        "COD": "Cash on Delivery",
+        "CARD": "Credit/Debit Card",
+        "ACH/WT": "ACH/Wire Transfer"
+      }
+    },
     "CourierSelection": {
       "label": "Choose Your Courier*",
       "fedex": {
@@ -269,6 +316,14 @@
         "cashOnDelivery": {
           "title": "Processing Your Order...",
           "description": "We're processing your cash on delivery order. Please wait while we confirm your order details."
+        },
+        "cardPayment": {
+          "title": "Processing Card Payment...",
+          "description": "We're securely processing your card payment. Please wait and do not close this window."
+        },
+        "wireTransfer": {
+          "title": "Processing Wire Transfer...",
+          "description": "We're processing your wire transfer information. Please wait while we confirm your payment details."
         },
         "default": {
           "title": "Processing Payment...",

@@ -1,14 +1,17 @@
 'use client';
 
 import BillingAddress from '@/components/checkout/BillingAddress';
+import GuestUserForm from '@/components/checkout/GuestUserForm';
 import ShippingAddress from '@/components/checkout/ShippingAddress';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { selectCurrentUser } from '@/lib/store/slices/authSlice';
 import { selectBillingAddress, setSameAsShipping } from '@/lib/store/slices/checkoutSlice';
 import { useTranslations } from 'next-intl';
 import { useDispatch, useSelector } from 'react-redux';
 
 const ShippingAndBillingAddress = () => {
   const billingAddress = useSelector(selectBillingAddress);
+  const currentUser = useSelector(selectCurrentUser);
   const dispatch = useDispatch();
   const t = useTranslations('CheckoutPage.ShippingAndBillingAddress');
 
@@ -20,6 +23,9 @@ const ShippingAndBillingAddress = () => {
 
   return (
     <div className="space-y-8 p-4">
+      {/* Show guest user form if not logged in */}
+      {!currentUser?.id && <GuestUserForm />}
+
       <ShippingAddress />
 
       <div className="mx-auto w-full">

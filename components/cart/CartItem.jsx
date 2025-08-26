@@ -37,6 +37,11 @@ const CartItem = ({ item }) => {
                 {item?.flavor}
               </p>
             )}
+            {item?.category_name && (
+              <p className="text-umbra-100 bg-dank/30 rounded-[10px] px-2 py-1 font-sans text-[12px] leading-[120%] font-normal capitalize">
+                {item?.category_name}
+              </p>
+            )}
           </div>
         </div>
         <div className="flex w-full items-end justify-between gap-5">
@@ -100,7 +105,7 @@ const CartItem = ({ item }) => {
             </button>
           </div>
           <div>
-            <p className="text-umbra-100 font-sans text-[20px] leading-[120%] font-normal">
+            <p className="text-umbra-100 font-sans text-[18px] leading-[120%] font-normal">
               ${item?.totalPrice?.toFixed(2)}
             </p>
           </div>

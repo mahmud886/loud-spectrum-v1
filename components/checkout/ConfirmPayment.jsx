@@ -141,6 +141,18 @@ const ConfirmPayment = ({
         description: t('fullPageLoader.cashOnDelivery.description'),
       };
     }
+    if (selectedPaymentMethod === 'debit-credit-card') {
+      return {
+        title: t('fullPageLoader.cardPayment.title'),
+        description: t('fullPageLoader.cardPayment.description'),
+      };
+    }
+    if (selectedPaymentMethod === 'ach-wire-transfer') {
+      return {
+        title: t('fullPageLoader.wireTransfer.title'),
+        description: t('fullPageLoader.wireTransfer.description'),
+      };
+    }
     return {
       title: t('fullPageLoader.default.title'),
       description: t('fullPageLoader.default.description'),

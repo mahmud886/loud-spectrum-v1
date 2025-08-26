@@ -111,6 +111,53 @@
       "billingOptionSame": "Wie Versandadresse",
       "billingOptionDifferent": "Verwenden Sie eine andere Rechnungsadresse"
     },
+    "GuestUser": {
+      "title": "Gast-Checkout",
+      "description": "Schließen Sie Ihre Bestellung ab, ohne ein Konto zu erstellen, oder erstellen Sie optional ein Konto für schnellere zukünftige Bestellungen.",
+      "customerEmailLabel": "E-Mail-Adresse*",
+      "customerEmailPlaceholder": "Geben Sie Ihre E-Mail-Adresse ein",
+      "customerEmailHelp": "Wir verwenden diese E-Mail für die Bestellbestätigung und Updates.",
+      "customerPasswordLabel": "Passwort (Optional)",
+      "customerPasswordPlaceholder": "Erstellen Sie ein Passwort, um Ihr Konto zu speichern",
+      "customerPasswordHelpWithPassword": "Ein Konto wird für Sie mit diesem Passwort erstellt.",
+      "customerPasswordHelpWithoutPassword": "Lassen Sie das Feld leer, um als Gast zu bestellen, ohne ein Konto zu erstellen.",
+      "guestCheckoutActiveTitle": "Gast-Checkout Aktiv",
+      "guestCheckoutActiveWithAccount": "Ein Konto wird für {email} nach erfolgreichem Bestellabschluss erstellt.",
+      "guestCheckoutActiveWithoutAccount": "Als Gast bestellen mit E-Mail: {email}"
+    },
+    "GuestOrderConfirmation": {
+      "title": "Bestellung bestätigt!",
+      "thankYou": "Vielen Dank für Ihre Bestellung!",
+      "guestOrderTitle": "Gast-Bestellbestätigung",
+      "orderConfirmationSent": "Bestellbestätigung gesendet an:",
+      "importantTitle": "Wichtig:",
+      "orderConfirmationEmail": "Die Bestellbestätigung wurde an Ihre E-Mail gesendet",
+      "orderNumber": "Bestellnummer: {orderCode}",
+      "contactSupport": "Kontaktieren Sie den Support mit Ihrer Bestellnummer für Anfragen",
+      "orderDetailsTitle": "Bestelldetails",
+      "orderNumberLabel": "Bestellnummer",
+      "orderDateLabel": "Bestelldatum",
+      "paymentMethodLabel": "Zahlungsmethode",
+      "totalAmountLabel": "Gesamtbetrag",
+      "orderItemsTitle": "Bestellartikel ({count})",
+      "quantityLabel": "Menge: {quantity}",
+      "orderSummaryTitle": "Bestellübersicht",
+      "subtotalLabel": "Zwischensumme",
+      "shippingLabel": "Versand",
+      "taxLabel": "Steuer",
+      "discountLabel": "Rabatt",
+      "totalLabel": "Gesamt",
+      "continueShoppingButton": "Weiter einkaufen",
+      "createAccountButton": "Konto erstellen",
+      "whatsNextTitle": "Was kommt als Nächstes?",
+      "whatsNextDescription": "Wir senden Ihnen per E-Mail Updates zum Versandstatus, während Ihre Bestellung bearbeitet wird.",
+      "supportContact": "Bei Fragen wenden Sie sich mit der Bestellnummer an den Support: {orderCode}",
+      "paymentMethods": {
+        "COD": "Nachnahme",
+        "CARD": "Kredit-/Debitkarte",
+        "ACH/WT": "ACH/Banküberweisung"
+      }
+    },
     "CourierSelection": {
       "label": "Wählen Sie Ihren Kurier*",
       "fedex": {
@@ -265,6 +312,14 @@
         "cashOnDelivery": {
           "title": "Ihre Bestellung wird bearbeitet...",
           "description": "Wir bearbeiten Ihre Nachnahme-Bestellung. Bitte warten Sie, während wir Ihre Bestelldetails bestätigen."
+        },
+        "cardPayment": {
+          "title": "Kartenzahlung wird verarbeitet...",
+          "description": "Wir verarbeiten Ihre Kartenzahlung. Bitte warten Sie, während wir Ihre Zahlungsinformationen bestätigen."
+        },
+        "wireTransfer": {
+          "title": "Überweisung wird verarbeitet...",
+          "description": "Wir verarbeiten Ihre Überweisungsinformationen. Bitte warten Sie, während wir Ihre Zahlungsinformationen bestätigen."
         },
         "default": {
           "title": "Zahlung wird bearbeitet...",

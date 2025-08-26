@@ -44,12 +44,12 @@ export const POST = async (req) => {
       },
     });
 
-    console.log('Square Payment Result:', result);
+    // console.log('Square Payment Result:', result);
 
     const { id, orderId, locationId, approvedMoney, status, sourceType, createdAt } = result?.payment;
 
     if (status === 'COMPLETED') {
-      console.log('Payment completed successfully');
+      // console.log('Payment completed successfully');
 
       const orderPayload = {
         ...data,
@@ -71,12 +71,15 @@ export const POST = async (req) => {
       const serializedOrderPayload = JSON.stringify(orderPayload, serializeBigInt);
       console.log('Order payload:', serializedOrderPayload);
 
-      // Get auth token
+      // Get auth token - allow guest users
       const cookieStore = await cookies();
       const authToken = cookieStore.get('authToken')?.value;
 
-      if (!authToken) {
-        console.error('No auth token found in cookies');
+      // For guest users, we don't require auth token
+      const isGuestCheckout = data.guest_checkout === true;
+
+      if (!authToken && !isGuestCheckout) {
+        console.error('No auth token found in cookies and not guest checkout');
         return new Response(
           JSON.stringify({
             error: 'Authentication token not found',
@@ -107,25 +110,32 @@ export const POST = async (req) => {
         );
       }
 
-      const url = `${baseUrl}/api/orders${data?.products?.[0]?.product_type === 'Wholesale' ? '/wholesale' : ''}`;
-      console.log('Sending order to:', url);
+      // const url = `${baseUrl}/api/orders${data?.products?.[0]?.product_type === 'Wholesale' ? '/wholesale' : ''}`;
+      const url = `${baseUrl}/orders`;
+      // console.log('Sending order to:', url);
 
       try {
+        // Prepare headers - only include Authorization if we have a token
+        const headers = {
+          'Content-Type': 'application/json',
+        };
+
+        if (authToken) {
+          headers.Authorization = `${authToken}`;
+        }
+
         const res = await fetch(url, {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `${authToken}`,
-          },
+          headers,
           body: serializedOrderPayload,
         });
 
-        console.log('Order API Response Status:', res.status);
+        // console.log('Order API Response Status:', res.status);
 
         if (res.ok) {
           try {
             const orderRes = await res.json();
-            console.log('Order API Response:', orderRes);
+            // console.log('Order API Response:', orderRes);
 
             if (!orderRes.error) {
               const serializedData = JSON.stringify(orderRes, serializeBigInt);

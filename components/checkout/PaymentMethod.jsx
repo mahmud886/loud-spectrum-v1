@@ -14,6 +14,27 @@ const PaymentMethod = ({ value, onValueChange, isDisabled = false, getMissingFie
   // Get loading state from Redux
   const isLoading = useSelector((state) => state.checkout.isProcessing);
 
+  // Get shipping address to determine country
+  const shippingAddress = useSelector((state) => state.checkout.shippingAddress);
+
+  // Helper function to check if shipping address is in the US
+  const isUSAddress = () => {
+    const country = shippingAddress?.country?.toLowerCase();
+    return country === 'us' || country === 'usa';
+  };
+
+  // Filter payment methods based on country
+  const getAvailablePaymentMethods = () => {
+    let availableMethods = [...paymentMethods];
+
+    // Cash-on-delivery is only available for US addresses
+    if (!isUSAddress()) {
+      availableMethods = availableMethods.filter((method) => method !== 'cash-on-delivery');
+    }
+
+    return availableMethods;
+  };
+
   const handleChange = (selectedValue) => {
     // If disabled and trying to select a new payment method, show missing fields message
     if (isDisabled && selectedValue && selectedValue !== value) {
@@ -85,7 +106,7 @@ const PaymentMethod = ({ value, onValueChange, isDisabled = false, getMissingFie
       )} */}
 
       <div className="grid gap-4 sm:grid-cols-1 xl:grid-cols-2">
-        {paymentMethods.map((methodKey) => {
+        {getAvailablePaymentMethods().map((methodKey) => {
           const isChecked = value === methodKey;
           // Only disable payment method selection if it's not already selected and required fields are missing
           const isMethodDisabled = isLoading || (isDisabled && !isChecked);

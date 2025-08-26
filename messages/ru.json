@@ -112,6 +112,53 @@
       "billingOptionSame": "Тот же, что и адрес доставки",
       "billingOptionDifferent": "Использовать другой адрес для выставления счета"
     },
+    "GuestUser": {
+      "title": "Оформление заказа гостем",
+      "description": "Завершите заказ без создания аккаунта или дополнительно создайте аккаунт для более быстрых будущих заказов.",
+      "customerEmailLabel": "Адрес электронной почты*",
+      "customerEmailPlaceholder": "Введите ваш адрес электронной почты",
+      "customerEmailHelp": "Мы будем использовать этот email для подтверждения заказа и обновлений.",
+      "customerPasswordLabel": "Пароль (Необязательно)",
+      "customerPasswordPlaceholder": "Создайте пароль для сохранения вашего аккаунта",
+      "customerPasswordHelpWithPassword": "Аккаунт будет создан для вас с этим паролем.",
+      "customerPasswordHelpWithoutPassword": "Оставьте пустым для оформления заказа как гость без создания аккаунта.",
+      "guestCheckoutActiveTitle": "Оформление заказа гостем активно",
+      "guestCheckoutActiveWithAccount": "Аккаунт будет создан для {email} после успешного завершения заказа.",
+      "guestCheckoutActiveWithoutAccount": "Оформление заказа как гость с email: {email}"
+    },
+    "GuestOrderConfirmation": {
+      "title": "Заказ подтвержден!",
+      "thankYou": "Спасибо за ваш заказ!",
+      "guestOrderTitle": "Подтверждение заказа гостя",
+      "orderConfirmationSent": "Подтверждение заказа отправлено на:",
+      "importantTitle": "Важно:",
+      "orderConfirmationEmail": "Подтверждение заказа было отправлено на ваш email",
+      "orderNumber": "Номер заказа: {orderCode}",
+      "contactSupport": "Обращайтесь в поддержку с номером заказа для запросов",
+      "orderDetailsTitle": "Детали заказа",
+      "orderNumberLabel": "Номер заказа",
+      "orderDateLabel": "Дата заказа",
+      "paymentMethodLabel": "Способ оплаты",
+      "totalAmountLabel": "Общая сумма",
+      "orderItemsTitle": "Товары заказа ({count})",
+      "quantityLabel": "Кол-во: {quantity}",
+      "orderSummaryTitle": "Итоги заказа",
+      "subtotalLabel": "Промежуточный итог",
+      "shippingLabel": "Доставка",
+      "taxLabel": "Налог",
+      "discountLabel": "Скидка",
+      "totalLabel": "Итого",
+      "continueShoppingButton": "Продолжить покупки",
+      "createAccountButton": "Создать аккаунт",
+      "whatsNextTitle": "Что дальше?",
+      "whatsNextDescription": "Мы будем отправлять вам обновления о доставке по электронной почте по мере обработки вашего заказа.",
+      "supportContact": "По любым вопросам обращайтесь в поддержку с номером заказа: {orderCode}",
+      "paymentMethods": {
+        "COD": "Наложенный платеж",
+        "CARD": "Кредитная/Дебетовая карта",
+        "ACH/WT": "ACH/Банковский перевод"
+      }
+    },
     "CourierSelection": {
       "label": "Выберите курьера*",
       "fedex": {
@@ -267,6 +314,14 @@
         "cashOnDelivery": {
           "title": "Обработка вашего заказа...",
           "description": "Мы обрабатываем ваш заказ с наложенным платежом. Пожалуйста, подождите, пока мы подтверждаем детали заказа."
+        },
+        "cardPayment": {
+          "title": "Обработка платежа картой...",
+          "description": "Мы обрабатываем ваш платеж картой. Пожалуйста, подождите, пока мы подтверждаем детали платежа."
+        },
+        "wireTransfer": {
+          "title": "Обработка банковского перевода...",
+          "description": "Мы обрабатываем ваш банковский перевод. Пожалуйста, подождите, пока мы подтверждаем детали платежа."
         },
         "default": {
           "title": "Обработка платежа...",

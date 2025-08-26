@@ -14,9 +14,9 @@ const FullPageLoader = ({
   if (!isVisible) return null;
 
   return (
-    <div className="bg-opacity-50 fixed inset-0 z-[9999] flex items-center justify-center bg-black backdrop-blur-sm">
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/20 backdrop-blur-lg">
       {/* Loading Container */}
-      <div className="mx-4 max-w-md rounded-lg bg-white p-8 text-center shadow-2xl">
+      <div className="flex h-screen w-full flex-col items-center justify-center rounded-lg bg-white p-8 text-center shadow-2xl">
         {/* Logo */}
         {showLogo && (
           <div className="mb-6">

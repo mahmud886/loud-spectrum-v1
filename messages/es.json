@@ -111,6 +111,53 @@
       "billingOptionSame": "Misma que la dirección de envío",
       "billingOptionDifferent": "Usar una dirección de facturación diferente"
     },
+    "GuestUser": {
+      "title": "Compra como Invitado",
+      "description": "Complete su pedido sin crear una cuenta, o cree opcionalmente una cuenta para futuros pedidos más rápidos.",
+      "customerEmailLabel": "Dirección de Correo*",
+      "customerEmailPlaceholder": "Ingrese su dirección de correo electrónico",
+      "customerEmailHelp": "Usaremos este correo para la confirmación del pedido y actualizaciones.",
+      "customerPasswordLabel": "Contraseña (Opcional)",
+      "customerPasswordPlaceholder": "Cree una contraseña para guardar su cuenta",
+      "customerPasswordHelpWithPassword": "Se creará una cuenta para usted con esta contraseña.",
+      "customerPasswordHelpWithoutPassword": "Deje en blanco para comprar como invitado sin crear una cuenta.",
+      "guestCheckoutActiveTitle": "Compra de Invitado Activa",
+      "guestCheckoutActiveWithAccount": "Se creará una cuenta para {email} después de completar el pedido exitosamente.",
+      "guestCheckoutActiveWithoutAccount": "Comprando como invitado con correo: {email}"
+    },
+    "GuestOrderConfirmation": {
+      "title": "¡Pedido Confirmado!",
+      "thankYou": "¡Gracias por su pedido!",
+      "guestOrderTitle": "Confirmación de Pedido de Invitado",
+      "orderConfirmationSent": "Confirmación de pedido enviada a:",
+      "importantTitle": "Importante:",
+      "orderConfirmationEmail": "La confirmación del pedido ha sido enviada a su correo electrónico",
+      "orderNumber": "Número de pedido: {orderCode}",
+      "contactSupport": "Contacte al soporte con su número de pedido para consultas",
+      "orderDetailsTitle": "Detalles del Pedido",
+      "orderNumberLabel": "Número de Pedido",
+      "orderDateLabel": "Fecha del Pedido",
+      "paymentMethodLabel": "Método de Pago",
+      "totalAmountLabel": "Monto Total",
+      "orderItemsTitle": "Artículos del Pedido ({count})",
+      "quantityLabel": "Cant: {quantity}",
+      "orderSummaryTitle": "Resumen del Pedido",
+      "subtotalLabel": "Subtotal",
+      "shippingLabel": "Envío",
+      "taxLabel": "Impuesto",
+      "discountLabel": "Descuento",
+      "totalLabel": "Total",
+      "continueShoppingButton": "Continuar Comprando",
+      "createAccountButton": "Crear Cuenta",
+      "whatsNextTitle": "¿Qué Sigue?",
+      "whatsNextDescription": "Le enviaremos actualizaciones de envío por correo electrónico mientras progresa su pedido.",
+      "supportContact": "Para cualquier pregunta, contacte al soporte con el número de pedido: {orderCode}",
+      "paymentMethods": {
+        "COD": "Pago Contra Entrega",
+        "CARD": "Tarjeta de Crédito/Débito",
+        "ACH/WT": "ACH/Transferencia Bancaria"
+      }
+    },
     "CourierSelection": {
       "label": "Elija su mensajero*",
       "fedex": {
@@ -264,6 +311,14 @@
         "cashOnDelivery": {
           "title": "Procesando su pedido...",
           "description": "Estamos procesando su pedido contra reembolso. Por favor espere mientras confirmamos los detalles de su pedido."
+        },
+        "cardPayment": {
+          "title": "Procesando pago con tarjeta...",
+          "description": "Estamos procesando su pago con tarjeta. Por favor espere y no cierre esta ventana."
+        },
+        "wireTransfer": {
+          "title": "Procesando transferencia bancaria...",
+          "description": "Estamos procesando la información de su transferencia bancaria. Por favor espere mientras confirmamos los detalles de su pago."
         },
         "default": {
           "title": "Procesando pago...",
