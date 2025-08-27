@@ -7,7 +7,6 @@ import {
   Head,
   Hr,
   Html,
-  Img,
   Preview,
   Row,
   Section,
@@ -294,7 +293,7 @@ const WholesaleRegistrationUnderReviewEmail = ({ registrationData }) => {
 
             {/* Footer */}
             <Section className="rounded-md bg-gray-100 p-4">
-              <Section className="mb-4 text-center">
+              {/* <Section className="mb-4 text-center">
                 <Img
                   src={`${baseUrl}/assets/svgs/logos/logo-dark.svg`}
                   alt="Loud Spectrum Logo"
@@ -302,6 +301,11 @@ const WholesaleRegistrationUnderReviewEmail = ({ registrationData }) => {
                   height="45"
                   className="mx-auto"
                 />
+              </Section> */}
+              <Section className="mb-4 text-center">
+                <Text className="bg-[linear-gradient(90deg,_#101820_21.53%,_#0077C8_44.13%,_#C0AEE7_74.27%,_#DDDAE8_107.64%)] bg-clip-text text-3xl font-bold text-transparent">
+                  LOUD SPECTRUM
+                </Text>
               </Section>
               <Text className="m-0 text-center text-sm text-gray-700">
                 Loudspectrum.com <br />
