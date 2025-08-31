@@ -17,8 +17,8 @@ const OrderASample = () => {
                 src="/assets/images/order-sample-stack.png"
                 alt="order-sample"
                 width={522}
-                height={474}
-                className="w-full object-cover lg:h-[373px] lg:w-[522px] xl:h-[582px] xl:w-[522px]"
+                height={582}
+                className="w-full object-cover xl:h-[582px] xl:w-[522px]"
               />
             </div>
             <div className="flex flex-col space-y-2.5">
@@ -61,7 +61,7 @@ const OrderASample = () => {
               src="/assets/images/order-sample-stack.png"
               alt="order-sample"
               width={522}
-              height={474}
+              height={582}
               className="h-[582px] w-[522px] object-cover"
             />
           </div>

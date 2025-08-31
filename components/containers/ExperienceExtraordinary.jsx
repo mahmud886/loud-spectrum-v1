@@ -15,14 +15,14 @@ const ExperienceExtraordinary = () => {
         </div>
       </div>
       <div className="bg-umbra-100">
-        <div className="mx-auto w-[1440px]">
-          <div className="relative hidden items-center justify-center xl:flex">
+        <div className="container w-full">
+          <div className="relative hidden items-center justify-center lg:flex xl:flex">
             {/* Background image */}
             <Image
               src="/assets/svgs/pattern-extra.svg"
               width={1440}
               height={1235}
-              className="h-[900px] w-[1440px] object-cover"
+              className="h-[1100px] w-[1440px] object-cover"
               alt="extra-ordinary-pattern"
             />
             {/* Centered foreground image */}
@@ -84,8 +84,8 @@ const ExperienceExtraordinary = () => {
           </div>
         </div>
       </div>
-      <div className="bg-umbra-100 container">
-        <div className="flex justify-center xl:hidden">
+      <div className="bg-umbra-100 px-[20px]">
+        <div className="flex justify-center lg:hidden xl:hidden">
           <Image
             src="/assets/videos/extraordinary.gif"
             width={373}
@@ -94,7 +94,7 @@ const ExperienceExtraordinary = () => {
             alt="extra-ordinary"
           />
         </div>
-        <div className="xl:hidden">
+        <div className="pb-20 lg:hidden xl:hidden">
           <div className="flex flex-col gap-6">
             {extraordinary.map((item, index) => (
               <div key={index} className="flex flex-col space-y-2.5 lg:space-y-4 xl:space-y-4">
@@ -110,14 +110,27 @@ const ExperienceExtraordinary = () => {
           </div>
         </div>
       </div>
-      <div className="bg-umbra-100 mx-auto w-full xl:w-[1440px]">
-        <Image
+      <div className="bg-umbra-100 relative mx-auto w-full">
+        {/* <Image
           src="/assets/svgs/mimosa-bottom-mask.svg"
           width={1440}
           height={195}
           className="h-[50px] w-[450px] object-cover xl:h-[195px] xl:w-[1440px]"
           alt="extra-ordinary"
-        />
+        /> */}
+        <div className="absolute bottom-0 left-0 w-screen">
+          <div className="w-full">
+            <div className="flex h-[25px] lg:h-[100px] xl:h-[100px]">
+              <div className="w-[70%] bg-transparent"></div>
+              <div className="w-[30%] bg-white"></div>
+            </div>
+            <div className="flex h-[25px] lg:h-[100px] xl:h-[100px]">
+              <div className="w-[10%] bg-white"></div>
+              <div className="w-[35%] bg-transparent"></div>
+              <div className="w-[55%] bg-white"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );

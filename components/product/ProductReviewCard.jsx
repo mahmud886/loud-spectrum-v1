@@ -18,7 +18,7 @@ const ProductReviewCard = ({ review }) => {
               ))}
             </span>
           </div>
-          <div className="max-w-[95%]">
+          <div className="max-w-[85%]">
             <p className="text-umbra-100 font-mono text-[20px] leading-[140%] font-normal">{reviewText}</p>
           </div>
         </div>

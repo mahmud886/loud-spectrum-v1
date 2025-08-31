@@ -1473,5 +1473,9 @@
         "account": "Mein Konto"
       }
     }
+  },
+  "Testimonials": {
+    "testimonials": "Erfahrungsberichte",
+    "testimonialTitle": "Lernen Sie die Hersteller, Einzelhändler und Formulierer kennen, die das Beste verlangen—und wissen, dass wir liefern."
   }
 }

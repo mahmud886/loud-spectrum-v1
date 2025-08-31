@@ -1,4 +1,5 @@
 import Hero from '@/components/Hero';
+import CustomerTestimonials from '@/components/containers/CustomerTestimonials';
 import ExperienceExtraordinary from '@/components/containers/ExperienceExtraordinary';
 import ExploreTerpeneGuide from '@/components/containers/ExploreTerpeneGuide';
 import ExploreTheSpectrum from '@/components/containers/ExploreTheSpectrum';
@@ -30,6 +31,7 @@ export default function Home() {
       <TransitionAnimation />
       <ShopByMood />
       <ExperienceExtraordinary />
+      <CustomerTestimonials />
       <OrderASample />
     </div>
   );

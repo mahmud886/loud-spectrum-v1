@@ -10,7 +10,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-umbra-100 text-white xl:pt-[80px] xl:pb-[50px]">
-      <div className="container px-5 lg:px-[40px] xl:px-[40px] xl:px-[80px] 2xl:px-[320px]">
+      <div className="container px-5 md:px-[20px] lg:px-[40px] xl:px-[80px]">
         {/*for desktop*/}
         <div className="hidden flex-col justify-center space-y-[150px] xl:flex">
           <div className="mx-auto grid w-full grid-cols-1 gap-8 xl:grid-cols-2">
@@ -146,7 +146,7 @@ const Footer = () => {
         {/*for mobile*/}
         <div className="visible mx-auto w-full xl:hidden">
           <div className="flex flex-col gap-[80px] pt-[80px] pb-5">
-            <div className="flex flex-col items-center justify-between">
+            <div className="flex flex-col items-start justify-between">
               <div className="flex flex-col justify-between gap-10 pb-5">
                 <img src="/footer-logo.svg" alt="" />
                 <div className="flex space-x-6">

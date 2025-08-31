@@ -51,7 +51,7 @@ const ProductLineCard = ({ productVariant = 'Default' }) => {
               hover: { opacity: 1 },
             }}
             transition={{ duration: 0.2 }}
-            className="outline-button-white border-umbra-10 group-hover:border-white-100 relative h-[44px] w-full cursor-pointer overflow-hidden rounded-full border px-6 py-3 opacity-100 transition-all duration-200 ease-in-out group-hover:text-white lg:h-[37px] lg:max-w-1/2 lg:min-w-[150px] xl:h-[37px] xl:max-w-1/2 xl:min-w-[150px]"
+            className="outline-button-white border-umbra-10 group-hover:border-white-100 relative h-[44px] w-full min-w-[150px] cursor-pointer overflow-hidden rounded-full border px-6 py-3 opacity-100 transition-all duration-200 ease-in-out group-hover:text-white lg:h-[37px] lg:max-w-full lg:min-w-[150px] xl:h-[37px] xl:max-w-full xl:min-w-[150px]"
           >
             <motion.span
               variants={{
@@ -59,7 +59,7 @@ const ProductLineCard = ({ productVariant = 'Default' }) => {
                 hover: { opacity: 0 },
               }}
               transition={{ duration: 0.2 }}
-              className="absolute inset-0 flex items-center justify-center gap-2"
+              className="absolute inset-0 flex items-center justify-center gap-2 whitespace-nowrap"
             >
               {t('buttons.shopTheLine')} <ArrowRight />
             </motion.span>

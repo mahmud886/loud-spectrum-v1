@@ -1478,5 +1478,9 @@
         "account": "My Account"
       }
     }
+  },
+  "Testimonials": {
+    "testimonials": "Testimonials",
+    "testimonialTitle": "Meet the manufacturers, retailers, and formulators who demand the best—and know we deliver."
   }
 }

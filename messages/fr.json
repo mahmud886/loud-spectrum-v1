@@ -1474,5 +1474,9 @@
         "account": "Mon Compte"
       }
     }
+  },
+  "Testimonials": {
+    "testimonials": "Témoignages",
+    "testimonialTitle": "Rencontrez les fabricants, détaillants et formulateurs qui exigent le meilleur—et savent que nous livrons."
   }
 }
