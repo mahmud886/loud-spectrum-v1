@@ -27,7 +27,7 @@ const TerpeneChartHero = () => {
             alt="Background"
             width={1280}
             height={631}
-            className="absolute top-0 left-1/2 z-0 h-[450px] w-full -translate-x-1/2 object-cover xl:h-[631px] xl:w-[1280px]"
+            className="absolute top-0 left-1/2 z-0 h-[450px] w-full -translate-x-1/2 object-cover xl:h-[631px] xl:w-full"
             priority
           />
           {/* Wave Image Overlay at Bottom Center */}
