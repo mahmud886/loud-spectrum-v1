@@ -464,3 +464,27 @@
 .blog-content img {
   @apply my-6 rounded-lg;
 }
+
+/* Tidio Chat Widget - Left Side Positioning */
+#tidio-chat-iframe {
+  left: 20px !important;
+  right: auto !important;
+}
+
+#tidio-chat {
+  left: 20px !important;
+  right: auto !important;
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+  #tidio-chat-iframe {
+    left: 10px !important;
+    right: auto !important;
+  }
+
+  #tidio-chat {
+    left: 10px !important;
+    right: auto !important;
+  }
+}

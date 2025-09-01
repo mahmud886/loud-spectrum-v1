@@ -198,6 +198,7 @@ const OrderDetailsPage = ({ orderId, initialOrderData = null }) => {
                     <th className="text-umbra-100 px-4 py-2 text-center font-sans text-[16px] font-normal">Volume</th>
                     <th className="text-umbra-100 px-4 py-2 text-center font-sans text-[16px] font-normal">Flavor</th>
                     <th className="text-umbra-100 px-4 py-2 text-center font-sans text-[16px] font-normal">Type</th>
+                    <th className="text-umbra-100 px-4 py-2 text-center font-sans text-[16px] font-normal">Remarks</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -252,6 +253,9 @@ const OrderDetailsPage = ({ orderId, initialOrderData = null }) => {
                           Regular
                         </button>
                       </td>
+                      <td className="text-umbra-100 px-4 py-2 text-center font-sans text-[14px] font-normal">
+                        {item?.remarks || 'N/A'}
+                      </td>
                     </tr>
                   ))}
                   {orderDetails?.ws_products?.map((item, index) => (
@@ -293,6 +297,9 @@ const OrderDetailsPage = ({ orderId, initialOrderData = null }) => {
                         <button className="text-umbra-100 bg-alive/10 rounded-full px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal capitalize">
                           Wholesale
                         </button>
+                      </td>
+                      <td className="text-umbra-100 px-4 py-2 text-center font-sans text-[14px] font-normal">
+                        {item?.remarks || 'N/A'}
                       </td>
                     </tr>
                   ))}

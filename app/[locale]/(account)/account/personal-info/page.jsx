@@ -5,6 +5,7 @@ import { validateUserInfo } from '@/helpers/validations/user-info-validation';
 import { selectCurrentUser, setCredentials } from '@/lib/store/slices/authSlice';
 import { motion } from 'framer-motion';
 import { Edit } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'sonner';
@@ -20,6 +21,8 @@ export default function PersonalInfoPage() {
     email: '',
   });
   const [errors, setErrors] = useState({});
+
+  const t = useTranslations('PersonalInfoPage');
 
   useEffect(() => {
     if (userInformation) {
@@ -86,7 +89,7 @@ export default function PersonalInfoPage() {
   return (
     <div>
       <div className="mb-5">
-        <h2 className="text-umbra-100 font-mono text-[24px] leading-[130%] font-normal">Personal Information</h2>
+        <h2 className="text-umbra-100 font-mono text-[24px] leading-[130%] font-normal">{t('title')}</h2>
       </div>
 
       <div className="relative min-h-[300px] w-full rounded-lg bg-white p-6 shadow-sm">
@@ -129,7 +132,7 @@ export default function PersonalInfoPage() {
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.3, delay: 0.1 }}
                 >
-                  <span className="text-umbra-100 font-mono text-[18px] leading-[130%] font-normal">Phone:</span>
+                  <span className="text-umbra-100 font-mono text-[18px] leading-[130%] font-normal">{t('phone')}:</span>
                   <p className="text-umbra-100 font-mono text-[16px] leading-[130%] font-normal">{formData.phone}</p>
                 </motion.div>
                 <motion.div
@@ -138,7 +141,7 @@ export default function PersonalInfoPage() {
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.3, delay: 0.2 }}
                 >
-                  <span className="text-umbra-100 font-mono text-[18px] leading-[130%] font-normal">Email:</span>
+                  <span className="text-umbra-100 font-mono text-[18px] leading-[130%] font-normal">{t('email')}:</span>
                   <p className="text-umbra-100 font-mono text-[16px] leading-[130%] font-normal">{formData.email}</p>
                 </motion.div>
               </>
@@ -155,7 +158,7 @@ export default function PersonalInfoPage() {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    placeholder="Full Name"
+                    placeholder={t('name')}
                     className={`bg-umbra-5 placeholder:text-umbra-100 hover:bg-umbra-10 min-h-[48px] w-full rounded-[10px] px-4 py-2 font-mono text-[16px] leading-[140%] font-normal ${
                       errors.name ? 'border border-red-500' : ''
                     }`}
@@ -182,7 +185,7 @@ export default function PersonalInfoPage() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    placeholder="Phone"
+                    placeholder={t('phone')}
                     className={`bg-umbra-5 placeholder:text-umbra-100 hover:bg-umbra-10 min-h-[48px] w-full rounded-[10px] px-4 py-2 font-mono text-[16px] leading-[140%] font-normal ${
                       errors.phone ? 'border border-red-500' : ''
                     }`}
@@ -217,7 +220,7 @@ export default function PersonalInfoPage() {
                     transition={{ delay: 0.3 }}
                     className="text-umbra-60 text-sm"
                   >
-                    Email cannot be changed
+                    {t('emailChanges')}
                   </motion.span>
                 </motion.div>
 
@@ -234,7 +237,7 @@ export default function PersonalInfoPage() {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    Cancel
+                    {t('cancel')}
                   </motion.button>
                   <motion.button
                     onClick={handleSave}
@@ -243,7 +246,7 @@ export default function PersonalInfoPage() {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    {isLoading ? 'Saving...' : 'Save'}
+                    {isLoading ? t('saving') : t('save')}
                   </motion.button>
                 </motion.div>
               </>

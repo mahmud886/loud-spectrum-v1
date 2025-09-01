@@ -18,7 +18,6 @@ async function OrderDetailsContent({ orderId }) {
 
   // Fetch order data on server side
   const order = await getOrderById(orderId, authToken);
-
   // Handle different error cases
   if (order.authError) {
     // Let the client component handle auth redirect

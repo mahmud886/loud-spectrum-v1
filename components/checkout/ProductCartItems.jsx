@@ -21,30 +21,35 @@ const ProductCartItems = ({ item }) => {
         <div className="flex flex-col items-start justify-between gap-1">
           <h6 className="text-umbra-100 font-sans text-[18px] leading-[120%] font-normal">{item.name}</h6>
           <div className="flex items-center gap-2">
-            <p className="bg-umbra-5 text-umbra-100 rounded-[10px] px-2 py-1 font-sans text-[12px] leading-[120%] font-normal">
+            <p className="bg-umbra-5 text-umbra-100 rounded-[10px] px-2 py-1 font-sans text-[10px] leading-[120%] font-normal whitespace-nowrap">
               {item.selectedVolume}
             </p>
             {item?.isRegular && (
-              <p className="text-umbra-100 bg-alive/50 rounded-[10px] px-2 py-1 font-sans text-[12px] leading-[120%] font-normal capitalize">
+              <p className="text-umbra-100 bg-alive/50 rounded-[10px] px-2 py-1 font-sans text-[10px] leading-[120%] font-normal whitespace-nowrap capitalize">
                 Regular
               </p>
             )}
             {item?.isWholesale && (
-              <p className="text-umbra-100 rounded-[10px] bg-red-100 px-2 py-1 font-sans text-[12px] leading-[120%] font-normal capitalize">
+              <p className="text-umbra-100 rounded-[10px] bg-red-100 px-2 py-1 font-sans text-[10px] leading-[120%] font-normal whitespace-nowrap capitalize">
                 Wholesale
               </p>
             )}
             {item?.flavor && (
-              <p className="text-umbra-100 bg-dank/30 rounded-[10px] px-2 py-1 font-sans text-[12px] leading-[120%] font-normal capitalize">
+              <p className="text-umbra-100 bg-dank/10 rounded-[10px] px-2 py-1 font-sans text-[10px] leading-[120%] font-normal whitespace-nowrap capitalize">
                 {item?.flavor}
               </p>
             )}
             {item?.category_name && (
-              <p className="text-umbra-100 bg-classic/30 rounded-[10px] px-2 py-1 font-sans text-[12px] leading-[120%] font-normal capitalize">
+              <p className="text-umbra-100 bg-classic/10 rounded-[10px] px-2 py-1 font-sans text-[10px] leading-[120%] font-normal whitespace-nowrap capitalize">
                 {item?.category_name}
               </p>
             )}
           </div>
+          {item?.remarks && (
+            <p className="text-umbra-100 bg-classic/10 rounded-[10px] px-2 py-1 font-sans text-[10px] leading-[120%] font-normal capitalize">
+              {item?.remarks}
+            </p>
+          )}
         </div>
         <div className="flex w-full items-end justify-between gap-5">
           <div className="mt-2 flex items-center gap-2">

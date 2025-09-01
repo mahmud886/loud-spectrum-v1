@@ -14,6 +14,7 @@ import {
 } from '@/lib/store/slices/authSlice';
 import { deleteOrderAddressById } from '@/services/delete-order-address-by-id';
 import { Edit } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'sonner';
@@ -23,6 +24,7 @@ export default function UserAddressBook({ userAddressBook }) {
   const authToken = useAuthToken();
   const addresses = useSelector(selectUserAddresses) || [];
   const [isLoading, setIsLoading] = useState(false);
+  const t = useTranslations('UserAddressBook');
 
   // Initialize addresses from props if Redux store is empty
   useEffect(() => {
@@ -87,13 +89,13 @@ export default function UserAddressBook({ userAddressBook }) {
 
         // Refresh addresses from server to ensure UI is in sync
         await refreshAddresses();
-        toast.success(checked ? 'Address set as default' : 'Address removed from default');
+        toast.success(checked ? t('addressSetAsDefault') : t('addressRemovedFromDefault'));
       } else {
-        toast.error(result.message || 'Failed to update address status');
+        toast.error(result.message || t('failedToUpdate'));
       }
     } catch (error) {
       console.error('Error updating address:', error);
-      toast.error('An error occurred while updating the address status');
+      toast.error(t('errorUpdatingAddress'));
     } finally {
       setIsLoading(false);
     }
@@ -106,7 +108,7 @@ export default function UserAddressBook({ userAddressBook }) {
       // Show confirmation dialog only on client side
       let confirmed = false;
       if (typeof window !== 'undefined') {
-        confirmed = window.confirm('Are you sure you want to delete this address? This action cannot be undone.');
+        confirmed = window.confirm(t('deleteConfirmation'));
       }
 
       if (!confirmed) {
@@ -123,13 +125,13 @@ export default function UserAddressBook({ userAddressBook }) {
 
         // Refresh addresses from server to ensure UI is in sync
         await refreshAddresses();
-        toast.success('Address deleted successfully');
+        toast.success(t('addressDeleted'));
       } else {
-        toast.error(result.message || 'Failed to delete address');
+        toast.error(result.message || t('failedToDelete'));
       }
     } catch (error) {
       console.error('Error deleting address:', error);
-      toast.error('An error occurred while deleting the address');
+      toast.error(t('errorDeletingAddress'));
     } finally {
       setIsLoading(false);
     }
@@ -159,9 +161,9 @@ export default function UserAddressBook({ userAddressBook }) {
   if (hasError) {
     return (
       <div className="p-4">
-        <h1 className="text-umbra-100 mb-4 font-sans text-[24px] font-normal">Address Book</h1>
+        <h1 className="text-umbra-100 mb-4 font-sans text-[24px] font-normal">{t('title')}</h1>
         <div className="py-8 text-center">
-          <p className="text-red-500">Something went wrong loading your addresses. Please try refreshing the page.</p>
+          <p className="text-red-500">{t('errorMessage')}</p>
           <button
             onClick={() => {
               if (typeof window !== 'undefined') {
@@ -170,7 +172,7 @@ export default function UserAddressBook({ userAddressBook }) {
             }}
             className="main-button-black mt-4 rounded-[10px] px-6 py-2"
           >
-            Refresh Page
+            {t('refreshPage')}
           </button>
         </div>
       </div>
@@ -180,7 +182,7 @@ export default function UserAddressBook({ userAddressBook }) {
   return (
     <div>
       <div className="flex w-full items-center justify-between gap-2 p-4 xl:p-0">
-        <h1 className="text-umbra-100 font-sans text-[24px] font-normal">Address Book</h1>
+        <h1 className="text-umbra-100 font-sans text-[24px] font-normal">{t('title')}</h1>
         <AddAddressDialog onSave={handleSaveAddress} />
       </div>
 
@@ -220,31 +222,33 @@ export default function UserAddressBook({ userAddressBook }) {
                 </div>
                 <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 xl:grid-cols-3">
                   <p>
-                    <span className="font-semibold">Name:</span> {address.first_name || ''} {address.last_name || ''}
+                    <span className="font-semibold">{t('addressFields.name')}:</span> {address.first_name || ''}{' '}
+                    {address.last_name || ''}
                   </p>
                   <p>
-                    <span className="font-semibold">Email:</span> {address.email || 'N/A'}
+                    <span className="font-semibold">{t('addressFields.email')}:</span> {address.email || 'N/A'}
                   </p>
                   <p>
-                    <span className="font-semibold">Phone:</span> {address.phone || 'N/A'}
+                    <span className="font-semibold">{t('addressFields.phone')}:</span> {address.phone || 'N/A'}
                   </p>
                   <p>
-                    <span className="font-semibold">City:</span> {address.city || 'N/A'}
+                    <span className="font-semibold">{t('addressFields.city')}:</span> {address.city || 'N/A'}
                   </p>
                   <p>
-                    <span className="font-semibold">Province:</span> {address.province || 'N/A'}
+                    <span className="font-semibold">{t('addressFields.province')}:</span> {address.province || 'N/A'}
                   </p>
                   <p>
-                    <span className="font-semibold">Country:</span> {address.country || 'N/A'}
+                    <span className="font-semibold">{t('addressFields.country')}:</span> {address.country || 'N/A'}
                   </p>
                   <p>
-                    <span className="font-semibold">Postal Code:</span> {address.post_code || 'N/A'}
+                    <span className="font-semibold">{t('addressFields.postalCode')}:</span> {address.post_code || 'N/A'}
                   </p>
                   <p>
-                    <span className="font-semibold">Street:</span> {address.street_address || 'N/A'}
+                    <span className="font-semibold">{t('addressFields.street')}:</span>{' '}
+                    {address.street_address || 'N/A'}
                   </p>
                   <p>
-                    <span className="font-semibold">Type:</span> {address.type || 'N/A'}
+                    <span className="font-semibold">{t('addressFields.type')}:</span> {address.type || 'N/A'}
                   </p>
                   {/* Default Address Checkbox */}
                   <div className="flex items-center space-x-2">
@@ -258,7 +262,7 @@ export default function UserAddressBook({ userAddressBook }) {
                       htmlFor={`default-${address._id}`}
                       className="text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                     >
-                      Default Address
+                      {t('defaultAddress')}
                     </Label>
                   </div>
                 </div>
@@ -272,7 +276,7 @@ export default function UserAddressBook({ userAddressBook }) {
           })
         ) : (
           <div className="py-8 text-center">
-            <p className="text-gray-500">No addresses found. Please add a new address.</p>
+            <p className="text-gray-500">{t('noAddressesFound')}</p>
           </div>
         )}
       </div>

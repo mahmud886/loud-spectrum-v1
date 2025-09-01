@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Textarea } from '@/components/ui/textarea';
 import { getCities, getCountries, getStates } from '@/services/location-services';
 import { X } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import { toast } from 'sonner';
 
@@ -29,6 +30,7 @@ export default function AddAddressDialog({ onSave, editMode = false, editAddress
     street_address: '',
     is_default: false,
   });
+  const t = useTranslations('UserAddressBook');
 
   // Load countries on component mount
   useEffect(() => {
@@ -42,7 +44,7 @@ export default function AddAddressDialog({ onSave, editMode = false, editAddress
           })),
         );
       } catch (error) {
-        toast.error('Failed to load countries');
+        toast.error(t('failedToLoadCountries'));
       }
     };
     fetchCountries();
@@ -64,7 +66,7 @@ export default function AddAddressDialog({ onSave, editMode = false, editAddress
           })),
         );
       } catch (error) {
-        toast.error('Failed to load provinces/states');
+        toast.error(t('failedToLoadProvinces'));
       }
     };
     fetchStates();
@@ -86,7 +88,7 @@ export default function AddAddressDialog({ onSave, editMode = false, editAddress
           })),
         );
       } catch (error) {
-        toast.error('Failed to load cities');
+        toast.error(t('failedToLoadCities'));
       }
     };
     fetchCities();
@@ -207,17 +209,17 @@ export default function AddAddressDialog({ onSave, editMode = false, editAddress
       }
 
       if (result.success) {
-        toast.success(editMode ? 'Address updated successfully' : 'Address added successfully');
+        toast.success(editMode ? t('addressUpdatedSuccessfully') : t('addressAddedSuccessfully'));
         onSave(result.data);
         setIsOpen(false);
         if (!editMode) {
           resetForm();
         }
       } else {
-        toast.error(result.message || (editMode ? 'Failed to update address' : 'Failed to add address'));
+        toast.error(result.message || (editMode ? t('failedToUpdateAddress') : t('failedToAddAddress')));
       }
     } catch (error) {
-      toast.error(`An error occurred while ${editMode ? 'updating' : 'adding'} the address`);
+      toast.error(t(`anErrorOccurredWhile${editMode ? 'updating' : 'adding'}TheAddress`));
     } finally {
       setIsLoading(false);
     }
@@ -258,7 +260,7 @@ export default function AddAddressDialog({ onSave, editMode = false, editAddress
         </div>
       ) : (
         <button onClick={() => setIsOpen(true)} className="main-button-black rounded-[10px] px-6 py-2">
-          {editMode ? 'Edit Address' : 'Add New Address'}
+          {editMode ? t('editAddress') : t('addNewAddress')}
         </button>
       )}
 
@@ -273,7 +275,7 @@ export default function AddAddressDialog({ onSave, editMode = false, editAddress
             {/* Header */}
             <div className="flex items-center justify-between border-b px-6 py-4">
               <h2 className="text-umbra-100 font-sans text-[24px] font-normal">
-                {editMode ? 'Edit Address' : 'Add New Address'}
+                {editMode ? t('editAddress') : t('addNewAddress')}
               </h2>
               <button
                 onClick={handleClose}
@@ -290,14 +292,14 @@ export default function AddAddressDialog({ onSave, editMode = false, editAddress
                 {/* First Name */}
                 <div>
                   <Label className="input-label" htmlFor="first_name">
-                    First Name
+                    {t('addressFields.firstName')}
                   </Label>
                   <Input
                     id="first_name"
                     name="first_name"
                     value={addressData.first_name}
                     onChange={handleInputChange}
-                    placeholder="Please enter First Name"
+                    placeholder={t('addressFields.pleaseEnterFirstName')}
                     className="input-field"
                     disabled={isLoading}
                   />
@@ -306,14 +308,14 @@ export default function AddAddressDialog({ onSave, editMode = false, editAddress
                 {/* Last Name */}
                 <div>
                   <Label className="input-label" htmlFor="last_name">
-                    Last Name
+                    {t('addressFields.lastName')}
                   </Label>
                   <Input
                     id="last_name"
                     name="last_name"
                     value={addressData.last_name}
                     onChange={handleInputChange}
-                    placeholder="Please enter Last Name"
+                    placeholder={t('addressFields.pleaseEnterLastName')}
                     className="input-field"
                     disabled={isLoading}
                   />
@@ -322,7 +324,7 @@ export default function AddAddressDialog({ onSave, editMode = false, editAddress
                 {/* Email */}
                 <div>
                   <Label className="input-label" htmlFor="email">
-                    Email
+                    {t('addressFields.email')}
                   </Label>
                   <Input
                     id="email"
@@ -330,7 +332,7 @@ export default function AddAddressDialog({ onSave, editMode = false, editAddress
                     type="email"
                     value={addressData.email}
                     onChange={handleInputChange}
-                    placeholder="Please enter Email"
+                    placeholder={t('addressFields.pleaseEnterEmail')}
                     className="input-field"
                     disabled={isLoading}
                   />
@@ -339,7 +341,7 @@ export default function AddAddressDialog({ onSave, editMode = false, editAddress
                 {/* Phone */}
                 <div>
                   <Label className="input-label" htmlFor="phone">
-                    Phone
+                    {t('addressFields.phone')}
                   </Label>
                   <Input
                     id="phone"
@@ -347,7 +349,7 @@ export default function AddAddressDialog({ onSave, editMode = false, editAddress
                     type="tel"
                     value={addressData.phone}
                     onChange={handleInputChange}
-                    placeholder="Please enter Phone"
+                    placeholder={t('addressFields.pleaseEnterPhone')}
                     className="input-field"
                     disabled={isLoading}
                   />
@@ -356,7 +358,7 @@ export default function AddAddressDialog({ onSave, editMode = false, editAddress
                 {/* Country */}
                 <div>
                   <Label className="input-label" htmlFor="country">
-                    Country
+                    {t('addressFields.country')}
                   </Label>
                   <Select
                     value={addressData.country}
@@ -364,7 +366,7 @@ export default function AddAddressDialog({ onSave, editMode = false, editAddress
                     disabled={isLoading}
                   >
                     <SelectTrigger className="bg-umbra-5 hover:bg-umbra-10 text-umbra-100 min-h-[48px] w-full rounded-[10px] px-4 py-2 font-mono text-[16px] font-normal">
-                      <SelectValue placeholder="Please select Country" />
+                      <SelectValue placeholder={t('addressFields.pleaseSelectCountry')} />
                     </SelectTrigger>
                     <SelectContent className="text-umbra-100 font-mono text-[16px]">
                       {countries.map((country) => (
@@ -379,7 +381,7 @@ export default function AddAddressDialog({ onSave, editMode = false, editAddress
                 {/* Province */}
                 <div>
                   <Label className="input-label" htmlFor="province">
-                    Province/State
+                    {t('addressFields.province')}
                   </Label>
                   {provinces?.length > 0 ? (
                     <Select
@@ -388,7 +390,7 @@ export default function AddAddressDialog({ onSave, editMode = false, editAddress
                       disabled={isLoading || !addressData.country}
                     >
                       <SelectTrigger className="bg-umbra-5 hover:bg-umbra-10 text-umbra-100 min-h-[48px] w-full rounded-[10px] px-4 py-2 font-mono text-[16px] font-normal">
-                        <SelectValue placeholder="Please select Province/State" />
+                        <SelectValue placeholder={t('addressFields.pleaseSelectProvince')} />
                       </SelectTrigger>
                       <SelectContent className="text-umbra-100 font-mono text-[16px]">
                         {provinces.map((province) => (
@@ -404,7 +406,7 @@ export default function AddAddressDialog({ onSave, editMode = false, editAddress
                       name="province"
                       value={addressData.province}
                       onChange={handleInputChange}
-                      placeholder="Please enter Province/State"
+                      placeholder={t('addressFields.pleaseEnterProvince')}
                       className="input-field"
                       disabled={isLoading}
                     />
@@ -414,7 +416,7 @@ export default function AddAddressDialog({ onSave, editMode = false, editAddress
                 {/* City */}
                 <div>
                   <Label className="input-label" htmlFor="city">
-                    City
+                    {t('addressFields.city')}
                   </Label>
                   {cities?.length > 0 ? (
                     <Select
@@ -423,7 +425,7 @@ export default function AddAddressDialog({ onSave, editMode = false, editAddress
                       disabled={isLoading || !addressData.province}
                     >
                       <SelectTrigger className="bg-umbra-5 hover:bg-umbra-10 text-umbra-100 min-h-[48px] w-full rounded-[10px] px-4 py-2 font-mono text-[16px] font-normal">
-                        <SelectValue placeholder="Please select City" />
+                        <SelectValue placeholder={t('addressFields.pleaseSelectCity')} />
                       </SelectTrigger>
                       <SelectContent className="text-umbra-100 font-mono text-[16px]">
                         {cities.map((city) => (
@@ -439,7 +441,7 @@ export default function AddAddressDialog({ onSave, editMode = false, editAddress
                       name="city"
                       value={addressData.city}
                       onChange={handleInputChange}
-                      placeholder="Please enter City"
+                      placeholder={t('addressFields.pleaseEnterCity')}
                       className="input-field"
                       disabled={isLoading}
                     />
@@ -449,14 +451,14 @@ export default function AddAddressDialog({ onSave, editMode = false, editAddress
                 {/* Postal Code */}
                 <div>
                   <Label className="input-label" htmlFor="post_code">
-                    Postal Code
+                    {t('addressFields.postalCode')}
                   </Label>
                   <Input
                     id="post_code"
                     name="post_code"
                     value={addressData.post_code}
                     onChange={handleInputChange}
-                    placeholder="Please enter Postal Code"
+                    placeholder={t('addressFields.pleaseEnterPostalCode')}
                     className="input-field"
                     disabled={isLoading}
                   />
@@ -466,7 +468,7 @@ export default function AddAddressDialog({ onSave, editMode = false, editAddress
               {/* Street Address */}
               <div className="mt-4">
                 <Label className="input-label" htmlFor="street_address">
-                  Street Address
+                  {t('addressFields.street')}
                 </Label>
                 <Textarea
                   id="street_address"
@@ -474,7 +476,7 @@ export default function AddAddressDialog({ onSave, editMode = false, editAddress
                   rows={3}
                   value={addressData.street_address}
                   onChange={handleInputChange}
-                  placeholder="Please enter Street Address"
+                  placeholder={t('addressFields.pleaseEnterStreetAddress')}
                   className="bg-umbra-5 placeholder:text-umbra-100 hover:bg-umbra-10 w-full rounded-[10px] px-4 py-2 font-mono text-[16px] leading-[140%] font-normal"
                   disabled={isLoading}
                 />
@@ -492,7 +494,7 @@ export default function AddAddressDialog({ onSave, editMode = false, editAddress
                   htmlFor="is_default"
                   className="text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                 >
-                  Set as default address
+                  {t('addressFields.setAsDefaultAddress')}
                 </Label>
               </div>
             </div>
@@ -505,14 +507,14 @@ export default function AddAddressDialog({ onSave, editMode = false, editAddress
                   onClick={handleClose}
                   disabled={isLoading}
                 >
-                  Cancel
+                  {t('cancel')}
                 </button>
                 <button
                   className="main-button-black inline-flex items-center justify-center rounded-[10px] px-6 py-2"
                   onClick={handleSave}
                   disabled={isLoading}
                 >
-                  {isLoading ? (editMode ? 'Updating...' : 'Saving...') : editMode ? 'Update' : 'Save'}
+                  {isLoading ? (editMode ? t('updating') : t('updating')) : editMode ? t('update') : t('update')}
                 </button>
               </div>
             </div>

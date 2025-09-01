@@ -2,9 +2,11 @@ import ProductCard from '@/components/product/ProductCard';
 import { Link } from '@/i18n/navigation';
 import { getCategoryProducts } from '@/services/get-category-products';
 import { ArrowRightIcon } from 'lucide-react';
+import { getTranslations } from 'next-intl/server';
 
 export default async function DashboardPage() {
   const products = await getCategoryProducts('all');
+  const t = await getTranslations('DashboardPage');
 
   // const stats = [
   //   {
@@ -35,7 +37,7 @@ export default async function DashboardPage() {
 
   return (
     <div className="p-4 xl:p-0">
-      <h1 className="mb-6 text-[24px] font-normal text-gray-800">User Dashboard</h1>
+      <h1 className="mb-6 text-[24px] font-normal text-gray-800">{t('userDashboard')}</h1>
 
       {/* <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {stats.map((stat) => (
@@ -51,10 +53,10 @@ export default async function DashboardPage() {
 
       <div>
         <div className="my-4 flex items-center justify-between rounded-xl border p-4">
-          <h6 className="text-[24px] font-normal text-gray-800">Continue Buying</h6>
+          <h6 className="text-[24px] font-normal text-gray-800">{t('continueBuying')}</h6>
           <Link href="/shop" className="text-umbra-100 flex items-center gap-2 font-mono text-[10px] font-normal">
             <button className="main-button-black flex items-center gap-2 rounded-full px-6 py-2 opacity-100 transition-opacity duration-200 ease-in-out group-hover:opacity-100">
-              Shop
+              {t('shop')}
               <ArrowRightIcon className="h-4 w-4" />
             </button>
           </Link>
