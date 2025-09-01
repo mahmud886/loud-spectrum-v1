@@ -31,7 +31,7 @@ const ShopHero = ({ category }) => {
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-1/2 z-20 w-full -translate-x-1/2 xl:w-[1440px]">
+      {/* <div className="absolute bottom-0 left-1/2 z-20 w-full -translate-x-1/2 xl:w-[1440px]">
         <Image
           src="/assets/images/hero-section-mask.png"
           alt="Shop Hero"
@@ -39,6 +39,20 @@ const ShopHero = ({ category }) => {
           height={195}
           className="h-[50px] w-full object-cover xl:h-[195px] xl:w-[1440px]"
         />
+      </div> */}
+
+      <div className="absolute bottom-0 left-0 w-screen">
+        <div className="w-full">
+          <div className="flex h-[25px] lg:h-[100px] xl:h-[100px]">
+            <div className="w-[70%] bg-transparent"></div>
+            <div className="w-[30%] bg-white"></div>
+          </div>
+          <div className="flex h-[25px] lg:h-[100px] xl:h-[100px]">
+            <div className="w-[15%] bg-white"></div>
+            <div className="w-[35%] bg-transparent"></div>
+            <div className="w-[50%] bg-white"></div>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <>
       <div className="relative bg-black" style={{ zIndex: 1 }}>
-        <div className="relative container h-[1000px] overflow-hidden">
+        <div className="relative container h-[1100px] overflow-hidden">
           <>
             <div className="absolute top-0 left-1/2 z-0 h-[900px] w-[450px] -translate-x-1/2 transform overflow-hidden xl:hidden">
               <video
@@ -19,7 +19,7 @@ const Hero = () => {
                 preload="auto"
               />
             </div>
-            <div className="absolute top-0 left-1/2 z-0 hidden h-[1000px] w-[1440px] -translate-x-1/2 transform overflow-hidden xl:block">
+            <div className="absolute top-0 left-1/2 z-0 hidden h-[1100px] w-[1440px] -translate-x-1/2 transform overflow-hidden xl:block">
               <video
                 src="/assets/homepage-hero-video.mp4"
                 autoPlay

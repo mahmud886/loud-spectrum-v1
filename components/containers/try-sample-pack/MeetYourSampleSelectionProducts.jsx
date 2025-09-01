@@ -28,7 +28,7 @@ const MeetYourSampleSelectionProducts = async ({ samplePackCategory }) => {
           {filteredSamplePackProducts?.slice(0, 20).map((product) => (
             <CarouselItem
               key={product._id}
-              className="pl-2 sm:basis-1 lg:basis-1/4 xl:basis-1/2 xl:basis-1/4 xl:pl-2 2xl:basis-1/4"
+              className="basis-1/2 pl-2 sm:basis-1/2 md:basis-1/2 lg:basis-1/4 xl:basis-1/4 xl:pl-2 2xl:basis-1/4"
             >
               <SamplePackCard product={product} />
             </CarouselItem>

@@ -43,7 +43,7 @@ const TrySamplePackHero = async ({ samplePackCategory }) => {
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-1/2 z-20 hidden w-[1440px] -translate-x-1/2 xl:block">
+        {/* <div className="absolute bottom-0 left-1/2 z-20 hidden w-[1440px] -translate-x-1/2 xl:block">
           <Image
             src="/assets/images/hero-section-mask.png"
             alt="Shop Hero"
@@ -51,6 +51,19 @@ const TrySamplePackHero = async ({ samplePackCategory }) => {
             height={195}
             className="w-full object-cover"
           />
+        </div> */}
+        <div className="absolute bottom-0 left-0 w-screen">
+          <div className="w-full">
+            <div className="flex h-[25px] lg:h-[100px] xl:h-[100px]">
+              <div className="w-[70%] bg-transparent"></div>
+              <div className="w-[30%] bg-white"></div>
+            </div>
+            <div className="flex h-[25px] lg:h-[100px] xl:h-[100px]">
+              <div className="w-[15%] bg-white"></div>
+              <div className="w-[35%] bg-transparent"></div>
+              <div className="w-[50%] bg-white"></div>
+            </div>
+          </div>
         </div>
       </div>
 

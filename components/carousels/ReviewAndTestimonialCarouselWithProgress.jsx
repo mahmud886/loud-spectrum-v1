@@ -36,7 +36,7 @@ export default function ReviewAndTestimonialCarouselWithProgress({ children }) {
           {React.Children.map(children, (child, index) => (
             <CarouselItem
               key={index}
-              className={`pl-0 transition-opacity duration-300 sm:basis-1 md:basis-1/2 lg:basis-1/3 xl:basis-1/3 ${
+              className={`basis-1/2 pl-0 transition-opacity duration-300 sm:basis-1/2 md:basis-1/2 lg:basis-1/3 xl:basis-1/3 ${
                 index === current ? 'opacity-100' : 'opacity-50'
               }`}
             >
