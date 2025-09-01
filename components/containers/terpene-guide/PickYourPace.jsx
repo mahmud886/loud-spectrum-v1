@@ -16,19 +16,22 @@ const PickYourPace = () => {
             {t('subtitle')}
           </h6>
         </div>
-        <div className="mt-12 flex flex-col items-center justify-center gap-6 xl:flex-row">
+        <div className="mt-12 flex w-full flex-col items-center justify-center gap-6 xl:flex-row">
           <div className="group relative">
-            <div className="overflow-hidden">
+            <div className="w-full overflow-hidden">
               <Image
                 src="/assets/images/terpene-guide/active.jpg"
                 alt={t('activeAlt')}
                 width={414}
                 height={408}
-                className="block h-[408px] w-[414px] object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                className="block h-[450px] w-[450px] object-cover transition-transform duration-700 ease-out group-hover:scale-110"
               />
             </div>
             <div className="absolute bottom-[12%] w-full px-5 pb-5 xl:top-[5%] xl:right-[5%] xl:bottom-auto xl:w-auto xl:px-0 xl:pb-0">
-              <Link href="/shop/active" className="outline-button-black w-full rounded-full px-6 py-2 xl:w-auto">
+              <Link
+                href="/shop/active"
+                className="outline-button-black inline-block w-full rounded-full px-6 py-2 text-center backdrop-blur-md transition-colors hover:bg-gray-700/80"
+              >
                 {t('shopActive')}
               </Link>
             </div>
@@ -42,11 +45,14 @@ const PickYourPace = () => {
                 alt={t('relaxedAlt')}
                 width={414}
                 height={408}
-                className="block h-[408px] w-[414px] object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                className="block h-[450px] w-[450px] object-cover transition-transform duration-700 ease-out group-hover:scale-110"
               />
             </div>
             <div className="absolute bottom-[12%] w-full px-5 pb-5 xl:top-[5%] xl:right-[5%] xl:bottom-auto xl:w-auto xl:px-0 xl:pb-0">
-              <Link href="/shop/relax" className="outline-button-black w-full rounded-full px-6 py-2 xl:w-auto">
+              <Link
+                href="/shop/relax"
+                className="outline-button-black inline-block w-full rounded-full px-6 py-2 text-center backdrop-blur-md transition-colors hover:bg-gray-700/80"
+              >
                 {t('shopRelaxed')}
               </Link>
             </div>
@@ -60,11 +66,14 @@ const PickYourPace = () => {
                 alt={t('hybridAlt')}
                 width={414}
                 height={408}
-                className="block h-[408px] w-[414px] object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                className="block h-[450px] w-[450px] object-cover transition-transform duration-700 ease-out group-hover:scale-110"
               />
             </div>
             <div className="absolute bottom-[12%] w-full px-5 pb-5 xl:top-[5%] xl:right-[5%] xl:bottom-auto xl:w-auto xl:px-0 xl:pb-0">
-              <Link href="/shop/hybrid" className="outline-button-black w-full rounded-full px-6 py-2 xl:w-auto">
+              <Link
+                href="/shop/hybrid"
+                className="outline-button-black inline-block w-full rounded-full px-6 py-2 text-center backdrop-blur-md transition-colors hover:bg-gray-700/80"
+              >
                 {t('shopHybrid')}
               </Link>
             </div>
