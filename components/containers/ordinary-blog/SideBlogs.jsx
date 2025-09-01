@@ -37,10 +37,10 @@ const SideBlogs = ({ blogs }) => {
     <div>
       {validBlogs.map((blog, index) => (
         <div key={index} className={`group mt-10 xl:mt-0 ${index !== 0 ? 'border-umbra-40 border-t py-5' : 'pb-5'}`}>
-          <div className="flex flex-col items-center gap-5 overflow-hidden bg-white transition-all duration-300 xl:flex-row">
+          <div className="flex flex-col items-start gap-5 overflow-hidden bg-white transition-all duration-300 lg:items-center xl:flex-row">
             <Link href={`/blog/${blog?.identifier_url}`} className="w-full overflow-hidden xl:w-[177px]">
               {/* <Link href={`/blog/${blog?._id}`} className="w-full overflow-hidden xl:w-[177px]"> */}
-              <div className="h-[150px] w-[177px]">
+              <div className="h-[380px] w-full lg:h-[150px] lg:w-[177px]">
                 <Image
                   width={177}
                   height={150}

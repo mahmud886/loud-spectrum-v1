@@ -13,7 +13,7 @@ const BlogCard = ({ blog }) => {
           <div className="overflow-hidden">
             <Link href={`/blog/${blog?.identifier_url}`} className="group w-full">
               {/* <Link href={`/blog/${blog?._id}`} className="group w-full"> */}
-              <div className="h-[380px] w-[413px]">
+              <div className="h-[380px] w-full lg:h-[380px] lg:w-[450px]">
                 <Image
                   src={
                     blog?.image
@@ -21,7 +21,7 @@ const BlogCard = ({ blog }) => {
                       : '/assets/images/blog/single-blog.png'
                   }
                   alt={blog?.alt_tag || blog?.title || 'blog-image-featuted'}
-                  width={413}
+                  width={450}
                   height={380}
                   className="block h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />

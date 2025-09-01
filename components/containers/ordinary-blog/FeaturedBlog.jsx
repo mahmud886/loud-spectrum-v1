@@ -25,7 +25,7 @@ const FeaturedBlog = ({ featuredBlog }) => {
         <div className="relative overflow-hidden">
           <Link href={`/blog/${featuredBlog?.identifier_url}`} className="group w-full">
             {/* <Link href={`/blog/${featuredBlog?._id}`} className="group w-full"> */}
-            <div className="h-[380px] w-[685px]">
+            <div className="h-[380px] w-[736px]">
               <Image
                 src={
                   featuredBlog?.image
@@ -33,7 +33,7 @@ const FeaturedBlog = ({ featuredBlog }) => {
                     : '/assets/images/blog/blog-image-featuted.png'
                 }
                 alt={featuredBlog?.alt_tag || featuredBlog?.title || 'blog-image-featured'}
-                width={685}
+                width={736}
                 height={380}
                 className="h-full w-full transform object-cover transition-transform duration-500 group-hover:scale-110"
               />
