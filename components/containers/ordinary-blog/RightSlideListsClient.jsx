@@ -51,11 +51,11 @@ const RightSlideListsClient = ({ blogs, blogId }) => {
         {blogPosts.map((blog, index) => (
           <div key={index} className="group border-umbra-40 border-t py-5">
             <div className="flex w-full flex-col items-center gap-5 overflow-hidden bg-white xl:flex-row">
-              <Link href={`/blog/${blog?.identifier_url}`} className="w-[170px] overflow-hidden">
-                <div className="h-[102px] w-[120px] overflow-hidden">
+              <Link href={`/blog/${blog?.identifier_url}`} className="w-full overflow-hidden lg:w-[170px]">
+                <div className="h-[380px] w-full overflow-hidden lg:h-[102px] lg:w-[120px]">
                   <Image
                     width={120}
-                    height={102}
+                    height={380}
                     src={
                       blog?.image
                         ? `${process.env.NEXT_PUBLIC_API_URL}/public${blog?.image}`
