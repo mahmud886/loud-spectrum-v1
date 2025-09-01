@@ -26,7 +26,7 @@ export default function ProductCarouselWithProgress({ children }) {
           align: 'start',
         }}
       >
-        <CarouselContent className="flex w-full gap-1">{children}</CarouselContent>
+        <CarouselContent className="flex w-full gap-4">{children}</CarouselContent>
 
         <div className="pt-8">
           <div className="py-2">

@@ -1,14 +1,14 @@
 import ProductCarouselWithProgress from '@/components/carousels/ProductCarouselWithProgress';
-import ProductCard from '@/components/product/ProductCard';
 import { CarouselItem } from '@/components/ui/carousel';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
+import NewProductCard from '../product/NewProductCard';
 
 const NewPageHero = ({ categoryProducts }) => {
   const t = useTranslations('NewPage.newPageHeroBanner');
 
   return (
-    <div className="bg-umbra-100 relative h-[1250px] overflow-hidden xl:h-[1200px]">
+    <div className="bg-umbra-100 relative h-[1250px] overflow-hidden xl:h-[1300px]">
       <Image
         src="/assets/images/new-mimosa.png"
         alt="Background"
@@ -48,9 +48,9 @@ const NewPageHero = ({ categoryProducts }) => {
               {categoryProducts?.slice(0, 20).map((product) => (
                 <CarouselItem
                   key={product._id}
-                  className="pl-2 sm:basis-1 lg:basis-1/4 xl:basis-1/2 xl:basis-1/4 xl:pl-2 2xl:basis-1/4"
+                  className="basis-2/3 pl-2 sm:basis-2/4 md:basis-3/4 lg:basis-1/3 xl:basis-1/4 xl:pl-2 2xl:basis-1/4"
                 >
-                  <ProductCard product={product} />
+                  <NewProductCard product={product} />
                 </CarouselItem>
               ))}
             </ProductCarouselWithProgress>

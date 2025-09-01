@@ -76,14 +76,14 @@ const TransitionAnimation = () => {
   };
 
   return (
-    <div ref={containerRef} className="flex h-screen w-full items-center justify-center overflow-hidden">
-      <div className="flex h-screen w-full">
+    <div ref={containerRef} className="flex h-[200px] w-full items-center justify-center overflow-hidden lg:h-[800px]">
+      <div className="flex h-full w-full">
         {/* Left Column */}
         <div className="flex h-full w-1/2 flex-col items-start justify-start">
           {[0, 1, 2, 3, 4, 5, 6, 7].map((index) => (
             <div
               key={`left-${index}`}
-              className="h-1/7 transition-all duration-500 ease-out"
+              className="h-[25px] transition-all duration-500 ease-out lg:h-[100px]"
               style={{
                 width: `${getDivWidth(index, true)}%`,
                 background: getGradientColors(index, true),
@@ -97,7 +97,7 @@ const TransitionAnimation = () => {
           {[0, 1, 2, 3, 4, 5, 6, 7].map((index) => (
             <div
               key={`right-${index}`}
-              className="h-1/7 transition-all duration-500 ease-out"
+              className="h-[25px] transition-all duration-500 ease-out lg:h-[100px]"
               style={{
                 width: `${getDivWidth(index, false)}%`,
                 background: getGradientColors(index, false),

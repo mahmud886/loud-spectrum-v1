@@ -14,7 +14,7 @@ const BehindTheProccess = () => {
             {t('behindTheProcess.subtitle')}
           </h6>
         </div>
-        <div className="mt-2 flex flex-col items-center justify-between py-12 xl:mt-0 xl:flex-row xl:gap-[145px] xl:py-20">
+        <div className="mt-2 flex flex-col items-center justify-between py-12 lg:flex-row lg:gap-10 xl:mt-0 xl:flex-row xl:gap-[145px] xl:py-20">
           <Image
             src="/assets/images/the-lab/behind-the-process-1.png"
             alt="the-lab-advantage"
@@ -22,7 +22,7 @@ const BehindTheProccess = () => {
             height={474}
             className="h-full w-full object-cover xl:h-[474px] xl:w-[522px]"
           />
-          <div className="w-full space-y-10 xl:max-w-[397px]">
+          <div className="w-full space-y-10">
             <h5 className="text-white-100 pt-12 pb-2 font-sans text-[26px] leading-[120%] font-normal tracking-normal xl:pt-0 xl:text-[32px]">
               {t('premiumSourcing.title')}
             </h5>
@@ -39,13 +39,13 @@ const BehindTheProccess = () => {
             </p>
           </div>
         </div>
-        <div className="mt-2 flex flex-col items-center justify-between py-12 xl:mt-0 xl:flex-row xl:gap-[145px] xl:py-20">
+        <div className="mt-2 flex flex-col items-center justify-between py-12 lg:flex-row lg:gap-10 xl:mt-0 xl:flex-row xl:gap-[145px] xl:py-20">
           <Image
             src="/assets/images/the-lab/behind-the-process-2.png"
             alt="the-lab-advantage"
             width={522}
             height={474}
-            className="h-full w-full object-cover xl:hidden xl:h-[474px] xl:w-[522px]"
+            className="h-full w-full object-cover lg:hidden xl:hidden xl:h-[474px] xl:w-[522px]"
           />
           <div className="w-full space-y-10 xl:max-w-[397px]">
             <h5 className="text-white-100 pt-12 pb-2 font-sans text-[26px] leading-[120%] font-normal tracking-normal xl:pt-0 xl:text-[32px]">
@@ -65,10 +65,10 @@ const BehindTheProccess = () => {
             alt="the-lab-advantage"
             width={522}
             height={474}
-            className="hidden h-[474px] w-[522px] object-cover xl:block"
+            className="hidden h-[474px] w-[522px] object-cover lg:block xl:block"
           />
         </div>
-        <div className="mt-2 flex flex-col items-center justify-between py-12 xl:mt-0 xl:flex-row xl:gap-[145px] xl:py-20">
+        <div className="mt-2 flex flex-col items-center justify-between py-12 lg:flex-row lg:gap-10 xl:mt-0 xl:flex-row xl:gap-[145px] xl:py-20">
           <Image
             src="/assets/images/the-lab/behind-the-process-3.png"
             alt="the-lab-advantage"
@@ -105,7 +105,7 @@ const BehindTheProccess = () => {
             className="h-full w-full object-cover xl:h-[525px] xl:w-[1064px]"
           />
           <div className="w-full">
-            <div className="inline-flex flex-col items-center gap-0 xl:flex-row xl:gap-[145px]">
+            <div className="inline-flex flex-col items-center gap-0 lg:flex-row lg:gap-10 xl:flex-row xl:gap-[145px]">
               <p className="text-white-100 font-mono text-[16px] leading-[140%] font-normal tracking-normal">
                 {t('finalTesting.description1')}
               </p>
