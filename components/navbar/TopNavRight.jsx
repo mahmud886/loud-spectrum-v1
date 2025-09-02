@@ -73,7 +73,7 @@ const TopNavRight = ({ onClose, setCartOpen }) => {
           {[
             { title: topNav.Line, items: [topNav.Alive, topNav.Dank, topNav.Sweet, topNav.Classic] },
             { title: topNav.Mood, items: [topNav.Active, topNav.Relaxed] },
-            { title: topNav.Mood, items: [topNav.Sample_packs] },
+            { items: [topNav.Sample_packs] },
           ].map((section, index) => (
             <div
               key={index}
@@ -92,7 +92,9 @@ const TopNavRight = ({ onClose, setCartOpen }) => {
                   </Link>
                 ))}
               </div>
-              <button className="rounded-sm border border-gray-300 px-3 py-[2px]">{section.title}</button>
+              {section.title && (
+                <button className="rounded-sm border border-gray-300 px-3 py-[2px]">{section.title}</button>
+              )}
             </div>
           ))}
         </div>

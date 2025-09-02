@@ -62,14 +62,14 @@ const TopNav = ({ setMenuOpen, menuOpen }) => {
               className="fixed top-0 right-0 left-0 z-50 overflow-hidden"
               ref={menuRef}
             >
-              <div className="divide-umbra-40 mx-auto grid h-full w-full grid-cols-1 divide-x text-black xl:w-[1440px] xl:grid-cols-3">
+              <div className="divide-umbra-40 mx-auto grid h-full w-full grid-cols-1 divide-x text-black xl:max-w-[1440px] xl:grid-cols-3">
                 {/* Left Section */}
                 <motion.div
                   initial={{ y: -50, opacity: 0 }}
                   animate={{ y: 0, opacity: 1, height: 554 }}
                   exit={{ y: -50, opacity: 0 }}
                   transition={{ duration: 0.4, delay: 0.2 }}
-                  className="flex w-[480px] flex-col items-start gap-6 bg-white py-[50px] pr-[60px] pl-[80px]"
+                  className="flex w-auto flex-col items-start gap-6 bg-white py-[50px] pr-[60px] pl-[80px]"
                 >
                   <TopNavLeft />
                 </motion.div>
@@ -80,7 +80,7 @@ const TopNav = ({ setMenuOpen, menuOpen }) => {
                   animate={{ y: 0, opacity: 1, height: 554 }}
                   exit={{ y: -50, opacity: 0 }}
                   transition={{ duration: 0.4, delay: 0.3 }}
-                  className="flex w-[480px] flex-col gap-6 bg-white px-[60px] pt-[120px] pb-[50px] pl-[60px] text-4xl font-semibold"
+                  className="flex w-auto flex-col gap-6 bg-white px-[60px] pt-[120px] pb-[50px] pl-[60px] text-4xl font-semibold"
                 >
                   <TopNavMiddle />
                 </motion.div>
@@ -91,7 +91,7 @@ const TopNav = ({ setMenuOpen, menuOpen }) => {
                   animate={{ y: 0, opacity: 1, height: 554 }}
                   exit={{ y: -50, opacity: 0 }}
                   transition={{ duration: 0.4, delay: 0.3 }}
-                  className="w-[480px] bg-white py-[50px] pr-[80px] pl-[60px]"
+                  className="w-auto bg-white py-[50px] pr-[80px] pl-[60px]"
                 >
                   <TopNavRight onClose={handleClose} setCartOpen={() => dispatch(toggleCartDrawer())} />
                 </motion.div>
