@@ -114,6 +114,7 @@
     "GuestUser": {
       "title": "Compra como Invitado",
       "description": "Complete su pedido sin crear una cuenta, o cree opcionalmente una cuenta para futuros pedidos más rápidos.",
+      "createAnAccount": "Crear una cuenta",
       "customerEmailLabel": "Dirección de Correo*",
       "customerEmailPlaceholder": "Ingrese su dirección de correo electrónico",
       "customerEmailHelp": "Usaremos este correo para la confirmación del pedido y actualizaciones.",

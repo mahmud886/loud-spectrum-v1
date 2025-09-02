@@ -114,6 +114,7 @@
     "GuestUser": {
       "title": "ゲストチェックアウト",
       "description": "アカウントを作成せずに注文を完了するか、将来の迅速な注文のためにオプションでアカウントを作成してください。",
+      "createAnAccount": "アカウントを作成",
       "customerEmailLabel": "メールアドレス*",
       "customerEmailPlaceholder": "メールアドレスを入力してください",
       "customerEmailHelp": "注文確認と更新のためにこのメールを使用します。",

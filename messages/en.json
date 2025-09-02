@@ -114,6 +114,7 @@
     "GuestUser": {
       "title": "Guest Checkout",
       "description": "Complete your order without creating an account, or optionally create an account for faster future checkouts.",
+      "createAnAccount": "Create an account",
       "customerEmailLabel": "Email Address*",
       "customerEmailPlaceholder": "Enter your email address",
       "customerEmailHelp": "We'll use this email for order confirmation and updates.",

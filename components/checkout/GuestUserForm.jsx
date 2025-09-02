@@ -1,7 +1,9 @@
 'use client';
 
+import { Link } from '@/i18n/navigation';
 import { selectCurrentUser } from '@/lib/store/slices/authSlice';
 import { selectGuestUser, setGuestUserField, setIsGuest } from '@/lib/store/slices/checkoutSlice';
+import { ArrowRight } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -36,7 +38,12 @@ const GuestUserForm = () => {
     <div className="border-umbra-10 bg-umbra-5 space-y-6 rounded-[10px] border p-4">
       <div>
         <h3 className="text-umbra-100 mb-2 font-sans text-[20px] font-normal">{t('title')}</h3>
-        <p className="text-umbra-80 mb-4 font-mono text-[14px]">{t('description')}</p>
+        <p className="text-umbra-80 inline-flex flex-wrap items-center gap-2 font-mono text-[11px] whitespace-nowrap">
+          {t('description')}{' '}
+          <Link href="/login" className="inline-flex items-center gap-1 font-normal underline">
+            <ArrowRight size={14} /> {t('createAnAccount')}
+          </Link>
+        </p>
       </div>
 
       <div className="space-y-4">

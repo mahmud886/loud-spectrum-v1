@@ -114,6 +114,7 @@
     "GuestUser": {
       "title": "Commande Invité",
       "description": "Finalisez votre commande sans créer de compte, ou créez optionnellement un compte pour des commandes futures plus rapides.",
+      "createAnAccount": "Créer un compte",
       "customerEmailLabel": "Adresse E-mail*",
       "customerEmailPlaceholder": "Entrez votre adresse e-mail",
       "customerEmailHelp": "Nous utiliserons cet e-mail pour la confirmation de commande et les mises à jour.",

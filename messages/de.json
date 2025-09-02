@@ -114,6 +114,7 @@
     "GuestUser": {
       "title": "Gast-Checkout",
       "description": "Schließen Sie Ihre Bestellung ab, ohne ein Konto zu erstellen, oder erstellen Sie optional ein Konto für schnellere zukünftige Bestellungen.",
+      "createAnAccount": "Konto erstellen",
       "customerEmailLabel": "E-Mail-Adresse*",
       "customerEmailPlaceholder": "Geben Sie Ihre E-Mail-Adresse ein",
       "customerEmailHelp": "Wir verwenden diese E-Mail für die Bestellbestätigung und Updates.",
