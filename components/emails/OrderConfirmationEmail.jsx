@@ -295,6 +295,9 @@ const OrderConfirmationEmail = ({ orderData }) => {
                             }
                           })()}
                         </Text>
+                        <Text className="m-0 text-sm text-gray-600">
+                          Remarks: {item?.product?.remarks || item?.remarks || 'N/A'}
+                        </Text>
                       </Column>
                       <Column className="w-[15%]">
                         <Text className="m-0">{item.quantity}</Text>
@@ -366,6 +369,9 @@ const OrderConfirmationEmail = ({ orderData }) => {
                               return 'N/A';
                             }
                           })()}
+                        </Text>
+                        <Text className="m-0 text-sm text-gray-600">
+                          Remarks: {item?.product?.remarks || item?.remarks || 'N/A'}
                         </Text>
                       </Column>
                       <Column className="w-[15%]">

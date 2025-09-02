@@ -240,6 +240,9 @@ const LocalPickupEmail = ({ orderData }) => {
                         <Text className="m-0 text-xs text-gray-500">
                           Qty: {item.quantity} | Volume: {item.selectedVolume}ml
                         </Text>
+                        <Text className="m-0 text-sm text-gray-600">
+                          Remarks: {item?.product?.remarks || item?.remarks || 'N/A'}
+                        </Text>
                       </Column>
                       <Column className="w-[40%] text-right">
                         <Text className="m-0 font-semibold text-blue-600">${formatPrice(item.total)}</Text>
@@ -266,6 +269,9 @@ const LocalPickupEmail = ({ orderData }) => {
                         <Text className="m-0 text-sm text-gray-600">SKU: {item.product?.sku || 'N/A'}</Text>
                         <Text className="m-0 text-xs text-gray-500">
                           Qty: {item.quantity} | Volume: {item.selectedVolume}ml
+                        </Text>
+                        <Text className="m-0 text-sm text-gray-600">
+                          Remarks: {item?.product?.remarks || item?.remarks || 'N/A'}
                         </Text>
                       </Column>
                       <Column className="w-[40%] text-right">

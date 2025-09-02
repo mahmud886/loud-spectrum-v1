@@ -270,8 +270,11 @@ const OrderConfirmationContent = ({ orderData }) => {
                           <span className="rounded-full bg-green-100 px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal text-green-600 capitalize">
                             {t('fields.quantity')}: {item.quantity}
                           </span>
-                          <span className="rounded-full bg-green-100 px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal text-green-600 capitalize">
+                          <span className="rounded-full bg-red-100 px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal text-red-600 capitalize">
                             {t('fields.sku')}: {item.product?.sku || 'N/A'}
+                          </span>
+                          <span className="rounded-full bg-green-100 px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal text-green-600 capitalize">
+                            {'Remarks'}: {item.product?.remarks || item?.remarks || 'N/A'}
                           </span>
                         </div>
                         <div className="mt-2 flex items-center gap-2">
@@ -361,6 +364,9 @@ const OrderConfirmationContent = ({ orderData }) => {
                           </span>
                           <span className="rounded-full bg-red-100 px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal text-red-600 capitalize">
                             {t('fields.sku')}: {item.product?.sku || 'N/A'}
+                          </span>
+                          <span className="rounded-full bg-red-100 px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal text-red-600 capitalize">
+                            {'Remarks'}: {item.product?.remarks || item?.remarks || 'N/A'}
                           </span>
                         </div>
                         <div className="mt-2 flex items-center gap-2">

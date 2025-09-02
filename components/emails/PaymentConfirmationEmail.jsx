@@ -127,6 +127,7 @@ const PaymentConfirmationEmail = ({ orderData, paymentData }) => {
   } = orderData;
 
   const {
+    payment_info,
     transaction_id,
     payment_method,
     payment_amount,
@@ -244,7 +245,7 @@ const PaymentConfirmationEmail = ({ orderData, paymentData }) => {
                 <Column>
                   <Text className="m-0 font-semibold text-blue-800">Transaction ID</Text>
                   <Text className="m-0 font-mono text-blue-700">
-                    {transaction_id ? transaction_id : payment_info?.transection_id}
+                    {transaction_id ? transaction_id : payment_info?.transaction_id || 'N/A'}
                   </Text>
                 </Column>
                 <Column className="text-right">
@@ -357,6 +358,9 @@ const PaymentConfirmationEmail = ({ orderData, paymentData }) => {
                             }
                           })()}
                         </Text>
+                        <Text className="m-0 text-sm text-gray-600">
+                          Remarks: {item?.product?.remarks || item?.remarks || 'N/A'}
+                        </Text>
                       </Column>
                       <Column className="w-[15%]">
                         <Text className="m-0">{item.quantity}</Text>
@@ -428,6 +432,9 @@ const PaymentConfirmationEmail = ({ orderData, paymentData }) => {
                               return 'N/A';
                             }
                           })()}
+                        </Text>
+                        <Text className="m-0 text-sm text-gray-600">
+                          Remarks: {item?.product?.remarks || item?.remarks || 'N/A'}
                         </Text>
                       </Column>
                       <Column className="w-[15%]">

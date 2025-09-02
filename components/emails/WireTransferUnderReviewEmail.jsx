@@ -244,6 +244,9 @@ const WireTransferUnderReviewEmail = ({ orderData, transactionDetails }) => {
                         <Text className="m-0 text-xs text-gray-500">
                           Qty: {item.quantity} | Volume: {item.selectedVolume}ml
                         </Text>
+                        <Text className="m-0 text-sm text-gray-600">
+                          Remarks: {item?.product?.remarks || item?.remarks || 'N/A'}
+                        </Text>
                       </Column>
                       <Column className="w-[40%] text-right">
                         <Text className="m-0 font-semibold text-yellow-600">${formatPrice(item.total)}</Text>
@@ -270,6 +273,9 @@ const WireTransferUnderReviewEmail = ({ orderData, transactionDetails }) => {
                         <Text className="m-0 text-sm text-gray-600">SKU: {item.product?.sku || 'N/A'}</Text>
                         <Text className="m-0 text-xs text-gray-500">
                           Qty: {item.quantity} | Volume: {item.selectedVolume}ml
+                        </Text>
+                        <Text className="m-0 text-sm text-gray-600">
+                          Remarks: {item?.product?.remarks || item?.remarks || 'N/A'}
                         </Text>
                       </Column>
                       <Column className="w-[40%] text-right">
