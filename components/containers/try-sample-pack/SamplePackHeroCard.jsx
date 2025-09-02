@@ -197,7 +197,7 @@ const SamplePackHeroCard = ({ filteredSamplePackProducts, filteredProductReviews
 
               {selectedProduct && (
                 <p className="text-umbra-40 font-mono text-[14px] leading-[140%] font-normal">
-                  {selectedProduct.name} - {selectedVolume}
+                  {selectedProduct?.name} - {selectedVolume}
                 </p>
               )}
             </div>
@@ -205,8 +205,7 @@ const SamplePackHeroCard = ({ filteredSamplePackProducts, filteredProductReviews
             <div className="space-y-2">
               <div className="scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent max-h-[100px] overflow-y-auto">
                 <p className="text-umbra-40 font-mono text-[16px] leading-[140%] font-normal tracking-normal">
-                  {selectedProduct?.short_description ||
-                    'Mango OG is a relaxing, herbal remedy strain made by crossing KC 33 with Afghani. Produces euphoric and uplifting effects that are sure to boost your mood.'}
+                  {selectedProduct?.short_description}
                 </p>
               </div>
             </div>
