@@ -9,7 +9,7 @@ const TerpeneProductsContainer = ({ categories, categoryId, productTypes, isProd
 
   return (
     <div className="container pt-[100px]">
-      <div className="flex flex-col items-start justify-between gap-12 xl:flex-row">
+      <div className="flex flex-col items-start justify-between gap-12 lg:gap-6 xl:flex-row xl:gap-6">
         <div className="w-full xl:w-[20%]">
           <div className="mb-6 xl:mb-12">
             <h5 className="text-umbra-100 font-sans text-[18px] leading-[130%] font-normal tracking-normal xl:text-[22px]">

@@ -32,7 +32,7 @@ const ProductGridCard = ({ product }) => {
       <motion.div initial="rest" whileHover="hover" animate="rest" className="cursor-pointer">
         <motion.div
           transition={{ duration: 0.3 }}
-          className="relative flex h-[220px] min-h-[220px] w-full min-w-[162px] flex-col justify-around border bg-[#F5F5F5] p-2.5 xl:h-[384px] xl:min-h-[384px] xl:w-[305px] xl:min-w-[305px]"
+          className="relative flex h-[220px] min-h-[220px] w-full min-w-[162px] flex-col justify-around border bg-[#F5F5F5] p-2.5 xl:h-[384px] xl:min-h-[384px] xl:w-auto xl:min-w-auto"
         >
           {/* Image Section */}
           <Link
