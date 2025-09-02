@@ -144,7 +144,7 @@ const WholesaleRegistrationRejectionEmail = ({ registrationData }) => {
             <Hr className="my-4 border-t border-gray-200" />
 
             {/* Rejection Reason */}
-            <Section className="mb-6">
+            {/* <Section className="mb-6">
               <Text className="m-0 mb-4 text-xl font-bold text-gray-900">Reason for Decision</Text>
 
               <Section className="mb-4 rounded-lg bg-red-50 p-4">
@@ -162,10 +162,10 @@ const WholesaleRegistrationRejectionEmail = ({ registrationData }) => {
               )}
             </Section>
 
-            <Hr className="my-4 border-t border-gray-200" />
+            <Hr className="my-4 border-t border-gray-200" /> */}
 
             {/* Common Reasons Section */}
-            <Section className="mb-6">
+            {/* <Section className="mb-6">
               <Text className="m-0 mb-4 text-xl font-bold text-gray-900">Common Reasons for Non-Approval</Text>
 
               <Section className="mb-4 rounded-lg bg-gray-50 p-4">
@@ -195,9 +195,9 @@ const WholesaleRegistrationRejectionEmail = ({ registrationData }) => {
                   Current wholesale partner capacity has been reached in your region
                 </Text>
               </Section>
-            </Section>
+            </Section> */}
 
-            <Hr className="my-4 border-t border-gray-200" />
+            {/* <Hr className="my-4 border-t border-gray-200" /> */}
 
             {/* What's Next Section */}
             <Section className="mb-6">
@@ -210,12 +210,12 @@ const WholesaleRegistrationRejectionEmail = ({ registrationData }) => {
                 </Text>
               </Section>
 
-              <Section className="mb-4 rounded-lg bg-blue-50 p-4">
+              {/* <Section className="mb-4 rounded-lg bg-blue-50 p-4">
                 <Text className="m-0 mb-2 font-semibold text-blue-800">📋 Application Improvements</Text>
                 <Text className="m-0 text-sm text-blue-700">
                   Address the specific reasons mentioned above to improve your chances of approval.
                 </Text>
-              </Section>
+              </Section> */}
 
               <Section className="mb-4 rounded-lg bg-blue-50 p-4">
                 <Text className="m-0 mb-2 font-semibold text-blue-800">🛒 Retail Shopping</Text>
