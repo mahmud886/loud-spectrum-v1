@@ -2,6 +2,7 @@
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { useRouter } from '@/i18n/navigation';
 import { getOrderByCode } from '@/services/get-order-by-code';
+import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import { toast } from 'sonner';
 
@@ -10,6 +11,7 @@ const OrderDetailsByCode = ({ orderCode, token, isOpen, onClose }) => {
   const [allProducts, setAllProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
+  const t = useTranslations('OrdersPage');
 
   useEffect(() => {
     const fetchOrderDetails = async () => {
@@ -20,7 +22,7 @@ const OrderDetailsByCode = ({ orderCode, token, isOpen, onClose }) => {
           setOrderDetails(order?.data);
           setAllProducts([...order?.data?.products, ...order?.data?.ws_products]);
         } catch (error) {
-          toast.error('Error fetching order details');
+          toast.error(t('errorFetchingOrderDetails'));
           console.error('Error fetching order details:', error);
         } finally {
           setIsLoading(false);
@@ -182,7 +184,9 @@ const OrderDetailsByCode = ({ orderCode, token, isOpen, onClose }) => {
             {isLoading ? (
               <div className="h-8 w-64 rounded bg-gray-200"></div>
             ) : (
-              <>Order Details - {orderDetails?.code}</>
+              <>
+                {t('orderDetails')} - {orderDetails?.code}
+              </>
             )}
           </DialogTitle>
         </DialogHeader>
@@ -193,30 +197,35 @@ const OrderDetailsByCode = ({ orderCode, token, isOpen, onClose }) => {
             <>
               {/* Product List Section */}
               <div className="mb-6">
-                <h3 className="mb-4 text-xl font-normal">Product Details</h3>
+                <h3 className="mb-4 text-xl font-normal">{t('productDetails')}</h3>
                 <div className="overflow-x-auto rounded-md border border-gray-200">
                   <table className="w-full table-auto text-left">
                     <thead className="bg-stardust/20">
                       <tr>
                         <th className="text-umbra-100 px-4 py-2 text-center font-sans text-[16px] font-normal">
-                          Product
+                          {t('product')}
                         </th>
                         <th className="text-umbra-100 px-4 py-2 text-center font-sans text-[16px] font-normal">
-                          Quantity
+                          {t('quantity')}
                         </th>
                         <th className="text-umbra-100 px-4 py-2 text-center font-sans text-[16px] font-normal">
-                          Price
+                          {t('price')}
                         </th>
                         <th className="text-umbra-100 px-4 py-2 text-center font-sans text-[16px] font-normal">
-                          Total
+                          {t('total')}
                         </th>
                         <th className="text-umbra-100 px-4 py-2 text-center font-sans text-[16px] font-normal">
-                          Volume
+                          {t('volume')}
                         </th>
                         <th className="text-umbra-100 px-4 py-2 text-center font-sans text-[16px] font-normal">
-                          Flavor
+                          {t('flavor')}
                         </th>
-                        <th className="text-umbra-100 px-4 py-2 text-center font-sans text-[16px] font-normal">Type</th>
+                        <th className="text-umbra-100 px-4 py-2 text-center font-sans text-[16px] font-normal">
+                          {t('type')}
+                        </th>
+                        <th className="text-umbra-100 px-4 py-2 text-center font-sans text-[16px] font-normal">
+                          {t('remarks')}
+                        </th>
                       </tr>
                     </thead>
                     <tbody>
@@ -268,8 +277,11 @@ const OrderDetailsByCode = ({ orderCode, token, isOpen, onClose }) => {
                           </td>
                           <td className="text-umbra-100 px-4 py-2 text-center font-sans text-[14px] font-normal">
                             <button className="text-umbra-100 bg-alive/10 rounded-full px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal capitalize">
-                              Regular
+                              {t('regular')}
                             </button>
+                          </td>
+                          <td className="text-umbra-100 px-4 py-2 text-center font-sans text-[14px] font-normal">
+                            {item?.remarks || 'N/A'}
                           </td>
                         </tr>
                       ))}
@@ -310,8 +322,11 @@ const OrderDetailsByCode = ({ orderCode, token, isOpen, onClose }) => {
                           </td>
                           <td className="text-umbra-100 px-4 py-2 text-center font-sans text-[14px] font-normal">
                             <button className="text-umbra-100 bg-alive/10 rounded-full px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal capitalize">
-                              Wholesale
+                              {t('wholesale')}
                             </button>
+                          </td>
+                          <td className="text-umbra-100 px-4 py-2 text-center font-sans text-[14px] font-normal">
+                            {item?.remarks || 'N/A'}
                           </td>
                         </tr>
                       ))}
@@ -324,10 +339,10 @@ const OrderDetailsByCode = ({ orderCode, token, isOpen, onClose }) => {
               <div className="flex flex-col gap-2 xl:flex-row xl:space-x-6">
                 {/* Shipping Address */}
                 <div className="w-full xl:flex-1">
-                  <h3 className="mb-4 text-[18px] font-normal">Address</h3>
+                  <h3 className="mb-4 text-[18px] font-normal">{t('address')}</h3>
                   <div className="bg-stardust/20 divide-umbra-10 divide-y rounded-[10px]">
                     <div className="p-4">
-                      <h3 className="mb-1 text-[18px] font-normal">Shipping Address</h3>
+                      <h3 className="mb-1 text-[18px] font-normal">{t('shippingAddress')}</h3>
                       <p className="text-umbra-100 font-sans text-[14px] font-normal">
                         {orderDetails?.shipping_details?.first_name} {orderDetails?.shipping_details?.last_name}
                       </p>
@@ -340,7 +355,7 @@ const OrderDetailsByCode = ({ orderCode, token, isOpen, onClose }) => {
                       </p>
                     </div>
                     <div className="p-4">
-                      <h3 className="mb-1 text-[18px] font-normal">Billing Address</h3>
+                      <h3 className="mb-1 text-[18px] font-normal">{t('billingAddress')}</h3>
                       <p className="text-umbra-100 font-sans text-[14px] font-normal">
                         {orderDetails?.billing_details?.first_name} {orderDetails?.billing_details?.last_name}
                       </p>
@@ -357,35 +372,35 @@ const OrderDetailsByCode = ({ orderCode, token, isOpen, onClose }) => {
 
                 {/* Order Summary */}
                 <div className="w-full xl:flex-1">
-                  <h3 className="mb-4 text-[18px] font-normal">Order Summary</h3>
+                  <h3 className="mb-4 text-[18px] font-normal">{t('orderSummary')}</h3>
                   <div className="rounded-[10px] bg-gray-50 p-4">
                     <div className="mb-2 flex justify-between">
-                      <span className="text-umbra-100 font-sans text-[14px] font-normal">Subtotal</span>
+                      <span className="text-umbra-100 font-sans text-[14px] font-normal">{t('subtotal')}</span>
                       <span>${orderDetails?.sub_total?.toFixed(2) || 0}</span>
                     </div>
                     <div className="mb-2 flex justify-between">
-                      <span className="text-umbra-100 font-sans text-[14px] font-normal">Shipping Fee</span>
+                      <span className="text-umbra-100 font-sans text-[14px] font-normal">{t('shipping')}</span>
                       <span>${orderDetails?.shipping_amount?.toFixed(2) || 0}</span>
                     </div>
                     <div className="mb-2 flex justify-between">
-                      <span className="text-umbra-100 font-sans text-[14px] font-normal">Taxes</span>
+                      <span className="text-umbra-100 font-sans text-[14px] font-normal">{t('tax')}</span>
                       <span>${orderDetails?.tax_amount?.toFixed(2) || 0}</span>
                     </div>
                     <div className="border-umbra-10 mb-2 flex justify-between border-t pt-2 font-normal">
-                      <span className="text-umbra-100 font-sans text-[14px] font-normal">Total</span>
+                      <span className="text-umbra-100 font-sans text-[14px] font-normal">{t('total')}</span>
                       <span>${orderDetails?.total?.toFixed(2)}</span>
                     </div>
                   </div>
                   <div className="mt-6 rounded-[10px] bg-gray-50 p-4">
-                    <h3 className="mb-2 text-[18px] font-normal">Payment Information</h3>
+                    <h3 className="mb-2 text-[18px] font-normal">{t('paymentInformation')}</h3>
                     <div className="mb-2 flex justify-between">
-                      <span className="text-umbra-100 font-sans text-[14px] font-normal">Transaction ID</span>
+                      <span className="text-umbra-100 font-sans text-[14px] font-normal">{t('transactionId')}</span>
                       <span className="text-umbra-100 font-sans text-[14px] font-normal">
                         {orderDetails?.payment_info?.transection_id}
                       </span>
                     </div>
                     <div className="mb-2 flex justify-between">
-                      <span className="text-umbra-100 font-sans text-[14px] font-normal">Payment Status</span>
+                      <span className="text-umbra-100 font-sans text-[14px] font-normal">{t('paymentStatus')}</span>
                       <span
                         className={`text-umbra-100 rounded-[10px] px-2 py-1 font-sans text-[12px] leading-[120%] font-normal capitalize ${
                           orderDetails?.payment_status === 'Unpaid'
@@ -397,7 +412,7 @@ const OrderDetailsByCode = ({ orderCode, token, isOpen, onClose }) => {
                       </span>
                     </div>
                     <div className="mb-2 flex justify-between">
-                      <span className="text-umbra-100 font-sans text-[14px] font-normal">Order Status</span>
+                      <span className="text-umbra-100 font-sans text-[14px] font-normal">{t('orderStatus')}</span>
                       <span
                         className={`text-umbra-100 rounded-[10px] px-2 py-1 font-sans text-[12px] leading-[120%] font-normal capitalize ${
                           orderDetails?.order_status === 'Waiting For Payment'
@@ -421,7 +436,7 @@ const OrderDetailsByCode = ({ orderCode, token, isOpen, onClose }) => {
                       </span>
                     </div>
                     <div className="mb-2 flex justify-between">
-                      <span className="text-umbra-100 font-sans text-[14px] font-normal">Order Date</span>
+                      <span className="text-umbra-100 font-sans text-[14px] font-normal">{t('orderDate')}</span>
                       <span className="text-umbra-100 font-sans text-[14px] font-normal">
                         {formatDate(orderDetails?.created_at)}
                       </span>
@@ -433,7 +448,7 @@ const OrderDetailsByCode = ({ orderCode, token, isOpen, onClose }) => {
               {/* Close Button */}
               <div className="mt-6 flex justify-end">
                 <button className="main-button-black rounded-full px-6 py-2 text-white" onClick={() => onClose(false)}>
-                  Close
+                  {t('close')}
                 </button>
               </div>
             </>

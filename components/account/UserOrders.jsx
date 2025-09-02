@@ -123,7 +123,7 @@ export default function UserOrdersPage({ orders }) {
                       onClick={() => handleViewClick(order._id)}
                       className="cursor-pointer rounded-full bg-green-50 px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal text-green-600"
                     >
-                      View
+                      {t('view')}
                     </Badge>
                   </TableCell>
                 </TableRow>

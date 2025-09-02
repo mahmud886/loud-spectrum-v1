@@ -22,17 +22,17 @@ export default function OrderTrackPage() {
       return;
     }
 
-    if (token) {
-      toast.error(t('pleaseLoginToViewOrderDetails'));
-      setError(t('pleaseLoginToViewOrderDetails'));
-      return;
-    }
+    // if (!token) {
+    //   toast.error(t('pleaseLoginToViewOrderDetails'));
+    //   setError(t('pleaseLoginToViewOrderDetails'));
+    //   return;
+    // }
 
-    if (!token) {
-      toast.error(t('pleaseLoginToViewOrderDetails'));
-      setError(t('pleaseLoginToViewOrderDetails'));
-      return;
-    }
+    // if (token) {
+    //   toast.error(t('pleaseLoginToViewOrderDetails'));
+    //   setError(t('pleaseLoginToViewOrderDetails'));
+    //   return;
+    // }
 
     setError('');
     setIsModalOpen(true);

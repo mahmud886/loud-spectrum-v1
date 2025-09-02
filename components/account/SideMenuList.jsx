@@ -38,12 +38,12 @@ const SideMenuList = () => {
   };
 
   const menuItems = [
-    { name: t('AccountPage.menuItems.profile'), href: '/account', icon: LayoutDashboard },
-    { name: t('AccountPage.menuItems.orders'), href: '/account/orders', icon: ShoppingBag },
-    { name: t('AccountPage.menuItems.orderTrack'), href: '/account/order-track', icon: LocateFixed },
-    { name: t('AccountPage.menuItems.personalInfo'), href: '/account/personal-info', icon: User },
-    { name: t('AccountPage.menuItems.addresses'), href: '/account/address-book', icon: MapPin },
-    { name: t('AccountPage.menuItems.logout'), href: '#', icon: LogOut, onClick: handleLogout },
+    { name: t('AccountPage.MenuItems.profile'), href: '/account', icon: LayoutDashboard },
+    { name: t('AccountPage.MenuItems.orders'), href: '/account/orders', icon: ShoppingBag },
+    { name: t('AccountPage.MenuItems.orderTrack'), href: '/account/order-track', icon: LocateFixed },
+    { name: t('AccountPage.MenuItems.personalInfo'), href: '/account/personal-info', icon: User },
+    { name: t('AccountPage.MenuItems.addresses'), href: '/account/address-book', icon: MapPin },
+    { name: t('AccountPage.MenuItems.logout'), href: '#', icon: LogOut, onClick: handleLogout },
   ];
 
   return (
