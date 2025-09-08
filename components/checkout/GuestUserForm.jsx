@@ -38,7 +38,7 @@ const GuestUserForm = () => {
     <div className="border-umbra-10 bg-umbra-5 space-y-6 rounded-[10px] border p-4">
       <div>
         <h3 className="text-umbra-100 mb-2 font-sans text-[20px] font-normal">{t('title')}</h3>
-        <p className="text-umbra-80 inline-flex flex-wrap items-center gap-2 font-mono text-[11px] whitespace-nowrap">
+        <p className="text-umbra-80 whitespace-wrap inline-flex flex-wrap items-center gap-2 font-mono text-[11px]">
           {t('description')}{' '}
           <Link href="/login" className="inline-flex items-center gap-1 font-normal underline">
             <ArrowRight size={14} /> {t('createAnAccount')}
