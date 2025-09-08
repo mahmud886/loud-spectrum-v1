@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
+    "prebuild": "npm run clean && npm run prettier",
     "start": "next start",
     "lint": "next lint",
     "clean": "rm -rf .next",
@@ -12,7 +13,8 @@
     "pm2:stop": "chmod +x stop-pm2.sh && ./stop-pm2.sh",
     "pm2:restart": "npm run pm2:stop && npm run pm2:start",
     "pm2:logs": "pm2 logs loud-spectrum-v1",
-    "pm2:status": "pm2 status"
+    "pm2:status": "pm2 status",
+    "prettier": "prettier --write ."
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.4",

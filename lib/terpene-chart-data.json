@@ -37,7 +37,7 @@
       {
         "id": "humulene",
         "name": "Humulene",
-        "value": 5.90
+        "value": 5.9
       },
       {
         "id": "caryophyllene",
@@ -159,7 +159,7 @@
       {
         "id": "terpinolene",
         "name": "Terpinolene",
-        "value": 3.60
+        "value": 3.6
       },
       {
         "id": "linalool",
@@ -259,7 +259,7 @@
       {
         "id": "trace",
         "name": "Trace",
-        "value": 19.40
+        "value": 19.4
       }
     ]
   },
@@ -418,7 +418,7 @@
       {
         "id": "d-limonene",
         "name": "d-Limonene",
-        "value": 6.00
+        "value": 6.0
       },
       {
         "id": "terpinolene",
@@ -523,7 +523,7 @@
       {
         "id": "trace",
         "name": "Trace",
-        "value": 13.50
+        "value": 13.5
       }
     ]
   },
@@ -560,7 +560,7 @@
       {
         "id": "linalool",
         "name": "Linalool",
-        "value": 5.20
+        "value": 5.2
       },
       {
         "id": "humulene",
@@ -575,7 +575,7 @@
       {
         "id": "b-pinene",
         "name": "b-Pinene",
-        "value": 3.60
+        "value": 3.6
       },
       {
         "id": "nerolidol",
@@ -620,7 +620,7 @@
       {
         "id": "bisabolol",
         "name": "Bisabolol",
-        "value": 1.60
+        "value": 1.6
       },
       {
         "id": "camphene",
@@ -707,7 +707,7 @@
       {
         "id": "b-pinene",
         "name": "b-Pinene",
-        "value": 7.70
+        "value": 7.7
       },
       {
         "id": "nerolidol",
@@ -814,7 +814,7 @@
       {
         "id": "d-limonene",
         "name": "d-Limonene",
-        "value": 9.10
+        "value": 9.1
       },
       {
         "id": "terpinolene",
@@ -839,12 +839,12 @@
       {
         "id": "b-pinene",
         "name": "b-Pinene",
-        "value": 3.40
+        "value": 3.4
       },
       {
         "id": "nerolidol",
         "name": "Nerolidol",
-        "value": 3.60
+        "value": 3.6
       },
       {
         "id": "a-phellandrene",
@@ -914,7 +914,7 @@
       {
         "id": "guaiol",
         "name": "Guaiol",
-        "value": 2.30
+        "value": 2.3
       },
       {
         "id": "trace",
@@ -1235,7 +1235,7 @@
       {
         "id": "b-pinene",
         "name": "b-Pinene",
-        "value": 4.10
+        "value": 4.1
       },
       {
         "id": "nerolidol",
@@ -1315,7 +1315,7 @@
       {
         "id": "trace",
         "name": "Trace",
-        "value": 15.00
+        "value": 15.0
       }
     ]
   },
@@ -1611,7 +1611,7 @@
       {
         "id": "terpinolene",
         "name": "Terpinolene",
-        "value": 3.60
+        "value": 3.6
       },
       {
         "id": "linalool",
@@ -1711,7 +1711,7 @@
       {
         "id": "trace",
         "name": "Trace",
-        "value": 14.30
+        "value": 14.3
       }
     ]
   },
@@ -1793,7 +1793,7 @@
       {
         "id": "borneol",
         "name": "Borneol",
-        "value": 1.10
+        "value": 1.1
       },
       {
         "id": "terpineol",
@@ -1865,7 +1865,7 @@
       {
         "id": "myrcene",
         "name": "Myrcene",
-        "value": 6.60
+        "value": 6.6
       },
       {
         "id": "d-limonene",
@@ -2124,7 +2124,7 @@
       {
         "id": "a-pinene",
         "name": "a-Pinene",
-        "value": 1.80
+        "value": 1.8
       },
       {
         "id": "myrcene",
@@ -2266,7 +2266,7 @@
       {
         "id": "d-limonene",
         "name": "d-Limonene",
-        "value": 5.30
+        "value": 5.3
       },
       {
         "id": "terpinolene",
@@ -2296,7 +2296,7 @@
       {
         "id": "nerolidol",
         "name": "Nerolidol",
-        "value": 2.50
+        "value": 2.5
       },
       {
         "id": "a-phellandrene",
@@ -2428,7 +2428,7 @@
       {
         "id": "nerolidol",
         "name": "Nerolidol",
-        "value": 4.40
+        "value": 4.4
       },
       {
         "id": "a-phellandrene",
@@ -2443,7 +2443,7 @@
       {
         "id": "terpinene",
         "name": "Terpinene",
-        "value": 1.00
+        "value": 1.0
       },
       {
         "id": "fenchol",
@@ -2525,7 +2525,7 @@
       {
         "id": "myrcene",
         "name": "Myrcene",
-        "value": 1.90
+        "value": 1.9
       },
       {
         "id": "d-limonene",
@@ -2682,7 +2682,7 @@
       {
         "id": "caryophyllene",
         "name": "Caryophyllene",
-        "value": 2.70
+        "value": 2.7
       },
       {
         "id": "b-pinene",
@@ -2819,7 +2819,7 @@
       {
         "id": "b-pinene",
         "name": "b-Pinene",
-        "value": 5.50
+        "value": 5.5
       },
       {
         "id": "nerolidol",
@@ -2966,7 +2966,7 @@
       {
         "id": "cerene",
         "name": "Cerene",
-        "value": 1.40
+        "value": 1.4
       },
       {
         "id": "terpinene",
@@ -3195,7 +3195,7 @@
       {
         "id": "terpinolene",
         "name": "Terpinolene",
-        "value": 3.60
+        "value": 3.6
       },
       {
         "id": "linalool",
@@ -3459,7 +3459,7 @@
       {
         "id": "terpinolene",
         "name": "Terpinolene",
-        "value": 0.00
+        "value": 0.0
       },
       {
         "id": "linalool",
@@ -3850,7 +3850,7 @@
       {
         "id": "d-limonene",
         "name": "d-Limonene",
-        "value": 6.00
+        "value": 6.0
       },
       {
         "id": "terpinolene",
@@ -3992,7 +3992,7 @@
       {
         "id": "linalool",
         "name": "Linalool",
-        "value": 5.20
+        "value": 5.2
       },
       {
         "id": "humulene",
@@ -4007,7 +4007,7 @@
       {
         "id": "b-pinene",
         "name": "b-Pinene",
-        "value": 3.60
+        "value": 3.6
       },
       {
         "id": "nerolidol",
@@ -4052,7 +4052,7 @@
       {
         "id": "bisabolol",
         "name": "Bisabolol",
-        "value": 1.60
+        "value": 1.6
       },
       {
         "id": "camphene",
@@ -4129,7 +4129,7 @@
       {
         "id": "humulene",
         "name": "Humulene",
-        "value": 5.90
+        "value": 5.9
       },
       {
         "id": "caryophyllene",
@@ -4500,12 +4500,12 @@
       {
         "id": "a-pinene",
         "name": "a-Pinene",
-        "value": 0.00
+        "value": 0.0
       },
       {
         "id": "myrcene",
         "name": "Myrcene",
-        "value": 0.00
+        "value": 0.0
       },
       {
         "id": "d-limonene",
@@ -4535,7 +4535,7 @@
       {
         "id": "b-pinene",
         "name": "b-Pinene",
-        "value": 0.00
+        "value": 0.0
       },
       {
         "id": "nerolidol",
@@ -4642,7 +4642,7 @@
       {
         "id": "d-limonene",
         "name": "d-Limonene",
-        "value": 6.00
+        "value": 6.0
       },
       {
         "id": "terpinolene",
@@ -4799,7 +4799,7 @@
       {
         "id": "b-pinene",
         "name": "b-Pinene",
-        "value": 7.70
+        "value": 7.7
       },
       {
         "id": "nerolidol",
@@ -4916,7 +4916,7 @@
       {
         "id": "linalool",
         "name": "Linalool",
-        "value": 5.20
+        "value": 5.2
       },
       {
         "id": "humulene",
@@ -4931,7 +4931,7 @@
       {
         "id": "b-pinene",
         "name": "b-Pinene",
-        "value": 3.60
+        "value": 3.6
       },
       {
         "id": "nerolidol",
@@ -4976,7 +4976,7 @@
       {
         "id": "bisabolol",
         "name": "Bisabolol",
-        "value": 1.60
+        "value": 1.6
       },
       {
         "id": "camphene",
@@ -5170,7 +5170,7 @@
       {
         "id": "d-limonene",
         "name": "d-Limonene",
-        "value": 6.00
+        "value": 6.0
       },
       {
         "id": "terpinolene",
@@ -5327,7 +5327,7 @@
       {
         "id": "b-pinene",
         "name": "b-Pinene",
-        "value": 5.50
+        "value": 5.5
       },
       {
         "id": "nerolidol",
@@ -5434,7 +5434,7 @@
       {
         "id": "d-limonene",
         "name": "d-Limonene",
-        "value": 5.30
+        "value": 5.3
       },
       {
         "id": "terpinolene",
@@ -5444,7 +5444,7 @@
       {
         "id": "linalool",
         "name": "Linalool",
-        "value": 0.00
+        "value": 0.0
       },
       {
         "id": "humulene",
@@ -5464,7 +5464,7 @@
       {
         "id": "nerolidol",
         "name": "Nerolidol",
-        "value": 2.50
+        "value": 2.5
       },
       {
         "id": "a-phellandrene",
@@ -5539,7 +5539,7 @@
       {
         "id": "trace",
         "name": "Trace",
-        "value": 13.10
+        "value": 13.1
       }
     ]
   },
@@ -5561,7 +5561,7 @@
       {
         "id": "myrcene",
         "name": "Myrcene",
-        "value": 1.90
+        "value": 1.9
       },
       {
         "id": "d-limonene",
@@ -5703,7 +5703,7 @@
       {
         "id": "terpinolene",
         "name": "Terpinolene",
-        "value": 0.00
+        "value": 0.0
       },
       {
         "id": "linalool",
@@ -5723,7 +5723,7 @@
       {
         "id": "b-pinene",
         "name": "b-Pinene",
-        "value": 4.10
+        "value": 4.1
       },
       {
         "id": "nerolidol",
@@ -5825,7 +5825,7 @@
       {
         "id": "myrcene",
         "name": "Myrcene",
-        "value": 0.00
+        "value": 0.0
       },
       {
         "id": "d-limonene",
@@ -5935,7 +5935,7 @@
       {
         "id": "trace",
         "name": "Trace",
-        "value": 14.00
+        "value": 14.0
       }
     ]
   },
@@ -5972,7 +5972,7 @@
       {
         "id": "linalool",
         "name": "Linalool",
-        "value": 5.20
+        "value": 5.2
       },
       {
         "id": "humulene",
@@ -6017,7 +6017,7 @@
       {
         "id": "borneol",
         "name": "Borneol",
-        "value": 0.00
+        "value": 0.0
       },
       {
         "id": "terpineol",
@@ -6032,7 +6032,7 @@
       {
         "id": "bisabolol",
         "name": "Bisabolol",
-        "value": 1.60
+        "value": 1.6
       },
       {
         "id": "camphene",
@@ -6368,7 +6368,7 @@
       {
         "id": "linalool",
         "name": "Linalool",
-        "value": 5.20
+        "value": 5.2
       },
       {
         "id": "humulene",
@@ -6428,7 +6428,7 @@
       {
         "id": "bisabolol",
         "name": "Bisabolol",
-        "value": 1.60
+        "value": 1.6
       },
       {
         "id": "camphene",
@@ -6515,7 +6515,7 @@
       {
         "id": "b-pinene",
         "name": "b-Pinene",
-        "value": 7.70
+        "value": 7.7
       },
       {
         "id": "nerolidol",
@@ -6647,7 +6647,7 @@
       {
         "id": "b-pinene",
         "name": "b-Pinene",
-        "value": 7.70
+        "value": 7.7
       },
       {
         "id": "nerolidol",
@@ -6779,7 +6779,7 @@
       {
         "id": "b-pinene",
         "name": "b-Pinene",
-        "value": 7.70
+        "value": 7.7
       },
       {
         "id": "nerolidol",
@@ -6911,7 +6911,7 @@
       {
         "id": "b-pinene",
         "name": "b-Pinene",
-        "value": 7.70
+        "value": 7.7
       },
       {
         "id": "nerolidol",
@@ -6991,7 +6991,7 @@
       {
         "id": "trace",
         "name": "Trace",
-        "value": 15.40
+        "value": 15.4
       }
     ]
   },
@@ -7556,7 +7556,7 @@
       {
         "id": "linalool",
         "name": "Linalool",
-        "value": 5.20
+        "value": 5.2
       },
       {
         "id": "humulene",
@@ -7616,7 +7616,7 @@
       {
         "id": "bisabolol",
         "name": "Bisabolol",
-        "value": 1.60
+        "value": 1.6
       },
       {
         "id": "camphene",
@@ -7718,7 +7718,7 @@
       {
         "id": "cerene",
         "name": "Cerene",
-        "value": 1.40
+        "value": 1.4
       },
       {
         "id": "terpinene",
@@ -7820,7 +7820,7 @@
       {
         "id": "linalool",
         "name": "Linalool",
-        "value": 5.20
+        "value": 5.2
       },
       {
         "id": "humulene",
@@ -7835,7 +7835,7 @@
       {
         "id": "b-pinene",
         "name": "b-Pinene",
-        "value": 3.60
+        "value": 3.6
       },
       {
         "id": "nerolidol",
@@ -7880,7 +7880,7 @@
       {
         "id": "bisabolol",
         "name": "Bisabolol",
-        "value": 1.60
+        "value": 1.6
       },
       {
         "id": "camphene",
@@ -8343,7 +8343,7 @@
       {
         "id": "terpinolene",
         "name": "Terpinolene",
-        "value": 3.60
+        "value": 3.6
       },
       {
         "id": "linalool",
@@ -8470,7 +8470,7 @@
       {
         "id": "d-limonene",
         "name": "d-Limonene",
-        "value": 9.10
+        "value": 9.1
       },
       {
         "id": "terpinolene",
@@ -8495,12 +8495,12 @@
       {
         "id": "b-pinene",
         "name": "b-Pinene",
-        "value": 3.40
+        "value": 3.4
       },
       {
         "id": "nerolidol",
         "name": "Nerolidol",
-        "value": 3.60
+        "value": 3.6
       },
       {
         "id": "a-phellandrene",
@@ -8570,7 +8570,7 @@
       {
         "id": "guaiol",
         "name": "Guaiol",
-        "value": 2.30
+        "value": 2.3
       },
       {
         "id": "trace",
@@ -8612,7 +8612,7 @@
       {
         "id": "linalool",
         "name": "Linalool",
-        "value": 0.00
+        "value": 0.0
       },
       {
         "id": "humulene",
@@ -8734,7 +8734,7 @@
       {
         "id": "d-limonene",
         "name": "d-Limonene",
-        "value": 9.10
+        "value": 9.1
       },
       {
         "id": "terpinolene",
@@ -8759,12 +8759,12 @@
       {
         "id": "b-pinene",
         "name": "b-Pinene",
-        "value": 3.40
+        "value": 3.4
       },
       {
         "id": "nerolidol",
         "name": "Nerolidol",
-        "value": 3.60
+        "value": 3.6
       },
       {
         "id": "a-phellandrene",
@@ -8834,7 +8834,7 @@
       {
         "id": "guaiol",
         "name": "Guaiol",
-        "value": 2.30
+        "value": 2.3
       },
       {
         "id": "trace",
