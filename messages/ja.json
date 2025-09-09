@@ -169,6 +169,10 @@
         "name": "UPS",
         "description": "国内外の効率的な物流"
       },
+      "dhl": {
+        "name": "DHL",
+        "description": "世界中の迅速で信頼性の高い配送"
+      },
       "ShippingType": {
         "label": "配送タイプを選択してください*",
         "placeholder": "配送タイプを選択してください",

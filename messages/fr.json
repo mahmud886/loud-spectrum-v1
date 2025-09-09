@@ -169,6 +169,10 @@
         "name": "UPS",
         "description": "Logistique efficace nationale et internationale"
       },
+      "dhl": {
+        "name": "DHL",
+        "description": "Livraison rapide et fiable à travers le monde"
+      },
       "ShippingType": {
         "label": "Choisissez votre type de livraison*",
         "placeholder": "Sélectionnez votre type de livraison",

@@ -169,6 +169,10 @@
         "name": "UPS",
         "description": "Efficient domestic and global logistics"
       },
+      "dhl": {
+        "name": "DHL",
+        "description": "Fast and reliable delivery across the globe"
+      },
       "ShippingType": {
         "label": "Choose Your Shipping Type*",
         "placeholder": "Select your shipping type",

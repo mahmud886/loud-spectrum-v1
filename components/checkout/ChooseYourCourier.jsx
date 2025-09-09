@@ -12,6 +12,7 @@ import {
   setSelectedCourier,
   setShippingCostLoading,
   setShippingType,
+  setShippingTypeFormatted,
   setTax,
 } from '@/lib/store/slices/checkoutSlice';
 import { cn } from '@/lib/utils';
@@ -19,7 +20,7 @@ import * as RadioGroup from '@radix-ui/react-radio-group';
 import { CheckCircle2 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import { useEffect, useMemo } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
@@ -28,6 +29,7 @@ import { getWeightByVolume } from '@/helpers/get-weight-by-volume';
 import { selectCurrentUser } from '@/lib/store/slices/authSlice';
 import { getFedexInformations } from '@/services/getFedexInformations';
 import { getUpsInformations } from '@/services/getUpsInformations';
+import { toast } from 'sonner';
 
 // Shipping type constants based on flowchart logic
 const US_VOLUME_LESS_THAN_OR_EQUAL_TO_5ML = ['STANDARD_FLAT_RATE_9_95', 'FEDEX_2_DAY', 'UPS_GROUND'];
@@ -50,10 +52,14 @@ const ChooseYourCourier = () => {
   const dynamicShippingCost = useSelector(selectDynamicShippingCost);
   const shippingAddress = useSelector(selectShippingAddress);
 
+  // Local state for DHL products
+  const [dhlProducts, setDhlProducts] = useState([]);
+  const [dhlLoading, setDhlLoading] = useState(false);
+
   // Get total volume from order summary
   const totalVolume = orderSummary.totalVolume;
-  const totalWeightInPounds = getWeightByVolume(totalVolume);
-  const dimensions = getDimensionsByVolume(totalVolume);
+  const totalWeightInPounds = useMemo(() => getWeightByVolume(totalVolume), [totalVolume]);
+  const dimensions = useMemo(() => getDimensionsByVolume(totalVolume), [totalVolume]);
   const countryCode = shippingAddress?.country;
   const postalCode = shippingAddress?.postalCode;
 
@@ -77,7 +83,7 @@ const ChooseYourCourier = () => {
   };
 
   // Calculate and apply tax based on flowchart logic
-  const calculateAndApplyTax = () => {
+  const calculateAndApplyTax = useCallback(() => {
     if (!shippingAddress?.country) {
       return;
     }
@@ -96,17 +102,12 @@ const ChooseYourCourier = () => {
     } else {
       dispatch(setTax(0));
     }
-  };
+  }, [shippingAddress?.country, shippingAddress?.province, orderSummary.subtotal, dispatch]);
 
   // Apply tax calculation when relevant factors change
   useEffect(() => {
     calculateAndApplyTax();
-  }, [orderSummary.subtotal, shippingAddress?.country, shippingAddress?.province, dispatch]);
-
-  // Initial tax calculation on component mount
-  useEffect(() => {
-    calculateAndApplyTax();
-  }, []);
+  }, [calculateAndApplyTax]);
 
   // Determine available shipping types based on flowchart logic
   const getAvailableShippingTypesByLogic = () => {
@@ -142,10 +143,37 @@ const ChooseYourCourier = () => {
       description: t('ups.description'),
       image: '/assets/images/courier-logos/ups-logo.png',
     },
+    {
+      value: 'dhl',
+      name: t('dhl.name'),
+      description: t('dhl.description'),
+      image: '/assets/images/courier-logos/dhl-logo.png',
+    },
   ];
 
   // Dynamic shipping types based on flowchart logic
   const availableShippingTypes = useMemo(() => {
+    // Handle DHL separately with dynamic products
+    if (selectedCourier === 'dhl') {
+      if (dhlLoading) {
+        return [{ value: 'loading', label: 'Loading DHL rates...', cost: 0, originalType: 'LOADING' }];
+      }
+
+      if (dhlProducts.length > 0) {
+        // Convert DHL products to shipping type format
+        return dhlProducts.map((product, index) => ({
+          value: `dhl-${product.productCode}-${index}`,
+          label: `${product.productName} - $${product.totalPrice[0].price} ${product.totalPrice[0].priceCurrency}`,
+          cost: product.totalPrice[0].price,
+          originalType: product.productCode,
+          dhlProduct: product,
+        }));
+      }
+
+      // Show static DHL shipping options that will trigger API calls when selected
+      return [{ value: 'no-rates', label: 'No DHL rates available', cost: 0, originalType: 'NO_RATES' }];
+    }
+
     // Get shipping types based on user type, destination, and volume
     const logicBasedTypes = getAvailableShippingTypesByLogic();
 
@@ -206,7 +234,16 @@ const ChooseYourCourier = () => {
 
       return { value: displayValue, label, cost, originalType: type };
     });
-  }, [totalVolume, selectedCourier, t, user?.role, shippingAddress?.country, shippingAddress?.province]);
+  }, [
+    totalVolume,
+    selectedCourier,
+    t,
+    user?.role,
+    shippingAddress?.country,
+    shippingAddress?.province,
+    dhlProducts,
+    dhlLoading,
+  ]);
 
   // Get display cost for shipping type (dynamic or default)
   // Shimmer component for loading state
@@ -218,6 +255,11 @@ const ChooseYourCourier = () => {
   );
 
   const getDisplayCost = (shippingType) => {
+    // Handle DHL products - price is already included in label
+    if (selectedCourier === 'dhl' && shippingType.value.startsWith('dhl-')) {
+      return ''; // Price is already shown in the label
+    }
+
     const apiEnabledTypes = ['fedex-2-day', 'international-economy', 'ups-ground'];
 
     if (apiEnabledTypes.includes(shippingType.value) && selectedShippingType === shippingType.value) {
@@ -232,11 +274,89 @@ const ChooseYourCourier = () => {
     // return shippingType.cost > 0 ? `$${shippingType.cost.toFixed(2)}` : '';
   };
 
+  // Fetch DHL rates when DHL is selected
+  const fetchDhlRates = useCallback(async () => {
+    if (!shippingAddress?.country || !shippingAddress?.postalCode) {
+      toast.error('Shipping address is required for DHL rates');
+      return;
+    }
+
+    setDhlLoading(true);
+    setDhlProducts([]);
+
+    // Construct the payload like the test page
+    const shippingData = {
+      shipperDetails: {
+        postalCode: '92706',
+        cityName: 'Santa Ana',
+        countryCode: 'US',
+      },
+      receiverDetails: {
+        postalCode: shippingAddress.postalCode,
+        cityName: shippingAddress.province || 'Destination City',
+        countryCode: shippingAddress.country,
+      },
+      packageDetails: {
+        weight: parseFloat(totalWeightInPounds * 0.453592) || 1, // Convert to kg
+        length: parseFloat(dimensions.length * 2.54) || 10, // Convert to cm
+        width: parseFloat(dimensions.width * 2.54) || 10, // Convert to cm
+        height: parseFloat(dimensions.height * 2.54) || 10, // Convert to cm
+      },
+    };
+
+    try {
+      const response = await fetch('/api/dhl/rates', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(shippingData),
+      });
+      const result = await response.json();
+      if (!response.ok) {
+        const errorMessage = result.details?.detail || result.error || 'Failed to fetch rates.';
+        toast.error(errorMessage);
+      }
+      setDhlProducts(result.products || []);
+    } catch (error) {
+      console.error('Error fetching DHL rates:', error);
+      let userFriendlyError = error.message;
+
+      // Make DHL API errors more user-friendly
+      if (error.message.includes('not available for the requested pickup date')) {
+        userFriendlyError = 'DHL services are not available for the selected dates. Please try again later.';
+      } else if (error.message.includes('user not authorized')) {
+        userFriendlyError = 'DHL service temporarily unavailable. Please try a different courier.';
+      } else if (error.message.includes('Failed to fetch rates')) {
+        userFriendlyError = 'Unable to get DHL rates. Please check your address and try again.';
+      }
+
+      toast.error(userFriendlyError);
+    } finally {
+      setDhlLoading(false);
+    }
+  }, [
+    dimensions,
+    totalWeightInPounds,
+    shippingAddress?.country,
+    shippingAddress?.postalCode,
+    shippingAddress?.province,
+  ]);
+
   // Handle courier change
   const handleCourierChange = (value) => {
     dispatch(setSelectedCourier(value));
     // Reset shipping type when courier changes as available options may change
     dispatch(setShippingType(''));
+
+    // Fetch DHL rates when DHL radio button is clicked
+    if (value === 'dhl') {
+      // Set initial DHL shipping type
+      dispatch(setShippingType('dhl'));
+      // Call DHL API only when user clicks DHL radio button
+      fetchDhlRates();
+    } else {
+      // Clear DHL data when switching away from DHL
+      setDhlProducts([]);
+    }
   };
 
   // API call functions
@@ -311,9 +431,25 @@ const ChooseYourCourier = () => {
 
   // Handle shipping type change
   const handleShippingTypeChange = (value) => {
+    // Handle DHL product selection
+    if (selectedCourier === 'dhl' && value.startsWith('dhl-')) {
+      // Find the selected DHL product
+      const selectedProduct = dhlProducts.find((product, index) => `dhl-${product.productCode}-${index}` === value);
+
+      if (selectedProduct) {
+        // Create the formatted shipping type for DHL
+        const formattedShippingType = `dhl-${selectedProduct.productCode}-0 - ${selectedProduct.productName}`;
+        dispatch(setShippingType(value));
+        dispatch(setShippingTypeFormatted(formattedShippingType));
+        dispatch(setDynamicShippingCost(selectedProduct.totalPrice[0].price));
+        return;
+      }
+    }
+
+    // For non-DHL couriers, use the original value
     dispatch(setShippingType(value));
 
-    // Call API for dynamic pricing for specific shipping types
+    // Call API for dynamic pricing for specific shipping types (FedEx/UPS)
     // Note: international-economy for customers has fixed pricing ($30), so no API call needed
     const apiEnabledTypes = ['fedex-2-day', 'ups-ground'];
 
@@ -326,13 +462,34 @@ const ChooseYourCourier = () => {
     }
   };
 
-  // Reset courier when total volume changes
+  // Reset courier when total volume changes (but not when address changes)
   useEffect(() => {
     if (selectedCourier) {
       dispatch(setSelectedCourier(''));
       dispatch(setShippingType(''));
+      // Clear DHL data when resetting
+      setDhlProducts([]);
     }
-  }, [totalVolume, dispatch, shippingAddress?.country, shippingAddress?.province, shippingAddress?.postalCode]);
+  }, [totalVolume, dispatch]);
+
+  // Reset courier and shipping type when address changes
+  useEffect(() => {
+    if (shippingAddress?.country || shippingAddress?.province || shippingAddress?.city || shippingAddress?.postalCode) {
+      dispatch(setSelectedCourier(''));
+      dispatch(setShippingType(''));
+      // Clear DHL products when courier is reset
+      setDhlProducts([]);
+    }
+  }, [
+    shippingAddress?.country,
+    shippingAddress?.province,
+    shippingAddress?.city,
+    shippingAddress?.postalCode,
+    dispatch,
+  ]);
+
+  // DHL API is only called when user clicks the DHL radio button
+  // No automatic refetch on address changes
 
   // Reset shipping type if current selection is not available for new volume/courier
   useEffect(() => {
@@ -494,6 +651,11 @@ const ChooseYourCourier = () => {
             Loading: {shippingCostLoading ? 'Yes' : 'No'} | Dynamic Cost:{' '}
             {dynamicShippingCost !== null ? `$${dynamicShippingCost}` : 'None'}
           </p>
+          {selectedCourier === 'dhl' && (
+            <p>
+              DHL: Loading: {dhlLoading ? 'Yes' : 'No'} | Products: {dhlProducts.length}
+            </p>
+          )}
           <p>
             Tax Info: Subtotal: ${orderSummary.subtotal} | Tax: ${orderSummary.tax} | Total: ${orderSummary.total}
           </p>
