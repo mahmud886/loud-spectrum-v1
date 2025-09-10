@@ -130,26 +130,36 @@ const ChooseYourCourier = () => {
     }
   };
 
-  const couriers = [
-    {
-      value: 'fedex',
-      name: t('fedex.name'),
-      description: t('fedex.description'),
-      image: '/assets/images/courier-logos/fedex-logo.png',
-    },
-    {
-      value: 'ups',
-      name: t('ups.name'),
-      description: t('ups.description'),
-      image: '/assets/images/courier-logos/ups-logo.png',
-    },
-    {
-      value: 'dhl',
-      name: t('dhl.name'),
-      description: t('dhl.description'),
-      image: '/assets/images/courier-logos/dhl-logo.png',
-    },
-  ];
+  // Filter couriers based on shipping destination
+  const couriers = useMemo(() => {
+    const allCouriers = [
+      {
+        value: 'fedex',
+        name: t('fedex.name'),
+        description: t('fedex.description'),
+        image: '/assets/images/courier-logos/fedex-logo.png',
+      },
+      {
+        value: 'ups',
+        name: t('ups.name'),
+        description: t('ups.description'),
+        image: '/assets/images/courier-logos/ups-logo.png',
+      },
+      {
+        value: 'dhl',
+        name: t('dhl.name'),
+        description: t('dhl.description'),
+        image: '/assets/images/courier-logos/dhl-logo.png',
+      },
+    ];
+
+    // DHL is only available for international customers
+    if (!isInternational()) {
+      return allCouriers.filter((courier) => courier.value !== 'dhl');
+    }
+
+    return allCouriers;
+  }, [t, shippingAddress?.country]);
 
   // Dynamic shipping types based on flowchart logic
   const availableShippingTypes = useMemo(() => {
@@ -160,14 +170,25 @@ const ChooseYourCourier = () => {
       }
 
       if (dhlProducts.length > 0) {
-        // Convert DHL products to shipping type format
-        return dhlProducts.map((product, index) => ({
-          value: `dhl-${product.productCode}-${index}`,
-          label: `${product.productName} - $${product.totalPrice[0].price} ${product.totalPrice[0].priceCurrency}`,
-          cost: product.totalPrice[0].price,
-          originalType: product.productCode,
-          dhlProduct: product,
-        }));
+        // Filter DHL products to only show Express Worldwide and add $30 extra
+        const expressWorldwideProducts = dhlProducts.filter(
+          (product) => product.productName && product.productName.toLowerCase().includes('express worldwide'),
+        );
+
+        // Convert DHL products to shipping type format with $30 extra fee
+        return expressWorldwideProducts.map((product, index) => {
+          const basePrice = parseFloat(product.totalPrice[0].price);
+          const priceWithExtra = basePrice + 30; // Add $30 extra
+
+          return {
+            value: `dhl-${product.productCode}-${index}`,
+            label: `${product.productName} - $${priceWithExtra.toFixed(2)} ${product.totalPrice[0].priceCurrency}`,
+            cost: priceWithExtra,
+            originalType: product.productCode,
+            dhlProduct: product,
+            basePrice: basePrice, // Store original price for reference
+          };
+        });
       }
 
       // Show static DHL shipping options that will trigger API calls when selected
@@ -433,15 +454,24 @@ const ChooseYourCourier = () => {
   const handleShippingTypeChange = (value) => {
     // Handle DHL product selection
     if (selectedCourier === 'dhl' && value.startsWith('dhl-')) {
-      // Find the selected DHL product
-      const selectedProduct = dhlProducts.find((product, index) => `dhl-${product.productCode}-${index}` === value);
+      // Find the selected DHL product from the filtered Express Worldwide products
+      const expressWorldwideProducts = dhlProducts.filter(
+        (product) => product.productName && product.productName.toLowerCase().includes('express worldwide'),
+      );
+      const selectedProduct = expressWorldwideProducts.find(
+        (product, index) => `dhl-${product.productCode}-${index}` === value,
+      );
 
       if (selectedProduct) {
+        // Calculate price with $30 extra
+        const basePrice = parseFloat(selectedProduct.totalPrice[0].price);
+        const priceWithExtra = basePrice + 30;
+
         // Create the formatted shipping type for DHL
         const formattedShippingType = `dhl-${selectedProduct.productCode}-0 - ${selectedProduct.productName}`;
         dispatch(setShippingType(value));
         dispatch(setShippingTypeFormatted(formattedShippingType));
-        dispatch(setDynamicShippingCost(selectedProduct.totalPrice[0].price));
+        dispatch(setDynamicShippingCost(priceWithExtra));
         return;
       }
     }
@@ -475,16 +505,25 @@ const ChooseYourCourier = () => {
   // Reset courier and shipping type when address changes
   useEffect(() => {
     if (shippingAddress?.country || shippingAddress?.province || shippingAddress?.city || shippingAddress?.postalCode) {
-      dispatch(setSelectedCourier(''));
-      dispatch(setShippingType(''));
-      // Clear DHL products when courier is reset
-      setDhlProducts([]);
+      // If DHL was selected but destination is no longer international, reset courier
+      if (selectedCourier === 'dhl' && !isInternational()) {
+        dispatch(setSelectedCourier(''));
+        dispatch(setShippingType(''));
+        setDhlProducts([]);
+      } else {
+        // For other couriers or when address changes, reset shipping type only
+        dispatch(setShippingType(''));
+        if (selectedCourier === 'dhl') {
+          setDhlProducts([]);
+        }
+      }
     }
   }, [
     shippingAddress?.country,
     shippingAddress?.province,
     shippingAddress?.city,
     shippingAddress?.postalCode,
+    selectedCourier,
     dispatch,
   ]);
 
@@ -653,7 +692,11 @@ const ChooseYourCourier = () => {
           </p>
           {selectedCourier === 'dhl' && (
             <p>
-              DHL: Loading: {dhlLoading ? 'Yes' : 'No'} | Products: {dhlProducts.length}
+              DHL: Loading: {dhlLoading ? 'Yes' : 'No'} | Total Products: {dhlProducts.length} | Express Worldwide:{' '}
+              {
+                dhlProducts.filter((p) => p.productName && p.productName.toLowerCase().includes('express worldwide'))
+                  .length
+              }
             </p>
           )}
           <p>
