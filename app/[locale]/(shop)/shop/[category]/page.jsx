@@ -208,7 +208,7 @@ async function CategoryShopContent({ params }) {
           <TerpeneProductsContainerContent
             categories={activeCategories}
             categoryId="all"
-            isProductType={isProductType || false}
+            isProductType={isProductType || { type: false, name: null, slug: null, _id: null }}
             productTypes={activeProductTypes || []}
           />
         </Suspense>
@@ -242,7 +242,7 @@ async function CategoryShopContent({ params }) {
         <TerpeneProductsContainerContent
           categories={activeCategories}
           categoryId={exactCategory?._id}
-          isProductType={isProductType || false}
+          isProductType={isProductType || { type: false, name: null, slug: null, _id: null }}
           productTypes={activeProductTypes || []}
         />
       </Suspense>

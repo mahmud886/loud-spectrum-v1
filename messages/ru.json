@@ -544,7 +544,39 @@
     "NoProductsAvailable": "Нет доступных товаров",
     "NoProductsInCategoryDescription": "Попробуйте выбрать другие категории или очистите фильтры, чтобы увидеть больше товаров.",
     "NoProductsAvailableDescription": "Мы в настоящее время обновляем наш ассортимент. Пожалуйста, вернитесь в ближайшее время для новых товаров.",
-    "ClearFilters": "Очистить фильтры"
+    "ClearFilters": "Очистить фильтры",
+    "Pagination": {
+      "showing": "Показано {start} до {end} из {total} товаров",
+      "firstPage": "Первая страница",
+      "previousPage": "Предыдущая страница",
+      "nextPage": "Следующая страница",
+      "lastPage": "Последняя страница",
+      "pageNumber": "Страница {page}"
+    },
+    "Filters": {
+      "filters": "Фильтры",
+      "searchPlaceholder": "Поиск товаров...",
+      "showingResults": "Показано {count} из {total} товаров",
+      "clearFilters": "Очистить все фильтры",
+      "sortBy": {
+        "label": "Сортировать по",
+        "name": "Название (А-Я)",
+        "priceLow": "Цена (по возрастанию)",
+        "priceHigh": "Цена (по убыванию)",
+        "newest": "Сначала новые"
+      },
+      "category": {
+        "label": "Категория",
+        "all": "Все категории"
+      },
+      "productType": {
+        "label": "Тип товара",
+        "all": "Все типы"
+      },
+      "priceRange": {
+        "label": "Ценовой диапазон"
+      }
+    }
   },
   "ProductDetails": {
     "AddToCart": "Добавить в корзину",

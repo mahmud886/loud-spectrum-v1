@@ -543,11 +543,44 @@
     },
     "RelatedProducts": "Related Products",
     "AllProducts": "All Products",
-    "NoProductsInCategory": "No products in this category",
+    "NoProductsInCategory": "No products match your filters",
     "NoProductsAvailable": "No products available",
-    "NoProductsInCategoryDescription": "Try selecting different categories or clear filters to see more products.",
+    "NoProductsInCategoryDescription": "Try adjusting your filters or clear them to see more products.",
     "NoProductsAvailableDescription": "We're currently updating our inventory. Please check back soon for new products.",
-    "ClearFilters": "Clear Filters"
+    "ErrorLoadingProducts": "Error loading products",
+    "ClearFilters": "Clear Filters",
+    "Pagination": {
+      "showing": "Showing {start} to {end} of {total} products",
+      "firstPage": "First page",
+      "previousPage": "Previous page",
+      "nextPage": "Next page",
+      "lastPage": "Last page",
+      "pageNumber": "Page {page}"
+    },
+    "Filters": {
+      "filters": "Filters",
+      "searchPlaceholder": "Search products...",
+      "showingResults": "Showing {count} of {total} products",
+      "clearFilters": "Clear All Filters",
+      "sortBy": {
+        "label": "Sort by",
+        "name": "Name (A-Z)",
+        "priceLow": "Price (Low to High)",
+        "priceHigh": "Price (High to Low)",
+        "newest": "Newest First"
+      },
+      "category": {
+        "label": "Category",
+        "all": "All Categories"
+      },
+      "productType": {
+        "label": "Product Type",
+        "all": "All Types"
+      },
+      "priceRange": {
+        "label": "Price Range"
+      }
+    }
   },
   "ProductDetails": {
     "AddToCart": "Add To Cart",

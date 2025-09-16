@@ -543,7 +543,39 @@
     "NoProductsAvailable": "Keine Produkte verfügbar",
     "NoProductsInCategoryDescription": "Versuchen Sie, verschiedene Kategorien auszuwählen oder Filter zu löschen, um mehr Produkte zu sehen.",
     "NoProductsAvailableDescription": "Wir aktualisieren derzeit unseren Bestand. Bitte schauen Sie bald wieder vorbei für neue Produkte.",
-    "ClearFilters": "Filter löschen"
+    "ClearFilters": "Filter löschen",
+    "Pagination": {
+      "showing": "Zeige {start} bis {end} von {total} Produkten",
+      "firstPage": "Erste Seite",
+      "previousPage": "Vorherige Seite",
+      "nextPage": "Nächste Seite",
+      "lastPage": "Letzte Seite",
+      "pageNumber": "Seite {page}"
+    },
+    "Filters": {
+      "filters": "Filter",
+      "searchPlaceholder": "Produkte suchen...",
+      "showingResults": "Zeige {count} von {total} Produkten",
+      "clearFilters": "Alle Filter löschen",
+      "sortBy": {
+        "label": "Sortieren nach",
+        "name": "Name (A-Z)",
+        "priceLow": "Preis (Niedrig zu Hoch)",
+        "priceHigh": "Preis (Hoch zu Niedrig)",
+        "newest": "Neueste zuerst"
+      },
+      "category": {
+        "label": "Kategorie",
+        "all": "Alle Kategorien"
+      },
+      "productType": {
+        "label": "Produkttyp",
+        "all": "Alle Typen"
+      },
+      "priceRange": {
+        "label": "Preisspanne"
+      }
+    }
   },
   "ProductDetails": {
     "AddToCart": "In den Warenkorb",

@@ -12,14 +12,14 @@ const TopNavLeft = () => {
       <div className="flex h-full flex-col items-start justify-between gap-4">
         <div>
           <Image
-            src="/assets/images/nav-product.png"
+            src="/assets/images/sweet_bottle.png"
             alt="Product Highlight"
             width={300}
-            height={175}
-            className="h-[175px] w-[300px]"
+            height={206}
+            className="h-[206px] w-[300px]"
           />
           <div className="mt-2 flex items-center justify-between">
-            <p className="text-umbra-100 font-sans text-[13px] font-normal">Product name</p>
+            <p className="text-umbra-100 font-sans text-[13px] font-normal">Sweet Blue Razz</p>
             <p className="text-umbra-40 font-sans text-[13px] font-normal">Product of the month</p>
           </div>
         </div>

@@ -21,7 +21,7 @@ const TerpeneProductsContainerShimmer = () => {
           </div>
         </div>
         <div className="w-full space-y-10 xl:w-[75%]">
-          <div className="grid grid-cols-2 gap-3 space-y-8 xl:grid-cols-3 xl:gap-5 xl:space-y-16">
+          <div className="grid grid-cols-2 gap-3 space-y-8 lg:grid-cols-3 lg:gap-2 xl:grid-cols-3 xl:gap-5 xl:space-y-16">
             {Array.from({ length: 9 }).map((_, index) => (
               <ProductGridCardShimmer key={index} />
             ))}

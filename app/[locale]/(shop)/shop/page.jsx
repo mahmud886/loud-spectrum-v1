@@ -150,7 +150,12 @@ async function TerpeneProductsContainerContent() {
       })) || [];
 
   return (
-    <TerpeneProductsContainer categories={activeCategories} categoryId={'all'} productTypes={activeProductTypes} />
+    <TerpeneProductsContainer
+      categories={activeCategories}
+      categoryId="all"
+      productTypes={activeProductTypes}
+      isProductType={{ type: false, name: null, slug: null, _id: null }}
+    />
   );
 }
 

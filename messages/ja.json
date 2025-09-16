@@ -543,7 +543,39 @@
     "NoProductsAvailable": "利用可能な商品がありません",
     "NoProductsInCategoryDescription": "異なるカテゴリを選択するか、フィルターをクリアして、より多くの商品を表示してください。",
     "NoProductsAvailableDescription": "現在、在庫を更新中です。新しい商品については、近日中に再度確認してください。",
-    "ClearFilters": "フィルターをクリア"
+    "ClearFilters": "フィルターをクリア",
+    "Pagination": {
+      "showing": "{total}製品中{start}〜{end}を表示",
+      "firstPage": "最初のページ",
+      "previousPage": "前のページ",
+      "nextPage": "次のページ",
+      "lastPage": "最後のページ",
+      "pageNumber": "ページ {page}"
+    },
+    "Filters": {
+      "filters": "フィルター",
+      "searchPlaceholder": "製品を検索...",
+      "showingResults": "{total}製品中{count}を表示",
+      "clearFilters": "すべてのフィルターをクリア",
+      "sortBy": {
+        "label": "並び替え",
+        "name": "名前（A-Z）",
+        "priceLow": "価格（安い順）",
+        "priceHigh": "価格（高い順）",
+        "newest": "新着順"
+      },
+      "category": {
+        "label": "カテゴリー",
+        "all": "すべてのカテゴリー"
+      },
+      "productType": {
+        "label": "製品タイプ",
+        "all": "すべてのタイプ"
+      },
+      "priceRange": {
+        "label": "価格帯"
+      }
+    }
   },
   "ProductDetails": {
     "AddToCart": "カートに追加",

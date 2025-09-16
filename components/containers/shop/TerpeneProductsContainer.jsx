@@ -1,7 +1,11 @@
+'use client';
+
 import { useTranslations } from 'next-intl';
+import { Suspense } from 'react';
 import CategoryButton from './CategoryButton';
 import MobileProductSelect from './MobileProductSelect';
 import TerpeneCategoryProducts from './TerpeneCategoryProducts';
+import TerpeneCategoryProductsLoading from './TerpeneCategoryProductsLoading';
 
 const TerpeneProductsContainer = ({ categories, categoryId, productTypes, isProductType }) => {
   const t = useTranslations('TerpeneShop');
@@ -31,11 +35,13 @@ const TerpeneProductsContainer = ({ categories, categoryId, productTypes, isProd
             />
           </div>
         </div>
-        <TerpeneCategoryProducts
-          categoryId={categoryId}
-          productTypes={productTypes || []}
-          isProductType={isProductType}
-        />
+        <Suspense fallback={<TerpeneCategoryProductsLoading />}>
+          <TerpeneCategoryProducts
+            categoryId={categoryId}
+            productTypes={productTypes || []}
+            isProductType={isProductType}
+          />
+        </Suspense>
       </div>
     </div>
   );

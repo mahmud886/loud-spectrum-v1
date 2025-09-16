@@ -3,7 +3,7 @@ import Shimmer from '@/components/ui/shimmer';
 const ProductGridCardShimmer = () => {
   return (
     <div className="cursor-pointer">
-      <div className="relative flex h-[220px] min-h-[220px] w-full min-w-[162px] flex-col justify-around border bg-[#F5F5F5] p-2.5 xl:h-[384px] xl:min-h-[384px] xl:w-[305px] xl:min-w-[305px]">
+      <div className="relative flex h-[220px] min-h-[220px] w-full min-w-[162px] flex-col justify-around border bg-[#F5F5F5] p-2.5 xl:h-[384px] xl:min-h-[384px] xl:w-auto xl:min-w-auto">
         {/* Image Section */}
         <div className="flex items-center justify-center overflow-hidden xl:mt-16">
           <Shimmer className="h-[150px] w-auto object-cover xl:h-[254px] xl:w-[174px]" />
