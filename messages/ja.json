@@ -404,7 +404,8 @@
       "Classic": "クラシック",
       "Active": "アクティブ",
       "Relaxed": "リラックス",
-      "Sample_packs": "サンプルパック"
+      "Sample_packs": "サンプルパック",
+      "productOfMonth": "{month}の製品"
     }
   },
   "Homepage": {

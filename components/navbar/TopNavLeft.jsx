@@ -1,7 +1,12 @@
+'use client';
+import { getCurrentMonth } from '@/helpers/get-current-month';
 import { Link } from '@/i18n/navigation';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
 const TopNavLeft = () => {
+  const t = useTranslations('Navbar.TopNav');
+
   return (
     <div className="space-y-12">
       <div>
@@ -20,7 +25,12 @@ const TopNavLeft = () => {
           />
           <div className="mt-2 flex items-center justify-between">
             <p className="text-umbra-100 font-sans text-[13px] font-normal">Sweet Blue Razz</p>
-            <p className="text-umbra-40 font-sans text-[13px] font-normal">Product of the month</p>
+            <p className="text-umbra-40 font-sans text-[13px] font-normal">
+              {t('productOfMonth', {
+                month: getCurrentMonth(),
+                defaultValue: `Product of ${getCurrentMonth()}`,
+              })}
+            </p>
           </div>
         </div>
         {/* <div className="group relative mt-4 w-full">

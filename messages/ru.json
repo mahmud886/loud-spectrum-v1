@@ -405,7 +405,8 @@
       "Classic": "Классический",
       "Active": "Активный",
       "Relaxed": "Расслабленный",
-      "Sample_packs": "Пробные наборы"
+      "Sample_packs": "Пробные наборы",
+      "productOfMonth": "Продукт {month}"
     }
   },
   "Homepage": {

@@ -408,7 +408,8 @@
       "Classic": "Classic",
       "Active": "Active",
       "Relaxed": "Relaxed",
-      "Sample_packs": "Sample packs"
+      "Sample_packs": "Sample packs",
+      "productOfMonth": "Product of {month}"
     }
   },
   "Homepage": {

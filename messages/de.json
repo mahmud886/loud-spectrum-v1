@@ -404,7 +404,8 @@
       "Classic": "Klassisch",
       "Active": "Aktiv",
       "Relaxed": "Entspannt",
-      "Sample_packs": "Musterpakete"
+      "Sample_packs": "Musterpakete",
+      "productOfMonth": "Produkt des {month}"
     }
   },
   "Homepage": {
