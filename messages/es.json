@@ -220,6 +220,7 @@
       "taxFree": "Gratis",
       "shipping": "Envío",
       "freeShipping": "Envío gratuito",
+      "calculatedAtCheckout": "Calculado.",
       "totalAmount": "Monto total"
     },
     "PaymentMethod": {

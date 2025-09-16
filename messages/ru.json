@@ -222,6 +222,7 @@
       "taxFree": "Бесплатно",
       "shipping": "Доставка",
       "freeShipping": "Бесплатная доставка",
+      "calculatedAtCheckout": "Рассчитывается.",
       "totalAmount": "Общая сумма"
     },
     "PaymentMethod": {

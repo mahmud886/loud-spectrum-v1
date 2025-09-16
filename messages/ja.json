@@ -221,6 +221,7 @@
       "taxFree": "無料",
       "shipping": "配送",
       "freeShipping": "無料配送",
+      "calculatedAtCheckout": "計算されます。",
       "totalAmount": "合計金額"
     },
     "PaymentMethod": {

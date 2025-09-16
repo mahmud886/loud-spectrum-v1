@@ -39,7 +39,7 @@ const OrderSummary = () => {
     }
   }, [cartItems, dispatch]);
 
-  const isFreeShipping = orderSummary.shipping === 0 || orderSummary.shipping === 'free';
+  const isShippingCalculated = orderSummary.shipping === 0 || orderSummary.shipping === 'free';
   const displayVolume = orderSummary.totalVolume > 0 ? `${orderSummary.totalVolume}ml` : '0ml';
 
   return (
@@ -80,8 +80,8 @@ const OrderSummary = () => {
         <div className="flex items-center justify-between">
           <span>{t('shipping')}</span>
           <span>
-            {isFreeShipping ? (
-              <span className="text-green-600">{t('freeShipping')}</span>
+            {isShippingCalculated ? (
+              <span className="text-umbra-60">{t('calculatedAtCheckout')}</span>
             ) : (
               `$${orderSummary.shipping.toFixed(2)}`
             )}

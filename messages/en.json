@@ -221,6 +221,7 @@
       "taxFree": "Free",
       "shipping": "Shipping",
       "freeShipping": "Free Shipping",
+      "calculatedAtCheckout": "Will be calculated.",
       "totalAmount": "Total Amount"
     },
     "PaymentMethod": {

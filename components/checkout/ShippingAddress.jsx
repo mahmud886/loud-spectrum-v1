@@ -28,6 +28,7 @@ const ShippingAddress = () => {
   const [openCity, setOpenCity] = useState(false);
   const [isCustomCity, setIsCustomCity] = useState(false);
   const [hasSetDefaultAddress, setHasSetDefaultAddress] = useState(false);
+  const [hasSetDefaultCountry, setHasSetDefaultCountry] = useState(false);
 
   // Check for default addresses when component mounts or user changes
   useEffect(() => {
@@ -70,18 +71,33 @@ const ShippingAddress = () => {
     const fetchCountries = async () => {
       try {
         const data = await getCountries();
-        setCountries(
-          data.map((country) => ({
-            value: country.iso2,
-            label: country.name,
-          })),
-        );
+        const countryOptions = data.map((country) => ({
+          value: country.iso2,
+          label: country.name,
+        }));
+        setCountries(countryOptions);
+
+        // Set United States as default if no country is selected and we haven't set it before
+        if (!shippingAddress.country && !hasSetDefaultCountry) {
+          const usCountry = countryOptions.find(
+            (country) => country.value === 'US' || country.label === 'United States',
+          );
+          if (usCountry) {
+            dispatch(
+              updateShippingAddress({
+                ...shippingAddress,
+                country: usCountry.value,
+              }),
+            );
+            setHasSetDefaultCountry(true);
+          }
+        }
       } catch (error) {
         toast.error('Failed to load countries');
       }
     };
     fetchCountries();
-  }, []);
+  }, [shippingAddress, dispatch, hasSetDefaultCountry]);
 
   useEffect(() => {
     const fetchStates = async () => {

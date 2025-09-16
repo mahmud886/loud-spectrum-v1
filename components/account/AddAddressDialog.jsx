@@ -30,6 +30,7 @@ export default function AddAddressDialog({ onSave, editMode = false, editAddress
     street_address: '',
     is_default: false,
   });
+  const [hasSetDefaultCountry, setHasSetDefaultCountry] = useState(false);
   const t = useTranslations('UserAddressBook');
 
   // Load countries on component mount
@@ -37,18 +38,31 @@ export default function AddAddressDialog({ onSave, editMode = false, editAddress
     const fetchCountries = async () => {
       try {
         const data = await getCountries();
-        setCountries(
-          data.map((country) => ({
-            value: country.iso2,
-            label: country.name,
-          })),
-        );
+        const countryOptions = data.map((country) => ({
+          value: country.iso2,
+          label: country.name,
+        }));
+        setCountries(countryOptions);
+
+        // Set United States as default if no country is selected and we haven't set it before
+        if (!addressData.country && !hasSetDefaultCountry && !editMode) {
+          const usCountry = countryOptions.find(
+            (country) => country.value === 'US' || country.label === 'United States',
+          );
+          if (usCountry) {
+            setAddressData((prev) => ({
+              ...prev,
+              country: usCountry.value,
+            }));
+            setHasSetDefaultCountry(true);
+          }
+        }
       } catch (error) {
         toast.error(t('failedToLoadCountries'));
       }
     };
     fetchCountries();
-  }, []);
+  }, [addressData.country, hasSetDefaultCountry, editMode]);
 
   // Load provinces when country changes
   useEffect(() => {
@@ -123,6 +137,7 @@ export default function AddAddressDialog({ onSave, editMode = false, editAddress
         street_address: '',
         is_default: false,
       });
+      setHasSetDefaultCountry(false);
     }
   }, [editMode, editAddress, isOpen]);
 
@@ -163,6 +178,7 @@ export default function AddAddressDialog({ onSave, editMode = false, editAddress
       street_address: '',
       is_default: false,
     });
+    setHasSetDefaultCountry(false);
   };
 
   const handleDefaultAddressLogic = async (addressId) => {
