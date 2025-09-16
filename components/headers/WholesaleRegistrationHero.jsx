@@ -17,14 +17,14 @@ const WholesaleRegistrationHero = () => {
       </div>
       <div className="space-y-20 py-16">
         <div className="bg-umbra-100 relative h-[631px] overflow-hidden">
-          <div className="absolute bottom-[-2px] left-[-2px] z-20">
-            <Image
-              src="/assets/images/wholesale-section-mask.png"
-              alt="Wave"
-              width={625}
-              height={104}
-              className="h-[27px] w-[163px] object-cover xl:h-[105] xl:w-[625px]"
-            />
+          <div className="absolute top-0 left-0 w-full">
+            <div className="w-full">
+              <div className="flex h-[25px] lg:h-[100px] xl:h-[100px]">
+                <div className="w-[15%] bg-white"></div>
+                <div className="w-[70%] bg-transparent"></div>
+                <div className="w-[15%] bg-white"></div>
+              </div>
+            </div>
           </div>
           {/* Background Image */}
           <Image
@@ -32,27 +32,17 @@ const WholesaleRegistrationHero = () => {
             alt="Background"
             width={1280}
             height={631}
-            className="h-full w-full object-cover xl:h-[631px] xl:w-[1280px]"
+            className="h-full w-full object-cover xl:h-[631px] xl:w-full"
             priority
           />
           {/* Wave Image Overlay at Bottom Center */}
-          <div className="absolute top-[-2px] right-[-2px] w-full xl:w-[1280px]">
-            <Image
-              src="/assets/images/terpene-chart-section-mask-top-right.png"
-              alt="Wave"
-              width={1280}
-              height={104}
-              className="h-[27px] w-[52px] object-cover xl:h-[105px] xl:w-[1280px]"
-            />
-          </div>
-          <div className="absolute top-0 right-1 w-full xl:w-[1280px]">
-            <Image
-              src="/assets/images/terpene-chart-section-mask-top-bottom.png"
-              alt="Wave"
-              width={1280}
-              height={105}
-              className="h-[27px] w-[52px] object-cover xl:h-[105px] xl:w-[1280px]"
-            />
+          <div className="absolute bottom-0 left-0 w-full">
+            <div className="w-full">
+              <div className="flex h-[25px] lg:h-[100px] xl:h-[100px]">
+                <div className="w-[50%] bg-white"></div>
+                <div className="w-[50%] bg-transparent"></div>
+              </div>
+            </div>
           </div>
         </div>
         <div className="flex flex-col items-start justify-start">

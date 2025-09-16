@@ -24,12 +24,12 @@ const WholesaleRegistrationForm = ({ id }) => {
 
   const wholesaleRegistrationSchema = z.object({
     name: z.string().min(1, t('wholesaleRegistrationForm.full_name_error')),
-    company: z.string().min(1, t('wholesaleRegistrationForm.company_name_error')),
-    phone_number: z.string().min(1, t('wholesaleRegistrationForm.phone_number_error')),
     email: z.string().email(t('wholesaleRegistrationForm.email_error')),
-    website: z.string().url(t('wholesaleRegistrationForm.website_error')).optional().or(z.literal('')),
-    country: z.string().min(1, t('wholesaleRegistrationForm.country_error')),
+    phone_number: z.string().min(1, t('wholesaleRegistrationForm.phone_number_error')),
     username: z.string().min(3, t('wholesaleRegistrationForm.username_error')),
+    company: z.string().optional(),
+    website: z.string().url(t('wholesaleRegistrationForm.website_error')).optional().or(z.literal('')),
+    country: z.string().optional(),
     password: z.string().min(6, t('wholesaleRegistrationForm.password_error')),
     terms: z.boolean().refine((val) => val === true, {
       message: t('wholesaleRegistrationForm.agree_terms_error'),
@@ -44,12 +44,12 @@ const WholesaleRegistrationForm = ({ id }) => {
     const formData = new FormData(e.target);
     const formValues = {
       name: formData.get('name'),
-      company: formData.get('company'),
-      phone_number: formData.get('phone_number'),
       email: formData.get('email'),
-      website: formData.get('website'),
-      country: formData.get('country'),
+      phone_number: formData.get('phone_number'),
       username: formData.get('username'),
+      company: formData.get('company') || '',
+      website: formData.get('website') || '',
+      country: formData.get('country') || '',
       password: formData.get('password'),
       terms: agree,
       role: 'wholesaler',
@@ -65,6 +65,7 @@ const WholesaleRegistrationForm = ({ id }) => {
         email: validatedData.email,
         password: validatedData.password,
         phone_number: validatedData.phone_number,
+        username: validatedData.username,
         role: 'wholesaler',
         status: 'Active',
       };
@@ -170,13 +171,15 @@ const WholesaleRegistrationForm = ({ id }) => {
               {t('wholesaleRegistrationForm.requiredFields')}
             </p>
 
+            {/* Row 1: Full Name, Company */}
             <div className="flex flex-col justify-between gap-4 xl:flex-row">
               <div className="w-full">
                 <input
                   name="name"
                   type="text"
-                  placeholder={t('wholesaleRegistrationForm.fullName')}
+                  placeholder={`${t('wholesaleRegistrationForm.fullName')} *`}
                   className={`input-field ${errors.name ? 'border-red-500' : ''}`}
+                  required
                 />
                 {errors.name && <p className="mt-1 text-sm text-red-500">{errors.name}</p>}
               </div>
@@ -184,20 +187,22 @@ const WholesaleRegistrationForm = ({ id }) => {
                 <input
                   name="company"
                   type="text"
-                  placeholder={t('wholesaleRegistrationForm.company')}
+                  placeholder={`${t('wholesaleRegistrationForm.company')} (${t('wholesaleRegistrationForm.optional')})`}
                   className={`input-field ${errors.company ? 'border-red-500' : ''}`}
                 />
                 {errors.company && <p className="mt-1 text-sm text-red-500">{errors.company}</p>}
               </div>
             </div>
 
+            {/* Row 2: Phone, Email */}
             <div className="flex flex-col justify-between gap-4 xl:flex-row">
               <div className="w-full">
                 <input
                   name="phone_number"
                   type="tel"
-                  placeholder={t('wholesaleRegistrationForm.phone')}
+                  placeholder={`${t('wholesaleRegistrationForm.phone')} *`}
                   className={`input-field ${errors.phone_number ? 'border-red-500' : ''}`}
+                  required
                 />
                 {errors.phone_number && <p className="mt-1 text-sm text-red-500">{errors.phone_number}</p>}
               </div>
@@ -205,19 +210,21 @@ const WholesaleRegistrationForm = ({ id }) => {
                 <input
                   name="email"
                   type="email"
-                  placeholder={t('wholesaleRegistrationForm.email')}
+                  placeholder={`${t('wholesaleRegistrationForm.email')} *`}
                   className={`input-field ${errors.email ? 'border-red-500' : ''}`}
+                  required
                 />
                 {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
               </div>
             </div>
 
+            {/* Row 3: Website, Country */}
             <div className="flex flex-col justify-between gap-4 xl:flex-row">
               <div className="w-full">
                 <input
                   name="website"
                   type="url"
-                  placeholder={t('wholesaleRegistrationForm.website')}
+                  placeholder={`${t('wholesaleRegistrationForm.website')} (${t('wholesaleRegistrationForm.optional')})`}
                   className={`input-field ${errors.website ? 'border-red-500' : ''}`}
                 />
                 {errors.website && <p className="mt-1 text-sm text-red-500">{errors.website}</p>}
@@ -226,20 +233,22 @@ const WholesaleRegistrationForm = ({ id }) => {
                 <input
                   name="country"
                   type="text"
-                  placeholder={t('wholesaleRegistrationForm.country')}
+                  placeholder={`${t('wholesaleRegistrationForm.country')} (${t('wholesaleRegistrationForm.optional')})`}
                   className={`input-field ${errors.country ? 'border-red-500' : ''}`}
                 />
                 {errors.country && <p className="mt-1 text-sm text-red-500">{errors.country}</p>}
               </div>
             </div>
 
+            {/* Row 4: Username, Password */}
             <div className="flex flex-col justify-between gap-4 xl:flex-row">
               <div className="w-full">
                 <input
                   name="username"
                   type="text"
-                  placeholder={t('wholesaleRegistrationForm.username')}
+                  placeholder={`${t('wholesaleRegistrationForm.username')} *`}
                   className={`input-field ${errors.username ? 'border-red-500' : ''}`}
+                  required
                 />
                 {errors.username && <p className="mt-1 text-sm text-red-500">{errors.username}</p>}
               </div>
@@ -247,8 +256,9 @@ const WholesaleRegistrationForm = ({ id }) => {
                 <input
                   name="password"
                   type={showPassword ? 'text' : 'password'}
-                  placeholder={t('wholesaleRegistrationForm.password')}
+                  placeholder={`${t('wholesaleRegistrationForm.password')} *`}
                   className={`input-field pr-10 ${errors.password ? 'border-red-500' : ''}`}
+                  required
                 />
                 <button
                   type="button"
