@@ -25,10 +25,10 @@ export const getDhlInformations = async (shippingPayload) => {
       countryCode: shippingPayload?.countryCode,
     },
     packageDetails: {
-      weight: parseFloat(shippingPayload?.totalWeightInPounds * 0.453592) || 1, // Convert to kg
-      length: parseFloat(shippingPayload?.dimensions?.length * 2.54) || 10, // Convert to cm
-      width: parseFloat(shippingPayload?.dimensions?.width * 2.54) || 10, // Convert to cm
-      height: parseFloat(shippingPayload?.dimensions?.height * 2.54) || 10, // Convert to cm
+      weight: parseFloat(shippingPayload?.totalKgs) || 1, // Convert to kg
+      length: parseFloat(shippingPayload?.dimensions?.length) || 10, // Convert to cm
+      width: parseFloat(shippingPayload?.dimensions?.width) || 10, // Convert to cm
+      height: parseFloat(shippingPayload?.dimensions?.height) || 10, // Convert to cm
     },
   };
 

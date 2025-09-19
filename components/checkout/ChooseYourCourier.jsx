@@ -24,9 +24,11 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import calculateShippingWeight from '@/helpers/calculate-shipping-weight';
 import { getDimensionsByVolume } from '@/helpers/get-dimentions-by-volume';
 import { getWeightByVolume } from '@/helpers/get-weight-by-volume';
 import { selectCurrentUser } from '@/lib/store/slices/authSlice';
+import { selectSimplifiedCartProducts } from '@/lib/store/slices/cartSlice';
 import { getFedexInformations } from '@/services/getFedexInformations';
 import { getUpsInformations } from '@/services/getUpsInformations';
 import { toast } from 'sonner';
@@ -51,6 +53,7 @@ const ChooseYourCourier = () => {
   const shippingCostLoading = useSelector(selectShippingCostLoading);
   const dynamicShippingCost = useSelector(selectDynamicShippingCost);
   const shippingAddress = useSelector(selectShippingAddress);
+  const simplifiedCartProducts = useSelector(selectSimplifiedCartProducts);
 
   // Local state for DHL products
   const [dhlProducts, setDhlProducts] = useState([]);
@@ -62,6 +65,12 @@ const ChooseYourCourier = () => {
   const dimensions = useMemo(() => getDimensionsByVolume(totalVolume), [totalVolume]);
   const countryCode = shippingAddress?.country;
   const postalCode = shippingAddress?.postalCode;
+
+  // Calculate shipping weight
+  const { totalGrams, totalPounds, box, details, totalKgs, totalMiligrams, totalPrice, totalMilliliters } = useMemo(
+    () => calculateShippingWeight(simplifiedCartProducts),
+    [simplifiedCartProducts],
+  );
 
   // Helper functions based on flowchart logic
   const isWholesaler = () => user?.role === 'wholesaler';
@@ -318,10 +327,10 @@ const ChooseYourCourier = () => {
         countryCode: shippingAddress.country,
       },
       packageDetails: {
-        weight: parseFloat(totalWeightInPounds * 0.453592) || 1, // Convert to kg
-        length: parseFloat(dimensions.length * 2.54) || 10, // Convert to cm
-        width: parseFloat(dimensions.width * 2.54) || 10, // Convert to cm
-        height: parseFloat(dimensions.height * 2.54) || 10, // Convert to cm
+        weight: parseFloat(totalKgs) || 1, // Convert to kg
+        length: parseFloat(box?.dimensions?.length) || 10, // Convert to cm
+        width: parseFloat(box?.dimensions?.width) || 10, // Convert to cm
+        height: parseFloat(box?.dimensions?.height) || 10, // Convert to cm
       },
     };
 
@@ -397,8 +406,8 @@ const ChooseYourCourier = () => {
       let response;
       // Prepare shipping payload
       let shippingPayload = {
-        dimensions,
-        totalWeightInPounds,
+        dimensions: box?.dimensions,
+        totalWeightInPounds: totalPounds,
         originalType: originalType,
         countryCode,
         postalCode,
