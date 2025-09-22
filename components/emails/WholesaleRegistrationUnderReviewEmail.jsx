@@ -103,7 +103,7 @@ const WholesaleRegistrationUnderReviewEmail = ({ registrationData }) => {
 
             {/* Status Banner */}
             <Section className="mb-6 rounded-md bg-blue-50 p-6">
-              <Text className="mb-2 text-center text-2xl font-bold text-blue-800">🔍 Under Review</Text>
+              <Text className="mb-2 text-center text-2xl font-bold text-blue-800">🔍 Pending</Text>
               <Text className="m-0 text-center text-lg text-blue-700">
                 Your wholesale registration application is being reviewed by our team.
               </Text>
@@ -112,7 +112,8 @@ const WholesaleRegistrationUnderReviewEmail = ({ registrationData }) => {
             <Text className="mb-4 text-lg">Dear {name},</Text>
             <Text className="mb-6 leading-relaxed text-gray-700">
               Thank you for submitting your wholesale registration application for <strong>{company}</strong>. We have
-              received your application and it is currently under review by our wholesale partnerships team.
+              received your application and we will connect with you to uncover what your business truly needs and
+              create a stolution tailored to your goals.
               <br />
               <br />
               We appreciate your interest in partnering with Loud Spectrum and will provide you with an update as soon
@@ -129,48 +130,10 @@ const WholesaleRegistrationUnderReviewEmail = ({ registrationData }) => {
                 <Column className="text-right">
                   {/* No created_at, so just show status */}
                   <Text className="m-0 text-blue-700">
-                    Status: <span className="font-semibold">{status || 'Under Review'}</span>
+                    Status: <span className="font-semibold">{status || 'Pending'}</span>
                   </Text>
                 </Column>
               </Row>
-            </Section>
-
-            <Hr className="my-4 border-t border-gray-200" />
-
-            {/* Review Timeline */}
-            <Section className="mb-6">
-              <Text className="m-0 mb-4 text-xl font-bold text-gray-900">Review Timeline & Process</Text>
-
-              <Section className="mb-4 rounded-lg bg-blue-50 p-4">
-                <Text className="m-0 mb-2 font-semibold text-blue-800">📅 Expected Timeline</Text>
-                <Text className="m-0 text-sm text-blue-700">
-                  {/* estimated_completion_date */}
-                  Standard review time: 5-7 business days
-                </Text>
-                {/* priority_level */}
-              </Section>
-
-              <Section className="mb-4 rounded-lg bg-blue-50 p-4">
-                <Text className="m-0 mb-2 font-semibold text-blue-800">🔍 Review Process</Text>
-                <Text className="m-0 text-sm text-blue-700">
-                  Our team is evaluating your business information, verifying documentation, and assessing compatibility
-                  with our wholesale program.
-                </Text>
-              </Section>
-
-              <Section className="mb-4 rounded-lg bg-blue-50 p-4">
-                <Text className="m-0 mb-2 font-semibold text-blue-800">📋 What We're Reviewing</Text>
-                <Text className="m-0 text-sm text-blue-700">
-                  • Business documentation and verification
-                  <br />
-                  • Market compatibility and target alignment
-                  <br />
-                  • Distribution channel assessment
-                  <br />• Financial and operational capacity
-                </Text>
-              </Section>
-
-              {/* required_documents */}
             </Section>
 
             <Hr className="my-4 border-t border-gray-200" />

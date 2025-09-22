@@ -57,7 +57,7 @@ function getBoxSizeBySubtotal(subtotal) {
 }
 
 function gramsToPounds(grams) {
-  return grams / 453.59237;
+  return (grams / 454) * 1.15;
 }
 
 /**

@@ -192,7 +192,7 @@ const WireTransferUnderReviewEmail = ({ orderData, transactionDetails }) => {
                 </Column>
                 <Column className="text-right">
                   <Text className="m-0 text-yellow-600">Order Date: {formatDate(created_at)}</Text>
-                  <Text className="m-0 text-yellow-600">Status: Under Review</Text>
+                  <Text className="m-0 text-yellow-600">Status: Pending</Text>
                 </Column>
               </Row>
             </Section>
