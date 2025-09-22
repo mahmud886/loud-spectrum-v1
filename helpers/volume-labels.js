@@ -35,7 +35,7 @@ const gramsByVolumeBotanical = {
   '50ml': '42.5g',
   '100ml': '85g',
   '1000ml': '850g',
-  '3785ml': '3217g',
+  '1 Gallon': '3217g',
 };
 
 export function getVolumeGramsLabel(volumeMl, isAliveOrBotanical) {
