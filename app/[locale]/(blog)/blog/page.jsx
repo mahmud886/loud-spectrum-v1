@@ -48,7 +48,7 @@ export async function generateMetadata({ params }) {
       siteName: 'Loud Spectrum',
       images: [
         {
-          url: `${websiteUrl}/images/blog/blog-image-featuted.png`,
+          url: `${websiteUrl}/api/og?title=${encodeURIComponent('Beyond Ordinary Blog')}&subtitle=${encodeURIComponent('Premium Terpene Products')}`,
           width: 1200,
           height: 630,
           alt: 'Beyond Ordinary Blog - Loud Spectrum',
@@ -65,7 +65,9 @@ export async function generateMetadata({ params }) {
       title: 'Beyond Ordinary Blog | Loud Spectrum',
       description:
         'Explore our collection of articles about terpenes, flavor science, and the extraordinary world of botanical extracts.',
-      images: [`${websiteUrl}/images/blog/blog-image-featuted.png`],
+      images: [
+        `${websiteUrl}/api/og?title=${encodeURIComponent('Beyond Ordinary Blog')}&subtitle=${encodeURIComponent('Premium Terpene Products')}`,
+      ],
       creator: '@loudspectrum',
       site: '@loudspectrum',
     },

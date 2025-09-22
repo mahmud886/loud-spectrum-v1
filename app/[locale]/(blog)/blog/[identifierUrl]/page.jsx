@@ -50,8 +50,9 @@ export async function generateMetadata({ params }) {
   try {
     const blogData = await getBlogDetailsBySlug(identifierUrl);
     const blog = blogData;
-    const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'https://loudspectrum.com';
-    const fullImageUrl = blog.image ? `${baseUrl}${blog.image}` : null;
+    const websiteUrl = process.env.NEXT_PUBLIC_WEBSITE_URL || 'https://loudspectrum.com';
+    const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL || websiteUrl;
+    const fullImageUrl = blog.image ? `${apiBaseUrl}${blog.image}` : null;
 
     return {
       title: blog.meta_title || blog.title || 'Blog Post',
@@ -66,18 +67,16 @@ export async function generateMetadata({ params }) {
       openGraph: {
         title: blog.meta_title || blog.title,
         description: blog.meta_description || blog.content?.replace(/<[^>]*>/g, '').substring(0, 160),
-        url: `${baseUrl}/blog/${identifierUrl}`,
+        url: `${websiteUrl}/blog/${identifierUrl}`,
         siteName: 'Loud Spectrum',
-        images: fullImageUrl
-          ? [
-              {
-                url: fullImageUrl,
-                width: 1200,
-                height: 630,
-                alt: blog.alt_tag || blog.title,
-              },
-            ]
-          : [],
+        images: [
+          {
+            url: `${websiteUrl}/api/og?title=${encodeURIComponent(blog.meta_title || blog.title)}&subtitle=${encodeURIComponent('Premium Terpene Products')}`,
+            width: 1200,
+            height: 630,
+            alt: blog.alt_tag || blog.title,
+          },
+        ],
         locale: 'en_US',
         type: 'article',
         publishedTime: blog.created_at,
@@ -91,14 +90,16 @@ export async function generateMetadata({ params }) {
         card: 'summary_large_image',
         title: blog.meta_title || blog.title,
         description: blog.meta_description || blog.content?.replace(/<[^>]*>/g, '').substring(0, 160),
-        images: fullImageUrl ? [fullImageUrl] : [],
+        images: [
+          `${websiteUrl}/api/og?title=${encodeURIComponent(blog.meta_title || blog.title)}&subtitle=${encodeURIComponent('Premium Terpene Products')}`,
+        ],
         creator: '@loudspectrum',
         site: '@loudspectrum',
       },
 
       // Additional metadata
       alternates: {
-        canonical: `${baseUrl}/blog/${identifierUrl}`,
+        canonical: `${websiteUrl}/blog/${identifierUrl}`,
       },
 
       // Robots metadata

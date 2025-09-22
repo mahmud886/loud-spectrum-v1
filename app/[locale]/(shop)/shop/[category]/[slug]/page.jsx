@@ -12,6 +12,69 @@ import { cookies } from 'next/headers';
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const websiteUrl = process.env.NEXT_PUBLIC_WEBSITE_URL || 'https://loudspectrum.com';
+
+  try {
+    const productDetails = await getProductDetails(slug);
+    if (!productDetails || productDetails.error || productDetails.notFound) {
+      return {
+        title: 'Product | Loud Spectrum',
+        description: 'Premium terpene product',
+      };
+    }
+
+    const title = productDetails?.name || 'Product';
+    const description = productDetails?.short_description || 'Premium terpene product';
+    const ogTitle = `${title} | Loud Spectrum`;
+
+    return {
+      title: ogTitle,
+      description,
+      metadataBase: new URL(websiteUrl),
+      openGraph: {
+        title: ogTitle,
+        description,
+        type: 'website',
+        url: `${websiteUrl}/shop/${productDetails?.category?.slug || 'all'}/${slug}`,
+        siteName: 'Loud Spectrum',
+        locale: 'en_US',
+        images: [
+          {
+            url: `${websiteUrl}/api/og?title=${encodeURIComponent(title)}&subtitle=${encodeURIComponent('Premium Terpene Products')}`,
+            width: 1200,
+            height: 630,
+            alt: title,
+          },
+        ],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: ogTitle,
+        description,
+        images: [
+          `${websiteUrl}/api/og?title=${encodeURIComponent(title)}&subtitle=${encodeURIComponent('Premium Terpene Products')}`,
+        ],
+        creator: '@loudspectrum',
+        site: '@loudspectrum',
+      },
+      alternates: {
+        canonical: `${websiteUrl}/shop/${productDetails?.category?.slug || 'all'}/${slug}`,
+      },
+      robots: {
+        index: true,
+        follow: true,
+      },
+    };
+  } catch (e) {
+    return {
+      title: 'Product | Loud Spectrum',
+      description: 'Premium terpene product',
+    };
+  }
+}
+
 // Async component for spectrum accordion
 async function SpectrumAccordionContent({ productDetails }) {
   const t = await getTranslations('ProductDetailsAccordion');

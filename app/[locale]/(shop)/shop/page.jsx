@@ -17,8 +17,8 @@ const structuredData = {
   name: 'Loud Spectrum Shop',
   description: 'Premium terpene products and accessories',
   url: `${websiteUrl}/shop`,
-  logo: `${websiteUrl}/images/logo.png`,
-  image: `${websiteUrl}/images/shop-banner.jpg`,
+  logo: `${websiteUrl}/assets/svgs/logos/logo-dark.svg`,
+  image: `${websiteUrl}/assets/images/homepage-image.jpeg`,
   priceRange: '$$',
   address: {
     '@type': 'PostalAddress',
@@ -84,7 +84,7 @@ export async function generateMetadata() {
       locale: 'en_US',
       images: [
         {
-          url: `${websiteUrl}/images/shop-og-image.jpg`,
+          url: `${websiteUrl}/api/og?title=Shop&subtitle=Premium%20Terpene%20Products`,
           width: 1200,
           height: 630,
           alt: 'Loud Spectrum Shop - Premium Terpene Products',
@@ -97,7 +97,7 @@ export async function generateMetadata() {
       description:
         'Discover our premium collection of terpene products. Shop high-quality, lab-tested terpenes for enhanced flavor and experience. Free shipping on orders over $50.',
       creator: '@loudspectrum',
-      images: [`${websiteUrl}/images/shop-twitter-image.jpg`],
+      images: [`${websiteUrl}/api/og?title=Shop&subtitle=Premium%20Terpenes`],
     },
     alternates: {
       canonical: `${websiteUrl}/shop`,
