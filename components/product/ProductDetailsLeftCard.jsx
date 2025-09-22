@@ -9,6 +9,7 @@ import { getProductPriceRange } from '@/helpers/get-product-price-ranges';
 import { stripHtml } from '@/helpers/get-strip-html';
 import { parseProductAttributes } from '@/helpers/product-attributes';
 import { getStarRatingData, renderStars } from '@/helpers/star-rating';
+import { formatVolumeLabelForProduct } from '@/helpers/volume-labels';
 import { addToCartAndOpenDrawer } from '@/lib/store/slices/cartSlice';
 import { getProductReviews } from '@/services/get-product-reviews';
 import { MinusIcon, PlusIcon } from 'lucide-react';
@@ -79,6 +80,9 @@ const ProductDetailsLeftCard = ({ product }) => {
     ...product,
     subProducts: selectedSubProduct,
   };
+
+  // Display-only: custom grams labels per line type
+  const formatVolumeLabel = (option) => formatVolumeLabelForProduct(option, product) || option?.label;
 
   const handleAddToCart = () => {
     if (!selectedVolume) {
@@ -203,7 +207,7 @@ const ProductDetailsLeftCard = ({ product }) => {
                     {volumeOptions?.length > 0 &&
                       volumeOptions?.map((option, idx) => (
                         <SelectItem key={`${option.value}-${idx}`} value={option.value}>
-                          {option.label}
+                          {formatVolumeLabel(option)}
                         </SelectItem>
                       ))}
                   </SelectContent>

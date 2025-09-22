@@ -8,6 +8,7 @@ import { getProductPriceByVolume } from '@/helpers/get-product-price-by-volume';
 import { getProductPriceRange } from '@/helpers/get-product-price-ranges';
 import { parseProductAttributes } from '@/helpers/product-attributes';
 import { getStarRatingData, renderStars } from '@/helpers/star-rating';
+import { formatVolumeLabelForProduct } from '@/helpers/volume-labels';
 import { addToCartAndOpenDrawer } from '@/lib/store/slices/cartSlice';
 import { getProductReviews } from '@/services/get-product-reviews';
 import { MinusIcon, PlusIcon, XIcon } from 'lucide-react';
@@ -211,7 +212,7 @@ const ProductBuyDialog = ({ open, onOpenChange, product }) => {
                     <SelectContent>
                       {volumeOptions.map((option) => (
                         <SelectItem key={option.value} value={option.value}>
-                          {option.label}
+                          {formatVolumeLabelForProduct(option, product) || option.label}
                         </SelectItem>
                       ))}
                     </SelectContent>

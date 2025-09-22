@@ -79,6 +79,8 @@ export async function generateMetadata({ params }) {
 async function SpectrumAccordionContent({ productDetails }) {
   const t = await getTranslations('ProductDetailsAccordion');
 
+  console.log(productDetails);
+
   const accordionData = [
     {
       title: t('AboutTheProduct.title'),
