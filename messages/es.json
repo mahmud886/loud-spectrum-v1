@@ -635,7 +635,7 @@
     },
     "CertificateOfAnalysis": {
       "title": "Certificado de Análisis",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"
+      "description": "Un Certificado de Análisis (COA) es un documento oficial emitido por un fabricante, proveedor o laboratorio externo que confirma la calidad, composición y cumplimiento de un producto con los estándares especificados. Normalmente incluye resultados de pruebas de pureza, potencia, seguridad y sustancias reguladas, garantizando que el producto cumpla con los requisitos legales, de seguridad y del cliente."
     }
   },
   "ProductReviews": {

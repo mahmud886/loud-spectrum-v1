@@ -636,7 +636,7 @@
     },
     "CertificateOfAnalysis": {
       "title": "Сертификат Анализа",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"
+      "description": "Сертификат анализа (COA) — это официальный документ, выданный производителем, поставщиком или независимой лабораторией, подтверждающий качество, состав и соответствие продукта установленным стандартам. Обычно включает результаты испытаний на чистоту, мощность, безопасность и наличие регулируемых веществ, обеспечивая соответствие изделия юридическим, безопасностным и клиентским требованиям."
     }
   },
   "ProductReviews": {

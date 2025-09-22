@@ -82,7 +82,7 @@ async function SpectrumAccordionContent({ productDetails }) {
   const accordionData = [
     {
       title: t('AboutTheProduct.title'),
-      description: productDetails?.description,
+      description: productDetails?.short_description,
     },
     {
       title: t('FeaturesAndBenefits.title'),

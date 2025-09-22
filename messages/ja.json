@@ -636,7 +636,7 @@
     },
     "CertificateOfAnalysis": {
       "title": "分析証明書",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"
+      "description": "分析証明書（COA）は、製造業者、供給業者、または第三者機関の検査機関が発行する公式文書で、製品の品質、組成、および規定された基準への適合を証明するものです。通常、純度、強度、安全性、ならびに規制対象物質に関する試験結果を含み、製品が法令、安全、そして顧客の要件を満たしていることを保証します。"
     }
   },
   "ProductReviews": {
