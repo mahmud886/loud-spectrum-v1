@@ -23,7 +23,7 @@ export default {
     siteName: 'Loud Spectrum',
     images: [
       {
-        url: `${websiteUrl}/images/og-image.jpg`,
+        url: `${websiteUrl}/api/og`,
         width: 1200,
         height: 630,
         alt: 'Loud Spectrum - Premium Terpene Products',
@@ -42,7 +42,7 @@ export default {
     },
     {
       rel: 'apple-touch-icon',
-      href: '/apple-icon.png',
+      href: '/apple-touch-icon.png',
       sizes: '180x180',
     },
     {
