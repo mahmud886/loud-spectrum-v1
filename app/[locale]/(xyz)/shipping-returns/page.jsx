@@ -80,8 +80,8 @@ const ShippingReturnsPage = () => {
           <div className="mt-10 text-center">
             <p className="text-umbra-40 text-sm">
               {t('For_any_questions_or_support')}
-              <a href="mailto:order@loudspectrum.com" className="text-blue-600 underline">
-                order@loudspectrum.com
+              <a href="mailto:hi@loudspectrum.com" className="text-blue-600 underline">
+                hi@loudspectrum.com
               </a>
               .
             </p>

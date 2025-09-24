@@ -737,7 +737,7 @@
       "tollFreeLabel": "Toll-Free Number",
       "textCallLabel": "Text/Call",
       "emailLabel": "Email",
-      "hours": "Monday to Friday - 10AM - 5PM PST",
+      "hours": "Monday to Friday - 9AM - 5PM PST",
       "addressLabel": "Address",
       "address1": "1907 N Main St,",
       "address2": "Santa Ana CA 92706"
@@ -982,7 +982,7 @@
   "ShippingReturns": {
     "ShippingPolicy": {
       "title": "Shipping Policy",
-      "globalShipping": "Global Shipping Available: We proudly ship to customers around the world using trusted carriers: USPS, UPS, and FedEx.",
+      "globalShipping": "Global Shipping Available: We proudly ship to customers around the world using trusted carriers: USPS, UPS, FedEx, and DHL",
       "shippingOptionsTitle": "Shipping Options & Rates:",
       "under100": "Orders under $100: A standard shipping rate will apply at checkout.",
       "over100": "Orders over $100: Enjoy free shipping on us.",
@@ -997,13 +997,13 @@
       "returnShippingCost": "All return shipping costs are the responsibility of the customer.",
       "noOpenedReturns": "We do not accept returns or exchanges on opened items.",
       "noCustomRefund": "Customized orders are not refundable.",
-      "returnProcess": "Return Process: If you'd like to request a return or exchange, please contact our support team order@loudspectrum.com within 7 days of receiving your order. Approved returns must be shipped back within 14 days."
+      "returnProcess": "Return Process: If you'd like to request a return or exchange, please contact our support team hi@loudspectrum.com within 7 days of receiving your order. Approved returns must be shipped back within 14 days."
     },
     "ImportantNotes": {
       "title": "Important Notes",
       "domesticOrders": "Domestic Orders are typically delivered between 1-7 days. We are not responsible for the carrier's delay.",
       "damagedReport": "Damaged or incorrect items must be reported within 3 days of delivery.",
-      "questions": "For any questions or support, feel free to email us at order@loudspectrum.com or use our contact form."
+      "questions": "For any questions or support, feel free to email us at hi@loudspectrum.com or use our contact form."
     }
   },
   "Thank_you_for_choosing_Loud_Spectrum": "Thank you for choosing Loud Spectrum (formerly Medical Terpenes). We’re committed to delivering our premium terpene products efficiently and transparently to customers worldwide.",
@@ -1652,5 +1652,78 @@
     "failedToDelete": "Failed to delete address",
     "errorDeletingAddress": "An error occurred while deleting the address",
     "notAvailable": "N/A"
+  },
+  "FAQPage": {
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "title": "What Are Terpenes?",
+        "description": "Terpenes are a large and diverse class of organic compounds found in many plants. They are the primary components of essential oils and are used for flavoring and in aromatherapy. In cannabis, the amount and type of terpenes contribute to the plant’s unique scent and effects."
+      },
+      {
+        "title": "Terpenes And CBD",
+        "description": "When combined with CBD, terpenes can work synergistically to enhance the effects, known as the “entourage effect.” Adding terpene profiles to CBD can improve the experience and allow for more control over desired effects."
+      },
+      {
+        "title": "What Are Strain Specific And Full Spectrum Profiles?",
+        "description": "Strain specific and full spectrum profiles mimic the exact aroma and effects of cannabis strains using naturally occurring terpenes to replicate their properties authentically."
+      },
+      {
+        "title": "Why Choose Sauce Terps And Medical Terpenes?",
+        "description": "Medical Terpenes has years of experience in delivering pure, high-quality terpene profiles with great customer service. They are committed to quality, authenticity, and customer care."
+      },
+      {
+        "title": "Do You Sell Samples?",
+        "description": "Yes. All terpene profiles are available in 1ml sample sizes. Sample packs are also offered for customers who want to explore a variety of profiles at a discounted price."
+      },
+      {
+        "title": "Do You Have A Store Front?",
+        "description": "Yes. There is a pickup location at 1907 N Main St, Santa Ana, CA 92706. Contact: 714-905-9681."
+      },
+      {
+        "title": "What Are Shipping And Handling Times?",
+        "description": "Handling: 1–3 business days. Shipping: USPS 2–4 days, FedEx/UPS Ground 2–5 days. Alaska/Hawaii: 3–5 business days."
+      },
+      {
+        "title": "What Are The International Shipping Rates?",
+        "description": "International shipping rates vary depending on the destination and order details."
+      },
+      {
+        "title": "Entourage Effect",
+        "description": "The entourage effect refers to how different terpenes work together to enhance the therapeutic effects of cannabis. Sauce Terps profiles include 100+ terpenes per blend."
+      },
+      {
+        "title": "Storage Direction",
+        "description": "Store terpene profiles in a cool, dark place. Freezing is acceptable if needed."
+      },
+      {
+        "title": "Mixing Direction",
+        "description": "Recommended ratios: 1–10% for Medical Terpenes, 5–15% for Sauce Terps. Start small due to potency and adjust to taste."
+      },
+      {
+        "title": "Measuring Direction",
+        "description": "Profiles come with a Euro dropper for accurate mixing. If removed, use glass pipettes."
+      },
+      {
+        "title": "Are There Wholesale / Bulk Options?",
+        "description": "Yes. Both Alive, Classic, Dank, and Sweets offer wholesale options via inquiry."
+      },
+      {
+        "title": "What Are My Shipping Options?",
+        "description": "USPS, FedEx, UPS, and DHL are available upon request."
+      },
+      {
+        "title": "Returns / Refunds",
+        "description": "All sales are final due to the consumable nature of the products. Orders can be refunded if not fulfilled/shipped."
+      },
+      {
+        "title": "Which Profiles Are The Most Gassy Or Resemble Flower Best?",
+        "description": "Alive and Dank profiles offer the most gassy, flower-like aromas."
+      },
+      {
+        "title": "Do You Have Lab Tests For The Terpenes?",
+        "description": "Yes. All terpene products have third-party COAs. They are tested for pesticides, heavy metals, and solvents in ISO and cGMP facilities."
+      }
+    ]
   }
 }

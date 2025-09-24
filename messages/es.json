@@ -731,7 +731,7 @@
       "tollFreeLabel": "Número gratuito",
       "textCallLabel": "Mensaje/Llamada",
       "emailLabel": "Correo electrónico",
-      "hours": "Lunes a viernes - 10AM a 5PM PST",
+      "hours": "Lunes a viernes - 9AM a 5PM PST",
       "addressLabel": "Dirección",
       "address1": "1907 N Main St,",
       "address2": "Santa Ana CA 92706"
@@ -976,7 +976,7 @@
   "ShippingReturns": {
     "ShippingPolicy": {
       "title": "Política de Envíos",
-      "globalShipping": "Envío global disponible: Enviamos a clientes de todo el mundo utilizando transportistas de confianza: USPS, UPS y FedEx.",
+      "globalShipping": "Envío global disponible: Enviamos a clientes de todo el mundo utilizando transportistas de confianza: USPS, UPS, FedEx y DHL",
       "shippingOptionsTitle": "Opciones y tarifas de envío:",
       "under100": "Pedidos inferiores a $100: Se aplicará una tarifa de envío estándar en el pago.",
       "over100": "Pedidos superiores a $100: Disfruta de envío gratis por nuestra cuenta.",
@@ -991,13 +991,13 @@
       "returnShippingCost": "Todos los costos de envío de devolución corren por cuenta del cliente.",
       "noOpenedReturns": "No aceptamos devoluciones ni cambios de artículos abiertos.",
       "noCustomRefund": "Los pedidos personalizados no son reembolsables.",
-      "returnProcess": "Proceso de devolución: Si deseas solicitar una devolución o cambio, contacta a nuestro equipo de soporte order@loudspectrum.com dentro de los 7 días posteriores a la recepción de tu pedido. Las devoluciones aprobadas deben enviarse de vuelta en un plazo de 14 días."
+      "returnProcess": "Proceso de devolución: Si deseas solicitar una devolución o cambio, contacta a nuestro equipo de soporte hi@loudspectrum.com dentro de los 7 días posteriores a la recepción de tu pedido. Las devoluciones aprobadas deben enviarse de vuelta en un plazo de 14 días."
     },
     "ImportantNotes": {
       "title": "Notas Importantes",
       "domesticOrders": "Los pedidos nacionales suelen entregarse entre 1 y 7 días. No somos responsables de los retrasos del transportista.",
       "damagedReport": "Los artículos dañados o incorrectos deben reportarse dentro de los 3 días posteriores a la entrega.",
-      "questions": "Para cualquier pregunta o soporte, no dudes en escribirnos a order@loudspectrum.com o usar nuestro formulario de contacto."
+      "questions": "Para cualquier pregunta o soporte, no dudes en escribirnos a hi@loudspectrum.com o usar nuestro formulario de contacto."
     }
   },
   "Thank_you_for_choosing_Loud_Spectrum": "Gracias por elegir Loud Spectrum (anteriormente Medical Terpenes). Nos comprometemos a entregar nuestros productos de terpenos premium de manera eficiente y transparente a clientes de todo el mundo.",
@@ -1641,5 +1641,78 @@
     "failedToDelete": "Error al eliminar la dirección",
     "errorDeletingAddress": "Ocurrió un error al eliminar la dirección",
     "notAvailable": "N/A"
+  },
+  "FAQPage": {
+    "title": "Preguntas frecuentes",
+    "items": [
+      {
+        "title": "¿Qué son los terpenos?",
+        "description": "Los terpenos son una clase amplia y diversa de compuestos orgánicos presentes en muchas plantas. Son componentes principales de los aceites esenciales y se utilizan para dar sabor y en aromaterapia. En el cannabis, la cantidad y el tipo de terpenos contribuyen al aroma y a los efectos únicos de la planta."
+      },
+      {
+        "title": "Terpenos y CBD",
+        "description": "Cuando se combinan con CBD, los terpenos pueden actuar de forma sinérgica para potenciar los efectos, conocido como el \"efecto séquito\". Añadir perfiles de terpenos al CBD puede mejorar la experiencia y permitir un mayor control sobre los efectos deseados."
+      },
+      {
+        "title": "¿Qué son los perfiles específicos de cepa y de espectro completo?",
+        "description": "Los perfiles específicos de cepa y de espectro completo imitan el aroma y los efectos exactos de las cepas de cannabis utilizando terpenos de origen natural para replicar sus propiedades de manera auténtica."
+      },
+      {
+        "title": "¿Por qué elegir Sauce Terps y Medical Terpenes?",
+        "description": "Medical Terpenes tiene años de experiencia ofreciendo perfiles de terpenos puros y de alta calidad con un excelente servicio al cliente. Se comprometen con la calidad, la autenticidad y la atención al cliente."
+      },
+      {
+        "title": "¿Venden muestras?",
+        "description": "Sí. Todos los perfiles de terpenos están disponibles en tamaños de muestra de 1 ml. También se ofrecen paquetes de muestra para clientes que deseen explorar una variedad de perfiles a un precio con descuento."
+      },
+      {
+        "title": "¿Tienen tienda física?",
+        "description": "Sí. Hay un punto de recogida en 1907 N Main St, Santa Ana, CA 92706. Contacto: 714-905-9681."
+      },
+      {
+        "title": "¿Cuáles son los tiempos de envío y manejo?",
+        "description": "Procesamiento: 1–3 días hábiles. Envío: USPS 2–4 días, FedEx/UPS Ground 2–5 días. Alaska/Hawái: 3–5 días hábiles."
+      },
+      {
+        "title": "¿Cuáles son las tarifas de envío internacional?",
+        "description": "Las tarifas de envío internacional varían según el destino y los detalles del pedido."
+      },
+      {
+        "title": "Efecto séquito",
+        "description": "El efecto séquito se refiere a cómo diferentes terpenos trabajan juntos para potenciar los efectos terapéuticos del cannabis. Los perfiles de Sauce Terps incluyen más de 100 terpenos por mezcla."
+      },
+      {
+        "title": "Instrucciones de almacenamiento",
+        "description": "Guarde los perfiles de terpenos en un lugar fresco y oscuro. El congelamiento es aceptable si es necesario."
+      },
+      {
+        "title": "Instrucciones de mezcla",
+        "description": "Proporciones recomendadas: 1–10 % para Medical Terpenes, 5–15 % para Sauce Terps. Comience con poco debido a la potencia y ajuste al gusto."
+      },
+      {
+        "title": "Instrucciones de medición",
+        "description": "Los perfiles vienen con un gotero europeo para una mezcla precisa. Si se retira, use pipetas de vidrio."
+      },
+      {
+        "title": "¿Hay opciones al por mayor / a granel?",
+        "description": "Sí. Alive, Classic, Dank y Sweets ofrecen opciones al por mayor previa solicitud."
+      },
+      {
+        "title": "¿Cuáles son mis opciones de envío?",
+        "description": "USPS, FedEx, UPS y DHL están disponibles previa solicitud."
+      },
+      {
+        "title": "Devoluciones / Reembolsos",
+        "description": "Todas las ventas son finales debido a la naturaleza consumible de los productos. Los pedidos pueden reembolsarse si no han sido procesados/enviados."
+      },
+      {
+        "title": "¿Qué perfiles son los más intensos o se asemejan más a la flor?",
+        "description": "Los perfiles Alive y Dank ofrecen los aromas más intensos y similares a la flor."
+      },
+      {
+        "title": "¿Tienen pruebas de laboratorio para los terpenos?",
+        "description": "Sí. Todos los productos de terpenos cuentan con COAs de terceros. Se analizan en instalaciones ISO y cGMP para detectar pesticidas, metales pesados y solventes."
+      }
+    ]
   }
 }

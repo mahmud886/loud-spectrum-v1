@@ -731,7 +731,7 @@
       "tollFreeLabel": "Kostenlose Telefonnummer",
       "textCallLabel": "SMS/Anruf",
       "emailLabel": "E-Mail",
-      "hours": "Montag bis Freitag - 10–17 Uhr PST",
+      "hours": "Montag bis Freitag - 9–17 Uhr PST",
       "addressLabel": "Adresse",
       "address1": "1907 N Main St,",
       "address2": "Santa Ana CA 92706"
@@ -976,7 +976,7 @@
   "ShippingReturns": {
     "ShippingPolicy": {
       "title": "Versandpolitik",
-      "globalShipping": "Globaler Versand verfügbar: Wir versenden gerne an Kunden auf der ganzen Welt mit vertrauenswürdigen Transportdiensten: USPS, UPS und FedEx.",
+      "globalShipping": "Globaler Versand verfügbar: Wir versenden gerne an Kunden auf der ganzen Welt mit vertrauenswürdigen Transportdiensten: USPS, UPS, FedEx und DHL",
       "shippingOptionsTitle": "Versandoptionen & Preise:",
       "under100": "Bestellungen unter $100: Eine Standardversandrate wird bei der Kasse angewendet.",
       "over100": "Bestellungen über $100: Freier Versand auf uns.",
@@ -997,11 +997,11 @@
       "title": "Wichtige Hinweise",
       "domesticOrders": "Inlandbestellungen werden in der Regel zwischen 1-7 Tagen geliefert. Wir sind nicht für die Verspätung des Transportunternehmens verantwortlich.",
       "damagedReport": "Beschädigte oder falsche Artikel müssen innerhalb von 3 Tagen nach Lieferung gemeldet werden.",
-      "questions": "Für Fragen oder Unterstützung können Sie uns jederzeit per E-Mail an order@loudspectrum.com oder über unsere Kontaktformular kontaktieren."
+      "questions": "Für Fragen oder Unterstützung können Sie uns jederzeit per E-Mail an hi@loudspectrum.com oder über unsere Kontaktformular kontaktieren."
     }
   },
   "Thank_you_for_choosing_Loud_Spectrum": "Vielen Dank, dass Sie sich für Loud Spectrum (ehemals Medical Terpenes) entschieden haben. Wir verpflichten uns, unsere hochwertigen Terpenprodukte effizient und transparent an Kunden weltweit zu liefern.",
-  "For_any_questions_or_support": "Für Fragen oder Unterstützung können Sie uns jederzeit per E-Mail an order@loudspectrum.com oder über unsere Kontaktformular kontaktieren.",
+  "For_any_questions_or_support": "Für Fragen oder Unterstützung können Sie uns jederzeit per E-Mail an hi@loudspectrum.com oder über unsere Kontaktformular kontaktieren.",
 
   "QualitySafety": {
     "intro": "Bei Loud Spectrum ist Qualität unser Handwerk und Sicherheit unser Versprechen. Wir verpflichten uns, Terpenprodukte zu liefern, die den höchsten Standards in Bezug auf Reinheit, Konsistenz und Konformität entsprechen.",
@@ -1645,5 +1645,78 @@
     "failedToDelete": "Fehler beim Löschen der Adresse",
     "errorDeletingAddress": "Beim Löschen der Adresse ist ein Fehler aufgetreten",
     "notAvailable": "N/V"
+  },
+  "FAQPage": {
+    "title": "Häufig gestellte Fragen",
+    "items": [
+      {
+        "title": "Was sind Terpene?",
+        "description": "Terpene sind eine große und vielfältige Klasse organischer Verbindungen, die in vielen Pflanzen vorkommen. Sie sind Hauptbestandteile ätherischer Öle und werden zum Aromatisieren und in der Aromatherapie verwendet. In Cannabis tragen Menge und Art der Terpene zum charakteristischen Duft und zu den Effekten der Pflanze bei."
+      },
+      {
+        "title": "Terpene und CBD",
+        "description": "In Kombination mit CBD können Terpene synergistisch wirken und die Effekte verstärken – bekannt als \"Entourage-Effekt\". Durch das Hinzufügen von Terpenprofilen zu CBD lässt sich das Erlebnis verbessern und gezielter steuern."
+      },
+      {
+        "title": "Was sind strainspezifische und Full-Spectrum-Profile?",
+        "description": "Strainspezifische und Full-Spectrum-Profile ahmen das genaue Aroma und die Effekte von Cannabissorten nach, indem natürlich vorkommende Terpene verwendet werden, um deren Eigenschaften authentisch zu reproduzieren."
+      },
+      {
+        "title": "Warum Sauce Terps und Medical Terpenes?",
+        "description": "Medical Terpenes verfügt über jahrelange Erfahrung in der Lieferung reiner, hochwertiger Terpenprofile mit ausgezeichnetem Kundenservice. Das Unternehmen steht für Qualität, Authentizität und Kundennähe."
+      },
+      {
+        "title": "Verkaufen Sie Proben?",
+        "description": "Ja. Alle Terpenprofile sind als 1-ml-Proben erhältlich. Es gibt auch Probensets für Kunden, die verschiedene Profile zu einem vergünstigten Preis testen möchten."
+      },
+      {
+        "title": "Haben Sie ein Ladengeschäft?",
+        "description": "Ja. Abholung ist möglich unter 1907 N Main St, Santa Ana, CA 92706. Kontakt: 714-905-9681."
+      },
+      {
+        "title": "Wie sind Versand- und Bearbeitungszeiten?",
+        "description": "Bearbeitung: 1–3 Werktage. Versand: USPS 2–4 Tage, FedEx/UPS Ground 2–5 Tage. Alaska/Hawaii: 3–5 Werktage."
+      },
+      {
+        "title": "Wie hoch sind die internationalen Versandkosten?",
+        "description": "Die internationalen Versandkosten variieren je nach Zielort und Bestelldaten."
+      },
+      {
+        "title": "Entourage-Effekt",
+        "description": "Der Entourage-Effekt beschreibt, wie verschiedene Terpene zusammenwirken, um die therapeutischen Effekte von Cannabis zu verstärken. Sauce Terps-Profile enthalten über 100 Terpene pro Mischung."
+      },
+      {
+        "title": "Lagerhinweise",
+        "description": "Terpenprofile kühl und dunkel lagern. Bei Bedarf ist Einfrieren möglich."
+      },
+      {
+        "title": "Mischhinweise",
+        "description": "Empfohlene Verhältnisse: 1–10 % für Medical Terpenes, 5–15 % für Sauce Terps. Aufgrund der Potenz klein beginnen und nach Geschmack anpassen."
+      },
+      {
+        "title": "Messhinweise",
+        "description": "Profile werden mit Euro-Tropfer für genaues Mischen geliefert. Bei Entfernen Glas-Pipetten verwenden."
+      },
+      {
+        "title": "Gibt es Großhandels-/Bulk-Optionen?",
+        "description": "Ja. Sowohl Alive, Classic, Dank als auch Sweets bieten Großhandelsoptionen auf Anfrage."
+      },
+      {
+        "title": "Welche Versandoptionen habe ich?",
+        "description": "USPS, FedEx, UPS und DHL sind auf Anfrage verfügbar."
+      },
+      {
+        "title": "Rückgaben / Erstattungen",
+        "description": "Alle Verkäufe sind endgültig, da es sich um Verbrauchsprodukte handelt. Bestellungen können erstattet werden, wenn sie nicht bearbeitet/versendet wurden."
+      },
+      {
+        "title": "Welche Profile sind am gasigsten bzw. ähneln Blumen am meisten?",
+        "description": "Alive- und Dank-Profile bieten die gasigsten, blütenähnlichen Aromen."
+      },
+      {
+        "title": "Gibt es Labortests für die Terpene?",
+        "description": "Ja. Alle Terpenprodukte verfügen über unabhängige COAs. Sie werden in ISO- und cGMP-Einrichtungen auf Pestizide, Schwermetalle und Lösungsmittel getestet."
+      }
+    ]
   }
 }

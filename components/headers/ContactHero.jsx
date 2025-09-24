@@ -40,7 +40,7 @@ const ContactHero = () => {
                     {t('contactHero.emailLabel')}
                   </span>
                   <button className="outline-button-black rounded-full px-6 py-2 text-white">
-                    info@medicalterpenes.com
+                    hi@loudspectrum.com
                   </button>
                 </div>
 
