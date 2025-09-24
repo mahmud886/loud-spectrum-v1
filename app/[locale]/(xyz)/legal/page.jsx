@@ -63,8 +63,8 @@ const LegalsPage = () => {
           <div className="mt-10 text-center">
             <p className="text-umbra-40 text-sm">
               {t('LegalPage.moreInfo')}{' '}
-              <a href="mailto:Info@loudspectrum.com" className="text-blue-600 underline">
-                Info@loudspectrum.com
+              <a href="mailto:hi@loudspectrum.com" className="text-blue-600 underline">
+                hi@loudspectrum.com
               </a>
               .
             </p>

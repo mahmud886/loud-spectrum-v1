@@ -111,10 +111,10 @@ const Footer = () => {
             <div className="flex items-baseline justify-between">
               <img src="/footer-logo.svg" alt="" />
               <div className="flex space-x-6">
-                <a href="#" className="footer-text">
+                <a href="https://www.youtube.com/@loudspectrum" target="_blank" className="footer-text">
                   {t('Youtube')}
                 </a>
-                <a href="#" className="footer-text">
+                <a href="https://www.instagram.com/loud_spectrum/" target="_blank" className="footer-text">
                   {t('Instagram')}
                 </a>
               </div>
@@ -150,10 +150,10 @@ const Footer = () => {
               <div className="flex flex-col justify-between gap-10 pb-5">
                 <img src="/footer-logo.svg" alt="" />
                 <div className="flex space-x-6">
-                  <a href="#" className="footer-text">
+                  <a href="https://www.youtube.com/@loudspectrum" target="_blank" className="footer-text">
                     {t('Youtube')}
                   </a>
-                  <a href="#" className="footer-text">
+                  <a href="https://www.instagram.com/loud_spectrum/" target="_blank" className="footer-text">
                     {t('Instagram')}
                   </a>
                 </div>

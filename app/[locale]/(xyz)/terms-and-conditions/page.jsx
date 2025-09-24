@@ -92,22 +92,22 @@ const TermsAndConditionsPage = () => {
                     {Array.isArray(section.content) ? (
                       section.content.map((line, i) => {
                         // Special case: email links
-                        if (line.includes('info@sauceterps.com')) {
+                        if (line.includes('hi@loudspectrum.com')) {
                           return (
                             <p key={i}>
-                              {line.replace('info@sauceterps.com', '')}
-                              <a href="mailto:info@sauceterps.com" className="text-blue-600 underline">
-                                info@sauceterps.com
+                              {line.replace('hi@loudspectrum.com', '')}
+                              <a href="mailto:hi@loudspectrum.com" className="text-blue-600 underline">
+                                hi@loudspectrum.com
                               </a>
                             </p>
                           );
                         }
-                        if (line.includes('sauceterps@gmail.com')) {
+                        if (line.includes('hi@loudspectrum.com')) {
                           return (
                             <p key={i}>
-                              {line.replace('sauceterps@gmail.com', '')}
-                              <a href="mailto:sauceterps@gmail.com" className="text-blue-600 underline">
-                                sauceterps@gmail.com
+                              {line.replace('hi@loudspectrum.com', '')}
+                              <a href="mailto:hi@loudspectrum.com" className="text-blue-600 underline">
+                                hi@loudspectrum.com
                               </a>
                             </p>
                           );

@@ -49,22 +49,22 @@ const PrivacyPolicyPage = () => {
                           );
                         }
                         // Special case: email links
-                        if (line.includes('info@medicalterpenes.com')) {
+                        if (line.includes('hi@loudspectrum.com')) {
                           return (
                             <p key={i}>
-                              {line.replace('info@medicalterpenes.com', '')}
-                              <a href="mailto:info@medicalterpenes.com" className="text-blue-600 underline">
-                                info@medicalterpenes.com
+                              {line.replace('hi@loudspectrum.com', '')}
+                              <a href="mailto:hi@loudspectrum.com" className="text-blue-600 underline">
+                                hi@loudspectrum.com
                               </a>
                             </p>
                           );
                         }
-                        if (line.includes('info@sauceterps.com')) {
+                        if (line.includes('hi@loudspectrum.com')) {
                           return (
                             <p key={i}>
-                              {line.replace('info@sauceterps.com', '')}
-                              <a href="mailto:info@sauceterps.com" className="text-blue-600 underline">
-                                info@sauceterps.com
+                              {line.replace('hi@loudspectrum.com', '')}
+                              <a href="mailto:hi@loudspectrum.com" className="text-blue-600 underline">
+                                hi@loudspectrum.com
                               </a>
                             </p>
                           );

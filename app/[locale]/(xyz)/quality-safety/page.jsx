@@ -85,8 +85,8 @@ const QualityAndSafetyPage = () => {
           <div className="mt-10 text-center">
             <p className="text-umbra-40 text-sm">
               {t('QualitySafety.moreInfo')}{' '}
-              <a href="mailto:info@loudspectrum.com" className="text-blue-600 underline">
-                info@loudspectrum.com
+              <a href="mailto:hi@loudspectrum.com" className="text-blue-600 underline">
+                hi@loudspectrum.com
               </a>
               .
             </p>
