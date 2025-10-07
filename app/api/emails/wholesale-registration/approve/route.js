@@ -45,9 +45,9 @@ export async function GET(request) {
       const sampleRegistrationData = {
         _id: '6751234567890123456789ab',
         company_name: 'Green Valley Dispensary',
-        contact_name: 'Sarah Johnson',
+        name: 'Sarah Johnson',
         email: 'sarah@greenvalleydispensary.com',
-        phone: '+1 (555) 987-6543',
+        phone_number: '+1 (555) 987-6543',
         business_type: 'dispensary',
         tax_id: '12-3456789',
         website: 'https://greenvalleydispensary.com',
@@ -95,9 +95,9 @@ export async function GET(request) {
         registrationData: {
           _id: 'registration_id',
           company_name: 'Company Name',
-          contact_name: 'Contact Person',
+          name: 'Contact Person',
           email: 'contact@company.com',
-          phone: '+1 (555) 123-4567',
+          phone_number: '+1 (555) 123-4567',
           business_type: 'dispensary',
           tax_id: '12-3456789',
           website: 'https://company.com',

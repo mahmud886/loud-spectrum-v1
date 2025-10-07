@@ -45,9 +45,9 @@ export async function GET(request) {
       const sampleRegistrationData = {
         _id: '6751234567890123456789cd',
         company_name: 'Mountain Peak Retail',
-        contact_name: 'Michael Chen',
+        name: 'Michael Chen',
         email: 'michael@mountainpeakretail.com',
-        phone: '+1 (555) 456-7890',
+        phone_number: '+1 (555) 456-7890',
         business_type: 'retail',
         tax_id: '98-7654321',
         website: 'https://mountainpeakretail.com',
@@ -98,9 +98,9 @@ export async function GET(request) {
         registrationData: {
           _id: 'registration_id',
           company_name: 'Company Name',
-          contact_name: 'Contact Person',
+          name: 'Contact Person',
           email: 'contact@company.com',
-          phone: '+1 (555) 123-4567',
+          phone_number: '+1 (555) 123-4567',
           business_type: 'retail',
           tax_id: '98-7654321',
           website: 'https://company.com',

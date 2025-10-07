@@ -23,9 +23,9 @@ const WholesaleRegistrationApproveEmail = ({ registrationData }) => {
   const {
     _id,
     company_name,
-    contact_name,
+    name,
     email,
-    phone,
+    phone_number,
     business_type,
     tax_id,
     website,
@@ -116,23 +116,33 @@ const WholesaleRegistrationApproveEmail = ({ registrationData }) => {
               </Text>
             </Section>
 
-            <Text className="mb-4 text-lg">Dear {contact_name},</Text>
+            <Text className="mb-4 text-lg">Dear {name || 'Valued Customer'},</Text>
             <Text className="mb-6 leading-relaxed text-gray-700">
-              We're excited to welcome <strong>{company_name}</strong> to the Loud Spectrum wholesale family! Your
-              registration application has been reviewed and approved.
+              We're excited to welcome <strong>{company_name || 'your company'}</strong> to the Loud Spectrum wholesale
+              family! Your registration application has been reviewed and approved.
               <br />
               <br />
               You now have access to our wholesale pricing, exclusive products, and dedicated support team.
             </Text>
 
+            <Section className="mt-0 mb-4 text-center">
+              <Text className="mb-2 text-lg text-gray-800">You can place your order on:</Text>
+              <Button
+                href={`${baseUrl}/wholesale-store`}
+                className="bg-umbra-100 mx-2 rounded-full px-6 py-3 text-sm font-normal text-white"
+              >
+                Wholesale Store
+              </Button>
+            </Section>
+
             {/* Registration Details */}
             <Section className="mb-6 rounded-lg bg-green-50 p-4">
               <Row>
-                <Column>
+                <Column className="w-1/2">
                   <Text className="m-0 font-semibold text-green-800">Registration ID</Text>
                   <Text className="m-0 font-mono text-green-700">{_id}</Text>
                 </Column>
-                <Column className="text-right">
+                <Column className="w-1/2">
                   <Text className="m-0 text-green-700">Approved: {formatDate(approved_at || created_at)}</Text>
                   <Text className="m-0 text-green-700">
                     Status: <span className="font-semibold">Approved</span>
@@ -147,47 +157,79 @@ const WholesaleRegistrationApproveEmail = ({ registrationData }) => {
             <Section className="mb-6">
               <Text className="m-0 mb-4 text-xl font-bold text-gray-900">Company Information</Text>
 
-              <Row className="mb-4">
-                <Column className="w-1/2">
-                  <Text className="m-0 text-sm font-medium text-gray-500">Company Name</Text>
-                  <Text className="m-0 text-sm font-semibold">{company_name}</Text>
-                </Column>
-                <Column className="w-1/2">
-                  <Text className="m-0 text-sm font-medium text-gray-500">Business Type</Text>
-                  <Text className="m-0 text-sm font-semibold capitalize">{business_type}</Text>
-                </Column>
-              </Row>
+              {(company_name || business_type) && (
+                <Row className="mb-4">
+                  <Column className="w-1/2">
+                    {company_name && (
+                      <>
+                        <Text className="m-0 text-sm font-medium text-gray-500">Company Name</Text>
+                        <Text className="m-0 text-sm font-semibold">{company_name}</Text>
+                      </>
+                    )}
+                  </Column>
+                  <Column className="w-1/2">
+                    {business_type && (
+                      <>
+                        <Text className="m-0 text-sm font-medium text-gray-500">Business Type</Text>
+                        <Text className="m-0 text-sm font-semibold capitalize">{business_type}</Text>
+                      </>
+                    )}
+                  </Column>
+                </Row>
+              )}
 
-              <Row className="mb-4">
-                <Column className="w-1/2">
-                  <Text className="m-0 text-sm font-medium text-gray-500">Contact Person</Text>
-                  <Text className="m-0 text-sm font-semibold">{contact_name}</Text>
-                </Column>
-                <Column className="w-1/2">
-                  <Text className="m-0 text-sm font-medium text-gray-500">Email</Text>
-                  <Text className="m-0 text-sm font-semibold">{email}</Text>
-                </Column>
-              </Row>
+              {(name || email) && (
+                <Row className="mb-4">
+                  <Column className="w-1/2">
+                    {name && (
+                      <>
+                        <Text className="m-0 text-sm font-medium text-gray-500">Contact Person</Text>
+                        <Text className="m-0 text-sm font-semibold">{name}</Text>
+                      </>
+                    )}
+                  </Column>
+                  <Column className="w-1/2">
+                    {email && (
+                      <>
+                        <Text className="m-0 text-sm font-medium text-gray-500">Email</Text>
+                        <Text className="m-0 text-sm font-semibold">{email}</Text>
+                      </>
+                    )}
+                  </Column>
+                </Row>
+              )}
 
-              <Row className="mb-4">
-                <Column className="w-1/2">
-                  <Text className="m-0 text-sm font-medium text-gray-500">Phone</Text>
-                  <Text className="m-0 text-sm font-semibold">{phone}</Text>
-                </Column>
-                <Column className="w-1/2">
-                  <Text className="m-0 text-sm font-medium text-gray-500">Tax ID</Text>
-                  <Text className="m-0 text-sm font-semibold">{tax_id}</Text>
-                </Column>
-              </Row>
+              {(phone_number || tax_id) && (
+                <Row className="mb-4">
+                  <Column className="w-1/2">
+                    {phone_number && (
+                      <>
+                        <Text className="m-0 text-sm font-medium text-gray-500">Phone</Text>
+                        <Text className="m-0 text-sm font-semibold">{phone_number}</Text>
+                      </>
+                    )}
+                  </Column>
+                  <Column className="w-1/2">
+                    {tax_id && (
+                      <>
+                        <Text className="m-0 text-sm font-medium text-gray-500">Tax ID</Text>
+                        <Text className="m-0 text-sm font-semibold">{tax_id}</Text>
+                      </>
+                    )}
+                  </Column>
+                </Row>
+              )}
 
-              <Row className="mb-4">
-                <Column>
-                  <Text className="m-0 text-sm font-medium text-gray-500">Business Address</Text>
-                  <Text className="m-0 text-sm font-semibold">
-                    {address}, {city}, {state} {zip_code}, {country}
-                  </Text>
-                </Column>
-              </Row>
+              {(address || city || state || zip_code || country) && (
+                <Row className="mb-4">
+                  <Column>
+                    <Text className="m-0 text-sm font-medium text-gray-500">Business Address</Text>
+                    <Text className="m-0 text-sm font-semibold">
+                      {[address, city, state, zip_code, country].filter(Boolean).join(', ')}
+                    </Text>
+                  </Column>
+                </Row>
+              )}
 
               {website && (
                 <Row className="mb-4">
@@ -208,9 +250,13 @@ const WholesaleRegistrationApproveEmail = ({ registrationData }) => {
               <Section className="mb-4 rounded-lg bg-green-50 p-4">
                 <Text className="m-0 mb-2 font-semibold text-green-800">✓ Account Setup</Text>
                 <Text className="m-0 text-sm text-green-700">
-                  {account_id
-                    ? `Your wholesale account (ID: ${account_id}) is ready to use.`
-                    : 'Your wholesale account will be set up within 24 hours.'}
+                  Your wholesale account is now active. Log in{' '}
+                  <a href={`${baseUrl}/login`} style={{ color: '#007291', textDecoration: 'underline' }}>
+                    here
+                  </a>{' '}
+                  using your registered email and password.
+                  <br />
+                  Email: <strong>{email}</strong>
                 </Text>
               </Section>
 
@@ -225,13 +271,6 @@ const WholesaleRegistrationApproveEmail = ({ registrationData }) => {
                 <Text className="m-0 mb-2 font-semibold text-green-800">✓ Dedicated Support</Text>
                 <Text className="m-0 text-sm text-green-700">
                   Our wholesale team will be your dedicated point of contact for all orders and inquiries.
-                </Text>
-              </Section>
-
-              <Section className="mb-4 rounded-lg bg-green-50 p-4">
-                <Text className="m-0 mb-2 font-semibold text-green-800">✓ Marketing Materials</Text>
-                <Text className="m-0 text-sm text-green-700">
-                  Access to marketing materials, product images, and promotional content to support your sales.
                 </Text>
               </Section>
             </Section>
@@ -267,11 +306,13 @@ const WholesaleRegistrationApproveEmail = ({ registrationData }) => {
                 For any questions or to place your first order, contact our wholesale team:
               </Text>
               <Text className="m-0 text-sm text-gray-600">
-                <strong>Email:</strong> wholesale@loudspectrum.com
+                Email: hi@loudspectrum.com
                 <br />
-                <strong>Phone:</strong> +1 (555) 123-4567
+                Phone: +1 714 905 9681
                 <br />
-                <strong>Hours:</strong> Monday - Friday, 9 AM - 6 PM PST
+                Hours: Monday to Friday - 9AM - 5PM PST
+                <br />
+                1907 N Main St, Santa Ana CA 92706
               </Text>
             </Section>
 

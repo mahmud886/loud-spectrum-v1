@@ -20,17 +20,7 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL_EMAIL
   : 'https://loudspectrum.com';
 
 const WholesaleRegistrationUnderReviewEmail = ({ registrationData }) => {
-  const {
-    id = '',
-    name = '',
-    company = '',
-    phone_number = '',
-    email = '',
-    website = '',
-    country = '',
-    username = '',
-    status = '',
-  } = registrationData;
+  const { id, name, company, username, phone_number, email, website, country, status = 'Pending' } = registrationData;
 
   const formatDate = (dateString) => {
     return new Date(dateString).toLocaleDateString('en-US', {
@@ -112,26 +102,16 @@ const WholesaleRegistrationUnderReviewEmail = ({ registrationData }) => {
 
             <Text className="mb-4 text-lg">Dear {name},</Text>
             <Text className="mb-6 leading-relaxed text-gray-700">
-              Thank you for submitting your wholesale registration application for <strong>{company}</strong>. We have
-              received your application and we will connect with you to uncover what your business truly needs and
-              create a stolution tailored to your goals.
-              <br />
-              <br />
-              We appreciate your interest in partnering with Loud Spectrum and will provide you with an update as soon
-              as our review is complete.
+              Thank you for submitting your wholesale registration application. We will connect with you to uncover what
+              your business truly needs and create a solution tailored to your goals.
             </Text>
 
             {/* Registration Details */}
             <Section className="mb-6 rounded-lg bg-blue-50 p-4">
               <Row>
-                <Column>
-                  <Text className="m-0 font-semibold text-blue-800">Registration ID</Text>
-                  <Text className="m-0 font-mono text-blue-700">{id}</Text>
-                </Column>
-                <Column className="text-right">
-                  {/* No created_at, so just show status */}
+                <Column className="w-1/2">
                   <Text className="m-0 text-blue-700">
-                    Status: <span className="font-semibold">{status || 'Pending'}</span>
+                    Status: <span className="font-semibold">{status}</span>
                   </Text>
                 </Column>
               </Row>
@@ -205,9 +185,19 @@ const WholesaleRegistrationUnderReviewEmail = ({ registrationData }) => {
                 </Column>
               </Row>
               <Row className="mb-4">
-                <Column>
+                <Column className="w-1/2">
                   <Text className="m-0 text-sm font-medium text-gray-500">Country</Text>
                   <Text className="m-0 text-sm font-semibold">{country}</Text>
+                </Column>
+                <Column className="w-1/2">
+                  <Text className="m-0 text-sm font-medium text-gray-500">Username</Text>
+                  <Text className="m-0 text-sm font-semibold">{username || '-'}</Text>
+                </Column>
+              </Row>
+              <Row className="mb-4">
+                <Column>
+                  <Text className="m-0 text-sm font-medium text-gray-500">Name</Text>
+                  <Text className="m-0 text-sm font-semibold">{name}</Text>
                 </Column>
               </Row>
             </Section>
@@ -243,13 +233,13 @@ const WholesaleRegistrationUnderReviewEmail = ({ registrationData }) => {
                 If you have questions about your application or need to provide additional information:
               </Text>
               <Text className="m-0 text-sm text-gray-600">
-                <strong>Email:</strong> wholesale@loudspectrum.com
+                Email: hi@loudspectrum.com
                 <br />
-                <strong>Phone:</strong> +1 (555) 123-4567
+                Phone: +1 714 905 9681
                 <br />
-                <strong>Hours:</strong> Monday - Friday, 9 AM - 6 PM PST
+                Hours: Monday to Friday - 9AM - 5PM PST
                 <br />
-                <strong>Reference:</strong> Registration ID {id}
+                1907 N Main St, Santa Ana CA 92706
               </Text>
             </Section>
 

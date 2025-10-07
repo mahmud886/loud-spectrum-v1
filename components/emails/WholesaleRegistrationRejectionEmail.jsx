@@ -23,9 +23,9 @@ const WholesaleRegistrationRejectionEmail = ({ registrationData }) => {
   const {
     _id,
     company_name,
-    contact_name,
+    name,
     email,
-    phone,
+    phone_number,
     business_type,
     tax_id,
     website,
@@ -112,7 +112,7 @@ const WholesaleRegistrationRejectionEmail = ({ registrationData }) => {
               </Text>
             </Section>
 
-            <Text className="mb-4 text-lg">Dear {contact_name},</Text>
+            <Text className="mb-4 text-lg">Dear {name},</Text>
             <Text className="mb-6 leading-relaxed text-gray-700">
               Thank you for your interest in becoming a wholesale partner with Loud Spectrum. After careful review of
               your application for <strong>{company_name}</strong>, we regret to inform you that we are unable to
@@ -266,7 +266,7 @@ const WholesaleRegistrationRejectionEmail = ({ registrationData }) => {
               <Text className="m-0 text-sm text-gray-600">
                 <strong>Email:</strong> wholesale@loudspectrum.com
                 <br />
-                <strong>Phone:</strong> +1 (555) 123-4567
+                <strong>Phone:</strong> {phone_number}
                 <br />
                 <strong>Hours:</strong> Monday - Friday, 9 AM - 6 PM PST
               </Text>
