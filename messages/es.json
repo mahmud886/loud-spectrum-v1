@@ -214,6 +214,7 @@
     "OrderSummary": {
       "title": "Resumen de su pedido",
       "totalVolume": "Volumen total",
+      "totalPounds": "Total Libras",
       "subtotal": "Subtotal",
       "discount": "Descuento",
       "tax": "Impuesto",
@@ -273,7 +274,7 @@
       "button": {
         "default": "Continuar al pago",
         "loading": "Procesando...",
-        "cashOnDelivery": "Realizar pedido (Contra reembolso)",
+        "cashOnDelivery": "Realizar pedido (Recogida local)",
         "cardPayment": "Continuar al pago con tarjeta",
         "wireTransfer": "Continuar a transferencia bancaria"
       },

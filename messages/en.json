@@ -215,6 +215,7 @@
     "OrderSummary": {
       "title": "Your order summary",
       "totalVolume": "Total Volume",
+      "totalPounds": "Total Pounds",
       "subtotal": "Subtotal",
       "discount": "Discount",
       "tax": "Tax",
@@ -274,7 +275,7 @@
       "button": {
         "default": "Continue to Payment",
         "loading": "Processing...",
-        "cashOnDelivery": "Place Order (Cash on Delivery)",
+        "cashOnDelivery": "Place Order (Local Pickup)",
         "cardPayment": "Continue to Card Payment",
         "wireTransfer": "Continue to Wire Transfer",
         "fullPageLoader": {

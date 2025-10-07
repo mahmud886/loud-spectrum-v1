@@ -1,6 +1,7 @@
 'use client';
 
-import { selectCartItems } from '@/lib/store/slices/cartSlice';
+import { calculateShippingWeight } from '@/helpers/calculate-shipping-weight';
+import { selectCartItems, selectSimplifiedCartProducts } from '@/lib/store/slices/cartSlice';
 import {
   selectDiscountCoupon,
   selectOrderSummary,
@@ -17,6 +18,8 @@ const OrderSummary = () => {
   const orderSummary = useSelector(selectOrderSummary);
   const discountCoupon = useSelector(selectDiscountCoupon);
   const t = useTranslations('CheckoutPage.OrderSummary');
+  const simplifiedCartProducts = useSelector(selectSimplifiedCartProducts);
+  const weight = calculateShippingWeight(simplifiedCartProducts || []);
 
   // Calculate cart totals from cart items
   useEffect(() => {
@@ -25,8 +28,20 @@ const OrderSummary = () => {
         return total + item.price * item.quantity;
       }, 0);
 
+      // Handle selectedVolume as "5ml" or "1g (1.1ml)" or similar
       const calculatedVolume = cartItems.reduce((totalVolume, item) => {
-        return totalVolume + (parseFloat(item.selectedVolume) || 0) * item.quantity;
+        let volume = 0;
+        if (item.selectedVolume) {
+          // Try to extract the first number followed by "ml" in the string
+          const mlMatch = item.selectedVolume.match(/([\d.]+)\s*ml/i);
+          if (mlMatch) {
+            volume = parseFloat(mlMatch[1]);
+          } else {
+            // Fallback: try to parse as a number directly
+            volume = parseFloat(item.selectedVolume) || 0;
+          }
+        }
+        return totalVolume + volume * item.quantity;
       }, 0);
 
       // Update Redux state with calculated values
@@ -54,6 +69,10 @@ const OrderSummary = () => {
         <div className="flex items-center justify-between">
           <span>{t('totalVolume')}</span>
           <span>{displayVolume}</span>
+        </div>
+        <div className="flex items-center justify-between">
+          <span>{t('totalPounds')}</span>
+          <span>{`${weight?.totalPounds?.toFixed(2)} lbs`}</span>
         </div>
         <div className="flex items-center justify-between">
           <span>{t('subtotal')}</span>

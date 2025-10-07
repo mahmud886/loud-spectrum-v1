@@ -2,6 +2,7 @@
 // Source: customer-provided sheet
 
 const BOTTLE_WEIGHT_GRAMS = {
+  '1.1ml': 11,
   '1ml': 11,
   '5ml': 38,
   '20ml': 65,
@@ -29,6 +30,7 @@ const BOX_DIMENSIONS_IN = {
 
 // Volume mapping in milliliters for supported sizes
 const VOLUME_ML = {
+  '1.1ml': 1.1,
   '1ml': 1,
   '5ml': 5,
   '20ml': 20,
@@ -38,7 +40,7 @@ const VOLUME_ML = {
   '250ml': 250,
   '500ml': 500,
   '1000ml': 1000,
-  '1 gallon': 3785, // approximate ml for 1 US gallon
+  '1 gallon': 3785,
 };
 
 /**
@@ -102,11 +104,24 @@ export function calculateShippingWeight(items = []) {
   const details = [];
   let totalMilliliters = 0;
   const bottlesGrams = items.reduce((sum, item) => {
-    const volume = String(item.selectedVolume || item.Volume || '').trim();
+    const volumeString = String(item.selectedVolume || item.Volume || '').trim();
+    let volume = volumeString;
+    let mlPerUnit = 0;
+
+    // Try to extract the first number followed by "ml" in the string
+    const mlMatch = volumeString.match(/([\d.]+)\s*ml/i);
+    if (mlMatch) {
+      mlPerUnit = parseFloat(mlMatch[1]);
+      volume = `${mlPerUnit}ml`;
+    } else {
+      // Fallback: try to parse as a number directly
+      mlPerUnit = parseFloat(volumeString) || 0;
+      volume = volumeString;
+    }
+
     const gramsPerUnit = BOTTLE_WEIGHT_GRAMS[volume] || 0;
     const quantity = Number(item.quantity) || 0;
     const gramsTotal = gramsPerUnit * quantity;
-    const mlPerUnit = (VOLUME_ML[volume] ?? parseFloat(volume)) || 0;
     totalMilliliters += mlPerUnit * quantity;
     const price = Number(item.Price) || 0;
     const totalPrice =

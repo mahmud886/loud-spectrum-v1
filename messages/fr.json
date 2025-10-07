@@ -215,6 +215,7 @@
     "OrderSummary": {
       "title": "Résumé de votre commande",
       "totalVolume": "Volume total",
+      "totalPounds": "Total Livres",
       "subtotal": "Sous-total",
       "discount": "Réduction",
       "tax": "Taxe",
@@ -274,7 +275,7 @@
       "button": {
         "default": "Continuer vers le paiement",
         "loading": "Traitement en cours...",
-        "cashOnDelivery": "Passer commande (Paiement à la livraison)",
+        "cashOnDelivery": "Passer commande (Retrait local)",
         "cardPayment": "Continuer vers le paiement par carte",
         "wireTransfer": "Continuer vers le virement bancaire"
       },

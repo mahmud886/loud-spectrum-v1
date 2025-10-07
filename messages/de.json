@@ -215,6 +215,7 @@
     "OrderSummary": {
       "title": "Ihre Bestellübersicht",
       "totalVolume": "Gesamtvolumen",
+      "totalPounds": "Gesamt Pfund",
       "subtotal": "Zwischensumme",
       "discount": "Rabatt",
       "tax": "Steuer",
@@ -274,7 +275,7 @@
       "button": {
         "default": "Weiter zur Zahlung",
         "loading": "Wird bearbeitet...",
-        "cashOnDelivery": "Bestellung aufgeben (Nachnahme)",
+        "cashOnDelivery": "Bestellung aufgeben (Abholung vor Ort)",
         "cardPayment": "Weiter zur Kartenzahlung",
         "wireTransfer": "Weiter zur Überweisung"
       },

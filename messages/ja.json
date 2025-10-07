@@ -215,6 +215,7 @@
     "OrderSummary": {
       "title": "ご注文の概要",
       "totalVolume": "合計容量",
+      "totalPounds": "総重量",
       "subtotal": "小計",
       "discount": "割引",
       "tax": "税金",
@@ -274,7 +275,7 @@
       "button": {
         "default": "支払いに進む",
         "loading": "処理中...",
-        "cashOnDelivery": "注文を確定する（代金引換）",
+        "cashOnDelivery": "注文を確定する（ローカルピックアップ）",
         "cardPayment": "カード決済に進む",
         "wireTransfer": "銀行振込に進む"
       },
