@@ -171,8 +171,10 @@ const LocalPickupEmail = ({ orderData }) => {
 
             {/* Main Header */}
             <Section className="rounded-md bg-blue-50 p-4">
-              <Text className="mb-2 text-center text-2xl font-bold text-blue-800">Local Pickup Ready!</Text>
-              <Text className="m-0 text-center text-blue-700">Your order is ready for pickup, {customer_name}!</Text>
+              <Text className="mt-0 mb-2 text-center text-2xl font-bold text-blue-800">Local Pickup</Text>
+              <Text className="m-0 text-center text-blue-700">
+                We have received your order, Please text us to schedule a pickup time.
+              </Text>
             </Section>
 
             <Text className="mb-4 text-lg">Hi {customer_name},</Text>
@@ -190,7 +192,7 @@ const LocalPickupEmail = ({ orderData }) => {
                 </Column>
                 <Column className="text-right">
                   <Text className="m-0 text-blue-700">Order Date: {formatDate(created_at)}</Text>
-                  <Text className="m-0 text-blue-700">Status: Ready for Pickup</Text>
+                  <Text className="m-0 text-blue-700">Status: Processing</Text>
                 </Column>
               </Row>
             </Section>
@@ -198,21 +200,19 @@ const LocalPickupEmail = ({ orderData }) => {
             <Hr className="my-4 border-t border-gray-200" />
 
             {/* Pickup Location */}
-            <Section className="rounded-lg bg-green-50 p-6">
-              <Text className="mb-4 text-center text-xl font-bold text-green-800">📍 Pickup Location</Text>
+            <Section className="rounded-lg bg-blue-50 p-6">
+              <Text className="mb-4 text-center text-xl font-bold text-blue-800">📍 Pickup Location</Text>
               <Section className="text-center">
-                <Text className="m-0 text-lg font-semibold text-green-700">1907 N Main St</Text>
-                <Text className="m-0 text-lg font-semibold text-green-700">Santa Ana, CA 92706</Text>
+                <Text className="m-0 text-lg font-semibold text-blue-700">1907 N Main St</Text>
+                <Text className="m-0 text-lg font-semibold text-blue-700">Santa Ana, CA 92706</Text>
               </Section>
 
-              <Hr className="my-4 border-t border-green-200" />
+              <Hr className="my-4 border-t border-blue-200" />
 
-              <Text className="mb-2 text-center font-semibold text-green-800">Important Pickup Information:</Text>
-              <Text className="m-0 text-center text-sm text-green-700">
-                • Please bring a valid photo ID
-                <br />
+              <Text className="mb-2 text-center font-semibold text-blue-800">Important Pickup Information:</Text>
+              <Text className="m-0 text-center text-sm text-blue-700">
                 • Have your order confirmation ready
-                <br />• Once your order is prepared, you will receive a confirmation email with the pickup date and time
+                <br />• We will text you once your order is ready for pick up .
               </Text>
             </Section>
 
@@ -337,7 +337,7 @@ const LocalPickupEmail = ({ orderData }) => {
             </Section>
 
             {/* Actions */}
-            <Section className="mb-4 text-center">
+            <Section className="my-4 text-center">
               <Row>
                 <Column className="text-center">
                   <Button
