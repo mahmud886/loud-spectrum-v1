@@ -198,32 +198,14 @@ const WireTransferRejectedEmail = ({ orderData, transactionDetails }) => {
             <Hr className="my-4 border-t border-gray-200" />
 
             {/* Action Required Section */}
-            <Section className="rounded-lg bg-orange-50 p-6">
+            <Section className="mb-2 rounded-lg bg-orange-50 p-6">
               <Text className="mb-4 text-center text-xl font-bold text-orange-700">🔍 Action Required</Text>
 
-              <Text className="mb-4 font-semibold text-orange-700">
-                To help us resolve this issue, please share the following:
-              </Text>
-
-              <Section className="mb-4">
-                <Text className="m-0 text-sm text-orange-600">
-                  • <strong>Transaction details:</strong> Transaction ID, date, and payment method
-                  <br />• <strong>Payment confirmation:</strong> A screenshot of the payment confirmation from your side
-                </Text>
-              </Section>
-
-              <Hr className="my-4 border-t border-orange-200" />
-
-              <Text className="mb-2 text-center font-semibold text-orange-700">How to Submit Information:</Text>
               <Text className="m-0 text-center text-sm text-orange-600">
-                Reply to this email with the requested information, or contact our support team directly.
-                <br />
-                Once we receive this information, we will re-check and update you regarding your order.
+                Please check with your bank and choose a different payment. We also accept Credit/Debit Card and Zelle
+                Payment.
               </Text>
             </Section>
-
-            <Hr className="my-4 border-t border-gray-200" />
-
             {/* Order Summary */}
             <Section>
               <Text className="m-0 text-xl font-bold">Order Summary ({allProducts.length} items)</Text>
@@ -355,7 +337,7 @@ const WireTransferRejectedEmail = ({ orderData, transactionDetails }) => {
             </Section>
 
             {/* Actions */}
-            <Section className="mb-4 text-center">
+            <Section className="my-4 text-center">
               <Row>
                 <Column className="text-center">
                   <Button
@@ -366,7 +348,7 @@ const WireTransferRejectedEmail = ({ orderData, transactionDetails }) => {
                   </Button>
                   <Button
                     href={`${baseUrl}/account/orders`}
-                    className="mx-2 rounded-full border border-gray-300 bg-white px-6 py-3 text-sm font-normal text-gray-700"
+                    className="mx-2 rounded-full border border-gray-300 bg-blue-600 px-6 py-3 text-sm font-normal text-white"
                   >
                     View Order
                   </Button>
