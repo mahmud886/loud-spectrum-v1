@@ -1,4 +1,5 @@
 import { Body, Container, Font, Head, Hr, Html, Preview, Section, Tailwind, Text } from '@react-email/components';
+import EmailFooter from './EmailFooter';
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL_EMAIL
   ? process.env.NEXT_PUBLIC_BASE_URL_EMAIL
@@ -92,6 +93,9 @@ const ContactSubmissionEmail = ({ name, email, message, is_subscriber }) => {
             <Text className="text-center text-sm text-gray-500">
               This message was sent from the Loud Spectrum website contact form.
             </Text>
+            <Hr className="my-6 border-t border-gray-200" />
+
+            <EmailFooter />
           </Container>
         </Body>
       </Tailwind>

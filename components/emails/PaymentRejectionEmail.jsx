@@ -14,6 +14,7 @@ import {
   Tailwind,
   Text,
 } from '@react-email/components';
+import EmailFooter from './EmailFooter';
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL_EMAIL
   ? process.env.NEXT_PUBLIC_BASE_URL_EMAIL
   : 'http://localhost:3000';
@@ -572,27 +573,7 @@ const PaymentRejectionEmail = ({ orderData, paymentData, rejectionReason }) => {
 
             <Hr className="my-6 border-t border-gray-200" />
 
-            <Section className="rounded-md bg-gray-100 p-4">
-              {/* Logo Footer */}
-              {/* <Section className="mb-4 text-center">
-                <Img
-                  src={`${baseUrl}/assets/svgs/logos/logo-dark.svg`}
-                  alt="Loud Spectrum Logo"
-                  width="150"
-                  height="45"
-                  className="mx-auto"
-                />
-              </Section> */}
-              <Section className="mb-4 text-center">
-                <Text className="bg-[linear-gradient(90deg,_#101820_21.53%,_#0077C8_44.13%,_#C0AEE7_74.27%,_#DDDAE8_107.64%)] bg-clip-text text-3xl font-bold text-transparent">
-                  LOUD SPECTRUM
-                </Text>
-              </Section>
-              <Text className="m-0 text-center text-sm text-gray-700">
-                Loudspectrum.com <br />
-                470 Noor Ave STE B #1148, South San Francisco, CA 94080
-              </Text>
-            </Section>
+            <EmailFooter />
           </Container>
         </Body>
       </Tailwind>
