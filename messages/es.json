@@ -928,6 +928,48 @@
     "wholesale": "Venta al por mayor",
     "cannabisDerived": "Derivado del cannabis"
   },
+  "WholesaleStore": {
+    "title": "Mi Tienda Mayorista",
+    "customOrder": "Pedido Personalizado",
+    "searchPlaceholder": "Buscar productos",
+    "filterAll": "Todos",
+    "filterCustom": "Personalizado",
+    "filterInStore": "En Tienda",
+    "tableHeaders": {
+      "lot": "#Lote",
+      "productName": "Nombre del Producto",
+      "source": "Fuente",
+      "line": "Línea",
+      "totalGrams": "Gramos Totales",
+      "action": "Acción"
+    },
+    "customOrderForm": {
+      "customFlavor": "Tu Sabor Personalizado",
+      "describeFlavor": "Describe Tu Sabor",
+      "select": "Seleccionar",
+      "pricePerGram": "$3/gr"
+    },
+    "cart": {
+      "title": "Tu Carrito Mayorista",
+      "calculatePrice": "Calcular Precio",
+      "totalAmount": "Cantidad Total",
+      "addToCart": "Agregar al Carrito",
+      "remove": "Eliminar"
+    },
+    "note": {
+      "title": "Nota",
+      "placeholder": "Escribe tu nota aquí .."
+    },
+    "loading": {
+      "title": "Cargando productos mayoristas…",
+      "description": "Obteniendo inventario y precios. Por favor espera."
+    },
+    "errors": {
+      "loginRequired": "Por favor inicia sesión para ver productos mayoristas",
+      "loadError": "Error al cargar productos. Por favor intenta más tarde.",
+      "noProducts": "No hay productos disponibles"
+    }
+  },
   "descriptions": {
     "Alive": {
       "line1": "Para los conocedores exigentes, Vivo destaca por sus propiedades puras, aromáticas y potentes.",

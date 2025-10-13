@@ -929,6 +929,48 @@
     "wholesale": "Vente en gros",
     "cannabisDerived": "Dérivé du cannabis"
   },
+  "WholesaleStore": {
+    "title": "Mon Magasin de Gros",
+    "customOrder": "Commande Personnalisée",
+    "searchPlaceholder": "Rechercher des produits",
+    "filterAll": "Tous",
+    "filterCustom": "Personnalisé",
+    "filterInStore": "En Magasin",
+    "tableHeaders": {
+      "lot": "#Lot",
+      "productName": "Nom du Produit",
+      "source": "Source",
+      "line": "Ligne",
+      "totalGrams": "Grammes Totaux",
+      "action": "Action"
+    },
+    "customOrderForm": {
+      "customFlavor": "Votre Saveur Personnalisée",
+      "describeFlavor": "Décrivez Votre Saveur",
+      "select": "Sélectionner",
+      "pricePerGram": "3€/g"
+    },
+    "cart": {
+      "title": "Votre Panier de Gros",
+      "calculatePrice": "Calculer le Prix",
+      "totalAmount": "Montant Total",
+      "addToCart": "Ajouter au Panier",
+      "remove": "Supprimer"
+    },
+    "note": {
+      "title": "Note",
+      "placeholder": "Écrivez votre note ici .."
+    },
+    "loading": {
+      "title": "Chargement des produits de gros…",
+      "description": "Récupération de l'inventaire et des prix. Veuillez patienter."
+    },
+    "errors": {
+      "loginRequired": "Veuillez vous connecter pour voir les produits de gros",
+      "loadError": "Erreur lors du chargement des produits. Veuillez réessayer plus tard.",
+      "noProducts": "Aucun produit disponible"
+    }
+  },
   "descriptions": {
     "Alive": {
       "line1": "Pour les connaisseurs exigeants, Vivant frappe fort avec ses propriétés pures, aromatiques et puissantes.",

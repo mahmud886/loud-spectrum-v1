@@ -934,6 +934,48 @@
     "wholesale": "Wholesale",
     "cannabisDerived": "Cannabis Derived"
   },
+  "WholesaleStore": {
+    "title": "My Wholesale Store",
+    "customOrder": "Custom Order",
+    "searchPlaceholder": "Search products",
+    "filterAll": "All",
+    "filterCustom": "Custom",
+    "filterInStore": "In-Store",
+    "tableHeaders": {
+      "lot": "#Lot",
+      "productName": "Product Name",
+      "source": "Source",
+      "line": "Line",
+      "totalGrams": "Total Grams",
+      "action": "Action"
+    },
+    "customOrderForm": {
+      "customFlavor": "Your Custom Flavor",
+      "describeFlavor": "Describe Your Flavor",
+      "select": "Select",
+      "pricePerGram": "$3/gm"
+    },
+    "cart": {
+      "title": "Your Wholesale Cart",
+      "calculatePrice": "Calculate Price",
+      "totalAmount": "Total Amount",
+      "addToCart": "Add to Cart",
+      "remove": "Remove"
+    },
+    "note": {
+      "title": "Note",
+      "placeholder": "Write your note here .."
+    },
+    "loading": {
+      "title": "Loading wholesale products…",
+      "description": "Fetching inventory and pricing. Please wait."
+    },
+    "errors": {
+      "loginRequired": "Please log in to view wholesale products",
+      "loadError": "Error loading products. Please try again later.",
+      "noProducts": "No products available"
+    }
+  },
   "descriptions": {
     "Alive": {
       "line1": "For the uncompromising connoisseur, Alive comes out swinging with its pure, aromatic, and potent properties.",

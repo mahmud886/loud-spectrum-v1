@@ -928,6 +928,48 @@
     "wholesale": "Großhandel",
     "cannabisDerived": "Aus Cannabis gewonnen"
   },
+  "WholesaleStore": {
+    "title": "Mein Großhandelsgeschäft",
+    "customOrder": "Individuelle Bestellung",
+    "searchPlaceholder": "Produkte suchen",
+    "filterAll": "Alle",
+    "filterCustom": "Individuell",
+    "filterInStore": "Im Geschäft",
+    "tableHeaders": {
+      "lot": "#Los",
+      "productName": "Produktname",
+      "source": "Quelle",
+      "line": "Linie",
+      "totalGrams": "Gesamtgramm",
+      "action": "Aktion"
+    },
+    "customOrderForm": {
+      "customFlavor": "Ihr individueller Geschmack",
+      "describeFlavor": "Beschreiben Sie Ihren Geschmack",
+      "select": "Auswählen",
+      "pricePerGram": "3€/g"
+    },
+    "cart": {
+      "title": "Ihr Großhandelswarenkorb",
+      "calculatePrice": "Preis berechnen",
+      "totalAmount": "Gesamtbetrag",
+      "addToCart": "In den Warenkorb",
+      "remove": "Entfernen"
+    },
+    "note": {
+      "title": "Notiz",
+      "placeholder": "Schreiben Sie hier Ihre Notiz .."
+    },
+    "loading": {
+      "title": "Großhandelsprodukte werden geladen…",
+      "description": "Inventar und Preise werden abgerufen. Bitte warten Sie."
+    },
+    "errors": {
+      "loginRequired": "Bitte loggen Sie sich ein, um Großhandelsprodukte anzuzeigen",
+      "loadError": "Fehler beim Laden der Produkte. Bitte versuchen Sie es später erneut.",
+      "noProducts": "Keine Produkte verfügbar"
+    }
+  },
   "descriptions": {
     "Alive": {
       "line1": "Für anspruchsvolle Kenner – Lebendig beeindruckt mit reinem, aromatischem und starkem Charakter.",
