@@ -2,20 +2,32 @@
 
 import { Skeleton } from '@/components/ui/skeleton';
 
+// Custom shimmer component for buttons and interactive elements
+const ShimmerElement = ({ className }) => {
+  return (
+    <div
+      className={`bg-gradient-to-r from-gray-100/50 via-gray-200/50 to-gray-100/50 bg-[length:200%_100%] ${className}`}
+      style={{
+        animation: 'shimmer 1.5s infinite',
+      }}
+    />
+  );
+};
+
 const SidebarCard = () => (
   <div className="mb-4 rounded-xl border border-gray-100 p-4">
     <Skeleton className="mb-2 h-4 w-24" />
     <Skeleton className="mb-3 h-3 w-16" />
     <div className="space-y-2">
       <Skeleton className="h-9 w-full rounded-lg" />
-      <Skeleton className="h-9 w-full rounded-lg" />
+      <Skeleton className="h-20 w-full rounded-lg" />
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Skeleton className="h-8 w-8 rounded-full" />
+          <ShimmerElement className="h-8 w-8 rounded-full" />
           <Skeleton className="h-4 w-6" />
-          <Skeleton className="h-8 w-8 rounded-full" />
+          <ShimmerElement className="h-8 w-8 rounded-full" />
         </div>
-        <Skeleton className="h-8 w-16 rounded-full" />
+        <ShimmerElement className="h-8 w-16 rounded-full" />
       </div>
     </div>
   </div>
@@ -26,13 +38,13 @@ const TableRowShimmer = () => (
     <Skeleton className="h-4 w-14" />
     <Skeleton className="h-4 w-40" />
     <Skeleton className="h-4 w-16" />
-    <Skeleton className="h-8 w-24 rounded-md" />
+    <ShimmerElement className="h-8 w-24 rounded-md" />
     <div className="flex items-center gap-2">
-      <Skeleton className="h-7 w-7 rounded-full" />
+      <ShimmerElement className="h-7 w-7 rounded-full" />
       <Skeleton className="h-4 w-6" />
-      <Skeleton className="h-7 w-7 rounded-full" />
+      <ShimmerElement className="h-7 w-7 rounded-full" />
     </div>
-    <Skeleton className="h-8 w-16 rounded-full" />
+    <ShimmerElement className="h-8 w-16 rounded-full" />
   </div>
 );
 
@@ -52,8 +64,8 @@ const PageShimmer = () => {
         <section className="order-1 space-y-6 xl:order-2">
           {/* Controls */}
           <div className="flex w-full gap-3">
-            <Skeleton className="h-10 w-full rounded-lg" />
-            <Skeleton className="h-10 w-32 rounded-lg" />
+            <ShimmerElement className="h-10 w-full rounded-lg" />
+            <ShimmerElement className="h-10 w-32 rounded-lg" />
           </div>
 
           {/* Table */}
@@ -76,7 +88,7 @@ const PageShimmer = () => {
           {/* Pagination */}
           <div className="flex items-center justify-center gap-1">
             {Array.from({ length: 5 }).map((_, i) => (
-              <Skeleton key={i} className="h-10 w-10 rounded-full" />
+              <ShimmerElement key={i} className="h-10 w-10 rounded-full" />
             ))}
           </div>
 
@@ -92,18 +104,18 @@ const PageShimmer = () => {
                 <div key={i} className="flex items-center justify-between gap-4 py-3">
                   <Skeleton className="h-4 w-44" />
                   <div className="flex items-center gap-3">
+                    <ShimmerElement className="h-4 w-4" />
                     <Skeleton className="h-4 w-4" />
-                    <Skeleton className="h-4 w-4" />
-                    <Skeleton className="h-4 w-4" />
+                    <ShimmerElement className="h-4 w-4" />
                   </div>
                 </div>
               ))}
-              <Skeleton className="mt-4 h-10 w-full rounded-full" />
+              <ShimmerElement className="mt-4 h-10 w-full rounded-full" />
               <div className="mt-4 flex items-center justify-between">
                 <Skeleton className="h-4 w-24" />
                 <Skeleton className="h-4 w-16" />
               </div>
-              <Skeleton className="mt-4 h-12 w-full rounded-full" />
+              <ShimmerElement className="mt-4 h-12 w-full rounded-full" />
             </div>
           </div>
         </section>
@@ -123,18 +135,18 @@ const PageShimmer = () => {
               <div key={i} className="flex items-center justify-between gap-4 py-3">
                 <Skeleton className="h-4 w-44" />
                 <div className="flex items-center gap-3">
+                  <ShimmerElement className="h-4 w-4" />
                   <Skeleton className="h-4 w-4" />
-                  <Skeleton className="h-4 w-4" />
-                  <Skeleton className="h-4 w-4" />
+                  <ShimmerElement className="h-4 w-4" />
                 </div>
               </div>
             ))}
-            <Skeleton className="mt-4 h-10 w-full rounded-full" />
+            <ShimmerElement className="mt-4 h-10 w-full rounded-full" />
             <div className="mt-4 flex items-center justify-between">
               <Skeleton className="h-4 w-24" />
               <Skeleton className="h-4 w-16" />
             </div>
-            <Skeleton className="mt-4 h-12 w-full rounded-full" />
+            <ShimmerElement className="mt-4 h-12 w-full rounded-full" />
           </div>
         </div>
       </div>

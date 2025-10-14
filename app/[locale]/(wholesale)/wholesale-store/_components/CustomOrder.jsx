@@ -13,9 +13,10 @@ const CustomOrder = ({ lines, t }) => {
               className="w-full rounded-lg border border-gray-200 px-3 py-2 text-[12px] outline-none focus:border-gray-400 sm:text-[13px]"
               placeholder={t('customOrderForm.customFlavor')}
             />
-            <input
-              className="w-full rounded-lg border border-gray-200 px-3 py-2 text-[12px] outline-none focus:border-gray-400 sm:text-[13px]"
+            <textarea
+              className="w-full resize-none rounded-lg border border-gray-200 px-3 py-2 text-[12px] outline-none focus:border-gray-400 sm:text-[14px]"
               placeholder={t('customOrderForm.describeFlavor')}
+              rows={3}
             />
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">

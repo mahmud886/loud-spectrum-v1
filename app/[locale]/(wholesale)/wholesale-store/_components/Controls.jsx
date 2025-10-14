@@ -1,5 +1,7 @@
 'use client';
 
+import { Search } from 'lucide-react';
+
 const Controls = ({ search, setSearch, lineFilter, setLineFilter, t }) => {
   return (
     <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
@@ -11,7 +13,10 @@ const Controls = ({ search, setSearch, lineFilter, setLineFilter, t }) => {
             className="w-full rounded-lg border border-gray-200 px-3 py-2 pl-9 text-[12px] outline-none focus:border-gray-400 sm:text-[13px]"
             placeholder={t('searchPlaceholder')}
           />
-          <span className="pointer-events-none absolute top-2.5 left-3 text-gray-400">🔎</span>
+
+          <span className="pointer-events-none absolute top-2.5 left-3 text-gray-400">
+            <Search size={16} />
+          </span>
         </div>
         <div className="w-[30%] min-w-[120px]">
           <select
