@@ -841,6 +841,22 @@
         "inactive": "非アクティブ",
         "nextSteps": "次のステップ",
         "nextStepsDescription": "弊社チームがお客様の申請を審査し、24-48時間以内にご連絡いたします。アカウントが承認されましたら、メールで通知いたします。"
+      },
+      "disapprove": {
+        "title": "申請が承認されませんでした",
+        "description": "Loud Spectrum の業務用パートナーになることにご興味をいただき、ありがとうございます。残念ながら、この度は申請が承認されませんでした。",
+        "registrationDetails": "登録詳細",
+        "status": "ステータス",
+        "disapproved": "承認拒否",
+        "reason": "承認拒否の理由",
+        "nextSteps": "次のステップ",
+        "nextStepsDescription": "以下で承認拒否の理由をご確認いただき、更新された情報で新しい申請を提出することができます。",
+        "reapplyButton": "新しい申請を提出"
+      },
+      "redirect": {
+        "title": "アクセス拒否",
+        "description": "このページにアクセスする権限がありません。続行するには業務用アカウントに登録してください。",
+        "button": "登録ページへ"
       }
     },
     "WholesaleRegistrationWorks": {

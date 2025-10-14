@@ -840,6 +840,22 @@
         "inactive": "Inaktiv",
         "nextSteps": "Wie geht es weiter?",
         "nextStepsDescription": "Unser Team wird Ihre Bewerbung überprüfen und sich innerhalb von 24-48 Stunden bei Ihnen melden. Sie erhalten eine E-Mail-Benachrichtigung, sobald Ihr Konto genehmigt wurde."
+      },
+      "disapprove": {
+        "title": "Bewerbung Nicht Genehmigt",
+        "description": "Wir schätzen Ihr Interesse, ein Loud Spectrum Großhandelspartner zu werden. Leider wurde Ihre Bewerbung zu diesem Zeitpunkt nicht genehmigt.",
+        "registrationDetails": "Registrierungsdetails",
+        "status": "Status",
+        "disapproved": "Abgelehnt",
+        "reason": "Grund für Ablehnung",
+        "nextSteps": "Wie geht es weiter?",
+        "nextStepsDescription": "Sie können den Grund für die Ablehnung unten überprüfen und eine neue Bewerbung mit aktualisierten Informationen einreichen.",
+        "reapplyButton": "Neue Bewerbung Einreichen"
+      },
+      "redirect": {
+        "title": "Zugriff Verweigert",
+        "description": "Sie haben keine Berechtigung, auf diese Seite zuzugreifen. Bitte registrieren Sie sich für ein Großhandelskonto, um fortzufahren.",
+        "button": "Zur Registrierung Gehen"
       }
     },
     "WholesaleRegistrationWorks": {

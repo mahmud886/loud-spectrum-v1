@@ -841,6 +841,22 @@
         "inactive": "Inactif",
         "nextSteps": "Que se passe-t-il ensuite?",
         "nextStepsDescription": "Notre équipe examinera votre demande et vous contactera dans les 24-48 heures. Vous recevrez une notification par e-mail une fois votre compte approuvé."
+      },
+      "disapprove": {
+        "title": "Demande Non Approuvée",
+        "description": "Nous apprécions votre intérêt à devenir un partenaire grossiste Loud Spectrum. Malheureusement, votre demande n'a pas été approuvée pour le moment.",
+        "registrationDetails": "Détails de l'inscription",
+        "status": "Statut",
+        "disapproved": "Rejeté",
+        "reason": "Raison du Rejet",
+        "nextSteps": "Que se passe-t-il ensuite?",
+        "nextStepsDescription": "Vous pouvez consulter la raison du rejet ci-dessous et soumettre une nouvelle demande avec des informations mises à jour.",
+        "reapplyButton": "Soumettre une Nouvelle Demande"
+      },
+      "redirect": {
+        "title": "Accès Refusé",
+        "description": "Vous n'avez pas l'autorisation d'accéder à cette page. Veuillez vous inscrire pour un compte grossiste pour continuer.",
+        "button": "Aller à l'Inscription"
       }
     },
     "WholesaleRegistrationWorks": {

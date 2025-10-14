@@ -20,7 +20,7 @@ const TopNavMiddle = () => {
         return '/wholesale-store';
       } else {
         // Inactive wholesaler - go to under review section
-        return '/wholesale-registration#wholesale-under-review';
+        return '/wholesale-under-review';
       }
     } else {
       // Customer - go to wholesale registration form

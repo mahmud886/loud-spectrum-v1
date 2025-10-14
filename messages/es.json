@@ -840,6 +840,22 @@
         "inactive": "Inactivo",
         "nextSteps": "¿Qué Sigue?",
         "nextStepsDescription": "Nuestro equipo revisará tu solicitud y te contactará dentro de 24-48 horas. Recibirás una notificación por correo electrónico una vez que tu cuenta sea aprobada."
+      },
+      "disapprove": {
+        "title": "Solicitud No Aprobada",
+        "description": "Apreciamos tu interés en convertirte en socio mayorista de Loud Spectrum. Desafortunadamente, tu solicitud no fue aprobada en este momento.",
+        "registrationDetails": "Detalles del Registro",
+        "status": "Estado",
+        "disapproved": "Rechazado",
+        "reason": "Razón del Rechazo",
+        "nextSteps": "¿Qué Sigue?",
+        "nextStepsDescription": "Puedes revisar la razón del rechazo a continuación y enviar una nueva solicitud con información actualizada.",
+        "reapplyButton": "Enviar Nueva Solicitud"
+      },
+      "redirect": {
+        "title": "Acceso Denegado",
+        "description": "No tienes permisos para acceder a esta página. Por favor regístrate para una cuenta mayorista para continuar.",
+        "button": "Ir al Registro"
       }
     },
     "WholesaleRegistrationWorks": {

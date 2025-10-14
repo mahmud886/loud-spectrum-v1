@@ -846,6 +846,22 @@
         "inactive": "Inactive",
         "nextSteps": "What's Next?",
         "nextStepsDescription": "Our team will review your application and get back to you within 24-48 hours. You'll receive an email notification once your account is approved."
+      },
+      "disapprove": {
+        "title": "Application Not Approved",
+        "description": "We appreciate your interest in becoming a Loud Spectrum wholesale partner. Unfortunately, your application was not approved at this time.",
+        "registrationDetails": "Registration Details",
+        "status": "Status",
+        "disapproved": "Disapproved",
+        "reason": "Reason for Disapproval",
+        "nextSteps": "What's Next?",
+        "nextStepsDescription": "You can review the reason for disapproval below and submit a new application with updated information.",
+        "reapplyButton": "Submit New Application"
+      },
+      "redirect": {
+        "title": "Access Denied",
+        "description": "You don't have permission to access this page. Please register for a wholesale account to continue.",
+        "button": "Go to Registration"
       }
     },
     "WholesaleRegistrationWorks": {
