@@ -184,18 +184,18 @@ async function CategoryShopContent({ params }) {
 
   const activeProductTypes =
     productTypes?.data
-      ?.filter((productType) => productType.status === 'Active' && productType.is_deleted === false)
+      ?.filter((productType) => productType?.status === 'Active' && productType?.is_deleted === false)
       .map((productType) => ({
-        name: productType.name,
-        slug: productType.slug || productType.name,
-        _id: productType._id,
-        productCount: productType?.productCount || 0,
+        name: productType?.name,
+        slug: productType?.slug || productType?.name,
+        _id: productType?._id,
+        productCount: productType?.relatedProductCount || 0,
       })) || [];
 
   let isProductType = { type: false, name: null, slug: null, _id: null };
   for (const productType of activeProductTypes) {
-    if (productType.name === decodedCategory || productType.slug === decodedCategory) {
-      isProductType = { type: true, name: productType.name, slug: productType.slug, _id: productType._id };
+    if (productType?.name === decodedCategory || productType?.slug === decodedCategory) {
+      isProductType = { type: true, name: productType.name, slug: productType.slug, _id: productType?._id };
       break;
     }
   }

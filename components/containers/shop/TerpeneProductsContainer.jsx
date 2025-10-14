@@ -9,7 +9,9 @@ import TerpeneCategoryProductsLoading from './TerpeneCategoryProductsLoading';
 
 const TerpeneProductsContainer = ({ categories, categoryId, productTypes, isProductType }) => {
   const t = useTranslations('TerpeneShop');
-  const totalCategoryProducts = categories?.reduce((acc, category) => acc + category.productCount, 0);
+  const totalCategoryProducts =
+    (categories?.reduce((acc, category) => acc + (category?.productCount || 0), 0) || 0) +
+    (productTypes?.reduce((acc, productType) => acc + (productType?.productCount || 0), 0) || 0);
 
   return (
     <div className="container pt-[100px]">

@@ -137,16 +137,15 @@ async function ShopHeroContent() {
 // Async component for terpene products container
 async function TerpeneProductsContainerContent() {
   const [categories, productTypes] = await Promise.all([getCategories(), getProductTypes()]);
-
   const activeCategories = categories?.data?.categories?.filter((category) => category.status === 'Active') || [];
   const activeProductTypes =
     productTypes?.data
-      ?.filter((productType) => productType.status === 'Active' && productType.is_deleted === false)
+      ?.filter((productType) => productType?.status === 'Active' && productType?.is_deleted === false)
       .map((productType) => ({
-        name: productType.name,
-        slug: productType.slug || productType.name,
-        _id: productType._id,
-        productCount: productType?.productCount || 0,
+        name: productType?.name,
+        slug: productType?.slug || productType?.name,
+        _id: productType?._id,
+        productCount: productType?.relatedProductCount || 0,
       })) || [];
 
   return (

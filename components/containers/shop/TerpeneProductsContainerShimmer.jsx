@@ -1,5 +1,5 @@
 import ProductGridCardShimmer from '@/components/product/ProductGridCardShimmer';
-import Shimmer from '@/components/ui/shimmer';
+import { Skeleton } from '@/components/ui/skeleton';
 
 const TerpeneProductsContainerShimmer = () => {
   return (
@@ -7,15 +7,15 @@ const TerpeneProductsContainerShimmer = () => {
       <div className="flex flex-col items-start justify-between gap-12 xl:flex-row">
         <div className="w-full xl:w-[20%]">
           <div className="mb-6 xl:mb-12">
-            <Shimmer className="h-7 w-32 rounded xl:h-8 xl:w-40" />
+            <Skeleton className="h-7 w-32 rounded xl:h-8 xl:w-40" />
           </div>
           <div className="block xl:hidden">
-            <Shimmer className="h-12 w-full rounded" />
+            <Skeleton className="h-12 w-full rounded" />
           </div>
           <div className="hidden xl:block">
             <div className="space-y-3">
               {[...Array(6)].map((_, idx) => (
-                <Shimmer key={idx} className="h-10 w-full rounded" />
+                <Skeleton key={idx} className="h-10 w-full rounded" />
               ))}
             </div>
           </div>
