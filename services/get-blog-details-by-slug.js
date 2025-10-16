@@ -11,7 +11,7 @@ export async function getBlogDetailsBySlug(identifierUrl) {
       next: { revalidate: 300 }, // Revalidate every 5 minutes
     });
     if (!res.ok) {
-      throw new Error(`HTTP error! status: ${res.status}`);
+      return { error: true, message: `HTTP error! status: ${res.status}`, data: { blog: [], count: 0 } };
     }
     const data = await res.json();
 
@@ -20,7 +20,7 @@ export async function getBlogDetailsBySlug(identifierUrl) {
       if (process.env.NODE_ENV === 'development') {
         console.log(`Invalid API response structure for identifierUrl: ${identifierUrl}`, data);
       }
-      return { notFound: true, message: 'Invalid API response' };
+      return { notFound: true, message: 'Invalid API response', data: { blog: [], count: 0 } };
     }
 
     // Check if we have a valid blog post
@@ -31,7 +31,7 @@ export async function getBlogDetailsBySlug(identifierUrl) {
       if (process.env.NODE_ENV === 'development') {
         console.log(`Blog post not found for identifierUrl: ${identifierUrl}`);
       }
-      return { notFound: true, message: 'Blog post not found' };
+      return { notFound: true, message: 'Blog post not found', data: { blog: [], count: 0 } };
     }
 
     // Additional validation: check if the blog post has required fields
@@ -39,12 +39,12 @@ export async function getBlogDetailsBySlug(identifierUrl) {
       if (process.env.NODE_ENV === 'development') {
         console.log(`Invalid blog post data for identifierUrl: ${identifierUrl}`, blogPost);
       }
-      return { notFound: true, message: 'Invalid blog post data' };
+      return { notFound: true, message: 'Invalid blog post data', data: { blog: [], count: 0 } };
     }
 
     return blogPost;
   } catch (error) {
     console.error('Error fetching blog details:', error);
-    return { error: true, message: error.message, data: { blog: [], count: 0 } };
+    return { error: true, message: error.message, data: { blog: [], count: 0 }, notFound: false };
   }
 }

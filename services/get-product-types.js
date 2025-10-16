@@ -11,12 +11,12 @@ export async function getProductTypes() {
     });
 
     if (!res.ok) {
-      throw new Error(`Failed to fetch product types: ${res.status} ${res.statusText}`);
+      return { error: true, message: `Failed to fetch product types: ${res.status} ${res.statusText}`, types: [] };
     }
 
     return res.json();
   } catch (error) {
     console.error('Error fetching product types:', error);
-    throw new Error('Failed to fetch product types. Please try again later.');
+    return { error: true, message: `Failed to fetch product types: ${error.message}`, types: [] };
   }
 }

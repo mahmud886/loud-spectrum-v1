@@ -16,13 +16,13 @@ export const getOrderByCode = async (orderCode, token) => {
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      return { error: true, message: `HTTP error! status: ${response.status}`, data: { order: [] } };
     }
 
     const data = await response.json();
     return { error: false, data: data?.data };
   } catch (error) {
     console.error('Error fetching orders:', error);
-    return { error: true, message: error.message, data: { order: [] } };
+    return { error: true, message: error.message, data: { order: [] }, notFound: false };
   }
 };

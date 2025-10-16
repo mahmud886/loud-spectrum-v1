@@ -42,7 +42,11 @@ const WholesaleUnderReviewPage = () => {
   useEffect(() => {
     // Check if user is logged in and is a wholesaler waiting for approval (not Active and not Disapprove)
     if (isAuthenticated && user) {
-      if (user.role === 'wholesaler' && user.status !== 'Active' && user.status !== 'Disapprove') {
+      if (
+        user?.role?.toLowerCase() === 'wholesaler' &&
+        user?.status?.toLowerCase() !== 'active' &&
+        user?.status?.toLowerCase() !== 'inactive'
+      ) {
         setUserData(user);
       }
     }
@@ -58,9 +62,8 @@ const WholesaleUnderReviewPage = () => {
   if (
     !isAuthenticated ||
     !user ||
-    user.role !== 'wholesaler' ||
-    user.status === 'Active' ||
-    user.status === 'Disapprove'
+    user?.role?.toLowerCase() !== 'wholesaler' ||
+    (user?.status?.toLowerCase() !== 'active' && user?.status?.toLowerCase() !== 'inactive')
   ) {
     return (
       <div className="container py-[80px]">

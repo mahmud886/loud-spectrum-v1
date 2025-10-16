@@ -11,12 +11,20 @@ export async function getCategoryProducts(categorySlug = 'all') {
     });
 
     if (!res.ok) {
-      throw new Error(`Failed to fetch categories wise products: ${res.status} ${res.statusText}`);
+      return {
+        error: true,
+        message: `Failed to fetch categories wise products: ${res.status} ${res.statusText}`,
+        products: [],
+      };
     }
 
     return res.json();
   } catch (error) {
     console.error('Error fetching categories wise products:', error);
-    throw new Error('Failed to fetch categories wise products. Please try again later.');
+    return {
+      error: true,
+      message: `Failed to fetch categories wise products: ${error.message}`,
+      products: [],
+    };
   }
 }

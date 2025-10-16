@@ -180,7 +180,7 @@ async function CategoryShopContent({ params }) {
   const decodedCategory = await decodeCategoryFromUrl(category);
   const [categories, productTypes] = await Promise.all([getCategories(), getProductTypes()]);
 
-  const activeCategories = categories.data.categories.filter((category) => category.status === 'Active') || [];
+  const activeCategories = categories?.data?.categories?.filter((category) => category.status === 'Active') || [];
 
   const activeProductTypes =
     productTypes?.data

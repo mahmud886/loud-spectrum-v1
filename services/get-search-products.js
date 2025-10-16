@@ -8,7 +8,7 @@ export const getSearchProducts = async (query) => {
   try {
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/search-product?search=${query}`);
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      return { error: true, message: `HTTP error! status: ${response.status}`, data: { products: [], count: 0 } };
     }
     return await response.json();
   } catch (error) {

@@ -19,13 +19,13 @@ export const getOrders = async () => {
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      return { error: true, message: `HTTP error! status: ${response.status}`, data: { orders: [] } };
     }
 
     const data = await response.json();
     return { error: false, data: data?.data?.orders };
   } catch (error) {
     console.error('Error fetching orders:', error);
-    return { error: true, message: error.message, data: { orders: [] } };
+    return { error: true, message: error.message, data: { orders: [] }, notFound: false };
   }
 };

@@ -41,15 +41,16 @@ export const getDhlInformations = async (shippingPayload) => {
     const result = await response.json();
     if (!response.ok) {
       const errorMessage = result.details?.detail || result.error || 'Failed to fetch rates.';
-      throw new Error(errorMessage);
+      return { error: true, message: errorMessage, data: { products: [] }, notFound: false };
     }
-    return { error: false, data: { products: result.products || [] } };
+    return { error: false, data: { products: result.products || [] }, notFound: false };
   } catch (error) {
     console.error('Error fetching DHL information:', error);
     return {
       error: true,
       message: error.message,
-      data: { error: true, data: {} },
+      data: { products: [] },
+      notFound: false,
     };
   }
 };

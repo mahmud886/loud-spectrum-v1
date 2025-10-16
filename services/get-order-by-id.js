@@ -7,11 +7,11 @@
 export const getOrderById = async (orderId, token) => {
   try {
     if (!token) {
-      return { authError: true, message: 'Authentication token not found' };
+      return { authError: true, message: 'Authentication token not found', data: {} };
     }
 
     if (!orderId) {
-      return { error: true, message: 'Order ID is required' };
+      return { error: true, message: 'Order ID is required', data: {} };
     }
 
     // Get API URL - works on both client and server side
@@ -19,7 +19,7 @@ export const getOrderById = async (orderId, token) => {
 
     if (!apiUrl) {
       console.error('API URL not configured');
-      return { error: true, message: 'API configuration error' };
+      return { error: true, message: 'API configuration error', data: {} };
     }
 
     const url = `${apiUrl}/api/orders/${orderId}`;
@@ -34,13 +34,13 @@ export const getOrderById = async (orderId, token) => {
     if (!response.ok) {
       // Handle different HTTP status codes
       if (response.status === 401) {
-        return { authError: true, message: 'Authentication failed' };
+        return { authError: true, message: 'Authentication failed', data: {} };
       } else if (response.status === 404) {
-        return { notFound: true, message: 'Order not found' };
+        return { notFound: true, message: 'Order not found', data: {} };
       } else if (response.status >= 500) {
-        return { serverError: true, message: `Server error: ${response.status}` };
+        return { serverError: true, message: `Server error: ${response.status}`, data: {} };
       } else {
-        return { error: true, message: `HTTP error! status: ${response.status}` };
+        return { error: true, message: `HTTP error! status: ${response.status}`, data: {} };
       }
     }
 
@@ -48,7 +48,7 @@ export const getOrderById = async (orderId, token) => {
 
     // Validate the API response structure
     if (!data || !data.data) {
-      return { notFound: true, message: 'Invalid API response' };
+      return { notFound: true, message: 'Invalid API response', data: {} };
     }
 
     // Check if we have valid order data
@@ -56,17 +56,17 @@ export const getOrderById = async (orderId, token) => {
 
     // If order data is empty or invalid, return not found
     if (!orderData || Object.keys(orderData).length === 0) {
-      return { notFound: true, message: 'Order not found' };
+      return { notFound: true, message: 'Order not found', data: {} };
     }
 
     // Additional validation: check if the order has at least basic identifying information
     if (!orderData._id) {
-      return { notFound: true, message: 'Invalid order data' };
+      return { notFound: true, message: 'Invalid order data', data: {} };
     }
 
-    return { error: false, data: orderData };
+    return { error: false, data: orderData, notFound: false };
   } catch (error) {
     console.error('Error fetching order details:', error);
-    return { error: true, message: error.message || 'Network error occurred', data: {} };
+    return { error: true, message: error.message || 'Network error occurred', data: {}, notFound: false };
   }
 };

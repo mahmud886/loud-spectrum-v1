@@ -97,13 +97,18 @@ export const getFedexInformations = async (shippingPayload) => {
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      return {
+        error: true,
+        message: `HTTP error! status: ${response.status}`,
+        data: { products: [] },
+        notFound: false,
+      };
     }
 
     const data = await response.json();
-    return { error: false, data };
+    return { error: false, data, notFound: false };
   } catch (error) {
     console.error('Error fetching fedex informations:', error);
-    return { error: true, message: error.message, data: { error: true, data: {} } };
+    return { error: true, message: error.message, data: { error: true, data: {} }, notFound: false };
   }
 };

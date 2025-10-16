@@ -7,7 +7,7 @@
  */
 export const getWholesalerProducts = async (wholesalerId, authToken) => {
   if (!authToken) {
-    throw new Error('Unauthorized: Authentication token is required');
+    return { error: true, message: 'Unauthorized: Authentication token is required', data: { products: [] } };
   }
 
   try {
@@ -20,12 +20,21 @@ export const getWholesalerProducts = async (wholesalerId, authToken) => {
     });
 
     if (!response.ok) {
-      throw new Error(`Failed to fetch wholesaler products: ${response.status} ${response.statusText}`);
+      return {
+        error: true,
+        message: `Failed to fetch wholesaler products: ${response.status} ${response.statusText}`,
+        data: { products: [] },
+      };
     }
 
     return response.json();
   } catch (error) {
     console.error('Error fetching wholesaler products:', error);
-    throw new Error('Failed to fetch wholesaler products. Please try again later.');
+    return {
+      error: true,
+      message: `Failed to fetch wholesaler products: ${error.message}`,
+      data: { products: [] },
+      notFound: false,
+    };
   }
 };

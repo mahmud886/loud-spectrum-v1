@@ -11,12 +11,17 @@ export async function getBlogDetails(blogId) {
       next: { revalidate: 300 }, // Revalidate every 5 minutes
     });
     if (!res.ok) {
-      throw new Error(`HTTP error! status: ${res.status}`);
+      return {
+        error: true,
+        message: `HTTP error! status: ${res.status}`,
+        data: [],
+        notFound: false,
+      };
     }
     const data = await res.json();
-    return data?.data || [];
+    return { error: false, data: data?.data || [], notFound: false };
   } catch (error) {
     console.error('Error fetching blog details:', error);
-    return { error: true, message: error.message, data: { blog: [], count: 0 } };
+    return { error: true, message: error.message, data: [], notFound: false };
   }
 }

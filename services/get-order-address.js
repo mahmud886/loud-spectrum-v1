@@ -19,13 +19,13 @@ export const getOrderAddress = async () => {
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      return { error: true, message: `HTTP error! status: ${response.status}`, data: { address: [] } };
     }
 
     const data = await response.json();
     return { error: false, data: data?.data };
   } catch (error) {
     console.error('Error fetching orders:', error);
-    return { error: true, message: error.message, data: { address: [] } };
+    return { error: true, message: error.message, data: { address: [] }, notFound: false };
   }
 };

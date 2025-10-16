@@ -13,7 +13,7 @@ export const getOrderDetails = async (orderId) => {
     const cookieStore = await cookies();
     const authToken = cookieStore.get('authToken')?.value;
     if (!authToken) {
-      return { authError: true, message: 'Authentication token not found' };
+      return { authError: true, message: 'Authentication token not found', data: {} };
     }
 
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/orders/${orderId}`, {
@@ -29,13 +29,13 @@ export const getOrderDetails = async (orderId) => {
 
       // Handle different HTTP status codes
       if (response.status === 401) {
-        return { authError: true, message: 'Authentication failed' };
+        return { authError: true, message: 'Authentication failed', data: {} };
       } else if (response.status === 404) {
-        return { notFound: true, message: 'Order not found' };
+        return { notFound: true, message: 'Order not found', data: {} };
       } else if (response.status >= 500) {
-        return { serverError: true, message: `Server error: ${response.status}` };
+        return { serverError: true, message: `Server error: ${response.status}`, data: {} };
       } else {
-        return { error: true, message: `HTTP error! status: ${response.status}, message: ${errorMessage}` };
+        return { error: true, message: `HTTP error! status: ${response.status}, message: ${errorMessage}`, data: {} };
       }
     }
 
@@ -46,7 +46,7 @@ export const getOrderDetails = async (orderId) => {
       if (process.env.NODE_ENV === 'development') {
         console.log(`Invalid API response structure for orderId: ${orderId}`, data);
       }
-      return { notFound: true, message: 'Invalid API response' };
+      return { notFound: true, message: 'Invalid API response', data: {} };
     }
 
     // Check if we have valid order data
@@ -63,7 +63,7 @@ export const getOrderDetails = async (orderId) => {
       if (process.env.NODE_ENV === 'development') {
         console.log(`Order not found for orderId: ${orderId}`);
       }
-      return { notFound: true, message: 'Order not found' };
+      return { notFound: true, message: 'Order not found', data: {} };
     }
 
     // Additional validation: check if the order has at least basic identifying information
@@ -71,7 +71,7 @@ export const getOrderDetails = async (orderId) => {
       if (process.env.NODE_ENV === 'development') {
         console.log(`Invalid order data - missing _id for orderId: ${orderId}`, orderData);
       }
-      return { notFound: true, message: 'Invalid order data' };
+      return { notFound: true, message: 'Invalid order data', data: {} };
     }
 
     return data;

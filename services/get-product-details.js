@@ -22,7 +22,7 @@ export async function getProductDetails(slug) {
       if (process.env.NODE_ENV === 'development') {
         console.log(`Invalid API response structure for product slug: ${slug}`, data);
       }
-      return { notFound: true, message: 'Invalid API response' };
+      return { notFound: true, message: 'Invalid API response', data: { products: [], count: 0 } };
     }
 
     // Check if we have a valid product
@@ -33,7 +33,7 @@ export async function getProductDetails(slug) {
       if (process.env.NODE_ENV === 'development') {
         console.log(`Product not found for slug: ${slug}`);
       }
-      return { notFound: true, message: 'Product not found' };
+      return { notFound: true, message: 'Product not found', data: { products: [], count: 0 } };
     }
 
     // Additional validation: check if the product has required fields
@@ -41,12 +41,12 @@ export async function getProductDetails(slug) {
       if (process.env.NODE_ENV === 'development') {
         console.log(`Invalid product data for slug: ${slug}`, product);
       }
-      return { notFound: true, message: 'Invalid product data' };
+      return { notFound: true, message: 'Invalid product data', data: { products: [], count: 0 } };
     }
 
     return product;
   } catch (error) {
     console.error('Error fetching product details:', error);
-    return { error: true, message: error.message };
+    return { error: true, message: error.message, data: { products: [], count: 0 }, notFound: false };
   }
 }

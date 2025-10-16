@@ -11,12 +11,21 @@ export async function getProductTypesCounts() {
     });
 
     if (!res.ok) {
-      throw new Error(`Failed to fetch product types counts: ${res.status} ${res.statusText}`);
+      return {
+        error: true,
+        message: `Failed to fetch product types counts: ${res.status} ${res.statusText}`,
+        data: { productTypesCounts: [] },
+      };
     }
 
     return res.json();
   } catch (error) {
     console.error('Error fetching product types counts:', error);
-    throw new Error('Failed to fetch product types counts. Please try again later.');
+    return {
+      error: true,
+      message: `Failed to fetch product types counts: ${error.message}`,
+      data: { productTypesCounts: [] },
+      notFound: false,
+    };
   }
 }

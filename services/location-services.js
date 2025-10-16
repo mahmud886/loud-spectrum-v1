@@ -16,13 +16,13 @@ export const getCountries = async () => {
     // console.log(response);
 
     if (!response.ok) {
-      throw new Error('Failed to fetch countries');
+      return { error: true, message: 'Failed to fetch countries', data: { countries: [] }, notFound: false };
     }
 
     return await response.json();
   } catch (error) {
     console.error('Error fetching countries:', error);
-    throw error;
+    return { error: true, message: error.message, data: { countries: [] }, notFound: false };
   }
 };
 
@@ -43,13 +43,14 @@ export const getStates = async (countryCode) => {
     // console.log(response);
 
     if (!response.ok) {
-      throw new Error('Failed to fetch states');
+      return { error: true, message: 'Failed to fetch states', data: { states: [] }, notFound: false };
     }
 
-    return await response.json();
+    const data = await response.json();
+    return { error: false, data, notFound: false };
   } catch (error) {
     console.error('Error fetching states:', error);
-    throw error;
+    return { error: true, message: error.message, data: { states: [] }, notFound: false };
   }
 };
 
@@ -71,12 +72,13 @@ export const getCities = async (countryCode, stateCode) => {
     // console.log(response);
 
     if (!response.ok) {
-      throw new Error('Failed to fetch cities');
+      return { error: true, message: 'Failed to fetch cities', data: { cities: [] }, notFound: false };
     }
 
-    return await response.json();
+    const data = await response.json();
+    return { error: false, data, notFound: false };
   } catch (error) {
     console.error('Error fetching cities:', error);
-    throw error;
+    return { error: true, message: error.message, data: { cities: [] }, notFound: false };
   }
 };

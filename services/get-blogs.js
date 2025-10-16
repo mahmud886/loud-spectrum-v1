@@ -11,7 +11,7 @@ export async function getBlogs() {
     });
 
     if (!res.ok) {
-      throw new Error(`Failed to fetch blogs: ${res.status} ${res.statusText}`);
+      return { error: true, message: `Failed to fetch blogs: ${res.status} ${res.statusText}`, blogs: [], count: 0 };
     }
 
     const data = await res.json();

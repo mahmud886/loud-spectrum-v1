@@ -26,13 +26,13 @@ export const getVerifyDiscountCoupon = async (couponCode) => {
 
     if (!response.ok) {
       const errorData = await response.json();
-      throw new Error(errorData.message || 'Failed to verify coupon');
+      return { error: true, message: errorData.message || 'Failed to verify coupon', data: null, notFound: false };
     }
 
     const data = await response.json();
-    return { error: false, data };
+    return { error: false, data, notFound: false };
   } catch (error) {
     console.error('Error verifying coupon:', error);
-    return { error: true, message: error.message || 'Invalid coupon!', data: null };
+    return { error: true, message: error.message || 'Invalid coupon!', data: null, notFound: false };
   }
 };

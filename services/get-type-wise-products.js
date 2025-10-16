@@ -12,12 +12,20 @@ export async function getTypeWiseProducts(type) {
     });
 
     if (!res.ok) {
-      throw new Error(`Failed to fetch type wise products: ${res.status} ${res.statusText}`);
+      return {
+        error: true,
+        message: `Failed to fetch type wise products: ${res.status} ${res.statusText}`,
+        products: [],
+      };
     }
 
     return res.json();
   } catch (error) {
     console.error('Error fetching type wise products:', error);
-    throw new Error('Failed to fetch type wise products. Please try again later.');
+    return {
+      error: true,
+      message: `Failed to fetch type wise products: ${error.message}`,
+      products: [],
+    };
   }
 }

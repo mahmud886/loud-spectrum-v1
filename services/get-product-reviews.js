@@ -12,13 +12,13 @@ export async function getProductReviews(productId) {
     });
 
     if (!res.ok) {
-      throw new Error(`Failed to fetch product reviews: ${res.status} ${res.statusText}`);
+      return { error: true, message: `Failed to fetch product reviews: ${res.status} ${res.statusText}`, reviews: [] };
     }
 
     const data = await res.json();
     return data?.data?.reviews;
   } catch (error) {
     console.error('Error fetching product reviews:', error);
-    throw new Error('Failed to fetch product reviews. Please try again later.');
+    return { error: true, message: `Failed to fetch product reviews: ${error.message}`, reviews: [] };
   }
 }

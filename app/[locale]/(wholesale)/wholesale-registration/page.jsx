@@ -17,16 +17,13 @@ const WholesaleRegistrationPage = () => {
   useEffect(() => {
     // Check if user is logged in and redirect based on their status
     if (isAuthenticated && user) {
-      if (user.role === 'wholesaler') {
-        if (user.status === 'Disapprove') {
-          console.log('Redirecting to disapprove page');
-          router.push('/wholesale-disapprove');
-          return;
-        } else if (user.status !== 'Active') {
-          console.log('Redirecting to under review page');
-          router.push('/wholesale-under-review');
-          return;
-        }
+      if (
+        user?.role?.toLowerCase() === 'wholesaler' &&
+        user?.status?.toLowerCase() !== 'active' &&
+        user?.status?.toLowerCase() !== 'inactive'
+      ) {
+        router.push('/wholesale-under-review');
+        return;
       }
     }
     setUserData(user);

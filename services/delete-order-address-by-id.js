@@ -17,7 +17,7 @@ export const deleteOrderAddressById = async (addressId, authToken) => {
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      return { error: true, message: `HTTP error! status: ${response.status}`, data: { address: [] } };
     }
 
     const data = await response.json();
