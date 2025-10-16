@@ -178,7 +178,8 @@ const WireTransferRejectedEmail = ({ orderData, transactionDetails }) => {
 
             <Text className="mb-4 text-lg">Dear {customer_name},</Text>
             <Text className="mb-6 leading-relaxed text-gray-700">
-              We attempted to process your payment, but unfortunately, it was not approved.
+              We attempted to verify your <strong>wire transfer payment</strong> for order <strong>{code}</strong>, but
+              unfortunately, the payment was <strong>not approved.</strong>
             </Text>
 
             {/* Order Info */}
@@ -202,8 +203,13 @@ const WireTransferRejectedEmail = ({ orderData, transactionDetails }) => {
               <Text className="mb-4 text-center text-xl font-bold text-orange-700">🔍 Action Required</Text>
 
               <Text className="m-0 text-center text-sm text-orange-600">
-                Please check with your bank and choose a different payment. We also accept Credit/Debit Card and Zelle
-                Payment.
+                Please check with your bank to ensure there are no issues with your payment method. You can then reorder
+                your items using one of our available payment options:
+                <br />
+                • Credit/Debit Card
+                <br />
+                • Local Pickup
+                <br />
               </Text>
             </Section>
             {/* Order Summary */}
@@ -330,8 +336,6 @@ const WireTransferRejectedEmail = ({ orderData, transactionDetails }) => {
               <Text className="m-0 text-center text-sm text-gray-700">
                 We apologize for the inconvenience and appreciate your quick response.
                 <br />
-                Our team will review your information promptly and get back to you within 24 hours.
-                <br />
                 <strong>Thank you for your patience and understanding.</strong>
               </Text>
             </Section>
@@ -341,7 +345,7 @@ const WireTransferRejectedEmail = ({ orderData, transactionDetails }) => {
               <Row>
                 <Column className="text-center">
                   <Button
-                    href={`mailto:support@loudspectrum.com?subject=Payment Issue - Order ${code}&body=Hi, I need help with my payment for order ${code}. Please find the transaction details attached.`}
+                    href={`mailto:hi@loudspectrum.com?subject=Payment Issue - Order ${code}&body=Hi, I need help with my payment for order ${code}. Please find the transaction details attached.`}
                     className="mx-2 rounded-full bg-red-600 px-6 py-3 text-sm font-normal text-white"
                   >
                     Contact Support

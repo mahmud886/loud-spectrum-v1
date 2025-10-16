@@ -123,6 +123,12 @@ const WholesaleRegistrationApproveEmail = ({ registrationData }) => {
               <br />
               <br />
               You now have access to our wholesale pricing, exclusive products, and dedicated support team.
+              <br />
+              <br />
+              In addition, you can now explore our <strong>collection of 2,000+ custom flavors</strong> and{' '}
+              <strong>in-store product flavors</strong> available for wholesale orders. If you don’t find the exact
+              flavor you’re looking for, you can even <strong>create your own custom flavor</strong> — simply provide
+              your desired <strong>flavor name and description,</strong> and our team will bring it to life.
             </Text>
 
             <Section className="mt-0 mb-4 text-center">

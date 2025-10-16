@@ -190,11 +190,16 @@ const OrderConfirmationEmail = ({ orderData }) => {
 
             <Text className="mb-4 text-lg">Hi, {customer_name}</Text>
             <Text className="mb-6 leading-relaxed text-gray-700">
-              Thanks for your order. We're processing your order and will send you a shipping confirmation email once
-              your order is dispatched.
-              <br />
-              Your order details are provided below for your reference.
+              <strong>Thanks for your order!</strong> We’re currently processing your order and will send you a payment
+              confirmation email once your payment has been successfully processed.
             </Text>
+            <Text className="m-0 text-gray-700">
+              If you’ve selected the Local <strong>Pickup option</strong>, we’ll notify you as soon as your order is
+              ready for collection, along with pickup details and instructions.
+            </Text>
+            <br />
+            <Text className="m-0 text-gray-700">Your order details are provided below for your reference.</Text>
+            <br />
 
             <Section className="rounded-lg bg-green-50 p-4">
               <Row>

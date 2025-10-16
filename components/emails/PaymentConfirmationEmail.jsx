@@ -237,19 +237,12 @@ const PaymentConfirmationEmail = ({ orderData, paymentData }) => {
             <Text className="mb-6 leading-relaxed text-gray-700">
               Your payment has been successfully processed. Below are the details of your transaction for your records.
               <br />
-              Your order is now being processed and you'll receive a shipping confirmation once it's dispatched.
             </Text>
 
             {/* Payment Details */}
             <Section className="rounded-lg bg-blue-50 p-4">
               <Row>
-                <Column>
-                  <Text className="m-0 font-semibold text-blue-800">Transaction ID</Text>
-                  <Text className="m-0 font-mono text-blue-700">
-                    {transaction_id ? transaction_id : payment_info?.transaction_id || 'N/A'}
-                  </Text>
-                </Column>
-                <Column className="text-right">
+                <Column className="text-center">
                   <Text className="m-0 text-blue-700">Payment Date: {formatDate(payment_date || created_at)}</Text>
                   <Text className="m-0 text-blue-700">Status: Completed</Text>
                 </Column>

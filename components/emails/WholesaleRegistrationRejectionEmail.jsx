@@ -263,13 +263,6 @@ const WholesaleRegistrationRejectionEmail = ({ registrationData }) => {
               <Text className="m-0 mb-2 text-gray-700">
                 If you have questions about this decision or need clarification on requirements:
               </Text>
-              <Text className="m-0 text-sm text-gray-600">
-                <strong>Email:</strong> wholesale@loudspectrum.com
-                <br />
-                <strong>Phone:</strong> {phone_number}
-                <br />
-                <strong>Hours:</strong> Monday - Friday, 9 AM - 6 PM PST
-              </Text>
             </Section>
 
             <Hr className="my-6 border-t border-gray-200" />

@@ -180,8 +180,15 @@ const WireTransferUnderReviewEmail = ({ orderData, transactionDetails }) => {
 
             <Text className="mb-4 text-lg">Hi {customer_name},</Text>
             <Text className="mb-6 leading-relaxed text-gray-700">
-              Thank you for your payment. Your transaction is currently under review. We are verifying the transaction
-              ID and will confirm your order shortly.
+              <strong>Thank you for your payment!</strong> We’ve received your transaction details, and your payment is
+              currently <strong>under review.</strong> Our team is in the process of{' '}
+              <strong>verifying the wire transfer</strong> to ensure the funds have been successfully received on our
+              end.
+              <br />
+              <br />
+              Once the payment is confirmed, we’ll update your order status and send you an{' '}
+              <strong>confirmation email.</strong>
+              Please note that wire transfer verification may take <strong>1–2 business days.</strong>
             </Text>
 
             {/* Order Info */}
@@ -346,14 +353,14 @@ const WireTransferUnderReviewEmail = ({ orderData, transactionDetails }) => {
               <Text className="m-0 text-center text-sm text-gray-700">
                 Once the review is complete, you will receive a confirmation email with your order details.
                 <br />
-                If you have any questions in the meantime, feel free to reply to this email or contact our support team.
+                If you have any questions in the meantime, feel free contact our support team.
                 <br />
                 <strong>Thank you for your patience and trust.</strong>
               </Text>
             </Section>
 
             {/* Actions */}
-            <Section className="mb-4 text-center">
+            <Section className="my-4 text-center">
               <Row>
                 <Column className="text-center">
                   <Button

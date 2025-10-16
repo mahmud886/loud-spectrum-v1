@@ -181,8 +181,12 @@ const WireTransferApprovedEmail = ({ orderData, transactionDetails }) => {
 
             <Text className="mb-4 text-lg">Dear {customer_name},</Text>
             <Text className="mb-6 leading-relaxed text-gray-700">
-              We are pleased to inform you that your payment has been successfully approved and your order is now
-              confirmed.
+              <strong>Great news!</strong> We’re pleased to inform you that your{' '}
+              <strong>payment has been successfully approved</strong>
+              and your <strong>order is now confirmed.</strong>
+              <br />
+              <br />
+              Our team will begin preparing your order right away.
             </Text>
 
             {/* Order Info */}

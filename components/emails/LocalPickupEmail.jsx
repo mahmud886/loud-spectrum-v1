@@ -179,8 +179,8 @@ const LocalPickupEmail = ({ orderData }) => {
 
             <Text className="mb-4 text-lg">Hi {customer_name},</Text>
             <Text className="mb-6 leading-relaxed text-gray-700">
-              Thank you for your order with Loud Spectrum. We have successfully received your request and will notify
-              you once your product is ready for pickup.
+              Thank you for your order with <strong>Loud Spectrum!</strong> We’re excited to let you know that your
+              order is now <strong>ready for local pickup.</strong>
             </Text>
 
             {/* Order Info */}
@@ -192,7 +192,7 @@ const LocalPickupEmail = ({ orderData }) => {
                 </Column>
                 <Column className="text-right">
                   <Text className="m-0 text-blue-700">Order Date: {formatDate(created_at)}</Text>
-                  <Text className="m-0 text-blue-700">Status: Processing</Text>
+                  <Text className="m-0 text-blue-700">Status: Ready for Pickup</Text>
                 </Column>
               </Row>
             </Section>
@@ -211,8 +211,8 @@ const LocalPickupEmail = ({ orderData }) => {
 
               <Text className="mb-2 text-center font-semibold text-blue-800">Important Pickup Information:</Text>
               <Text className="m-0 text-center text-sm text-blue-700">
-                • Have your order confirmation ready
-                <br />• We will text you once your order is ready for pick up .
+                • Please text us to schedule a convenient pickup time.
+                <br />• Have your order confirmation or order number ready at pickup.
               </Text>
             </Section>
 
