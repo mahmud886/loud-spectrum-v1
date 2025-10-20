@@ -957,7 +957,7 @@
       "productName": "Название товара",
       "source": "Источник",
       "line": "Линия",
-      "totalGrams": "Общие граммы",
+      "totalMl": "Общий ML",
       "action": "Действие"
     },
     "customOrderForm": {
@@ -968,6 +968,7 @@
     },
     "cart": {
       "title": "Ваша оптовая корзина",
+      "empty": "В корзине нет товаров",
       "calculatePrice": "Рассчитать цену",
       "totalAmount": "Общая сумма",
       "addToCart": "Добавить в корзину",

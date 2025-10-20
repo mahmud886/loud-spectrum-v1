@@ -957,7 +957,7 @@
       "productName": "商品名",
       "source": "ソース",
       "line": "ライン",
-      "totalGrams": "総グラム数",
+      "totalMl": "総ML",
       "action": "アクション"
     },
     "customOrderForm": {
@@ -968,6 +968,7 @@
     },
     "cart": {
       "title": "あなたの卸売カート",
+      "empty": "カートにアイテムがありません",
       "calculatePrice": "価格を計算",
       "totalAmount": "合計金額",
       "addToCart": "カートに追加",

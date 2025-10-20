@@ -956,7 +956,7 @@
       "productName": "Produktname",
       "source": "Quelle",
       "line": "Linie",
-      "totalGrams": "Gesamtgramm",
+      "totalMl": "Gesamt ML",
       "action": "Aktion"
     },
     "customOrderForm": {
@@ -967,6 +967,7 @@
     },
     "cart": {
       "title": "Ihr Großhandelswarenkorb",
+      "empty": "Keine Artikel im Warenkorb",
       "calculatePrice": "Preis berechnen",
       "totalAmount": "Gesamtbetrag",
       "addToCart": "In den Warenkorb",

@@ -957,7 +957,7 @@
       "productName": "Nom du Produit",
       "source": "Source",
       "line": "Ligne",
-      "totalGrams": "Grammes Totaux",
+      "totalMl": "Total ML",
       "action": "Action"
     },
     "customOrderForm": {
@@ -968,6 +968,7 @@
     },
     "cart": {
       "title": "Votre Panier de Gros",
+      "empty": "Aucun article dans le panier",
       "calculatePrice": "Calculer le Prix",
       "totalAmount": "Montant Total",
       "addToCart": "Ajouter au Panier",

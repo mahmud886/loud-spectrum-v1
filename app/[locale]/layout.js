@@ -93,7 +93,7 @@ export async function generateMetadata({ params }) {
       },
     },
     verification: {
-      google: 'your-google-site-verification',
+      google: 'OiUikAqP3lwMz8PYTIvvQ2wwRwAlXptRobZdKge4NYQ',
       yandex: 'your-yandex-verification',
       bing: 'your-bing-verification',
     },
@@ -137,8 +137,37 @@ export default async function LocaleLayout({ children, params }) {
     <html lang={locale} suppressHydrationWarning>
       <head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+        {/* Google Tag Manager */}
+        <Script id="gtm-init" strategy="afterInteractive">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WQ8K7XPB');`}
+        </Script>
+        {/* Google tag (gtag.js) */}
+        <Script
+          id="ga4-src"
+          src="https://www.googletagmanager.com/gtag/js?id=G-SR3YV7PRR7"
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-SR3YV7PRR7');`}
+        </Script>
       </head>
       <body className={`bg-white-100 ${adelphiSans.variable} ${neueHaasUnicaW1GMono.variable} antialiased`}>
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-WQ8K7XPB"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
         <ReduxProvider>
           <ToastProvider />
           <ScrollToTop>

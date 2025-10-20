@@ -962,17 +962,18 @@
       "productName": "Product Name",
       "source": "Source",
       "line": "Line",
-      "totalGrams": "Total Grams",
+      "totalMl": "Total ML",
       "action": "Action"
     },
     "customOrderForm": {
       "customFlavor": "Your Custom Flavor",
       "describeFlavor": "Describe Your Flavor",
       "select": "Select",
-      "pricePerGram": "$3/gm"
+      "pricePerMl": "$3/ml"
     },
     "cart": {
       "title": "Your Wholesale Cart",
+      "empty": "No items in cart",
       "calculatePrice": "Calculate Price",
       "totalAmount": "Total Amount",
       "addToCart": "Add to Cart",

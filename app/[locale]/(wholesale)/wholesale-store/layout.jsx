@@ -1,9 +1,9 @@
 // MOVED: Original file archived to _wholesale-store/layout.jsx
 import DynamicBreadcrumb from '@/components/DynamicBreadcrumb';
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 
-const WholesaleStoreLayout = ({ children }) => {
-  const t = useTranslations('WholesaleStore');
+const WholesaleStoreLayout = async ({ children }) => {
+  const t = await getTranslations('WholesaleStore');
   return (
     <div className="container">
       <div className="mt-[120px] xl:mt-[140px]">
