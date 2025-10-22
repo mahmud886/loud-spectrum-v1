@@ -132,20 +132,27 @@ export const calculateDiscountForSelectedPrice = (category, selectedPrice, minim
 export const formatDiscountedPrice = (discountInfo, showOriginal = true) => {
   const { originalPrice, discountedPrice, hasDiscount, discountPercentage, discountType } = discountInfo;
 
+  // Ensure values are numbers before calling toFixed
+  const originalPriceNum = Number(originalPrice) || 0;
+  const discountedPriceNum = Number(discountedPrice) || 0;
+  const discountPercentageNum = Number(discountPercentage) || 0;
+
   if (!hasDiscount) {
     return {
-      displayPrice: `$${originalPrice.toFixed(2)}`,
-      originalPrice: showOriginal ? `$${originalPrice.toFixed(2)}` : null,
+      displayPrice: `$${originalPriceNum.toFixed(2)}`,
+      originalPrice: showOriginal ? `$${originalPriceNum.toFixed(2)}` : null,
       discountedPrice: null,
       discountText: null,
     };
   }
 
   return {
-    displayPrice: `$${discountedPrice.toFixed(2)}`,
-    originalPrice: showOriginal ? `$${originalPrice.toFixed(2)}` : null,
-    discountedPrice: `$${discountedPrice.toFixed(2)}`,
+    displayPrice: `$${discountedPriceNum.toFixed(2)}`,
+    originalPrice: showOriginal ? `$${originalPriceNum.toFixed(2)}` : null,
+    discountedPrice: `$${discountedPriceNum.toFixed(2)}`,
     discountText:
-      discountType === 'Percentage' ? `${discountPercentage.toFixed(0)}% OFF` : `${discountPercentage.toFixed(0)}% OFF`,
+      discountType === 'Percentage'
+        ? `${discountPercentageNum.toFixed(0)}% OFF`
+        : `${discountPercentageNum.toFixed(0)}% OFF`,
   };
 };

@@ -39,7 +39,7 @@ const ProductDetailsLeftCard = ({ product }) => {
   useEffect(() => {
     if (selectedPrice) {
       const displayPrice = selectedPriceDiscount.hasDiscount ? selectedPriceDiscount.discountedPrice : selectedPrice;
-      toast.success(`Selected price: $${displayPrice.toFixed(2)} for ${selectedVolume}`);
+      toast.success(`Selected price: $${Number(displayPrice || 0).toFixed(2)} for ${selectedVolume}`);
     }
   }, [selectedPrice, selectedVolume, selectedPriceDiscount]);
 

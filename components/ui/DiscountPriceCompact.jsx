@@ -53,7 +53,7 @@ const DiscountPriceCompact = ({
         <div className={containerClass}>
           <span className={regularPriceClass}>
             {currency}
-            {selectedPrice.toFixed(decimalPlaces)}
+            {Number(selectedPrice || 0).toFixed(decimalPlaces)}
           </span>
         </div>
       );
@@ -66,21 +66,21 @@ const DiscountPriceCompact = ({
           {showOriginalPrice && discountInfo.hasDiscount && (
             <span className={originalPriceClass}>
               {currency}
-              {discountInfo.originalPrice.toFixed(decimalPlaces)}
+              {Number(discountInfo.originalPrice || 0).toFixed(decimalPlaces)}
             </span>
           )}
           {showDiscountText && discountInfo.hasDiscount && (
             <span className={discountTextClass}>
               {discountInfo.discountType === 'Percentage'
-                ? `${discountInfo.discountPercentage.toFixed(0)}% OFF`
-                : `$${discountInfo.discountAmount.toFixed(2)} OFF`}
+                ? `${Number(discountInfo.discountPercentage || 0).toFixed(0)}% OFF`
+                : `$${Number(discountInfo.discountAmount || 0).toFixed(2)} OFF`}
             </span>
           )}
         </div>
         {/* Second line: Discounted price */}
         <span className={discountedPriceClass}>
           {currency}
-          {discountInfo.discountedPrice.toFixed(decimalPlaces)}
+          {Number(discountInfo.discountedPrice || 0).toFixed(decimalPlaces)}
         </span>
       </div>
     );
@@ -95,8 +95,8 @@ const DiscountPriceCompact = ({
       <div className={containerClass}>
         <span className={regularPriceClass}>
           {currency}
-          {minPrice.toFixed(decimalPlaces)} – {currency}
-          {maxPrice.toFixed(decimalPlaces)}
+          {Number(minPrice || 0).toFixed(decimalPlaces)} – {currency}
+          {Number(maxPrice || 0).toFixed(decimalPlaces)}
         </span>
       </div>
     );
@@ -110,8 +110,8 @@ const DiscountPriceCompact = ({
         {showOriginalPrice && (
           <span className={originalPriceClass}>
             {currency}
-            {minPrice.toFixed(decimalPlaces)} – {currency}
-            {maxPrice.toFixed(decimalPlaces)}
+            {Number(minPrice || 0).toFixed(decimalPlaces)} – {currency}
+            {Number(maxPrice || 0).toFixed(decimalPlaces)}
           </span>
         )}
         {showDiscountText && (
@@ -125,8 +125,8 @@ const DiscountPriceCompact = ({
       {/* Second line: Discounted price range */}
       <span className={discountedPriceClass}>
         {currency}
-        {rangeDiscount.discountedRange.min.toFixed(decimalPlaces)} – {currency}
-        {rangeDiscount.discountedRange.max.toFixed(decimalPlaces)}
+        {Number(rangeDiscount.discountedRange.min || 0).toFixed(decimalPlaces)} – {currency}
+        {Number(rangeDiscount.discountedRange.max || 0).toFixed(decimalPlaces)}
       </span>
     </div>
   );
