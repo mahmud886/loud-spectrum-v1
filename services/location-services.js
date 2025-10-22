@@ -22,7 +22,7 @@ export const getCountries = async () => {
     return await response.json();
   } catch (error) {
     console.error('Error fetching countries:', error);
-    return { error: true, message: error.message, data: { countries: [] }, notFound: false };
+    throw error;
   }
 };
 
@@ -46,11 +46,10 @@ export const getStates = async (countryCode) => {
       return { error: true, message: 'Failed to fetch states', data: { states: [] }, notFound: false };
     }
 
-    const data = await response.json();
-    return { error: false, data, notFound: false };
+    return await response.json();
   } catch (error) {
     console.error('Error fetching states:', error);
-    return { error: true, message: error.message, data: { states: [] }, notFound: false };
+    throw error;
   }
 };
 
@@ -75,10 +74,9 @@ export const getCities = async (countryCode, stateCode) => {
       return { error: true, message: 'Failed to fetch cities', data: { cities: [] }, notFound: false };
     }
 
-    const data = await response.json();
-    return { error: false, data, notFound: false };
+    return await response.json();
   } catch (error) {
     console.error('Error fetching cities:', error);
-    return { error: true, message: error.message, data: { cities: [] }, notFound: false };
+    throw error;
   }
 };
