@@ -9,7 +9,11 @@ const ProductCartItems = ({ item }) => {
   const t = useTranslations('CheckoutPage.ProductCart');
   const dispatch = useDispatch();
   return (
-    <div className="border-umbra-10 bg-umbra-5 flex items-center gap-4 rounded-md border-1 py-2.5 pr-5 pl-2.5">
+    <div
+      className={`bg-umbra-5 flex items-center gap-4 rounded-md border-1 py-2.5 pr-5 pl-2.5 ${
+        item?.isRegular ? 'border-alive/50' : item?.isWholesale ? 'border-red-100' : 'border-umbra-10'
+      }`}
+    >
       <Image
         src={item.image ? `${process.env.NEXT_PUBLIC_API_URL}/public${item.image}` : '/assets/images/cart-item.jpg'}
         alt={item.name}
@@ -46,28 +50,50 @@ const ProductCartItems = ({ item }) => {
             )}
           </div>
           {item?.remarks && (
-            <p className="text-umbra-100 bg-classic/10 rounded-[10px] px-2 py-1 font-sans text-[10px] leading-[120%] font-normal capitalize">
-              {item?.remarks}
-            </p>
+            <div className="space-y-1">
+              {item.remarks.includes(',') ? (
+                // Multiple items - split by comma
+                item.remarks.split(',').map((remark, index) => (
+                  <p
+                    key={index}
+                    className="text-umbra-100 bg-classic/10 rounded-[10px] px-2 py-1 font-sans text-[10px] leading-[120%] font-normal whitespace-nowrap capitalize"
+                  >
+                    {remark.trim()}
+                  </p>
+                ))
+              ) : (
+                // Single item - display as is
+                <p className="text-umbra-100 bg-classic/10 rounded-[10px] px-2 py-1 font-sans text-[10px] leading-[120%] font-normal capitalize">
+                  {item.remarks}
+                </p>
+              )}
+            </div>
           )}
         </div>
         <div className="flex w-full items-end justify-between gap-5">
           <div className="mt-2 flex items-center gap-2">
             {/* Quantity Control */}
-            <div className="bg-umbra-5 inline-flex overflow-hidden rounded-full">
+            <div
+              className={`bg-umbra-5 inline-flex overflow-hidden rounded-full ${item?.isWholesale ? 'opacity-50' : ''}`}
+            >
               {/* Minus Button */}
               <button
-                className="group text-umbra-100 hover:text-white-100 flex cursor-pointer items-center justify-center px-2 py-1 transition hover:bg-red-500"
-                onClick={() =>
-                  dispatch(
-                    updateQuantity({
-                      id: item.originalId,
-                      selectedVolume: item.selectedVolume,
-                      quantity: item.quantity - 1,
-                      flavor: item.flavor,
-                    }),
-                  )
-                }
+                className={`group text-umbra-100 hover:text-white-100 flex items-center justify-center px-2 py-1 transition hover:bg-red-500 ${
+                  item?.isWholesale ? 'cursor-not-allowed' : 'cursor-pointer'
+                }`}
+                disabled={item?.isWholesale}
+                onClick={() => {
+                  if (!item?.isWholesale) {
+                    dispatch(
+                      updateQuantity({
+                        id: item.originalId,
+                        selectedVolume: item.selectedVolume,
+                        quantity: item.quantity - 1,
+                        flavor: item.flavor,
+                      }),
+                    );
+                  }
+                }}
               >
                 <MinusIcon size={16} className="text-umbra-100 group-hover:text-white-100 transition" />
               </button>
@@ -79,17 +105,22 @@ const ProductCartItems = ({ item }) => {
 
               {/* Plus Button */}
               <button
-                className="group text-umbra-100 hover:text-white-100 hover:bg-alive flex cursor-pointer items-center justify-center px-2 py-1 transition"
-                onClick={() =>
-                  dispatch(
-                    updateQuantity({
-                      id: item.originalId,
-                      selectedVolume: item.selectedVolume,
-                      quantity: item.quantity + 1,
-                      flavor: item.flavor,
-                    }),
-                  )
-                }
+                className={`group text-umbra-100 hover:text-white-100 hover:bg-alive flex items-center justify-center px-2 py-1 transition ${
+                  item?.isWholesale ? 'cursor-not-allowed' : 'cursor-pointer'
+                }`}
+                disabled={item?.isWholesale}
+                onClick={() => {
+                  if (!item?.isWholesale) {
+                    dispatch(
+                      updateQuantity({
+                        id: item.originalId,
+                        selectedVolume: item.selectedVolume,
+                        quantity: item.quantity + 1,
+                        flavor: item.flavor,
+                      }),
+                    );
+                  }
+                }}
               >
                 <PlusIcon size={16} className="text-umbra-100 group-hover:text-white-100 transition" />
               </button>

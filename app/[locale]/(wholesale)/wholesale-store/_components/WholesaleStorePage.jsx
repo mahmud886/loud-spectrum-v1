@@ -1,10 +1,13 @@
 'use client';
 
 import ProductPagination from '@/components/containers/shop/ProductPagination';
+import { calculateProductPrice } from '@/helpers/wholesale-product-price-calculations';
+import { addToCartAndOpenDrawer } from '@/lib/store/slices/cartSlice';
 import { getWholesalerProducts } from '@/services/get-wholesaler-products';
 import { useTranslations } from 'next-intl';
 import { useEffect, useMemo, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'sonner';
 import Controls from './Controls';
 import CustomOrder from './CustomOrder';
 import DesktopCart from './DesktopCart';
@@ -14,6 +17,7 @@ import ProductTable from './ProductTable';
 
 const WholesaleStorePage = ({ serverProducts }) => {
   const t = useTranslations('WholesaleStore');
+  const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
   const { token } = useSelector((state) => state.auth);
   const [products, setProducts] = useState(null);
@@ -50,6 +54,81 @@ const WholesaleStorePage = ({ serverProducts }) => {
   const [page, setPage] = useState(1);
 
   const lines = ['Classic', 'Sweet', 'Dank'];
+
+  // Function to merge wholesale cart items into a single item
+  const mergeWholesaleCartItems = (cartItems) => {
+    if (!cartItems || cartItems.length === 0) {
+      return null;
+    }
+
+    // Calculate total quantity in ml
+    const totalQuantityMl = cartItems.reduce((sum, item) => sum + (item.qty || 0), 0);
+
+    // Calculate total price using wholesale pricing
+    const totalPrice = cartItems.reduce((sum, item) => {
+      const calculation = calculateProductPrice(item.qty || 0, item.line || 'Classic');
+      return sum + calculation.totalPrice;
+    }, 0);
+
+    // Create remarks string with individual item details
+    const remarks = cartItems.map((item) => `${item.line} - ${item.name} - ${item.qty}ml`).join(', ');
+
+    // Generate a random ID for this wholesale order
+    const randomId = `wholesale-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+
+    // Create a merged item that represents all wholesale items
+    const mergedItem = {
+      id: randomId,
+      originalId: randomId,
+      name: 'Wholesale Order',
+      quantity: 1, // Always 1 for merged item
+      selectedVolume: `${totalQuantityMl}ml`, // Total volume as the "selected volume"
+      price: totalPrice, // Total price for all items
+      totalPrice: totalPrice,
+      isRegular: false,
+      isWholesale: true,
+      flavor: 'Mixed', // Indicate it's a mixed order
+      remarks: remarks, // Individual item details
+    };
+
+    return mergedItem;
+  };
+
+  // Function to add merged wholesale cart to main cart
+  const handleAddWholesaleToCart = () => {
+    if (cart.length === 0) {
+      toast.error('Cart is empty');
+      return;
+    }
+
+    const mergedItem = mergeWholesaleCartItems(cart);
+    if (!mergedItem) {
+      toast.error('Unable to process cart items');
+      return;
+    }
+
+    // Dispatch to main cart using addToCartAndOpenDrawer
+    dispatch(
+      addToCartAndOpenDrawer({
+        id: mergedItem.id,
+        product: {
+          name: mergedItem.name,
+          id: mergedItem.originalId,
+        },
+        quantity: mergedItem.quantity,
+        selectedVolume: mergedItem.selectedVolume,
+        price: mergedItem.price,
+        isRegular: mergedItem.isRegular,
+        isWholesale: mergedItem.isWholesale,
+        flavor: mergedItem.flavor,
+        remarks: mergedItem.remarks,
+      }),
+    );
+
+    // Clear the wholesale cart after adding to main cart
+    setCart([]);
+    toast.success('Wholesale order added to cart!');
+  };
 
   const filteredProducts = useMemo(() => {
     // Use serverProducts.items for table data
@@ -214,7 +293,13 @@ const WholesaleStorePage = ({ serverProducts }) => {
                 />
               </div>
             </div>
-            <DesktopCart cart={cart} updateCartItemQty={updateCartItemQty} setCart={setCart} t={t} />
+            <DesktopCart
+              cart={cart}
+              updateCartItemQty={updateCartItemQty}
+              setCart={setCart}
+              t={t}
+              onAddToMainCart={handleAddWholesaleToCart}
+            />
           </div>
         </section>
 
@@ -229,7 +314,13 @@ const WholesaleStorePage = ({ serverProducts }) => {
               className="h-36 w-full resize-none rounded-lg border border-gray-200 p-3 text-[12px] outline-none focus:border-gray-400 sm:text-[13px]"
             />
           </div>
-          <MobileCart cart={cart} updateCartItemQty={updateCartItemQty} setCart={setCart} t={t} />
+          <MobileCart
+            cart={cart}
+            updateCartItemQty={updateCartItemQty}
+            setCart={setCart}
+            t={t}
+            onAddToMainCart={handleAddWholesaleToCart}
+          />
         </div>
       </div>
     </div>

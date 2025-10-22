@@ -3,7 +3,7 @@
 import { calculateCartTotal, formatPrice } from '@/helpers/wholesale-product-price-calculations';
 import { toast } from 'sonner';
 
-const DesktopCart = ({ cart, updateCartItemQty, setCart, t }) => {
+const DesktopCart = ({ cart, updateCartItemQty, setCart, t, onAddToMainCart }) => {
   const calculation = calculateCartTotal(cart);
 
   console.log('calculation:', calculation);
@@ -92,7 +92,10 @@ const DesktopCart = ({ cart, updateCartItemQty, setCart, t }) => {
           <span className="text-gray-800">{formatPrice(calculation.subtotal)}</span>
         </div>
         <div className="mt-4">
-          <button className="w-full rounded-full bg-gray-900 px-5 py-3 text-[14px] text-white">
+          <button
+            className="w-full rounded-full bg-gray-900 px-5 py-3 text-[14px] text-white"
+            onClick={onAddToMainCart}
+          >
             {t('cart.addToCart')}
           </button>
         </div>
