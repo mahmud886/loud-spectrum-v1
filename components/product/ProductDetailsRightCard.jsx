@@ -23,9 +23,13 @@ const ProductDetailsRightCard = ({ product }) => {
             {product?.meta_description}
           </p>
         )}
-        <div className="mt-6">
-          <button className="outline-button-black rounded-full px-5 py-2 !text-white">{t('SeePDF')}</button>
-        </div>
+        {product?.pdf && (
+          <div className="mt-6">
+            <a href={product?.pdf} target="_blank" className="outline-button-black rounded-full px-5 py-2 !text-white">
+              {t('SeePDF')}
+            </a>
+          </div>
+        )}
       </div>
     </div>
   );

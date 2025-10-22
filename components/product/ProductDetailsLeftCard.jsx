@@ -116,11 +116,22 @@ const ProductDetailsLeftCard = ({ product }) => {
         <div className="w-full self-start">
           <div className="space-y-5">
             <div className="flex items-center justify-between gap-5">
-              <button
-                className={`${getCategoryColorClasses(product?.category?.name)} rounded-[3px] border-1 px-2 text-[12px] font-normal capitalize`}
-              >
-                {product?.category?.name}
-              </button>
+              <div className="flex gap-2">
+                {product?.category?.name && (
+                  <button
+                    className={`${getCategoryColorClasses(product?.category?.name)} rounded-[3px] border-1 px-2 text-[12px] font-normal capitalize`}
+                  >
+                    {product?.category?.name}
+                  </button>
+                )}
+                {product?.product_type && (
+                  <button
+                    className={`${getCategoryColorClasses(product?.product_type)} rounded-[3px] border-1 px-2 text-[12px] font-normal capitalize`}
+                  >
+                    {product?.product_type}
+                  </button>
+                )}
+              </div>
               <div className="text-umbra-100 inline-flex items-center justify-start gap-2 font-mono text-[14px] leading-[130%] font-normal">
                 {reviewsLoading ? (
                   <div className="flex items-center gap-2">
