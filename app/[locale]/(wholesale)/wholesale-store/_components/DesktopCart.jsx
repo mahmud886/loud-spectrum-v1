@@ -6,8 +6,6 @@ import { toast } from 'sonner';
 const DesktopCart = ({ cart, updateCartItemQty, setCart, t, onAddToMainCart }) => {
   const calculation = calculateCartTotal(cart);
 
-  console.log('calculation:', calculation);
-
   const handleCalculatePrice = () => {
     if (calculation.totalItems === 0) {
       toast.error('Cart is empty');
@@ -38,7 +36,7 @@ const DesktopCart = ({ cart, updateCartItemQty, setCart, t, onAddToMainCart }) =
               <div key={i} className="flex items-center justify-between gap-4 py-3">
                 <div className="min-w-0">
                   <div className="truncate text-[12px] text-gray-900 sm:text-[13px]">
-                    {item.line} - {item.name} - {item.qty}ml
+                    {item.line} - {item.name} - {item.qty}gm
                   </div>
                   {/* {i === 1 && (
                     <div className="mt-1 text-[12px] text-indigo-600">

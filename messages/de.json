@@ -945,6 +945,8 @@
     "cannabisDerived": "Aus Cannabis gewonnen"
   },
   "WholesaleStore": {
+    "description": "Je mehr Sie kaufen, desto geringer der Preis pro Gramm. Durchsuchen und suchen Sie durch unsere Katalog mit über 3.000 einzigartigen Aromen, um Ihren perfekten Match zu finden. Wenn Sie nicht genau das finden, was Sie suchen, können Sie Ihr eigenes benutzerdefiniertes Produkt erstellen. Großhandelspreise werden automatisch angewendet, wenn Sie auf “Preis berechnen” klicken",
+    "customOrderDescription": "Ihr eigenes benutzerdefiniertes Produkt erstellen",
     "title": "Mein Großhandelsgeschäft",
     "customOrder": "Individuelle Bestellung",
     "searchPlaceholder": "Produkte suchen",
@@ -956,14 +958,14 @@
       "productName": "Produktname",
       "source": "Quelle",
       "line": "Linie",
-      "totalMl": "Gesamt ML",
+      "totalGrams": "Gesamt Gramm",
       "action": "Aktion"
     },
     "customOrderForm": {
       "customFlavor": "Ihr individueller Geschmack",
       "describeFlavor": "Beschreiben Sie Ihren Geschmack",
       "select": "Auswählen",
-      "pricePerGram": "3€/g"
+      "pricePerGram": "3€/gram"
     },
     "cart": {
       "title": "Ihr Großhandelswarenkorb",

@@ -10,7 +10,7 @@ const CustomOrder = ({ lines, t, wholesaleProducts, onAddToCart }) => {
 
   // Group wholesale products by line/category
   const productsByLine =
-    wholesaleProducts?.items?.reduce((acc, product) => {
+    wholesaleProducts?.reduce((acc, product) => {
       const line = product?.productDetails?.category_name || 'Other';
       if (!acc[line]) {
         acc[line] = [];
@@ -117,7 +117,9 @@ const CustomOrder = ({ lines, t, wholesaleProducts, onAddToCart }) => {
 
   return (
     <aside className="order-2 rounded-2xl border border-gray-200 bg-white p-4 shadow-sm xl:order-1 xl:p-5">
-      <h3 className="mb-4 font-sans text-[15px] font-medium text-gray-900 sm:text-[16px]">{t('customOrder')}</h3>
+      <h3 className="mb-4 font-sans text-[15px] font-medium text-gray-900 sm:text-[16px]">
+        {t('customOrderDescription')}
+      </h3>
 
       {lines.map((line) => {
         const lineProducts = productsByLine[line] || [];
@@ -126,7 +128,9 @@ const CustomOrder = ({ lines, t, wholesaleProducts, onAddToCart }) => {
         return (
           <div key={line} className="mb-4 rounded-xl border border-gray-100 p-4 shadow-[0_1px_0_rgba(0,0,0,0.03)]">
             <div className="mb-2 text-[13px] font-semibold text-gray-900 sm:text-[14px]">{line}</div>
-            <div className="mb-1 text-[12px] text-gray-500">${defaultPrice}/ml</div>
+            <div className="mb-1 text-[12px] text-gray-500">
+              ${lineProducts?.length > 0 ? lineProducts[0].price : 3}/gm
+            </div>
             <div className="space-y-2">
               <input
                 className="w-full rounded-lg border border-gray-200 px-3 py-2 text-[12px] outline-none focus:border-gray-400 sm:text-[13px]"

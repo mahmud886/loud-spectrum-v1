@@ -946,6 +946,8 @@
     "cannabisDerived": "カンナビス由来"
   },
   "WholesaleStore": {
+    "description": "購入量が多いほど、1グラムあたりの価格が安くなります。3,000以上のユニークなフレーバーをカタログから探し、マッチングするフレーバーを見つけてください。探しているものが見つからない場合は、独自のカスタム製品を作成できます。「価格を計算」をクリックすると、卸売価格が自動的に適用されます",
+    "customOrderDescription": "独自のカスタム製品を作成",
     "title": "私の卸売店",
     "customOrder": "カスタム注文",
     "searchPlaceholder": "商品を検索",
@@ -957,14 +959,14 @@
       "productName": "商品名",
       "source": "ソース",
       "line": "ライン",
-      "totalMl": "総ML",
+      "totalGrams": "総グラム",
       "action": "アクション"
     },
     "customOrderForm": {
       "customFlavor": "あなたのカスタムフレーバー",
       "describeFlavor": "フレーバーを説明してください",
       "select": "選択",
-      "pricePerGram": "3ドル/g"
+      "pricePerGram": "3ドル/グラム"
     },
     "cart": {
       "title": "あなたの卸売カート",

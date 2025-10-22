@@ -92,12 +92,8 @@ const PageShimmer = () => {
             ))}
           </div>
 
-          {/* Note + Cart (Desktop only) */}
-          <div className="hidden grid-cols-1 gap-6 xl:grid xl:grid-cols-[1fr_360px]">
-            <div className="rounded-2xl border border-gray-200 bg-white p-4">
-              <Skeleton className="mb-2 h-4 w-20" />
-              <Skeleton className="h-36 w-full rounded-lg" />
-            </div>
+          {/* Cart (Desktop only) */}
+          <div className="hidden xl:grid xl:grid-cols-1">
             <div className="rounded-2xl border border-gray-200 bg-white p-4">
               <Skeleton className="mb-3 h-5 w-40" />
               {Array.from({ length: 3 }).map((_, i) => (
@@ -120,14 +116,8 @@ const PageShimmer = () => {
           </div>
         </section>
 
-        {/* Mobile-only Note + Cart at bottom */}
+        {/* Mobile-only Cart at bottom */}
         <div className="order-4 xl:hidden">
-          {/* Mobile Note */}
-          <div className="mb-6 rounded-2xl border border-gray-200 bg-white p-4">
-            <Skeleton className="mb-2 h-4 w-20" />
-            <Skeleton className="h-36 w-full rounded-lg" />
-          </div>
-
           {/* Mobile Cart */}
           <div className="rounded-2xl border border-gray-200 bg-white p-4">
             <Skeleton className="mb-3 h-5 w-40" />

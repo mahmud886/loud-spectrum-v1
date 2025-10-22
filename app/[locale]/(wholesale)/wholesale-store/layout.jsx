@@ -15,6 +15,11 @@ const WholesaleStoreLayout = async ({ children }) => {
             <DynamicBreadcrumb />
           </div>
         </div>
+        <div className="w-full xl:w-auto">
+          <h5 className="text-umbra-40 max-w-3/4 font-mono text-[14px] leading-[150%] font-normal">
+            {t('description')}
+          </h5>
+        </div>
       </div>
       {children}
     </div>

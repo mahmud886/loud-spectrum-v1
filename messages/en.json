@@ -951,6 +951,8 @@
     "cannabisDerived": "Cannabis Derived"
   },
   "WholesaleStore": {
+    "description": "The more you buy, the lower the price per gram. Browse and search through 3,000+ unique flavors in our catalog to find your perfect match. If you can't find exactly what you’re looking for, you can create your own custom product Wholesale prices apply automatically when you click “Calculate Price”",
+    "customOrderDescription": "Create your own custom product",
     "title": "My Wholesale Store",
     "customOrder": "Custom Order",
     "searchPlaceholder": "Search products",
@@ -962,14 +964,14 @@
       "productName": "Product Name",
       "source": "Source",
       "line": "Line",
-      "totalMl": "Total ML",
+      "totalGrams": "Total Grams",
       "action": "Action"
     },
     "customOrderForm": {
       "customFlavor": "Your Custom Flavor",
       "describeFlavor": "Describe Your Flavor",
       "select": "Select",
-      "pricePerMl": "$3/ml"
+      "pricePerGram": "$3/gram"
     },
     "cart": {
       "title": "Your Wholesale Cart",

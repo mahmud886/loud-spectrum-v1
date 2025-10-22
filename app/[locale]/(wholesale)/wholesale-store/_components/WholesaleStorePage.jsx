@@ -29,7 +29,6 @@ const WholesaleStorePage = ({ serverProducts }) => {
       if (user?.id) {
         try {
           const response = await getWholesalerProducts(user.id, token);
-          console.log('response', response?.data?.wholesalerProducts?.[0]?.products);
           setProducts(response?.data?.wholesalerProducts?.[0]?.products);
         } catch (error) {
           console.error('Error fetching products:', error);
@@ -134,49 +133,7 @@ const WholesaleStorePage = ({ serverProducts }) => {
     // Use serverProducts.items for table data
     const original = serverProducts?.items || [];
 
-    // Demo dataset matching the shared design if API items are missing/insufficient
-    const sampleProducts = [
-      { name: 'The Juice', lot_number: '1001', source: 'Custom', line: 'Classic' },
-      { name: 'Melon Blast', lot_number: '1002', source: 'Custom', line: 'Dank' },
-      { name: 'Blue Razz', lot_number: '1003', source: 'In-store', line: 'Sweet' },
-      { name: 'Banana Kush', lot_number: '1004', source: 'In-store', line: 'Classic' },
-      { name: 'Pineapple Express', lot_number: '1005', source: 'Custom', line: 'Sweet' },
-      { name: 'Mango Haze', lot_number: '1006', source: 'Custom', line: 'Classic' },
-      { name: 'Grape Ape', lot_number: '1007', source: 'In-store', line: 'Dank' },
-      { name: 'Strawberry Cough', lot_number: '1008', source: 'In-store', line: 'Sweet' },
-      { name: 'Lemon Skunk', lot_number: '1009', source: 'Custom', line: 'Classic' },
-      { name: 'Watermelon Z', lot_number: '1010', source: 'Custom', line: 'Sweet' },
-      { name: 'Cherry Pie', lot_number: '1011', source: 'In-store', line: 'Classic' },
-      { name: 'Orange Cream', lot_number: '1012', source: 'In-store', line: 'Dank' },
-      { name: 'Citrus Punch', lot_number: '1013', source: 'Custom', line: 'Sweet' },
-      { name: 'Berry Blast', lot_number: '1014', source: 'In-store', line: 'Sweet' },
-      { name: 'Tropical Storm', lot_number: '1015', source: 'Custom', line: 'Classic' },
-      { name: 'Mint Fresh', lot_number: '1016', source: 'In-store', line: 'Classic' },
-      { name: 'Caramel Swirl', lot_number: '1017', source: 'Custom', line: 'Sweet' },
-      { name: 'Vanilla Sky', lot_number: '1018', source: 'Custom', line: 'Classic' },
-      { name: 'Cookies & Cream', lot_number: '1019', source: 'In-store', line: 'Dank' },
-      { name: 'Apple Fritter', lot_number: '1020', source: 'In-store', line: 'Sweet' },
-      { name: 'Blueberry Muffin', lot_number: '1021', source: 'Custom', line: 'Sweet' },
-      { name: 'Raspberry Gelato', lot_number: '1022', source: 'Custom', line: 'Classic' },
-      { name: 'Kiwi Dream', lot_number: '1023', source: 'In-store', line: 'Sweet' },
-      { name: 'Peach Rings', lot_number: '1024', source: 'In-store', line: 'Classic' },
-    ];
-
-    // Prefer real data when there is enough variety; otherwise use demo items
-    const base = original.length >= 12 ? original : sampleProducts;
-
-    // Ensure we have a visually substantial table by repeating (cycling sample data) up to at least 12 rows
-    const minRows = 24;
-    let expanded = [...base];
-    if (expanded.length < minRows) {
-      const needed = minRows - expanded.length;
-      for (let i = 0; i < needed; i++) {
-        const src = base[i % base.length] || {};
-        expanded.push({ ...src, lot_number: `${src?.lot_number || 'mock'}-dup-${i}` });
-      }
-    }
-
-    return expanded.filter((p) => {
+    return original.filter((p) => {
       const matchesSearch = search
         ? `${p?.name || ''} ${p?.lot_number || ''}`.toLowerCase().includes(search.toLowerCase())
         : true;
@@ -239,10 +196,8 @@ const WholesaleStorePage = ({ serverProducts }) => {
           t={t}
           wholesaleProducts={products}
           onAddToCart={(cartItem) => {
-            console.log('Received cart item in WholesaleStorePage:', cartItem);
             setCart((prev) => {
               const newCart = [...prev, cartItem];
-              console.log('Updated cart:', newCart);
               return newCart;
             });
           }}
@@ -281,9 +236,10 @@ const WholesaleStorePage = ({ serverProducts }) => {
           />
 
           {/* Note + Cart */}
-          <div className="grid grid-cols-1 gap-6 xl:grid-cols-[1fr_360px]">
+          {/* <div className="grid grid-cols-1 gap-6 xl:grid-cols-[1fr_360px]"> */}
+          <div className="grid grid-cols-1 gap-6 xl:grid-cols-[1fr]">
             <div>
-              <div className="hidden rounded-2xl border border-gray-200 bg-white p-4 xl:block">
+              {/* <div className="hidden rounded-2xl border border-gray-200 bg-white p-4 xl:block">
                 <div className="mb-2 text-[13px] font-medium text-gray-900 sm:text-[14px]">{t('note.title')}</div>
                 <textarea
                   value={note}
@@ -291,7 +247,7 @@ const WholesaleStorePage = ({ serverProducts }) => {
                   placeholder={t('note.placeholder')}
                   className="h-36 w-full resize-none rounded-lg border border-gray-200 p-3 text-[12px] outline-none focus:border-gray-400 sm:text-[13px]"
                 />
-              </div>
+              </div> */}
             </div>
             <DesktopCart
               cart={cart}
@@ -305,7 +261,7 @@ const WholesaleStorePage = ({ serverProducts }) => {
 
         {/* Mobile-only Cart at very bottom */}
         <div className="order-4 xl:hidden">
-          <div className="rounded-2xl border border-gray-200 bg-white p-4">
+          {/* <div className="rounded-2xl border border-gray-200 bg-white p-4">
             <div className="mb-2 text-[13px] font-medium text-gray-900 sm:text-[14px]">{t('note.title')}</div>
             <textarea
               value={note}
@@ -313,7 +269,7 @@ const WholesaleStorePage = ({ serverProducts }) => {
               placeholder={t('note.placeholder')}
               className="h-36 w-full resize-none rounded-lg border border-gray-200 p-3 text-[12px] outline-none focus:border-gray-400 sm:text-[13px]"
             />
-          </div>
+          </div> */}
           <MobileCart
             cart={cart}
             updateCartItemQty={updateCartItemQty}

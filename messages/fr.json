@@ -946,6 +946,8 @@
     "cannabisDerived": "Dérivé du cannabis"
   },
   "WholesaleStore": {
+    "description": "Plus vous achetez, moins le prix par gramme est élevé. Explorez et recherchez parmi plus de 3 000 saveurs uniques dans notre catalogue pour trouver votre correspondance parfaite. Si vous ne trouvez pas exactement ce que vous cherchez, vous pouvez créer votre propre produit personnalisé. Les prix en gros s'appliquent automatiquement lorsque vous cliquez sur “Calculer le Prix”",
+    "customOrderDescription": "Créez votre propre produit personnalisé",
     "title": "Mon Magasin de Gros",
     "customOrder": "Commande Personnalisée",
     "searchPlaceholder": "Rechercher des produits",
@@ -957,14 +959,14 @@
       "productName": "Nom du Produit",
       "source": "Source",
       "line": "Ligne",
-      "totalMl": "Total ML",
+      "totalGrams": "Total Grams",
       "action": "Action"
     },
     "customOrderForm": {
       "customFlavor": "Votre Saveur Personnalisée",
       "describeFlavor": "Décrivez Votre Saveur",
       "select": "Sélectionner",
-      "pricePerGram": "3€/g"
+      "pricePerGram": "3€/gram"
     },
     "cart": {
       "title": "Votre Panier de Gros",
