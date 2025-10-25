@@ -50,7 +50,7 @@ const WholesaleDisapprovePage = () => {
     // Check if user is logged in and is a disapproved wholesaler
     if (isAuthenticated && user) {
       console.log('Disapprove Page - User status:', user.status, 'Role:', user.role);
-      if (user.role === 'wholesaler' && user?.status?.toLowerCase() === 'inactive') {
+      if (user.role === 'wholesaler' && user?.status === 'Inactive') {
         setUserData(user);
       }
     }
@@ -63,7 +63,7 @@ const WholesaleDisapprovePage = () => {
   }
 
   // Redirect to registration if user is not authenticated or not a disapproved wholesaler
-  if (!isAuthenticated || !user || user.role !== 'wholesaler' || user?.status?.toLowerCase() !== 'inactive') {
+  if (!isAuthenticated || !user || user.role !== 'wholesaler' || user?.status !== 'Inactive') {
     return (
       <div className="container py-[80px]">
         <div className="mx-auto max-w-2xl text-center">

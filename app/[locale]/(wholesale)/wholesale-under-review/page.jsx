@@ -40,13 +40,9 @@ const WholesaleUnderReviewPage = () => {
   const { user, isAuthenticated } = useSelector((state) => state.auth);
 
   useEffect(() => {
-    // Check if user is logged in and is a wholesaler waiting for approval (not Active and not Disapprove)
+    // Check if user is logged in and is a wholesaler waiting for approval
     if (isAuthenticated && user) {
-      if (
-        user?.role?.toLowerCase() === 'wholesaler' &&
-        user?.status?.toLowerCase() !== 'active' &&
-        user?.status?.toLowerCase() !== 'inactive'
-      ) {
+      if (user?.role === 'wholesaler' && user?.status === 'Waiting For Approve') {
         setUserData(user);
       }
     }
@@ -59,12 +55,7 @@ const WholesaleUnderReviewPage = () => {
   }
 
   // Redirect to registration if user is not authenticated or not a pending wholesaler
-  if (
-    !isAuthenticated ||
-    !user ||
-    user?.role?.toLowerCase() !== 'wholesaler' ||
-    (user?.status?.toLowerCase() !== 'active' && user?.status?.toLowerCase() !== 'inactive')
-  ) {
+  if (!isAuthenticated || !user || user?.role !== 'wholesaler' || user?.status !== 'Waiting For Approve') {
     return (
       <div className="container py-[80px]">
         <div className="mx-auto max-w-2xl text-center">
@@ -137,9 +128,7 @@ const WholesaleUnderReviewPage = () => {
             <div className="flex justify-between">
               <span className="text-gray-600">{t('wholesaleRegistrationForm.waitingForApproval.status')}:</span>
               <span className="inline-flex items-center rounded-full bg-yellow-100 px-2.5 py-0.5 text-xs font-medium text-yellow-800">
-                {userData.status === 'Waiting For Approve'
-                  ? t('wholesaleRegistrationForm.waitingForApproval.pendingApproval')
-                  : t('wholesaleRegistrationForm.waitingForApproval.inactive')}
+                {t('wholesaleRegistrationForm.waitingForApproval.pendingApproval')}
               </span>
             </div>
           </div>

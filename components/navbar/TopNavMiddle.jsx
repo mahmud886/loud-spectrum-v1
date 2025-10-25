@@ -10,21 +10,17 @@ const TopNavMiddle = () => {
   // Determine the wholesale link based on user status
   const getWholesaleLink = () => {
     if (!isAuthenticated || !user) {
-      // Not logged in - go to wholesale registration form
       return '/wholesale-registration#wholesale-form';
     }
 
     if (user.role === 'wholesaler') {
       if (user.status === 'Active') {
-        // Active wholesaler - go to wholesale store
         return '/wholesale-store';
-      } else {
-        // Inactive wholesaler - go to under review section
+      } else if (user.status === 'Inactive') {
+        return '/wholesale-disapprove';
+      } else if (user.status === 'Waiting For Approve') {
         return '/wholesale-under-review';
       }
-    } else {
-      // Customer - go to wholesale registration form
-      return '/wholesale-registration#wholesale-form';
     }
   };
 
