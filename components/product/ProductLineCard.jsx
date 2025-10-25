@@ -28,7 +28,7 @@ const ProductLineCard = ({ productVariant = 'Default' }) => {
         whileHover="hover"
         animate="rest"
         className={cn(
-          'border-umbra-10 xl:h-h-[408px] relative h-[400px] w-full overflow-hidden border bg-[#F0F0F0] p-5 transition-colors duration-500 ease-in-out lg:h-[408px] lg:w-full xl:h-[408px] xl:w-full',
+          'border-umbra-10 xl:h-h-[408px] relative h-[400px] w-full overflow-hidden border bg-[#F5F5F5] p-5 transition-colors duration-500 ease-in-out lg:h-[408px] lg:w-full xl:h-[408px] xl:w-full',
           'group-hover:border-transparent',
           `group-hover:${borderClass}`,
         )}
@@ -88,8 +88,8 @@ const ProductLineCard = ({ productVariant = 'Default' }) => {
         >
           <Image
             className="h-[250px] w-[161px] object-cover lg:h-[282px] lg:w-[211px] xl:h-[282px] xl:w-[211px]"
-            src="/assets/images/products/product-line-1.png"
-            alt="Product"
+            src={`/assets/images/explore-the-pectrum/${productVariant.toLowerCase()}.jpg`}
+            alt={`${productVariant} Product`}
             width={422}
             height={565}
             priority

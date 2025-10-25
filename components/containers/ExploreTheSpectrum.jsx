@@ -15,8 +15,8 @@ const ExploreTheSpectrum = () => {
       </div>
       <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 xl:gap-5">
         <ProductLineCard productVariant="Alive" />
-        <ProductLineCard productVariant="Sweet" />
         <ProductLineCard productVariant="Dank" />
+        <ProductLineCard productVariant="Sweet" />
         <ProductLineCard productVariant="Classic" />
       </div>
     </div>
