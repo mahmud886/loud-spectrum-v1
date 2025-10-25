@@ -24,11 +24,11 @@ const NewPageCommingSoon = () => {
       </div>
       <div className="pt-12 xl:px-20 xl:pt-[140px]">
         <Image
-          src="/assets/images/newpage-footer.png"
+          src="/assets/images/newpage-footer.jpg"
           alt="Background"
           width={1064}
           height={501}
-          className="z-0 h-[402px] w-full object-cover xl:h-[501px] xl:w-[1064px]"
+          className="z-0 h-[501px] w-full object-cover"
           priority
         />
       </div>
