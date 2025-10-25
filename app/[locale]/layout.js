@@ -136,6 +136,7 @@ export default async function LocaleLayout({ children, params }) {
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
+        <meta name="google-site-verification" content="OiUikAqP3lwMz8PYTIvvQ2wwRwAlXptRobZdKge4NYQ" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
         {/* Google Tag Manager */}
         <Script id="gtm-init" strategy="afterInteractive">
