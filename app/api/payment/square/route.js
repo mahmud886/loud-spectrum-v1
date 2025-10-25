@@ -4,8 +4,8 @@ import { cookies } from 'next/headers';
 import { Client } from 'square';
 
 const { paymentsApi } = new Client({
-  accessToken: 'EAAAlySOp8rRv9UJuEmBUXMV4Szhxk7oMPNPYBl0_hIHg53xpRxzVaPK3WqfaJzt',
-  environment: 'sandbox',
+  accessToken: process.env.SQUARE_ACCESS_TOKEN,
+  environment: process.env.SQUARE_ENVIRONMENT,
 });
 
 // Function to handle BigInt serialization
