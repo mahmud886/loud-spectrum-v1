@@ -18,6 +18,8 @@ const OrderConfirmationContent = ({ orderData }) => {
     height: 0,
   });
 
+  console.log('Order data:', orderData);
+
   // Handle window resize for confetti
   useEffect(() => {
     // Only run on client side
@@ -48,6 +50,66 @@ const OrderConfirmationContent = ({ orderData }) => {
       }, 10000);
 
       return () => clearTimeout(timer);
+    }
+  }, [orderData]);
+
+  // Check for address mismatch and send suspicious order email
+  useEffect(() => {
+    if (orderData && orderData.shipping_details && orderData.billing_details) {
+      const checkAddressMismatch = () => {
+        const shipping = orderData.shipping_details;
+        const billing = orderData.billing_details;
+
+        // Compare key address fields
+        const addressFields = [
+          'first_name',
+          'last_name',
+          'street_address',
+          'city',
+          'province',
+          'post_code',
+          'country',
+          'email',
+          'phone',
+        ];
+
+        const mismatchedFields = addressFields.filter((field) => {
+          const shippingValue = shipping[field]?.toString().toLowerCase().trim();
+          const billingValue = billing[field]?.toString().toLowerCase().trim();
+          return shippingValue !== billingValue;
+        });
+
+        // If more than 2 fields don't match, consider it suspicious
+        if (mismatchedFields.length > 2) {
+          console.log('Address mismatch detected:', mismatchedFields);
+
+          // Send suspicious order email
+          fetch('/api/emails/order/suspicious', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              orderData: orderData,
+            }),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.success) {
+                console.log('Suspicious order email sent successfully');
+              } else {
+                console.error('Failed to send suspicious order email:', data.error);
+              }
+            })
+            .catch((error) => {
+              console.error('Error sending suspicious order email:', error);
+            });
+        }
+      };
+
+      // Add a small delay to ensure order data is fully loaded
+      const timeoutId = setTimeout(checkAddressMismatch, 1000);
+      return () => clearTimeout(timeoutId);
     }
   }, [orderData]);
 
@@ -380,7 +442,7 @@ const OrderConfirmationContent = ({ orderData }) => {
                             variant="default"
                             className="bg-umbra-5 text-umbra-100 rounded-full px-2 py-1 font-sans text-[12px] leading-[120%] font-normal capitalize"
                           >
-                            {item.selectedVolume} 1ml
+                            {item?.selectedVolume || item?.volume} ml
                           </Badge>
                           <Badge
                             variant="default"
