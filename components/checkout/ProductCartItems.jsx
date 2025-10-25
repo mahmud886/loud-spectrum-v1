@@ -15,7 +15,9 @@ const ProductCartItems = ({ item }) => {
       }`}
     >
       <Image
-        src={item.image ? `${process.env.NEXT_PUBLIC_API_URL}/public${item.image}` : '/assets/images/cart-item.jpg'}
+        src={
+          item.image ? `${process.env.NEXT_PUBLIC_API_URL}/public${item.image}` : '/assets/images/default-cartItems.jpg'
+        }
         alt={item.name}
         width={96}
         height={96}

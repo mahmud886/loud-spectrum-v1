@@ -409,12 +409,12 @@ const OrderConfirmationContent = ({ orderData }) => {
                         src={
                           item.product?.image
                             ? `${process.env.NEXT_PUBLIC_API_URL}/public${item.product.image}`
-                            : '/assets/images/cart-item.jpg'
+                            : '/assets/images/default-cartItems.jpg'
                         }
                         alt={item.product?.name || item.name || `Product ${index + 1}`}
                         width={96}
                         height={96}
-                        className="h-[100px] w-[80px] rounded object-cover xl:h-auto xl:w-auto"
+                        className="h-[100px] w-[80px] rounded object-cover"
                       />
                       <div className="flex-1">
                         <h4 className="font-semibold text-gray-900">

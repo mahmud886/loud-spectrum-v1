@@ -13,8 +13,12 @@ const CartItem = ({ item }) => {
       }`}
     >
       <Image
-        src={item.image ? `${process.env.NEXT_PUBLIC_API_URL}/public${item.image}` : '/assets/images/cart-item.jpg'}
-        alt={item.name}
+        src={
+          item?.image
+            ? `${process.env.NEXT_PUBLIC_API_URL}/public${item.image}`
+            : '/assets/images/default-cartItems.jpg'
+        }
+        alt={item?.name}
         width={96}
         height={96}
         className="h-[100px] w-[80px] rounded"
@@ -24,7 +28,7 @@ const CartItem = ({ item }) => {
           <h6 className="text-umbra-100 font-sans text-[18px] leading-[120%] font-normal">{item.name}</h6>
           <div className="flex items-center gap-2">
             <p className="bg-umbra-5 text-umbra-100 rounded-[10px] px-2 py-1 font-sans text-[10px] leading-[120%] font-normal">
-              {item.selectedVolume}
+              {item?.selectedVolume}
             </p>
             {item?.isRegular && (
               <p className="text-umbra-100 bg-alive/50 rounded-[10px] px-2 py-1 font-sans text-[10px] leading-[120%] font-normal capitalize">
