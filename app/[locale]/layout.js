@@ -1,5 +1,6 @@
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
+import RebrandingPopup from '@/components/RebrandingPopup';
 import ScrollToTop from '@/components/ScrollToTop';
 import { routing } from '@/i18n/routing';
 import { adelphiSans, neueHaasUnicaW1GMono } from '@/lib/fonts';
@@ -184,6 +185,7 @@ gtag('config', 'G-SR3YV7PRR7');`}
                 color="var(--primary)"
                 showSpinner={false}
               />
+              <RebrandingPopup />
               <Navbar locale={locale} />
               {children}
               <Footer locale={locale} />
