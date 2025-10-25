@@ -337,7 +337,8 @@
         "header": "Compléter les informations requises",
         "instruction": "Veuillez remplir les champs requis suivants :",
         "andMore": "et {count} de plus..."
-      }
+      },
+      "fraudWarning": "Toutes les transactions frauduleuses, y compris l'abus de rétrofacturation, seront signalées et poursuivies dans toute la mesure du possible"
     }
   },
   "OrderConfirmation": {

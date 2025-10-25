@@ -337,7 +337,8 @@
         "header": "Erforderliche Informationen vervollständigen",
         "instruction": "Bitte füllen Sie die folgenden erforderlichen Felder aus:",
         "andMore": "und {count} weitere..."
-      }
+      },
+      "fraudWarning": "Alle betrügerischen Transaktionen, einschließlich Chargeback-Missbrauch, werden gemeldet und mit aller Konsequenz verfolgt"
     }
   },
   "OrderConfirmation": {

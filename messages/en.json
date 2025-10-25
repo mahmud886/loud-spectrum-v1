@@ -341,7 +341,8 @@
         "header": "Complete Required Information",
         "instruction": "Please fill in the following required fields:",
         "andMore": "and {count} more..."
-      }
+      },
+      "fraudWarning": "All fraudulent transactions, including chargeback abuse, will be reported and pursued to the fullest extent"
     }
   },
   "OrderConfirmation": {

@@ -337,7 +337,8 @@
         "header": "必須情報を入力してください",
         "instruction": "以下の必須項目を入力してください：",
         "andMore": "その他{count}項目..."
-      }
+      },
+      "fraudWarning": "すべての不正取引（チャージバックの悪用を含む）は報告され、最大限の範囲で追及されます"
     }
   },
   "OrderConfirmation": {

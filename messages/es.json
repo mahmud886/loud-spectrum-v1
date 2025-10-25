@@ -336,7 +336,8 @@
         "header": "Complete la información requerida",
         "instruction": "Por favor complete los siguientes campos requeridos:",
         "andMore": "y {count} más..."
-      }
+      },
+      "fraudWarning": "Todas las transacciones fraudulentas, incluyendo el abuso de contracargos, serán reportadas y perseguidas al máximo"
     }
   },
   "OrderConfirmation": {
