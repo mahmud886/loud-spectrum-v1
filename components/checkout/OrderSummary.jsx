@@ -5,6 +5,7 @@ import { selectCartItems, selectSimplifiedCartProducts } from '@/lib/store/slice
 import {
   selectDiscountCoupon,
   selectOrderSummary,
+  selectSelectedPaymentMethod,
   setSubtotal,
   setTotalVolume,
 } from '@/lib/store/slices/checkoutSlice';
@@ -17,6 +18,7 @@ const OrderSummary = () => {
   const cartItems = useSelector(selectCartItems);
   const orderSummary = useSelector(selectOrderSummary);
   const discountCoupon = useSelector(selectDiscountCoupon);
+  const selectedPaymentMethod = useSelector(selectSelectedPaymentMethod);
   const t = useTranslations('CheckoutPage.OrderSummary');
   const simplifiedCartProducts = useSelector(selectSimplifiedCartProducts);
   const weight = calculateShippingWeight(simplifiedCartProducts || []);
@@ -55,6 +57,7 @@ const OrderSummary = () => {
   }, [cartItems, dispatch]);
 
   const isShippingCalculated = orderSummary.shipping === 0 || orderSummary.shipping === 'free';
+  const isCashOnDelivery = selectedPaymentMethod === 'cash-on-delivery';
   const displayVolume = orderSummary.totalVolume > 0 ? `${orderSummary.totalVolume}ml` : '0ml';
 
   return (
@@ -99,7 +102,9 @@ const OrderSummary = () => {
         <div className="flex items-center justify-between">
           <span>{t('shipping')}</span>
           <span>
-            {isShippingCalculated ? (
+            {isCashOnDelivery && orderSummary.shipping === 0 ? (
+              <span className="font-medium text-green-600">Free</span>
+            ) : isShippingCalculated ? (
               <span className="text-umbra-60">{t('calculatedAtCheckout')}</span>
             ) : (
               `$${orderSummary.shipping.toFixed(2)}`

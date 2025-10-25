@@ -25,6 +25,7 @@ import {
   setIsProcessing,
   setSelectedCourier,
   setSelectedPaymentMethod,
+  setShippingCostToZero,
   setShippingType,
   setShowCardDialog,
   setShowWireDialog,
@@ -627,7 +628,26 @@ const CheckoutPage = () => {
       return; // Don't set the payment method
     }
 
+    // If switching away from cash-on-delivery, reset shipping cost to calculated value
+    if (selectedPaymentMethod === 'cash-on-delivery' && value !== 'cash-on-delivery') {
+      // Reset shipping cost to the calculated value based on shipping type
+      // We'll use the setShippingType action to recalculate the shipping cost
+      if (selectedShippingType) {
+        dispatch(setShippingType(selectedShippingType));
+      }
+    }
+
     dispatch(setSelectedPaymentMethod(value));
+
+    // If cash-on-delivery is selected, automatically set shipping cost to zero
+    if (value === 'cash-on-delivery') {
+      dispatch(setShippingCostToZero());
+      toast.info('Free Shipping Applied', {
+        description: 'Shipping cost has been set to zero for cash-on-delivery',
+        duration: 3000,
+        icon: '🚚',
+      });
+    }
   };
 
   // Cash on Delivery Payment Processing
