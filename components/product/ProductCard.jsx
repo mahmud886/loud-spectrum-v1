@@ -3,6 +3,7 @@
 import ProductBuyDialog from '@/components/product/ProductBuyDialog';
 import DiscountPriceDisplay from '@/components/ui/DiscountPriceDisplay';
 import { getTranslatedCategoryName } from '@/helpers/dynamic-translations';
+import { getCategoryColorClasses } from '@/helpers/get-category-color-classes';
 import { getProductPriceRange } from '@/helpers/get-product-price-ranges';
 import { encodeCategoryForUrl } from '@/helpers/url-category-utils';
 import { Link } from '@/i18n/navigation';
@@ -68,7 +69,9 @@ const ProductCard = ({ product }) => {
 
           {/* Tag Button (Hidden on mobile) */}
           <div className="ml- hidden xl:block">
-            <button className="border-umbra-100 rounded-[3px] border px-2 text-[9px] font-normal">
+            <button
+              className={`${getCategoryColorClasses(product?.category?.name)} rounded-[3px] border-1 px-2 text-[12px] font-normal capitalize`}
+            >
               {categoryDisplayName}
             </button>
           </div>
