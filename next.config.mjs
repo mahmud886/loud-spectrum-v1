@@ -8,7 +8,7 @@ const nextConfig = {
   compress: true,
   reactStrictMode: true,
   images: {
-    unoptimized: true,
+    unoptimized: false,
     remotePatterns: [
       {
         protocol: 'https',
