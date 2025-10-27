@@ -8,6 +8,7 @@ import {
   Heading,
   Hr,
   Html,
+  Img,
   Preview,
   Row,
   Section,
@@ -66,9 +67,13 @@ const WireTransferApprovedEmail = ({ orderData, transactionDetails }) => {
           <Body className="bg-white p-6">
             <Container className="rounded-lg bg-white p-6 shadow-md">
               <Section className="mb-6 text-center">
-                <Text className="bg-[linear-gradient(90deg,_#101820_21.53%,_#0077C8_44.13%,_#C0AEE7_74.27%,_#DDDAE8_107.64%)] bg-clip-text text-3xl font-bold text-transparent">
-                  LOUD SPECTRUM
-                </Text>
+                <Img
+                  src={`${baseUrl}/assets/images/logo.png`}
+                  alt="Loud Spectrum Logo"
+                  width="200"
+                  height="40"
+                  className="mx-auto"
+                />
               </Section>
 
               <Section className="text-center">
@@ -166,9 +171,13 @@ const WireTransferApprovedEmail = ({ orderData, transactionDetails }) => {
           <Container className="rounded-lg bg-white p-6 shadow-md">
             {/* Logo Header */}
             <Section className="mb-6 text-center">
-              <Text className="bg-[linear-gradient(90deg,_#101820_21.53%,_#0077C8_44.13%,_#C0AEE7_74.27%,_#DDDAE8_107.64%)] bg-clip-text text-3xl font-bold text-transparent">
-                LOUD SPECTRUM
-              </Text>
+              <Img
+                src={`${baseUrl}/assets/images/logo.png`}
+                alt="Loud Spectrum Logo"
+                width="200"
+                height="40"
+                className="mx-auto"
+              />
             </Section>
 
             {/* Main Header */}
@@ -485,7 +494,7 @@ const WireTransferApprovedEmail = ({ orderData, transactionDetails }) => {
 
             <Hr className="my-6 border-t border-gray-200" />
 
-            <EmailFooter />
+            <EmailFooter baseUrl={baseUrl} />
           </Container>
         </Body>
       </Tailwind>

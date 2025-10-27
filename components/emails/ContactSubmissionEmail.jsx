@@ -1,4 +1,4 @@
-import { Body, Container, Font, Head, Hr, Html, Preview, Section, Tailwind, Text } from '@react-email/components';
+import { Body, Container, Font, Head, Hr, Html, Img, Preview, Section, Tailwind, Text } from '@react-email/components';
 import EmailFooter from './EmailFooter';
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL_EMAIL
@@ -46,21 +46,16 @@ const ContactSubmissionEmail = ({ name, email, message, is_subscriber }) => {
         <Body className="bg-gray-50 p-6">
           <Container className="rounded-lg bg-white p-6 shadow-md">
             {/* Logo Header */}
-            {/* <Section className="mb-6 text-center">
+            <Section className="mb-6 text-center">
               <Img
-                src={`${baseUrl}/assets/svgs/logos/logo-dark.svg`}
+                src={`${baseUrl}/assets/images/logo.png`}
                 alt="Loud Spectrum Logo"
                 width="200"
-                height="60"
+                height="40"
                 className="mx-auto"
               />
-            </Section> */}
-            <Section className="mb-6 text-center">
-              <Text className="bg-[linear-gradient(90deg,_#101820_21.53%,_#0077C8_44.13%,_#C0AEE7_74.27%,_#DDDAE8_107.64%)] bg-clip-text text-3xl font-bold text-transparent">
-                LOUD SPECTRUM
-              </Text>
             </Section>
-
+            {/* Removed gradient text - using logo image instead */}
             <Section className="mb-6 rounded-md bg-blue-50 p-6">
               <Text className="mb-2 text-center text-2xl font-bold text-blue-700">New Contact Form Submission</Text>
               <Text className="m-0 text-center text-blue-700">
@@ -95,7 +90,7 @@ const ContactSubmissionEmail = ({ name, email, message, is_subscriber }) => {
             </Text>
             <Hr className="my-6 border-t border-gray-200" />
 
-            <EmailFooter />
+            <EmailFooter baseUrl={baseUrl} />
           </Container>
         </Body>
       </Tailwind>

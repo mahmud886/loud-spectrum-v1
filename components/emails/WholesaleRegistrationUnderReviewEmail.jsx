@@ -7,6 +7,7 @@ import {
   Head,
   Hr,
   Html,
+  Img,
   Preview,
   Row,
   Section,
@@ -76,22 +77,17 @@ const WholesaleRegistrationUnderReviewEmail = ({ registrationData }) => {
         <Body className="bg-gray-50 p-6">
           <Container className="rounded-lg bg-white p-6 shadow-md">
             {/* Logo Header */}
-            {/* <Section className="mb-6 text-center">
+            <Section className="mb-6 text-center">
               <Img
-                src={`${baseUrl}/assets/svgs/logos/logo-dark.svg`}
+                src={`${baseUrl}/assets/images/logo.png`}
                 alt="Loud Spectrum Logo"
                 width="200"
-                height="60"
+                height="40"
                 className="mx-auto"
               />
-            </Section> */}
-
-            <Section className="mb-6 text-center">
-              <Text className="bg-[linear-gradient(90deg,_#101820_21.53%,_#0077C8_44.13%,_#C0AEE7_74.27%,_#DDDAE8_107.64%)] bg-clip-text text-3xl font-bold text-transparent">
-                LOUD SPECTRUM
-              </Text>
             </Section>
 
+            {/* Removed gradient text - using logo image instead */}
             {/* Status Banner */}
             <Section className="mb-6 rounded-md bg-blue-50 p-6">
               <Text className="mb-2 text-center text-2xl font-bold text-blue-800">🔍 Pending</Text>
@@ -246,7 +242,7 @@ const WholesaleRegistrationUnderReviewEmail = ({ registrationData }) => {
             <Hr className="my-6 border-t border-gray-200" />
 
             {/* Footer */}
-            <EmailFooter />
+            <EmailFooter baseUrl={baseUrl} />
           </Container>
         </Body>
       </Tailwind>
