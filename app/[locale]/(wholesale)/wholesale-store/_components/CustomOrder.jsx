@@ -1,13 +1,14 @@
 'use client';
 
+import { useAuthToken } from '@/hooks/useAuthToken';
 import { useState } from 'react';
 import { toast } from 'sonner';
 
-const CustomOrder = ({ lines, t, wholesaleProducts, onAddToCart }) => {
+const CustomOrder = ({ lines, t, wholesaleProducts, onAddToCart, serverProducts }) => {
   const [quantities, setQuantities] = useState({});
   const [customFlavors, setCustomFlavors] = useState({});
   const [flavorDescriptions, setFlavorDescriptions] = useState({});
-
+  const token = useAuthToken();
   // Group wholesale products by line/category
   const productsByLine =
     wholesaleProducts?.reduce((acc, product) => {
@@ -49,7 +50,7 @@ const CustomOrder = ({ lines, t, wholesaleProducts, onAddToCart }) => {
     }));
   };
 
-  const handleSelectProduct = (line) => {
+  const handleSelectProduct = async (line) => {
     const customFlavor = customFlavors[line] || '';
     const flavorDescription = flavorDescriptions[line] || '';
     const quantity = quantities[line] || 5;
@@ -63,6 +64,40 @@ const CustomOrder = ({ lines, t, wholesaleProducts, onAddToCart }) => {
     if (!flavorDescription.trim()) {
       toast.error('Please enter a flavor description');
       return;
+    }
+
+    // Get the lot from the last item in serverProducts.items
+    const items = serverProducts?.items || [];
+    const lastLot =
+      items.length > 0 && items[items.length - 1]?.lot_number ? items[items.length - 1].lot_number : 'CUSTOM';
+
+    // Call the POST API to create custom product
+    let apiSuccess = false;
+    console.log(token);
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/custom-products`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: token,
+        },
+        body: JSON.stringify({
+          flavor_name: customFlavor,
+          description: flavorDescription,
+          status: 'Active',
+          lot: lastLot,
+          is_deleted: false,
+        }),
+      });
+
+      if (!response.ok) {
+        console.log('Failed to create custom product');
+      }
+      apiSuccess = true;
+    } catch (error) {
+      console.error('Error creating custom product:', error);
+      toast.error('Failed to create custom product. Please try again.');
+      return; // Stop execution if API call fails
     }
 
     const products = productsByLine[line];

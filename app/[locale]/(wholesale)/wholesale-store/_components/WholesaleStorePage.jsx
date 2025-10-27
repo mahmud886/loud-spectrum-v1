@@ -201,6 +201,7 @@ const WholesaleStorePage = ({ serverProducts }) => {
               return newCart;
             });
           }}
+          serverProducts={serverProducts}
         />
 
         {/* Right: Product table + note + cart (mobile: shown before sidebar) */}
