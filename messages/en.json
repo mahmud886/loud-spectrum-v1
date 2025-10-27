@@ -949,7 +949,8 @@
   "buttons": {
     "shopTheLine": "Shop the Line",
     "wholesale": "Wholesale",
-    "cannabisDerived": "Cannabis Derived"
+    "cannabisDerived": "Cannabis Derived",
+    "botanicallyDerived": "Botanically Derived"
   },
   "WholesaleStore": {
     "description": "The more you buy, the lower the price per gram. Browse and search through 3,000+ unique flavors in our catalog to find your perfect match. If you can't find exactly what you’re looking for, you can create your own custom product Wholesale prices apply automatically when you click “Calculate Price”",

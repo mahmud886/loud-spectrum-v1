@@ -943,7 +943,8 @@
   "buttons": {
     "shopTheLine": "Produktlinie kaufen",
     "wholesale": "Großhandel",
-    "cannabisDerived": "Aus Cannabis gewonnen"
+    "cannabisDerived": "Aus Cannabis gewonnen",
+    "botanicallyDerived": "Aus Botanik gewonnen"
   },
   "WholesaleStore": {
     "description": "Je mehr Sie kaufen, desto geringer der Preis pro Gramm. Durchsuchen und suchen Sie durch unsere Katalog mit über 3.000 einzigartigen Aromen, um Ihren perfekten Match zu finden. Wenn Sie nicht genau das finden, was Sie suchen, können Sie Ihr eigenes benutzerdefiniertes Produkt erstellen. Großhandelspreise werden automatisch angewendet, wenn Sie auf “Preis berechnen” klicken",

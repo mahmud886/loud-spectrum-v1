@@ -133,7 +133,7 @@ const ProductLineCard = ({ productVariant = 'Default' }) => {
           className="absolute bottom-5 left-5 z-20"
         >
           <button className="border-umbra-100 text-umbra-100 relative z-[100px] min-w-[114px] rounded-[3px] border px-2 py-[2px] text-[12px] font-normal transition-all duration-200 ease-in-out group-hover:border-white group-hover:text-white">
-            {t('buttons.cannabisDerived')}
+            {t('buttons.botanicallyDerived')}
           </button>
         </motion.div>
       </motion.div>

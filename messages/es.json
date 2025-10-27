@@ -943,7 +943,8 @@
   "buttons": {
     "shopTheLine": "Comprar la línea",
     "wholesale": "Venta al por mayor",
-    "cannabisDerived": "Derivado del cannabis"
+    "cannabisDerived": "Derivado del cannabis",
+    "botanicallyDerived": "Derivado de la botánica"
   },
   "WholesaleStore": {
     "description": "Cuanto más compres, menor el precio por gramo. Explora y busca entre más de 3,000 sabores únicos en nuestro catálogo para encontrar tu perfecto match. Si no encuentras exactamente lo que buscas, puedes crear tu propio producto personalizado. Los precios al por mayor se aplican automáticamente cuando haces clic en “Calcular Precio”",
