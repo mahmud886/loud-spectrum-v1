@@ -24,7 +24,8 @@ const ShopHero = ({ category }) => {
         <div className="relative z-10 flex h-[610px] w-full flex-col items-center justify-center gap-[40px] xl:h-full xl:w-[42%]">
           <div>
             <h1 className="pb-5 font-sans text-[35px] leading-[120%] font-normal tracking-normal text-white xl:text-[60px]">
-              {t('title')}
+              {/* {t('title')} */}
+              {category?.description ? category?.description?.slice(0, 40)?.replace(/^<p>|<\/p>$/g, '') : t('title')}
             </h1>
             <p className="font-mono text-[20px] leading-[120%] font-normal text-white">{t('description')}</p>
           </div>
