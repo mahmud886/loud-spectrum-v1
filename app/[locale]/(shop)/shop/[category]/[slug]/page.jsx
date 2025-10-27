@@ -12,6 +12,65 @@ import { cookies } from 'next/headers';
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 
+// Helper function to generate structured data for products
+function generateProductStructuredData(productDetails, websiteUrl) {
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+  const productImage = productDetails?.images?.[0]
+    ? `${apiUrl}/public${productDetails.images[0]}`
+    : `${websiteUrl}/assets/images/product-default.jpeg`;
+
+  // Parse tags if it's a string
+  const tags = productDetails?.tags
+    ? typeof productDetails.tags === 'string'
+      ? productDetails.tags.split(',').map((tag) => tag.trim())
+      : productDetails.tags
+    : [];
+
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    '@id': `${websiteUrl}/shop/${productDetails?.category?.slug || 'all'}/${productDetails?.slug}`,
+    name: productDetails?.name || 'Product',
+    description:
+      productDetails?.description || productDetails?.short_description || productDetails?.meta_description || '',
+    image: productImage,
+    sku: productDetails?.code || '',
+    category: productDetails?.category?.name || '',
+    brand: {
+      '@type': 'Brand',
+      name: 'Loud Spectrum',
+    },
+    manufacturer: {
+      '@type': 'Organization',
+      name: 'Loud Spectrum',
+    },
+    offers: {
+      '@type': 'AggregateOffer',
+      offerCount: productDetails?.subproducts?.length || 0,
+      lowPrice: '0',
+      highPrice: '0',
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
+    },
+  };
+
+  // Add tags/keywords if available
+  if (tags.length > 0) {
+    structuredData.keywords = tags.join(', ');
+  }
+
+  // Add category information
+  if (productDetails?.category) {
+    structuredData.category = {
+      '@type': 'Category',
+      name: productDetails.category.name,
+      description: productDetails.category.description,
+    };
+  }
+
+  return structuredData;
+}
+
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const websiteUrl = process.env.NEXT_PUBLIC_WEBSITE_URL || 'https://loudspectrum.com';
@@ -25,37 +84,53 @@ export async function generateMetadata({ params }) {
       };
     }
 
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+    const productImage = productDetails?.images?.[0]
+      ? `${apiUrl}/public${productDetails.images[0]}`
+      : `${websiteUrl}/assets/images/product-default.jpeg`;
+
     const title = productDetails?.name || 'Product';
-    const description = productDetails?.short_description || 'Premium terpene product';
-    const ogTitle = `${title} | Loud Spectrum`;
+    const description =
+      productDetails?.description ||
+      productDetails?.meta_description ||
+      productDetails?.short_description ||
+      'Premium terpene product';
+    const altTag = productDetails?.alt_tag || productDetails?.name || title;
+
+    // Parse tags for keywords
+    const tags = productDetails?.tags
+      ? typeof productDetails.tags === 'string'
+        ? productDetails.tags.split(',').map((tag) => tag.trim())
+        : productDetails.tags
+      : [];
+    const keywords = tags.length > 0 ? tags.join(', ') : 'terpenes, terpene profile, cannabis terpenes';
 
     return {
-      title: ogTitle,
-      description,
+      title: productDetails?.meta_title || `${title} | Loud Spectrum`,
+      description: description,
+      keywords: keywords,
       metadataBase: new URL(websiteUrl),
       openGraph: {
-        title: ogTitle,
-        description,
         type: 'website',
+        title: productDetails?.meta_title || `${title} | Loud Spectrum`,
+        description: description,
         url: `${websiteUrl}/shop/${productDetails?.category?.slug || 'all'}/${slug}`,
         siteName: 'Loud Spectrum',
         locale: 'en_US',
         images: [
           {
-            url: `${websiteUrl}/api/og?title=${encodeURIComponent(title)}&subtitle=${encodeURIComponent('Premium Terpene Products')}`,
+            url: productImage,
             width: 1200,
             height: 630,
-            alt: title,
+            alt: altTag,
           },
         ],
       },
       twitter: {
         card: 'summary_large_image',
-        title: ogTitle,
-        description,
-        images: [
-          `${websiteUrl}/api/og?title=${encodeURIComponent(title)}&subtitle=${encodeURIComponent('Premium Terpene Products')}`,
-        ],
+        title: productDetails?.meta_title || `${title} | Loud Spectrum`,
+        description: description,
+        images: productImage,
         creator: '@loudspectrum',
         site: '@loudspectrum',
       },
@@ -65,6 +140,19 @@ export async function generateMetadata({ params }) {
       robots: {
         index: true,
         follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          'max-video-preview': -1,
+          'max-image-preview': 'large',
+          'max-snippet': -1,
+        },
+      },
+      other: {
+        'product:price:amount': '0',
+        'product:price:currency': 'USD',
+        'product:availability': 'in stock',
+        'product:condition': 'new',
       },
     };
   } catch (e) {
@@ -79,10 +167,17 @@ export async function generateMetadata({ params }) {
 async function SpectrumAccordionContent({ productDetails }) {
   const t = await getTranslations('ProductDetailsAccordion');
 
+  // Use full description if available, otherwise fall back to short_description
+  const isDescriptionEmpty =
+    !productDetails?.description ||
+    productDetails?.description.trim() === '' ||
+    productDetails?.description.trim() === '<p></p>';
+  const aboutDescription = isDescriptionEmpty ? productDetails?.short_description : productDetails?.description;
+
   const accordionData = [
     {
       title: t('AboutTheProduct.title'),
-      description: productDetails?.short_description,
+      description: aboutDescription,
     },
     {
       title: t('FeaturesAndBenefits.title'),
@@ -167,6 +262,7 @@ async function RelatedProductsContent({ productDetails }) {
 // Main async component that fetches product data
 async function ProductDetailsContent({ params }) {
   const { slug } = await params;
+  const websiteUrl = process.env.NEXT_PUBLIC_WEBSITE_URL || 'https://loudspectrum.com';
 
   // Validate the product (category is already validated in layout)
   const productDetails = await getProductDetails(slug);
@@ -178,28 +274,35 @@ async function ProductDetailsContent({ params }) {
     notFound();
   }
 
+  // Generate structured data for SEO
+  const structuredData = generateProductStructuredData(productDetails, websiteUrl);
+
   return (
-    <div className="xl:mt-[160px]">
-      <Suspense fallback={<SpectrumAccordionShimmer />}>
-        <SpectrumAccordionContent productDetails={productDetails} />
-      </Suspense>
+    <>
+      {/* Add JSON-LD structured data for SEO */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+      <div className="xl:mt-[160px]">
+        <Suspense fallback={<SpectrumAccordionShimmer />}>
+          <SpectrumAccordionContent productDetails={productDetails} />
+        </Suspense>
 
-      <Suspense fallback={<ProductReviewsShimmer />}>
-        <ProductReviewsContent productId={productDetails._id} />
-      </Suspense>
+        <Suspense fallback={<ProductReviewsShimmer />}>
+          <ProductReviewsContent productId={productDetails._id} />
+        </Suspense>
 
-      <Suspense fallback={<AddAReviewShimmer />}>
-        <AddAReviewContent
-          productId={productDetails._id}
-          authToken={authToken?.value}
-          categoryId={productDetails?.category?._id}
-        />
-      </Suspense>
+        <Suspense fallback={<AddAReviewShimmer />}>
+          <AddAReviewContent
+            productId={productDetails._id}
+            authToken={authToken?.value}
+            categoryId={productDetails?.category?._id}
+          />
+        </Suspense>
 
-      <Suspense fallback={<RelatedProductsShimmer />}>
-        <RelatedProductsContent productDetails={productDetails} />
-      </Suspense>
-    </div>
+        <Suspense fallback={<RelatedProductsShimmer />}>
+          <RelatedProductsContent productDetails={productDetails} />
+        </Suspense>
+      </div>
+    </>
   );
 }
 
