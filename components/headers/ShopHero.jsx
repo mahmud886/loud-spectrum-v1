@@ -13,7 +13,7 @@ const ShopHero = ({ category }) => {
             ? `${process.env.NEXT_PUBLIC_API_URL}/public${category?.image}`
             : '/assets/images/shop-hero.png'
         }
-        alt="Background"
+        alt={category?.name || 'Category Background'}
         width={1920}
         height={1291}
         className="absolute top-0 left-1/2 z-0 h-full w-full -translate-x-1/2 object-cover xl:w-[1920px]"

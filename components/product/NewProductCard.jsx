@@ -59,7 +59,7 @@ const NewProductCard = ({ product }) => {
                     ? `${process.env.NEXT_PUBLIC_API_URL}/public${product.image}`
                     : '/assets/images/products/mother.png'
                 }
-                alt="Product"
+                alt={product?.name || 'Product Image'}
                 width={411}
                 height={548}
                 priority={true}

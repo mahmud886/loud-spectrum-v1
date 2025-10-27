@@ -40,7 +40,7 @@ const SearchProductCard = ({ product, onOpenChange }) => {
                   ? `${process.env.NEXT_PUBLIC_API_URL}/public${product.image}`
                   : '/assets/images/products/mother.png'
               }
-              alt="Product"
+              alt={product?.name || 'Product Image'}
               width={256}
               height={256}
             />
