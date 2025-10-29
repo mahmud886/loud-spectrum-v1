@@ -1,49 +1,53 @@
+'use client';
 import HashLink from '@/components/ui/hash-link';
+import { useUserStatus } from '@/hooks/useUserStatus';
 import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
+import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 const TopNavMiddle = () => {
   const t = useTranslations('Navbar.TopNav');
   const { user, isAuthenticated } = useSelector((state) => state.auth);
+  const { userStatus, error: userStatusError } = useUserStatus();
 
-  // Determine the wholesale link based on user status
-  const getWholesaleLink = () => {
+  const wholesaleHref = useMemo(() => {
     if (!isAuthenticated || !user || user.role === 'customer') {
       return '/wholesale-registration#wholesale-form';
     }
+
     if (user.role === 'wholesaler') {
-      switch (user.status) {
-        case 'Active':
-          return '/wholesale-store';
-        case 'Inactive':
-          return '/wholesale-disapprove';
-        case 'Waiting For Approve':
-          return '/wholesale-under-review';
-        default:
-          return '/wholesale-registration#wholesale-form';
+      // Use userStatus from API if available, otherwise fall back to Redux user state
+      const status = userStatus?.status || user?.status;
+      if (status === 'Active') {
+        return '/wholesale-store';
       }
+      if (status === 'Inactive') {
+        return '/wholesale-disapprove';
+      }
+      if (status === 'Waiting For Approve') {
+        return '/wholesale-under-review';
+      }
+      return '/wholesale-registration#wholesale-form';
     }
     // Fallback (if user.role is unexpected)
     return '/wholesale-registration#wholesale-form';
-  };
-
-  const wholesaleHref = getWholesaleLink();
-  const isHashLink = wholesaleHref && wholesaleHref.includes('#');
+  }, [user, isAuthenticated, userStatus, userStatusError]);
+  const isHashLink = typeof wholesaleHref === 'string' && wholesaleHref?.includes('#');
 
   return (
     <div className="flex h-full flex-col justify-center gap-12">
       <div>
         {isHashLink ? (
           <HashLink
-            href={wholesaleHref}
+            href={wholesaleHref || ''}
             className="main-button-black inline-flex items-center justify-center rounded-full px-6 py-2"
           >
             {t('Wholesale')}
           </HashLink>
         ) : (
           <Link
-            href={wholesaleHref}
+            href={wholesaleHref || ''}
             className="main-button-black inline-flex items-center justify-center rounded-full px-6 py-2"
           >
             {t('Wholesale')}

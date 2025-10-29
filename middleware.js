@@ -42,9 +42,37 @@ export default async function middleware(request) {
         // Decode the JWT token to get user info
         const tokenPayload = JSON.parse(atob(authToken.split('.')[1]));
 
-        // Check if user is a wholesaler and has active status
-        if (tokenPayload.role !== 'wholesaler' || tokenPayload.status !== 'Active') {
-          console.log('Access denied: User is not an active wholesaler');
+        // If user is not a wholesaler, redirect to registration
+        if (tokenPayload.role !== 'wholesaler') {
+          console.log('Access denied: User is not a wholesaler');
+          return NextResponse.redirect(new URL('/wholesale-registration', request.url));
+        }
+
+        // Try to fetch the latest user status from API
+        try {
+          const apiUrl = process.env.NEXT_PUBLIC_API_URL || '';
+          const statusResponse = await fetch(`${apiUrl}/api/get-user-status`, {
+            headers: {
+              Authorization: authToken,
+              'Content-Type': 'application/json',
+            },
+          });
+
+          if (statusResponse.ok) {
+            const statusData = await statusResponse.json();
+            // If API returns active status, allow access even if JWT says inactive
+            if (!statusData.error && statusData.data?.status === 'Active') {
+              return response;
+            }
+          }
+        } catch (apiError) {
+          // If API call fails, fall back to JWT status check
+          console.log('API call failed, falling back to JWT status');
+        }
+
+        // Fall back to JWT status if API doesn't show Active
+        if (tokenPayload.status !== 'Active') {
+          console.log('Access denied: User status is not Active');
           return NextResponse.redirect(new URL('/wholesale-registration', request.url));
         }
       } catch (error) {

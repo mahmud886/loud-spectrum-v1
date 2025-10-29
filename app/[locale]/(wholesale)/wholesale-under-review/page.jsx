@@ -1,8 +1,10 @@
 'use client';
 
 import { Skeleton } from '@/components/ui/skeleton';
+import { useUserStatus } from '@/hooks/useUserStatus';
+import { useRouter } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 // Shimmer component for loading state
@@ -35,27 +37,26 @@ const UnderReviewShimmer = () => (
 
 const WholesaleUnderReviewPage = () => {
   const t = useTranslations('Wholesale');
-  const [userData, setUserData] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
   const { user, isAuthenticated } = useSelector((state) => state.auth);
+  const { userStatus, loading } = useUserStatus();
+  const router = useRouter();
+  const userData = useMemo(() => userStatus ?? null, [userStatus]);
 
   useEffect(() => {
-    // Check if user is logged in and is a wholesaler waiting for approval
-    if (isAuthenticated && user) {
-      if (user?.role === 'wholesaler' && user?.status === 'Waiting For Approve') {
-        setUserData(user);
-      }
+    // Redirect to wholesale store if status becomes Active
+    if (userData && userData.status === 'Active') {
+      router.push('/wholesale-store');
     }
-    setIsLoading(false);
-  }, [isAuthenticated, user]);
+  }, [userData, router]);
 
   // Show shimmer while loading
-  if (isLoading) {
+  if (loading) {
     return <UnderReviewShimmer />;
   }
 
   // Redirect to registration if user is not authenticated or not a pending wholesaler
-  if (!isAuthenticated || !user || user?.role !== 'wholesaler' || user?.status !== 'Waiting For Approve') {
+  const currentStatus = userData?.status || user?.status;
+  if (!userData || userData.role !== 'wholesaler' || currentStatus !== 'Waiting For Approve') {
     return (
       <div className="container py-[80px]">
         <div className="mx-auto max-w-2xl text-center">
