@@ -58,7 +58,7 @@ export async function POST(request) {
       return NextResponse.json({ error: 'Failed to send email', details: error }, { status: 500 });
     }
 
-    const res =  NextResponse.json(
+    const res = NextResponse.json(
       {
         success: true,
         message: 'Local pickup email sent successfully',
@@ -67,11 +67,10 @@ export async function POST(request) {
       { status: 200 },
     );
 
-    res.headers.set("Access-Control-Allow-Origin", "*");
-    res.headers.set("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-    res.headers.set("Access-Control-Allow-Headers", "Content-Type");
+    res.headers.set('Access-Control-Allow-Origin', '*');
+    res.headers.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    res.headers.set('Access-Control-Allow-Headers', 'Content-Type');
     return res;
-
   } catch (error) {
     console.error('Error sending local pickup email:', error);
     return NextResponse.json({ error: 'Internal server error', details: error.message }, { status: 500 });

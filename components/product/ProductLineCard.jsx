@@ -18,6 +18,24 @@ const ProductLineCard = ({ productVariant = 'Default' }) => {
     Default: 'bg-gray-500 border-gray-500',
   };
 
+  const getButtonText = (variant) => {
+    if (variant === 'Alive') {
+      return t('buttons.flowerDerived');
+    }
+    return t('buttons.botanicallyDerived');
+  };
+
+  const getVariantTextColor = (variant) => {
+    const colorMap = {
+      Alive: 'text-alive',
+      Sweet: 'text-sweet',
+      Classic: 'text-classic',
+      Dank: 'text-dank',
+      Default: 'text-gray-500',
+    };
+    return colorMap[variant] || colorMap.Default;
+  };
+
   const bgClass = variantClasses[productVariant]?.split(' ')[0] || variantClasses.Default.split(' ')[0];
   const borderClass = variantClasses[productVariant]?.split(' ')[1] || variantClasses.Default.split(' ')[1];
 
@@ -118,7 +136,13 @@ const ProductLineCard = ({ productVariant = 'Default' }) => {
           transition={{ duration: 0.2 }}
           className="absolute right-5 bottom-5 z-20 w-[70px]"
         >
-          <p className="rotate-[-90deg] text-[70px] leading-none font-bold text-white">
+          <p
+            className={cn(
+              'rotate-[-90deg] text-[70px] leading-none font-bold transition-all duration-200 ease-in-out',
+              getVariantTextColor(productVariant),
+              'group-hover:text-white group-hover:[text-shadow:_0_0_8px_rgba(0,0,0,0.8)]',
+            )}
+          >
             {t(`productVariants.${productVariant}`, { default: productVariant })}
           </p>
         </motion.div>
@@ -133,7 +157,7 @@ const ProductLineCard = ({ productVariant = 'Default' }) => {
           className="absolute bottom-5 left-5 z-20"
         >
           <button className="border-umbra-100 text-umbra-100 relative z-[100px] min-w-[114px] rounded-[3px] border px-2 py-[2px] text-[12px] font-normal transition-all duration-200 ease-in-out group-hover:border-white group-hover:text-white">
-            {t('buttons.botanicallyDerived')}
+            {getButtonText(productVariant)}
           </button>
         </motion.div>
       </motion.div>

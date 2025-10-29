@@ -945,7 +945,8 @@
     "shopTheLine": "Acheter la gamme",
     "wholesale": "Vente en gros",
     "cannabisDerived": "Dérivé du cannabis",
-    "botanicallyDerived": "Dérivé de la botanique"
+    "botanicallyDerived": "Dérivé de la botanique",
+    "flowerDerived": "Dérivé de la fleur"
   },
   "WholesaleStore": {
     "description": "Plus vous achetez, moins le prix par gramme est élevé. Explorez et recherchez parmi plus de 3 000 saveurs uniques dans notre catalogue pour trouver votre correspondance parfaite. Si vous ne trouvez pas exactement ce que vous cherchez, vous pouvez créer votre propre produit personnalisé. Les prix en gros s'appliquent automatiquement lorsque vous cliquez sur “Calculer le Prix”",

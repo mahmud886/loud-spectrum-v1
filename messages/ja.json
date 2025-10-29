@@ -945,7 +945,8 @@
     "shopTheLine": "製品ラインを購入",
     "wholesale": "卸売り",
     "cannabisDerived": "カンナビス由来",
-    "botanicallyDerived": "植物由来"
+    "botanicallyDerived": "植物由来",
+    "flowerDerived": "花由来"
   },
   "WholesaleStore": {
     "description": "購入量が多いほど、1グラムあたりの価格が安くなります。3,000以上のユニークなフレーバーをカタログから探し、マッチングするフレーバーを見つけてください。探しているものが見つからない場合は、独自のカスタム製品を作成できます。「価格を計算」をクリックすると、卸売価格が自動的に適用されます",
