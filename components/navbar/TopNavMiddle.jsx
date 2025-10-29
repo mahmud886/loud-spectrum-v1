@@ -25,7 +25,7 @@ const TopNavMiddle = () => {
   };
 
   const wholesaleHref = getWholesaleLink();
-  const isHashLink = wholesaleHref.includes('#');
+  const isHashLink = wholesaleHref && wholesaleHref.includes('#');
 
   return (
     <div className="flex h-full flex-col justify-center gap-12">

@@ -61,13 +61,13 @@ export const getUpsInformations = async (shippingPayload) => {
     Shipment: {
       Shipper: {
         Address: {
-          PostalCode: '10001',
+          PostalCode: '92706',
           CountryCode: 'US',
         },
       },
       ShipFrom: {
         Address: {
-          PostalCode: '10001',
+          PostalCode: '92706',
           CountryCode: 'US',
         },
       },

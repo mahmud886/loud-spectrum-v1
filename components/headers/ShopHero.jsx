@@ -32,7 +32,7 @@ const ShopHero = ({ category }) => {
 
               const words = cleanDescription.split(' ');
 
-              const titleWordCount = 6;
+              const titleWordCount = 3;
               const titlePart = words.slice(0, titleWordCount).join(' ');
               const remainingPart = words.slice(titleWordCount).join(' ');
 
