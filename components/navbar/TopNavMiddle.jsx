@@ -9,19 +9,23 @@ const TopNavMiddle = () => {
 
   // Determine the wholesale link based on user status
   const getWholesaleLink = () => {
-    if (!isAuthenticated || !user) {
+    if (!isAuthenticated || !user || user.role === 'customer') {
       return '/wholesale-registration#wholesale-form';
     }
-
     if (user.role === 'wholesaler') {
-      if (user.status === 'Active') {
-        return '/wholesale-store';
-      } else if (user.status === 'Inactive') {
-        return '/wholesale-disapprove';
-      } else if (user.status === 'Waiting For Approve') {
-        return '/wholesale-under-review';
+      switch (user.status) {
+        case 'Active':
+          return '/wholesale-store';
+        case 'Inactive':
+          return '/wholesale-disapprove';
+        case 'Waiting For Approve':
+          return '/wholesale-under-review';
+        default:
+          return '/wholesale-registration#wholesale-form';
       }
     }
+    // Fallback (if user.role is unexpected)
+    return '/wholesale-registration#wholesale-form';
   };
 
   const wholesaleHref = getWholesaleLink();
