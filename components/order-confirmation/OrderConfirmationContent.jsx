@@ -12,6 +12,7 @@ import Confetti from 'react-confetti';
 
 const OrderConfirmationContent = ({ orderData }) => {
   const t = useTranslations('OrderConfirmation');
+  const tPaymentMethods = useTranslations('CheckoutPage.PaymentMethod');
   const [showConfetti, setShowConfetti] = useState(true);
   const [windowDimension, setWindowDimension] = useState({
     width: 0,
@@ -192,7 +193,7 @@ const OrderConfirmationContent = ({ orderData }) => {
   const getPaymentMethodName = (paymentType) => {
     switch (paymentType) {
       case 'COD':
-        return t('paymentMethods.COD');
+        return tPaymentMethods('methods.cash-on-delivery.name');
       case 'CARD':
         return t('paymentMethods.CARD');
       case 'ACH/WT':
