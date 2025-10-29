@@ -23,25 +23,33 @@ const ShopHero = ({ category }) => {
       <div className="absolute inset-0 z-10 container h-[610px] w-full overflow-hidden">
         <div className="relative z-10 flex h-[610px] w-full flex-col items-center justify-center gap-[40px] xl:h-full xl:w-[42%]">
           <div>
-            <h1 className="pb-5 font-sans text-[35px] leading-[120%] font-normal tracking-normal text-white xl:text-[60px]">
-              {/* {t('title')} */}
-              {category?.description ? category?.description?.slice(0, 40)?.replace(/^<p>|<\/p>$/g, '') : t('title')}
-            </h1>
-            <p className="font-mono text-[20px] leading-[120%] font-normal text-white">{t('description')}</p>
+            {(() => {
+              const rawDescription = category?.description || '';
+              const cleanDescription = rawDescription
+                .replace(/<\/?[^>]+(>|$)/g, '')
+                .replace(/\s+/g, ' ')
+                .trim();
+
+              const words = cleanDescription.split(' ');
+
+              const titleWordCount = 6;
+              const titlePart = words.slice(0, titleWordCount).join(' ');
+              const remainingPart = words.slice(titleWordCount).join(' ');
+
+              return (
+                <>
+                  <h1 className="pb-5 font-sans text-[35px] leading-[120%] font-normal tracking-normal text-white xl:text-[60px]">
+                    {titlePart || t('title')}
+                  </h1>
+                  <p className="font-mono text-[16px] leading-[120%] font-normal text-white md:text-[18px]">
+                    {remainingPart || t('description')}
+                  </p>
+                </>
+              );
+            })()}
           </div>
         </div>
       </div>
-
-      {/* <div className="absolute bottom-0 left-1/2 z-20 w-full -translate-x-1/2 xl:w-[1440px]">
-        <Image
-          src="/assets/images/hero-section-mask.png"
-          alt="Shop Hero"
-          width={1440}
-          height={195}
-          className="h-[50px] w-full object-cover xl:h-[195px] xl:w-[1440px]"
-        />
-      </div> */}
-
       <div className="absolute bottom-0 left-0 w-screen">
         <div className="w-full">
           <div className="flex h-[25px] lg:h-[100px] xl:h-[100px]">
