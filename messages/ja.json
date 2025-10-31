@@ -186,8 +186,8 @@
         "standardFlatRate": "標準配送 ($9.95)",
         "fedex2Day": "FedEx 2 Days",
         "upsGround": "UPS Ground",
-        "fedexAirHazardous": "FedEx Air Hazardous ($300)",
-        "fedexAirHazardousIntl": "FedEx Air Hazardous International ($350)",
+        "fedexAirHazardous": "FedEx Air ($300)",
+        "fedexAirHazardousIntl": "FedEx Air International ($350)",
         "internationalEconomy": "国際経済配送",
         "noOptionsAvailable": "配送オプションがありません"
       }

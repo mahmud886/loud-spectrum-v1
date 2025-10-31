@@ -26,6 +26,7 @@ const ProductGridCard = ({ product }) => {
   const pathname = usePathname();
   const cleanPath = pathname.replace(/^\/(en|fr|de|es|ja|ru)/, '').replace(/\/$/, '');
   const isShopPage = cleanPath.startsWith('/shop') || cleanPath.startsWith('/try-sample-pack');
+  const isSamplePack = product?.category?.name?.toLowerCase().includes('sample pack');
 
   return (
     <>
@@ -47,7 +48,9 @@ const ProductGridCard = ({ product }) => {
               transition={{ duration: 0.4 }}
             >
               <Image
-                className="h-[150px] w-auto object-cover xl:h-[254px] xl:w-[174px]"
+                className={`h-[150px] object-cover xl:h-[254px] ${
+                  isSamplePack ? 'w-full xl:w-full' : 'w-auto xl:w-[174px]'
+                }`}
                 // src="/assets/images/products/mother.png"
                 src={
                   product?.image

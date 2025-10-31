@@ -10,7 +10,7 @@ const ResetPasswordPage = async ({ params }) => {
     <div className="text-umbra-100 flex w-full items-center justify-center">
       <div className="bg-white py-24 xl:py-40">
         <div className="container mx-auto grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-20">
-          <div className="aspect-w-2 aspect-h-3 xl:aspect-w-3 xl:aspect-h-2">
+          <div className="aspect-w-2 aspect-h-3 xl:aspect-w-3 xl:aspect-h-2 hidden md:block">
             <div className="overflow-hidden">
               <Image
                 src="/assets/images/contact-image.png"

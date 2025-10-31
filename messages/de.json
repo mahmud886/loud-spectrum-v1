@@ -186,8 +186,8 @@
         "standardFlatRate": "Standard Flat Rate ($9.95)",
         "fedex2Day": "FedEx 2 Tag",
         "upsGround": "UPS Ground",
-        "fedexAirHazardous": "FedEx Air Hazardous ($300)",
-        "fedexAirHazardousIntl": "FedEx Air Hazardous International ($350)",
+        "fedexAirHazardous": "FedEx Air ($300)",
+        "fedexAirHazardousIntl": "FedEx Air International ($350)",
         "internationalEconomy": "International Economy",
         "noOptionsAvailable": "Keine Versandoptionen verfügbar"
       }

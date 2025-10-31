@@ -6,32 +6,31 @@ const Hero = () => {
   return (
     <>
       <div className="relative bg-black" style={{ zIndex: 1 }}>
+        <>
+          <div className="absolute top-0 left-1/2 z-0 h-[900px] w-[450px] -translate-x-1/2 transform overflow-hidden xl:hidden">
+            <video
+              src="/assets/homepage-hero-video-mobile.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="h-full w-full object-cover"
+              preload="auto"
+            />
+          </div>
+          <div className="absolute top-0 left-1/2 z-0 hidden h-[1100px] w-full -translate-x-1/2 transform overflow-hidden xl:block">
+            <video
+              src="/assets/homepage-hero-video.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="h-full w-full object-cover"
+              preload="auto"
+            />
+          </div>
+        </>
         <div className="relative container h-[1100px] overflow-hidden">
-          <>
-            <div className="absolute top-0 left-1/2 z-0 h-[900px] w-[450px] -translate-x-1/2 transform overflow-hidden xl:hidden">
-              <video
-                src="/assets/homepage-hero-video-mobile.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="h-full w-full object-cover"
-                preload="auto"
-              />
-            </div>
-            <div className="absolute top-0 left-1/2 z-0 hidden h-[1100px] w-[1440px] -translate-x-1/2 transform overflow-hidden xl:block">
-              <video
-                src="/assets/homepage-hero-video.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="h-full w-full object-cover"
-                preload="auto"
-              />
-            </div>
-          </>
-
           <div className="relative z-30 flex h-[900px] flex-col justify-end gap-6 md:w-[70%] md:items-center md:justify-center md:gap-[40px] xl:w-3/6 xl:items-center xl:justify-center xl:gap-[40px]">
             <div className="space-y-6 xl:space-y-0">
               <h1 className="font-sans text-[35px] leading-[120%] font-normal tracking-normal text-white md:pb-5 md:text-[46px] xl:pb-5 xl:text-[60px]">

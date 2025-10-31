@@ -458,13 +458,13 @@ const OrderConfirmationContent = ({ orderData }) => {
                             })()}
                           </Badge>
                         </div>
-                        <div className="rounded-full bg-red-100 px-2 py-1 text-center font-sans text-[10px] leading-[120%] font-normal text-red-700 capitalize">
+                        <div className="text-classic/50 rounded-full bg-red-100 px-2 py-1 text-center font-sans text-[10px] leading-[120%] font-normal capitalize">
                           {'Remarks'}: {item.product?.remarks || item?.remarks || 'N/A'}
                         </div>
                       </div>
                     </div>
                     <div className="text-right">
-                      <p className="font-semibold text-red-700">{formatPrice(item.total)}</p>
+                      <p className="text-classic/50 font-semibold">{formatPrice(item.total)}</p>
                     </div>
                   </div>
                 ))}

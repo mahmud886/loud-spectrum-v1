@@ -16,7 +16,7 @@ const ShopHero = ({ category }) => {
         alt={category?.name || 'Category Background'}
         width={1920}
         height={1291}
-        className="absolute top-0 left-1/2 z-0 h-full w-full -translate-x-1/2 object-cover xl:w-[1920px]"
+        className="absolute top-0 left-1/2 z-0 h-full w-full -translate-x-1/2 object-cover xl:w-full"
         priority
       />
 
