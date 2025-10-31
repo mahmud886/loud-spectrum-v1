@@ -208,6 +208,8 @@ const ShippingAddress = () => {
         </div>
       </div>
 
+      {/* Street Address */}
+
       <div className="grid grid-cols-1 gap-4 xl:grid-cols-2">
         {/* First Name */}
         <div>
@@ -264,7 +266,23 @@ const ShippingAddress = () => {
             required
           />
         </div>
+      </div>
 
+      <div>
+        <label className="input-label">{t('streetAddressLabel')}</label>
+        <Textarea
+          rows={3}
+          name="streetAddress"
+          value={shippingAddress?.streetAddress || ''}
+          onChange={handleShippingAddressChange}
+          placeholder={t('streetAddressPlaceholder')}
+          className="bg-umbra-5 placeholder:text-umbra-100 hover:bg-umbra-10 w-full rounded-[10px] px-4 py-2 font-mono text-[16px] leading-[140%] font-normal"
+          required
+        />
+      </div>
+
+      {/* City, Province, Postal Code, Country */}
+      <div className="grid grid-cols-1 gap-4 xl:grid-cols-2">
         {/* Country */}
         <div>
           <label className="input-label">{t('countryLabel')}</label>
@@ -288,7 +306,7 @@ const ShippingAddress = () => {
 
         {/* Province */}
         <div>
-          <label className="input-label">{t('provinceLabel')}</label>
+          <label className="input-label">{t('stateLabel')}</label>
           {provinces?.length > 0 ? (
             <Select
               value={shippingAddress?.province || ''}
@@ -296,7 +314,7 @@ const ShippingAddress = () => {
               required
             >
               <SelectTrigger className="bg-umbra-5 hover:bg-umbra-10 text-umbra-100 min-h-[48px] w-full rounded-[10px] px-4 py-2 font-mono text-[16px] font-normal">
-                <SelectValue placeholder={t('provincePlaceholder')} />
+                <SelectValue placeholder={t('statePlaceholder')} />
               </SelectTrigger>
               <SelectContent className="text-umbra-100 font-mono text-[16px]">
                 {provinces.map((province) => (
@@ -312,7 +330,7 @@ const ShippingAddress = () => {
               name="province"
               value={shippingAddress?.province || ''}
               onChange={handleShippingAddressChange}
-              placeholder={t('provincePlaceholder')}
+              placeholder={t('statePlaceholder')}
               className="input-field"
               required
             />
@@ -365,20 +383,6 @@ const ShippingAddress = () => {
             required
           />
         </div>
-      </div>
-
-      {/* Street Address */}
-      <div>
-        <label className="input-label">{t('streetAddressLabel')}</label>
-        <Textarea
-          rows={3}
-          name="streetAddress"
-          value={shippingAddress?.streetAddress || ''}
-          onChange={handleShippingAddressChange}
-          placeholder={t('streetAddressPlaceholder')}
-          className="bg-umbra-5 placeholder:text-umbra-100 hover:bg-umbra-10 w-full rounded-[10px] px-4 py-2 font-mono text-[16px] leading-[140%] font-normal"
-          required
-        />
       </div>
     </form>
   );

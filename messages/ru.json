@@ -103,6 +103,8 @@
       "countryPlaceholder": "Выберите страну",
       "provinceLabel": "Область/регион*",
       "provincePlaceholder": "Введите ваш регион",
+      "stateLabel": "Область/регион*",
+      "statePlaceholder": "Выберите ваш регион",
       "cityLabel": "Город*",
       "cityPlaceholder": "Введите ваш город",
       "postalCodeLabel": "Почтовый индекс*",

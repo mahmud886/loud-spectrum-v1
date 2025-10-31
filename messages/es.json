@@ -102,6 +102,8 @@
       "countryPlaceholder": "Seleccione su país",
       "provinceLabel": "Provincia*",
       "provincePlaceholder": "Ingrese su provincia",
+      "stateLabel": "Estado*",
+      "statePlaceholder": "Seleccione su estado",
       "cityLabel": "Ciudad*",
       "cityPlaceholder": "Ingrese su ciudad",
       "postalCodeLabel": "Código postal / ZIP*",
