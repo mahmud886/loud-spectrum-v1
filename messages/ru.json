@@ -164,6 +164,10 @@
     },
     "CourierSelection": {
       "label": "Выберите курьера*",
+      "standardFlatRate": {
+        "name": "Стандартная фиксированная ставка",
+        "description": "Доступная фиксированная доставка в пределах США"
+      },
       "fedex": {
         "name": "FedEx",
         "description": "Надежная доставка более чем в 220 странах"
@@ -185,6 +189,7 @@
         "overnight": "Доставка на следующий день (1 рабочий день)",
         "free": "Бесплатная доставка (10-15 рабочих дней)",
         "standardFlatRate": "Стандартная доставка ($9.95)",
+        "standardFlatRate799": "Стандартная фиксированная ставка ($7.99)",
         "fedex2Day": "FedEx 2 Days",
         "upsGround": "UPS Ground",
         "fedexAirHazardous": "FedEx Air ($300)",

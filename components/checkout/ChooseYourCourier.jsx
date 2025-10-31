@@ -34,9 +34,9 @@ import { getUpsInformations } from '@/services/getUpsInformations';
 import { toast } from 'sonner';
 
 // Shipping type constants based on flowchart logic
-const US_VOLUME_LESS_THAN_OR_EQUAL_TO_5ML = ['STANDARD_FLAT_RATE_9_95', 'FEDEX_2_DAY', 'UPS_GROUND'];
-const US_VOLUME_MORE_THAN_5ML_LESS_THAN_50ML = ['FEDEX_2_DAY', 'UPS_GROUND'];
-const US_VOLUME_MORE_THAN_OR_EQUAL_TO_50ML = ['FEDEX_AIR_HAZARDOUS_300', 'UPS_GROUND'];
+const US_VOLUME_LESS_THAN_OR_EQUAL_TO_5ML = ['STANDARD_FLAT_RATE_7_99', 'FEDEX_2_DAY', 'UPS_GROUND'];
+const US_VOLUME_MORE_THAN_5ML_LESS_THAN_50ML = ['STANDARD_FLAT_RATE_7_99', 'FEDEX_2_DAY', 'UPS_GROUND'];
+const US_VOLUME_MORE_THAN_OR_EQUAL_TO_50ML = ['STANDARD_FLAT_RATE_7_99', 'FEDEX_AIR_HAZARDOUS_300', 'UPS_GROUND'];
 const INTERNATIONAL_CUSTOMER = ['INTERNATIONAL_ECONOMY'];
 const INTERNATIONAL_WHOLESALER = ['FEDEX_AIR_HAZARDOUS_SHIPPING_SHIP_MANAGER_350'];
 
@@ -160,14 +160,21 @@ const ChooseYourCourier = () => {
         description: t('dhl.description'),
         image: '/assets/images/courier-logos/dhl-logo.png',
       },
+      {
+        value: 'standard-flat-rate',
+        name: t('standardFlatRate.name'),
+        description: t('standardFlatRate.description'),
+        // image: '/assets/images/courier-logos/fedex-logo.png', // Placeholder - can be updated with USPS/standard shipping logo
+      },
     ];
 
     // DHL is only available for international customers
-    if (!isInternational()) {
+    // Standard Flat Rate is only available for US customers
+    if (isInternational()) {
+      return allCouriers.filter((courier) => courier.value !== 'standard-flat-rate');
+    } else {
       return allCouriers.filter((courier) => courier.value !== 'dhl');
     }
-
-    return allCouriers;
   }, [t, shippingAddress?.country]);
 
   // Dynamic shipping types based on flowchart logic
@@ -209,7 +216,9 @@ const ChooseYourCourier = () => {
 
     // Filter shipping types based on selected courier
     const courierFilteredTypes = logicBasedTypes.filter((type) => {
-      if (selectedCourier === 'fedex') {
+      if (selectedCourier === 'standard-flat-rate') {
+        return type.includes('STANDARD_FLAT_RATE');
+      } else if (selectedCourier === 'fedex') {
         return (
           type.toLowerCase().includes('fedex') ||
           type.includes('STANDARD_FLAT_RATE') ||
@@ -227,9 +236,14 @@ const ChooseYourCourier = () => {
 
       switch (type) {
         case 'STANDARD_FLAT_RATE_9_95':
-          displayValue = 'standard-flat-rate';
+          displayValue = 'standard-flat-rate-9-95';
           label = t('ShippingType.standardFlatRate') || 'Standard Flat Rate ($9.95)';
           cost = 9.95;
+          break;
+        case 'STANDARD_FLAT_RATE_7_99':
+          displayValue = 'standard-flat-rate-7-99';
+          label = t('ShippingType.standardFlatRate799') || 'Standard Flat Rate ($7.99)';
+          cost = 7.99;
           break;
         case 'FEDEX_2_DAY':
           displayValue = 'fedex-2-day';
@@ -288,6 +302,11 @@ const ChooseYourCourier = () => {
     // Handle DHL products - price is already included in label
     if (selectedCourier === 'dhl' && shippingType.value.startsWith('dhl-')) {
       return ''; // Price is already shown in the label
+    }
+
+    // Handle standard flat rate types - show cost directly
+    if (shippingType.value === 'standard-flat-rate-7-99' || shippingType.value === 'standard-flat-rate-9-95') {
+      return shippingType.cost > 0 ? `$${shippingType.cost.toFixed(2)}` : '';
     }
 
     const apiEnabledTypes = ['fedex-2-day', 'international-economy', 'ups-ground'];
@@ -377,8 +396,13 @@ const ChooseYourCourier = () => {
     // Reset shipping type when courier changes as available options may change
     dispatch(setShippingType(''));
 
-    // Fetch DHL rates when DHL radio button is clicked
-    if (value === 'dhl') {
+    // Auto-select shipping type for standard-flat-rate courier
+    if (value === 'standard-flat-rate') {
+      // Auto-select STANDARD_FLAT_RATE_7_99 when standard-flat-rate courier is selected
+      dispatch(setShippingType('standard-flat-rate-7-99'));
+      dispatch(setShippingTypeFormatted('Standard Flat Rate ($7.99)'));
+      dispatch(setDynamicShippingCost(7.99));
+    } else if (value === 'dhl') {
       // Set initial DHL shipping type
       dispatch(setShippingType('dhl'));
       // Call DHL API only when user clicks DHL radio button
@@ -485,6 +509,21 @@ const ChooseYourCourier = () => {
       }
     }
 
+    // Handle standard flat rate shipping types
+    if (value === 'standard-flat-rate-7-99') {
+      dispatch(setShippingType(value));
+      dispatch(setShippingTypeFormatted('Standard Flat Rate ($7.99)'));
+      dispatch(setDynamicShippingCost(7.99));
+      return;
+    }
+
+    if (value === 'standard-flat-rate-9-95') {
+      dispatch(setShippingType(value));
+      dispatch(setShippingTypeFormatted('Standard Flat Rate ($9.95)'));
+      dispatch(setDynamicShippingCost(9.95));
+      return;
+    }
+
     // For non-DHL couriers, use the original value
     dispatch(setShippingType(value));
 
@@ -519,11 +558,22 @@ const ChooseYourCourier = () => {
         dispatch(setSelectedCourier(''));
         dispatch(setShippingType(''));
         setDhlProducts([]);
+      } else if (selectedCourier === 'standard-flat-rate' && isInternational()) {
+        // If standard-flat-rate was selected but destination is now international, reset courier
+        dispatch(setSelectedCourier(''));
+        dispatch(setShippingType(''));
       } else {
         // For other couriers or when address changes, reset shipping type only
         dispatch(setShippingType(''));
         if (selectedCourier === 'dhl') {
           setDhlProducts([]);
+        } else if (selectedCourier === 'standard-flat-rate') {
+          // Re-auto-select STANDARD_FLAT_RATE_7_99 when address changes but still US
+          if (!isInternational()) {
+            dispatch(setShippingType('standard-flat-rate-7-99'));
+            dispatch(setShippingTypeFormatted('Standard Flat Rate ($7.99)'));
+            dispatch(setDynamicShippingCost(7.99));
+          }
         }
       }
     }
@@ -576,9 +626,11 @@ const ChooseYourCourier = () => {
               <p className="text-umbra-60 text-left text-[12px]">{courier.description}</p>
             </div>
 
-            <div className="relative ml-auto h-12 w-20">
-              <Image src={courier.image} alt={courier.name} fill className="rounded-[10px] object-contain" />
-            </div>
+            {courier.image && (
+              <div className="relative ml-auto h-12 w-20">
+                <Image src={courier.image} alt={courier.name} fill className="rounded-[10px] object-contain" />
+              </div>
+            )}
           </RadioGroup.Item>
         ))}
       </RadioGroup.Root>

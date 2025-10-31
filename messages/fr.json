@@ -163,6 +163,10 @@
     },
     "CourierSelection": {
       "label": "Choisissez votre transporteur*",
+      "standardFlatRate": {
+        "name": "Tarif Forfaitaire Standard",
+        "description": "Expédition forfaitaire abordable aux États-Unis"
+      },
       "fedex": {
         "name": "FedEx",
         "description": "Livraison fiable dans plus de 220 pays"
@@ -184,6 +188,7 @@
         "overnight": "Livraison en 24 heures (1 jour ouvré)",
         "free": "Livraison gratuite (10-15 jours ouvrés)",
         "standardFlatRate": "Livraison standard ($9.95)",
+        "standardFlatRate799": "Tarif Forfaitaire Standard ($7.99)",
         "fedex2Day": "FedEx 2 Jours",
         "upsGround": "UPS Ground",
         "fedexAirHazardous": "FedEx Air ($300)",

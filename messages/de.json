@@ -163,6 +163,10 @@
     },
     "CourierSelection": {
       "label": "Wählen Sie Ihren Kurier*",
+      "standardFlatRate": {
+        "name": "Standardpauschale",
+        "description": "Günstige Pauschalsendung innerhalb der USA"
+      },
       "fedex": {
         "name": "FedEx",
         "description": "Zuverlässige Lieferung in über 220 Länder"
@@ -184,6 +188,7 @@
         "overnight": "Übernachtversand (1 Werktag)",
         "free": "Kostenloser Versand (10-15 Werktage)",
         "standardFlatRate": "Standard Flat Rate ($9.95)",
+        "standardFlatRate799": "Standardpauschale ($7.99)",
         "fedex2Day": "FedEx 2 Tag",
         "upsGround": "UPS Ground",
         "fedexAirHazardous": "FedEx Air ($300)",

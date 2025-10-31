@@ -163,6 +163,10 @@
     },
     "CourierSelection": {
       "label": "Choose Your Courier*",
+      "standardFlatRate": {
+        "name": "Standard Flat Rate",
+        "description": "Affordable flat rate shipping within the US"
+      },
       "fedex": {
         "name": "FedEx",
         "description": "Reliable delivery across 220+ countries"
@@ -184,6 +188,7 @@
         "overnight": "Overnight Shipping (1 business day)",
         "free": "Free Shipping (10-15 business days)",
         "standardFlatRate": "Standard Flat Rate ($9.95)",
+        "standardFlatRate799": "Standard Flat Rate ($7.99)",
         "fedex2Day": "FedEx 2 Days",
         "upsGround": "UPS Ground",
         "fedexAirHazardous": "FedEx Air ($300)",
