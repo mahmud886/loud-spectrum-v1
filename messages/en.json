@@ -368,6 +368,8 @@
       "orderStatus": "Order Status",
       "paymentStatus": "Payment Status",
       "orderType": "Order Type",
+      "typeRegular": "Retail",
+      "typeWholesale": "Wholesale",
       "paymentMethod": "Payment Method",
       "totalAmount": "Total Amount",
       "subtotal": "Subtotal",

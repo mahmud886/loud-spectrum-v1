@@ -19,8 +19,6 @@ const OrderConfirmationContent = ({ orderData }) => {
     height: 0,
   });
 
-  console.log('Order data:', orderData);
-
   // Handle window resize for confetti
   useEffect(() => {
     // Only run on client side
@@ -272,7 +270,9 @@ const OrderConfirmationContent = ({ orderData }) => {
           <div className="grid grid-cols-1 items-center justify-between gap-4 xl:grid-cols-3">
             <div className="text-center">
               <p className="text-sm font-medium text-gray-500">{t('fields.orderType')}</p>
-              <p className="text-sm font-semibold capitalize">{type}</p>
+              <p className="text-sm font-semibold capitalize">
+                {type === 'Regular' ? t('fields.typeRegular') : t('fields.typeWholesale')}
+              </p>
             </div>
             <div className="text-center">
               <p className="text-sm font-medium text-gray-500">{t('fields.paymentMethod')}</p>
@@ -330,26 +330,23 @@ const OrderConfirmationContent = ({ orderData }) => {
                           {item.product?.name || item.name || `Product ${index + 1}`}
                         </h4>
                         <div className="mt-1 flex items-center gap-4 text-sm text-gray-600">
-                          <span className="rounded-full bg-green-100 px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal text-green-600 capitalize">
+                          <span className="rounded-full bg-green-100 px-2 py-1 text-center font-sans text-[10px] leading-[120%] font-normal text-green-600 capitalize">
                             {t('fields.quantity')}: {item.quantity}
                           </span>
-                          <span className="rounded-full bg-red-100 px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal text-red-600 capitalize">
+                          <span className="rounded-full bg-red-100 px-2 py-1 text-center font-sans text-[10px] leading-[120%] font-normal text-red-600 capitalize">
                             {t('fields.sku')}: {item.product?.sku || 'N/A'}
-                          </span>
-                          <span className="rounded-full bg-green-100 px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal text-green-600 capitalize">
-                            {'Remarks'}: {item.product?.remarks || item?.remarks || 'N/A'}
                           </span>
                         </div>
                         <div className="mt-2 flex items-center gap-2">
                           <Badge
                             variant="default"
-                            className="text-umbra-100 rounded-full bg-green-100 px-2 py-1 font-sans text-[12px] leading-[120%] font-normal capitalize"
+                            className="text-umbra-100 rounded-full bg-green-100 px-2 py-1 font-sans text-[10px] leading-[120%] font-normal capitalize"
                           >
                             {t('fields.regular')}
                           </Badge>
                           <Badge
                             variant="default"
-                            className="bg-umbra-5 text-umbra-100 rounded-full px-2 py-1 font-sans text-[12px] leading-[120%] font-normal"
+                            className="bg-umbra-5 text-umbra-100 rounded-full px-2 py-1 font-sans text-[10px] leading-[120%] font-normal"
                           >
                             {(() => {
                               try {
@@ -364,7 +361,7 @@ const OrderConfirmationContent = ({ orderData }) => {
                           </Badge>
                           <Badge
                             variant="default"
-                            className="bg-classic/20 text-umbra-100 rounded-full px-2 py-1 font-sans text-[12px] leading-[120%] font-normal"
+                            className="bg-classic/20 text-umbra-100 rounded-full px-2 py-1 font-sans text-[10px] leading-[120%] font-normal"
                           >
                             {(() => {
                               try {
@@ -377,6 +374,9 @@ const OrderConfirmationContent = ({ orderData }) => {
                               }
                             })()}
                           </Badge>
+                        </div>
+                        <div className="mt-2 rounded-full bg-green-100 px-2 py-1 text-center font-sans text-[10px] leading-[120%] font-normal text-green-700 capitalize">
+                          {'Remarks'}: {item.product?.remarks || item?.remarks || 'N/A'}
                         </div>
                       </div>
                     </div>
@@ -422,32 +422,29 @@ const OrderConfirmationContent = ({ orderData }) => {
                           {item.product?.name || item.name || `Product ${index + 1}`}
                         </h4>
                         <div className="mt-1 flex items-center gap-2 text-sm text-gray-600">
-                          <span className="rounded-full bg-red-100 px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal text-red-600 capitalize">
+                          <span className="rounded-full bg-red-100 px-2 py-1 text-center font-sans text-[10px] leading-[120%] font-normal text-red-600 capitalize">
                             {t('fields.quantity')}: {item.quantity}
                           </span>
-                          <span className="rounded-full bg-red-100 px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal text-red-600 capitalize">
+                          <span className="rounded-full bg-red-100 px-2 py-1 text-center font-sans text-[10px] leading-[120%] font-normal text-red-600 capitalize">
                             {t('fields.sku')}: {item.product?.sku || 'N/A'}
-                          </span>
-                          <span className="rounded-full bg-red-100 px-2 py-1 text-center font-sans text-[12px] leading-[120%] font-normal text-red-600 capitalize">
-                            {'Remarks'}: {item.product?.remarks || item?.remarks || 'N/A'}
                           </span>
                         </div>
                         <div className="mt-2 flex items-center gap-2">
                           <Badge
                             variant="default"
-                            className="text-umbra-100 rounded-full bg-red-100 px-2 py-1 font-sans text-[12px] leading-[120%] font-normal capitalize"
+                            className="text-umbra-100 rounded-full bg-red-100 px-2 py-1 font-sans text-[10px] leading-[120%] font-normal capitalize"
                           >
                             {t('fields.wholesale')}
                           </Badge>
                           <Badge
                             variant="default"
-                            className="bg-umbra-5 text-umbra-100 rounded-full px-2 py-1 font-sans text-[12px] leading-[120%] font-normal capitalize"
+                            className="bg-umbra-5 text-umbra-100 rounded-full px-2 py-1 font-sans text-[10px] leading-[120%] font-normal capitalize"
                           >
                             {item?.selectedVolume || item?.volume} ml
                           </Badge>
                           <Badge
                             variant="default"
-                            className="bg-classic/20 text-umbra-100 rounded-full px-2 py-1 font-sans text-[12px] leading-[120%] font-normal"
+                            className="bg-classic/20 text-umbra-100 rounded-full px-2 py-1 font-sans text-[10px] leading-[120%] font-normal"
                           >
                             {(() => {
                               try {
@@ -460,6 +457,9 @@ const OrderConfirmationContent = ({ orderData }) => {
                               }
                             })()}
                           </Badge>
+                        </div>
+                        <div className="rounded-full bg-red-100 px-2 py-1 text-center font-sans text-[10px] leading-[120%] font-normal text-red-700 capitalize">
+                          {'Remarks'}: {item.product?.remarks || item?.remarks || 'N/A'}
                         </div>
                       </div>
                     </div>

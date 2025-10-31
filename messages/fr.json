@@ -364,6 +364,8 @@
       "orderStatus": "Statut de la commande",
       "paymentStatus": "Statut du paiement",
       "orderType": "Type de commande",
+      "typeRegular": "Vente au détail",
+      "typeWholesale": "Gros",
       "paymentMethod": "Méthode de paiement",
       "totalAmount": "Montant total",
       "subtotal": "Sous-total",

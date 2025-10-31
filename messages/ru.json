@@ -365,6 +365,8 @@
       "orderStatus": "Статус заказа",
       "paymentStatus": "Статус платежа",
       "orderType": "Тип заказа",
+      "typeRegular": "Розничный",
+      "typeWholesale": "Оптовый",
       "paymentMethod": "Способ оплаты",
       "totalAmount": "Общая сумма",
       "subtotal": "Промежуточный итог",

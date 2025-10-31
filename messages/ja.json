@@ -364,6 +364,8 @@
       "orderStatus": "注文ステータス",
       "paymentStatus": "支払いステータス",
       "orderType": "注文タイプ",
+      "typeRegular": "小売",
+      "typeWholesale": "卸売",
       "paymentMethod": "支払い方法",
       "totalAmount": "合計金額",
       "subtotal": "小計",

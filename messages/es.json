@@ -363,6 +363,8 @@
       "orderStatus": "Estado del pedido",
       "paymentStatus": "Estado del pago",
       "orderType": "Tipo de pedido",
+      "typeRegular": "Venta al por menor",
+      "typeWholesale": "Al por mayor",
       "paymentMethod": "Método de pago",
       "totalAmount": "Monto total",
       "subtotal": "Subtotal",

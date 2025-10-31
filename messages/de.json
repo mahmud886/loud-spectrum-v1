@@ -364,6 +364,8 @@
       "orderStatus": "Bestellstatus",
       "paymentStatus": "Zahlungsstatus",
       "orderType": "Bestelltyp",
+      "typeRegular": "Einzelhandel",
+      "typeWholesale": "Großhandel",
       "paymentMethod": "Zahlungsmethode",
       "totalAmount": "Gesamtbetrag",
       "subtotal": "Zwischensumme",
