@@ -2,7 +2,7 @@
 
 import { authenticateUser } from '@/app/actions/auth';
 import { Checkbox } from '@/components/ui/checkbox';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { ComboBox } from '@/components/ui/combobox';
 import { useRouter } from '@/i18n/navigation';
 import { selectIsAuthenticated, setCredentials } from '@/lib/store/slices/authSlice';
 import { clearCheckoutOnLogin } from '@/lib/store/slices/checkoutSlice';
@@ -89,6 +89,7 @@ const WholesaleRegistrationForm = ({ id }) => {
         password: validatedData.password,
         phone_number: validatedData.phone_number,
         username: validatedData.username,
+        country: validatedData.country,
         role: 'wholesaler',
         status: 'Active',
       };
@@ -253,29 +254,16 @@ const WholesaleRegistrationForm = ({ id }) => {
                 {errors.website && <p className="mt-1 text-sm text-red-500">{errors.website}</p>}
               </div>
               <div className="w-full">
-                <Select
+                <ComboBox
                   name="country"
+                  options={countries}
                   value={selectedCountry}
                   onValueChange={(value) => setSelectedCountry(value)}
-                  required
-                >
-                  <SelectTrigger
-                    className={`bg-umbra-5 hover:bg-umbra-10 text-umbra-100 min-h-[48px] w-full rounded-[10px] px-4 py-2 font-mono text-[16px] font-normal ${
-                      errors.country ? 'border-red-500' : ''
-                    }`}
-                  >
-                    <SelectValue placeholder={`${t('wholesaleRegistrationForm.country')} *`} />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {countries.map((country) => (
-                      <SelectItem key={country.value} value={country.value}>
-                        {country.label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                {/* Hidden input for form submission */}
-                <input type="hidden" name="country" value={selectedCountry} />
+                  placeholder={`${t('wholesaleRegistrationForm.country')} *`}
+                  searchable={true}
+                  required={true}
+                  triggerClassName={errors.country ? 'border border-red-500' : ''}
+                />
                 {errors.country && <p className="mt-1 text-sm text-red-500">{errors.country}</p>}
               </div>
             </div>
