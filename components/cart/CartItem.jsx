@@ -8,7 +8,7 @@ const CartItem = ({ item }) => {
   const dispatch = useDispatch();
   return (
     <div
-      className={`flex items-center gap-4 rounded-md border-1 py-2.5 pr-5 pl-2.5 ${
+      className={`flex items-center gap-2 rounded-md border-1 py-2.5 pr-5 pl-2.5 md:gap-4 ${
         item?.isRegular ? 'border-alive/50' : item?.isWholesale ? 'border-red-100' : 'border-umbra-10'
       }`}
     >
@@ -21,7 +21,7 @@ const CartItem = ({ item }) => {
         alt={item?.name}
         width={96}
         height={96}
-        className="h-[100px] w-[80px] rounded"
+        className="h-[80px] w-[60px] rounded object-cover sm:h-[100px] sm:w-[80px] xl:h-[100px] xl:w-[100px]"
       />
       <div className="flex w-full flex-col justify-between gap-2">
         <div className="flex flex-col items-start justify-between gap-1">
@@ -80,7 +80,7 @@ const CartItem = ({ item }) => {
             >
               {/* Minus Button */}
               <button
-                className={`group text-umbra-100 hover:text-white-100 flex items-center justify-center px-2 py-1 transition hover:bg-red-500 ${
+                className={`group text-umbra-100 hover:text-white-100 flex items-center justify-center px-2 py-1 text-[12px] leading-[120%] font-normal transition hover:bg-red-500 sm:text-[14px] md:text-[16px] md:font-medium ${
                   item?.isWholesale ? 'cursor-not-allowed' : 'cursor-pointer'
                 }`}
                 disabled={item?.isWholesale}
@@ -97,17 +97,17 @@ const CartItem = ({ item }) => {
                   }
                 }}
               >
-                <MinusIcon size={16} className="text-umbra-100 group-hover:text-white-100 transition" />
+                <MinusIcon size={14} className="text-umbra-100 group-hover:text-white-100 transition sm:size-4" />
               </button>
 
               {/* Quantity */}
-              <div className="text-umbra-100 flex items-center justify-center px-3 py-1 font-medium">
+              <div className="text-umbra-100 flex items-center justify-center px-2 py-1 text-[12px] leading-[120%] font-normal sm:text-[14px] md:px-3 md:text-[16px] md:font-medium">
                 {item.quantity}
               </div>
 
               {/* Plus Button */}
               <button
-                className={`group text-umbra-100 hover:text-white-100 hover:bg-alive flex items-center justify-center px-2 py-1 transition ${
+                className={`group text-umbra-100 hover:text-white-100 hover:bg-alive flex items-center justify-center px-2 py-1 text-[12px] leading-[120%] font-normal transition sm:text-[14px] md:text-[16px] md:font-medium ${
                   item?.isWholesale ? 'cursor-not-allowed' : 'cursor-pointer'
                 }`}
                 disabled={item?.isWholesale}
@@ -124,13 +124,13 @@ const CartItem = ({ item }) => {
                   }
                 }}
               >
-                <PlusIcon size={16} className="text-umbra-100 group-hover:text-white-100 transition" />
+                <PlusIcon size={14} className="text-umbra-100 group-hover:text-white-100 transition sm:size-4" />
               </button>
             </div>
 
             {/* Remove Button */}
             <button
-              className="group text-umbra-100 hover:text-white-100 bg-umbra-5 flex cursor-pointer items-center justify-center rounded-full p-2 transition hover:bg-red-500"
+              className="group text-umbra-100 hover:text-white-100 bg-umbra-5 flex cursor-pointer items-center justify-center rounded-full p-1.5 text-[12px] leading-[120%] font-normal transition hover:bg-red-500 sm:p-2 sm:text-[14px] md:text-[16px] md:font-medium"
               onClick={() =>
                 dispatch(
                   removeFromCart({
@@ -141,11 +141,11 @@ const CartItem = ({ item }) => {
                 )
               }
             >
-              <TrashIcon size={16} className="text-umbra-100 group-hover:text-white-100 transition" />
+              <TrashIcon size={14} className="text-umbra-100 group-hover:text-white-100 transition sm:size-4" />
             </button>
           </div>
           <div>
-            <p className="text-umbra-100 font-sans text-[18px] leading-[120%] font-normal">
+            <p className="text-umbra-100 font-sans text-[18px] leading-[120%] font-normal sm:text-[18px]">
               ${item?.totalPrice?.toFixed(2)}
             </p>
           </div>
