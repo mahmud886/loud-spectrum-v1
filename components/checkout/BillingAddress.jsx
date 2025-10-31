@@ -1,6 +1,6 @@
 'use client';
 
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { ComboBox } from '@/components/ui/combobox';
 import { Textarea } from '@/components/ui/textarea';
 import { selectBillingAddress, updateBillingAddress } from '@/lib/store/slices/checkoutSlice';
 import { getCities, getCountries, getStates } from '@/services/location-services';
@@ -173,44 +173,30 @@ const BillingAddress = () => {
         {/* Country */}
         <div>
           <label className="input-label">{t('countryLabel')}</label>
-          <Select
+          <ComboBox
+            name="country"
+            options={countries}
             value={billingAddress?.country || ''}
             onValueChange={(value) => handleCountrySelectChange('country', value)}
-            required
-          >
-            <SelectTrigger className="bg-umbra-5 hover:bg-umbra-10 text-umbra-100 min-h-[48px] w-full rounded-[10px] px-4 py-2 font-mono text-[16px] font-normal">
-              <SelectValue placeholder={t('countryPlaceholder')} />
-            </SelectTrigger>
-            <SelectContent className="text-umbra-100 font-mono text-[16px]">
-              {countries.map((country) => (
-                <SelectItem key={country.value} value={country.value}>
-                  {country.label}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+            placeholder={t('countryPlaceholder')}
+            searchable={true}
+            required={true}
+          />
         </div>
 
         {/* Province */}
         <div>
           <label className="input-label">{t('stateLabel')}</label>
           {provinces?.length > 0 ? (
-            <Select
+            <ComboBox
+              name="province"
+              options={provinces}
               value={billingAddress?.province || ''}
               onValueChange={(value) => handleProvinceSelectChange('province', value)}
-              required
-            >
-              <SelectTrigger className="bg-umbra-5 hover:bg-umbra-10 text-umbra-100 min-h-[48px] w-full rounded-[10px] px-4 py-2 font-mono text-[16px] font-normal">
-                <SelectValue placeholder={t('statePlaceholder')} />
-              </SelectTrigger>
-              <SelectContent className="text-umbra-100 font-mono text-[16px]">
-                {provinces.map((province) => (
-                  <SelectItem key={province.value} value={province.value}>
-                    {province.label}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+              placeholder={t('statePlaceholder')}
+              searchable={true}
+              required={true}
+            />
           ) : (
             <input
               type="text"
@@ -228,22 +214,15 @@ const BillingAddress = () => {
         <div>
           <label className="input-label">{t('cityLabel')}</label>
           {cities?.length > 0 ? (
-            <Select
+            <ComboBox
+              name="city"
+              options={cities}
               value={billingAddress?.city || ''}
               onValueChange={(value) => handleCitySelectChange('city', value)}
-              required
-            >
-              <SelectTrigger className="bg-umbra-5 hover:bg-umbra-10 text-umbra-100 min-h-[48px] w-full rounded-[10px] px-4 py-2 font-mono text-[16px] font-normal">
-                <SelectValue placeholder={t('cityPlaceholder')} />
-              </SelectTrigger>
-              <SelectContent className="text-umbra-100 font-mono text-[16px]">
-                {cities.map((city) => (
-                  <SelectItem key={city.value} value={city.value}>
-                    {city.label}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+              placeholder={t('cityPlaceholder')}
+              searchable={true}
+              required={true}
+            />
           ) : (
             <input
               type="text"
