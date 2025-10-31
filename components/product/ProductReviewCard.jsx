@@ -24,7 +24,7 @@ const ProductReviewCard = ({ review }) => {
         </div>
         <div>
           <p className="text-umbra-100 font-mono text-[20px] leading-[140%] font-normal">{name}</p>
-          <p className="text-umbra-40 font-mono text-[20px] leading-[140%] font-normal">{date}</p>
+          {/* <p className="text-umbra-40 font-mono text-[20px] leading-[140%] font-normal">{date}</p> */}
         </div>
       </div>
     </div>
