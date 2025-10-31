@@ -1,4 +1,3 @@
-import OrderConfirmationEmail from '@/components/emails/OrderConfirmationEmail';
 import OrderNotificationEmail from '@/components/emails/OrderNotificationEmail';
 import { render } from '@react-email/components';
 import { NextResponse } from 'next/server';
@@ -8,100 +7,61 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request) {
   try {
-    const { orderData, recipientEmail, recipientName } = await request.json();
-
-    // console.log('orderDataOrder', orderData);
-    // console.log('recipientEmailOrder', recipientEmail);
-    // console.log('recipientNameOrder', recipientName);
+    const { orderData } = await request.json();
 
     // Validate required fields
-    if (!orderData || !recipientEmail) {
-      return NextResponse.json({ error: 'Order data and recipient email are required' }, { status: 400 });
+    if (!orderData) {
+      return NextResponse.json({ error: 'Order data is required' }, { status: 400 });
     }
 
     // Render the email component to HTML
     const emailHtml = await render(
-      OrderConfirmationEmail({
-        orderData: {
-          ...orderData,
-          customer_name: recipientName || orderData.customer_name || 'Customer',
-        },
+      OrderNotificationEmail({
+        orderData,
       }),
     );
 
     // Send the email using Resend
     const { data, error } = await resend.emails.send({
       from: process.env.RESEND_FROM_EMAIL || 'loudspectrum.com <noreply@loudspectrum.com>',
-      // to: [recipientEmail],
-      to: process.env.NODE_ENV === 'production' ? [recipientEmail] : ['web.amex19@gmail.com'],
-      // cc: ['iqbal886mahmud@gmail.com', 'wafafatima66@gmail.com', 'web.amex19@gmail.com'],
-      subject: `Order Confirmation - ${orderData.code}`,
+      to:
+        process.env.NODE_ENV === 'production'
+          ? ['order@loudspectrum.com']
+          : ['wafafatima66@gmail.com', 'web.amex19@gmail.com'],
+      subject: `You have received an order - ${orderData.code}`,
       html: emailHtml,
       // Optional: Add plain text version for better compatibility
       text: `
-        Order Confirmation
+        New Order Received - Loud Spectrum
 
-        Thank you for your order, ${recipientName || orderData.customer_name || 'Customer'}!
+        You have received a new order!
 
         Order Details:
         - Order Number: ${orderData.code}
+        - Customer: ${orderData.customer_name}
         - Total: $${parseFloat(orderData.total || 0).toFixed(2)}
         - Status: ${orderData.order_status}
         - Payment: ${orderData.payment_status}
 
-        We'll send you a shipping confirmation once your order is dispatched.
-
-        Thank you for choosing Loud Spectrum!
+        Please review and process this order.
       `,
     });
 
     if (error) {
-      console.error('Failed to send email:', error);
+      console.error('Failed to send order notification email:', error);
       return NextResponse.json({ error: 'Failed to send email', details: error }, { status: 500 });
-    }
-
-    // Send notification email to client
-    try {
-      const notificationHtml = await render(OrderNotificationEmail({ orderData }));
-
-      await resend.emails.send({
-        from: process.env.RESEND_FROM_EMAIL || 'loudspectrum.com <noreply@loudspectrum.com>',
-        to:
-          process.env.NODE_ENV === 'production'
-            ? ['order@loudspectrum.com']
-            : ['wafafatima66@gmail.com', 'web.amex19@gmail.com'],
-        subject: `You have received an order - ${orderData.code}`,
-        html: notificationHtml,
-        text: `
-          New Order Received - Loud Spectrum
-
-          You have received a new order!
-
-          Order Details:
-          - Order Number: ${orderData.code}
-          - Customer: ${orderData.customer_name}
-          - Total: $${parseFloat(orderData.total || 0).toFixed(2)}
-          - Status: ${orderData.order_status}
-          - Payment: ${orderData.payment_status}
-
-          Please review and process this order.
-        `,
-      });
-    } catch (notificationError) {
-      console.error('Error sending order notification:', notificationError);
-      // Don't fail the main request if notification fails
     }
 
     return NextResponse.json(
       {
         success: true,
-        message: 'Email sent successfully',
+        message: 'Order notification email sent successfully',
         emailId: data?.id,
       },
       { status: 200 },
     );
   } catch (error) {
-    console.error('Error sending order confirmation email:', error);
+    console.error('Error sending order notification email:', error);
     return NextResponse.json({ error: 'Internal server error', details: error.message }, { status: 500 });
   }
 }
@@ -123,7 +83,7 @@ export async function GET() {
           },
           quantity: 2,
           selectedVolume: 10,
-          attribute: JSON.stringify({ flavor: 'Citrus' }),
+          attribute: JSON.stringify({ flavor: 'Citrus', volume: '10ml' }),
           total: 29.99,
         },
       ],
@@ -146,9 +106,9 @@ export async function GET() {
       discount_amount: 5.0,
       total: 150.38,
       payment_type: 'CARD',
-      payment_status: 'paid',
+      payment_status: 'Paid',
       order_status: 'processing',
-      type: 'regular',
+      type: 'Regular',
       shipping_details: {
         first_name: 'John',
         last_name: 'Doe',
@@ -176,7 +136,7 @@ export async function GET() {
 
     // Render the email component to HTML for preview
     const emailHtml = await render(
-      OrderConfirmationEmail({
+      OrderNotificationEmail({
         orderData: sampleOrderData,
       }),
     );

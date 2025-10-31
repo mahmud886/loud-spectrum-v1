@@ -26,7 +26,7 @@ export async function POST(request) {
       from: process.env.RESEND_FROM_EMAIL || 'loudspectrum.com <noreply@loudspectrum.com>',
       to:
         process.env.NODE_ENV === 'production'
-          ? ['hi@loudspectrum.com']
+          ? ['order@loudspectrum.com', 'hi@loudspectrum.com']
           : ['wafafatima66@gmail.com', 'web.amex19@gmail.com'],
       subject: `Suspicious Order from Loud Spectrum – Mismatched Addresses (Order #${orderData.code})`,
       html: emailHtml,
