@@ -835,6 +835,7 @@
       "username_error": "ユーザー名は3文字以上必要です",
       "password_error": "パスワードは6文字以上必要です",
       "website_error": "ウェブサイトが無効です",
+      "country_error": "国が必要です",
       "confirm_password_error": "パスワードは6文字以上必要です",
       "agreeTerms": "利用規約に同意します",
       "waitingForApproval": {

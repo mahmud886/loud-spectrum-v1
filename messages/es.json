@@ -834,6 +834,7 @@
       "username_error": "Nombre de usuario debe tener al menos 3 caracteres",
       "password_error": "Contraseña debe tener al menos 6 caracteres",
       "website_error": "Sitio web inválido",
+      "country_error": "El país es obligatorio",
       "confirm_password_error": "Contraseña debe tener al menos 6 caracteres",
       "agreeTerms": "Acepto los términos y condiciones",
       "waitingForApproval": {

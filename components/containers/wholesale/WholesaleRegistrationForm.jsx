@@ -29,7 +29,7 @@ const WholesaleRegistrationForm = ({ id }) => {
     username: z.string().min(3, t('wholesaleRegistrationForm.username_error')),
     company: z.string().optional(),
     website: z.string().url(t('wholesaleRegistrationForm.website_error')).optional().or(z.literal('')),
-    country: z.string().optional(),
+    country: z.string().min(1, t('wholesaleRegistrationForm.country_error')),
     password: z.string().min(6, t('wholesaleRegistrationForm.password_error')),
     terms: z.boolean().refine((val) => val === true, {
       message: t('wholesaleRegistrationForm.agree_terms_error'),
@@ -233,8 +233,9 @@ const WholesaleRegistrationForm = ({ id }) => {
                 <input
                   name="country"
                   type="text"
-                  placeholder={`${t('wholesaleRegistrationForm.country')} (${t('wholesaleRegistrationForm.optional')})`}
+                  placeholder={`${t('wholesaleRegistrationForm.country')} *`}
                   className={`input-field ${errors.country ? 'border-red-500' : ''}`}
+                  required
                 />
                 {errors.country && <p className="mt-1 text-sm text-red-500">{errors.country}</p>}
               </div>

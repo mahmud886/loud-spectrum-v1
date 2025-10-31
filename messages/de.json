@@ -834,6 +834,7 @@
       "username_error": "Benutzername muss mindestens 3 Zeichen lang sein",
       "password_error": "Passwort muss mindestens 6 Zeichen lang sein",
       "website_error": "Ungültige Webseite",
+      "country_error": "Land ist erforderlich",
       "confirm_password_error": "Passwort muss mindestens 6 Zeichen lang sein",
       "agreeTerms": "Ich stimme den Nutzungsbedingungen zu",
       "waitingForApproval": {

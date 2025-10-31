@@ -840,6 +840,7 @@
       "username_error": "Username must be at least 3 characters",
       "password_error": "Password must be at least 6 characters",
       "website_error": "Invalid website URL",
+      "country_error": "Country is required",
       "confirm_password_error": "Confirm password must be at least 6 characters",
       "agreeTerms": "I agree to the terms and conditions",
       "waitingForApproval": {

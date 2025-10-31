@@ -835,6 +835,7 @@
       "username_error": "Nom d'utilisateur doit contenir au moins 3 caractères",
       "password_error": "Mot de passe doit contenir au moins 6 caractères",
       "website_error": "Site web invalide",
+      "country_error": "Le pays est requis",
       "confirm_password_error": "Mot de passe doit contenir au moins 6 caractères",
       "agreeTerms": "J'accepte les conditions d'utilisation",
       "waitingForApproval": {
