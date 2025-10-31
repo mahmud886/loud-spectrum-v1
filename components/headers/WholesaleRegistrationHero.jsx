@@ -1,3 +1,4 @@
+import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
@@ -10,9 +11,11 @@ const WholesaleRegistrationHero = () => {
           <h2 className="text-umbra-100 font-sans text-[35px] leading-[120%] font-normal xl:text-[60px]">
             {t('wholesaleRegistrationHero.title')}
           </h2>
-          <button className="main-button-black rounded-full px-6 py-2">
-            {t('wholesaleRegistrationHero.registerButton')}
-          </button>
+          <Link href="/wholesale-registration#wholesale-form">
+            <button className="main-button-black rounded-full px-6 py-2">
+              {t('wholesaleRegistrationHero.registerButton')}
+            </button>
+          </Link>
         </div>
       </div>
       <div className="space-y-20 py-16">
