@@ -5,7 +5,7 @@ import GuestUserForm from '@/components/checkout/GuestUserForm';
 import ShippingAddress from '@/components/checkout/ShippingAddress';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { useUserStatus } from '@/hooks/useUserStatus';
-import { selectCurrentUser } from '@/lib/store/slices/authSlice';
+import { selectCurrentUser, selectIsAuthenticated } from '@/lib/store/slices/authSlice';
 import { selectBillingAddress, setSameAsShipping } from '@/lib/store/slices/checkoutSlice';
 import { useTranslations } from 'next-intl';
 import { useDispatch, useSelector } from 'react-redux';
@@ -13,7 +13,8 @@ import { useDispatch, useSelector } from 'react-redux';
 const ShippingAndBillingAddress = () => {
   const billingAddress = useSelector(selectBillingAddress);
   const currentUser = useSelector(selectCurrentUser);
-  const { userStatus } = useUserStatus();
+  const isAuthenticated = useSelector(selectIsAuthenticated);
+  const { userStatus, loading: userStatusLoading } = useUserStatus();
   const dispatch = useDispatch();
   const t = useTranslations('CheckoutPage.ShippingAndBillingAddress');
 
@@ -23,13 +24,15 @@ const ShippingAndBillingAddress = () => {
     dispatch(setSameAsShipping(value === 'same'));
   };
 
-  // Show guest form if user is not logged in or not Active status
-  const isUserActive = currentUser?.id && userStatus?.status === 'Active';
+  // Determine if user is active based on userStatus
+  const isUserActive = userStatus?.status === 'Active';
+  const shouldShowGuestForm =
+    !userStatusLoading && (!isAuthenticated || (isAuthenticated && userStatus !== null && !isUserActive));
 
   return (
     <div className="space-y-8 p-4">
       {/* Show guest user form if not logged in or not active status */}
-      {!isUserActive && <GuestUserForm />}
+      {shouldShowGuestForm && <GuestUserForm />}
 
       <ShippingAddress />
 
