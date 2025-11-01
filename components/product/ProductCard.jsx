@@ -33,6 +33,8 @@ const ProductCard = ({ product }) => {
 
   const isShopPage =
     cleanPath.startsWith('/shop') || cleanPath.startsWith('/try-sample-pack') || cleanPath.startsWith('/account');
+
+  const isSamplePack = product?.category?.name?.toLowerCase().includes('sample pack');
   return (
     <>
       <motion.div initial="rest" whileHover="hover" animate="rest" className="cursor-pointer">
@@ -53,7 +55,12 @@ const ProductCard = ({ product }) => {
               transition={{ duration: 0.4 }}
             >
               <Image
-                className="h-[320px] w-auto object-cover xl:h-[254px] xl:w-[174px]"
+                className={clsx(
+                  'object-cover',
+                  isSamplePack
+                    ? 'h-[254px] w-[304px] xl:h-[254px] xl:w-[304px]'
+                    : 'h-[254px] w-[174px] xl:h-[254px] xl:w-[174px]',
+                )}
                 src={
                   product?.image
                     ? `${process.env.NEXT_PUBLIC_API_URL}/public${product.image}`

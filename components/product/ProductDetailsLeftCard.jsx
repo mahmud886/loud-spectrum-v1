@@ -124,7 +124,7 @@ const ProductDetailsLeftCard = ({ product }) => {
                     {product?.category?.name}
                   </button>
                 )}
-                {product?.product_type && (
+                {product?.product_type && product?.product_type !== 'undefined' && (
                   <button
                     className={`${getCategoryColorClasses(product?.product_type)} rounded-[3px] border-1 px-2 text-[12px] font-normal capitalize`}
                   >
