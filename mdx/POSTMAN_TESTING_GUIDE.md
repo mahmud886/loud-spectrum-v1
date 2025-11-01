@@ -3,10 +3,12 @@
 ## Quick Setup
 
 ### Base URL
+
 - **Local Development:** `http://localhost:3000`
 - **Production:** `https://your-domain.com`
 
 ### API Endpoint
+
 ```
 /api/check-referrer
 ```
@@ -20,10 +22,12 @@
 1. **Open Postman** and click **New** → **HTTP Request**
 
 2. **Set Request Type:**
+
    - Method: `GET`
    - URL: `http://localhost:3000/api/check-referrer`
 
 3. **Add Query Parameter:**
+
    - Click on the **Params** tab
    - Add a new parameter:
      - **Key:** `url`
@@ -40,6 +44,7 @@ GET http://localhost:3000/api/check-referrer?url=https://medicalterpenes.com
 ```
 
 **Params Tab:**
+
 ```
 Key: url          Value: https://medicalterpenes.com    ✅
 ```
@@ -80,20 +85,24 @@ http://localhost:3000/api/check-referrer?url=https://example.com
 1. **Open Postman** and click **New** → **HTTP Request**
 
 2. **Set Request Type:**
+
    - Method: `POST`
    - URL: `http://localhost:3000/api/check-referrer`
 
 3. **Set Headers:**
+
    - Click on the **Headers** tab
    - Add header:
      - **Key:** `Content-Type`
      - **Value:** `application/json`
 
 4. **Set Body:**
+
    - Click on the **Body** tab
    - Select **raw** radio button
    - Select **JSON** from the dropdown (on the right)
    - Enter this JSON:
+
    ```json
    {
      "url": "https://medicalterpenes.com"
@@ -110,14 +119,17 @@ POST http://localhost:3000/api/check-referrer
 ```
 
 **Headers Tab:**
+
 ```
 Content-Type: application/json
 ```
 
 **Body Tab:**
+
 - ✅ raw
 - Dropdown: JSON
 - Body content:
+
 ```json
 {
   "url": "https://medicalterpenes.com"
@@ -147,30 +159,39 @@ or
 ## Complete Test Collection
 
 ### Test Case 1: Old Website - Medical Terpenes
+
 ```
 GET http://localhost:3000/api/check-referrer?url=https://medicalterpenes.com
 ```
+
 **Expected:** `isFromOldWebsite: true`
 
 ### Test Case 2: Old Website - WWW Version
+
 ```
 GET http://localhost:3000/api/check-referrer?url=https://www.medicalterpenes.com/page
 ```
+
 **Expected:** `isFromOldWebsite: true`, `matchedDomain: "www.medicalterpenes.com"`
 
 ### Test Case 3: New Website
+
 ```
 GET http://localhost:3000/api/check-referrer?url=https://loudspectrum.com
 ```
+
 **Expected:** `isFromNewWebsite: true`, `isFromOldWebsite: false`
 
 ### Test Case 4: Other Website
+
 ```
 GET http://localhost:3000/api/check-referrer?url=https://google.com
 ```
+
 **Expected:** `isFromOldWebsite: false`, `isFromNewWebsite: false`
 
 ### Test Case 5: POST Request
+
 ```
 POST http://localhost:3000/api/check-referrer
 Body (JSON):
@@ -178,12 +199,15 @@ Body (JSON):
   "url": "https://medicalterpenes.com"
 }
 ```
+
 **Expected:** `isFromOldWebsite: true`
 
 ### Test Case 6: Missing URL (Error)
+
 ```
 GET http://localhost:3000/api/check-referrer
 ```
+
 **Expected:** Status `400`, Error message in response
 
 ---
@@ -247,6 +271,7 @@ You can create a Postman collection with these requests:
 ```
 
 **To Import:**
+
 1. Click **Import** in Postman
 2. Select **Raw text**
 3. Paste the JSON above
@@ -257,22 +282,29 @@ You can create a Postman collection with these requests:
 ## Troubleshooting
 
 ### Issue: "URL parameter is required" Error
+
 **Solution:** Make sure you've added the `url` parameter in Params tab (GET) or Body (POST)
 
 ### Issue: Connection Refused
+
 **Solution:**
+
 - Make sure your Next.js server is running (`npm run dev`)
 - Check if you're using the correct port (default: 3000)
 - Try `http://127.0.0.1:3000` instead of `localhost`
 
 ### Issue: 404 Not Found
+
 **Solution:**
+
 - Verify the endpoint path: `/api/check-referrer`
 - Check if your Next.js app is running
 - Ensure you're in the correct environment (local vs production)
 
 ### Issue: Invalid JSON in POST
+
 **Solution:**
+
 - Make sure Content-Type header is set to `application/json`
 - Verify JSON syntax (no trailing commas)
 - Use Postman's JSON validator (it highlights errors)

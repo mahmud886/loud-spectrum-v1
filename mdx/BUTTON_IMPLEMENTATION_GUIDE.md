@@ -20,6 +20,7 @@ export default function MyPage() {
 ```
 
 This component includes:
+
 - ✅ Button to trigger the check
 - ✅ Loading state
 - ✅ Automatic popup display
@@ -142,9 +143,15 @@ export default function ManualCheckButton() {
       </div>
 
       {result && (
-        <div className="rounded-lg border p-4 bg-gray-50">
-          <p><strong>Is Old Website:</strong> {result.isFromOldWebsite ? '✅ Yes' : '❌ No'}</p>
-          {result.matchedDomain && <p><strong>Matched:</strong> {result.matchedDomain}</p>}
+        <div className="rounded-lg border bg-gray-50 p-4">
+          <p>
+            <strong>Is Old Website:</strong> {result.isFromOldWebsite ? '✅ Yes' : '❌ No'}
+          </p>
+          {result.matchedDomain && (
+            <p>
+              <strong>Matched:</strong> {result.matchedDomain}
+            </p>
+          )}
         </div>
       )}
 
@@ -310,7 +317,7 @@ import { Button } from '@/components/ui/button';
 
 <Button variant="default" size="lg" onClick={handleCheck}>
   Check Old Website
-</Button>
+</Button>;
 ```
 
 ### Custom Styled Button
@@ -385,7 +392,7 @@ export default function OldWebsiteChecker() {
   };
 
   return (
-    <div className="p-6 space-y-4">
+    <div className="space-y-4 p-6">
       <h2 className="text-2xl font-bold">Old Website Checker</h2>
 
       <Button
@@ -398,12 +405,20 @@ export default function OldWebsiteChecker() {
 
       {result && (
         <div className="mt-4 rounded-lg border bg-gray-50 p-4">
-          <h3 className="font-semibold mb-2">Check Result:</h3>
+          <h3 className="mb-2 font-semibold">Check Result:</h3>
           <ul className="space-y-1 text-sm">
             <li>From Old Website: {result.isFromOldWebsite ? '✅ Yes' : '❌ No'}</li>
-            {result.matchedDomain && <li>Matched Domain: <strong>{result.matchedDomain}</strong></li>}
+            {result.matchedDomain && (
+              <li>
+                Matched Domain: <strong>{result.matchedDomain}</strong>
+              </li>
+            )}
             <li>From New Website: {result.isFromNewWebsite ? '✅ Yes' : '❌ No'}</li>
-            {result.url && <li>Checked URL: <code className="text-xs">{result.url}</code></li>}
+            {result.url && (
+              <li>
+                Checked URL: <code className="text-xs">{result.url}</code>
+              </li>
+            )}
           </ul>
         </div>
       )}
@@ -423,21 +438,24 @@ export default function OldWebsiteChecker() {
 ## Testing Your Button
 
 1. **Test with Old Website URL:**
+
    - Manually set `document.referrer` in browser console:
+
    ```javascript
    Object.defineProperty(document, 'referrer', {
      value: 'https://medicalterpenes.com',
-     writable: true
+     writable: true,
    });
    ```
+
    - Then click your button
 
 2. **Test Programmatically:**
    ```javascript
    // In browser console
    fetch('/api/check-referrer?url=https://medicalterpenes.com')
-     .then(res => res.json())
-     .then(data => console.log(data));
+     .then((res) => res.json())
+     .then((data) => console.log(data));
    ```
 
 ---

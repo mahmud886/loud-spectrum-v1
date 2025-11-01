@@ -73,9 +73,8 @@ const CustomOrder = ({ lines, t, wholesaleProducts, onAddToCart, serverProducts 
 
     // Call the POST API to create custom product
     let apiSuccess = false;
-    console.log(token);
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/custom-products`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/custom-products`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -104,13 +103,15 @@ const CustomOrder = ({ lines, t, wholesaleProducts, onAddToCart, serverProducts 
 
     if (products && products.length > 0) {
       const selectedProduct = products[0]; // Use first product as default
+      const productPrice = selectedProduct.price;
+      const finalPrice = productPrice && productPrice > 0 ? productPrice : 3;
 
       // Create cart item
       const cartItem = {
         name: customFlavor || selectedProduct.productDetails?.name || 'Custom Product',
         line: line,
         qty: quantity,
-        price: selectedProduct.price || 3,
+        price: finalPrice,
         lot: selectedProduct.productDetails?.sku || selectedProduct.productDetails?.code || 'CUSTOM',
         customFlavor: customFlavor,
         flavorDescription: flavorDescription,
@@ -158,14 +159,13 @@ const CustomOrder = ({ lines, t, wholesaleProducts, onAddToCart, serverProducts 
 
       {lines.map((line) => {
         const lineProducts = productsByLine[line] || [];
-        const defaultPrice = lineProducts?.length > 0 ? lineProducts[0].price : 3;
+        const productPrice = lineProducts?.length > 0 ? lineProducts[0].price : 3;
+        const defaultPrice = productPrice && productPrice > 0 ? productPrice : 3;
 
         return (
           <div key={line} className="mb-4 rounded-xl border border-gray-100 p-4 shadow-[0_1px_0_rgba(0,0,0,0.03)]">
             <div className="mb-2 text-[13px] font-semibold text-gray-900 sm:text-[14px]">{line}</div>
-            <div className="mb-1 text-[12px] text-gray-500">
-              ${lineProducts?.length > 0 ? lineProducts[0].price : 3}/gm
-            </div>
+            <div className="mb-1 text-[12px] text-gray-500">${defaultPrice}/gm</div>
             <div className="space-y-2">
               <input
                 className="w-full rounded-lg border border-gray-200 px-3 py-2 text-[12px] outline-none focus:border-gray-400 sm:text-[13px]"

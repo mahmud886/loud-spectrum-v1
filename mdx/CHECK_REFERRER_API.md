@@ -34,9 +34,9 @@ const data = await response.json();
 
 #### Query Parameters
 
-| Parameter | Type   | Required | Description                  |
-| --------- | ------ | -------- | ---------------------------- |
-| `url`     | string | No*      | The URL to check             |
+| Parameter | Type   | Required | Description      |
+| --------- | ------ | -------- | ---------------- |
+| `url`     | string | No\*     | The URL to check |
 
 \* If `url` is not provided, the API will check the `Referer` header from the request.
 
@@ -138,15 +138,15 @@ Same as GET request responses.
 
 ## Response Fields
 
-| Field                  | Type    | Description                                          |
-| ---------------------- | ------- | ---------------------------------------------------- |
-| `isFromOldWebsite`     | boolean | `true` if URL matches any old website domain        |
-| `matchedDomain`        | string  | The matched old website domain (null if no match)   |
-| `isFromNewWebsite`     | boolean | `true` if URL is from the new website               |
-| `isFromMedicalTerpenes`| boolean | `true` if matched domain contains 'medicalterpenes' |
-| `url`                  | string  | The URL that was checked                            |
-| `newWebsiteDomain`     | string  | The new website domain (from config)                |
-| `error`                | string  | Error message (only present on errors)              |
+| Field                   | Type    | Description                                         |
+| ----------------------- | ------- | --------------------------------------------------- |
+| `isFromOldWebsite`      | boolean | `true` if URL matches any old website domain        |
+| `matchedDomain`         | string  | The matched old website domain (null if no match)   |
+| `isFromNewWebsite`      | boolean | `true` if URL is from the new website               |
+| `isFromMedicalTerpenes` | boolean | `true` if matched domain contains 'medicalterpenes' |
+| `url`                   | string  | The URL that was checked                            |
+| `newWebsiteDomain`      | string  | The new website domain (from config)                |
+| `error`                 | string  | Error message (only present on errors)              |
 
 ---
 
@@ -167,6 +167,7 @@ NEXT_PUBLIC_DOMAIN=loudspectrum.com
 ```
 
 If `OLD_WEBSITE_DOMAINS` is not set, it defaults to:
+
 - `medicalterpenes.com`
 - `www.medicalterpenes.com`
 - `medical-terpenes.com`
@@ -215,10 +216,12 @@ const RebrandingPopup = () => {
     <div className="popup">
       <h2>Welcome to Loud Spectrum!</h2>
       <p>We've rebranded from Medical Terpenes...</p>
-      <button onClick={() => {
-        setShowPopup(false);
-        localStorage.setItem('rebranding-popup-seen', 'true');
-      }}>
+      <button
+        onClick={() => {
+          setShowPopup(false);
+          localStorage.setItem('rebranding-popup-seen', 'true');
+        }}
+      >
         Got it!
       </button>
     </div>
@@ -238,7 +241,9 @@ export async function GET(request) {
   const referer = request.headers.get('referer') || '';
 
   // Check if user came from old website
-  const checkResponse = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/check-referrer?url=${encodeURIComponent(referer)}`);
+  const checkResponse = await fetch(
+    `${process.env.NEXT_PUBLIC_SITE_URL}/api/check-referrer?url=${encodeURIComponent(referer)}`,
+  );
   const checkData = await checkResponse.json();
 
   if (checkData.isFromOldWebsite) {
@@ -389,17 +394,17 @@ curl -X POST http://localhost:3000/api/check-referrer \
 ```javascript
 // Test GET request
 fetch('/api/check-referrer?url=https://medicalterpenes.com')
-  .then(res => res.json())
-  .then(data => console.log(data));
+  .then((res) => res.json())
+  .then((data) => console.log(data));
 
 // Test POST request
 fetch('/api/check-referrer', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ url: 'https://medicalterpenes.com' })
+  body: JSON.stringify({ url: 'https://medicalterpenes.com' }),
 })
-  .then(res => res.json())
-  .then(data => console.log(data));
+  .then((res) => res.json())
+  .then((data) => console.log(data));
 ```
 
 ---
