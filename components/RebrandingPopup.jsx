@@ -14,7 +14,10 @@ const RebrandingPopup = () => {
         const response = await fetch('/api/check-referrer');
         const data = await response.json();
 
-        if (data.isFromMedicalTerpenes) {
+        // Use the new dynamic isFromOldWebsite flag (backward compatible with isFromMedicalTerpenes)
+        const shouldShowPopup = data.isFromOldWebsite || data.isFromMedicalTerpenes;
+
+        if (shouldShowPopup && !data.isFromNewWebsite) {
           // Check if user has already seen the popup
           const hasSeenPopup = localStorage.getItem('rebranding-popup-seen');
           if (!hasSeenPopup) {
