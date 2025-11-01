@@ -34,9 +34,9 @@ import { getUpsInformations } from '@/services/getUpsInformations';
 import { toast } from 'sonner';
 
 // Shipping type constants based on flowchart logic
-const US_VOLUME_LESS_THAN_OR_EQUAL_TO_5ML = ['STANDARD_FLAT_RATE_7_99', 'FEDEX_2_DAY', 'UPS_GROUND'];
-const US_VOLUME_MORE_THAN_5ML_LESS_THAN_50ML = ['STANDARD_FLAT_RATE_7_99', 'FEDEX_2_DAY', 'UPS_GROUND'];
-const US_VOLUME_MORE_THAN_OR_EQUAL_TO_50ML = ['STANDARD_FLAT_RATE_7_99', 'FEDEX_AIR_HAZARDOUS_300', 'UPS_GROUND'];
+const US_VOLUME_LESS_THAN_OR_EQUAL_TO_5ML = ['FEDEX_2_DAY', 'UPS_GROUND'];
+const US_VOLUME_MORE_THAN_5ML_LESS_THAN_50ML = ['FEDEX_2_DAY', 'UPS_GROUND'];
+const US_VOLUME_MORE_THAN_OR_EQUAL_TO_50ML = ['FEDEX_AIR_HAZARDOUS_300', 'UPS_GROUND'];
 const INTERNATIONAL_CUSTOMER = ['INTERNATIONAL_ECONOMY'];
 const INTERNATIONAL_WHOLESALER = ['FEDEX_AIR_HAZARDOUS_SHIPPING_SHIP_MANAGER_350'];
 
@@ -170,12 +170,25 @@ const ChooseYourCourier = () => {
 
     // DHL is only available for international customers
     // Standard Flat Rate is only available for US customers
+    // Always include the selectedCourier if it's set to prevent showing nothing selected
+    let filteredCouriers;
     if (isInternational()) {
-      return allCouriers.filter((courier) => courier.value !== 'standard-flat-rate');
+      filteredCouriers = allCouriers.filter((courier) => courier.value !== 'standard-flat-rate');
     } else {
-      return allCouriers.filter((courier) => courier.value !== 'dhl');
+      filteredCouriers = allCouriers.filter((courier) => courier.value !== 'dhl');
     }
-  }, [t, shippingAddress?.country]);
+
+    // If selectedCourier is set but filtered out, include it temporarily to show selection
+    // (the useEffect will reset invalid selections, but this prevents UI glitch)
+    if (selectedCourier && !filteredCouriers.some((c) => c.value === selectedCourier)) {
+      const selectedCourierObj = allCouriers.find((c) => c.value === selectedCourier);
+      if (selectedCourierObj) {
+        return [...filteredCouriers, selectedCourierObj];
+      }
+    }
+
+    return filteredCouriers;
+  }, [t, shippingAddress?.country, selectedCourier]);
 
   // Dynamic shipping types based on flowchart logic
   const availableShippingTypes = useMemo(() => {
@@ -214,8 +227,16 @@ const ChooseYourCourier = () => {
     // Get shipping types based on user type, destination, and volume
     const logicBasedTypes = getAvailableShippingTypesByLogic();
 
+    // If standard-flat-rate is selected, add STANDARD_FLAT_RATE options for US customers
+    let typesToFilter = logicBasedTypes;
+    if (selectedCourier === 'standard-flat-rate' && !isInternational()) {
+      // Standard flat rate is available for US customers regardless of volume
+      // Default to 7.99, but can show both options if needed
+      typesToFilter = ['STANDARD_FLAT_RATE_7_99'];
+    }
+
     // Filter shipping types based on selected courier
-    const courierFilteredTypes = logicBasedTypes.filter((type) => {
+    const courierFilteredTypes = typesToFilter.filter((type) => {
       if (selectedCourier === 'standard-flat-rate') {
         return type.includes('STANDARD_FLAT_RATE');
       } else if (selectedCourier === 'fedex') {
@@ -599,6 +620,20 @@ const ChooseYourCourier = () => {
       }
     }
   }, [availableShippingTypes, selectedShippingType, dispatch]);
+
+  // Auto-select standard-flat-rate-7-99 by default when standard-flat-rate courier is selected
+  useEffect(() => {
+    if (
+      selectedCourier === 'standard-flat-rate' &&
+      !selectedShippingType &&
+      !isInternational() &&
+      availableShippingTypes.some((type) => type.value === 'standard-flat-rate-7-99')
+    ) {
+      dispatch(setShippingType('standard-flat-rate-7-99'));
+      dispatch(setShippingTypeFormatted('Standard Flat Rate ($7.99)'));
+      dispatch(setDynamicShippingCost(7.99));
+    }
+  }, [selectedCourier, selectedShippingType, availableShippingTypes, dispatch]);
 
   return (
     <div className="border-umbra-10 my-4 space-y-4 rounded-[10px] border p-4">
