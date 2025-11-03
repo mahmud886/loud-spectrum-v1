@@ -21,13 +21,16 @@ export async function POST(request) {
       }),
     );
 
+    // Prepare recipients (primary TO + CC)
+    const isProd = process.env.NODE_ENV === 'production';
+    const toRecipient = isProd ? 'order@loudspectrum.com' : 'wafafatima66@gmail.com';
+    const ccRecipients = isProd ? ['hi@loudspectrum.com'] : ['web.amex19@gmail.com'];
+
     // Send the email using Resend
     const { data, error } = await resend.emails.send({
       from: process.env.RESEND_FROM_EMAIL || 'loudspectrum.com <noreply@loudspectrum.com>',
-      to:
-        process.env.NODE_ENV === 'production'
-          ? ['order@loudspectrum.com', 'hi@loudspectrum.com']
-          : ['wafafatima66@gmail.com', 'web.amex19@gmail.com'],
+      to: toRecipient,
+      cc: ccRecipients,
       subject: `Suspicious Order from Loud Spectrum – Mismatched Addresses (Order #${orderData.code})`,
       html: emailHtml,
       // Optional: Add plain text version for better compatibility

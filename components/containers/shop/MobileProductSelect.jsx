@@ -20,7 +20,7 @@ export default function MobileProductSelect({ categories, totalCategoryProducts,
   const sortedCategories = [
     { name: 'All', _id: 'all', slug: 'all', productCount: totalCategoryProducts },
     ...categories
-      .sort((a, b) => a.name.localeCompare(b.name))
+      // .sort((a, b) => a.name.localeCompare(b.name))
       .map((category) => ({
         ...category,
         productCount: category.productCount || 0,

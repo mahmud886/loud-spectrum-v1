@@ -2,48 +2,92 @@
 
 import { X } from 'lucide-react';
 import Image from 'next/image';
+import { usePathname, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 const RebrandingPopup = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [animateIn, setAnimateIn] = useState(false);
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
 
   useEffect(() => {
-    const run = () => {
-      try {
-        const search = typeof window !== 'undefined' ? window.location.search : '';
-        const qp = new URLSearchParams(search);
+    try {
+      const qp = searchParams ?? new URLSearchParams(typeof window !== 'undefined' ? window.location.search : '');
 
-        // Dev override: force open
-        const force = qp.get('force_rebrand') === '1' || qp.get('show_rebrand') === '1';
-        if (force) {
-          setShowPopup(true);
-          requestAnimationFrame(() => setAnimateIn(true));
+      // If route has no utm_source, clear seen flag and ensure popup is hidden
+      const hasUtmSource = qp.has('utm_source');
+      if (!hasUtmSource) {
+        localStorage.removeItem('rebranding-popup-seen');
+        setAnimateIn(false);
+        setShowPopup(false);
+        setIsLoading(false);
+        return;
+      }
+
+      // Dev override: force open
+      const force = qp.get('force_rebrand') === '1' || qp.get('show_rebrand') === '1';
+      const hasSeen = localStorage.getItem('rebranding-popup-seen') === 'true';
+
+      if (force || !hasSeen) {
+        setShowPopup(true);
+        requestAnimationFrame(() => setAnimateIn(true));
+      }
+    } catch (error) {
+      console.error('Error deciding rebrand popup:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  }, [pathname, searchParams]);
+
+  // Handle browser back/forward navigation explicitly
+  useEffect(() => {
+    const onPopState = () => {
+      try {
+        const qp = new URLSearchParams(window.location.search || '');
+        const hasUtmSource = qp.has('utm_source');
+        if (!hasUtmSource) {
+          localStorage.removeItem('rebranding-popup-seen');
+          setAnimateIn(false);
+          setShowPopup(false);
           return;
         }
-
-        // Show only when utm_source is present
-        const hasUtmSource = qp.has('utm_source');
-        if (hasUtmSource) {
+        const force = qp.get('force_rebrand') === '1' || qp.get('show_rebrand') === '1';
+        const hasSeen = localStorage.getItem('rebranding-popup-seen') === 'true';
+        if (force || !hasSeen) {
           setShowPopup(true);
           requestAnimationFrame(() => setAnimateIn(true));
         }
-      } catch (error) {
-        console.error('Error deciding rebrand popup:', error);
-      } finally {
-        setIsLoading(false);
+      } catch (e) {
+        // no-op
       }
     };
-
-    run();
+    window.addEventListener('popstate', onPopState);
+    return () => window.removeEventListener('popstate', onPopState);
   }, []);
 
   const handleClose = () => {
     setAnimateIn(false);
     setTimeout(() => {
       setShowPopup(false);
-      localStorage.setItem('rebranding-popup-seen', 'true');
+
+      localStorage.removeItem('rebranding-popup-seen');
+
+      // Remove utm_source (and related UTM params) from the URL without reloading
+      try {
+        const url = new URL(window.location.href);
+        const sp = url.searchParams;
+        sp.delete('utm_source');
+        sp.delete('utm_medium');
+        sp.delete('utm_campaign');
+        sp.delete('utm_term');
+        sp.delete('utm_content');
+        url.search = sp.toString();
+        window.history.replaceState({}, '', url.toString());
+      } catch (_) {
+        // no-op
+      }
     }, 200);
   };
 

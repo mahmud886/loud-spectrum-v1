@@ -458,7 +458,7 @@ const OrderConfirmationContent = ({ orderData }) => {
                             })()}
                           </Badge>
                         </div>
-                        <div className="text-classic/50 rounded-full bg-red-100 px-2 py-1 text-center font-sans text-[10px] leading-[120%] font-normal capitalize">
+                        <div className="text-classic/50 mt-2 rounded-full bg-red-100 px-2 py-1 text-center font-sans text-[10px] leading-[120%] font-normal capitalize">
                           {'Remarks'}: {item.product?.remarks || item?.remarks || 'N/A'}
                         </div>
                       </div>

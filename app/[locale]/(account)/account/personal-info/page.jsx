@@ -56,12 +56,18 @@ export default function PersonalInfoPage() {
     const validationResult = await validateUserInfo(formData);
 
     if (!validationResult.success) {
-      const newErrors = {};
-      validationResult.errors.forEach((error) => {
-        newErrors[error.field] = error.message;
-      });
-      setErrors(newErrors);
-      return;
+      // Ignore phone-related validation errors
+      const filteredErrors = (validationResult.errors || []).filter(
+        (e) => e.field !== 'phone' && e.field !== 'phone_number',
+      );
+      if (filteredErrors.length) {
+        const newErrors = {};
+        filteredErrors.forEach((error) => {
+          newErrors[error.field] = error.message;
+        });
+        setErrors(newErrors);
+        return;
+      }
     }
     try {
       setIsLoading(true);
