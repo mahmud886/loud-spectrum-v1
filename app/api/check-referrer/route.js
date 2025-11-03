@@ -1,155 +1,133 @@
 import { NextResponse } from 'next/server';
 
-// Old website domains list (can be configured via environment variable)
-const getOldWebsiteDomains = () => {
-  const envDomains = process.env.OLD_WEBSITE_DOMAINS;
-  if (envDomains) {
-    return envDomains
-      .split(',')
-      .map((domain) => domain.trim().toLowerCase())
-      .filter(Boolean);
+// --- Config helpers -------------------------------------------------------
+
+function normalizeDomain(domain) {
+  if (!domain || typeof domain !== 'string') return '';
+  return domain
+    .trim()
+    .toLowerCase()
+    .replace(/^www\./, '');
+}
+
+function parseUrl(raw) {
+  if (!raw || typeof raw !== 'string') return null;
+  try {
+    const withProto = /^(https?:)?\/\//i.test(raw) ? raw : `http://${raw}`;
+    return new URL(withProto);
+  } catch {
+    return null;
   }
+}
 
-  // Default fallback list
-  return ['medicalterpenes.com', 'www.medicalterpenes.com', 'medical-terpenes.com'];
-};
+function getDomainsConfig() {
+  const oldEnv = process.env.OLD_WEBSITE_DOMAINS || '';
+  const oldDomains = oldEnv
+    .split(',')
+    .map((d) => normalizeDomain(d))
+    .filter(Boolean);
+  const defaultOld = ['medicalterpenes.com', 'medical-terpenes.com'];
+  const finalOld = oldDomains.length ? oldDomains : defaultOld;
 
-// Current/new website domain
-const NEW_WEBSITE_DOMAIN = process.env.NEXT_PUBLIC_SITE_URL || process.env.NEXT_PUBLIC_DOMAIN || 'loudspectrum.com';
+  const newDomainRaw = process.env.NEXT_PUBLIC_SITE_URL || process.env.NEXT_PUBLIC_DOMAIN || 'localhost';
+  const parsed = parseUrl(newDomainRaw);
+  const newHost = parsed ? parsed.hostname : newDomainRaw;
+  const newDomain = normalizeDomain(newHost);
 
-/**
- * Checks if the provided URL is from an old website
- * @param {string} url - The URL string to check
- * @returns {Object} - Object containing match information
- */
-function checkOldWebsite(url) {
-  if (!url || typeof url !== 'string') {
+  return { oldDomains: finalOld, newDomain, rawNew: newDomainRaw };
+}
+
+// --- Decision logic -------------------------------------------------------
+
+function evaluateSource(candidateUrl) {
+  const { oldDomains, rawNew } = getDomainsConfig();
+
+  if (!candidateUrl) {
     return {
       isFromOldWebsite: false,
       matchedDomain: null,
+      isFromNewWebsite: false,
       url: null,
+      newWebsiteDomain: rawNew,
     };
   }
 
-  const oldWebsiteDomains = getOldWebsiteDomains();
-  const normalizedUrl = url.toLowerCase();
+  const parsed = parseUrl(candidateUrl);
+  const utmSource = parsed?.searchParams.get('utm_source')?.toLowerCase() || '';
+  const utmSourceNorm = normalizeDomain(utmSource);
 
-  // Check if URL matches any old website domain
-  for (const domain of oldWebsiteDomains) {
-    if (normalizedUrl.includes(domain)) {
+  // Only consider utm_source for old-site detection
+  for (const d of oldDomains) {
+    if (utmSourceNorm === d || utmSourceNorm.endsWith(d)) {
       return {
         isFromOldWebsite: true,
-        matchedDomain: domain,
-        url: url,
+        matchedDomain: d,
+        isFromNewWebsite: false,
+        url: candidateUrl,
+        newWebsiteDomain: rawNew,
       };
     }
   }
 
-  // Check if URL is from the new website
-  const normalizedNewDomain = NEW_WEBSITE_DOMAIN.toLowerCase();
-  if (normalizedUrl.includes(normalizedNewDomain)) {
-    return {
-      isFromOldWebsite: false,
-      matchedDomain: null,
-      url: url,
-      isFromNewWebsite: true,
-    };
-  }
-
+  // Neutral (no utm_source match)
   return {
     isFromOldWebsite: false,
     matchedDomain: null,
-    url: url,
+    isFromNewWebsite: false,
+    url: candidateUrl,
+    newWebsiteDomain: rawNew,
   };
 }
 
+// --- Handlers -------------------------------------------------------------
+
 export async function GET(request) {
   try {
-    // Get URL from query parameter
     const { searchParams } = new URL(request.url);
     const url = searchParams.get('url');
+    const fallbackReferer = request.headers.get('referer') || request.headers.get('referrer') || '';
+    const candidate = url || fallbackReferer;
 
-    // If no URL provided in query, check referer header for backward compatibility
-    const urlToCheck = url || request.headers.get('referer') || request.headers.get('referrer') || '';
-
-    if (!urlToCheck) {
+    if (!candidate) {
       return NextResponse.json(
         {
-          error: 'URL parameter is required. Usage: /api/check-referrer?url=your-url-here',
-          isFromOldWebsite: false,
-          isFromMedicalTerpenes: false,
+          error: 'Provide ?url=... or ensure Referer header is present',
+          ...evaluateSource(''),
         },
         { status: 400 },
       );
     }
 
-    // Check if URL matches any old website
-    const result = checkOldWebsite(urlToCheck);
-
-    // Maintain backward compatibility
+    const result = evaluateSource(candidate);
     const isFromMedicalTerpenes = result.isFromOldWebsite && result.matchedDomain?.includes('medicalterpenes');
 
-    return NextResponse.json({
-      isFromOldWebsite: result.isFromOldWebsite,
-      matchedDomain: result.matchedDomain,
-      isFromNewWebsite: result.isFromNewWebsite || false,
-      isFromMedicalTerpenes,
-      url: result.url,
-      newWebsiteDomain: NEW_WEBSITE_DOMAIN,
-    });
+    return NextResponse.json({ ...result, isFromMedicalTerpenes });
   } catch (error) {
-    console.error('Error checking referrer:', error);
-    return NextResponse.json(
-      {
-        error: 'Failed to check referrer',
-        isFromOldWebsite: false,
-        isFromMedicalTerpenes: false,
-      },
-      { status: 500 },
-    );
+    console.error('check-referrer GET error', error);
+    return NextResponse.json({ error: 'Failed to check referrer' }, { status: 500 });
   }
 }
 
-// Also support POST request with URL in body
 export async function POST(request) {
   try {
-    const body = await request.json();
+    const body = await request.json().catch(() => ({}));
     const url = body?.url || body?.referer || body?.referrer || '';
 
     if (!url) {
       return NextResponse.json(
         {
-          error: 'URL is required in request body. Example: {"url": "medicalterpenes.com"}',
-          isFromOldWebsite: false,
-          isFromMedicalTerpenes: false,
+          error: 'Body must include { url: "..." }',
+          ...evaluateSource(''),
         },
         { status: 400 },
       );
     }
 
-    // Check if URL matches any old website
-    const result = checkOldWebsite(url);
-
-    // Maintain backward compatibility
+    const result = evaluateSource(url);
     const isFromMedicalTerpenes = result.isFromOldWebsite && result.matchedDomain?.includes('medicalterpenes');
-
-    return NextResponse.json({
-      isFromOldWebsite: result.isFromOldWebsite,
-      matchedDomain: result.matchedDomain,
-      isFromNewWebsite: result.isFromNewWebsite || false,
-      isFromMedicalTerpenes,
-      url: result.url,
-      newWebsiteDomain: NEW_WEBSITE_DOMAIN,
-    });
+    return NextResponse.json({ ...result, isFromMedicalTerpenes });
   } catch (error) {
-    console.error('Error checking referrer:', error);
-    return NextResponse.json(
-      {
-        error: 'Failed to check referrer',
-        isFromOldWebsite: false,
-        isFromMedicalTerpenes: false,
-      },
-      { status: 500 },
-    );
+    console.error('check-referrer POST error', error);
+    return NextResponse.json({ error: 'Failed to check referrer' }, { status: 500 });
   }
 }

@@ -7,36 +7,44 @@ import { useEffect, useState } from 'react';
 const RebrandingPopup = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [animateIn, setAnimateIn] = useState(false);
 
   useEffect(() => {
-    const checkReferrer = async () => {
+    const run = () => {
       try {
-        const response = await fetch('/api/check-referrer');
-        const data = await response.json();
+        const search = typeof window !== 'undefined' ? window.location.search : '';
+        const qp = new URLSearchParams(search);
 
-        // Use the new dynamic isFromOldWebsite flag (backward compatible with isFromMedicalTerpenes)
-        const shouldShowPopup = data.isFromOldWebsite || data.isFromMedicalTerpenes;
+        // Dev override: force open
+        const force = qp.get('force_rebrand') === '1' || qp.get('show_rebrand') === '1';
+        if (force) {
+          setShowPopup(true);
+          requestAnimationFrame(() => setAnimateIn(true));
+          return;
+        }
 
-        if (shouldShowPopup && !data.isFromNewWebsite) {
-          // Check if user has already seen the popup
-          const hasSeenPopup = localStorage.getItem('rebranding-popup-seen');
-          if (!hasSeenPopup) {
-            setShowPopup(true);
-          }
+        // Show only when utm_source is present
+        const hasUtmSource = qp.has('utm_source');
+        if (hasUtmSource) {
+          setShowPopup(true);
+          requestAnimationFrame(() => setAnimateIn(true));
         }
       } catch (error) {
-        console.error('Error checking referrer:', error);
+        console.error('Error deciding rebrand popup:', error);
       } finally {
         setIsLoading(false);
       }
     };
 
-    checkReferrer();
+    run();
   }, []);
 
   const handleClose = () => {
-    setShowPopup(false);
-    localStorage.setItem('rebranding-popup-seen', 'true');
+    setAnimateIn(false);
+    setTimeout(() => {
+      setShowPopup(false);
+      localStorage.setItem('rebranding-popup-seen', 'true');
+    }, 200);
   };
 
   if (isLoading || !showPopup) {
@@ -44,8 +52,16 @@ const RebrandingPopup = () => {
   }
 
   return (
-    <div className="bg-opacity-50 fixed inset-0 z-50 flex items-center justify-center bg-black">
-      <div className="relative mx-4 w-full max-w-md rounded-lg bg-white p-6 shadow-xl">
+    <div
+      className={`fixed inset-0 z-50 flex items-center justify-center bg-black transition-opacity duration-200 ease-out ${
+        animateIn ? 'bg-opacity-50 opacity-100' : 'bg-opacity-0 opacity-0'
+      }`}
+    >
+      <div
+        className={`relative mx-4 w-full max-w-md transform rounded-lg bg-white p-6 shadow-xl transition-all duration-200 ease-out ${
+          animateIn ? 'translate-y-0 scale-100 opacity-100' : 'translate-y-2 scale-95 opacity-0'
+        }`}
+      >
         {/* Close button */}
         <button
           onClick={handleClose}
