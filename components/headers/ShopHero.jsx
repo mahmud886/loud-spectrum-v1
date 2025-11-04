@@ -24,32 +24,27 @@ const ShopHero = ({ category }) => {
         <div className="relative z-10 flex h-[610px] w-full flex-col items-center justify-center gap-[40px] md:h-[450px] md:items-start md:justify-center xl:h-full xl:w-[42%]">
           <div>
             {(() => {
-              const rawDescription = category?.description || '';
-              const cleanDescription = rawDescription
-                .replace(/<\/?[^>]+(>|$)/g, '')
-                .replace(/\s+/g, ' ')
-                .trim();
+              const fallbackHtml = `
+<p>Alive It\'s the pinnacle of terpene luxury—pure, rare, and perfected over years of production. Extracted from fresh flower within an hour of picking, this premium line preserves the delicate, full-bodied aroma and complexity of each strain. Never diluted or cut with other products, every batch is a unique vintage, making it a sought-after choice for those who demand the finest. Many customers secure their supply annually to ensure consistency across their products.</p><p><br></p><p><strong>Quick Facts:</strong></p><ul><li>Invented in 2018</li><li>Premium pricing</li><li>Can be CDT (cannabis derived terpene) or HDT (hemp derived terpene)</li><li>Extracted in-house through exclusive partnerships with growers</li></ul><p><br></p>`;
 
-              const words = cleanDescription.split(' ');
+              const rawDescription =
+                category?.description && category.description.trim().length > 0 ? category.description : fallbackHtml;
 
-              const titleWordCount = 3;
-              const titlePart = words.slice(0, titleWordCount).join(' ');
-              const remainingPart = words.slice(titleWordCount).join(' ');
+              const sanitizedHtml = rawDescription.replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '').trim();
 
               return (
-                <>
-                  <h1 className="pb-5 font-sans text-[35px] leading-[120%] font-normal tracking-normal text-white md:text-[40px] xl:text-[60px]">
-                    {titlePart || t('title')}
-                  </h1>
-                  <p className="font-mono text-[12px] leading-[120%] font-normal text-white md:text-[12px] xl:text-[16px]">
-                    {remainingPart || t('description')}
-                  </p>
-                </>
+                <div className="text-white">
+                  <div
+                    className="max-w-[90%] font-mono text-[12px] leading-[120%] font-normal text-white md:text-[10px] xl:text-[16px]"
+                    dangerouslySetInnerHTML={{ __html: sanitizedHtml }}
+                  />
+                </div>
               );
             })()}
           </div>
         </div>
       </div>
+
       <div className="absolute bottom-0 left-0 w-screen">
         <div className="w-full">
           <div className="flex h-[25px] md:h-[50px] xl:h-[100px]">
