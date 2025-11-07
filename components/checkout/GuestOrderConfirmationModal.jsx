@@ -17,7 +17,6 @@ const GuestOrderConfirmationModal = ({ isOpen, onClose, orderData, guestEmail })
     width: 0,
     height: 0,
   });
-  console.log(orderData);
 
   // Handle window resize for confetti
   useEffect(() => {
