@@ -25,7 +25,8 @@ const ShopHero = ({ category }) => {
           <div>
             {(() => {
               const fallbackHtml = `
-<p>Alive It\'s the pinnacle of terpene luxury—pure, rare, and perfected over years of production. Extracted from fresh flower within an hour of picking, this premium line preserves the delicate, full-bodied aroma and complexity of each strain. Never diluted or cut with other products, every batch is a unique vintage, making it a sought-after choice for those who demand the finest. Many customers secure their supply annually to ensure consistency across their products.</p><p><br></p><p><strong>Quick Facts:</strong></p><ul><li>Invented in 2018</li><li>Premium pricing</li><li>Can be CDT (cannabis derived terpene) or HDT (hemp derived terpene)</li><li>Extracted in-house through exclusive partnerships with growers</li></ul><p><br></p>`;
+<h1 class="pb-5 font-sans text-[35px] leading-[120%] font-normal tracking-normal text-white md:text-[40px] xl:text-[60px]">The Full Spectrum,<br>at Your Fingertips</h1>
+<p class="font-mono text-[12px] leading-[120%] font-normal text-white md:text-[12px] xl:text-[16px]">Shop our full range of strain-specific terpenes and flavor-packed profiles that maximize your products and help your business grow.</p>`;
 
               const rawDescription =
                 category?.description && category.description.trim().length > 0 ? category.description : fallbackHtml;
@@ -33,11 +34,8 @@ const ShopHero = ({ category }) => {
               const sanitizedHtml = rawDescription.replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '').trim();
 
               return (
-                <div className="text-white">
-                  <div
-                    className="max-w-[90%] font-mono text-[12px] leading-[120%] font-normal text-white md:text-[10px] xl:text-[16px]"
-                    dangerouslySetInnerHTML={{ __html: sanitizedHtml }}
-                  />
+                <div className="text-white [&_h1]:pb-5 [&_h1]:font-sans [&_h1]:text-[35px] [&_h1]:leading-[120%] [&_h1]:font-normal [&_h1]:tracking-normal [&_h1]:text-white [&_h1]:md:text-[40px] [&_h1]:xl:text-[60px] [&_li]:font-mono [&_li]:text-[12px] [&_li]:leading-[120%] [&_li]:text-white [&_li]:md:text-[12px] [&_li]:xl:text-[16px] [&_p]:font-mono [&_p]:text-[12px] [&_p]:leading-[120%] [&_p]:font-normal [&_p]:text-white [&_p]:md:text-[12px] [&_p]:xl:text-[16px] [&_strong]:font-semibold [&_ul]:list-disc [&_ul]:space-y-1 [&_ul]:pl-5">
+                  <div className="max-w-[90%]" dangerouslySetInnerHTML={{ __html: sanitizedHtml }} />
                 </div>
               );
             })()}
