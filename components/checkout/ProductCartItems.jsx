@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux';
 
 const ProductCartItems = ({ item }) => {
   const t = useTranslations('CheckoutPage.ProductCart');
+  const t2 = useTranslations('OrderConfirmation');
   const dispatch = useDispatch();
   return (
     <div
@@ -32,12 +33,12 @@ const ProductCartItems = ({ item }) => {
             </p>
             {item?.isRegular && (
               <p className="text-umbra-100 bg-alive/50 rounded-[10px] px-2 py-1 font-sans text-[10px] leading-[120%] font-normal whitespace-nowrap capitalize">
-                Regular
+                {t2('fields.typeRegular')}
               </p>
             )}
             {item?.isWholesale && (
               <p className="text-umbra-100 rounded-[10px] bg-red-100 px-2 py-1 font-sans text-[10px] leading-[120%] font-normal whitespace-nowrap capitalize">
-                Wholesale
+                {t2('fields.typeWholesale')}
               </p>
             )}
             {item?.flavor && (

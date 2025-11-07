@@ -381,10 +381,10 @@
       "total": "Итого",
       "quantity": "Количество",
       "price": "Цена",
-      "regularProducts": "Обычные товары",
+      "regularProducts": "Розничные товары",
       "wholesaleProducts": "Оптовые товары",
       "sku": "SKU",
-      "regular": "Обычный",
+      "regular": "Розничный",
       "wholesale": "Оптовый"
     },
     "paymentMethods": {

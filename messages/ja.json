@@ -380,10 +380,10 @@
       "total": "合計",
       "quantity": "数量",
       "price": "価格",
-      "regularProducts": "通常商品",
+      "regularProducts": "小売商品",
       "wholesaleProducts": "卸売商品",
       "sku": "SKU",
-      "regular": "通常",
+      "regular": "小売",
       "wholesale": "卸売"
     },
     "paymentMethods": {

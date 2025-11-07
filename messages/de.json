@@ -380,10 +380,10 @@
       "total": "Gesamt",
       "quantity": "Menge",
       "price": "Preis",
-      "regularProducts": "Reguläre Produkte",
+      "regularProducts": "Einzelhandelsprodukte",
       "wholesaleProducts": "Großhandelsprodukte",
       "sku": "SKU",
-      "regular": "Regulär",
+      "regular": "Einzelhandel",
       "wholesale": "Großhandel"
     },
     "paymentMethods": {

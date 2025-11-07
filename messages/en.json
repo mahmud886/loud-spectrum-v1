@@ -384,10 +384,10 @@
       "total": "Total",
       "quantity": "Qty",
       "price": "Price",
-      "regularProducts": "Regular Products",
+      "regularProducts": "Retail Products",
       "wholesaleProducts": "Wholesale Products",
       "sku": "SKU",
-      "regular": "Regular",
+      "regular": "Retail",
       "wholesale": "Wholesale"
     },
     "paymentMethods": {

@@ -1,11 +1,13 @@
 'use client';
 import { removeFromCart, updateQuantity } from '@/lib/store/slices/cartSlice';
 import { MinusIcon, PlusIcon, TrashIcon } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { useDispatch } from 'react-redux';
 
 const CartItem = ({ item }) => {
   const dispatch = useDispatch();
+  const t = useTranslations('OrderConfirmation');
   return (
     <div
       className={`flex items-center gap-2 rounded-md border-1 py-2.5 pr-5 pl-2.5 md:gap-4 ${
@@ -32,12 +34,12 @@ const CartItem = ({ item }) => {
             </p>
             {item?.isRegular && (
               <p className="text-umbra-100 bg-alive/50 rounded-[10px] px-2 py-1 font-sans text-[10px] leading-[120%] font-normal capitalize">
-                Regular
+                {t('fields.typeRegular')}
               </p>
             )}
             {item?.isWholesale && (
               <p className="text-umbra-100 rounded-[10px] bg-red-100 px-2 py-1 font-sans text-[10px] leading-[120%] font-normal whitespace-nowrap capitalize">
-                Wholesale
+                {t('fields.typeWholesale')}
               </p>
             )}
             {item?.flavor && (

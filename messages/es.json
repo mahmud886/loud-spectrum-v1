@@ -379,10 +379,10 @@
       "total": "Total",
       "quantity": "Cantidad",
       "price": "Precio",
-      "regularProducts": "Productos regulares",
+      "regularProducts": "Productos de venta al por menor",
       "wholesaleProducts": "Productos al por mayor",
       "sku": "SKU",
-      "regular": "Regular",
+      "regular": "Venta al por menor",
       "wholesale": "Al por mayor"
     },
     "paymentMethods": {
