@@ -192,9 +192,7 @@ const RefundEmail = ({ orderData }) => {
                 If you have any questions or need further assistance, feel free to reply to this email — we're happy to
                 help.
               </Text>
-              <Text className="m-0 leading-relaxed text-gray-700">
-                Thank you for your understanding and patience.
-              </Text>
+              <Text className="m-0 leading-relaxed text-gray-700">Thank you for your understanding and patience.</Text>
             </Section>
 
             <Hr className="my-4 border-t border-gray-200" />
