@@ -160,14 +160,15 @@ const RebrandingPopup = () => {
         {/* Content */}
         <div className="text-umbra-100 space-y-5 text-center text-sm md:space-y-7 md:text-left md:text-[0.925rem]">
           <div className="flex flex-col items-center gap-3 md:flex-row md:items-start md:justify-between">
-            <h2 className="from-umbra-100/10 via-atmosphere/10 to-aurora/10 text-umbra-100 inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r px-5 py-1.5 text-center text-[0.6rem] font-semibold tracking-[0.3em] uppercase md:text-[0.65rem]">
+            <h2 className="text-umbra-100 inline-flex w-full items-center justify-center rounded-full px-5 py-1.5 text-center text-[20px] font-bold tracking-[0.05em] uppercase md:text-[24px]">
               Welcome to Loud Spectrum
             </h2>
             {/* <div className="main-gradient hidden h-px w-20 md:block" /> */}
           </div>
 
-          <p className="text-umbra-100 text-base font-semibold text-balance md:max-w-2xl md:text-[1.05rem]">
-            We've evolved — same great team, same premium quality, bold new name.
+          <p className="text-center text-xs leading-relaxed md:text-sm">
+            We've evolved — same great team, same premium quality, bold new name. We’ve rebranded to bring you a more
+            streamlined, elevated web experience — one that matches our full spectrum of flavor and innovation.
           </p>
 
           <div className="from-umbra-100/10 via-atmosphere/10 to-aurora/10 rounded-xl bg-gradient-to-r p-4 shadow-inner">
@@ -180,14 +181,14 @@ const RebrandingPopup = () => {
                 return (
                   <div
                     key={old}
-                    className="border-umbra-10 text-umbra-100 flex items-center justify-between rounded-2xl border bg-white/90 px-3 py-2 text-xs font-medium backdrop-blur-sm sm:text-sm"
+                    className="border-umbra-10 text-umbra-100 flex items-center justify-center rounded-2xl border bg-white/90 px-3 py-2 text-xs font-medium backdrop-blur-sm sm:text-sm"
                   >
                     <span className="flex items-center gap-2">
-                      <span
+                      {/* <span
                         className={`inline-flex h-7 w-7 items-center justify-center rounded-full ${colors.bgLight} ${colors.text} text-[0.65rem] font-semibold`}
                       >
                         {old.charAt(0)}
-                      </span>
+                      </span> */}
                       {old}
                     </span>
                     <span className="flex items-center gap-2">
@@ -205,16 +206,11 @@ const RebrandingPopup = () => {
           </div>
 
           <div className="grid gap-5 md:grid-cols-1 md:items-start md:gap-6">
-            <p className="leading-relaxed">
-              We’ve rebranded to bring you a more streamlined, elevated web experience — one that matches our full
-              spectrum of flavor and innovation.
-            </p>
-
-            <div className="from-umbra-100/10 via-atmosphere/10 to-aurora/10 rounded-xl bg-gradient-to-r p-4 shadow-inner">
+            <div className="rounded-xl p-4">
               <p className="text-umbra-60 text-center text-xs font-semibold tracking-[0.35em] uppercase">
                 Here for you
               </p>
-              <p className="text-umbra-100/80 mt-2 text-xs leading-relaxed sm:text-sm">
+              <p className="text-umbra-100/80 mt-2 text-center text-xs leading-relaxed sm:text-sm">
                 If you have questions or run into issues, reach out in chat or email us at{' '}
                 <a
                   href="mailto:hi@loudspectrum.com"
@@ -222,21 +218,17 @@ const RebrandingPopup = () => {
                 >
                   hi@loudspectrum.com
                 </a>
-                .
+                . We're glad you're here — and we can't wait to take your flavor experience beyond ordinary.
               </p>
             </div>
           </div>
-
-          <p className="text-umbra-60 text-xs md:text-sm">
-            We're glad you're here — and we can't wait to take your flavor experience beyond ordinary.
-          </p>
         </div>
 
         {/* Action button */}
         <div className="mt-6 flex justify-center">
           <button
             onClick={handleClose}
-            className="from-umbra-100 via-atmosphere to-aurora text-white-100 inline-flex cursor-pointer items-center justify-center rounded-full bg-gradient-to-r px-5 py-1.5 text-center text-[0.6rem] font-semibold tracking-[0.3em] uppercase md:text-[0.65rem]"
+            className="from-umbra-100 via-atmosphere to-aurora text-white-100 inline-flex cursor-pointer items-center justify-center rounded-full bg-gradient-to-r px-5 py-1.5 text-center text-[0.6rem] font-semibold tracking-[0.1em] uppercase md:text-[14px]"
           >
             Got it!
           </button>
