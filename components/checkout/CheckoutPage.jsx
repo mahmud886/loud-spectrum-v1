@@ -10,6 +10,7 @@ import WireTransferDialog from '@/components/checkout/WireTransferDialog';
 import { useRouter } from '@/i18n/navigation';
 import {
   completeOrder,
+  removeCoupon,
   selectBillingAddress,
   selectGuestUser,
   selectIsProcessing,
@@ -32,6 +33,7 @@ import {
   setWireFormField,
 } from '@/lib/store/slices/checkoutSlice';
 
+import { selectIsAuthenticated } from '@/lib/store/slices/authSlice';
 import {
   clearCart,
   selectCartItems,
@@ -73,6 +75,7 @@ const CheckoutPage = () => {
   const selectedShippingType = useSelector(selectShippingType);
   const isProcessing = useSelector(selectIsProcessing);
   const guestUser = useSelector(selectGuestUser);
+  const isAuthenticated = useSelector(selectIsAuthenticated);
 
   // Cart selectors
   const cartItems = useSelector(selectCartItems);
@@ -171,24 +174,11 @@ const CheckoutPage = () => {
 
     const missingFields = [];
     Object.entries(requiredFields).forEach(([field, label]) => {
-      let fieldValue;
-
-      // For guest users, use guest email instead of shipping address email
-      if (field === 'email' && guestUser?.isGuest) {
-        fieldValue = guestUser?.customerEmail;
-      } else {
-        fieldValue = shippingAddress[field];
-      }
-
+      const fieldValue = shippingAddress[field];
       if (!fieldValue || String(fieldValue).trim() === '') {
         missingFields.push(label);
       }
     });
-
-    // For guest users, also validate guest email is provided
-    if (guestUser?.isGuest && (!guestUser?.customerEmail || guestUser?.customerEmail.trim() === '')) {
-      missingFields.push('Guest Email');
-    }
 
     if (missingFields.length > 0) {
       toast.error('Missing Shipping Information', {
@@ -198,10 +188,9 @@ const CheckoutPage = () => {
       return false;
     }
 
-    // Email validation - check guest email if guest user, otherwise shipping email
-    const emailToValidate = guestUser?.isGuest ? guestUser?.customerEmail : shippingAddress.email;
+    // Email validation - use shipping address email (which is synced with guest email for non-authenticated users)
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(emailToValidate)) {
+    if (!emailRegex.test(shippingAddress.email)) {
       toast.error('Invalid Email', {
         description: 'Please enter a valid email address',
         duration: 4000,
@@ -309,23 +298,10 @@ const CheckoutPage = () => {
     ];
 
     for (const field of shippingRequired) {
-      let fieldValue;
-
-      // For guest users, use guest email instead of shipping address email
-      if (field === 'email' && guestUser?.isGuest) {
-        fieldValue = guestUser?.customerEmail;
-      } else {
-        fieldValue = shippingAddress[field];
-      }
-
+      const fieldValue = shippingAddress[field];
       if (!fieldValue || String(fieldValue).trim() === '') {
         return false;
       }
-    }
-
-    // For guest users, also validate guest email is provided
-    if (guestUser?.isGuest && (!guestUser?.customerEmail || guestUser?.customerEmail.trim() === '')) {
-      return false;
     }
 
     // Check billing address if not same as shipping
@@ -383,23 +359,10 @@ const CheckoutPage = () => {
     ];
 
     for (const field of shippingRequired) {
-      let fieldValue;
-
-      // For guest users, use guest email instead of shipping address email
-      if (field === 'email' && guestUser?.isGuest) {
-        fieldValue = guestUser?.customerEmail;
-      } else {
-        fieldValue = shippingAddress[field];
-      }
-
+      const fieldValue = shippingAddress[field];
       if (!fieldValue || String(fieldValue).trim() === '') {
         return false;
       }
-    }
-
-    // For guest users, also validate guest email is provided
-    if (guestUser?.isGuest && (!guestUser?.customerEmail || guestUser?.customerEmail.trim() === '')) {
-      return false;
     }
 
     // Check billing address if not same as shipping
@@ -450,10 +413,9 @@ const CheckoutPage = () => {
       missing.push('Shipping name');
     }
 
-    // Check email - use guest email if guest user, otherwise shipping email
-    const emailToCheck = guestUser?.isGuest ? guestUser?.customerEmail : shippingAddress.email;
-    if (!emailToCheck) {
-      missing.push(guestUser?.isGuest ? 'Guest email address' : 'Email address');
+    // Check email - use shipping address email (synced with guest email for non-authenticated users)
+    if (!shippingAddress.email) {
+      missing.push('Email address');
     }
 
     if (!shippingAddress.phone) {
@@ -737,6 +699,7 @@ const CheckoutPage = () => {
 
         if (orderId) {
           dispatch(completeOrder({ orderId }));
+          dispatch(removeCoupon());
           setIsOrderCompleted(true);
 
           // Reset payment state and close dialogs
@@ -927,6 +890,7 @@ const CheckoutPage = () => {
         setOrderedData(data);
         dispatch(clearCart());
         dispatch(completeOrder({ orderId: data?._id }));
+        dispatch(removeCoupon());
         setIsOrderCompleted(true);
 
         // Reset payment state and close dialogs
@@ -1084,6 +1048,7 @@ const CheckoutPage = () => {
 
         if (orderId) {
           dispatch(completeOrder({ orderId }));
+          dispatch(removeCoupon());
           dispatch(clearCart());
 
           // Reset payment state and close dialogs

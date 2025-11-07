@@ -345,7 +345,8 @@
         "instruction": "Veuillez remplir les champs requis suivants :",
         "andMore": "et {count} de plus..."
       },
-      "fraudWarning": "Toutes les transactions frauduleuses, y compris l'abus de rétrofacturation, seront signalées et poursuivies dans toute la mesure du possible"
+      "fraudWarning": "Toutes les transactions frauduleuses, y compris l'abus de rétrofacturation, seront signalées et poursuivies dans toute la mesure du possible",
+      "helpfulNotice": "Vous avez des problèmes ? Contactez-nous à tout moment à it@loudspectrum.com — nous sommes ici pour vous aider !"
     }
   },
   "OrderConfirmation": {

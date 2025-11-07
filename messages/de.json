@@ -345,7 +345,8 @@
         "instruction": "Bitte füllen Sie die folgenden erforderlichen Felder aus:",
         "andMore": "und {count} weitere..."
       },
-      "fraudWarning": "Alle betrügerischen Transaktionen, einschließlich Chargeback-Missbrauch, werden gemeldet und mit aller Konsequenz verfolgt"
+      "fraudWarning": "Alle betrügerischen Transaktionen, einschließlich Chargeback-Missbrauch, werden gemeldet und mit aller Konsequenz verfolgt",
+      "helpfulNotice": "Haben Sie Probleme? Kontaktieren Sie uns jederzeit unter it@loudspectrum.com — wir sind hier, um Ihnen zu helfen!"
     }
   },
   "OrderConfirmation": {

@@ -344,7 +344,8 @@
         "instruction": "Por favor complete los siguientes campos requeridos:",
         "andMore": "y {count} más..."
       },
-      "fraudWarning": "Todas las transacciones fraudulentas, incluyendo el abuso de contracargos, serán reportadas y perseguidas al máximo"
+      "fraudWarning": "Todas las transacciones fraudulentas, incluyendo el abuso de contracargos, serán reportadas y perseguidas al máximo",
+      "helpfulNotice": "¿Tiene problemas? Póngase en contacto con nosotros en cualquier momento en it@loudspectrum.com — estamos aquí para ayudar!"
     }
   },
   "OrderConfirmation": {

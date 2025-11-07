@@ -166,7 +166,7 @@ const ConfirmPayment = ({
 
       <div className="border-umbra-10 mt-4 space-y-5 rounded-[10px] border-1 p-4">
         {/* Show missing fields information when disabled */}
-        {isDisabled && !isLoading && (
+        {/* {isDisabled && !isLoading && (
           <div className="rounded-md border border-amber-200 bg-amber-50 p-3">
             <div className="flex items-start">
               <div className="flex-shrink-0">
@@ -196,20 +196,20 @@ const ConfirmPayment = ({
               </div>
             </div>
           </div>
-        )}
+        )} */}
+
+        {/* Helpful Notice */}
+        <div className="rounded-md border border-green-200 bg-green-50 p-3">
+          <div className="flex items-start">
+            <div className="ml-3">
+              <p className="text-sm text-green-800">{t('helpfulNotice')}</p>
+            </div>
+          </div>
+        </div>
 
         {/* Fraud Warning Notice */}
         <div className="rounded-md border border-red-200 bg-red-50 p-3">
           <div className="flex items-start">
-            <div className="flex-shrink-0">
-              <svg className="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </div>
             <div className="ml-3">
               <p className="text-sm text-red-800">{t('fraudWarning')}</p>
             </div>

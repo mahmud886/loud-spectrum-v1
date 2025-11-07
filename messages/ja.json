@@ -345,7 +345,8 @@
         "instruction": "以下の必須項目を入力してください：",
         "andMore": "その他{count}項目..."
       },
-      "fraudWarning": "すべての不正取引（チャージバックの悪用を含む）は報告され、最大限の範囲で追及されます"
+      "fraudWarning": "すべての不正取引（チャージバックの悪用を含む）は報告され、最大限の範囲で追及されます",
+      "helpfulNotice": "問題がありますか？いつでも it@loudspectrum.com にお問い合わせください — お手伝いいたします！"
     }
   },
   "OrderConfirmation": {

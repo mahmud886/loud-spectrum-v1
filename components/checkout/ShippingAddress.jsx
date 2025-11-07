@@ -3,8 +3,14 @@
 import { ComboBox } from '@/components/ui/combobox';
 import { Textarea } from '@/components/ui/textarea';
 import { Link } from '@/i18n/navigation';
-import { selectCurrentUser } from '@/lib/store/slices/authSlice';
-import { selectShippingAddress, setDefaultAddresses, updateShippingAddress } from '@/lib/store/slices/checkoutSlice';
+import { selectCurrentUser, selectIsAuthenticated } from '@/lib/store/slices/authSlice';
+import {
+  selectShippingAddress,
+  setDefaultAddresses,
+  setGuestUserField,
+  setIsGuest,
+  updateShippingAddress,
+} from '@/lib/store/slices/checkoutSlice';
 import { getOrderAddress } from '@/services/get-order-address';
 import { getCities, getCountries, getStates } from '@/services/location-services';
 import { ArrowRight } from 'lucide-react';
@@ -19,6 +25,7 @@ const ShippingAddress = () => {
   const dispatch = useDispatch();
   const shippingAddress = useSelector(selectShippingAddress);
   const currentUser = useSelector(selectCurrentUser);
+  const isAuthenticated = useSelector(selectIsAuthenticated);
   const [countries, setCountries] = useState([]);
   const [provinces, setProvinces] = useState([]);
   const [cities, setCities] = useState([]);
@@ -137,12 +144,25 @@ const ShippingAddress = () => {
   }, [shippingAddress.country, shippingAddress.province]);
 
   const handleShippingAddressChange = (e) => {
+    const { name, value } = e.target;
+
+    // Update shipping address
     dispatch(
       updateShippingAddress({
         ...shippingAddress,
-        [e.target.name]: e.target.value,
+        [name]: value,
       }),
     );
+
+    // If email field is changed and user is not authenticated, sync guest user email and mark as guest
+    if (name === 'email' && !isAuthenticated) {
+      const emailValue = value || '';
+      dispatch(setGuestUserField({ name: 'customerEmail', value: emailValue }));
+      // Only set isGuest to true if email has a value
+      if (emailValue) {
+        dispatch(setIsGuest(true));
+      }
+    }
   };
 
   const handleCountrySelectChange = (name, value) => {
