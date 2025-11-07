@@ -6,8 +6,8 @@ import { setCredentials } from '@/lib/store/slices/authSlice';
 import { clearCheckoutOnLogin } from '@/lib/store/slices/checkoutSlice';
 import { Eye, EyeOff } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { toast } from 'sonner';
 import { z } from 'zod';
@@ -18,11 +18,23 @@ const Register = () => {
   const t = useTranslations('LoginPage.Registration');
   const router = useRouter();
   const dispatch = useDispatch();
+  const searchParams = useSearchParams();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [agree, setAgree] = useState(false);
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [prefilledEmail, setPrefilledEmail] = useState('');
+
+  // Pre-fill email from URL params
+  useEffect(() => {
+    if (searchParams) {
+      const emailParam = searchParams.get('email');
+      if (emailParam) {
+        setPrefilledEmail(emailParam);
+      }
+    }
+  }, [searchParams]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -149,6 +161,7 @@ const Register = () => {
             <input
               name="email"
               type="email"
+              defaultValue={prefilledEmail}
               placeholder={t('emailPlaceholder')}
               className={`bg-umbra-5 placeholder:text-umbra-100 hover:bg-umbra-10 min-h-[48px] w-full rounded-[10px] border px-4 py-2 font-mono text-[16px] leading-[140%] font-normal ${
                 errors.email ? 'border-red-500' : 'border-transparent'

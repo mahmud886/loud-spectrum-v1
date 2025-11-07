@@ -6,16 +6,18 @@ import { Separator } from '@/components/ui/separator';
 import { Link } from '@/i18n/navigation';
 import { CheckCircle, CreditCard, Hash, Package, User, X } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Confetti from 'react-confetti';
 
 const GuestOrderConfirmationModal = ({ isOpen, onClose, orderData, guestEmail }) => {
   const t = useTranslations('CheckoutPage.GuestOrderConfirmation');
   const [showConfetti, setShowConfetti] = useState(true);
+  const emailSentForOrdersRef = useRef(new Set());
   const [windowDimension, setWindowDimension] = useState({
     width: 0,
     height: 0,
   });
+  console.log(orderData);
 
   // Handle window resize for confetti
   useEffect(() => {
@@ -41,6 +43,40 @@ const GuestOrderConfirmationModal = ({ isOpen, onClose, orderData, guestEmail })
         setShowConfetti(false);
       }, 5000);
       return () => clearTimeout(timer);
+    }
+  }, [isOpen, orderData]);
+
+  // Send guest account invitation email when modal opens
+  useEffect(() => {
+    if (isOpen && orderData && orderData.code && orderData.billing_details?.email) {
+      const orderCode = orderData.code;
+      const hasEmailBeenSent = emailSentForOrdersRef.current.has(orderCode);
+
+      if (!hasEmailBeenSent) {
+        const sendGuestAccountInvitationEmail = async () => {
+          try {
+            const response = await fetch('/api/emails/guest/account-invitation', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                orderData,
+              }),
+            });
+
+            if (response.ok) {
+              emailSentForOrdersRef.current.add(orderCode);
+              console.log('Guest account invitation email sent successfully for order:', orderCode);
+            } else {
+              console.error('Failed to send guest account invitation email:', await response.json());
+            }
+          } catch (error) {
+            console.error('Error sending guest account invitation email:', error);
+            // Don't block the UI if email fails
+          }
+        };
+
+        sendGuestAccountInvitationEmail();
+      }
     }
   }, [isOpen, orderData]);
 
@@ -249,7 +285,7 @@ const GuestOrderConfirmationModal = ({ isOpen, onClose, orderData, guestEmail })
                 {t('continueShoppingButton')}
               </Link>
               <Link
-                href="/login"
+                href={`/login?email=${encodeURIComponent(guestEmail || orderData?.billing_details?.email || '')}&tab=register`}
                 onClick={onClose}
                 className="inline-flex flex-1 items-center justify-center rounded-lg bg-black px-4 py-3 text-center text-sm font-medium text-white transition-colors hover:bg-gray-800"
               >
