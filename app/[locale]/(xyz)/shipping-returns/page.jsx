@@ -15,7 +15,7 @@ const ShippingReturnsPage = () => {
             {t('ShippingReturns.ShippingPolicy.shippingOptionsTitle')}
             <ul className="list-disc pl-5">
               <li>{t('ShippingReturns.ShippingPolicy.under100')}</li>
-              <li>{t('ShippingReturns.ShippingPolicy.over100')}</li>
+              {/* <li>{t('ShippingReturns.ShippingPolicy.over100')}</li> */}
               <li>{t('ShippingReturns.ShippingPolicy.expedited')}</li>
             </ul>
           </li>

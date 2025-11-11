@@ -1,6 +1,6 @@
 'use client';
 
-import { X } from 'lucide-react';
+import { ArrowRightIcon, X } from 'lucide-react';
 import Image from 'next/image';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -132,7 +132,7 @@ const RebrandingPopup = () => {
       }`}
     >
       <div
-        className={`relative mx-4 w-full max-w-md transform overflow-hidden rounded-3xl bg-white p-5 shadow-2xl transition-all duration-200 ease-out sm:max-w-lg md:max-w-2xl md:p-7 xl:max-w-3xl xl:p-9 ${
+        className={`bg-umbra-100 relative mx-4 w-full max-w-md transform overflow-hidden rounded-3xl p-5 shadow-2xl transition-all duration-200 ease-out sm:max-w-lg md:max-w-2xl md:p-7 xl:p-9 ${
           animateIn ? 'translate-y-0 scale-100 opacity-100' : 'translate-y-4 scale-95 opacity-0'
         }`}
       >
@@ -160,44 +160,39 @@ const RebrandingPopup = () => {
         {/* Content */}
         <div className="text-umbra-100 space-y-5 text-center text-sm md:space-y-7 md:text-left md:text-[0.925rem]">
           <div className="flex flex-col items-center gap-3 md:flex-row md:items-start md:justify-between">
-            <h2 className="text-umbra-100 inline-flex w-full items-center justify-center rounded-full px-5 py-1.5 text-center text-[20px] font-bold tracking-[0.05em] uppercase md:text-[24px]">
+            <h2 className="text-white-100 inline-flex w-full items-center justify-center rounded-full px-5 py-1.5 text-center text-[20px] font-normal md:text-[24px]">
               Welcome to Loud Spectrum
             </h2>
             {/* <div className="main-gradient hidden h-px w-20 md:block" /> */}
           </div>
 
-          <p className="text-center text-xs leading-relaxed md:text-sm">
+          <p className="text-white-100 text-center text-xs leading-relaxed md:text-sm">
             We've evolved — same great team, same premium quality, bold new name. We’ve rebranded to bring you a more
             streamlined, elevated web experience — one that matches our full spectrum of flavor and innovation.
           </p>
 
           <div className="from-umbra-100/10 via-atmosphere/10 to-aurora/10 rounded-xl bg-gradient-to-r p-4 shadow-inner">
-            <h3 className="text-umbra-60 mb-3 text-center text-xs font-semibold tracking-[0.35em] uppercase">
-              Brand Evolutions
-            </h3>
+            <h3 className="text-white-100 mb-3 text-center text-xs font-normal uppercase">Brand Evolutions</h3>
             <div className="grid gap-3 sm:grid-cols-2">
               {brandUpdates.map(({ old, newName, color }) => {
                 const colors = colorClasses[color];
                 return (
                   <div
                     key={old}
-                    className="border-umbra-10 text-umbra-100 flex items-center justify-center rounded-2xl border bg-white/90 px-3 py-2 text-xs font-medium backdrop-blur-sm sm:text-sm"
+                    className="border-umbra-10 text-umbra-100 flex items-center justify-between rounded-full border bg-white/90 px-3 py-2 text-xs font-medium backdrop-blur-sm sm:text-sm"
                   >
-                    <span className="flex items-center gap-2">
-                      {/* <span
-                        className={`inline-flex h-7 w-7 items-center justify-center rounded-full ${colors.bgLight} ${colors.text} text-[0.65rem] font-semibold`}
-                      >
-                        {old.charAt(0)}
-                      </span> */}
-                      {old}
-                    </span>
-                    <span className="flex items-center gap-2">
-                      <span className="text-umbra-40 text-sm sm:text-base">→</span>
-                      <span
-                        className={`inline-flex items-center rounded-full ${colors.bg} px-2.5 py-0.5 text-[0.65rem] font-semibold text-white shadow-sm sm:px-3 sm:py-0.5 sm:text-xs`}
-                      >
-                        {newName}
+                    {/* Aligned Arrow & New Name */}
+                    <span className="ml-2 flex min-w-0 items-center justify-center gap-2">
+                      {/* Old Name */}
+                      <span className="flex min-w-0 items-center justify-start gap-2">{old}</span>
+                      <span className="text-umbra-40 text-sm sm:text-base">
+                        <ArrowRightIcon className="text-umbra-40 size-4" />
                       </span>
+                    </span>
+                    <span
+                      className={`inline-flex items-center rounded-full ${colors.bg} px-2.5 py-0.5 text-[0.65rem] font-normal text-white shadow-sm sm:px-3 sm:py-0.5 sm:text-xs`}
+                    >
+                      {newName}
                     </span>
                   </div>
                 );
@@ -207,14 +202,12 @@ const RebrandingPopup = () => {
 
           <div className="grid gap-5 md:grid-cols-1 md:items-start md:gap-6">
             <div className="rounded-xl p-4">
-              <p className="text-umbra-60 text-center text-xs font-semibold tracking-[0.35em] uppercase">
-                Here for you
-              </p>
-              <p className="text-umbra-100/80 mt-2 text-center text-xs leading-relaxed sm:text-sm">
+              <p className="text-white-100 text-center text-xs font-normal uppercase">Here for you</p>
+              <p className="text-white-100 mt-2 text-center text-xs leading-relaxed sm:text-sm">
                 If you have questions or run into issues, reach out in chat or email us at{' '}
                 <a
                   href="mailto:hi@loudspectrum.com"
-                  className="text-umbra-100 font-semibold underline-offset-4 hover:underline"
+                  className="text-white-100 font-normal underline-offset-4 hover:underline"
                 >
                   hi@loudspectrum.com
                 </a>
@@ -228,7 +221,7 @@ const RebrandingPopup = () => {
         <div className="mt-6 flex justify-center">
           <button
             onClick={handleClose}
-            className="from-umbra-100 via-atmosphere to-aurora text-white-100 inline-flex cursor-pointer items-center justify-center rounded-full bg-gradient-to-r px-5 py-1.5 text-center text-[0.6rem] font-semibold tracking-[0.1em] uppercase md:text-[14px]"
+            className="special-button inline-flex cursor-pointer items-center justify-center rounded-full bg-gradient-to-r px-5 py-1.5 text-center text-[0.6rem] font-normal text-white uppercase md:!text-[14px]"
           >
             Got it!
           </button>
