@@ -1,0 +1,52 @@
+import { useTranslations } from 'next-intl';
+import Image from 'next/image';
+
+const FluurPageHero = ({ categoryProducts }) => {
+  const t = useTranslations('FluurPage.hero');
+
+  return (
+    <div className="bg-umbra-100 relative h-[1250px] overflow-hidden xl:h-[1300px]">
+      <Image
+        src="/assets/images/fluur/fluur.png"
+        alt="Fluur"
+        width={1920}
+        height={1080}
+        className="absolute top-0 left-1/2 z-0 h-full w-full -translate-x-1/2 object-contain xl:w-[1920px]"
+        priority
+      />
+
+      <div className="absolute inset-0 z-10 container h-full w-full overflow-hidden">
+        <div className="relative z-10 flex h-full w-full flex-row items-center justify-center gap-[40px]">
+          <div className="w-full text-center xl:w-[62%]">
+            <h1 className="pb-5 font-sans text-[35px] leading-[120%] font-normal tracking-normal text-white xl:text-[60px]">
+              {t('title')}
+            </h1>
+            <p className="font-mono text-[20px] leading-[120%] font-normal text-white">{t('description')}</p>
+          </div>
+        </div>
+      </div>
+
+      {/* <div className="absolute bottom-[0%] left-1/2 z-[100] container -translate-x-1/2 xl:bottom-[0%]">
+        <div className="bg-transparent">
+          <div className="py-20">
+            <h2 className="text-white-100 mb-3 font-sans text-[32px] leading-[120%] font-normal xl:text-[42px]">
+              {t('discoverTitle')}
+            </h2>
+            <ProductCarouselWithProgress>
+              {categoryProducts?.slice(0, 20).map((product) => (
+                <CarouselItem
+                  key={product._id}
+                  className="basis-2/3 pl-2 sm:basis-2/4 md:basis-3/4 lg:basis-1/3 xl:basis-1/4 xl:pl-2 2xl:basis-1/4"
+                >
+                  <NewProductCard product={product} />
+                </CarouselItem>
+              ))}
+            </ProductCarouselWithProgress>
+          </div>
+        </div>
+      </div> */}
+    </div>
+  );
+};
+
+export default FluurPageHero;

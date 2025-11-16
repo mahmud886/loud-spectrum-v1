@@ -910,16 +910,75 @@
   "NewPage": {
     "newPageHeroBanner": {
       "title": "You've got high standards. We offer endless possibilities.",
-      "description": "We’re always innovating terpene profiles in our lab. With new flavors rolling out regularly, check back often for the latest products that set your business apart."
+      "description": "We're always innovating terpene profiles in our lab. With new flavors rolling out regularly, check back often for the latest products that set your business apart."
     },
     "WhatsNewProductSlider": {
-      "DiscoverWhatsNew": "Discover What’s New"
+      "DiscoverWhatsNew": "Discover What's New"
     },
     "commingSoon": {
       "comingSoonLabel": "COMING SOON",
       "title": "A New Kind of Flavor Experience",
-      "description": "What’s next for Loud Spectrum? We’ve been in the lab working on a bold new wave of terpene innovation, designed to elevate every moment in unexpected ways. Our latest venture is a line of first-to-market products that bring flavor to everyday experiences. Get a taste for the future of terpenes—and stay tuned for more.",
+      "description": "What's next for Loud Spectrum? We've been in the lab working on a bold new wave of terpene innovation, designed to elevate every moment in unexpected ways. Our latest venture is a line of first-to-market products that bring flavor to everyday experiences. Get a taste for the future of terpenes—and stay tuned for more.",
       "button": "Join the Waitlist"
+    }
+  },
+  "FluurPage": {
+    "hero": {
+      "title": "Introducing FLUUR",
+      "subheading": "Fresh from Harvest, Pure to Experience",
+      "description": "Introducing FLUUR - our line of consumer products which captures the flavor and aroma of freshly harvested flower. The terpenes are extracted within an hour of harvest, never frozen or dried.",
+      "description2": "They feature our most premium Alive flower-derived terpenes (FDTs) that also power our lab formulations. Take your sensory experiences to the next level with FLUUR Gum and FLUUR Beads.",
+      "discoverTitle": "Discover FLUUR"
+    },
+    "content": {
+      "title": "FLUUR",
+      "description": "Introducing FLUUR - our line of consumer products which captures the flavor and aroma of freshly harvested flower. The terpenes are extracted within an hour of harvest, never frozen or dried. They feature our most premium Alive flower-derived terpenes (FDTs) that also power our lab formulations. Take your sensory experiences to the next level with FLUUR Gum and FLUUR Beads.",
+      "button": "Shop Now"
+    },
+    "productShowcase": {
+      "label": "Our Products",
+      "title": "Experience FLUUR",
+      "description": "Discover our premium line of consumer products featuring the purest terpene profiles extracted from freshly harvested flowers.",
+      "gum": {
+        "title": "FLUUR Gum",
+        "description": "Long-lasting flavor experience with our premium Alive flower-derived terpenes. Perfect for on-the-go sensory enjoyment."
+      },
+      "beads": {
+        "title": "FLUUR Beads",
+        "description": "Concentrated terpene beads that deliver intense flavor and aroma. Experience the essence of freshly harvested flower in every bead."
+      }
+    },
+    "process": {
+      "label": "The Process",
+      "title": "From Harvest to Experience",
+      "step1": {
+        "title": "Fresh Harvest",
+        "description": "Our terpenes are extracted from flowers at the peak of freshness, ensuring maximum flavor and aroma preservation.",
+        "item1": "Harvested at optimal maturity",
+        "item2": "Never frozen or dried",
+        "item3": "Preserved within one hour of harvest"
+      },
+      "step2": {
+        "title": "Rapid Extraction",
+        "description": "Within one hour of harvest, our advanced extraction process captures the terpenes at their most potent state.",
+        "item1": "Extraction within 60 minutes",
+        "item2": "Cold extraction methods",
+        "item3": "Preserves full terpene profile"
+      },
+      "step3": {
+        "title": "Premium Formulation",
+        "description": "Our Alive flower-derived terpenes (FDTs) are the same premium quality used in our lab formulations, now available in consumer products.",
+        "item1": "Alive FDT technology",
+        "item2": "Lab-grade quality",
+        "item3": "Consumer-ready products"
+      },
+      "step4": {
+        "title": "Elevated Sensory Experience",
+        "description": "Experience the true essence of freshly harvested flower through FLUUR Beads. Each bead delivers concentrated terpenes that enhance your sensory journey with authentic flavor and aroma profiles.",
+        "item1": "Concentrated terpene delivery",
+        "item2": "Authentic flavor profiles",
+        "item3": "Enhanced sensory journey"
+      }
     }
   },
   "InTheLab": {

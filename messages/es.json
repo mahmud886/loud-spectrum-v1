@@ -916,6 +916,65 @@
       "button": "Únete a la lista de espera"
     }
   },
+  "FluurPage": {
+    "hero": {
+      "title": "Presentando FLUUR",
+      "subheading": "Fresco de la Cosecha, Puro para Experimentar",
+      "description": "Presentamos FLUUR - nuestra línea de productos para consumidores que captura el sabor y el aroma de flores recién cosechadas. Los terpenos se extraen dentro de una hora después de la cosecha, nunca se congelan ni se secan.",
+      "description2": "Presentan nuestros terpenos derivados de flores vivas (FDT) más premium que también impulsan nuestras formulaciones de laboratorio. Lleve sus experiencias sensoriales al siguiente nivel con FLUUR Gum y FLUUR Beads.",
+      "discoverTitle": "Descubre FLUUR"
+    },
+    "content": {
+      "title": "FLUUR",
+      "description": "Presentamos FLUUR - nuestra línea de productos para consumidores que captura el sabor y el aroma de flores recién cosechadas. Los terpenos se extraen dentro de una hora después de la cosecha, nunca se congelan ni se secan. Presentan nuestros terpenos derivados de flores vivas (FDT) más premium que también impulsan nuestras formulaciones de laboratorio. Lleve sus experiencias sensoriales al siguiente nivel con FLUUR Gum y FLUUR Beads.",
+      "button": "Comprar ahora"
+    },
+    "productShowcase": {
+      "label": "Nuestros Productos",
+      "title": "Experimenta FLUUR",
+      "description": "Descubre nuestra línea premium de productos para consumidores con los perfiles de terpenos más puros extraídos de flores recién cosechadas.",
+      "gum": {
+        "title": "FLUUR Gum",
+        "description": "Experiencia de sabor duradera con nuestros terpenos derivados de flores vivas premium. Perfecto para disfrute sensorial sobre la marcha."
+      },
+      "beads": {
+        "title": "FLUUR Beads",
+        "description": "Perlas de terpenos concentradas que ofrecen sabor y aroma intensos. Experimenta la esencia de flores recién cosechadas en cada perla."
+      }
+    },
+    "process": {
+      "label": "El Proceso",
+      "title": "De la Cosecha a la Experiencia",
+      "step1": {
+        "title": "Cosecha Fresca",
+        "description": "Nuestros terpenos se extraen de flores en el punto máximo de frescura, asegurando la máxima preservación del sabor y aroma.",
+        "item1": "Cosechadas en madurez óptima",
+        "item2": "Nunca congeladas ni secadas",
+        "item3": "Preservadas dentro de una hora de la cosecha"
+      },
+      "step2": {
+        "title": "Extracción Rápida",
+        "description": "Dentro de una hora de la cosecha, nuestro proceso de extracción avanzado captura los terpenos en su estado más potente.",
+        "item1": "Extracción dentro de 60 minutos",
+        "item2": "Métodos de extracción en frío",
+        "item3": "Preserva el perfil completo de terpenos"
+      },
+      "step3": {
+        "title": "Formulación Premium",
+        "description": "Nuestros terpenos derivados de flores vivas (FDT) son la misma calidad premium utilizada en nuestras formulaciones de laboratorio, ahora disponibles en productos para consumidores.",
+        "item1": "Tecnología Alive FDT",
+        "item2": "Calidad de grado de laboratorio",
+        "item3": "Productos listos para consumidores"
+      },
+      "step4": {
+        "title": "Experiencia Sensorial Elevada",
+        "description": "Experimenta la verdadera esencia de flores recién cosechadas a través de FLUUR Beads. Cada perla ofrece terpenos concentrados que mejoran tu viaje sensorial con perfiles de sabor y aroma auténticos.",
+        "item1": "Entrega de terpenos concentrados",
+        "item2": "Perfiles de sabor auténticos",
+        "item3": "Viaje sensorial mejorado"
+      }
+    }
+  },
   "InTheLab": {
     "In_the_Lab": "En el Laboratorio",
     "Science_Is_in_Our_DNA": "La Ciencia Está en Nuestro ADN",

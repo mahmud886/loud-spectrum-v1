@@ -917,6 +917,65 @@
       "button": "Rejoindre la liste d’attente"
     }
   },
+  "FluurPage": {
+    "hero": {
+      "title": "Présentation de FLUUR",
+      "subheading": "Frais de la Récolte, Pur à Expérimenter",
+      "description": "Présentation de FLUUR - notre gamme de produits grand public qui capture la saveur et l'arôme des fleurs fraîchement récoltées. Les terpènes sont extraits dans l'heure suivant la récolte, jamais congelés ni séchés.",
+      "description2": "Ils présentent nos terpènes dérivés de fleurs vivantes (FDT) les plus premium qui alimentent également nos formulations de laboratoire. Élevez vos expériences sensorielles au niveau supérieur avec FLUUR Gum et FLUUR Beads.",
+      "discoverTitle": "Découvrir FLUUR"
+    },
+    "content": {
+      "title": "FLUUR",
+      "description": "Présentation de FLUUR - notre gamme de produits grand public qui capture la saveur et l'arôme des fleurs fraîchement récoltées. Les terpènes sont extraits dans l'heure suivant la récolte, jamais congelés ni séchés. Ils présentent nos terpènes dérivés de fleurs vivantes (FDT) les plus premium qui alimentent également nos formulations de laboratoire. Élevez vos expériences sensorielles au niveau supérieur avec FLUUR Gum et FLUUR Beads.",
+      "button": "Acheter maintenant"
+    },
+    "productShowcase": {
+      "label": "Nos Produits",
+      "title": "Découvrez FLUUR",
+      "description": "Découvrez notre gamme premium de produits grand public avec les profils de terpènes les plus purs extraits de fleurs fraîchement récoltées.",
+      "gum": {
+        "title": "FLUUR Gum",
+        "description": "Expérience de saveur durable avec nos terpènes dérivés de fleurs vivantes premium. Parfait pour la jouissance sensorielle en déplacement."
+      },
+      "beads": {
+        "title": "FLUUR Beads",
+        "description": "Perles de terpènes concentrées qui offrent une saveur et un arôme intenses. Découvrez l'essence des fleurs fraîchement récoltées dans chaque perle."
+      }
+    },
+    "process": {
+      "label": "Le Processus",
+      "title": "De la Récolte à l'Expérience",
+      "step1": {
+        "title": "Récolte Fraîche",
+        "description": "Nos terpènes sont extraits de fleurs au summum de la fraîcheur, assurant une préservation maximale de la saveur et de l'arôme.",
+        "item1": "Récoltées à maturité optimale",
+        "item2": "Jamais congelées ni séchées",
+        "item3": "Préservées dans l'heure suivant la récolte"
+      },
+      "step2": {
+        "title": "Extraction Rapide",
+        "description": "Dans l'heure suivant la récolte, notre processus d'extraction avancé capture les terpènes à leur état le plus puissant.",
+        "item1": "Extraction dans les 60 minutes",
+        "item2": "Méthodes d'extraction à froid",
+        "item3": "Préserve le profil complet de terpènes"
+      },
+      "step3": {
+        "title": "Formulation Premium",
+        "description": "Nos terpènes dérivés de fleurs vivantes (FDT) sont de la même qualité premium utilisée dans nos formulations de laboratoire, maintenant disponibles dans les produits grand public.",
+        "item1": "Technologie Alive FDT",
+        "item2": "Qualité de grade laboratoire",
+        "item3": "Produits prêts pour les consommateurs"
+      },
+      "step4": {
+        "title": "Expérience Sensorielle Élevée",
+        "description": "Découvrez la véritable essence des fleurs fraîchement récoltées grâce aux FLUUR Beads. Chaque perle offre des terpènes concentrés qui enrichissent votre parcours sensoriel avec des profils de saveur et d'arôme authentiques.",
+        "item1": "Livraison de terpènes concentrés",
+        "item2": "Profils de saveur authentiques",
+        "item3": "Parcours sensoriel amélioré"
+      }
+    }
+  },
   "InTheLab": {
     "In_the_Lab": "Dans le Laboratoire",
     "Science_Is_in_Our_DNA": "La Science Est dans Notre ADN",

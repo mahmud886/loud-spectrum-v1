@@ -916,6 +916,65 @@
       "button": "Zur Warteliste anmelden"
     }
   },
+  "FluurPage": {
+    "hero": {
+      "title": "FLUUR vorstellen",
+      "subheading": "Frisch von der Ernte, rein im Erlebnis",
+      "description": "Stellen Sie FLUUR vor - unsere Produktlinie für Verbraucher, die den Geschmack und das Aroma von frisch geernteten Blüten einfängt. Die Terpene werden innerhalb einer Stunde nach der Ernte extrahiert, niemals eingefroren oder getrocknet.",
+      "description2": "Sie enthalten unsere hochwertigsten Lebend-Blüten-Terpene (FDTs), die auch unsere Laborformulierungen antreiben. Bringen Sie Ihre Sinneserfahrungen mit FLUUR Gum und FLUUR Beads auf die nächste Stufe.",
+      "discoverTitle": "FLUUR entdecken"
+    },
+    "content": {
+      "title": "FLUUR",
+      "description": "Stellen Sie FLUUR vor - unsere Produktlinie für Verbraucher, die den Geschmack und das Aroma von frisch geernteten Blüten einfängt. Die Terpene werden innerhalb einer Stunde nach der Ernte extrahiert, niemals eingefroren oder getrocknet. Sie enthalten unsere hochwertigsten Lebend-Blüten-Terpene (FDTs), die auch unsere Laborformulierungen antreiben. Bringen Sie Ihre Sinneserfahrungen mit FLUUR Gum und FLUUR Beads auf die nächste Stufe.",
+      "button": "Jetzt einkaufen"
+    },
+    "productShowcase": {
+      "label": "Unsere Produkte",
+      "title": "FLUUR erleben",
+      "description": "Entdecken Sie unsere Premium-Produktlinie für Verbraucher mit den reinsten Terpenprofilen, die aus frisch geernteten Blüten extrahiert werden.",
+      "gum": {
+        "title": "FLUUR Gum",
+        "description": "Langanhaltendes Geschmackserlebnis mit unseren Premium Lebend-Blüten-Terpenen. Perfekt für sensorischen Genuss unterwegs."
+      },
+      "beads": {
+        "title": "FLUUR Beads",
+        "description": "Konzentrierte Terpenperlen, die intensiven Geschmack und Aroma liefern. Erleben Sie das Wesen frisch geernteter Blüten in jeder Perle."
+      }
+    },
+    "process": {
+      "label": "Der Prozess",
+      "title": "Von der Ernte zum Erlebnis",
+      "step1": {
+        "title": "Frische Ernte",
+        "description": "Unsere Terpene werden aus Blüten im Höhepunkt der Frische extrahiert, um maximale Geschmacks- und Aromenerhaltung zu gewährleisten.",
+        "item1": "Bei optimaler Reife geerntet",
+        "item2": "Niemals eingefroren oder getrocknet",
+        "item3": "Innerhalb einer Stunde nach der Ernte konserviert"
+      },
+      "step2": {
+        "title": "Schnelle Extraktion",
+        "description": "Innerhalb einer Stunde nach der Ernte erfasst unser fortschrittlicher Extraktionsprozess die Terpene in ihrem potentesten Zustand.",
+        "item1": "Extraktion innerhalb von 60 Minuten",
+        "item2": "Kälteextraktionsmethoden",
+        "item3": "Erhält vollständiges Terpenprofil"
+      },
+      "step3": {
+        "title": "Premium-Formulierung",
+        "description": "Unsere Lebend-Blüten-Terpene (FDTs) sind die gleiche Premium-Qualität, die in unseren Laborformulierungen verwendet wird, jetzt in Verbraucherprodukten erhältlich.",
+        "item1": "Alive FDT-Technologie",
+        "item2": "Laborqualität",
+        "item3": "Verbraucherfertige Produkte"
+      },
+      "step4": {
+        "title": "Erhöhte Sensorische Erfahrung",
+        "description": "Erleben Sie das wahre Wesen frisch geernteter Blüten durch FLUUR Beads. Jede Perle liefert konzentrierte Terpene, die Ihre Sinnesreise mit authentischen Geschmacks- und Aromaprofilen bereichern.",
+        "item1": "Konzentrierte Terpenlieferung",
+        "item2": "Authentische Geschmacksprofile",
+        "item3": "Erweiterte Sinnesreise"
+      }
+    }
+  },
   "InTheLab": {
     "In_the_Lab": "Im Labor",
     "Science_Is_in_Our_DNA": "Wissenschaft liegt in unserer DNA",
