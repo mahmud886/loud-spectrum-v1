@@ -9,7 +9,7 @@ import { getProductPriceRange } from '@/helpers/get-product-price-ranges';
 import { stripHtml } from '@/helpers/get-strip-html';
 import { parseProductAttributes } from '@/helpers/product-attributes';
 import { getStarRatingData, renderStars } from '@/helpers/star-rating';
-import { formatVolumeLabelForProduct } from '@/helpers/volume-labels';
+import { formatVolumeLabelForProduct, sortVolumeOptionsAscending } from '@/helpers/volume-labels';
 import { addToCartAndOpenDrawer } from '@/lib/store/slices/cartSlice';
 import { getProductReviews } from '@/services/get-product-reviews';
 import { MinusIcon, PlusIcon } from 'lucide-react';
@@ -28,7 +28,7 @@ const ProductDetailsLeftCard = ({ product }) => {
 
   const t = useTranslations('ProductDetails');
 
-  const volumeOptions = parseProductAttributes(product?.subproducts, 'volume');
+  const volumeOptions = sortVolumeOptionsAscending(parseProductAttributes(product?.subproducts, 'volume'));
   const { min, max } = getProductPriceRange(product?.subproducts);
   const selectedPrice = getProductPriceByVolume(product?.subproducts, selectedVolume);
   const formulaOptions = parseProductAttributes(product?.subproducts, 'formula');

@@ -119,7 +119,36 @@ export function calculateShippingWeight(items = []) {
       volume = volumeString;
     }
 
-    const gramsPerUnit = BOTTLE_WEIGHT_GRAMS[volume] || 0;
+    // Get product category/type (case-insensitive)
+    const categoryName = String(item.category_name || '')
+      .trim()
+      .toLowerCase();
+    let gramsPerUnit = 0;
+
+    // Check for product-type-specific weights for 250ml and 500ml
+    if (mlPerUnit === 250) {
+      if (categoryName === 'alive') {
+        gramsPerUnit = 206.25;
+      } else if (['classic', 'sweet', 'dank'].includes(categoryName)) {
+        gramsPerUnit = 212.5;
+      } else {
+        // Fallback to default weight
+        gramsPerUnit = BOTTLE_WEIGHT_GRAMS[volume] || 0;
+      }
+    } else if (mlPerUnit === 500) {
+      if (categoryName === 'alive') {
+        gramsPerUnit = 412.5;
+      } else if (['classic', 'sweet', 'dank'].includes(categoryName)) {
+        gramsPerUnit = 425;
+      } else {
+        // Fallback to default weight
+        gramsPerUnit = BOTTLE_WEIGHT_GRAMS[volume] || 0;
+      }
+    } else {
+      // Use default weights for all other volumes
+      gramsPerUnit = BOTTLE_WEIGHT_GRAMS[volume] || 0;
+    }
+
     const quantity = Number(item.quantity) || 0;
     const gramsTotal = gramsPerUnit * quantity;
     totalMilliliters += mlPerUnit * quantity;
