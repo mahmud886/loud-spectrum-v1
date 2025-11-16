@@ -14,7 +14,7 @@ const FluurPageHero = () => {
         <div className="relative h-[427px] overflow-hidden bg-white xl:h-[631px]">
           <Image
             src="/assets/images/fluur/Gum&Beads_Packaging.png"
-            alt="FLUUR"
+            alt="Fluur"
             width={1280}
             height={631}
             className="absolute top-0 left-1/2 z-0 h-[427px] w-full -translate-x-1/2 object-cover xl:h-full xl:w-[1280px]"

@@ -409,7 +409,7 @@
       "The_lab": "The lab",
       "Shop": "Shop",
       "New": "New",
-      "FLUUR": "FLUUR",
+      "FLUUR": "Fluur",
       "Product_guide": "Product guide",
       "Terpene_Chart": "Terpene Chart",
       "Terpene_Guide": "Terpene Guide",
@@ -423,6 +423,8 @@
       "Active": "Active",
       "Relaxed": "Relaxed",
       "Sample_packs": "Sample packs",
+      "Terpenes": "Terpenes",
+      "Terpenes_Infused": "Terpenes Infused",
       "productOfMonth": "Product of {month}"
     }
   },
@@ -925,27 +927,27 @@
   },
   "FluurPage": {
     "hero": {
-      "title": "Introducing FLUUR",
+      "title": "Introducing Fluur",
       "subheading": "Fresh from Harvest, Pure to Experience",
-      "description": "Introducing FLUUR - our line of consumer products which captures the flavor and aroma of freshly harvested flower. The terpenes are extracted within an hour of harvest, never frozen or dried.",
-      "description2": "They feature our most premium Alive flower-derived terpenes (FDTs) that also power our lab formulations. Take your sensory experiences to the next level with FLUUR Gum and FLUUR Beads.",
-      "discoverTitle": "Discover FLUUR"
+      "description": "Introducing Fluur - our line of consumer products which captures the flavor and aroma of freshly harvested flower. The terpenes are extracted within an hour of harvest, never frozen or dried.",
+      "description2": "They feature our most premium Alive flower-derived terpenes (FDTs) that also power our lab formulations. Take your sensory experiences to the next level with Fluur Gum and Fluur Beads.",
+      "discoverTitle": "Discover Fluur"
     },
     "content": {
       "title": "FLUUR",
-      "description": "Introducing FLUUR - our line of consumer products which captures the flavor and aroma of freshly harvested flower. The terpenes are extracted within an hour of harvest, never frozen or dried. They feature our most premium Alive flower-derived terpenes (FDTs) that also power our lab formulations. Take your sensory experiences to the next level with FLUUR Gum and FLUUR Beads.",
+      "description": "Introducing Fluur - our line of consumer products which captures the flavor and aroma of freshly harvested flower. The terpenes are extracted within an hour of harvest, never frozen or dried. They feature our most premium Alive flower-derived terpenes (FDTs) that also power our lab formulations. Take your sensory experiences to the next level with Fluur Gum and Fluur Beads.",
       "button": "Shop Now"
     },
     "productShowcase": {
       "label": "Our Products",
-      "title": "Experience FLUUR",
+      "title": "Experience Fluur",
       "description": "Discover our premium line of consumer products featuring the purest terpene profiles extracted from freshly harvested flowers.",
       "gum": {
-        "title": "FLUUR Gum",
+        "title": "Fluur Gum",
         "description": "Long-lasting flavor experience with our premium Alive flower-derived terpenes. Perfect for on-the-go sensory enjoyment."
       },
       "beads": {
-        "title": "FLUUR Beads",
+        "title": "Fluur Beads",
         "description": "Concentrated terpene beads that deliver intense flavor and aroma. Experience the essence of freshly harvested flower in every bead."
       }
     },
@@ -975,7 +977,7 @@
       },
       "step4": {
         "title": "Elevated Sensory Experience",
-        "description": "Experience the true essence of freshly harvested flower through FLUUR Beads. Each bead delivers concentrated terpenes that enhance your sensory journey with authentic flavor and aroma profiles.",
+        "description": "Experience the true essence of freshly harvested flower through Fluur Beads. Each bead delivers concentrated terpenes that enhance your sensory journey with authentic flavor and aroma profiles.",
         "item1": "Concentrated terpene delivery",
         "item2": "Authentic flavor profiles",
         "item3": "Enhanced sensory journey"
@@ -1091,7 +1093,7 @@
   "Menu": "Menu",
   "Shop": "Shop",
   "NEW": "NEW",
-  "FLUUR": "FLUUR",
+  "FLUUR": "Fluur",
   "The_lab": "The lab",
   "About": "About",
   "Blog": "Blog",

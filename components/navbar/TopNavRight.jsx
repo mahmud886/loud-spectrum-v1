@@ -25,7 +25,14 @@ const TopNavRight = ({ onClose, setCartOpen }) => {
       [topNav.Active]: 'active',
       [topNav.Relaxed]: 'relax',
       [topNav.Sample_packs]: 'sample-packs',
+      [topNav.Terpenes_Infused]: '/fluur',
+      [topNav.FLUUR]: '/fluur',
     };
+
+    // Check if it's a direct URL path
+    if (categoryMap[categoryName]?.startsWith('/')) {
+      return categoryMap[categoryName];
+    }
 
     const englishCategory = categoryMap[categoryName] || categoryName.toLowerCase();
     return `/shop/${englishCategory}`;
@@ -71,7 +78,8 @@ const TopNavRight = ({ onClose, setCartOpen }) => {
 
         <div>
           {[
-            { title: topNav.Line, items: [topNav.Alive, topNav.Dank, topNav.Sweet, topNav.Classic] },
+            { title: topNav.Terpenes, items: [topNav.Alive, topNav.Dank, topNav.Sweet, topNav.Classic] },
+            { title: topNav.Terpenes_Infused, items: [topNav.Terpenes_Infused], customLabel: topNav.FLUUR },
             { title: topNav.Mood, items: [topNav.Active, topNav.Relaxed] },
             { items: [topNav.Sample_packs] },
           ].map((section, index) => (
@@ -85,10 +93,10 @@ const TopNavRight = ({ onClose, setCartOpen }) => {
                 {section.items.map((name, idx) => (
                   <Link
                     key={idx}
-                    href={getCategoryUrl(name)}
+                    href={getCategoryUrl(section.customLabel || name)}
                     className="text-umbra-100 hover:text-umbra-40 mx-[5px] font-sans text-[20px] font-normal transition-colors duration-300 ease-in-out"
                   >
-                    {name}
+                    {section.customLabel ? section.customLabel : name}
                   </Link>
                 ))}
               </div>

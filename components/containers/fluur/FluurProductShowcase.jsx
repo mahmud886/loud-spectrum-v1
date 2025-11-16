@@ -22,7 +22,7 @@ const FluurProductShowcase = () => {
         <div className="mt-12 flex justify-center xl:mt-20">
           <Image
             src="/assets/images/fluur/Gum&Beads_Packaging.png"
-            alt="FLUUR Gum and Beads"
+            alt="Fluur Gum and Beads"
             width={1064}
             height={525}
             className="h-full w-full object-cover xl:h-[525px] xl:w-[1064px]"
@@ -32,10 +32,10 @@ const FluurProductShowcase = () => {
 
         {/* Individual Products */}
         <div className="mt-12 flex flex-col items-center justify-between gap-12 py-12 lg:flex-row lg:gap-10 xl:mt-0 xl:flex-row xl:gap-[145px] xl:py-20">
-          {/* FLUUR Gum */}
+          {/* Fluur Gum */}
           <Image
             src="/assets/images/fluur/Gum_Packaging.png"
-            alt="FLUUR Gum"
+            alt="Fluur Gum"
             width={522}
             height={474}
             className="h-full w-full object-cover xl:h-[474px] xl:w-[522px]"
@@ -62,7 +62,7 @@ const FluurProductShowcase = () => {
           <div className="order-1 w-full xl:order-2 xl:max-w-[522px]">
             <Image
               src="/assets/images/fluur/Beads_Packaging.png"
-              alt="FLUUR Beads"
+              alt="Fluur Beads"
               width={522}
               height={474}
               className="h-full w-full object-cover xl:h-[474px] xl:w-[522px]"

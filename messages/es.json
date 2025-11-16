@@ -404,7 +404,7 @@
       "The_lab": "El laboratorio",
       "Shop": "Tienda",
       "New": "Nuevo",
-      "FLUUR": "FLUUR",
+      "Fluur": "Fluur",
       "Product_guide": "Guía de productos",
       "Shop_by": "Comprar por",
       "Terpene_Chart": "Gráfico de terpenos",
@@ -418,6 +418,8 @@
       "Active": "Activo",
       "Relaxed": "Relajado",
       "Sample_packs": "Paquetes de muestra",
+      "Terpenes": "Terpenos",
+      "Terpenes_Infused": "Terpenos Infundidos",
       "productOfMonth": "Producto de {month}"
     }
   },
@@ -919,27 +921,27 @@
   },
   "FluurPage": {
     "hero": {
-      "title": "Presentando FLUUR",
+      "title": "Presentando Fluur",
       "subheading": "Fresco de la Cosecha, Puro para Experimentar",
-      "description": "Presentamos FLUUR - nuestra línea de productos para consumidores que captura el sabor y el aroma de flores recién cosechadas. Los terpenos se extraen dentro de una hora después de la cosecha, nunca se congelan ni se secan.",
-      "description2": "Presentan nuestros terpenos derivados de flores vivas (FDT) más premium que también impulsan nuestras formulaciones de laboratorio. Lleve sus experiencias sensoriales al siguiente nivel con FLUUR Gum y FLUUR Beads.",
-      "discoverTitle": "Descubre FLUUR"
+      "description": "Presentamos Fluur - nuestra línea de productos para consumidores que captura el sabor y el aroma de flores recién cosechadas. Los terpenos se extraen dentro de una hora después de la cosecha, nunca se congelan ni se secan.",
+      "description2": "Presentan nuestros terpenos derivados de flores vivas (FDT) más premium que también impulsan nuestras formulaciones de laboratorio. Lleve sus experiencias sensoriales al siguiente nivel con Fluur Gum y Fluur Beads.",
+      "discoverTitle": "Descubre Fluur"
     },
     "content": {
-      "title": "FLUUR",
-      "description": "Presentamos FLUUR - nuestra línea de productos para consumidores que captura el sabor y el aroma de flores recién cosechadas. Los terpenos se extraen dentro de una hora después de la cosecha, nunca se congelan ni se secan. Presentan nuestros terpenos derivados de flores vivas (FDT) más premium que también impulsan nuestras formulaciones de laboratorio. Lleve sus experiencias sensoriales al siguiente nivel con FLUUR Gum y FLUUR Beads.",
+      "title": "Fluur",
+      "description": "Presentamos Fluur - nuestra línea de productos para consumidores que captura el sabor y el aroma de flores recién cosechadas. Los terpenos se extraen dentro de una hora después de la cosecha, nunca se congelan ni se secan. Presentan nuestros terpenos derivados de flores vivas (FDT) más premium que también impulsan nuestras formulaciones de laboratorio. Lleve sus experiencias sensoriales al siguiente nivel con Fluur Gum y Fluur Beads.",
       "button": "Comprar ahora"
     },
     "productShowcase": {
       "label": "Nuestros Productos",
-      "title": "Experimenta FLUUR",
+      "title": "Experimenta Fluur",
       "description": "Descubre nuestra línea premium de productos para consumidores con los perfiles de terpenos más puros extraídos de flores recién cosechadas.",
       "gum": {
-        "title": "FLUUR Gum",
+        "title": "Fluur Gum",
         "description": "Experiencia de sabor duradera con nuestros terpenos derivados de flores vivas premium. Perfecto para disfrute sensorial sobre la marcha."
       },
       "beads": {
-        "title": "FLUUR Beads",
+        "title": "Fluur Beads",
         "description": "Perlas de terpenos concentradas que ofrecen sabor y aroma intensos. Experimenta la esencia de flores recién cosechadas en cada perla."
       }
     },
@@ -969,7 +971,7 @@
       },
       "step4": {
         "title": "Experiencia Sensorial Elevada",
-        "description": "Experimenta la verdadera esencia de flores recién cosechadas a través de FLUUR Beads. Cada perla ofrece terpenos concentrados que mejoran tu viaje sensorial con perfiles de sabor y aroma auténticos.",
+        "description": "Experimenta la verdadera esencia de flores recién cosechadas a través de Fluur Beads. Cada perla ofrece terpenos concentrados que mejoran tu viaje sensorial con perfiles de sabor y aroma auténticos.",
         "item1": "Entrega de terpenos concentrados",
         "item2": "Perfiles de sabor auténticos",
         "item3": "Viaje sensorial mejorado"
@@ -1085,7 +1087,7 @@
   "Menu": "Menú",
   "Shop": "Tienda",
   "NEW": "NUEVO",
-  "FLUUR": "FLUUR",
+  "FLUUR": "Fluur",
   "The_lab": "El laboratorio",
   "About": "Acerca de",
   "Blog": "Blog",

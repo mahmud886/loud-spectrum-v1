@@ -405,7 +405,7 @@
       "The_lab": "研究所",
       "Shop": "ショップ",
       "New": "新着",
-      "FLUUR": "FLUUR",
+      "Fluur": "Fluur",
       "Product_guide": "商品ガイド",
       "Shop_by": "カテゴリで探す",
       "Terpene_Chart": "テルペンチャート",
@@ -419,6 +419,8 @@
       "Active": "アクティブ",
       "Relaxed": "リラックス",
       "Sample_packs": "サンプルパック",
+      "Terpenes": "テルペン",
+      "Terpenes_Infused": "テルペン注入",
       "productOfMonth": "{month}の製品"
     }
   },
@@ -920,27 +922,27 @@
   },
   "FluurPage": {
     "hero": {
-      "title": "FLUURをご紹介",
+      "title": "Fluurをご紹介",
       "subheading": "収穫直後から、純粋な体験へ",
-      "description": "FLUURをご紹介 - 収穫直後の花の風味と香りを捉えた消費者向け製品ライン。テルペンは収穫後1時間以内に抽出され、冷凍も乾燥もされません。",
-      "description2": "これらには、ラボ製剤にも使用される最高級のAlive花由来テルペン（FDT）が含まれています。FLUUR GumとFLUUR Beadsで、感覚体験を次のレベルへと引き上げましょう。",
-      "discoverTitle": "FLUURを発見"
+      "description": "Fluurをご紹介 - 収穫直後の花の風味と香りを捉えた消費者向け製品ライン。テルペンは収穫後1時間以内に抽出され、冷凍も乾燥もされません。",
+      "description2": "これらには、ラボ製剤にも使用される最高級のAlive花由来テルペン（FDT）が含まれています。Fluur GumとFluur Beadsで、感覚体験を次のレベルへと引き上げましょう。",
+      "discoverTitle": "Fluurを発見"
     },
     "content": {
-      "title": "FLUUR",
-      "description": "FLUURをご紹介 - 収穫直後の花の風味と香りを捉えた消費者向け製品ライン。テルペンは収穫後1時間以内に抽出され、冷凍も乾燥もされません。これらには、ラボ製剤にも使用される最高級のAlive花由来テルペン（FDT）が含まれています。FLUUR GumとFLUUR Beadsで、感覚体験を次のレベルへと引き上げましょう。",
+      "title": "Fluur",
+      "description": "Fluurをご紹介 - 収穫直後の花の風味と香りを捉えた消費者向け製品ライン。テルペンは収穫後1時間以内に抽出され、冷凍も乾燥もされません。これらには、ラボ製剤にも使用される最高級のAlive花由来テルペン（FDT）が含まれています。Fluur GumとFluur Beadsで、感覚体験を次のレベルへと引き上げましょう。",
       "button": "今すぐ購入"
     },
     "productShowcase": {
       "label": "私たちの製品",
-      "title": "FLUURを体験",
+      "title": "Fluurを体験",
       "description": "収穫直後の花から抽出された最も純粋なテルペンプロファイルを特徴とするプレミアム消費者向け製品ラインをご紹介します。",
       "gum": {
-        "title": "FLUUR Gum",
+        "title": "Fluur Gum",
         "description": "最高級のAlive花由来テルペンによる長続きする風味体験。外出先での感覚的な楽しみに最適です。"
       },
       "beads": {
-        "title": "FLUUR Beads",
+        "title": "Fluur Beads",
         "description": "強烈な風味と香りを提供する濃縮テルペンビーズ。各ビーズで収穫直後の花の本質を体験してください。"
       }
     },
@@ -970,7 +972,7 @@
       },
       "step4": {
         "title": "高められた感覚体験",
-        "description": "FLUUR Beadsを通じて、収穫直後の花の真の本質を体験してください。各ビーズは濃縮されたテルペンを提供し、本物の風味と香りのプロファイルで感覚的な旅を向上させます。",
+        "description": "Fluur Beadsを通じて、収穫直後の花の真の本質を体験してください。各ビーズは濃縮されたテルペンを提供し、本物の風味と香りのプロファイルで感覚的な旅を向上させます。",
         "item1": "濃縮テルペン提供",
         "item2": "本物の風味プロファイル",
         "item3": "向上した感覚的旅"
@@ -1086,7 +1088,7 @@
   "Menu": "メニュー",
   "Shop": "店",
   "NEW": "新しい",
-  "FLUUR": "FLUUR",
+  "FLUUR": "Fluur",
   "The_lab": "研究室",
   "About": "について",
   "Blog": "ブログ",
