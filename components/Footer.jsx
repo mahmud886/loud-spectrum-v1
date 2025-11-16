@@ -30,6 +30,11 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
+                    <Link href={`/fluur`} className="footer-text">
+                      {t('FLUUR')}
+                    </Link>
+                  </li>
+                  <li>
                     <Link href={`/lab`} className="footer-text">
                       {t('The_lab')}
                     </Link>
@@ -174,6 +179,11 @@ const Footer = () => {
                   <li>
                     <Link href={`/new`} className="footer-text">
                       {t('NEW')}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href={`/fluur`} className="footer-text">
+                      {t('FLUUR')}
                     </Link>
                   </li>
                   <li>

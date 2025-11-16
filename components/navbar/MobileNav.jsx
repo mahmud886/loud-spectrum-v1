@@ -142,6 +142,9 @@ const MobileNav = ({ onClose, setCartOpen }) => {
           <Link href="/new" className={'navLinkClass'}>
             {topNav('New')}
           </Link>
+          <Link href="/fluur" className={'navLinkClass'}>
+            {topNav('FLUUR')}
+          </Link>
           <Link href="/terpene-guide" className={'navLinkClass'}>
             {topNav('Terpene_Guide')}
           </Link>
