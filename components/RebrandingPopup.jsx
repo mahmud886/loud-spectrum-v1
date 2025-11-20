@@ -1,6 +1,4 @@
 'use client';
-
-import { ArrowRightIcon, X } from 'lucide-react';
 import Image from 'next/image';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -132,88 +130,67 @@ const RebrandingPopup = () => {
       }`}
     >
       <div
-        className={`bg-umbra-100 relative mx-4 w-full max-w-md transform overflow-hidden rounded-3xl p-5 shadow-2xl transition-all duration-200 ease-out sm:max-w-lg md:max-w-2xl md:p-7 xl:p-9 ${
+        className={`bg-umbra-100 relative mx-auto w-[360px] max-w-[calc(100vw-1rem)] transform overflow-hidden rounded-3xl p-5 shadow-2xl transition-all duration-200 ease-out md:mx-4 md:w-full md:max-w-3xl md:p-7 xl:p-9 ${
           animateIn ? 'translate-y-0 scale-100 opacity-100' : 'translate-y-4 scale-95 opacity-0'
         }`}
       >
-        {/* Close button */}
-        <button
-          onClick={handleClose}
-          className="text-umbra-60 hover:text-umbra-100 absolute top-4 right-4 transition-colors"
-          aria-label="Close popup"
-        >
-          <X size={20} />
-        </button>
-
         {/* Logo */}
         <div className="mb-4 flex justify-center">
           <Image
-            src="/assets/brand.png"
+            src="/assets/rebranding-logo.png"
             alt="Loud Spectrum Logo"
-            width={64}
-            height={64}
-            className="h-16 w-auto"
+            width={96}
+            height={40}
+            className="h-auto w-full max-w-[96px]"
             priority
           />
         </div>
 
         {/* Content */}
         <div className="text-umbra-100 space-y-5 text-center text-sm md:space-y-7 md:text-left md:text-[0.925rem]">
-          <div className="flex flex-col items-center gap-3 md:flex-row md:items-start md:justify-between">
-            <h2 className="text-white-100 inline-flex w-full items-center justify-center rounded-full px-5 py-1.5 text-center text-[20px] font-normal md:text-[24px]">
-              Welcome to Loud Spectrum
-            </h2>
-            {/* <div className="main-gradient hidden h-px w-20 md:block" /> */}
-          </div>
-
-          <p className="text-white-100 text-center text-xs leading-relaxed md:text-sm">
-            We've evolved — same great team, same premium quality, bold new name. We’ve rebranded to bring you a more
-            streamlined, elevated web experience — one that matches our full spectrum of flavor and innovation.
-          </p>
-
-          <div className="from-umbra-100/10 via-atmosphere/10 to-aurora/10 rounded-xl bg-gradient-to-r p-4 shadow-inner">
-            <h3 className="text-white-100 mb-3 text-center text-xs font-normal uppercase">Brand Evolutions</h3>
-            <div className="grid gap-3 sm:grid-cols-2">
-              {brandUpdates.map(({ old, newName, color }) => {
-                const colors = colorClasses[color];
-                return (
-                  <div
-                    key={old}
-                    className="border-umbra-10 text-umbra-100 flex items-center justify-between rounded-full border bg-white/90 px-3 py-2 text-xs font-medium backdrop-blur-sm sm:text-sm"
-                  >
-                    {/* Aligned Arrow & New Name */}
-                    <span className="ml-2 flex min-w-0 items-center justify-center gap-2">
-                      {/* Old Name */}
-                      <span className="flex min-w-0 items-center justify-start gap-2">{old}</span>
-                      <span className="text-umbra-40 text-sm sm:text-base">
-                        <ArrowRightIcon className="text-umbra-40 size-4" />
-                      </span>
-                    </span>
-                    <span
-                      className={`inline-flex items-center rounded-full ${colors.bg} px-2.5 py-0.5 text-[0.65rem] font-normal text-white shadow-sm sm:px-3 sm:py-0.5 sm:text-xs`}
-                    >
-                      {newName}
-                    </span>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
-          <div className="grid gap-5 md:grid-cols-1 md:items-start md:gap-6">
-            <div className="rounded-xl p-4">
-              <p className="text-white-100 text-center text-xs font-normal uppercase">Here for you</p>
-              <p className="text-white-100 mt-2 text-center text-xs leading-relaxed sm:text-sm">
-                If you have questions or run into issues, reach out in chat or email us at{' '}
-                <a
-                  href="mailto:hi@loudspectrum.com"
-                  className="text-white-100 font-normal underline-offset-4 hover:underline"
-                >
-                  hi@loudspectrum.com
-                </a>
-                . We're glad you're here — and we can't wait to take your flavor experience beyond ordinary.
+          <div className="flex flex-col items-center md:flex-row md:items-start">
+            <div>
+              <h2
+                className="inline-flex w-full items-center justify-center rounded-full px-5 py-1.5 text-center text-[36px] !leading-[104%] font-normal md:text-[36px]"
+                style={{
+                  background: 'linear-gradient(273.4deg, #101820 4.3%, #0077C8 29.35%, #B2A9F5 64.06%, #DDDAE8 95.7%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}
+              >
+                Welcome to Loud Spectrum
+              </h2>
+              {/* <div className="main-gradient hidden h-px w-20 md:block" /> */}
+              <p className="text-white-100 text-center text-xs leading-relaxed md:text-[11px]">
+                Today, we’re proud to introduce our next evolution — <br />
+                Loud Spectrum — a full-service Flavor House built around one mission: to turn up the volume on flavor
+                innovation and elevate sensory experiences across every category.
               </p>
             </div>
+          </div>
+
+          <div className="flex w-full justify-center">
+            <Image
+              src="/assets/rebranding-gif.gif"
+              alt="Loud Spectrum Rebranding"
+              width={606}
+              height={353}
+              className="h-full w-full max-w-[300px] object-contain md:max-w-[400px]"
+              unoptimized
+            />
+          </div>
+
+          <div className="rounded-xl">
+            <p className="text-white-100 mt-2 text-center text-xs leading-relaxed sm:text-xs md:text-[11px]">
+              Take a look around and If you have questions or run into issues, reach out in chat or email us at{' '}
+              <a
+                href="mailto:hi@loudspectrum.com"
+                className="text-white-100 text-[14px] font-medium underline-offset-4 hover:underline"
+              >
+                hi@loudspectrum.com
+              </a>
+            </p>
           </div>
         </div>
 
@@ -221,7 +198,17 @@ const RebrandingPopup = () => {
         <div className="mt-6 flex justify-center">
           <button
             onClick={handleClose}
-            className="special-button inline-flex cursor-pointer items-center justify-center rounded-full bg-gradient-to-r px-5 py-1.5 text-center text-[0.6rem] font-normal text-white uppercase md:!text-[14px]"
+            className="group bg-white-100 text-umbra-100 hover:text-white-100 inline-flex cursor-pointer items-center justify-center rounded-full px-5 py-1.5 text-center text-[16px] font-medium uppercase transition-all duration-300 md:!text-[16px]"
+            style={{
+              background: 'white',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background =
+                'linear-gradient(273.4deg, #101820 4.3%, #0077C8 29.35%, #B2A9F5 64.06%, #DDDAE8 95.7%)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = 'white';
+            }}
           >
             Got it!
           </button>

@@ -73,10 +73,10 @@ const OrderSummary = () => {
           <span>{t('totalVolume')}</span>
           <span>{displayVolume}</span>
         </div>
-        <div className="flex items-center justify-between">
+        {/* <div className="flex items-center justify-between">
           <span>{t('totalPounds')}</span>
           <span>{`${weight?.totalPounds?.toFixed(2)} lbs`}</span>
-        </div>
+        </div> */}
         <div className="flex items-center justify-between">
           <span>{t('subtotal')}</span>
           <span>${orderSummary.subtotal.toFixed(2)}</span>
